@@ -44,6 +44,6 @@ plugins:
   - search
   - glightbox
 
-  markdown_extensions:
-  - attr_list
-  - md_in_html
+markdown_extensions:
+- attr_list
+- md_in_html
