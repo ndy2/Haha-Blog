@@ -1,26 +1,25 @@
-site_name: obsidian-mkdocs template
+# Project information
+site_name: Haha 블로그
+site_url: https://ndy2.github.io//Haha-Blog/
+site_author: Haha
+site_description: >-
+  안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다.
+  잘 부탁드립니다.
+
+# Repository
+repo_name: ndy2/Haha-Blog
+repo_url: https://github.com/ndy2/Haha-Blog
+
+copyright: Copyright &copy; 2022 - 2022 ndy2
 
 theme:
     name: 'material'
-    palette:
-
-    # Light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: pink
-      accent: indigo
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
-
-    # Dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: pink
-      accent: blue
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
+    font:
+      text: Roboto
+      code: Roboto Mono
+    favicon: assets/favicon.png
+    icon:
+      logo: logo
 
 # Extensions
 markdown_extensions:
