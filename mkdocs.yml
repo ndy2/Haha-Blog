@@ -18,9 +18,6 @@ theme:
       text: Roboto
       code: Roboto Mono
     favicon: assets/favicon.ico
-    icon:
-      logo: library_books
-      
 
 # Extensions
 markdown_extensions:
