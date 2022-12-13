@@ -48,3 +48,14 @@ nav:
   - 기술 서적 정리/리뷰:
       - 책!: books/index.md
       - 클린 애자일: books/clean-agile.md
+      - 스프링 부트로 개발하는 MSA 컴포넌트:
+        - 리뷰 : books/springboot-msa-component/README.md
+        - 1장 마이크로서비스 아키텍처 : books/springboot-msa-component/ch01-msa.md
+        - 2장 프레임워크와 스프링부트 : books/springboot-msa-component/ch02-framework-and-springboot.md
+        - 3장 스프링 애플리케이션 기본 : books/springboot-msa-component/ch03-springboot-basic.md
+        - 4장 스프링 웹 MVC 개요 :
+            - books/springboot-msa-component/ch04-spring-web-mvc-basic.md
+            - books/springboot-msa-component/ch04-sec01-http.md
+            - books/springboot-msa-component/ch04-sec02-servlet-and-mvc.md
+        - 5장 스프링 MVC를 이용한 REST-API 개발: books/springboot-msa-component/ch05-spring-web-mvc-with-restapi.md
+        - 6장 웹 애플리케이션 서버 구축하기: books/springboot-msa-component/ch06-build-web-application-server.md
