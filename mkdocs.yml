@@ -55,7 +55,7 @@ plugins:
 nav:
   - Home: index.md
   - 블로그 팁:
-    - 들어가기: bloggingtips/getting-started.md
+      - 들어가기: bloggingtips/getting-started.md
   - 기술 서적 정리/리뷰:
       - 책!: books/index.md
       - 클린 애자일: books/clean-agile/clean-agile.md
@@ -69,4 +69,7 @@ nav:
               - 파트 1 HTTP: books/springboot-msa-component/ch04-sec01-http.md
               - 파트 2 서블릿과 MVC: books/springboot-msa-component/ch04-sec02-servlet-and-mvc.md
           - 5장 스프링 MVC를 이용한 REST-API 개발: books/springboot-msa-component/ch05-spring-web-mvc-with-restapi.md
-          - 6장 웹 애플리케이션 서버 구축하기: books/springboot-msa-component/ch06-build-web-application-server.md
+          - 6장 웹 애플리케이션 서버 구축하기:
+              - 들어가기: books/springboot-msa-component/ch06-build-web-application-server.md
+              - EnableXXX의 동작과 빈 설정 모듈화: books/springboot-msa-component/ch06-sec00-@EnableXXX-and-bean-modulerlize.md
+              - 웹 애플리케이션 설정 메커니즘: books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism.md
