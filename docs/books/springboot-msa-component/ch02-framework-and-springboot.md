@@ -5,6 +5,7 @@
 ## 스프링의 의미
 
 스프링은 참 다양한 의미를 가진다.
+
 - Spring (Framework) - 스프링 프레임워크
 - Spring (Core Framework) - 스프링 핵심 프레임 워크
 - Spring (Application Context, BeanFactory) - IOC 컨테이너
@@ -53,25 +54,31 @@ SpringApplication 의 생성자는 전달받는 Class 정보를 참고하여 여
 	- `Resource` 를 애플리케이션으로 로드하기위한 다양한 방법을 추상화한 전략 인터페이스이다.
 	- `SpringApplication` 에서의 `ResourceLoader`는 스프링 배너 프린터, `ApplicationContext`  생성시 필요한 다양한 객체의 `ResourceLoader` 필드를 전달하기 위한 용도로 사용되며 
 	- 참고로 `ApplicationContext` 자체도 `ResourceLoader` 를 구현하고 있다.
-	- 기본적으로 SpringApplciation 의 ResourceLoader 는  null, ApplicationContext 
+	- 기본적으로 SpringApplciation 의 ResourceLoader 는  null, ApplicationContext
+
 - `primarySources`
 	- 전달 받은 Class 정보를 저장하는 필드이다.
+
 - `webApplicationType`
 	- `WebApplicationType.REACTIVE`, `WebApplicationType.NONE`, `WebApplicationType.SERVLET` 중 하나로 추론 된다.
 	- `Environment` 의 타입을 결정하기 위해 사용된다.
+
 - `bootstrapRegistryInitializers` 
 	- 아직 뭔지 모르겠다.
+
 - `mainApplicationClass`
 	- 메인 애플리케이션 클래스를 셋업해둔다. 로깅을 위해서만 활용된다.
 	- 셋업 과정에서 더미 런타임 예외를 만들어 스택 트레이스를 순회하며 `main` 메서드를 찾는 방식으로 추론한다.
+
 
 ### 2. 애플리케이션 컨텍스트 생성/초기화를 포함한 실행 과정
 
 셋업이후의 실질적인 `run` 메서드의 흐름은 간단히 아래의 그림과 같다.
 
-![[SpringApplication.run.png]]
+![SpringApplication.run.png](images/SpringApplication.run.png)
 
 역할을 요약하면
+
 - Enviroment 준비
 - ApplicationContext 생성 및 초기화
 - Runner 실행 
