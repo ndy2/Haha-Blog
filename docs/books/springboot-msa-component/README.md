@@ -1,7 +1,9 @@
 ### 읽기 전
 호주에 거주 중이신 토비님이 SNS에 이 책을 읽고 공부하고 싶은데 책을 읽을 방법이 없다고 한탄하는 글을 게시하셨다.
 
-![toby-sns.png](images/toby-sns.png)|
+<figure markdown>
+  ![toby-sns.png](images/toby-sns.png){ width="400" }
+</figure>
 
 끝없이 공부를 하고 커뮤니티의 리더로서 책임(?) 을 다하는 모습이 참 멋지다고 생각한다. 동시에 해당 책에 대한 궁금증이 생겨 목차를 읽고 나니 사지 않을 수가 없었다.
 
