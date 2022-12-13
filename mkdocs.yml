@@ -54,6 +54,8 @@ plugins:
 # Page tree
 nav:
   - Home: index.md
+  - 블로그 팁:
+    - 들어가기: bloggingtips/getting-started.md
   - 기술 서적 정리/리뷰:
       - 책!: books/index.md
       - 클린 애자일: books/clean-agile/clean-agile.md
