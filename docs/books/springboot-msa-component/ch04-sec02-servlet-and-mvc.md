@@ -84,9 +84,9 @@ Spring Web MVC 는 5.0 부터 두가지 방식으로 설정 할 수 있습니다
 	- Thread 들이 코어를 사용하기 위해 경합 하는 상황 발생
 	- Thread 개수 = 기본적으로 200개
 
-![[ServletStack_ThreadModel.excalidraw]]
+![ServletStack_ThreadModel.excalidraw](excalidraws/ServletStack_ThreadModel.excalidraw.md)
 
-![[ServletStack_Blocked.excalidraw]]
+![ServletStack_Blocked.excalidraw](ServletStack_Blocked.excalidraw)
 
 
 - 리액티브 스택 모델 (a.k.a. EventLoop Model)
@@ -100,7 +100,7 @@ Spring Web MVC 는 5.0 부터 두가지 방식으로 설정 할 수 있습니다
 	- NIO 를 사용하여 IO 를 하기 때문에 Thread 가 Block 되지 않음
 	- 높은 처리량의 이유 = EventLoop + Non-Blocking IO !
 
-![[ReativeStack_NonBlocked.excalidraw]]
+![ReativeStack_NonBlocked.excalidraw](ReativeStack_NonBlocked.excalidraw)
 
 
 
