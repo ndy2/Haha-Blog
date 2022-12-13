@@ -4,7 +4,7 @@
 저는 `하하` 라는 닉네임을 사용하고 오른쪽 이미지를 프로필 이미지로 자주 사용해요.
 
 <figure markdown>
-  ![my-profile.png](my-profile.png){ align=right }
+  ![my-profile.jpeg](my-profile.jpeg){ align=right }
 </figure>
 
 
