@@ -13,16 +13,17 @@ repo_url: https://github.com/ndy2/Haha-Blog
 copyright: Copyright &copy; 2022 - 2022 ndy2
 
 theme:
-    name: 'material'
-    font:
-      text: Roboto
-      code: Roboto Mono
-    favicon: assets/favicon.ico
+  name: 'material'
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.ico
 
 # Extensions
 markdown_extensions:
   - footnotes
-  # - attr_list
+  - md_in_html
+    - attr_list
   - pymdownx.arithmatex:
       generic: true
   # - pymdownx.superfences
@@ -44,6 +45,8 @@ plugins:
   - search
   - glightbox
 
-markdown_extensions:
-  - attr_list
-  - md_in_html
+# Page tree
+nav:
+  - Home: index.md
+  - 기술 서적 정리/리뷰:
+      클린 애자일: clean-agile.md

@@ -51,7 +51,7 @@
         
         -   스노버드 회의
         
-        ![snowbird.png](images/snowbird.png)
+        ![snowbird.png](snowbird.png)
         
         -   경량 프로세스와 소프트웨어 개발 전반에 걸친 믿음!
         
