@@ -49,5 +49,5 @@ plugins:
 nav:
   - Home: index.md
   - 기술 서적 정리/리뷰:
-      - index.md
-      - 클린 애자일: clean-agile.md
+      - 책!: books/index.md
+      - 클린 애자일: books/clean-agile.md
