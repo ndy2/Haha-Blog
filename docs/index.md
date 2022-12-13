@@ -3,6 +3,11 @@
 *좋은 설계*와 *객체지향 방법론*에 관심이 많은 ==미래의 백엔드 개발자 남득윤==입니다.
 저는 `하하` 라는 닉네임을 사용하고 오른쪽 이미지를 프로필 이미지로 자주 사용해요.
 
+<figure markdown>
+  ![my-profile.png](my-profile.png){ align=right }
+</figure>
+
+
 ## 좋아하는 것!
 - :moon: 늦게나고 늦게 일어나는 것
 - :mug-saucer: 카페 공부
