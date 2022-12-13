@@ -1,6 +1,6 @@
 ## HTTP Protocol
 
-![[HTTP-Request-Response.png]]
+![HTTP-Request-Response.png](images/HTTP-Request-Response.png)
 
 ### HTTP 프로토콜의 주요 버전별 주요 특징
 HTTP/1.1 (RFC 2616/ 1999.06)

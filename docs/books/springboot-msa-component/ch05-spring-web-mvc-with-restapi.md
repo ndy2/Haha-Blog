@@ -2,6 +2,7 @@
 이 장에서는 Controller 구현시 활용하는 여러 Spring 의 기능들 을 소개합니다.
 
 컨트롤러 클래스와 메서드에 활용되는 애너테이션
+
 - @Controller
 - @RequestMapping
 - @PathVariable
@@ -10,16 +11,19 @@
 - @ResponseBody
 
 요청/응답 메시지 처리에 활용되는 애너테이션
+
 - @JsonProperty, @JsonSerialize ... 
 - JsonSerializer, JsonDeserializer ...
 
 페이징, 정렬 을 다루는 스프링 표준 인터페이스
+
 - Pageable, Slice, Sort ...
 
 등등에 관해서는 스킵하겠습니당.
 
 이 장에서 소개하는 내용중 가장 흥미로운 내용 두가지만 예제를 포함해서 정리하겠습니다.
 두가지는
+
 1. 요청 데이터의 검증을 프레젠테이션 레이어에서 진행하는 여러가지 방법
 2. 파일 다운로드 기능을 구현하는 두가지 방법
 입니다.
@@ -54,7 +58,7 @@
 
 --- 
 
-### 2. 파일 다운로드를 구현하는 방법
+## 2. 파일 다운로드를 구현하는 방법
 
 #### 1. `HttpMessageConverter` 사용
 - 그냥 재주껏 `byte[]` 로 변경하여 `ResponseEntity<byte[]>` 애 담아 반환하면 `ByteArrayHttpMessageConverter` 가 처리한다.
