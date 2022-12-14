@@ -1,0 +1,201 @@
+{
+  "main": {
+    "id": "0b878f700814257b",
+    "type": "split",
+    "children": [
+      {
+        "id": "e2e87367dcaf3486",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ccea69d4ec89445f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/books/springboot-msa-component/ch06-build-web-application-server.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "06d449dd56729529",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/index.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "bf49940565204300",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/til/2022-12-14.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ec38217504e3cdbe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/index.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "58f288d816474942",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/til/getting-started.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "cad7dacf49992c75",
+    "type": "split",
+    "children": [
+      {
+        "id": "2f0c391fccb2ac7b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d5d67769f784457f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "93433e4705eabcdd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "8a142aed08feb139",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 422.5
+  },
+  "right": {
+    "id": "321c3e0b416bdb75",
+    "type": "split",
+    "children": [
+      {
+        "id": "6d2fab4edddb083e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fa1ce25b5ec77754",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/til/getting-started.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "28f84d4b0b7871b0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/til/getting-started.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f7dc2a2a614687fb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ce76ca7f01c6d59a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/til/getting-started.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "58f288d816474942",
+  "lastOpenFiles": [
+    "docs/til/2022-12-14.md",
+    "docs/til/getting-started.md",
+    "docs/til/til-template.md",
+    "docs/index.md",
+    "docs/my-profile.jpeg",
+    "docs/books/springboot-msa-component/images/my-profile.jpeg",
+    "README.md",
+    "${page.file.name}.md",
+    "docs/til/til/2022-12-14.md",
+    "docs/books/springboot-msa-component/ch06-build-web-application-server.md"
+  ]
+}
