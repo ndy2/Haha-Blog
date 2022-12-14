@@ -20,6 +20,16 @@ theme:
     code: Roboto Mono
   favicon: assets/favicon.ico
 
+# Extra
+extra_javascript:
+  - ../.obsidian/plugins/dataview/main.js
+  - ../.obsidian/plugins/dataview/data.json
+  - ../.obsidian/plugins/heatmap-calendar/main.js
+
+extra_css:
+  - ../.obsidian/plugins/dataview/style.css
+  - ../.obsidian/plugins/heatmap-calendar/style.css
+
 # Extensions
 markdown_extensions:
   - footnotes

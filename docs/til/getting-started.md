@@ -16,7 +16,7 @@ const calendarData = {
 }
 
 //DataviewJS loop
-for (let page of dv.pages().where(p => p.til)) {
+for (let page of dv.pages('"docs/til"').where(p => p.til)) {
     calendarData.entries.push({
         date: page.file.name,
         intensity: page.til,
