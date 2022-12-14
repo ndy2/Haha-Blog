@@ -12,3 +12,4 @@
 
 0. @EnableXXX 애너테이션의 동작과 빈 설정 모듈화
 1. 웹 애플리케이션 설정 메커니즘
+3. DispatcherServlet
