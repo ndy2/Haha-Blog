@@ -76,4 +76,3 @@ nav:
               - DispatcherServlet: books/springboot-msa-component/ch06-sec03-dispatcher-servlet.md
   - TIL:
       - 시작하기: til/getting-started.md
-      - 2022-12-14: til/2022-12-14.md
