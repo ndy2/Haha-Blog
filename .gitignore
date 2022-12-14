@@ -1,9 +1,2 @@
 .vscode/settings.json
-.idea/*
-.DS_Store
-.obsidian/hotkeys.json
-.obsidian/plugins/obsidian-emoji-toolbar
-.obsidian/plugins/obsidian-excalidraw-plugin
-.obsidian/plugins/obsidian-git
-.obsidian/plugins/obsidian-paste-image-rename
-.obsidian/plugins/wikilinks-to-mdlinks-obsidian
+.obsidian/*
