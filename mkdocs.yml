@@ -73,3 +73,6 @@ nav:
               - 들어가기: books/springboot-msa-component/ch06-build-web-application-server.md
               - EnableXXX의 동작과 빈 설정 모듈화: books/springboot-msa-component/ch06-sec00-@EnableXXX-and-bean-modulerlize.md
               - 웹 애플리케이션 설정 메커니즘: books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism.md
+  - TIL:
+      - 시작하기: til/getting-started.md
+      - 2022-12-14: til/2022-12-14.md
