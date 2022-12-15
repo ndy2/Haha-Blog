@@ -4,3 +4,4 @@
 
 - [JPA 장점과 단점](../ch08-sec01-jpa-pros-and-cons)
 - [엔티티 매니저와 영속성 컨텍스트](../ch08-sec08-entitymanager-and-persistence-context)
+- [Open Session In View](../ch08-sec11-osiv.md)
