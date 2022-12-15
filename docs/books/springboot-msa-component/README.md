@@ -12,7 +12,7 @@
 
 ### 읽는 중 ...
 
-- [[1장 microservice architecture]]
+- [1장 마이크로 서비스 아키텍처](ch01-msa)
 - [[2장 Framework and Spring Boot]]
 - [[3장 스프링 애플리케이션 기본]]
 - [[4장 스프링 웹 MVC 개요]]

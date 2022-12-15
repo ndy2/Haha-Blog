@@ -193,7 +193,7 @@ public @interface EnableTransactionManagement {
 -  추상 클래스와 템플릿 메서드 패턴을 이용해 `selectImports` 메서드의 파라미터를 `AdviceMode` 로 두었다.
 - 스프링이 지원하는 두가지 프록시 방식 (JDK 의 다이나믹 프록시 기반, AspectJ AOP 기반) 에 따라 내부에 설정되어야 하는 빈의 정보가 완전히 달라지게 된다.
 - 이를 `EnableTransactionManagement` 에서 `AdviceMode` 를 설정하는 것으로 간단히 변경할 수 있도록 한 것이다. 이때 `ImportSelector` 를 구현하여 `@Enable` 애너테이션의 `@Import`에 추가하였다.
-- 옵션에 따라 복잡한 빈 설정 조합을 만들어내야 하는 경우라면 `ImportBeanDefinitionRegistrar` 를ㄹ 이용할 수 있다.
+- 옵션에 따라 복잡한 빈 설정 조합을 만들어내야 하는 경우라면 `ImportBeanDefinitionRegistrar` 를 이용할 수 있다.
 
 
 
