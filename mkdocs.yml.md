@@ -17,9 +17,22 @@ copyright: Copyright &copy; 2022 - 2022 ndy2
 theme:
   name: 'material'
   font:
-    text: Roboto
-    code: Roboto Mono
+   text: Roboto
+   code: Roboto Mono
   favicon: assets/favicon.ico
+  admonition:
+   note: octicons/tag-16
+   abstract: octicons/checklist-16
+   info: octicons/info-16
+   tip: octicons/squirrel-16
+   success: octicons/check-16
+   question: octicons/question-16
+   warning: octicons/alert-16
+   failure: octicons/x-circle-16
+   danger: octicons/zap-16
+   bug: octicons/bug-16
+   example: octicons/beaker-16
+   quote: octicons/quote-16
 
 # Extensions
 markdown_extensions:
@@ -35,6 +48,8 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences
   - pymdownx.critic
   - pymdownx.caret
@@ -79,6 +94,11 @@ nav:
               - 들어가기: books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration.md
               - 스프링 AOP: books/springboot-msa-component/ch07-sec01-spring-aop.md
               - 스프링 부트 자동 설정: books/springboot-msa-component/ch07-sec03-autoconfiguration.md
+          - 8장 데이터 영속성:
+	          - 들어가기: books/springboot-msa-component/ch08-data-persistence.md
+	          - JPA 장점과 단점: books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons.md
+	          - 엔티티 매니저와 영속성 컨텍스트: books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context.md
   - TIL:
       - 시작하기: til/getting-started.md
 ```
+
