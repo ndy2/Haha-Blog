@@ -2,7 +2,7 @@
 이 장에서는 제목에 있는 세가지 굴직굴직한 주제를 다룹니다.
 
 세가지는
-1. [AOP](ch07-sec01-spring-aop)
+1. [AOP](../ch07-sec01-spring-aop)
 2. 테스트
 3. [자동 설정](ch07-sec03-autoconfiguration)
 입니다.
