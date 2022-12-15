@@ -4,7 +4,7 @@
 세가지는
 1. [AOP](../ch07-sec01-spring-aop)
 2. 테스트
-3. [자동 설정](ch07-sec03-autoconfiguration)
+3. [자동 설정](../ch07-sec03-autoconfiguration)
 입니다.
 
 그 중에서 테스트 파트는 이미 여러번 [정리](https://ndy-dev.notion.site/bd4872f1f1dc4d3faf9e92bd119a1bf7) 하였고 사용을 통해 체화된 내용이 많아 생략하겠습니다.
