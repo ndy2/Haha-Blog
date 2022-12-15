@@ -111,6 +111,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch08-sec11-osiv/</loc>
+         <lastmod>2022-12-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/ReativeStack_NonBlocked.excalidraw/</loc>
          <lastmod>2022-12-15</lastmod>
          <changefreq>daily</changefreq>
@@ -122,6 +127,16 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/ServletStack_ThreadModel.excalidraw/</loc>
+         <lastmod>2022-12-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/osiv-off.excalidraw/</loc>
+         <lastmod>2022-12-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/osiv-on.excalidraw/</loc>
          <lastmod>2022-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>

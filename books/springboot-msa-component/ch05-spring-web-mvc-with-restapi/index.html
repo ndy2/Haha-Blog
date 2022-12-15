@@ -402,6 +402,11 @@
         엔티티 매니저와 영속성 컨텍스트
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ch08-sec08-osiv.md">
+        OSIV
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -607,6 +612,14 @@
 <p>보통 <code>Resource</code> 클래스를 많이 활용하는 것 같아 찾아보니 <code>ResourceHttpMessageConverter</code> 도 내부에 protected 메서드 <code>writeContent</code> 를 통해 응답 메시지를 작성하는데 여기에서도 <code>StreamUtils.copy</code> 메서드를 활용하고 있다.</p>
 <p>헤더의 처리나 예외처리도 자동으로 해준다.
 아무래도 저자분이 위 방식들을 비교, 소개하신 이유는 이런 인사이트를 주기 위해서였던것 같다.</p>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2022</span>
+</small>
+</div>
 </article>
 </div>
 </div>

@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch02-framework-and-springboot/" rel="canonical"/>
+<link href="https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch08-sec11-osiv/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>2장 프레임워크와 스프링부트 - Haha 블로그</title>
+<title>Ch08 sec11 osiv - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#_1">
+<a class="md-skip" href="#osiv-on">
           Skip to content
         </a>
 </div>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              2장 프레임워크와 스프링부트
+              Ch08 sec11 osiv
             
           </span>
 </div>
@@ -155,8 +155,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           기술 서적 정리/리뷰
           <span class="md-nav__icon md-icon"></span>
@@ -177,8 +177,8 @@
         클린 애자일
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_3">
           스프링 부트로 개발하는 MSA 컴포넌트
           <span class="md-nav__icon md-icon"></span>
@@ -199,52 +199,10 @@
         1장 마이크로서비스 아키텍처
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          2장 프레임워크와 스프링부트
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ch02-framework-and-springboot/">
         2장 프레임워크와 스프링부트
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    스프링의 의미
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    스프링과 스프링 부트
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    스프링 애플리케이션이 실행되고 애플리케이션 컨텍스트가 준비되는 과정
-  </a>
-<nav aria-label="스프링 애플리케이션이 실행되고 애플리케이션 컨텍스트가 준비되는 과정" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1. 클래스 정보를 이용하여 실행 준비
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2. 애플리케이션 컨텍스트 생성/초기화를 포함한 실행 과정
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../ch03-springboot-basic/">
@@ -437,33 +395,14 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    스프링의 의미
+<a class="md-nav__link" href="#osiv-on">
+    OSIV - on
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    스프링과 스프링 부트
+<a class="md-nav__link" href="#osiv-off">
+    OSIV - off
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    스프링 애플리케이션이 실행되고 애플리케이션 컨텍스트가 준비되는 과정
-  </a>
-<nav aria-label="스프링 애플리케이션이 실행되고 애플리케이션 컨텍스트가 준비되는 과정" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1. 클래스 정보를 이용하여 실행 준비
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2. 애플리케이션 컨텍스트 생성/초기화를 포함한 실행 과정
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -472,111 +411,24 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/books/springboot-msa-component/ch02-framework-and-springboot.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/books/springboot-msa-component/ch08-sec11-osiv.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>2장 프레임워크와 스프링부트</h1>
-<p>프레임워크란 용도에 맞는 일반적인 기능들을 보편적인 방식으로 제공한다.</p>
-<blockquote>
-<p>❗ 면접 단골 질문 중 하나인 Framework/ Library/ API 의 차이도 이해하자!</p>
-</blockquote>
-<h2 id="_1">스프링의 의미<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>스프링은 참 다양한 의미를 가진다.</p>
-<ul>
-<li>Spring (Framework) - 스프링 프레임워크</li>
-<li>Spring (Core Framework) - 스프링 핵심 프레임 워크</li>
-<li>Spring (Application Context, BeanFactory) - IOC 컨테이너</li>
-</ul>
-<h2 id="_2">스프링과 스프링 부트<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p><a href="https://spring.io/projects/spring-framework">스프링 프로젝트 공식문서</a> 의 소개글 첫머리와 그 특징이다.</p>
-<p><a href="https://spring.io/projects/spring-framework">Spring Framework</a></p>
-<blockquote>
-<p>The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform.</p>
-</blockquote>
-<ul>
-<li>POJO 기반의 경량 컨테이너 제공</li>
-<li>복잡한 비즈니스 영역의 문제를 쉽게 개발하고 운영하기 위한 철학 (the Spring Triangle)</li>
-<li>Module 식 프레임워크</li>
-</ul>
-<p><a href="https://spring.io/projects/spring-boot">Spring Boot</a></p>
-<blockquote>
-<p>Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".</p>
-</blockquote>
-<ul>
-<li>Create stand-alone Spring applications</li>
-<li>Embed Tomcat, Jetty or Undertow directly (no need to deploy WAR files)</li>
-<li>Provide opinionated 'starter' dependencies to simplify your build configuration</li>
-<li>Automatically configure Spring and 3rd party libraries whenever possible</li>
-<li>Provide production-ready features such as metrics, health checks, and externalized configuration</li>
-<li>Absolutely no code generation and no requirement for XML configuration</li>
-</ul>
-<p>두 프로젝트에서 개발시 경험하는 스프링의 대부분의 마법같은 일이 일어난다.
-IOC, AOP, AutoConfigure, Embedded WAS ...</p>
-<h2 id="_3">스프링 애플리케이션이 실행되고 애플리케이션 컨텍스트가 준비되는 과정<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<p>스프링 애플리케이션은 자바 애플리케이션이므로 <code>main</code> 메서드에 의해 시작된다.
-Spring Initializer로 프로젝트를 생성하게 되면 <code>SpringApplication.run</code> 메서드를 호출하는 코드가 달랑 한줄 있다. <code>run</code> 메서드가 의미하는 바를 간단히 정리해보자.</p>
-<p>Static 메서드 <code>run</code> 은 <code>SpringApplication</code> 객체를 생성하고 Instance 메서드 <code>run</code> 을 실행한다. 
-이때 <code>SpringApplication</code> 객체 생성 시 <code>Main</code> 클래스 정보가 <code>Class</code>  객체의 형태로 전달된다.</p>
-<h3 id="1">1. 클래스 정보를 이용하여 실행 준비<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
-<p>SpringApplication 의 생성자는 전달받는 Class 정보를 참고하여 여러가지 필드를 셋업한다.</p>
-<p>주요 셋업 필드는 다음과 같다.
-- <code>resourceLoader</code>
-    - <code>ResourceLoader</code> 는 <code>Resource getResource(String location);</code> 라는 핵심 메서드를 가지는 인터페이스이다.
-    - <code>Resource</code> 를 애플리케이션으로 로드하기위한 다양한 방법을 추상화한 전략 인터페이스이다.
-    - <code>SpringApplication</code> 에서의 <code>ResourceLoader</code>는 스프링 배너 프린터, <code>ApplicationContext</code>  생성시 필요한 다양한 객체의 <code>ResourceLoader</code> 필드를 전달하기 위한 용도로 사용되며 
-    - 참고로 <code>ApplicationContext</code> 자체도 <code>ResourceLoader</code> 를 구현하고 있다.
-    - 기본적으로 SpringApplciation 의 ResourceLoader 는  null, ApplicationContext</p>
-<ul>
-<li>
-<p><code>primarySources</code></p>
-<ul>
-<li>전달 받은 Class 정보를 저장하는 필드이다.</li>
-</ul>
-</li>
-<li>
-<p><code>webApplicationType</code></p>
-<ul>
-<li><code>WebApplicationType.REACTIVE</code>, <code>WebApplicationType.NONE</code>, <code>WebApplicationType.SERVLET</code> 중 하나로 추론 된다.</li>
-<li><code>Environment</code> 의 타입을 결정하기 위해 사용된다.</li>
-</ul>
-</li>
-<li>
-<p><code>bootstrapRegistryInitializers</code> </p>
-<ul>
-<li>아직 뭔지 모르겠다.</li>
-</ul>
-</li>
-<li>
-<p><code>mainApplicationClass</code></p>
-<ul>
-<li>메인 애플리케이션 클래스를 셋업해둔다. 로깅을 위해서만 활용된다.</li>
-<li>셋업 과정에서 더미 런타임 예외를 만들어 스택 트레이스를 순회하며 <code>main</code> 메서드를 찾는 방식으로 추론한다.</li>
-</ul>
-</li>
-</ul>
-<h3 id="2">2. 애플리케이션 컨텍스트 생성/초기화를 포함한 실행 과정<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
-<p>셋업이후의 실질적인 <code>run</code> 메서드의 흐름은 간단히 아래의 그림과 같다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/SpringApplication.run.png"><img alt="SpringApplication.run.png" src="../images/SpringApplication.run.png"/></a></p>
-<p>역할을 요약하면</p>
-<ul>
-<li>Enviroment 준비</li>
-<li>ApplicationContext 생성 및 초기화</li>
-<li>Runner 실행 <ul>
-<li>ApplicationRunner, CommandLineRunner 가 있다.</li>
-<li>둘은 스프링 컨텍스트의 생성이 완료된 시점에 단한번만 실행 되는 컴포넌트로서 사용된다.</li>
-<li>CommandLineRunner 는 구닥다리이다. ApplicationRunner 를 사용하자! <a href="https://github.com/ndy2/study-with-code/blob/main/study-spring/application-context/TOBYSPRINGBOOT.md">참고</a></li>
-</ul>
-</li>
-</ul>
-<p>등이 있다.</p>
-<p>run 메서드는 생성된 ApplicationContext 를 반환하므로 main 메서드에서 이를 받아 추가적인 처리를 해줄 수도 있다.
-    e.g.) 애플리케이션 리스너 추가, 이벤트 발행, ...</p>
+<h1>Ch08 sec11 osiv</h1>
+<p>OSIV 는 영속성 컨텍스트의 생명주기를 트랜잭션 범위를 넘어 스프링 MVC 의 View 까지 확장하여 사용할 수 있는 기능이다. 스프링 부트 프레임워크에서는 기본 설정으로 OSIV 가 활성화되어 있다.</p>
+<div class="highlight"><span class="filename">osiv 활성화를 끄는 설정</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="na">spring.jpa.open-in-view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false</span><span class="w"></span>
+</code></pre></div>
+<p>책에서 소개하는 아래 그림이 entityManager, connection, transaction 의 생명주기를 아주 잘 나타내 줍니다.</p>
+<h3 id="osiv-on">OSIV - on<a class="headerlink" href="#osiv-on" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/osiv-on.excalidraw.png"><img alt="excalidraws/osiv-on.excalidraw.png" src="../excalidraws/osiv-on.excalidraw.png"/></a></p>
+<h3 id="osiv-off">OSIV - off<a class="headerlink" href="#osiv-off" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/osiv-off.excalidraw.png"><img alt="excalidraws/osiv-on.excalidraw.png" src="../excalidraws/osiv-off.excalidraw.png"/></a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
 </small>
 </div>
 </article>
@@ -584,34 +436,6 @@ Spring Initializer로 프로젝트를 생성하게 되면 <code>SpringApplicatio
 </div>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 1장 마이크로서비스 아키텍처" class="md-footer__link md-footer__link--prev" href="../ch01-msa/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Previous
-              </span>
-              1장 마이크로서비스 아키텍처
-            </div>
-</div>
-</a>
-<a aria-label="Next: 3장 스프링 애플리케이션 기본" class="md-footer__link md-footer__link--next" href="../ch03-springboot-basic/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              3장 스프링 애플리케이션 기본
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
