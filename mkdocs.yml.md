@@ -66,6 +66,7 @@ plugins:
   - search
   - glightbox
   - git-revision-date-localized
+  - git-authors
 
 # Page tree
 nav:
