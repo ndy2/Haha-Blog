@@ -95,9 +95,9 @@ nav:
               - 스프링 AOP: books/springboot-msa-component/ch07-sec01-spring-aop.md
               - 스프링 부트 자동 설정: books/springboot-msa-component/ch07-sec03-autoconfiguration.md
           - 8장 데이터 영속성:
-	          - 들어가기: books/springboot-msa-component/ch08-data-persistence.md
-	          - JPA 장점과 단점: books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons.md
-	          - 엔티티 매니저와 영속성 컨텍스트: books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context.md
+              - 들어가기: books/springboot-msa-component/ch08-data-persistence.md
+              - JPA 장점과 단점: books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons.md
+              - 엔티티 매니저와 영속성 컨텍스트: books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context.md
   - TIL:
       - 시작하기: til/getting-started.md
 ```
