@@ -65,9 +65,12 @@ markdown_extensions:
 plugins:
   - search
   - glightbox
-  - git-revision-date-localized
+  - git-revision-date-localized:
+      type: date
+      timezone: Asia/Seoul
+      enable_creation_date: true
   - git-authors
-
+  
 # Page tree
 nav:
   - Home: index.md
