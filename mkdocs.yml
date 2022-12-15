@@ -77,6 +77,6 @@ nav:
           - 7장 스프링 AOP와 테스트, 자동 설정 원리:
               - 들어가기: books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration.md
               - 스프링 AOP: books/springboot-msa-component/ch07-sec01-spring-aop.md
-              - 스프링 부트 자동 설정: books/springboot-msa-component/ch07-sec03-autoconfiguration
+              - 스프링 부트 자동 설정: books/springboot-msa-component/ch07-sec03-autoconfiguration.md
   - TIL:
       - 시작하기: til/getting-started.md
