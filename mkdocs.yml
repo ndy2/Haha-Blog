@@ -5,7 +5,7 @@ edit_uri: blob/main/docs/
 site_author: Haha
 site_description: >-
   안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다.
-  잘 부탁드립니다!
+  잘 부탁드립니다.
 
 # Repository
 repo_name: ndy2/Haha-Blog
@@ -74,6 +74,9 @@ nav:
               - EnableXXX의 동작과 빈 설정 모듈화: books/springboot-msa-component/ch06-sec00-@EnableXXX-and-bean-modulerlize.md
               - 웹 애플리케이션 설정 메커니즘: books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism.md
               - DispatcherServlet: books/springboot-msa-component/ch06-sec03-dispatcher-servlet.md
+	  - 7장 스프링 AOPO와 테스트, 자동 설정 원리
+	      - 들어가기: books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration
+	      - 스프링 AOP:books/springboot-msa-component/ch07-sec01-spring-aop
+	      - 스프링 부트 자동 설정: books/springboot-msa-component/ch07-sec03-autoconfiguration
   - TIL:
       - 시작하기: til/getting-started.md
-      - 2022-12-14: til/til/2022-12-14.md
