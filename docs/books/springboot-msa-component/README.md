@@ -13,7 +13,9 @@
 ### 읽는 중 ...
 
 - [1장 마이크로 서비스 아키텍처](../ch01-msa)
-- [[2장 Framework and Spring Boot]]
-- [[3장 스프링 애플리케이션 기본]]
-- [[4장 스프링 웹 MVC 개요]]
-- [[5장 스프링 웹 MVC를 이양한 REST_API 개발]]
+- [2장 프레임워크와 스프링 부트](../ch02-framwork-and-springboot)
+- [3장 스프링 애플리케이션 기본](../ch03-springboot-basic)
+- [4장 스프링 웹 MVC 개요](../ch04-spring-web-mvc-basic)
+- [5장 스프링 웹 MVC를 이양한 REST_API 개발](../ch05-spring-web-mvc-with-restapi)
+- [6장 웹 애플리케이션 서버 구축하기](ch06-build-web-application-server.md)
+- [7장 스프링 AOP와 테스트, 자동 설정 원리](ch07-spring-aop-and-test-and-autoconfiguration.md)
