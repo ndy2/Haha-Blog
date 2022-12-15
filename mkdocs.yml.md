@@ -65,7 +65,7 @@ markdown_extensions:
 plugins:
   - search
   - glightbox
-  - kroki
+  - git-revision-date-localized
 
 # Page tree
 nav:
