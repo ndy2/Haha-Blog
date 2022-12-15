@@ -74,9 +74,10 @@ nav:
               - EnableXXX의 동작과 빈 설정 모듈화: books/springboot-msa-component/ch06-sec00-@EnableXXX-and-bean-modulerlize.md
               - 웹 애플리케이션 설정 메커니즘: books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism.md
               - DispatcherServlet: books/springboot-msa-component/ch06-sec03-dispatcher-servlet.md
-	  - 7장 스프링 AOPO와 테스트, 자동 설정 원리
-	      - 들어가기: books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration
-	      - 스프링 AOP:books/springboot-msa-component/ch07-sec01-spring-aop
-	      - 스프링 부트 자동 설정: books/springboot-msa-component/ch07-sec03-autoconfiguration
+          - 7장 스프링 AOPO와 테스트, 자동 설정 원리:
+              - 들어가기: books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration.md
+              - EnableXXX의 동작과 빈 설정 모듈화: books/springboot-msa-component/ch06-sec00-@EnableXXX-and-bean-modulerlize.md
+              - 웹 애플리케이션 설정 메커니즘: books/springboot-msa-component/ch07-sec01-spring-aop.md
+              - DispatcherServlet: books/springboot-msa-component/ch07-sec03-autoconfiguration.md
   - TIL:
       - 시작하기: til/getting-started.md
