@@ -1,3 +1,4 @@
+```yml
 # Project information
 site_name: Haha 블로그
 site_url: https://ndy2.github.io//Haha-Blog/
@@ -80,3 +81,4 @@ nav:
               - 스프링 부트 자동 설정: books/springboot-msa-component/ch07-sec03-autoconfiguration.md
   - TIL:
       - 시작하기: til/getting-started.md
+```
