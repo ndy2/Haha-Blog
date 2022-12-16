@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!!!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/" rel="canonical"/>
+<link href="https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>JPA 장점과 단점 - Haha 블로그</title>
+<title>Transactional을 사용할 때 주의 사항 - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#jpa">
+<a class="md-skip" href="#1-transactional">
           Skip to content
         </a>
 </div>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              JPA 장점과 단점
+              Transactional을 사용할 때 주의 사항
             
           </span>
 </div>
@@ -326,14 +326,24 @@
         들어가기
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ch08-sec01-jpa-pros-and-cons/">
+        JPA 장점과 단점
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ch08-sec08-entitymanager-and-persistence-context/">
+        엔티티 매니저와 영속성 컨텍스트
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          JPA 장점과 단점
+          Transactional을 사용할 때 주의 사항
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        JPA 장점과 단점
+        Transactional을 사용할 때 주의 사항
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -342,60 +352,22 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#jpa">
-    JPA 단점
-  </a>
-<nav aria-label="JPA 단점" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    러닝 커브
+<a class="md-nav__link" href="#1-transactional">
+    1. @Transactional의 우선 순위
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#jpa-oltp">
-    JPA 는 OLTP에 적합
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#jpa_1">
-    JPA 장점
-  </a>
-<nav aria-label="JPA 장점" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    생산성
+<a class="md-nav__link" href="#2-public">
+    2. public 접근 제어자 필수
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    데이터베이스에 독립적인 개발
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    객체지향적인 프로그래밍
+<a class="md-nav__link" href="#3">
+    3. 프록시 내부 호출 문제
   </a>
 </li>
 </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec08-entitymanager-and-persistence-context/">
-        엔티티 매니저와 영속성 컨텍스트
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec07-warning-on-%40Transactional/">
-        Transactional을 사용할 때 주의 사항
-      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../ch08-sec11-osiv/">
@@ -486,47 +458,19 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#jpa">
-    JPA 단점
-  </a>
-<nav aria-label="JPA 단점" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    러닝 커브
+<a class="md-nav__link" href="#1-transactional">
+    1. @Transactional의 우선 순위
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#jpa-oltp">
-    JPA 는 OLTP에 적합
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#jpa_1">
-    JPA 장점
-  </a>
-<nav aria-label="JPA 장점" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    생산성
+<a class="md-nav__link" href="#2-public">
+    2. public 접근 제어자 필수
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    데이터베이스에 독립적인 개발
+<a class="md-nav__link" href="#3">
+    3. 프록시 내부 호출 문제
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    객체지향적인 프로그래밍
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -535,46 +479,80 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/books/springboot-msa-component/ch08-sec07-warning-on-@Transactional.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>JPA 장점과 단점</h1>
-<h2 id="jpa">JPA 단점<a class="headerlink" href="#jpa" title="Permanent link">¶</a></h2>
-<h5 id="_1">러닝 커브<a class="headerlink" href="#_1" title="Permanent link">¶</a></h5>
-<ul>
-<li>JPA 는 어렵다. JPA 는 애플리케이션과 데이터베이스 사이의 중계자 역할을 하며 그 사이에서 개발자가 느끼는 패러다임의 불일치를 해결한다는 중대한 역할을 가진다. 그렇기 때문에 동적 쿼리 생성을 비롯한 많은 고급 기술들이 추상화되어 있고 영속성 컨텍스트라는 복잡한 개념 아래서 동작한다.</li>
-<li>그렇기 때문에 JPA 는 SQL 매퍼에 비해서 학습하기 어렵다. 그런데 잘 학습하지 않으면 당연히 잘 사용할 수도 없다!</li>
+<h1>Transactional을 사용할 때 주의 사항</h1>
+<p>7절의 내용중 정리하고 싶은 내용은 <code>@Transactional</code> 애너테이션을 활용 때 주의 사항입니다.</p>
+<h2 id="1-transactional">1. @Transactional의 우선 순위<a class="headerlink" href="#1-transactional" title="Permanent link">¶</a></h2>
+<p><code>@Transactional</code> 코드의 <code>@Target</code>을 살펴보면 <code>TYPE</code>, <code>METHOD</code> 로 선언되어 있습니다.</p>
+<div class="highlight"><span class="filename">@Transactional 코드 일부</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">pacakge</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="na">s</span><span class="p">.</span><span class="na">transaction</span><span class="p">.</span><span class="na">annotation</span><span class="w"></span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nd">@Target</span><span class="p">({</span><span class="n">ElementType</span><span class="p">.</span><span class="na">Type</span><span class="p">,</span><span class="w"> </span><span class="n">ElementType</span><span class="p">.</span><span class="na">METHOD</span><span class="p">})</span><span class="w"></span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nd">@Retention</span><span class="p">(</span><span class="n">RetentionPolicy</span><span class="p">.</span><span class="na">RUNTIME</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nd">@Inherited</span><span class="w"></span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nd">@Documented</span><span class="w"></span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="kd">public</span><span class="w"> </span><span class="nd">@interface</span><span class="w"> </span><span class="n">Transactional</span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="c1">// 생략</span><span class="w"></span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>즉, @Transactional 은 타입 (클래스, 인터페이스)과 메서드에 모두 선언 될 수 있습니다.
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nd">@Transactional</span><span class="w"> </span><span class="c1">// (1)</span><span class="w"></span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">UserService</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="nd">@Transactional</span><span class="w"> </span><span class="c1">// (2)</span><span class="w"></span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">saveUser</span><span class="p">(</span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="p">);</span><span class="w"></span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="nd">@RequiredArgsConstructor</span><span class="w"></span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="nd">@Transactional</span><span class="w"> </span><span class="c1">//(3)</span><span class="w"></span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserServiceImpl</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">UserService</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">UserRepository</span><span class="w"> </span><span class="n">userRepository</span><span class="w"></span>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="nd">@Transactional</span><span class="w"> </span><span class="c1">// (4)</span><span class="w"></span>
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">saveUser</span><span class="p">(</span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="p">){</span><span class="w"></span>
+<a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">        </span><span class="n">userRepository</span><span class="p">.</span><span class="na">save</span><span class="p">();</span><span class="w"></span>
+<a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<p>이 코드에 총 몇개의 @Transactional 어노테이션이 관여할까요?
+정답은 4개... 지만 높은 확률로 5개입니다.</p>
+<p>그 이유는 높은 확률로 JpaRepository 를 활용할탠데 JpaRepository 의 save 메서드에서는 <code>@Transactional</code> 이 선언 되어 있기 때문입니다. 그 부분은 @Transactional 의 propagation 속성과 관련이 있는데 지금은 다루지 않겠습니다.</p>
+<p>그러면 남은 4개의 @Transactional 애너테이션의 우선순위는 어떨까요? 지금은 4가지 애너테이션이 모두 같은 방식으로 선언되어 있지만 readOnly flag를 준다든가 propagation 속성, timeout 속성을 다르게 주면 어떤 선언이 동작할 까요?</p>
+<p><mark class="critic">정답은 <strong><code>(4) -&gt; (3) -&gt; (2) -&gt; (1)</code></strong> 입니다.</mark> 가장 구체적인 선언이 가장 먼저 활용되는 것이니 합리적인 우선순위라고 생각됩니다. 하지만 interface 에 <code>@Transactional</code> 을 추가하는 방식은 활용하지 않는 것이 좋습니다. 클래스에 직접 선언되어 있지 않기 때문에 명시적이지 않으며 일부 버전에서는 aop 적용 방식에 따라 인터페이스의 <code>@Transactional</code> 애너테이션을 인식하지 못하는 문제가 있다고 합니다.</p>
+<p>물론 이런 규칙은 같이 작업하는 팀원들과 통일해서 일관되게 적용하는것이 가장 중요합니다.</p>
+<h2 id="2-public">2. public 접근 제어자 필수<a class="headerlink" href="#2-public" title="Permanent link">¶</a></h2>
+<p>@Transactional 애너테이션은 기본적으로 Proxy 기반의 aop 로 동작 (<code>ProxyMode</code>)하기 때문에 <code>private</code>, <code>protected</code> 메서드에 선언하면 동작하지 않는다. 물론 메서드 혹은 클래스에 <code>final</code> 키워드를 사용해서도 안된다. </p>
+<h2 id="3">3. 프록시 내부 호출 문제<a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/transaction-internal-call.png"><img alt="transaction-internal-call.png" src="../images/transaction-internal-call.png"/></a></p>
+<p><code>@Transactional</code> 로직은 Proxy에 적용되어 있기 때문에 같은 클래스 내에서 <code>@Transational</code> 이 선언된 메서드를 직접 호출해도 트랜잭션이 적용되지 않는다. 트랜잭션 적용을 위해서는 항상 스프링 빈으로 주입된 객체의 메서드를 호출해야 한다.</p>
+<p>이를 해결하는 일반적인 방식은</p>
+<ol>
+<li>클래스를 분리한다<ul>
+<li>두 메서드의 클래스를 분리해 자연스럽게 빈을 주입받아 호출한다.</li>
 </ul>
-<h5 id="jpa-oltp">JPA 는 OLTP에 적합<a class="headerlink" href="#jpa-oltp" title="Permanent link">¶</a></h5>
-<ul>
-<li>보통 API 처럼 실시간 트랜잭션 처리를 OLTP (OnLine Transaction Processing) 라고 하며, 통계를 위한 쿼리 처리를 OLAP (OnLine Analytical Processing) 라고 한다. 통계 쿼리에서는 원하는 데이터를  추출하기 위해 쿼리를 세밀하게 튜닝하거나 복잡한 쿼리가 필요하다. 이때는 직접 SQL 쿼리를 코딩할 수 있는 SQL Mapper 가 더 적합하다.</li>
+</li>
+<li>자기 주입 방식을 한다.<ul>
+<li>자기 자신을 주입 받는다.</li>
 </ul>
-<h2 id="jpa_1">JPA 장점<a class="headerlink" href="#jpa_1" title="Permanent link">¶</a></h2>
-<h5 id="_2">생산성<a class="headerlink" href="#_2" title="Permanent link">¶</a></h5>
-<ul>
-<li>SQL 을 직접 작성하지 않는다.</li>
-<li>코드를 재활용 할 수 있다.</li>
-<li>단순한 CRUD 구문은 모두 구현되어 있다.</li>
-<li><mark class="critic">익숙해 지기만 한다면</mark> 높은 생산성이 보장된다.</li>
+</li>
+<li>지연 조회를 한다. <ul>
+<li>ApplicationContext (ObjectProvider) 를 주입받아 사용하는 시점에 빈을 조회해 사용)</li>
 </ul>
-<h5 id="_3">데이터베이스에 독립적인 개발<a class="headerlink" href="#_3" title="Permanent link">¶</a></h5>
-<ul>
-<li>쿼리를 직접 작성한다면 데이터베이스에 의존적인 쿼리가 애플리케이션 코드에 등장하는 것에 신경쓰면서 코딩을 해야한다. JPA 에서는 리포지토리 아래 데이터베이스에 의존적인 쿼리가 모두 숨어 있기 때문에 개발자는 이를 의식하지 않아도 된다.</li>
-</ul>
-<h5 id="_4">객체지향적인 프로그래밍<a class="headerlink" href="#_4" title="Permanent link">¶</a></h5>
-<ul>
-<li>JPA 의 등장 배경이다.</li>
-<li>ORM 은 객체지향과 관계형데이터베이스라는 두 패러다임을 연결하는 다리로서 동작하며 개발자는 데이터베이스를 마치 자바 컬렉션 처럼 활용할 수 있다. 그 중심에는 JPA 의 <mark class="critic">영속성 컨텍스트</mark>가 있다.</li>
-</ul>
+</li>
+</ol>
+<p>정도가 있다.</p>
+<p>실무에서는 보통 1번 방식을 활용한다.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
 </small>
 </div>
 </article>
@@ -583,7 +561,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 들어가기" class="md-footer__link md-footer__link--prev" href="../ch08-data-persistence/" rel="prev">
+<a aria-label="Previous: 엔티티 매니저와 영속성 컨텍스트" class="md-footer__link md-footer__link--prev" href="../ch08-sec08-entitymanager-and-persistence-context/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -592,17 +570,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              들어가기
+              엔티티 매니저와 영속성 컨텍스트
             </div>
 </div>
 </a>
-<a aria-label="Next: 엔티티 매니저와 영속성 컨텍스트" class="md-footer__link md-footer__link--next" href="../ch08-sec08-entitymanager-and-persistence-context/" rel="next">
+<a aria-label="Next: OSIV" class="md-footer__link md-footer__link--next" href="../ch08-sec11-osiv/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              엔티티 매니저와 영속성 컨텍스트
+              OSIV
             </div>
 </div>
 <div class="md-footer__button md-icon">
