@@ -31,6 +31,5 @@
 	- 그래도 모든 글을 옮기기 보다는 가장 많은 노력과 정성을 담은 글 몇개는 옮기기로 했어요. 너무 썰렁해 보여서 ㅜ.ㅜ
 
 
-
-
-
+## 타임 라인
+![my-timeline.excalidraw.png](my-timeline.excalidraw.png)
