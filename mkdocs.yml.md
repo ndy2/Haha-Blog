@@ -50,7 +50,11 @@ markdown_extensions:
   - pymdownx.snippets
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: vegalite
+          class: vegalite
+          format: !!python/name:mkdocs_charts_plugin.fences.fence_vegalite
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
@@ -69,8 +73,13 @@ plugins:
       type: date
       timezone: Asia/Seoul
       enable_creation_date: true
-  - git-authors
-  
+  - charts
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/vega@5
+  - https://cdn.jsdelivr.net/npm/vega-lite@5
+  - https://cdn.jsdelivr.net/npm/vega-embed@6
+
 # Page tree
 nav:
   - Home: index.md

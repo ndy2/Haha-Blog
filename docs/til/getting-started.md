@@ -29,3 +29,50 @@ renderHeatmapCalendar(this.container, calendarData)
 ```
 
 
+## Today I Learn!
+
+```vegalite
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "values": "date,til\n2012-01-02,0\n2012-01-03,1\n2012-01-04,1\n2012-01-05,1\n2012-01-06,1\n2012-01-07,1\n2012-01-08,2,\n2012-01-09,2\n2012-01-010,1",
+    "format": {"type": "csv"}
+  },
+  "title": "Today I Learn",
+  "config": {
+    "mark": {
+      "width": 18,
+      "height": 18,
+      "cornerRadius": 6,
+      "outerRadius": 10,
+      "stroke": "black",
+      "strokeWidth": 1
+    }
+  },
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "date",
+      "timeUnit": "week",
+      "type": "nominal",
+      "axis": {"labelAngle": 0, "format": "%e"}
+    },
+    "y": {"field": "date", "timeUnit": "day", "type": "ordinal"},
+    "color": {
+      "field": "til",
+      "type": "quantitative",
+      "scale": {
+        "range": [
+          "transparent",
+          "#c6e48b",
+          "#7bc96f",
+          "#49af5d",
+          "#2e8840",
+          "#196127"
+        ]
+      },
+      "legend": null
+    }
+  }
+}
+```
