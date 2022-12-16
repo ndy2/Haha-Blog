@@ -18,4 +18,5 @@ jobs:
       - run: pip install mkdocs-glightbox
       - run: pip3 install mkdocs-git-revision-date-localized-plugin
       - run: pip3 install mkdocs-git-authors-plugin
+      - run: pip3 install mkdocs-charts-plugin
       - run: mkdocs gh-deploy --force
