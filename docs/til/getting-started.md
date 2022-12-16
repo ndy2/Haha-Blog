@@ -37,8 +37,8 @@ renderHeatmapCalendar(this.container, calendarData)
   "title": "Today I Learn",
   "config": {
     "mark": {
-      "width": 18,
-      "height": 18,
+      "width": 15,
+      "height": 15,
       "cornerRadius": 6,
       "outerRadius": 10,
       "stroke": "black",
