@@ -34,6 +34,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#today-i-learn">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -396,9 +399,26 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          시작하기
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         시작하기
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#today-i-learn">
+    Today I Learn!
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../til/2022-12-14/">
@@ -422,6 +442,17 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#today-i-learn">
+    Today I Learn!
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -458,12 +489,56 @@
 <a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>
 <a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a>renderHeatmapCalendar(this.container, calendarData)
 </code></pre></div>
+<h2 id="today-i-learn">Today I Learn!<a class="headerlink" href="#today-i-learn" title="Permanent link">¶</a></h2>
+<p><vegachart class="vegalite" style="width: 100%">{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "values": "date,til\n2012-01-02,0\n2012-01-03,1\n2012-01-04,1\n2012-01-05,1\n2012-01-06,1\n2012-01-07,1\n2012-01-08,2,\n2012-01-09,2\n2012-01-010,1",
+    "format": {"type": "csv"}
+  },
+  "title": "Today I Learn",
+  "config": {
+    "mark": {
+      "width": 18,
+      "height": 18,
+      "cornerRadius": 6,
+      "outerRadius": 10,
+      "stroke": "black",
+      "strokeWidth": 1
+    }
+  },
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "date",
+      "timeUnit": "week",
+      "type": "nominal",
+      "axis": {"labelAngle": 0, "format": "%e"}
+    },
+    "y": {"field": "date", "timeUnit": "day", "type": "ordinal"},
+    "color": {
+      "field": "til",
+      "type": "quantitative",
+      "scale": {
+        "range": [
+          "transparent",
+          "#c6e48b",
+          "#7bc96f",
+          "#49af5d",
+          "#2e8840",
+          "#196127"
+        ]
+      },
+      "legend": null
+    }
+  }
+}</vegachart></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2022</span>
@@ -524,5 +599,13 @@
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
 <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+<script src="../../js/mkdocs-charts-plugin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script>
+        <script>
+        var mkdocs_chart_plugin = {'data_path': '', 'use_data_path': 'True', 'vega_theme': 'default', 'vega_theme_dark': 'dark', 'vega_renderer': 'svg', 'vega_width': 'container', 'fallback_width': '800', 'path_to_homepage': '../../..'}
+        </script>
+        </body>
 </html>
