@@ -34,10 +34,7 @@ renderHeatmapCalendar(this.container, calendarData)
 ```vegalite
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {
-    "values": "date,til\n2012-01-02,0\n2012-01-03,1\n2012-01-04,1\n2012-01-05,1\n2012-01-06,1\n2012-01-07,1\n2012-01-08,2,\n2012-01-09,2\n2012-01-010,1",
-    "format": {"type": "csv"}
-  },
+  "data": { "url" : "csv/2022.csv"},
   "title": "Today I Learn",
   "config": {
     "mark": {
