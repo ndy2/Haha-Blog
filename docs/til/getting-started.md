@@ -30,11 +30,10 @@ renderHeatmapCalendar(this.container, calendarData)
 
 
 ## Today I Learn!
-
 ```vegalite
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": { "url" : "til/csv/2022.csv"},
+  "data": { "url" : "Haha-Blog/til/csv/2022.csv"},
   "title": "Today I Learn",
   "config": {
     "mark": {
