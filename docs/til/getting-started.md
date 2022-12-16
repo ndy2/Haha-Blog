@@ -50,8 +50,7 @@ renderHeatmapCalendar(this.container, calendarData)
     "x": {
       "field": "date",
       "timeUnit": "week",
-      "type": "nominal",
-      "axis": {"labelAngle": 0, "format": "%e"}
+      "type": "nominal"
     },
     "y": {"field": "date", "timeUnit": "day", "type": "ordinal"},
     "color": {
