@@ -19,3 +19,5 @@
 - [5장 스프링 웹 MVC를 이양한 REST_API 개발](../ch05-spring-web-mvc-with-restapi)
 - [6장 웹 애플리케이션 서버 구축하기](ch06-build-web-application-server.md)
 - [7장 스프링 AOP와 테스트, 자동 설정 원리](ch07-spring-aop-and-test-and-autoconfiguration.md)
+- [8장 데이터 영속성](../ch08-data-persistence)
+- [9장 애플리케이션 통합: REST-API](../ch09-application-integration-restapi)

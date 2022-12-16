@@ -104,6 +104,10 @@ nav:
               - 엔티티 매니저와 영속성 컨텍스트: books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context.md
               - @Transactional을 사용할 때 주의 사항: books/springboot-msa-component/ch08-sec07-warning-on-@Transactional.md
               - OSIV: books/springboot-msa-component/ch08-sec11-osiv.md
+          - 9장 애플리케이션 통합 REST-API :
+              - 들어가기: books/springboot-msa-component/ch09-application-integration-restapi.md
+              - RestTemplate 클래스 : books/springboot-msa-component/ch09-sec01-resttemplate.md
+              - WebClient 클래스 : books/springboot-msa-component/ch09-sec02-webclient.md
   - TIL:
       - 시작하기: til/getting-started.md
 ```
