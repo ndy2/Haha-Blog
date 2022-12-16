@@ -102,6 +102,7 @@ nav:
               - 들어가기: books/springboot-msa-component/ch08-data-persistence.md
               - JPA 장점과 단점: books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons.md
               - 엔티티 매니저와 영속성 컨텍스트: books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context.md
+              - @Transactional을 사용할 때 주의 사항: books/springboot-msa-component/ch08-sec07-warning-on-@Transactional.md
               - OSIV: books/springboot-msa-component/ch08-sec11-osiv.md
   - TIL:
       - 시작하기: til/getting-started.md
