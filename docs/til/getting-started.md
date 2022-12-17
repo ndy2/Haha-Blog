@@ -37,11 +37,11 @@ renderHeatmapCalendar(this.container, calendarData)
   "title": "Today I Learn",
   "config": {
     "mark": {
-      "width": 18,
-      "height": 18,
-      "cornerRadius": 6,
+      "width": 11,
+      "height": 11,
+      "cornerRadius": 2,
       "outerRadius": 10,
-      "stroke": "black",
+      "stroke": "#E8E8E8",
       "strokeWidth": 1
     }
   },
@@ -50,8 +50,7 @@ renderHeatmapCalendar(this.container, calendarData)
     "x": {
       "field": "date",
       "timeUnit": "week",
-      "type": "nominal",
-      "axis": {"labelAngle": 0, "format": "%e"}
+      "type": "nominal"
     },
     "y": {"field": "date", "timeUnit": "day", "type": "ordinal"},
     "color": {
@@ -59,7 +58,7 @@ renderHeatmapCalendar(this.container, calendarData)
       "type": "quantitative",
       "scale": {
         "range": [
-          "transparent",
+          "#E8E8E8",
           "#c6e48b",
           "#7bc96f",
           "#49af5d",
