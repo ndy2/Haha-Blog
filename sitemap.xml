@@ -176,6 +176,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/redis-cluster-architecture.excalidraw/</loc>
+         <lastmod>2022-12-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/redis-event-loop.excalidraw/</loc>
          <lastmod>2022-12-18</lastmod>
          <changefreq>daily</changefreq>
