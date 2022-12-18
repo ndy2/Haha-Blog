@@ -95,6 +95,12 @@ public void getImage(... , HttpServletResponse response){
 아무래도 저자분이 위 방식들을 비교, 소개하신 이유는 이런 인사이트를 주기 위해서였던것 같다.
 
 
+### 4. 더 찾다 보니...
+
+Line 에서도 비슷한 문제를 겪어서 자체 개발한 reative 프레임워크인 [Armeria](https://armeria.dev/) 를 통해 Reative 패턴으로 이 문제를 해결하였다고 한다. [참고 링크](https://engineering.linecorp.com/ko/blog/hello-armeria-bye-spring) 
+
+![streaming-with-armeria.png](images/streaming-with-armeria.png)
+
 
 
 
