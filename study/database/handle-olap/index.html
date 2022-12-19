@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch10-sec01-redis-introduction/" rel="canonical"/>
+<link href="https://ndy2.github.io/Haha-Blog/study/database/handle-olap/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>레디스 소개 - Haha 블로그</title>
+<title>Handle olap - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#what-makes-redis-special">
+<a class="md-skip" href="#olap">
           Skip to content
         </a>
 </div>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              레디스 소개
+              Handle olap
             
           </span>
 </div>
@@ -155,8 +155,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           기술 서적 정리/리뷰
           <span class="md-nav__icon md-icon"></span>
@@ -168,17 +168,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../">
+<a class="md-nav__link" href="../../../books/">
         책!
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../clean-agile/clean-agile/">
+<a class="md-nav__link" href="../../../books/clean-agile/clean-agile/">
         클린 애자일
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_3">
           스프링 부트로 개발하는 MSA 컴포넌트
           <span class="md-nav__icon md-icon"></span>
@@ -190,22 +190,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/">
         리뷰
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch01-msa/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch01-msa/">
         1장 마이크로서비스 아키텍처
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch02-framework-and-springboot/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch02-framework-and-springboot/">
         2장 프레임워크와 스프링부트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch03-springboot-basic/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch03-springboot-basic/">
         3장 스프링 애플리케이션 기본
       </a>
 </li>
@@ -222,17 +222,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch04-spring-web-mvc-basic/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-spring-web-mvc-basic/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch04-sec01-http/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-sec01-http/">
         파트 1 HTTP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch04-sec02-servlet-and-mvc/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
         파트 2 서블릿과 MVC
       </a>
 </li>
@@ -240,7 +240,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch05-spring-web-mvc-with-restapi/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
         5장 스프링 MVC를 이용한 REST-API 개발
       </a>
 </li>
@@ -257,22 +257,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-build-web-application-server/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-build-web-application-server/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
         EnableXXX의 동작과 빈 설정 모듈화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-sec01-webapplication-configure-mechanism/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
         웹 애플리케이션 설정 메커니즘
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-sec03-dispatcher-servlet/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
         DispatcherServlet
       </a>
 </li>
@@ -292,17 +292,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch07-spring-aop-and-test-and-autoconfiguration/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch07-sec01-spring-aop/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-sec01-spring-aop/">
         스프링 AOP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch07-sec03-autoconfiguration/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-sec03-autoconfiguration/">
         스프링 부트 자동 설정
       </a>
 </li>
@@ -322,27 +322,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-data-persistence/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-data-persistence/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec01-jpa-pros-and-cons/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
         JPA 장점과 단점
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec08-entitymanager-and-persistence-context/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
         엔티티 매니저와 영속성 컨텍스트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec07-warning-on-%40Transactional/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
         Transactional을 사용할 때 주의 사항
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec11-osiv/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec11-osiv/">
         OSIV
       </a>
 </li>
@@ -362,25 +362,25 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch09-application-integration-restapi/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-application-integration-restapi/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch09-sec01-resttemplate/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-sec01-resttemplate/">
         RestTemplate 클래스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch09-sec02-webclient/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-sec02-webclient/">
         WebClient 클래스
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_11" id="__nav_3_3_11" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_11" id="__nav_3_3_11" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_3_11">
           10장 레디스와 스프링 캐시
           <span class="md-nav__icon md-icon"></span>
@@ -391,55 +391,13 @@
           10장 레디스와 스프링 캐시
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          레디스 소개
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec01-redis-introduction/">
         레디스 소개
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#what-makes-redis-special">
-    What makes Redis special?
-  </a>
-<nav aria-label="What makes Redis special?" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-every-operation-on-redis-is-czjqqkd0atomicczjqqkd1">
-    1. Every operation on Redis is czjqqkd:0Atomicczjqqkd:1
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-data-is-stored-czjqqkd2in-memoryczjqqkd3">
-    2. Data is stored czjqqkd:2in-memoryczjqqkd:3
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-redis-czjqqkd4-czjqqkd5">
-    3. Redis 가 czjqqkd:4싱글 스레드czjqqkd:5로 클라이언트 커맨드를 처리하는 방식!
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-other-key-features">
-    4. Other key features
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../ch10-sec01-redis-high-availablity.md">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec01-redis-high-availablity.md">
         레디스 HA
       </a>
 </li>
@@ -507,33 +465,19 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#what-makes-redis-special">
-    What makes Redis special?
-  </a>
-<nav aria-label="What makes Redis special?" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-every-operation-on-redis-is-czjqqkd0atomicczjqqkd1">
-    1. Every operation on Redis is czjqqkd:0Atomicczjqqkd:1
+<a class="md-nav__link" href="#olap">
+    OLAP 이란?
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-data-is-stored-czjqqkd2in-memoryczjqqkd3">
-    2. Data is stored czjqqkd:2in-memoryczjqqkd:3
+<a class="md-nav__link" href="#_1">
+    데이터베이스 레벨
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#3-redis-czjqqkd4-czjqqkd5">
-    3. Redis 가 czjqqkd:4싱글 스레드czjqqkd:5로 클라이언트 커맨드를 처리하는 방식!
+<a class="md-nav__link" href="#_2">
+    애플리케이션 레벨
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-other-key-features">
-    4. Other key features
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -542,73 +486,39 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/books/springboot-msa-component/ch10-sec01-redis-introduction.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/database/handle-olap.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>레디스 소개</h1>
-<p>참고 - <a href="https://www.youtube.com/watch?v=h30k7YixrMo&amp;ab_channel=AsliEngineeringbyArpitBhayani">Waht Makes Redis Special? | Redis Internals</a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<h1>Handle olap</h1>
+<p>@참고)
+- 우아한형제들 기술블로그 - <a href="https://techblog.woowahan.com/6550/">정지원,# Aurora MySQL vs Aurora PostgreSQL</a>
+- microsoft - <a href="https://learn.microsoft.com/ko-kr/azure/architecture/data-guide/relational-data/online-analytical-processing"># OLAP(온라인 분석 처리)</a></p>
+<p>면접에서 아래와 같은 꼬리질문을 받았다.</p>
+<p>Q. MSA 에서 데이터베이스의 독립적인 구성이 중요하다고 해주셨는데 왜 그런지 말씀해 주실 수 있나요?</p>
+<p>A. 물리적으로 데이터베이스를 분리하는것은 여러 관점에서 중요합니다. 첫째로는 MSA의 독립성을 위해서입니다. MSA의 가장큰 장점은 Micro-Service 컴포넌트간의 의존성을 낮추어 독립성을 바탕으로 확장성, Business Agility 같은 여러 장점을 얻을 수 있습니다. 애플리케이션 레벨에서 아무리 열심히 메시지 큐와 같은 미들웨어로 독립성을 갖추었다고 할지라도 데이터베이스에서 서로 join을 통해 모든 영역의 데이터를 한번에 조회한다면 이는 아무 의미가 없을 것입니다. 그래서 최소한 MSA 를 활용한다면 데이터베이스를 논리적인 관점에서라도 분리하는 것이 필수입니다.</p>
+<p>두번째는 장애 대응입니다. MSA에서 또한 가장 중요한 것은 Micro-Service 컴포넌트의 장애가 다른 컴포넌트로 전파되지 않도록 관리하는 것입니다. 데이터베이스를 분리하지 않는다면 데이터베이스가 단일 장애 지점이 되어 큰 문제가 될 수 있습니다.</p>
+<p><code>물론 위와 같이 정리해서 답변 하지는 못했다...</code></p>
+<p>Q. 그럼 그런 분리된 데이터베이스 구조에서 통계성 쿼리를 처리하는 방법이 있을까요?</p>
+<p>A. 에... 그게... 효과적으로 잘 모아서 Read 만 발생할 수 있는 서버에다가 어쩌구 저쩌구....</p>
+<p><code>물론 위 처럼 횡설수설 하면서 대답했다...</code></p>
+<p>추후에 찾아보니 OLTP (Online Transaction Processing) 와 OLAP (Online Analytical Processing) 이라는 키워드가 있다. 여기서는 통계성 쿼리 처리, 즉 OLAP 를 효과적으로 처리하기 위한 일반적인 접근방식을 찾아보자!</p>
+<hr/>
+<h3 id="olap">OLAP 이란?<a class="headerlink" href="#olap" title="Permanent link">¶</a></h3>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>OLAP(온라인 분석 처리)는 대규모 비즈니스 데이터베이스를 구성하고 복잡한 분석을 지원하는 기술입니다. 트랜잭션 시스템에 부정적인 영향을 주지 않고 복잡한 분석 쿼리를 수행하는 데 사용할 수 있습니다.</p>
+<p>기업에서 모든 트랜잭션 및 레코드를 저장하는 데 사용하는 데이터베이스를 <a href="https://learn.microsoft.com/ko-kr/azure/architecture/data-guide/relational-data/online-transaction-processing">OLTP(온라인 트랜잭션 처리)</a> 데이터베이스라고 합니다. 일반적으로 이러한 데이터베이스의 레코드는 한 번에 하나씩 입력됩니다. 종종 이러한 데이터베이스는 조직에 귀중한 정보를 풍부하게 포함합니다. 그러나 OLTP에 사용되는 데이터베이스는 분석용으로 디자인되지 않았습니다. 따라서 이러한 데이터베이스에서 답변을 검색할 때는 시간과 노력이 많이 듭니다. OLAP 시스템은 고효율적 방식으로 데이터에서 이러한 비즈니스 인텔리전스 정보를 추출하는 데 도움이 되도록 디자인되었습니다. OLAP 데이터베이스가 과도한 읽기, 낮은 쓰기 워크로드에 최적화되어 있기 때문입니다.</p>
+<p>miscrosoft - olap</p>
 </div>
-<p>Redis</p>
-<div class="highlight"><pre><span></span><code>The open source, in-memory data structure store used by millions of developers 
-as a database, cache, streaming engine, and message broker.
-
-레디스의 특징을 대표하기 적합한 키워드 두가지는
-1. '메모리', 2. '싱글 스레드' 이다.
-</code></pre></div>
-<h2 id="what-makes-redis-special">What makes Redis special?<a class="headerlink" href="#what-makes-redis-special" title="Permanent link">¶</a></h2>
-<h3 id="1-every-operation-on-redis-is-czjqqkd0atomicczjqqkd1">1. Every operation on Redis is <mark class="critic">Atomic</mark><a class="headerlink" href="#1-every-operation-on-redis-is-czjqqkd0atomicczjqqkd1" title="Permanent link">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>atomic - when command is executing, Redis does not context switch and stant
-executing others command. That is you don't have to worry about concurrency at all</p>
-</div>
-<ul>
-<li>putting a key</li>
-<li>adding to the list</li>
-<li>set union, intersection</li>
-<li>incrementing the value</li>
-</ul>
-<h3 id="2-data-is-stored-czjqqkd2in-memoryczjqqkd3">2. Data is stored <mark class="critic">in-memory</mark><a class="headerlink" href="#2-data-is-stored-czjqqkd2in-memoryczjqqkd3" title="Permanent link">¶</a></h3>
-<ul>
-<li>hence the most common use of Redis is for "caching"</li>
-</ul>
-<p>-&gt; 백업 지원!</p>
-<p>Redis 는 메모리 기반의 데이터 저장소다. 메모리 특성상 매우 빠른 속도로 데이터를 저장 및 조회할 수 있다. 하지만 메모리 특정상 저장된 데이터는 사라질 가능성이 있다. 이를 보완 하고자 레디스는 메모리의 데이터를 디스크로 백업하는 두가지 방식을 제공한다. 두 가지 기능은 각각 사용해도 되지만, 함께 설정 하여 상호 보완적으로 사용해도 된다.</p>
-<ol>
-<li>RDB (Redis DataBase)</li>
-<li>relational database 아니다.</li>
-<li>특정 시간 마다 전체 메모리 데이터에 대한 스냅샷을 생성한다.</li>
-<li>데이터 복구는 스냅샷을 그대로 로딩하면 되어 상대적으로 간단하다.</li>
-<li>
-<p>하지만 스냅샷이 마지막으로 저장된 시점 이후의 데이터는 유실된다.</p>
-</li>
-<li>
-<p>AOF (Append Only File)</p>
-</li>
-<li>레디스의 데이터 변경 이벤트를 감지해 이를 모두 로그에 저장하는 방식이다.</li>
-<li>데이터의 변경 이벤트를 초 단위로 취합하여 로그 파일에 작성한다.</li>
-<li>RDB 방식에 비해 데이터 유실량이 적은 장점이 있다.</li>
-<li>하지만 로그 파일에 대한 관리가 필요하고 복구 시간이 RDB에 비해서 오래 걸린다.</li>
-</ol>
-<h3 id="3-redis-czjqqkd4-czjqqkd5">3. Redis 가 <mark class="critic">싱글 스레드</mark>로 클라이언트 커맨드를 처리하는 방식!<a class="headerlink" href="#3-redis-czjqqkd4-czjqqkd5" title="Permanent link">¶</a></h3>
-<p>은 바로 <strong>이벤트 루프</strong>!</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/redis-event-loop.excalidraw.png"><img alt="redis-event-loop.excalidraw.png" src="../excalidraws/redis-event-loop.excalidraw.png"/></a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>이벤트 루프(event loop)</strong> 는 동시성(concurrency)을 제공하기 위한 프로그래밍 모델
- 중 하나로, 특정 이벤트가 발생할 때까지 대기하다가 이벤트가 발생하면 디스패치해 처리하
- 는 방식으로 작동합니다.  </p>
-</div>
-<p>이벤트 루프를 활용한 다양한 구현체
-- Netty, Node.js (libuy), Redis </p>
-<p>Single Thread
- Conccurency 를 위해 mutex, semaphore, wating 이 필요 없다.</p>
-<p>I/O multiplexing
-- 다중 TCP 연결을 concurrent 하게 다룰 수 있다.</p>
-<h3 id="4-other-key-features">4. Other key features<a class="headerlink" href="#4-other-key-features" title="Permanent link">¶</a></h3>
-<p>Transactions, Pub/Sub, TTL on keys and LRU eviction</p>
+<h3 id="_1">데이터베이스 레벨<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<p>찾아보니 대용량 통계성 쿼리를 위해 별도의 테이블을 관리하고 이를 OLAP 방식으로 처리하는 것이 일반적인것 같다.</p>
+<p>이런 OLAP 를 위해서는 어떤 데이터베이스를 사용하는 가는 데이터의 특성이나 인덱스를 적용하는 방식에 따라 달라 너무 많은 의견있는것 같습니다. 보통 MySQL 과 PostgreSQL 을 두고 고민하는데 직접 데이터를 추가해 쿼리를 날려보고 튜닝하며 성능을 측정하는것이 이런 선택에서는 필수로 보입니다.</p>
+<p>혹은 OLAP 를 위해 특별히 설계된 데이터 웨어하우스 툴 (Amazon Redshit, Azure data lake) 을 고려하기도 합니다.</p>
+<h3 id="_2">애플리케이션 레벨<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<p>애플리케이션 레벨에서는 복잡한 쿼리는 JPA 가 아니라 네이티브 쿼리를 쉽게 다룰 수 있는 
+Data JDBC 나 MyBatis 같은 툴을 활용하는것이 더욱 좋습니다.
+- <a href="https://www.inflearn.com/questions/40192/qdsl%EB%A1%9C-%EB%B3%B5%EC%9E%A1%ED%95%9C-%EC%BF%BC%EB%A6%AC%EB%A5%BC-%EC%96%B4%EB%8A%90%EC%A0%95%EB%8F%84-%EC%BB%A4%EB%B2%84-%EA%B0%80%EB%8A%A5%ED%95%9C%EA%B0%80%EC%9A%94">김영한님 -복잡한 쿼리 처리하는 방법</a> 
+- 스프링 부트로 개발하는 MSA 컴포넌트 - 7장 1절 JPA 장점과 잔점</p>
 <hr/>
 <div class="md-source-file">
 <small>
@@ -617,7 +527,7 @@ executing others command. That is you don't have to worry about concurrency at a
       <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 19, 2022</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 19, 2022</span>
 </small>
 </div>
 </article>
@@ -625,34 +535,6 @@ executing others command. That is you don't have to worry about concurrency at a
 </div>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: WebClient 클래스" class="md-footer__link md-footer__link--prev" href="../ch09-sec02-webclient/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Previous
-              </span>
-              WebClient 클래스
-            </div>
-</div>
-</a>
-<a aria-label="Next: 시작하기" class="md-footer__link md-footer__link--next" href="../../../til/getting-started/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              시작하기
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
