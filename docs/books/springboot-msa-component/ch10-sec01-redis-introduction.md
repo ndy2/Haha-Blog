@@ -1,6 +1,6 @@
 참고 - [Waht Makes Redis Special? | Redis Internals](https://www.youtube.com/watch?v=h30k7YixrMo&ab_channel=AsliEngineeringbyArpitBhayani)
 
-!!!note
+!!! note
 
    Redis
 
