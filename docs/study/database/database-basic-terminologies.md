@@ -57,7 +57,16 @@
 - 특정 시점에 database에 있는 데이터
 
 
-### Three-Schema Architecture
+### Three-Schema Architecture  (a.k.a. ANSI/SPARC architecture) [참고](https://www.javatpoint.com/dbms-three-schema-architecture)
 - database system 을 구축하는 architecture 중의 하나
 - user-application 으로 부터 물리적인 database를 분리 시키는 목적
-- 세 가지 level이 존재, 각각의 elvel 마다 schema가 존재한다.
+- 세 가지 level이 존재, 각각의 level 마다 schema가 존재한다.
+
+![three-schema-architecture.png](images/three-schema-architecture.png)
+
+
+### Database Language
+-  View Definition Language (VDL)
+-  `Data Definition Language (DDL)`
+-  Storage Definition Language (SDL)
+- `Data Manupulation Language (DML)`
