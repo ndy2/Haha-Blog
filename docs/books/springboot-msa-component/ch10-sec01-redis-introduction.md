@@ -2,9 +2,7 @@
 
 !!! note
 
-   Redis
-
-	The open source, in-memory data structure store used by millions of developers 
+	Redis :  The open source, in-memory data structure store used by millions of developers 
 	as a database, cache, streaming engine, and message broker.
      
     레디스의 특징을 대표하기 적합한 키워드 두가지는
@@ -12,7 +10,7 @@
 
 ## What makes Redis special?
 
-### 1. Every operation on Redis is {==Atomic==}
+### 1. Every operation on Redis is **Atomic**
 !!! note
 
     atomic - when command is executing, Redis does not context switch and stant
@@ -23,7 +21,7 @@
 - set union, intersection
 - incrementing the value
 
-### 2. Data is stored {==in-memory==}
+### 2. Data is stored **in-memory**
 - hence the most common use of Redis is for "caching"
 
 -> 백업 지원!
