@@ -1,8 +1,8 @@
 @ 참고 자료)
 
 - [Rebro의 코딩 일기장 - 인덱스(Index) - (1) 개념, 장단점, B+Tree 등](https://rebro.kr/167)
-<iframe width="853" height="480" src="https://www.youtube.com/embed/IMDH4iAQ6zM" title="DB 인덱스 !! 핵심만 모아서 설명합니다 !! (31분이 아깝지 않을 겁니다)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+- [쉬운코드 - DB 인덱스 !! 핵심만 모아서 설명합니다](https://www.youtube.com/embed/IMDH4iAQ6zM)
+---
 
 ### 1. 인덱스를 사용하는 이유
 - 조건에 맞는 튜플(들)을 **빠르게 조회**하기 위한 자료구조
@@ -78,12 +78,12 @@ SELECT * FROM plyaer FORCE INDEX (player_name_idx);            ## 더 강하게 
 
 ### 9. Clustered Index 와 Non-Clustered Index
 
-@ 참고 자료 [# Clustered vs. Nonclustered Index Structures in SQL Server](https://www.youtube.com/@VoluntaryDBA)]
+@ 참고 자료) -  [# Clustered vs. Nonclustered Index Structures in SQL Server](https://www.youtube.com/@VoluntaryDBA)
 
 - Clustered-Index
 	- 기본적으로 PK에 걸림
 	- 테이블당 하나만 가질 수 있음
-	- 인덱스의 리프노드 자체가 데이터임
+	- 인덱스의 Leaf Node 자체가 데이터임
 	- 성능이 더 빠르다.
 ![clustered_index.png](images/clustered_index.png)
 
@@ -98,4 +98,4 @@ SELECT * FROM plyaer FORCE INDEX (player_name_idx);            ## 더 강하게 
 - B-Tree 인덱스는 범위 검색에서도 인덱스를 사용할 수 있다.
 - B-Tree 인덱스는 복합 인덱스 적용 시 일부 컬럼 (앞에서 부터)에 대한 조건절 처리에도 인덱스를 사용할 수 있다.
 
-- 반면 헤시 테이블 인덱스는 단건 조회에 대해서 O(1) 타임에 조회가 가능하다. 
+- 반면 헤시 테이블 인덱스는 단건 조회에 대해서 `O(1)` 타임에 조회가 가능하다. 
