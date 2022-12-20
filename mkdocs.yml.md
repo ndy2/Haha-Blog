@@ -86,10 +86,12 @@ nav:
   - 블로그 팁:
       - 들어가기: bloggingtips/getting-started.md
   - 분야 별 학습:
+      - 아키텍처:
+          -  MSA 장단점: study/architecture/msa-pros-cons.md
       - 데이터베이스:
           -  데이터베이스 기본 용어: study/database/database-basic-terminologies.md
           -  관계형 데이터베이스: study/database/relational-database.md
-          -  SQL join: study/database/sql-join.md
+          -  SQLjoin: study/database/sql-join.md
           -  데이터베이스 락: study/database/db-lock.md
           -  데이터베이스 인덱스: study/database/db-index.md
           -  데이터베이스 정규화: study/database/db-normalization.md
