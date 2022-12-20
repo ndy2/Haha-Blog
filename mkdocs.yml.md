@@ -131,7 +131,7 @@ nav:
               - WebClient 클래스 : books/springboot-msa-component/ch09-sec02-webclient.md
           - 10장 레디스와 스프링 캐시:
               - 레디스 소개 : books/springboot-msa-component/ch10-sec01-redis-introduction.md
-              - 레디스 HA : books/springboot-msa-component/ch10-sec01-redis-high-availablity.md
+              - 레디스 HA : books/springboot-msa-component/ch10-sec01-redis-high-availability.md
   - TIL:
       - 시작하기: til/getting-started.md
 ```
