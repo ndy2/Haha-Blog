@@ -719,8 +719,9 @@
 <p>@ 참고 자료)</p>
 <ul>
 <li><a href="https://rebro.kr/167">Rebro의 코딩 일기장 - 인덱스(Index) - (1) 개념, 장단점, B+Tree 등</a></li>
+<li><a href="https://www.youtube.com/embed/IMDH4iAQ6zM">쉬운코드 - DB 인덱스 !! 핵심만 모아서 설명합니다</a></li>
 </ul>
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="480" src="https://www.youtube.com/embed/IMDH4iAQ6zM" title="DB 인덱스 !! 핵심만 모아서 설명합니다 !! (31분이 아깝지 않을 겁니다)" width="853"></iframe>
+<hr/>
 <h3 id="1">1. 인덱스를 사용하는 이유<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
 <ul>
 <li>조건에 맞는 튜플(들)을 <strong>빠르게 조회</strong>하기 위한 자료구조</li>
@@ -785,14 +786,14 @@
 <li>select 절의 모든 projection 필드를 인덱스로 검색 할 수 있도록 하는 것</li>
 </ul>
 <h3 id="9-clustered-index-non-clustered-index">9. Clustered Index 와 Non-Clustered Index<a class="headerlink" href="#9-clustered-index-non-clustered-index" title="Permanent link">¶</a></h3>
-<p>@ 참고 자료 <a href="https://www.youtube.com/@VoluntaryDBA"># Clustered vs. Nonclustered Index Structures in SQL Server</a>]</p>
+<p>@ 참고 자료) -  <a href="https://www.youtube.com/@VoluntaryDBA"># Clustered vs. Nonclustered Index Structures in SQL Server</a></p>
 <ul>
 <li>
 <p>Clustered-Index</p>
 <ul>
 <li>기본적으로 PK에 걸림</li>
 <li>테이블당 하나만 가질 수 있음</li>
-<li>인덱스의 리프노드 자체가 데이터임</li>
+<li>인덱스의 Leaf Node 자체가 데이터임</li>
 <li>성능이 더 빠르다.
 <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/clustered_index.png"><img alt="clustered_index.png" src="../images/clustered_index.png"/></a></li>
 </ul>
@@ -814,7 +815,7 @@
 <p>B-Tree 인덱스는 복합 인덱스 적용 시 일부 컬럼 (앞에서 부터)에 대한 조건절 처리에도 인덱스를 사용할 수 있다.</p>
 </li>
 <li>
-<p>반면 헤시 테이블 인덱스는 단건 조회에 대해서 O(1) 타임에 조회가 가능하다. </p>
+<p>반면 헤시 테이블 인덱스는 단건 조회에 대해서 <code>O(1)</code> 타임에 조회가 가능하다. </p>
 </li>
 </ul>
 <hr/>
