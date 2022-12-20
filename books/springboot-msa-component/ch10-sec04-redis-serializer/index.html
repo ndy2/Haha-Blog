@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/" rel="canonical"/>
+<link href="https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch10-sec04-redis-serializer/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>엔티티 매니저와 영속성 컨텍스트 - Haha 블로그</title>
+<title>Ch10 sec04 redis serializer - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#_1">
+<a class="md-skip" href="#1-redistemplate-jdkserializationredisserializer">
           Skip to content
         </a>
 </div>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              엔티티 매니저와 영속성 컨텍스트
+              Ch10 sec04 redis serializer
             
           </span>
 </div>
@@ -245,8 +245,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4">
           기술 서적 정리/리뷰
           <span class="md-nav__icon md-icon"></span>
@@ -267,8 +267,8 @@
         클린 애자일
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3">
           스프링 부트로 개발하는 MSA 컴포넌트
           <span class="md-nav__icon md-icon"></span>
@@ -399,8 +399,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_9" id="__nav_4_3_9" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_9" id="__nav_4_3_9" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3_9">
           8장 데이터 영속성
           <span class="md-nav__icon md-icon"></span>
@@ -421,33 +421,10 @@
         JPA 장점과 단점
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          엔티티 매니저와 영속성 컨텍스트
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ch08-sec08-entitymanager-and-persistence-context/">
         엔티티 매니저와 영속성 컨텍스트
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    엔티티의 생명주기
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    영속성 컨텍스트의 특징
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../ch08-sec07-warning-on-%40Transactional/">
@@ -515,7 +492,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch10-sec04-redis-serializer">
+<a class="md-nav__link" href=".">
         레디스 직렬화 설정
       </a>
 </li>
@@ -598,13 +575,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    엔티티의 생명주기
+<a class="md-nav__link" href="#1-redistemplate-jdkserializationredisserializer">
+    1. 기본 RedisTemplate 사용 - JdkSerializationRedisSerializer
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    영속성 컨텍스트의 특징
+<a class="md-nav__link" href="#2-stringredistemplate-stringredisserializer">
+    2. StringRedisTemplate - StringRedisSerializer 사용!
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-redisserializer">
+    3. 직접 RedisSerializer 클래스 구현!
   </a>
 </li>
 </ul>
@@ -614,88 +596,138 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/books/springboot-msa-component/ch10-sec04-redis-serializer.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>엔티티 매니저와 영속성 컨텍스트</h1>
-<h3 id="_1">엔티티의 생명주기<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<p>영속성 컨텍스트 (persistence context)는 영속하려는 엔티티 객체의 집합을 의미하며, 엔티티 객체의 생명주기를 관리하는 컨텍스트 객체이다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/entity-lifecycle.png"><img alt="entity-lifecycle.png" src="../images/entity-lifecycle.png"/></a></p>
+<h1>Ch10 sec04 redis serializer</h1>
+<p>자동 설정이 아닌 빈 직접 생성 방식으로 RedisTemplate<string, string=""> 을 생성하여 레디스에 저장해 보자.</string,></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nd">@Bean</span><span class="w">  </span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="n">RedisConnectionFactory</span><span class="w"> </span><span class="nf">redisConnectionFactory</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">RedisStandaloneConfiguration</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RedisStandaloneConfiguration</span><span class="p">(</span><span class="s">"127.0.0.1"</span><span class="p">,</span><span class="w"> </span><span class="mi">6379</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LettuceConnectionFactory</span><span class="p">(</span><span class="n">configuration</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nd">@Bean</span><span class="w">  </span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="kd">public</span><span class="w"> </span><span class="n">RedisTemplate</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">redisTemplate</span><span class="p">(){</span><span class="w">  </span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="n">RedisTemplate</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">redisTemplate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RedisTemplate</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">  </span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">setConnectionFactory</span><span class="p">(</span><span class="n">redisConnectionFactory</span><span class="p">());</span><span class="w">  </span>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">;</span><span class="w">  </span>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<hr/>
+<h3 id="1-redistemplate-jdkserializationredisserializer">1. 기본 <code>RedisTemplate</code> 사용 - <code>JdkSerializationRedisSerializer</code><a class="headerlink" href="#1-redistemplate-jdkserializationredisserializer" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nd">@Autowired</span><span class="w">  </span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kd">private</span><span class="w"> </span><span class="n">RedisTemplate</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">;</span><span class="w"></span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="nd">@Test</span><span class="w">  </span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">set</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="n">ValueOperations</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">valueOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForValue</span><span class="p">();</span><span class="w">  </span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="n">valueOperations</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="s">"key"</span><span class="p">,</span><span class="w"> </span><span class="s">"value"</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <ul>
-<li>생성 상태 (NEW, TRANSIENT) <ul>
-<li>영속성 컨텍스트에 한번도 속하지 않는 new 로 생성된 객체이다.</li>
+<li>redis moniter 를 통해 확인한 실행된 명령어
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>"SET" "\xac\xed\x00\x05t\x00\x03key" "\xac\xed\x00\x05t\x00\x05value"
+</code></pre></div></li>
 </ul>
-</li>
-</ul>
-<div class="admonition warn">
-<p class="admonition-title">Warn</p>
-<p>근데 여기서 한가지 주의할 점이 있다. JPA 가 내부적으로 NEW 상태임을 판단하는 기준은 ID 의 여부이다. 
-@Id 필드가 <code>Long</code>, <code>Integer</code> 같은 객체타입인 경우 <code>null</code>. <code>int</code>, <code>long</code> 같은 원시 타입인 경
-우 기본값(0, 0L) 이라면 NEW 상태의 엔티티 이지만 그렇지 않은 경우 준영속 상태로 판단해 save 메서드 호
-출시 em.persist 가 아니라 em.merge 가 호출된다. 이때 save 를 호출하였음에도 insert 쿼리가 아니라
-변경 감지기능이 동작하여 select 쿼리와 update 쿼리가 발생 할 수 있다.</p>
-</div>
-<ul>
-<li>
-<p>영속 상태 (MANAGED)</p>
-<ul>
-<li>객체가 영속성 컨텍스트에 의해 관리되는 상태이다.</li>
-<li>영속성 컨텍스트에 의해 관리된다는 것은 영속성 컨텍스의 기능인 1차 캐시, 더티 체킹 등의 기능이 동작하는 상태라는 의미이다.</li>
-</ul>
-</li>
-<li>
-<p>준영속 상태 (DETACHED)</p>
-<ul>
-<li>Managed 상태의 객체는 <code>em.detach()</code> 를 통해 영속성 컨텍스트의 관리에서 빠져나갈 수 있다.</li>
-<li><code>em.merge()</code> 를 통해 다시 MANAGED 상태가 될 수 있다.</li>
-</ul>
-</li>
-<li>
-<p>삭제 상태 (REMOVED)</p>
-<ul>
-<li><code>em.remove()</code> 에 의해 삭제 된 상태이다.</li>
-<li><code>em.flush()</code> 가 호출되면 삭제 쿼리가 발생한다.</li>
-</ul>
-</li>
-</ul>
-<h3 id="_2">영속성 컨텍스트의 특징<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<ul>
-<li>1차 캐시<ul>
-<li>같은 트랜잭션에서 영속성 컨텍스트에 저장된 엔티티에 대해서 <strong><em>ID 로 조회 요청</em></strong>을 하면 영속성 컨텍스트 메모리 내에서 객체를 조회해 준다.</li>
-</ul>
-</li>
-<li>동일성 보장<ul>
-<li>마치 자바 컬렉션을 활용하는 것 처럼 같은 엔티티에 대해서는 identity 연산의 참이 보장된다.</li>
-</ul>
-</li>
-<li>변경 감지 (더티 체킹)<ul>
-<li>영속성 컨텍스트에서 조회한 엔티티를 수정하고 다시 이를 persist 한다거나 merge 할 필요가 없다.</li>
-<li>트랜잭션이 마무리 되는 시점에 영속성 컨텍스트는 트랜잭션 시작시점의 스냅샷과 비교하여 변경을 감지해 자동으로 update 쿼리를 발생시킨다.</li>
-</ul>
-</li>
-<li>지연 로딩<ul>
-<li>연관 관계에 있는 엔티티 객체들은 지연 로딩 설정에 따라 참조될 때 로딩할 수 있다.</li>
-</ul>
-</li>
-<li>쓰기 지연 (을 지원하는 SQL 저장소)<ul>
-<li>CUD 쿼리를 매번 데이터 베이스에 반영하지 않고 <code>em.flush()</code> 가 호출 될 때 한 번에 반영한다.</li>
-</ul>
-</li>
-</ul>
-<div class="admonition warn">
-<p class="admonition-title">Warn</p>
-<p>@GenratedValue 의 전략이 <code>GenerationType.IDENTITY</code> 즉 auto-increment 로 설정된 경우는 
-save 호출시 바로 insert 쿼리가 발생한다. 영속성 컨텍스트에의해 관리 되기 위해서는 id 값이 필요하기 때문이다.</p>
-</div>
+<p>위 처럼 아무 설정을 하지 않고 RedisTemplate 을 만들게 되면 Key 와 Value 의 직렬화<code>JdkSerialization</code>RedisSerializer<code>를 사용해서 위 처럼 알아보기 힘든 문자가 저장된다. 만약 직접 정의한 Key 와 Value 타입을 사용할때</code>JdkSerializationRedisSerializer<code>를 사용하고 싶다면 꼭</code>java.io.Serializable<code>을 구현 해야 한다. 이런 두가지 이유로 저자분은</code>JdkSerializationRedisSerializer` 의 사용을 반대한다.</p>
+<hr/>
+<h3 id="2-stringredistemplate-stringredisserializer">2. <code>StringRedisTemplate</code> - <code>StringRedisSerializer</code> 사용!<a class="headerlink" href="#2-stringredistemplate-stringredisserializer" title="Permanent link">¶</a></h3>
+<p>그럼 이번에는 StringRedisTemplate 을 사용해보자!</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nd">@Autowired</span><span class="w">  </span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="kd">private</span><span class="w"> </span><span class="n">StringRedisTemplate</span><span class="w"> </span><span class="n">stringRedisTemplate</span><span class="p">;</span><span class="w"></span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="nd">@Test</span><span class="w">  </span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">set2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="n">ValueOperations</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">valueOperations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringRedisTemplate</span><span class="p">.</span><span class="na">opsForValue</span><span class="p">();</span><span class="w">  </span>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="n">valueOperations</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="s">"key"</span><span class="p">,</span><span class="w"> </span><span class="s">"value"</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>"SET" "key" "value"
+</code></pre></div>
+<p>깔끔하다!</p>
+<h3 id="3-redisserializer">3. 직접 RedisSerializer 클래스 구현!<a class="headerlink" href="#3-redisserializer" title="Permanent link">¶</a></h3>
+<p>만약 String 이 아니라 직접만든 객체를 RedisTemplate 의 Key 와 Value 로 사용하고 싶다면 RedisSerializer 클래스를 구현하여야 한다. (<code>JdkSerializertionRedisSerializer</code> 를 사용하지 말자!)</p>
+<p>그럼 링크와 같은 Key 와 Value 객체를 위한 RedisSerializer 를 만들어 보자!</p>
+<div class="highlight"><span class="filename">HotelCacheKeySerializer</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HotelCacheKeySerializer</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RedisSerializer</span><span class="o">&lt;</span><span class="n">HotelCacheKey</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Charset</span><span class="w"> </span><span class="n">UTF_8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Charset</span><span class="p">.</span><span class="na">forName</span><span class="p">(</span><span class="s">"UTF-8"</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="nd">@Override</span><span class="w">  </span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="nf">serialize</span><span class="p">(</span><span class="n">HotelCacheKey</span><span class="w"> </span><span class="n">hotelCacheKey</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">SerializationException</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Objects</span><span class="p">.</span><span class="na">isNull</span><span class="p">(</span><span class="n">hotelCacheKey</span><span class="p">))</span><span class="w">  </span>
+<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SerializationException</span><span class="p">(</span><span class="s">"hotelCacheKey is null"</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>
+<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">hotelCacheKey</span><span class="p">.</span><span class="na">toString</span><span class="p">().</span><span class="na">getBytes</span><span class="p">(</span><span class="n">UTF_8</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a>
+<a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">    </span><span class="nd">@Override</span><span class="w">  </span>
+<a href="#__codelineno-5-14" id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">HotelCacheKey</span><span class="w"> </span><span class="nf">deserialize</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">bytes</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">SerializationException</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-5-15" id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Objects</span><span class="p">.</span><span class="na">isNull</span><span class="p">(</span><span class="n">bytes</span><span class="p">))</span><span class="w">  </span>
+<a href="#__codelineno-5-16" id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SerializationException</span><span class="p">(</span><span class="s">"bytes is null"</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-5-17" id="__codelineno-5-17" name="__codelineno-5-17"></a>
+<a href="#__codelineno-5-18" id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">HotelCacheKey</span><span class="p">.</span><span class="na">fromString</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span><span class="w"> </span><span class="n">UTF_8</span><span class="p">));</span><span class="w">  </span>
+<a href="#__codelineno-5-19" id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-5-20" id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>```java title = </p>
+<p>@Slf4j<br/>
+public class HotelCacheValueSerializer implements RedisSerializer<hotelcachevalue> {  </hotelcachevalue></p>
+<div class="highlight"><pre><span></span><code>// JSON Mapper  
+public static final ObjectMapper MAPPER = new ObjectMapper();  
+private final Charset UTF_8 = Charset.forName("UTF-8");
+
+@Override  
+public byte[] serialize(HotelCacheValue hotelCacheValue) throws SerializationException {  
+    if (Objects.isNull(hotelCacheValue))  
+        return null;
+
+    try {  
+        String json = MAPPER.writeValueAsString(hotelCacheValue);  
+        return json.getBytes(UTF_8);  
+    } catch (JsonProcessingException e) {  
+        throw new SerializationException("json serialize error", e);  
+    }  
+}
+
+@Override  
+public HotelCacheValue deserialize(byte[] bytes) throws SerializationException {
+
+    if (Objects.isNull(bytes))  
+        return null;
+
+    try {  
+        return MAPPER.readValue(new String(bytes, UTF_8), HotelCacheValue.class);  
+    } catch (JsonProcessingException e) {  
+        throw new SerializationException("json deserialize error", e);  
+    }  
+}
+</code></pre></div>
+<p>}
+<code>이제 명령을 실행해 보자!</code>java
+@Test<br/>
+void set3() {<br/>
+    ValueOperations<hotelcachekey, hotelcachevalue=""> valueOperations = hotelRedisTemplate.opsForValue();<br/>
+    valueOperations.set(<br/>
+            HotelCacheKey.from(1L),<br/>
+            HotelCacheValue.of("haha", "대구 수성구")<br/>
+    );<br/>
+}
+```</hotelcachekey,></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>"SET" "HOTEL::1" "{\"name\":\"haha\",\"address\":\"\xeb\x8c\x80\xea\xb5\xac \xec\x88\x98\xec\x84\xb1\xea\xb5\xac\"}"
+</code></pre></div>
+<p>분명 Serializer 에 Encoding 옵션을 주었는데도 한글이 깨진다.
+찾아 보니 이는 redis-cli 실행시 --raw 옵션을 넣어 조회하면 정상적으로 볼 수 있다.
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/redis-get.png"><img alt="redis-get.png" src="../images/redis-get.png"/></a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
 </small>
 </div>
 </article>
@@ -703,34 +735,6 @@ save 호출시 바로 insert 쿼리가 발생한다. 영속성 컨텍스트에�
 </div>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: JPA 장점과 단점" class="md-footer__link md-footer__link--prev" href="../ch08-sec01-jpa-pros-and-cons/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Previous
-              </span>
-              JPA 장점과 단점
-            </div>
-</div>
-</a>
-<a aria-label="Next: Transactional을 사용할 때 주의 사항" class="md-footer__link md-footer__link--next" href="../ch08-sec07-warning-on-%40Transactional/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              Transactional을 사용할 때 주의 사항
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
