@@ -503,18 +503,18 @@
 <nav aria-label="What makes Redis special?" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-every-operation-on-redis-is-czjqqkd0atomicczjqqkd1">
-    1. Every operation on Redis is czjqqkd:0Atomicczjqqkd:1
+<a class="md-nav__link" href="#1-every-operation-on-redis-is-atomic">
+    1. Every operation on Redis is Atomic
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-data-is-stored-czjqqkd2in-memoryczjqqkd3">
-    2. Data is stored czjqqkd:2in-memoryczjqqkd:3
+<a class="md-nav__link" href="#2-data-is-stored-in-memory">
+    2. Data is stored in-memory
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#3-redis-czjqqkd4-czjqqkd5">
-    3. Redis 가 czjqqkd:4싱글 스레드czjqqkd:5로 클라이언트 커맨드를 처리하는 방식!
+<a class="md-nav__link" href="#3-redis-czjqqkd0-czjqqkd1">
+    3. Redis 가 czjqqkd:0싱글 스레드czjqqkd:1로 클라이언트 커맨드를 처리하는 방식!
   </a>
 </li>
 <li class="md-nav__item">
@@ -613,18 +613,18 @@
 <nav aria-label="What makes Redis special?" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-every-operation-on-redis-is-czjqqkd0atomicczjqqkd1">
-    1. Every operation on Redis is czjqqkd:0Atomicczjqqkd:1
+<a class="md-nav__link" href="#1-every-operation-on-redis-is-atomic">
+    1. Every operation on Redis is Atomic
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-data-is-stored-czjqqkd2in-memoryczjqqkd3">
-    2. Data is stored czjqqkd:2in-memoryczjqqkd:3
+<a class="md-nav__link" href="#2-data-is-stored-in-memory">
+    2. Data is stored in-memory
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#3-redis-czjqqkd4-czjqqkd5">
-    3. Redis 가 czjqqkd:4싱글 스레드czjqqkd:5로 클라이언트 커맨드를 처리하는 방식!
+<a class="md-nav__link" href="#3-redis-czjqqkd0-czjqqkd1">
+    3. Redis 가 czjqqkd:0싱글 스레드czjqqkd:1로 클라이언트 커맨드를 처리하는 방식!
   </a>
 </li>
 <li class="md-nav__item">
@@ -649,16 +649,13 @@
 <p>참고 - <a href="https://www.youtube.com/watch?v=h30k7YixrMo&amp;ab_channel=AsliEngineeringbyArpitBhayani">Waht Makes Redis Special? | Redis Internals</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+<p>Redis :  The open source, in-memory data structure store used by millions of developers 
+as a database, cache, streaming engine, and message broker.</p>
+<p>레디스의 특징을 대표하기 적합한 키워드 두가지는
+1. '메모리', 2. '싱글 스레드' 이다.</p>
 </div>
-<p>Redis</p>
-<div class="highlight"><pre><span></span><code>The open source, in-memory data structure store used by millions of developers 
-as a database, cache, streaming engine, and message broker.
-
-레디스의 특징을 대표하기 적합한 키워드 두가지는
-1. '메모리', 2. '싱글 스레드' 이다.
-</code></pre></div>
 <h2 id="what-makes-redis-special">What makes Redis special?<a class="headerlink" href="#what-makes-redis-special" title="Permanent link">¶</a></h2>
-<h3 id="1-every-operation-on-redis-is-czjqqkd0atomicczjqqkd1">1. Every operation on Redis is <mark class="critic">Atomic</mark><a class="headerlink" href="#1-every-operation-on-redis-is-czjqqkd0atomicczjqqkd1" title="Permanent link">¶</a></h3>
+<h3 id="1-every-operation-on-redis-is-atomic">1. Every operation on Redis is <strong>Atomic</strong><a class="headerlink" href="#1-every-operation-on-redis-is-atomic" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>atomic - when command is executing, Redis does not context switch and stant
@@ -670,7 +667,7 @@ executing others command. That is you don't have to worry about concurrency at a
 <li>set union, intersection</li>
 <li>incrementing the value</li>
 </ul>
-<h3 id="2-data-is-stored-czjqqkd2in-memoryczjqqkd3">2. Data is stored <mark class="critic">in-memory</mark><a class="headerlink" href="#2-data-is-stored-czjqqkd2in-memoryczjqqkd3" title="Permanent link">¶</a></h3>
+<h3 id="2-data-is-stored-in-memory">2. Data is stored <strong>in-memory</strong><a class="headerlink" href="#2-data-is-stored-in-memory" title="Permanent link">¶</a></h3>
 <ul>
 <li>hence the most common use of Redis is for "caching"</li>
 </ul>
@@ -692,7 +689,7 @@ executing others command. That is you don't have to worry about concurrency at a
 <li>RDB 방식에 비해 데이터 유실량이 적은 장점이 있다.</li>
 <li>하지만 로그 파일에 대한 관리가 필요하고 복구 시간이 RDB에 비해서 오래 걸린다.</li>
 </ol>
-<h3 id="3-redis-czjqqkd4-czjqqkd5">3. Redis 가 <mark class="critic">싱글 스레드</mark>로 클라이언트 커맨드를 처리하는 방식!<a class="headerlink" href="#3-redis-czjqqkd4-czjqqkd5" title="Permanent link">¶</a></h3>
+<h3 id="3-redis-czjqqkd0-czjqqkd1">3. Redis 가 <mark class="critic">싱글 스레드</mark>로 클라이언트 커맨드를 처리하는 방식!<a class="headerlink" href="#3-redis-czjqqkd0-czjqqkd1" title="Permanent link">¶</a></h3>
 <p>은 바로 <strong>이벤트 루프</strong>!</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/redis-event-loop.excalidraw.png"><img alt="redis-event-loop.excalidraw.png" src="../excalidraws/redis-event-loop.excalidraw.png"/></a></p>
 <div class="admonition note">
@@ -714,7 +711,7 @@ executing others command. That is you don't have to worry about concurrency at a
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 19, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2022</span>
