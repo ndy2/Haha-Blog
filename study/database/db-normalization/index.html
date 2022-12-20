@@ -7,17 +7,17 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io//Haha-Blog/" rel="canonical"/>
-<link href="assets/favicon.ico" rel="icon"/>
+<link href="https://ndy2.github.io/Haha-Blog/study/database/db-normalization/" rel="canonical"/>
+<link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Haha 블로그</title>
-<link href="assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
-<link href="assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<title>데이터베이스 정규화 - Haha 블로그</title>
+<link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -28,21 +28,18 @@
                 body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
                 body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="assets/javascripts/glightbox.min.js"></script></head>
+                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#_1">
-          Skip to content
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Haha 블로그" class="md-header__button md-logo" data-md-component="logo" href="." title="Haha 블로그">
+<a aria-label="Haha 블로그" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Haha 블로그">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -58,7 +55,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Home
+              데이터베이스 정규화
             
           </span>
 </div>
@@ -114,7 +111,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Haha 블로그" class="md-nav__button md-logo" data-md-component="logo" href="." title="Haha 블로그">
+<a aria-label="Haha 블로그" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Haha 블로그">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
     Haha 블로그
@@ -130,43 +127,10 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href=".">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
         Home
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    좋아하는 것!
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    개발자로서 좋아하는 것!
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    저는 요즘 ...
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
-    타임 라인
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
@@ -181,15 +145,15 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="bloggingtips/getting-started/">
+<a class="md-nav__link" href="../../../bloggingtips/getting-started/">
         들어가기
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
@@ -200,8 +164,8 @@
           분야 별 학습
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_1">
           데이터베이스
           <span class="md-nav__icon md-icon"></span>
@@ -213,42 +177,43 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="study/database/database-basic-terminologies/">
+<a class="md-nav__link" href="../database-basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="study/database/relational-database/">
+<a class="md-nav__link" href="../relational-database/">
         관계형 데이터베이스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="study/database/sql-join/">
+<a class="md-nav__link" href="../sql-join/">
         SQL join
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="study/database/db-lock/">
+<a class="md-nav__link" href="../db-lock/">
         데이터베이스 락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="study/database/db-index/">
+<a class="md-nav__link" href="../db-index/">
         데이터베이스 인덱스
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="study/database/db-normalization/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
         데이터베이스 정규화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="study/database/handle-olap/">
+<a class="md-nav__link" href="../handle-olap/">
         OLAP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="study/database/clustering-replication-sharding/">
+<a class="md-nav__link" href="../clustering-replication-sharding/">
         클러스터링, 리플리케이션, 샤딩
       </a>
 </li>
@@ -271,12 +236,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/">
+<a class="md-nav__link" href="../../../books/">
         책!
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/clean-agile/clean-agile/">
+<a class="md-nav__link" href="../../../books/clean-agile/clean-agile/">
         클린 애자일
       </a>
 </li>
@@ -293,22 +258,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/">
         리뷰
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch01-msa/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch01-msa/">
         1장 마이크로서비스 아키텍처
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch02-framework-and-springboot/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch02-framework-and-springboot/">
         2장 프레임워크와 스프링부트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch03-springboot-basic/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch03-springboot-basic/">
         3장 스프링 애플리케이션 기본
       </a>
 </li>
@@ -325,17 +290,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch04-spring-web-mvc-basic/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-spring-web-mvc-basic/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch04-sec01-http/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-sec01-http/">
         파트 1 HTTP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
         파트 2 서블릿과 MVC
       </a>
 </li>
@@ -343,7 +308,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
         5장 스프링 MVC를 이용한 REST-API 개발
       </a>
 </li>
@@ -360,22 +325,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch06-build-web-application-server/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-build-web-application-server/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
         EnableXXX의 동작과 빈 설정 모듈화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
         웹 애플리케이션 설정 메커니즘
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
         DispatcherServlet
       </a>
 </li>
@@ -395,17 +360,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch07-sec01-spring-aop/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-sec01-spring-aop/">
         스프링 AOP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch07-sec03-autoconfiguration/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-sec03-autoconfiguration/">
         스프링 부트 자동 설정
       </a>
 </li>
@@ -425,27 +390,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch08-data-persistence/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-data-persistence/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
         JPA 장점과 단점
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
         엔티티 매니저와 영속성 컨텍스트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
         Transactional을 사용할 때 주의 사항
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch08-sec11-osiv/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec11-osiv/">
         OSIV
       </a>
 </li>
@@ -465,17 +430,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch09-application-integration-restapi/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-application-integration-restapi/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch09-sec01-resttemplate/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-sec01-resttemplate/">
         RestTemplate 클래스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch09-sec02-webclient/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-sec02-webclient/">
         WebClient 클래스
       </a>
 </li>
@@ -495,12 +460,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch10-sec01-redis-introduction/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec01-redis-introduction/">
         레디스 소개
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="books/springboot-msa-component/ch10-sec01-redis-high-availablity.md">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec01-redis-high-availablity.md">
         레디스 HA
       </a>
 </li>
@@ -526,37 +491,37 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="til/getting-started/">
+<a class="md-nav__link" href="../../../til/getting-started/">
         시작하기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="til/til/2022-12-14/">
+<a class="md-nav__link" href="../../../til/til/2022-12-14/">
         2022-12-14
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="til/til/2022-12-15/">
+<a class="md-nav__link" href="../../../til/til/2022-12-15/">
         2022-12-15
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="til/til/2022-12-16/">
+<a class="md-nav__link" href="../../../til/til/2022-12-16/">
         2022-12-16
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="til/til/2022-12-17/">
+<a class="md-nav__link" href="../../../til/til/2022-12-17/">
         2022-12-17
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="til/til/2022-12-18/">
+<a class="md-nav__link" href="../../../til/til/2022-12-18/">
         2022-12-18
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="til/til/2022-12-19/">
+<a class="md-nav__link" href="../../../til/til/2022-12-19/">
         2022-12-19
       </a>
 </li>
@@ -572,90 +537,25 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    좋아하는 것!
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    개발자로서 좋아하는 것!
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    저는 요즘 ...
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
-    타임 라인
-  </a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/index.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/database/db-normalization.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="_1">안녕하세요!<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="my-profile.jpeg"><img align="right" alt="my-profile.jpeg|200" src="my-profile.jpeg" width="200"/></a></p>
-<p><em>좋은 설계</em>와 <em>객체지향 방법론</em>에 관심이 많은 <mark class="critic">미래의 백엔드 개발자 남득윤</mark>입니다. </p>
-<p>저는 <code>하하</code> 라는 닉네임을 사용하고 오른쪽 이미지를 프로필 이미지로 자주 사용해요.</p>
-<p><br/>
-<br/>
-<br/>
-<br/></p>
-<h2 id="_2">좋아하는 것!<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<ul>
-<li>🦉 늦게나고 늦게 일어나는 것 </li>
-<li>☕ 카페 공부</li>
-<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></span> 유튜브 시청</li>
-</ul>
-<h2 id="_3">개발자로서 좋아하는 것!<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<ul>
-<li><span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M4.72 3.22a.75.75 0 0 1 1.06 1.06L2.06 8l3.72 3.72a.75.75 0 1 1-1.06 1.06L.47 8.53a.75.75 0 0 1 0-1.06l4.25-4.25zm6.56 0a.75.75 0 1 0-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 1 0 1.06 1.06l4.25-4.25a.75.75 0 0 0 0-1.06l-4.25-4.25z" fill-rule="evenodd"></path></svg></span> 강의와 책을 바탕으로 학습한 내용을 코드로 풀어내는 것</li>
-<li>🧑‍🤝‍🧑 그런 코드에 대해서 열정적인 동료와 열띤 토론을 하는 것!</li>
-</ul>
-<h2 id="_4">저는 요즘 ...<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<ul>
-<li>
-<p><a href="http://www.yes24.com/Product/Goods/115306377">스프링 부트로 개발하는 MSA 컴포넌트</a> 라는 책을 읽고 있어요</p>
-</li>
-<li>
-<p>유데미에서 <a href="https://www.udemy.com/course/complete-java-reactive-programming/">Reactive Programming 강의</a> 를 듣고 있어요</p>
-<ul>
-<li>아직 지식이 부족하고 겉할기 수준이라 블로그에 정리할 정도는 안되지만 얼른 완강하고 Spring-Webflux 관련 공부도 해보고싶네요. 제 첫 <code>Udemy</code> 강의인데 앞으로는 <code>Udemy</code> 애용 할 것 같아요!</li>
-</ul>
-</li>
-<li>
-<p>블로그 이사를 진행 중이에요 - <a href="https://ndy2.github.io//Haha-Blog/">여기</a></p>
-<ul>
-<li>한동안 <a href="https://www.notion.so/ndy-dev/60723b352f294580a98c2e2e8da9fbfa">노션</a>을 주로 썻었는데 아무래도 개인 학습 정리하기에는 조금 더 가벼운 포맷이 좋을것 같아 Obsidian 을 이용해 보기로 했어요. mkdocs 와 조합해서 사용하니 블로그로 사용하기에도 좋을 것 같아. 이사를 결심하게 됬어요.</li>
-<li>그래도 모든 글을 옮기기 보다는 가장 많은 노력과 정성을 담은 글 몇개는 옮기기로 했어요. 너무 썰렁해 보여서 ㅜ.ㅜ</li>
-</ul>
-</li>
-</ul>
-<h2 id="_5">타임 라인<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="my-timeline.excalidraw.png"><img alt="my-timeline.excalidraw.png" src="my-timeline.excalidraw.png"/></a></p>
+<h1>데이터베이스 정규화</h1>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
 </small>
 </div>
 </article>
@@ -664,13 +564,26 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Next: 들어가기" class="md-footer__link md-footer__link--next" href="bloggingtips/getting-started/" rel="next">
+<a aria-label="Previous: 데이터베이스 인덱스" class="md-footer__link md-footer__link--prev" href="../db-index/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              데이터베이스 인덱스
+            </div>
+</div>
+</a>
+<a aria-label="Next: OLAP" class="md-footer__link md-footer__link--next" href="../handle-olap/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              들어가기
+              OLAP
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -698,9 +611,9 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-<script src="assets/javascripts/bundle.5a2dcb6a.min.js"></script>
-<script src="js/mkdocs-charts-plugin.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script src="../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>

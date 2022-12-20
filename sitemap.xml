@@ -196,6 +196,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/architecture/msa-pros-cons/</loc>
+         <lastmod>2022-12-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/database/clustering-replication-sharding/</loc>
          <lastmod>2022-12-20</lastmod>
          <changefreq>daily</changefreq>
@@ -206,12 +211,37 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/database/db-index/</loc>
+         <lastmod>2022-12-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/database/db-lock/</loc>
+         <lastmod>2022-12-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/database/db-normalization/</loc>
+         <lastmod>2022-12-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/database/handle-olap/</loc>
          <lastmod>2022-12-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/database/relational-database/</loc>
+         <lastmod>2022-12-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/database/sql-join/</loc>
+         <lastmod>2022-12-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/database/transaction-acid/</loc>
          <lastmod>2022-12-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
