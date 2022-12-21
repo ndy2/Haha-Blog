@@ -101,6 +101,8 @@ nav:
           -  데이터베이스 정규화: study/database/db-normalization.md
           -  OLAP: study/database/handle-olap.md
           - 클러스터링, 리플리케이션, 샤딩: study/database/clustering-replication-sharding.md
+      - 네트워크:
+          -  HTTP 버전별 특징: study/network/http-versions.md
   - 기술 서적 정리/리뷰:
       - 책!: books/index.md
       - 클린 애자일: books/clean-agile/clean-agile.md
