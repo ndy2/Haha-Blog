@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/study/database/db-normalization/" rel="canonical"/>
+<link href="https://ndy2.github.io/Haha-Blog/study/database/db-normalization-3nf-bcnf/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>데이터베이스 정규화 - Haha 블로그</title>
+<title>Db normalization 3nf bcnf - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#1-normalization">
+<a class="md-skip" href="#3-3nf">
           Skip to content
         </a>
 </div>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              데이터베이스 정규화
+              Db normalization 3nf bcnf
             
           </span>
 </div>
@@ -155,8 +155,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
@@ -187,8 +187,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_2">
           데이터베이스
           <span class="md-nav__icon md-icon"></span>
@@ -234,56 +234,10 @@
         데이터베이스 FD
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          데이터베이스 정규화
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../db-normalization/">
         데이터베이스 정규화
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-normalization">
-    1. 정규화 (normalization 개념)
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2. 정규화 과정
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-init-table">
-    3. Init Table
-  </a>
-<nav aria-label="3. Init Table" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1. 키 식별
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-fd">
-    2. FD 식별
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../handle-olap/">
@@ -631,37 +585,19 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-normalization">
-    1. 정규화 (normalization 개념)
+<a class="md-nav__link" href="#3-3nf">
+    3. 3NF
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2. 정규화 과정
+<a class="md-nav__link" href="#35-bcnf">
+    3.5 BCNF
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#3-init-table">
-    3. Init Table
+<a class="md-nav__link" href="#4">
+    4. 역정규화
   </a>
-<nav aria-label="3. Init Table" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1. 키 식별
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-fd">
-    2. FD 식별
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-</a>
 </li>
 </ul>
 </nav>
@@ -670,60 +606,49 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/database/db-normalization.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/database/db-normalization-3nf-bcnf.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>데이터베이스 정규화</h1>
+<h1>Db normalization 3nf bcnf</h1>
 <p>@ 참고 자료)</p>
 <ul>
 <li>쉬운코드 - <a href="https://youtu.be/EdkjkifH-m8">(1부) DB 정규화(normalization)는 DB를 설계하는 공식적인 방법이죠~</a></li>
 <li>쉬운코드 - <a href="">(2부) DB 정규화(normalization) 2부입니다!!</a></li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>DB 정규화를 이해하기 위해서는 <a href="../db-anomaly">이상현상</a>과 <a href="../db-functional-dependency">FD</a>에 관한 내용을 꼭 알고 있어야 합니다!</p>
-</div>
 <hr/>
-<h3 id="1-normalization">1. 정규화 (normalization 개념)<a class="headerlink" href="#1-normalization" title="Permanent link">¶</a></h3>
+<h3 id="3-3nf">3. 3NF<a class="headerlink" href="#3-3nf" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>모든 non-prime attribute 는 어떤 key에 대해서도 Transitive FD 가 존재하면 안된다.
+or non-prime attribute 와 non-prime attribute 사이에는 FD 가 있으면 안된다.</p>
+<p>Transitive FD
+if X -&gt; Y &amp; Y -&gt; Z holds, then X -&gt; Z holds 
+unless either Y or Z is NOT subset of any key</p>
+</blockquote>
 <ul>
-<li>
-<p>정규화 (normalization) - 데이터 중복과 insertion, update, deletion anomaly를 최소화 하기 위하여 일련의 normal forms (NF) 에 따라 RDB 를 구성하는 과정</p>
-</li>
-<li>
-<p>Normal forms (NF) - 정규화 되기 위해 준수해야 하는 몇가지 rule들</p>
-</li>
+<li>2NF 까지 적용한 상태의 테이블 구조
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/after-2nf.png"><img alt="after-2nf.png" src="../images/after-2nf.png"/></a></li>
 </ul>
-<h3 id="2">2. 정규화 과정<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/nf.png"><img alt="nf.png" src="../images/nf.png"/></a></p>
+<p>살펴보면 (e1, Sony) 튜플이 중복으로 존재한다는 사실을 알 수 있습니다.</p>
+<p>그 이유는 Transitive FD 때문입니다.
+이 테이블에 존재하는 Transitive FD 는 아래와 같습니다.</p>
+<ol>
+<li><code>{account_id}</code> -&gt; <code>{empl_id}</code> -&gt; <code>{empl_name}</code></li>
+<li><code>{bank_name, account_name}</code> -&gt; <code>{empl_id}</code> -&gt; <code>{empl_name}</code></li>
+</ol>
+<p>Employee 테이블을 분리하여 3NF 를 만족하도록 변경하면 아래와 같습니다.
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/after-3nf.png"><img alt="after-3nf.png" src="../images/after-3nf.png"/></a></p>
+<h3 id="35-bcnf">3.5 BCNF<a class="headerlink" href="#35-bcnf" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>모든 유효한 non-trivial FD X -&gt; Y 에 대해서 X 는 super key 여야 한다.</p>
+</blockquote>
+<p>EMPLOYEE_ACCOUNT 테이블의 {class} -&gt; {bank_name} FD 는 위 제약사항을 위반합니다!
+class 의 값인 BRONZE, LOYAL 만으로는 tuple 을 식별할 수 없습니다.</p>
+<p>테이블을 나누어 BCNF 를 만족하도록 변경해보면 아래와 같습니다.
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/after-bcnf.png"><img alt="after-bcnf.png" src="../images/after-bcnf.png"/></a></p>
+<h3 id="4">4. 역정규화<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
 <ul>
-<li>순서대로 진행한다!</li>
-<li>1NF ~ BCNF 까지가 FD 와 key 만으로 정의되는 normal forms</li>
-<li>3NF 까지 도달하면 정규화 됐다고 말하기도 함, 5NF 이후는 학술적인 영역</li>
-<li>실무에서는 3NF, BCNF 까지 정도만 함</li>
+<li>테이블을 너무 잘게 나누면 join 시 성능상 이슈도 있고 관리가 힘들 수 있기 때문에 전략적으로 테이블을 합치는 것</li>
 </ul>
-<h3 id="3-init-table">3. Init Table<a class="headerlink" href="#3-init-table" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/1NF.png"><img alt="1NF.png" src="../images/1NF.png"/></a>
-자료형은 대충 넣었습니다. 정규화 중이라 안 맞는 부분이 존재합니다.
-직원의 월급 계좌를 관리하는 <code>EMPLOYEE_ACCOUNT</code> 테이블을 정규화 해보자!</p>
-<p>먼저 key 를 식별하고 그 중 primary key 를 선정해야합니다.</p>
-<h4 id="1">1. 키 식별<a class="headerlink" href="#1" title="Permanent link">¶</a></h4>
-<ul>
-<li>
-<p>(candidate) key - <code>{account_id}, {bank_name, account_name}</code></p>
-<ul>
-<li>요구사항에서 직원이 여러 계좌를 가질 수 있고 또 한 계좌는 여러 카드에 연동 될 수 있기 때문에 {empl_id} 와 {card_id} 는 key 가 될 수 없습니다.</li>
-</ul>
-</li>
-<li>
-<p>primary key - <code>{account_id}</code></p>
-</li>
-<li>prime attribute - <code>account_id</code>, <code>bank_name</code>, <code>account_name</code></li>
-<li>non-prime attribute - <code>bank_name</code>, <code>class</code>, <code>ratio</code>, <code>empl_id</code>, <code>emple_name</code>, <code>card_id</code></li>
-</ul>
-<h4 id="2-fd">2. FD 식별<a class="headerlink" href="#2-fd" title="Permanent link">¶</a></h4>
-<p>주요 FD 는 아래와 같습니다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/table-fd.png"><img alt="table-fd.png" src="../images/table-fd.png"/></a></p>
-<h3 id="_1"><a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <hr/>
 <div class="md-source-file">
 <small>
@@ -732,7 +657,7 @@
       <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
 </small>
 </div>
 </article>
@@ -740,34 +665,6 @@
 </div>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 데이터베이스 FD" class="md-footer__link md-footer__link--prev" href="../db-functional-dependency/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Previous
-              </span>
-              데이터베이스 FD
-            </div>
-</div>
-</a>
-<a aria-label="Next: OLAP" class="md-footer__link md-footer__link--next" href="../handle-olap/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              OLAP
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
