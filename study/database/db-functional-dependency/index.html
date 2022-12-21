@@ -266,8 +266,8 @@
 <nav aria-label="4.  FD 의 종류" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#0-material-arrow-righty">
-    0. {} :material-arrow-right:Y
+<a class="md-nav__link" href="#0-y">
+    0. {} -&gt;Y
   </a>
 </li>
 <li class="md-nav__item">
@@ -658,8 +658,8 @@
 <nav aria-label="4.  FD 의 종류" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#0-material-arrow-righty">
-    0. {} :material-arrow-right:Y
+<a class="md-nav__link" href="#0-y">
+    0. {} -&gt;Y
   </a>
 </li>
 <li class="md-nav__item">
@@ -708,19 +708,19 @@
 | 2      | sonny | 105     | 7          |
 | 3       | ronaldo  | null   | null  |</li>
 </ul>
-<p><code>{name} :material-arrow-right: {team_id}</code> 처럼 보이지만 id 3번과 동명이인인 브라질의 Ronaldo 선수는 team_id 값이 있을 수 있다!</p>
+<p><code>{name}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{team_id}</code> 처럼 보이지만 id 3번과 동명이인인 브라질의 Ronaldo 선수는 team_id 값이 있을 수 있다!</p>
 <h3 id="3-fd">3. FD 예시<a class="headerlink" href="#3-fd" title="Permanent link">¶</a></h3>
 <ul>
-<li>`{std_id} <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span>  {stu_name, birth_date, addr}</li>
-<li><code>{class_id} :material-arrow-right: {class_name, year, semester, credit}</code></li>
-<li><code>{stu_id, class_id} :material-arrow-right:  {grde}</code></li>
-<li>`{bank_name, bank_account} <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span>  {balance, open_date}``</li>
+<li><code>{std_id}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{stu_name, birth_date, addr}</code></li>
+<li><code>{class_id}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{class_name, year, semester, credit}</code></li>
+<li><code>{stu_id, class_id}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{grde}</code></li>
+<li><code>{bank_name, bank_account}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{balance, open_date}</code></li>
 </ul>
 <h3 id="4-fd">4.  FD 의 종류<a class="headerlink" href="#4-fd" title="Permanent link">¶</a></h3>
-<h4 id="0-material-arrow-righty">0. <code>{} :material-arrow-right:Y</code><a class="headerlink" href="#0-material-arrow-righty" title="Permanent link">¶</a></h4>
-<p>항상 Y 의 값이 일정하다면 공집합 즉, 아무 attribute 없이도 Y 값을 결정할 수 있고 이러한 FD 를 <code>{} :material-arrow-right: Y</code> 처럼 표현 할 수 있다.</p>
+<h4 id="0-y">0. {} -&gt;Y<a class="headerlink" href="#0-y" title="Permanent link">¶</a></h4>
+<p>항상 Y 의 값이 일정하다면 공집합 즉, 아무 attribute 없이도 Y 값을 결정할 수 있고 이러한 FD 를 <code>{}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>Y</code> 처럼 표현 할 수 있다.</p>
 <h4 id="1-trivial-fd-non-trivial-fd">1. Trivial FD, Non-trivial FD<a class="headerlink" href="#1-trivial-fd-non-trivial-fd" title="Permanent link">¶</a></h4>
-<p>Y 가 X 의 subset 이라면 당연히 <code>X :material-arrow-right: Y</code> 가 성립하고 이런 FD 를 trivial FD 라 부른다.
+<p>Y 가 X 의 subset 이라면 당연히 <code>X</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>Y</code> 가 성립하고 이런 FD 를 trivial FD 라 부른다.
 그렇지 않은 FD 는 non-trivial FD 라 부른다.</p>
 <h3 id="2-partial-fd-full-fd">2. Partial FD, Full FD<a class="headerlink" href="#2-partial-fd-full-fd" title="Permanent link">¶</a></h3>
 <p>X 의 proper subset 으로도 FD 가 성립하면 partial FD 라 부르고 그렇지 않다면 full FD 라 부른다.</p>
