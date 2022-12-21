@@ -85,6 +85,8 @@ nav:
   - 블로그 팁:
       - 들어가기: bloggingtips/getting-started.md
   - 분야 별 학습:
+      - 자바:
+          -  NIO: study/java/nio.md
       - 아키텍처:
           -  MSA 장단점: study/architecture/msa-pros-cons.md
       - 데이터베이스:
