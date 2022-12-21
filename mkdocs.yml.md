@@ -94,7 +94,7 @@ nav:
           -  SQL join: study/database/sql-join.md
           -  데이터베이스 락: study/database/db-lock.md
           -  데이터베이스 인덱스: study/database/db-index.md
-          -  데이터베이스 이상현상: study/database/db-anomaly.md
+          -  데이터베이스 이상현상: study/database/db-anomaly.md
           -  데이터베이스 FD: study/database/db-functional-dependency.md
           -  데이터베이스 정규화: study/database/db-normalization.md
           -  OLAP: study/database/handle-olap.md
