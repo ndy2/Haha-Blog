@@ -42,7 +42,7 @@ A page with an image
 ```
 
 ### 3. HTTP/1.1
-- keep-alive 스펙 - Connection 을 재사용하는 기능이 추가되었습니다. (keep-alive)
+- Persistent Connection 스펙 - Connection 을 재사용하는 기능이 추가되었습니다. (keep-alive)
 - pipelining 스펙 - 첫 번째 요청에 대한 응답이 완전히 전송되기 이전에 두번째 요청 전송을 가능케 하여, 커뮤니케이션 (네트워크) 레이턴시를 낮췄습니다.
 - ETag, Last-Modified 등 - 추가적인 캐시 제어 메커니즘이 도입되었습니다.
 - 현재 (2022) 가장 널리 활용되는 HTTP 버전입니다.
@@ -62,6 +62,6 @@ A page with an image
 - 구글이 UDP 를 기반으로 만든 새로운 전송계층 프로토콜인 QUIC 를 기반으로 동작합니다.
 - SSL 을 기본으로 지원합니다.
 - 전송 계층에서의 HOL 문제를 해결하였습니다.
-	- QUIC 은 스트림을 전송계층에서 일급시민 (First-class citizen) 으로 도입하여  
+	- QUIC 은 스트림을 전송계층에서 일급시민 (First-class citizen) 으로 도입하여!  
 - 클라이언트의 IP 가 변경되는 경우 빠르게 대처 할 수 있도록 고안되었습니다.
-- 
+	- Connection UUID 라는 개념을 도입하여!
