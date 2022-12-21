@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/" rel="canonical"/>
+<link href="https://ndy2.github.io/Haha-Blog/study/database/db-anomaly/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>웹 애플리케이션 설정 메커니즘 - Haha 블로그</title>
+<title>데이터베이스 이상현상 - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#1-enablewebmvc-webmvcconfigurationsupport">
+<a class="md-skip" href="#1-anomalies">
           Skip to content
         </a>
 </div>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              웹 애플리케이션 설정 메커니즘
+              데이터베이스 이상현상
             
           </span>
 </div>
@@ -155,8 +155,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
@@ -180,15 +180,15 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/architecture/msa-pros-cons/">
+<a class="md-nav__link" href="../../architecture/msa-pros-cons/">
         MSA 장단점
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_2">
           데이터베이스
           <span class="md-nav__icon md-icon"></span>
@@ -200,52 +200,99 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/database-basic-terminologies/">
+<a class="md-nav__link" href="../database-basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/relational-database/">
+<a class="md-nav__link" href="../relational-database/">
         관계형 데이터베이스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/sql-join/">
+<a class="md-nav__link" href="../sql-join/">
         SQL join
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-lock/">
+<a class="md-nav__link" href="../db-lock/">
         데이터베이스 락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-index/">
+<a class="md-nav__link" href="../db-index/">
         데이터베이스 인덱스
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-anomaly/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          데이터베이스 이상현상
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         데이터베이스 이상현상
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-anomalies">
+    1. 이상현상 (Anomalies)
+  </a>
+<nav aria-label="1. 이상현상 (Anomalies)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-insertion-anomaly">
+    1. Insertion Anomaly
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-functional-dependency/">
+<a class="md-nav__link" href="#2-deletion-anomaly">
+    2. Deletion Anomaly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#update-anomaly">
+    Update Anomaly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-spurious-tuple">
+    2. Spurious Tuple
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-null">
+    3. null 값이 많아짐으로 인한 문제
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../db-functional-dependency/">
         데이터베이스 FD
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-normalization/">
+<a class="md-nav__link" href="../db-normalization/">
         데이터베이스 정규화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/handle-olap/">
+<a class="md-nav__link" href="../handle-olap/">
         OLAP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/clustering-replication-sharding/">
+<a class="md-nav__link" href="../clustering-replication-sharding/">
         클러스터링, 리플리케이션, 샤딩
       </a>
 </li>
@@ -255,8 +302,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4">
           기술 서적 정리/리뷰
           <span class="md-nav__icon md-icon"></span>
@@ -268,17 +315,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../">
+<a class="md-nav__link" href="../../../books/">
         책!
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../clean-agile/clean-agile/">
+<a class="md-nav__link" href="../../../books/clean-agile/clean-agile/">
         클린 애자일
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3">
           스프링 부트로 개발하는 MSA 컴포넌트
           <span class="md-nav__icon md-icon"></span>
@@ -290,22 +337,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/">
         리뷰
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch01-msa/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch01-msa/">
         1장 마이크로서비스 아키텍처
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch02-framework-and-springboot/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch02-framework-and-springboot/">
         2장 프레임워크와 스프링부트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch03-springboot-basic/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch03-springboot-basic/">
         3장 스프링 애플리케이션 기본
       </a>
 </li>
@@ -322,17 +369,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch04-spring-web-mvc-basic/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-spring-web-mvc-basic/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch04-sec01-http/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-sec01-http/">
         파트 1 HTTP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch04-sec02-servlet-and-mvc/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
         파트 2 서블릿과 MVC
       </a>
 </li>
@@ -340,12 +387,12 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch05-spring-web-mvc-with-restapi/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
         5장 스프링 MVC를 이용한 REST-API 개발
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_7" id="__nav_4_3_7" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_7" id="__nav_4_3_7" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3_7">
           6장 웹 애플리케이션 서버 구축하기
           <span class="md-nav__icon md-icon"></span>
@@ -357,74 +404,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-build-web-application-server/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-build-web-application-server/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
         EnableXXX의 동작과 빈 설정 모듈화
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          웹 애플리케이션 설정 메커니즘
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
         웹 애플리케이션 설정 메커니즘
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-enablewebmvc-webmvcconfigurationsupport">
-    1. @EnableWebMvc 와 WebMvcConfigurationSupport
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-webmvcconfigurer">
-    2. WebMvcConfigurer
-  </a>
-<nav aria-label="2. WebMvcConfigurer" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#configurepathmatch">
-    configurePathMatch()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addinterceptors">
-    addInterceptors()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addcorsmapping">
-    addCorsMapping()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addformatter">
-    addFormatter()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addargumentresolver">
-    addArgumentResolver()
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-sec03-dispatcher-servlet/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
         DispatcherServlet
       </a>
 </li>
@@ -444,17 +439,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch07-spring-aop-and-test-and-autoconfiguration/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch07-sec01-spring-aop/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-sec01-spring-aop/">
         스프링 AOP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch07-sec03-autoconfiguration/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-sec03-autoconfiguration/">
         스프링 부트 자동 설정
       </a>
 </li>
@@ -474,27 +469,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-data-persistence/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-data-persistence/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec01-jpa-pros-and-cons/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
         JPA 장점과 단점
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec08-entitymanager-and-persistence-context/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
         엔티티 매니저와 영속성 컨텍스트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec07-warning-on-%40Transactional/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
         Transactional을 사용할 때 주의 사항
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec11-osiv/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec11-osiv/">
         OSIV
       </a>
 </li>
@@ -514,17 +509,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch09-application-integration-restapi/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-application-integration-restapi/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch09-sec01-resttemplate/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-sec01-resttemplate/">
         RestTemplate 클래스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch09-sec02-webclient/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-sec02-webclient/">
         WebClient 클래스
       </a>
 </li>
@@ -544,17 +539,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch10-sec01-redis-introduction/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec01-redis-introduction/">
         레디스 소개
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch10-sec01-redis-high-availability/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec01-redis-high-availability/">
         레디스 HA
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch10-sec04-redis-serializer">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec04-redis-serializer">
         레디스 직렬화 설정
       </a>
 </li>
@@ -637,43 +632,38 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-enablewebmvc-webmvcconfigurationsupport">
-    1. @EnableWebMvc 와 WebMvcConfigurationSupport
+<a class="md-nav__link" href="#1-anomalies">
+    1. 이상현상 (Anomalies)
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-webmvcconfigurer">
-    2. WebMvcConfigurer
-  </a>
-<nav aria-label="2. WebMvcConfigurer" class="md-nav">
+<nav aria-label="1. 이상현상 (Anomalies)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#configurepathmatch">
-    configurePathMatch()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addinterceptors">
-    addInterceptors()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addcorsmapping">
-    addCorsMapping()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addformatter">
-    addFormatter()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addargumentresolver">
-    addArgumentResolver()
+<a class="md-nav__link" href="#1-insertion-anomaly">
+    1. Insertion Anomaly
   </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-deletion-anomaly">
+    2. Deletion Anomaly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#update-anomaly">
+    Update Anomaly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-spurious-tuple">
+    2. Spurious Tuple
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-null">
+    3. null 값이 많아짐으로 인한 문제
+  </a>
 </li>
 </ul>
 </nav>
@@ -682,75 +672,60 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/database/db-anomaly.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>웹 애플리케이션 설정 메커니즘</h1>
-<p>앞서 <code>@EnableXXX</code> 애너테이션의 일반적인 활용 방식을 비롯해서 다양한 설정 클래스 활용방식을 살펴보았습니다. 이를 바탕으로 <code>@EnableWebMvc</code> 가 어떻게 동작하는지 구체적으로 살펴보겠습니다.</p>
-<h3 id="1-enablewebmvc-webmvcconfigurationsupport">1. @EnableWebMvc 와 WebMvcConfigurationSupport<a class="headerlink" href="#1-enablewebmvc-webmvcconfigurationsupport" title="Permanent link">¶</a></h3>
-<div class="highlight"><span class="filename">@EnableWebMvc 애너테이션과 DelegatingWebMvcConfiguration 클래스</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nd">@Import</span><span class="p">(</span><span class="n">DelegatingWebMvcConfiguration</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"> </span><span class="c1">// (1)</span><span class="w"></span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="nd">@interface</span><span class="w"> </span><span class="n">EnableWebMvc</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DelegatingWebMvcConfiguration</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">WebMvcConfigurationSupport</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (2)</span><span class="w"></span>
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">webMvcConfiguerComposite</span><span class="w"> </span><span class="n">configurers</span><span class="w"> </span>
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebMvcConfigurerComposite</span><span class="p">;</span><span class="w"> </span><span class="c1">// (3)</span><span class="w"></span>
-<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="c1">//  생략</span><span class="w"></span>
-<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<ol>
-<li><code>WebMvcConfigurerComposite</code> 는 <code>List&lt;WebMvcConfigurer&gt;</code> 를 가지는 Wrapper 클래스이다. </li>
-<li><code>WebMvcConfigurationSupport</code> 는 <code>DispatcherServlet</code> 과 같이 동작하는 여러 컴포넌트를 생성하고 설정한다.</li>
-</ol>
-<p><code>WebMvcConfigurationSupport</code> 가 설정하는 컴포넌트는 다음과 같다.
-- <code>RequestMappingHandlerMapping</code> 
-- <code>RequestMappingHandlerAdapter</code>
-- <code>HttpMessageConverter</code>
-- <code>HandlerExceptionResolver</code> 
-- ...</p>
-<p>사용자가 <code>WebMvcConfigurer</code> 를 상속한 클래스를 하나 커스텀 하게 빈으로 등록하면 그 클래스는 <code>WebMvcConfigurerComposite</code> 가 가지는 <code>List&lt;WebMvcConfigurer&gt;</code> 에 포함되어 <code>WebMvcConfigurationSupport</code> 에 의해 그 콜백이 호출되며 설정이 이루어 지게 된다.</p>
-<h3 id="2-webmvcconfigurer">2. <code>WebMvcConfigurer</code><a class="headerlink" href="#2-webmvcconfigurer" title="Permanent link">¶</a></h3>
-<p>그럼 이제 <code>WebMvcConfigurationSupport</code> 가 호출하는 콜백. 즉, 개발자가 재정의 수 있는 <code>WebMvcConfigurer</code> 의 확장포인트 중에 자주 쓸만한 것에 대해서 요약해보겠습니다.</p>
-<h4 id="configurepathmatch"><code>configurePathMatch()</code><a class="headerlink" href="#configurepathmatch" title="Permanent link">¶</a></h4>
+<h1>데이터베이스 이상현상</h1>
+<p>@참고 자료)</p>
 <ul>
-<li>디스패처서블릿이 요청 정보에서 Path 매칭을 하는 방식을 설정합니다.</li>
-<li>전체 컨트롤러에 일괄적으로 prefix 를 설정하는 기능을 제공합니다. 이를 통해 <code>"/api/v1"</code> 과 같은 prefix 를 일괄적으로 제공할 수 있습니다.</li>
+<li>쉬운코드<ul>
+<li>DB 테이블 설계 잘못하면 어떤 문제가 생길 수 있을까요?</li>
+<li>DB에서 functional dependency(FD : 함수 종속)을 설명합니다! 고고씽!!</li>
 </ul>
-<h4 id="addinterceptors"><code>addInterceptors()</code><a class="headerlink" href="#addinterceptors" title="Permanent link">¶</a></h4>
-<p>인터셉터는 사용자의 요청과 응답을 처리하는 과정에서 추가적인 작업을 할 수 있는 스프링 웹 MVC 의 기능입니다.</p>
-<h4 id="addcorsmapping"><code>addCorsMapping()</code><a class="headerlink" href="#addcorsmapping" title="Permanent link">¶</a></h4>
-<p>cors 의 의미와 preflight 과정을 포함한 cors 정책의 흐름에 대한부분은 생략하겠습니다.</p>
-<div class="highlight"><span class="filename">addCorsMapping()</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nd">@Override</span><span class="w"></span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addCorsMappings</span><span class="p">(</span><span class="n">CorsRegistry</span><span class="w"> </span><span class="n">registry</span><span class="p">){</span><span class="w"></span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">registry</span><span class="p">.</span><span class="na">addMapping</span><span class="p">(</span><span class="s">"/**"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (1)</span><span class="w"></span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">            </span><span class="p">.</span><span class="na">allowedOrigins</span><span class="p">(</span><span class="s">"www.springtour.io"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (2)</span><span class="w"></span>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">            </span><span class="p">.</span><span class="na">allowedMethods</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span><span class="w"> </span><span class="s">"POST"</span><span class="p">,</span><span class="w"> </span><span class="s">"PUT"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (3)</span><span class="w"></span>
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">            </span><span class="p">.</span><span class="na">allowedHeaders</span><span class="p">(</span><span class="s">"*"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (4)</span><span class="w"></span>
-<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">            </span><span class="p">.</span><span class="na">maxAge</span><span class="p">(</span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mo">06</span><span class="p">);</span><span class="w"> </span><span class="c1">// (5)</span><span class="w"></span>
-<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<ol>
-<li>모든 리소스에 대해 CORS 를 적용한다.</li>
-<li>허용하는 출처는 www.springtour.io 이다.</li>
-<li>허용하는 메서드는 GET, POST, PUT 이다.</li>
-<li>허용하는 헤더는 전부 <code>(*)</code> 이다.</li>
-<li>CORS 정책의 유효시간은 하루 이다.</li>
-</ol>
-<h4 id="addformatter"><code>addFormatter()</code><a class="headerlink" href="#addformatter" title="Permanent link">¶</a></h4>
-<p>핸들러 메서드의 <code>@PathVariable</code> 나 <code>@RequestParam</code> 파라미터을 원하는 객체타입으로 받기 위해 확장할 수 있습니다.
-보통 <code>Converter</code> 타입과 <code>Formmater</code> 타입 두가지를 활용하는데 차이점은 다국어 기능 처리 여부입니다.</p>
-<h4 id="addargumentresolver"><code>addArgumentResolver()</code><a class="headerlink" href="#addargumentresolver" title="Permanent link">¶</a></h4>
-<p>ArgumentResolver 는 Formatter 보다 훨씬 강력한 기능을 제공합니다. 대상 데이터를 지정하지않고 사용자가 요청한 HTTP 메시지에서 필요한 모든 정보를 조회해 객체로 반환할 수 있습니다.</p>
+</li>
+</ul>
+<h3 id="1-anomalies">1. 이상현상 (Anomalies)<a class="headerlink" href="#1-anomalies" title="Permanent link">¶</a></h3>
+<h4 id="1-insertion-anomaly">1. Insertion Anomaly<a class="headerlink" href="#1-insertion-anomaly" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/insertion-anomaly.png"><img alt="insertion-anomaly.png" src="../images/insertion-anomaly.png"/></a></p>
+<p><strong>문제점</strong>
+- 저장 공간 낭비
+- 실수로 인한 데이터 불일치 가능성 존재
+- null 값을 많이 쓰게 됨</p>
+<p><strong>발생 이유</strong>
+- 별개의 관심사가 한 테이블에 있음 - <code>EMPLOYEE</code>, <code>DEPARTMENT</code></p>
+<h3 id="2-deletion-anomaly">2. Deletion Anomaly<a class="headerlink" href="#2-deletion-anomaly" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/deletion-anomaly.png"><img alt="deletion-anomaly.png" src="../images/deletion-anomaly.png"/></a>
+<strong>문제점</strong>
+- QA 부서 최후의 1인인 YUJIN 을 삭제하려면?
+- QA 문서 자체가 사라진다, 자연스럽지도 않다.</p>
+<p><strong>발생이유</strong> 
+- 별개의 관심사가 한 테이블에 있음 - <code>EMPLOYEE</code>, <code>DEPARTMENT</code></p>
+<h3 id="update-anomaly">Update Anomaly<a class="headerlink" href="#update-anomaly" title="Permanent link">¶</a></h3>
+<p>개발팀의 부서이름이 DEV -&gt; DEV1 로 업데이트 된다면?</p>
+<p><strong>문제점</strong>
+- 일부만 업데이트 되어 데이터의 불일치가 발생 할 수 있다.</p>
+<p><strong>발생이유</strong> 
+- 별개의 관심사가 한 테이블에 있음 - <code>EMPLOYEE</code>, <code>DEPARTMENT</code></p>
+<h3 id="2-spurious-tuple">2. Spurious Tuple<a class="headerlink" href="#2-spurious-tuple" title="Permanent link">¶</a></h3>
+<ul>
+<li>두 테이블의 Join 을 잘못 된 방식으로 해서 발생한 이상한 튜플
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/spurious-tuple.png"><img alt="spurious-tuple.png" src="../images/spurious-tuple.png"/></a></li>
+</ul>
+<h3 id="3-null">3. null 값이 많아짐으로 인한 문제<a class="headerlink" href="#3-null" title="Permanent link">¶</a></h3>
+<ul>
+<li>null 값이 있는 column 으로 join 하는 경우 상황에 따라 예상과 다른 결과 발생</li>
+<li>null 값이 있는 column 에 aggregate function 을 사용할 때 주의 필요</li>
+<li>불필요한 storage 낭비</li>
+</ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
 </small>
 </div>
 </article>
@@ -759,7 +734,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: EnableXXX의 동작과 빈 설정 모듈화" class="md-footer__link md-footer__link--prev" href="../ch06-sec00-%40EnableXXX-and-bean-modulerlize/" rel="prev">
+<a aria-label="Previous: 데이터베이스 인덱스" class="md-footer__link md-footer__link--prev" href="../db-index/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -768,17 +743,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              EnableXXX의 동작과 빈 설정 모듈화
+              데이터베이스 인덱스
             </div>
 </div>
 </a>
-<a aria-label="Next: DispatcherServlet" class="md-footer__link md-footer__link--next" href="../ch06-sec03-dispatcher-servlet/" rel="next">
+<a aria-label="Next: 데이터베이스 FD" class="md-footer__link md-footer__link--next" href="../db-functional-dependency/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              DispatcherServlet
+              데이터베이스 FD
             </div>
 </div>
 <div class="md-footer__button md-icon">

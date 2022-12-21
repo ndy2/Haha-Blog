@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/study/database/db-pre-normalization/" rel="canonical"/>
+<link href="https://ndy2.github.io/Haha-Blog/study/database/db-functional-dependency/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Db pre normalization - Haha 블로그</title>
+<title>데이터베이스 FD - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#1-anomalies">
+<a class="md-skip" href="#1-functional-dependency">
           Skip to content
         </a>
 </div>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Db pre normalization
+              데이터베이스 FD
             
           </span>
 </div>
@@ -155,8 +155,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
@@ -187,8 +187,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_2">
           데이터베이스
           <span class="md-nav__icon md-icon"></span>
@@ -211,7 +211,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../sql-join/">
-        SQLjoin
+        SQL join
       </a>
 </li>
 <li class="md-nav__item">
@@ -223,6 +223,68 @@
 <a class="md-nav__link" href="../db-index/">
         데이터베이스 인덱스
       </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../db-anomaly/">
+        데이터베이스 이상현상
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          데이터베이스 FD
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        데이터베이스 FD
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-functional-dependency">
+    1. Functional Dependency 란?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-fd">
+    2. FD 주의 사항
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-fd">
+    3. FD 예시
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-fd">
+    4.  FD 의 종류
+  </a>
+<nav aria-label="4.  FD 의 종류" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#0-material-arrow-righty">
+    0. {} :material-arrow-right:Y
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-trivial-fd-non-trivial-fd">
+    1. Trivial FD, Non-trivial FD
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-partial-fd-full-fd">
+    2. Partial FD, Full FD
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../db-normalization/">
@@ -575,37 +637,42 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-anomalies">
-    1. 이상현상 (Anomalies)
+<a class="md-nav__link" href="#1-functional-dependency">
+    1. Functional Dependency 란?
   </a>
-<nav aria-label="1. 이상현상 (Anomalies)" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-fd">
+    2. FD 주의 사항
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-fd">
+    3. FD 예시
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-fd">
+    4.  FD 의 종류
+  </a>
+<nav aria-label="4.  FD 의 종류" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-insertion-anomaly">
-    1. Insertion Anomaly
+<a class="md-nav__link" href="#0-material-arrow-righty">
+    0. {} :material-arrow-right:Y
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-trivial-fd-non-trivial-fd">
+    1. Trivial FD, Non-trivial FD
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-deletion-anomaly">
-    2. Deletion Anomaly
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#update-anomaly">
-    Update Anomaly
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-spurious-tuple">
-    2. Spurious Tuple
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-null">
-    3. null 값이 많아짐으로 인한 문제
+<a class="md-nav__link" href="#2-partial-fd-full-fd">
+    2. Partial FD, Full FD
   </a>
 </li>
 </ul>
@@ -615,60 +682,57 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/database/db-pre-normalization.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/database/db-functional-dependency.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Db pre normalization</h1>
-<p>@참고 자료)</p>
+<h1>데이터베이스 FD</h1>
+<p>@ 참고 자료)
+- 쉬운코드 - <a href="https://youtu.be/fw8hvolebLw">DB에서 functional dependency(FD : 함수 종속)을 설명합니다! 고고씽!!</a></p>
+<hr/>
+<h3 id="1-functional-dependency">1. Functional Dependency 란?<a class="headerlink" href="#1-functional-dependency" title="Permanent link">¶</a></h3>
 <ul>
-<li>쉬운코드<ul>
-<li>DB 테이블 설계 잘못하면 어떤 문제가 생길 수 있을까요?</li>
-<li>DB에서 functional dependency(FD : 함수 종속)을 설명합니다! 고고씽!!</li>
+<li>한 테이블에 있는 두 개의 <code>attributes set</code> 사이의 <code>constraint</code></li>
+<li>집합 X 의 값에 따라 집합 Y 의 값이 유일하게 결정된때
+  'X 가 Y 를 함수적으로 결정한다. Y 가 X 에 함수적으로 의존한다' 라고 부르며 두 집합 사이의 이러한 제약 관계를 Functional Dependency (FD) 라고 부른다.</li>
 </ul>
-</li>
-</ul>
-<h3 id="1-anomalies">1. 이상현상 (Anomalies)<a class="headerlink" href="#1-anomalies" title="Permanent link">¶</a></h3>
-<h4 id="1-insertion-anomaly">1. Insertion Anomaly<a class="headerlink" href="#1-insertion-anomaly" title="Permanent link">¶</a></h4>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/insertion-anomaly.png"><img alt="insertion-anomaly.png" src="../images/insertion-anomaly.png"/></a></p>
-<p><strong>문제점</strong>
-- 저장 공간 낭비
-- 실수로 인한 데이터 불일치 가능성 존재
-- null 값을 많이 쓰게 됨</p>
-<p><strong>발생 이유</strong>
-- 별개의 관심사가 한 테이블에 있음 - <code>EMPLOYEE</code>, <code>DEPARTMENT</code></p>
-<h3 id="2-deletion-anomaly">2. Deletion Anomaly<a class="headerlink" href="#2-deletion-anomaly" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/deletion-anomaly.png"><img alt="deletion-anomaly.png" src="../images/deletion-anomaly.png"/></a>
-<strong>문제점</strong>
-- QA 부서 최후의 1인인 YUJIN 을 삭제하려면?
-- QA 문서 자체가 사라진다, 자연스럽지도 않다.</p>
-<p><strong>발생이유</strong> 
-- 별개의 관심사가 한 테이블에 있음 - <code>EMPLOYEE</code>, <code>DEPARTMENT</code></p>
-<h3 id="update-anomaly">Update Anomaly<a class="headerlink" href="#update-anomaly" title="Permanent link">¶</a></h3>
-<p>개발팀의 부서이름이 DEV -&gt; DEV1 로 업데이트 된다면?</p>
-<p><strong>문제점</strong>
-- 일부만 업데이트 되어 데이터의 불일치가 발생 할 수 있다.</p>
-<p><strong>발생이유</strong> 
-- 별개의 관심사가 한 테이블에 있음 - <code>EMPLOYEE</code>, <code>DEPARTMENT</code></p>
-<h3 id="2-spurious-tuple">2. Spurious Tuple<a class="headerlink" href="#2-spurious-tuple" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/fd.excalidraw.png"><img alt="fd.excalidraw.png" src="../excalidraws/fd.excalidraw.png"/></a></p>
+<p><code>X = {empl_id}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>Y = {empl_name, birt_date, position, salary}</code></p>
+<p>empl_id 값에 따라 나머지 모든 필드의 값은 의미적으로 unique 하게 결정된다.</p>
+<h3 id="2-fd">2. FD 주의 사항<a class="headerlink" href="#2-fd" title="Permanent link">¶</a></h3>
 <ul>
-<li>두 테이블의 Join 을 잘못 된 방식으로 해서 발생한 이상한 튜플
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/spurious-tuple.png"><img alt="spurious-tuple.png" src="../images/spurious-tuple.png"/></a></li>
+<li>테이블의 특정 순간, 상태가 아니라 <strong>의미적으로 파악</strong>해야 한다.</li>
+<li>player
+| <ins>id</ins> | name  | team_id | backnumber |
+| ------ | ----- | ------- | ---------- |
+| 1      | messi | 2       | 10         |
+| 2      | sonny | 105     | 7          |
+| 3       | ronaldo  | null   | null  |</li>
 </ul>
-<h3 id="3-null">3. null 값이 많아짐으로 인한 문제<a class="headerlink" href="#3-null" title="Permanent link">¶</a></h3>
+<p><code>{name} :material-arrow-right: {team_id}</code> 처럼 보이지만 id 3번과 동명이인인 브라질의 Ronaldo 선수는 team_id 값이 있을 수 있다!</p>
+<h3 id="3-fd">3. FD 예시<a class="headerlink" href="#3-fd" title="Permanent link">¶</a></h3>
 <ul>
-<li>null 값이 있는 column 으로 join 하는 경우 상황에 따라 예상과 다른 결과 발생</li>
-<li>null 값이 있는 column 에 aggregate function 을 사용할 때 주의 필요</li>
-<li>불필요한 storage 낭비</li>
+<li>`{std_id} <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span>  {stu_name, birth_date, addr}</li>
+<li><code>{class_id} :material-arrow-right: {class_name, year, semester, credit}</code></li>
+<li><code>{stu_id, class_id} :material-arrow-right:  {grde}</code></li>
+<li>`{bank_name, bank_account} <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span>  {balance, open_date}``</li>
 </ul>
+<h3 id="4-fd">4.  FD 의 종류<a class="headerlink" href="#4-fd" title="Permanent link">¶</a></h3>
+<h4 id="0-material-arrow-righty">0. <code>{} :material-arrow-right:Y</code><a class="headerlink" href="#0-material-arrow-righty" title="Permanent link">¶</a></h4>
+<p>항상 Y 의 값이 일정하다면 공집합 즉, 아무 attribute 없이도 Y 값을 결정할 수 있고 이러한 FD 를 <code>{} :material-arrow-right: Y</code> 처럼 표현 할 수 있다.</p>
+<h4 id="1-trivial-fd-non-trivial-fd">1. Trivial FD, Non-trivial FD<a class="headerlink" href="#1-trivial-fd-non-trivial-fd" title="Permanent link">¶</a></h4>
+<p>Y 가 X 의 subset 이라면 당연히 <code>X :material-arrow-right: Y</code> 가 성립하고 이런 FD 를 trivial FD 라 부른다.
+그렇지 않은 FD 는 non-trivial FD 라 부른다.</p>
+<h3 id="2-partial-fd-full-fd">2. Partial FD, Full FD<a class="headerlink" href="#2-partial-fd-full-fd" title="Permanent link">¶</a></h3>
+<p>X 의 proper subset 으로도 FD 가 성립하면 partial FD 라 부르고 그렇지 않다면 full FD 라 부른다.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
 </small>
 </div>
 </article>
@@ -676,6 +740,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: 데이터베이스 이상현상" class="md-footer__link md-footer__link--prev" href="../db-anomaly/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              데이터베이스 이상현상
+            </div>
+</div>
+</a>
+<a aria-label="Next: 데이터베이스 정규화" class="md-footer__link md-footer__link--next" href="../db-normalization/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              데이터베이스 정규화
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
