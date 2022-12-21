@@ -276,6 +276,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/java/nio/</loc>
+         <lastmod>2022-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/network/http-versions/</loc>
+         <lastmod>2022-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/til/getting-started/</loc>
          <lastmod>2022-12-21</lastmod>
          <changefreq>daily</changefreq>
