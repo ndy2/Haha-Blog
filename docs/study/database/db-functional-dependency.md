@@ -24,24 +24,24 @@ empl_id 값에 따라 나머지 모든 필드의 값은 의미적으로 unique �
 | 2      | sonny | 105     | 7          |
 | 3       | ronaldo  | null   | null  |
 
-`{name} :material-arrow-right: {team_id}` 처럼 보이지만 id 3번과 동명이인인 브라질의 Ronaldo 선수는 team_id 값이 있을 수 있다!
+`{name}` :material-arrow-right: `{team_id}` 처럼 보이지만 id 3번과 동명이인인 브라질의 Ronaldo 선수는 team_id 값이 있을 수 있다!
 
 
 ### 3. FD 예시
 
-- `{std_id} :material-arrow-right:  {stu_name, birth_date, addr}
-- `{class_id} :material-arrow-right: {class_name, year, semester, credit}`
-- `{stu_id, class_id} :material-arrow-right:  {grde}`
-- `{bank_name, bank_account} :material-arrow-right:  {balance, open_date}``
+- `{std_id}` :material-arrow-right:  `{stu_name, birth_date, addr}`
+- `{class_id}` :material-arrow-right: `{class_name, year, semester, credit}`
+- `{stu_id, class_id}` :material-arrow-right:  `{grde}`
+- `{bank_name, bank_account}` :material-arrow-right: `{balance, open_date}`
 
 
 ### 4.  FD 의 종류
 
-#### 0. `{} :material-arrow-right:Y`
-항상 Y 의 값이 일정하다면 공집합 즉, 아무 attribute 없이도 Y 값을 결정할 수 있고 이러한 FD 를 `{} :material-arrow-right: Y` 처럼 표현 할 수 있다.
+#### 0. {} ->Y
+항상 Y 의 값이 일정하다면 공집합 즉, 아무 attribute 없이도 Y 값을 결정할 수 있고 이러한 FD 를 `{}` :material-arrow-right: `Y` 처럼 표현 할 수 있다.
 
 #### 1. Trivial FD, Non-trivial FD
-Y 가 X 의 subset 이라면 당연히 `X :material-arrow-right: Y` 가 성립하고 이런 FD 를 trivial FD 라 부른다.
+Y 가 X 의 subset 이라면 당연히 `X` :material-arrow-right: `Y` 가 성립하고 이런 FD 를 trivial FD 라 부른다.
 그렇지 않은 FD 는 non-trivial FD 라 부른다.
 
 ### 2. Partial FD, Full FD
