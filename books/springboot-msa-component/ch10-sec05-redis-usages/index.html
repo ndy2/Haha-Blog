@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/" rel="canonical"/>
+<link href="https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch10-sec05-redis-usages/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>웹 애플리케이션 설정 메커니즘 - Haha 블로그</title>
+<title>레디스의 다양한 활용 - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,9 +34,6 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#1-enablewebmvc-webmvcconfigurationsupport">
-          Skip to content
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -58,7 +55,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              웹 애플리케이션 설정 메커니즘
+              레디스의 다양한 활용
             
           </span>
 </div>
@@ -404,8 +401,8 @@
         5장 스프링 MVC를 이용한 REST-API 개발
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_7" id="__nav_4_3_7" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_7" id="__nav_4_3_7" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3_7">
           6장 웹 애플리케이션 서버 구축하기
           <span class="md-nav__icon md-icon"></span>
@@ -426,62 +423,10 @@
         EnableXXX의 동작과 빈 설정 모듈화
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          웹 애플리케이션 설정 메커니즘
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ch06-sec01-webapplication-configure-mechanism/">
         웹 애플리케이션 설정 메커니즘
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-enablewebmvc-webmvcconfigurationsupport">
-    1. @EnableWebMvc 와 WebMvcConfigurationSupport
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-webmvcconfigurer">
-    2. WebMvcConfigurer
-  </a>
-<nav aria-label="2. WebMvcConfigurer" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#configurepathmatch">
-    configurePathMatch()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addinterceptors">
-    addInterceptors()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addcorsmapping">
-    addCorsMapping()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addformatter">
-    addFormatter()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addargumentresolver">
-    addArgumentResolver()
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../ch06-sec03-dispatcher-servlet/">
@@ -591,8 +536,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_11" id="__nav_4_3_11" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_11" id="__nav_4_3_11" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3_11">
           10장 레디스와 스프링 캐시
           <span class="md-nav__icon md-icon"></span>
@@ -618,8 +563,9 @@
         레디스 직렬화 설정
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../ch10-sec05-redis-usages/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
         레디스의 다양한 활용
       </a>
 </li>
@@ -701,126 +647,33 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-enablewebmvc-webmvcconfigurationsupport">
-    1. @EnableWebMvc 와 WebMvcConfigurationSupport
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-webmvcconfigurer">
-    2. WebMvcConfigurer
-  </a>
-<nav aria-label="2. WebMvcConfigurer" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#configurepathmatch">
-    configurePathMatch()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addinterceptors">
-    addInterceptors()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addcorsmapping">
-    addCorsMapping()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addformatter">
-    addFormatter()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#addargumentresolver">
-    addArgumentResolver()
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/books/springboot-msa-component/ch10-sec05-redis-usages.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>웹 애플리케이션 설정 메커니즘</h1>
-<p>앞서 <code>@EnableXXX</code> 애너테이션의 일반적인 활용 방식을 비롯해서 다양한 설정 클래스 활용방식을 살펴보았습니다. 이를 바탕으로 <code>@EnableWebMvc</code> 가 어떻게 동작하는지 구체적으로 살펴보겠습니다.</p>
-<h3 id="1-enablewebmvc-webmvcconfigurationsupport">1. @EnableWebMvc 와 WebMvcConfigurationSupport<a class="headerlink" href="#1-enablewebmvc-webmvcconfigurationsupport" title="Permanent link">¶</a></h3>
-<div class="highlight"><span class="filename">@EnableWebMvc 애너테이션과 DelegatingWebMvcConfiguration 클래스</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nd">@Import</span><span class="p">(</span><span class="n">DelegatingWebMvcConfiguration</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"> </span><span class="c1">// (1)</span><span class="w"></span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="nd">@interface</span><span class="w"> </span><span class="n">EnableWebMvc</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DelegatingWebMvcConfiguration</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">WebMvcConfigurationSupport</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (2)</span><span class="w"></span>
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">webMvcConfiguerComposite</span><span class="w"> </span><span class="n">configurers</span><span class="w"> </span>
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebMvcConfigurerComposite</span><span class="p">;</span><span class="w"> </span><span class="c1">// (3)</span><span class="w"></span>
-<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="c1">//  생략</span><span class="w"></span>
-<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">}</span><span class="w"></span>
-</code></pre></div>
+<h1>레디스의 다양한 활용</h1>
+<p>Redis 를 단순 메모리 저장소가 아니라 다양한 방식으로 활용하는 예제를 보여준다.</p>
 <ol>
-<li><code>WebMvcConfigurerComposite</code> 는 <code>List&lt;WebMvcConfigurer&gt;</code> 를 가지는 Wrapper 클래스이다. </li>
-<li><code>WebMvcConfigurationSupport</code> 는 <code>DispatcherServlet</code> 과 같이 동작하는 여러 컴포넌트를 생성하고 설정한다.</li>
+<li>캐시</li>
+<li>분산 락</li>
+<li>Sorting (순위, 경매)</li>
+<li>Pub-Sub</li>
 </ol>
-<p><code>WebMvcConfigurationSupport</code> 가 설정하는 컴포넌트는 다음과 같다.
-- <code>RequestMappingHandlerMapping</code> 
-- <code>RequestMappingHandlerAdapter</code>
-- <code>HttpMessageConverter</code>
-- <code>HandlerExceptionResolver</code> 
-- ...</p>
-<p>사용자가 <code>WebMvcConfigurer</code> 를 상속한 클래스를 하나 커스텀 하게 빈으로 등록하면 그 클래스는 <code>WebMvcConfigurerComposite</code> 가 가지는 <code>List&lt;WebMvcConfigurer&gt;</code> 에 포함되어 <code>WebMvcConfigurationSupport</code> 에 의해 그 콜백이 호출되며 설정이 이루어 지게 된다.</p>
-<h3 id="2-webmvcconfigurer">2. <code>WebMvcConfigurer</code><a class="headerlink" href="#2-webmvcconfigurer" title="Permanent link">¶</a></h3>
-<p>그럼 이제 <code>WebMvcConfigurationSupport</code> 가 호출하는 콜백. 즉, 개발자가 재정의 수 있는 <code>WebMvcConfigurer</code> 의 확장포인트 중에 자주 쓸만한 것에 대해서 요약해보겠습니다.</p>
-<h4 id="configurepathmatch"><code>configurePathMatch()</code><a class="headerlink" href="#configurepathmatch" title="Permanent link">¶</a></h4>
-<ul>
-<li>디스패처서블릿이 요청 정보에서 Path 매칭을 하는 방식을 설정합니다.</li>
-<li>전체 컨트롤러에 일괄적으로 prefix 를 설정하는 기능을 제공합니다. 이를 통해 <code>"/api/v1"</code> 과 같은 prefix 를 일괄적으로 제공할 수 있습니다.</li>
-</ul>
-<h4 id="addinterceptors"><code>addInterceptors()</code><a class="headerlink" href="#addinterceptors" title="Permanent link">¶</a></h4>
-<p>인터셉터는 사용자의 요청과 응답을 처리하는 과정에서 추가적인 작업을 할 수 있는 스프링 웹 MVC 의 기능입니다.</p>
-<h4 id="addcorsmapping"><code>addCorsMapping()</code><a class="headerlink" href="#addcorsmapping" title="Permanent link">¶</a></h4>
-<p>cors 의 의미와 preflight 과정을 포함한 cors 정책의 흐름에 대한부분은 생략하겠습니다.</p>
-<div class="highlight"><span class="filename">addCorsMapping()</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nd">@Override</span><span class="w"></span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addCorsMappings</span><span class="p">(</span><span class="n">CorsRegistry</span><span class="w"> </span><span class="n">registry</span><span class="p">){</span><span class="w"></span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">registry</span><span class="p">.</span><span class="na">addMapping</span><span class="p">(</span><span class="s">"/**"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (1)</span><span class="w"></span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">            </span><span class="p">.</span><span class="na">allowedOrigins</span><span class="p">(</span><span class="s">"www.springtour.io"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (2)</span><span class="w"></span>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">            </span><span class="p">.</span><span class="na">allowedMethods</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span><span class="w"> </span><span class="s">"POST"</span><span class="p">,</span><span class="w"> </span><span class="s">"PUT"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (3)</span><span class="w"></span>
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">            </span><span class="p">.</span><span class="na">allowedHeaders</span><span class="p">(</span><span class="s">"*"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (4)</span><span class="w"></span>
-<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">            </span><span class="p">.</span><span class="na">maxAge</span><span class="p">(</span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mo">06</span><span class="p">);</span><span class="w"> </span><span class="c1">// (5)</span><span class="w"></span>
-<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<ol>
-<li>모든 리소스에 대해 CORS 를 적용한다.</li>
-<li>허용하는 출처는 www.springtour.io 이다.</li>
-<li>허용하는 메서드는 GET, POST, PUT 이다.</li>
-<li>허용하는 헤더는 전부 <code>(*)</code> 이다.</li>
-<li>CORS 정책의 유효시간은 하루 이다.</li>
-</ol>
-<h4 id="addformatter"><code>addFormatter()</code><a class="headerlink" href="#addformatter" title="Permanent link">¶</a></h4>
-<p>핸들러 메서드의 <code>@PathVariable</code> 나 <code>@RequestParam</code> 파라미터을 원하는 객체타입으로 받기 위해 확장할 수 있습니다.
-보통 <code>Converter</code> 타입과 <code>Formmater</code> 타입 두가지를 활용하는데 차이점은 다국어 기능 처리 여부입니다.</p>
-<h4 id="addargumentresolver"><code>addArgumentResolver()</code><a class="headerlink" href="#addargumentresolver" title="Permanent link">¶</a></h4>
-<p>ArgumentResolver 는 Formatter 보다 훨씬 강력한 기능을 제공합니다. 대상 데이터를 지정하지않고 사용자가 요청한 HTTP 메시지에서 필요한 모든 정보를 조회해 객체로 반환할 수 있습니다.</p>
+<p>여기 <a href="https://github.com/gilbutITbook/080264/tree/main/spring-boot-example/chapter10/src/main/java/com/springtour/example/chapter10/adapter">깃헙 링크</a> 의 어댑터를 통해 구현을 확인해보자!</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 22, 2022</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 22, 2022</span>
 </small>
 </div>
 </article>
@@ -829,7 +682,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: EnableXXX의 동작과 빈 설정 모듈화" class="md-footer__link md-footer__link--prev" href="../ch06-sec00-%40EnableXXX-and-bean-modulerlize/" rel="prev">
+<a aria-label="Previous: 레디스 직렬화 설정" class="md-footer__link md-footer__link--prev" href="../ch10-sec04-redis-serializer/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -838,17 +691,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              EnableXXX의 동작과 빈 설정 모듈화
+              레디스 직렬화 설정
             </div>
 </div>
 </a>
-<a aria-label="Next: DispatcherServlet" class="md-footer__link md-footer__link--next" href="../ch06-sec03-dispatcher-servlet/" rel="next">
+<a aria-label="Next: 시작하기" class="md-footer__link md-footer__link--next" href="../../../til/getting-started/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              DispatcherServlet
+              시작하기
             </div>
 </div>
 <div class="md-footer__button md-icon">

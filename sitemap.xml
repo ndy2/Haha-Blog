@@ -156,6 +156,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch10-sec05-redis-usages/</loc>
+         <lastmod>2022-12-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/ReativeStack_NonBlocked.excalidraw/</loc>
          <lastmod>2022-12-22</lastmod>
          <changefreq>daily</changefreq>
