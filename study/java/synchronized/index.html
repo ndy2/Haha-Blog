@@ -10,7 +10,7 @@
 <link href="https://ndy2.github.io/Haha-Blog/study/java/synchronized/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Synchronized - Haha 블로그</title>
+<title>동시성 - synchrozied - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Synchronized
+              동시성 - synchrozied
             
           </span>
 </div>
@@ -155,8 +155,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
@@ -167,8 +167,8 @@
           분야 별 학습
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_1">
           자바
           <span class="md-nav__icon md-icon"></span>
@@ -183,6 +183,116 @@
 <a class="md-nav__link" href="../nio/">
         NIO
       </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          동시성 - synchrozied
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        동시성 - synchrozied
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-synchronized">
+    1. synchronized 키워드
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-synchronzied">
+    2. 그림으로 보는 synchronzied 키워드
+  </a>
+<nav aria-label="2. 그림으로 보는 synchronzied 키워드" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 같은 객체 공유
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 서로 다른 객체 활용
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-static-synchronzied">
+    3. Static 메서드와 synchronzied 키워드
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 복잡하게 모니터 객체를 활용하는 예제 코드
+  </a>
+<nav aria-label="3. 복잡하게 모니터 객체를 활용하는 예제 코드" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-static-instance-synchronized">
+    1. static, instance 메서드에 모두 synchronized 활용하기
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2_1">
+    2. 한 객체에서 여러 모니터 객체 활용하기
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-class-instance">
+    3. 서로다른 class instance 에서 모니터 객체를 공유하기
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 모니터 객체를 활용할때 주의 할 점
+  </a>
+<nav aria-label="4. 모니터 객체를 활용할때 주의 할 점" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-monitor-objects-cannot-be-null">
+    1. Monitor objects cannot be null
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-dont-use-string-constant-objects-as-monitor-objects">
+    2. Don't use String constant objects as monitor objects
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-java-synchronized-blocks-inside-java-lambda-expressions">
+    3. Java synchronized blocks inside Java Lambda Expressions
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-synchronized">
+    5. 자바 synchronized 블락의 한계
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-synchronized">
+    6. synchronized 블락과 성능 오버헤드
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7. 자바에서 모니터란?
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -287,6 +397,21 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../network/http-versions/">
         HTTP 버전별 특징
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../network/https/">
+        HTTPS
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../network/tcp-flow-control/">
+        tcp 흐름제어
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../network/tcp-congestion-control/">
+        tcp 혼잡제어
       </a>
 </li>
 </ul>
@@ -731,7 +856,7 @@
 <a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/java/synchronized.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Synchronized</h1>
+<h1>동시성 - synchrozied</h1>
 <p>@참고 자료)
 - Jakob Jenkov - https://www.youtube.com/watch?v=eKWjfZ-TUdo
 - oracle java tutorial - https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html
@@ -1002,6 +1127,34 @@ Thread 1과 Thread 2가 각자의 SynchronizedExchanger 객체를 가지는 경�
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: NIO" class="md-footer__link md-footer__link--prev" href="../nio/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              NIO
+            </div>
+</div>
+</a>
+<a aria-label="Next: MSA 장단점" class="md-footer__link md-footer__link--next" href="../../architecture/msa-pros-cons/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              MSA 장단점
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">

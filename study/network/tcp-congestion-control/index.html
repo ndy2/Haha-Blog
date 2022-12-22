@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch06-build-web-application-server/" rel="canonical"/>
+<link href="https://ndy2.github.io/Haha-Blog/study/network/tcp-congestion-control/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>들어가기 - Haha 블로그</title>
+<title>tcp 혼잡제어 - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,6 +34,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -55,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              들어가기
+              tcp 혼잡제어
             
           </span>
 </div>
@@ -152,8 +155,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
@@ -177,12 +180,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/java/nio/">
+<a class="md-nav__link" href="../../java/nio/">
         NIO
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/java/synchronized/">
+<a class="md-nav__link" href="../../java/synchronized/">
         동시성 - synchrozied
       </a>
 </li>
@@ -202,7 +205,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/architecture/msa-pros-cons/">
+<a class="md-nav__link" href="../../architecture/msa-pros-cons/">
         MSA 장단점
       </a>
 </li>
@@ -222,60 +225,60 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/database-basic-terminologies/">
+<a class="md-nav__link" href="../../database/database-basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/relational-database/">
+<a class="md-nav__link" href="../../database/relational-database/">
         관계형 데이터베이스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/sql-join/">
+<a class="md-nav__link" href="../../database/sql-join/">
         SQL join
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-lock/">
+<a class="md-nav__link" href="../../database/db-lock/">
         데이터베이스 락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-index/">
+<a class="md-nav__link" href="../../database/db-index/">
         데이터베이스 인덱스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-anomaly/">
+<a class="md-nav__link" href="../../database/db-anomaly/">
         데이터베이스 이상현상
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-functional-dependency/">
+<a class="md-nav__link" href="../../database/db-functional-dependency/">
         데이터베이스 FD
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-normalization/">
+<a class="md-nav__link" href="../../database/db-normalization/">
         데이터베이스 정규화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/handle-olap/">
+<a class="md-nav__link" href="../../database/handle-olap/">
         OLAP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/clustering-replication-sharding/">
+<a class="md-nav__link" href="../../database/clustering-replication-sharding/">
         클러스터링, 리플리케이션, 샤딩
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_4">
           네트워크
           <span class="md-nav__icon md-icon"></span>
@@ -287,24 +290,64 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/http-versions/">
+<a class="md-nav__link" href="../http-versions/">
         HTTP 버전별 특징
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/https/">
+<a class="md-nav__link" href="../https/">
         HTTPS
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/tcp-flow-control/">
+<a class="md-nav__link" href="../tcp-flow-control/">
         tcp 흐름제어
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/tcp-congestion-control/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          tcp 혼잡제어
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         tcp 혼잡제어
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    혼잡제어와 흐름제어
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    네트워크 혼잡을 인식하는 방식
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    혼잡 제어의 핵심!
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    혼잡 제어 방식
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tcp-taheo-reno">
+    TCP Taheo 와 Reno
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    추가로...
+  </a>
 </li>
 </ul>
 </nav>
@@ -312,8 +355,11 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4">
           기술 서적 정리/리뷰
           <span class="md-nav__icon md-icon"></span>
@@ -325,17 +371,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../">
+<a class="md-nav__link" href="../../../books/">
         책!
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../clean-agile/clean-agile/">
+<a class="md-nav__link" href="../../../books/clean-agile/clean-agile/">
         클린 애자일
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3">
           스프링 부트로 개발하는 MSA 컴포넌트
           <span class="md-nav__icon md-icon"></span>
@@ -347,22 +393,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/">
         리뷰
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch01-msa/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch01-msa/">
         1장 마이크로서비스 아키텍처
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch02-framework-and-springboot/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch02-framework-and-springboot/">
         2장 프레임워크와 스프링부트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch03-springboot-basic/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch03-springboot-basic/">
         3장 스프링 애플리케이션 기본
       </a>
 </li>
@@ -379,17 +425,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch04-spring-web-mvc-basic/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-spring-web-mvc-basic/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch04-sec01-http/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-sec01-http/">
         파트 1 HTTP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch04-sec02-servlet-and-mvc/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
         파트 2 서블릿과 MVC
       </a>
 </li>
@@ -397,12 +443,12 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch05-spring-web-mvc-with-restapi/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
         5장 스프링 MVC를 이용한 REST-API 개발
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_7" id="__nav_4_3_7" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_7" id="__nav_4_3_7" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3_7">
           6장 웹 애플리케이션 서버 구축하기
           <span class="md-nav__icon md-icon"></span>
@@ -413,24 +459,23 @@
           6장 웹 애플리케이션 서버 구축하기
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-build-web-application-server/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
         EnableXXX의 동작과 빈 설정 모듈화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-sec01-webapplication-configure-mechanism/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
         웹 애플리케이션 설정 메커니즘
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-sec03-dispatcher-servlet/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
         DispatcherServlet
       </a>
 </li>
@@ -450,17 +495,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch07-spring-aop-and-test-and-autoconfiguration/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch07-sec01-spring-aop/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-sec01-spring-aop/">
         스프링 AOP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch07-sec03-autoconfiguration/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-sec03-autoconfiguration/">
         스프링 부트 자동 설정
       </a>
 </li>
@@ -480,27 +525,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-data-persistence/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-data-persistence/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec01-jpa-pros-and-cons/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
         JPA 장점과 단점
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec08-entitymanager-and-persistence-context/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
         엔티티 매니저와 영속성 컨텍스트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec07-warning-on-%40Transactional/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
         Transactional을 사용할 때 주의 사항
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec11-osiv/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec11-osiv/">
         OSIV
       </a>
 </li>
@@ -520,17 +565,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch09-application-integration-restapi/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-application-integration-restapi/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch09-sec01-resttemplate/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-sec01-resttemplate/">
         RestTemplate 클래스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch09-sec02-webclient/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-sec02-webclient/">
         WebClient 클래스
       </a>
 </li>
@@ -550,17 +595,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch10-sec01-redis-introduction/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec01-redis-introduction/">
         레디스 소개
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch10-sec01-redis-high-availability/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec01-redis-high-availability/">
         레디스 HA
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch10-sec04-redis-serializer">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec04-redis-serializer">
         레디스 직렬화 설정
       </a>
 </li>
@@ -642,40 +687,138 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    혼잡제어와 흐름제어
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    네트워크 혼잡을 인식하는 방식
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    혼잡 제어의 핵심!
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    혼잡 제어 방식
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tcp-taheo-reno">
+    TCP Taheo 와 Reno
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    추가로...
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/books/springboot-msa-component/ch06-build-web-application-server.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/network/tcp-congestion-control.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>들어가기</h1>
-<p>이 장이 8장 데이터 영속성 다음으로 내용이 가장 많다.</p>
+<h1>tcp 혼잡제어</h1>
+<p>@참고 자료)</p>
 <ul>
-<li>여러 자동 설정과 그 설정을 커스터마이징 하는 방법</li>
-<li>DispatcherServlet 을 중심으로 한 여러 확장 포인트</li>
-<li>실제 서비스 운영에 필수적인 Profile 과 Logger 설정 </li>
-<li>애플리케이션을 패키징 하고 실행하는 방법</li>
+<li>한국기술교육대학교박승철교수 - https://youtu.be/R2dWNQTABcI</li>
+<li>문동욱(Evan Moon) - https://evan-moon.github.io/2019/11/26/tcp-congestion-control/</li>
 </ul>
-<p>등 무지무지하게 많은 분량을 포함하고 있다.
-특히 이장의 저 처럼 내용은 가볍게 여기다가 학습시 놓치기 쉬운것 같습니다. ㅜ.ㅜ</p>
-<p>분량 상 모든 내용을 정리하지는 못하고 가장 정리하고 싶은 아래의 내용만 정리하겠습니당</p>
+<p>TCP 의 주요한 특징은연결 지향 프로토콜 이면서 신뢰성있는 프로토콜 이라는 점입니다.</p>
+<ul>
+<li>TCP 의 연결지향은 3-way, 4-way handshake 로 달성됩니다.</li>
+<li>TCP 의 신뢰성은 많은 이유가 있지만 보통 흐름제어 (flow-control), 혼잡제어 (congestion-control) 를 통해 이루어진다고 이야기 됩니다.</li>
+</ul>
+<p>이중 혼잡 제어 (Congestion Control) 란 트래픽 증가로 인해 라우터/스위치 버퍼의 큐잉 지연시간 증가 및 오버플로 발생 상태를 막기위해 혼잡 윈도우 라는 개념을 통해 Sender 가 전송하는 segment의 양을 조절하는 것입니다.  이 문서에서는 바로이 혼잡 제어에 대해서 알아보겠습니다.</p>
+<hr/>
+<h3 id="_1">혼잡제어와 흐름제어<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>혼잡제어와 흐름제어는 다른 개념입니다!</li>
+<li>혼잡제어는 두 노드 간의 link - 라우터, 스위치 가 overflow 하는 것을 방지하는 것입니다.</li>
+<li>반면 흐름제어는 두 노드 (end-node), 특히 수신측 노드의 receiver 버퍼가 overflow 하는 것을 방지하는 것입니다.</li>
+</ul>
+<h3 id="_2">네트워크 혼잡을 인식하는 방식<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<ul>
+<li>심각한 혼잡 - Timeout 발생<ul>
+<li>전송한 segment 에 대해 지정한 timeout 시간 이내 ack 가 도착하지 않을 시 심각한 혼잡 상태라고 파악합니다.</li>
+</ul>
+</li>
+<li>경미한 혼잡 - 중복 ack 발생 (3 duplicated ACKs)<ul>
+<li>중복 ack 가 발생했다는 것은 송신한 데이터가 유실되어 수신측이 데이터 재 전송을 요청하고 있는 상황입니다.</li>
+<li>이때는 경미한 혼잡 상태라고 파악합니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="_3">혼잡 제어의 핵심!<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<ul>
+<li>세그먼트 전송률 (transmission rate) 를 축소 조정합니다.</li>
+<li>혼잡 윈도우 (cwnd) 라는 가상의 개념을 통해 너무많은 데이터가 한번에 전송되는것을 제어합니다.</li>
+<li>혼잡 제어를 위한 TCP 전송률 제어<ul>
+<li>마지막 송신 바이트 번호 - 마지막 수신 확인 바이트 번호 &lt;= min(수신 윈도우, 혼잡 윈도우)</li>
+<li>LastByteSent - LastByteAcked &lt;= min (rwnd, cwnd)</li>
+</ul>
+</li>
+<li><mark class="critic">혼잡 윈도우란 ack 를 수신하지 않고 보낼 수 있는 세그먼트의 양을 의미합니다.</mark></li>
+</ul>
+<h3 id="_4">혼잡 제어 방식<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<ul>
+<li>
 <ol>
-<li>@EnableXXX 애너테이션의 동작과 빈 설정 모듈화</li>
-<li>웹 애플리케이션 설정 메커니즘</li>
-<li>DispatcherServlet</li>
+<li>Slow Start</li>
+<li>ACK 수신시 cwnd 를 1 (MSS) 늘립니다.</li>
+<li>즉 RTT 마다 cwnd 를 두배씩 (지수적으로) 늘립니다.</li>
 </ol>
+</li>
+<li>
+<ol>
+<li>Congestion Avoidance</li>
+<li>계속해서 Slow Start 알고리즘을 적용하면 cwnd 가 계속 지수적으로 커지게 됩니다. </li>
+<li>이를 방지하기 위해 특정 임계치가 넘어가는 경우 RTT 마다 cwnd 를 1씩 늘릴 수 있도록 조정해줍니다.</li>
+<li>이때 ACK 수신시 cwnd 를 1/cwnd 만큼 늘리면 됩니다.</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Fast Recovery</li>
+<li>경미한 혼잡 상황에서 cwnd 를 다시 1로 drop 시키고 slow start 를 적용하는 것은 비합리적입니다.</li>
+<li>TCP 최신 버전인 TCP Reno 버전에서는 이를 Fast Recovery 방식으로 해결합니다.</li>
+<li>fast recovery 알고리즘은  3 Ack Duplicated 감지시 임계치를 반으로 줄인 후 RTT 마다 cwnd 를 1씩 늘릴 수 있도록 합니다. 혼잡이 해결되면 cwnd 를 다시 복구하고 Congestion Avoidance 를 시작합니다.</li>
+</ol>
+</li>
+</ul>
+<h3 id="tcp-taheo-reno">TCP Taheo 와 Reno<a class="headerlink" href="#tcp-taheo-reno" title="Permanent link">¶</a></h3>
+<ul>
+<li>TCP Taheo 는 Timeout 과 3 duplicated ACKs 발생시 모두 cwnd 를 1로 줄이고 Slow Start 를 시작합니다.</li>
+<li>TCP Reno 는 Timout 시에는 TCP Taheo 와 같이 동작하지만 3 duplicated ACKs 시에는 Fast Recovery 를 적용합니다.</li>
+</ul>
+<h3 id="_5">추가로...<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<ul>
+<li>맨 위 참고 자료에 있는 문동욱 님의 글에 따르면 TCP Taheo 와 Reno 모두 현재는 그리 잘 사용되는 방식은 아니라고 한다. </li>
+<li>최근에는 과거에 비해 네트워크 대역폭이 훨씬 여유가 있기 때문에 송신측이 혼잡 윈도우를 팍팍 늘려도 덜 문제가 된다고 한다. 최근의 혼잡제어 정책들은 얼마나 빠르고 똑똑하게 혼잡 윈도우의 크기를 조절하고 혼잡 감지를 하는가에 초점이 맞추어져 있다고 한다.</li>
+</ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 22, 2022</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 22, 2022</span>
 </small>
 </div>
 </article>
@@ -684,7 +827,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 5장 스프링 MVC를 이용한 REST-API 개발" class="md-footer__link md-footer__link--prev" href="../ch05-spring-web-mvc-with-restapi/" rel="prev">
+<a aria-label="Previous: tcp 흐름제어" class="md-footer__link md-footer__link--prev" href="../tcp-flow-control/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -693,17 +836,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              5장 스프링 MVC를 이용한 REST-API 개발
+              tcp 흐름제어
             </div>
 </div>
 </a>
-<a aria-label="Next: EnableXXX의 동작과 빈 설정 모듈화" class="md-footer__link md-footer__link--next" href="../ch06-sec00-%40EnableXXX-and-bean-modulerlize/" rel="next">
+<a aria-label="Next: 책!" class="md-footer__link md-footer__link--next" href="../../../books/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              EnableXXX의 동작과 빈 설정 모듈화
+              책!
             </div>
 </div>
 <div class="md-footer__button md-icon">
