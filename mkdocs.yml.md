@@ -142,7 +142,8 @@ nav:
           - 10장 레디스와 스프링 캐시:
               - 레디스 소개 : books/springboot-msa-component/ch10-sec01-redis-introduction.md
               - 레디스 HA : books/springboot-msa-component/ch10-sec01-redis-high-availability.md
-              - 레디스 직렬화 설정 : books/springboot-msa-component/ch10-sec04-redis-serializer
+              - 레디스 직렬화 설정 : books/springboot-msa-component/ch10-sec04-redis-serializer.md
+              - 레디스의 다양한 활용: books/springboot-msa-component/ch10-sec05-redis-usages.md
   - TIL:
       - 시작하기: til/getting-started.md
 ```
