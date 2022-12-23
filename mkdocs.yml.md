@@ -105,6 +105,8 @@ nav:
       - 네트워크:
           -  HTTP 버전별 특징: study/network/http-versions.md
           -  HTTPS: study/network/https.md
+          -  tcp 흐름제어: study/network/tcp-flow-control.md
+          -  tcp 혼잡제어: study/network/tcp-congestion-control.md
   - 기술 서적 정리/리뷰:
       - 책!: books/index.md
       - 클린 애자일: books/clean-agile/clean-agile.md
@@ -140,7 +142,8 @@ nav:
           - 10장 레디스와 스프링 캐시:
               - 레디스 소개 : books/springboot-msa-component/ch10-sec01-redis-introduction.md
               - 레디스 HA : books/springboot-msa-component/ch10-sec01-redis-high-availability.md
-              - 레디스 직렬화 설정 : books/springboot-msa-component/ch10-sec04-redis-serializer
+              - 레디스 직렬화 설정 : books/springboot-msa-component/ch10-sec04-redis-serializer.md
+              - 레디스의 다양한 활용: books/springboot-msa-component/ch10-sec05-redis-usages.md
   - TIL:
       - 시작하기: til/getting-started.md
 ```
