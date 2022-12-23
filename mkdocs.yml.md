@@ -87,7 +87,8 @@ nav:
       - 들어가기: bloggingtips/getting-started.md
   - 분야 별 학습:
       - 자바:
-          -  NIO: study/java/nio.md
+          -  String: study/java/string.md
+		  -  NIO: study/java/nio.md
           -  동시성 - synchrozied: study/java/synchronized.md
       - 아키텍처:
           -  MSA 장단점: study/architecture/msa-pros-cons.md
