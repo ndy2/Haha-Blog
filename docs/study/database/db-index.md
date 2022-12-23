@@ -71,6 +71,8 @@ SELECT * FROM plyaer FORCE INDEX (player_name_idx);            ## 더 강하게 
 - 인덱스가 의도한 대로 동작하는지 쿼리를 확인할 필요가 있다.
 - 인덱스를 적용할 때는 cardinarlity 를 고려하자.
 - 데이터가 몇 백만건 이상 있는 테이블에 인덱스를 추가할 때는 시간이 많이 소요된다.
+- 대량의 데이터를 조회하는 쿼리 같은 경우 인덱스가 아니라 Full Table Scan 이 빠를 수 있다.
+	- 참고 - 조시형 - [친절한 SQL 튜닝] 
 
 ### 8. Covering Index
 
