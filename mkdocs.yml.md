@@ -106,6 +106,7 @@ nav:
       - 네트워크:
           -  HTTP 버전별 특징: study/network/http-versions.md
           -  HTTPS: study/network/https.md
+          -  tcp vs udp: study/network/tcp-vs-udp.md
           -  tcp 흐름제어: study/network/tcp-flow-control.md
           -  tcp 혼잡제어: study/network/tcp-congestion-control.md
   - 기술 서적 정리/리뷰:
