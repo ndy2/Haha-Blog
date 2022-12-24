@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/study/database/sql-join/" rel="canonical"/>
+<link href="https://ndy2.github.io/Haha-Blog/study/network/tcp-vs-udp/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>SQL join - Haha 블로그</title>
+<title>Tcp vs udp - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#join">
+<a class="md-skip" href="#tcp-vs-udp">
           Skip to content
         </a>
 </div>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              SQL join
+              Tcp vs udp
             
           </span>
 </div>
@@ -155,8 +155,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
@@ -212,8 +212,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_3">
           데이터베이스
           <span class="md-nav__icon md-icon"></span>
@@ -225,110 +225,52 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../database-basic-terminologies/">
+<a class="md-nav__link" href="../../database/database-basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../relational-database/">
+<a class="md-nav__link" href="../../database/relational-database/">
         관계형 데이터베이스
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          SQL join
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../database/sql-join/">
         SQL join
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#join">
-    Join 의 의미
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#implicit-join">
-    Implicit Join
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#explicit-join">
-    Explicit Join
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inner-join">
-    Inner Join
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#outer-join">
-    Outer Join
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#equi-join">
-    Equi Join
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#using">
-    Using
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#natural-join">
-    Natural Join
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cross-join">
-    Cross Join
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../db-lock/">
+<a class="md-nav__link" href="../../database/db-lock/">
         데이터베이스 락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-index/">
+<a class="md-nav__link" href="../../database/db-index/">
         데이터베이스 인덱스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-anomaly/">
+<a class="md-nav__link" href="../../database/db-anomaly/">
         데이터베이스 이상현상
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-functional-dependency/">
+<a class="md-nav__link" href="../../database/db-functional-dependency/">
         데이터베이스 FD
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-normalization/">
+<a class="md-nav__link" href="../../database/db-normalization/">
         데이터베이스 정규화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../handle-olap/">
+<a class="md-nav__link" href="../../database/handle-olap/">
         OLAP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clustering-replication-sharding/">
+<a class="md-nav__link" href="../../database/clustering-replication-sharding/">
         클러스터링, 리플리케이션, 샤딩
       </a>
 </li>
@@ -348,22 +290,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/http-versions/">
+<a class="md-nav__link" href="../http-versions/">
         HTTP 버전별 특징
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/https/">
+<a class="md-nav__link" href="../https/">
         HTTPS
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/tcp-flow-control/">
+<a class="md-nav__link" href="../tcp-flow-control/">
         tcp 흐름제어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/tcp-congestion-control/">
+<a class="md-nav__link" href="../tcp-congestion-control/">
         tcp 혼잡제어
       </a>
 </li>
@@ -713,48 +655,56 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#join">
-    Join 의 의미
+<a class="md-nav__link" href="#tcp-vs-udp">
+    TCP vs UDP 간단 비교
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#implicit-join">
-    Implicit Join
+<a class="md-nav__link" href="#tcp">
+    TCP 상태 다이어그램
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#explicit-join">
-    Explicit Join
+<a class="md-nav__link" href="#tcp-udp">
+    TCP, UDP 와 관련된 질문들
+  </a>
+<nav aria-label="TCP, UDP 와 관련된 질문들" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-tcp-handshake">
+    1. TCP 의 Handshake 에 대해서 설명해주세요
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#inner-join">
-    Inner Join
+<a class="md-nav__link" href="#1-1-3-way-4-way-handshake">
+    1-1. 연결 수립시에는 3-Way, 연결 종료시에는 4-Way Handshake 가 발생하는데 왜 그런 차이가 있을까요?
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-2-server-fin-routing-fin">
+    1-2 만약 Server에서 FIN 플래그를 전송하기 전에 전송한 패킷이 Routing 지연이나 패킷 유실로 인한 재전송 등으로 인해 FIN 패킷보다 늦게 도착하는 상황이 발생하면 어떻게 될까요?
+  </a>
+<nav aria-label="1-2 만약 Server에서 FIN 플래그를 전송하기 전에 전송한 패킷이 Routing 지연이나 패킷 유실로 인한 재전송 등으로 인해 FIN 패킷보다 늦게 도착하는 상황이 발생하면 어떻게 될까요?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-3-sequence-number-isn-0">
+    1-3 초기 Sequence Number인 ISN을 0부터 시작하지 않고 난수를 생성해서 설정하는 이유?
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#outer-join">
-    Outer Join
+<a class="md-nav__link" href="#2-tcp-udp">
+    2. TCP 가 UDP 보다 빠른 이유가 무엇일까요?
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#equi-join">
-    Equi Join
-  </a>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#using">
-    Using
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#natural-join">
-    Natural Join
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cross-join">
-    Cross Join
+<a class="md-nav__link" href="#video-streaming-udp">
+    Video Streaming 과 UDP
   </a>
 </li>
 </ul>
@@ -764,117 +714,155 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/database/sql-join.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/network/tcp-vs-udp.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>SQL join</h1>
-<p>@ 참고 자료)</p>
-<ul>
-<li>쉬운 코드 - <a href="https://www.youtube.com/watch?v=E-khvKjjVv4">join 의 의미와 여러 종류 ... </a></li>
-</ul>
+<h1>Tcp vs udp</h1>
+<p>@참고 자료)
+- 위키피디아 - <a href="https://ko.wikipedia.org/wiki/전송_계층">전송계층</a>
+- GeeksforGeeks - <a href="https://www.geeksforgeeks.org/differences-between-tcp-and-udp/?ref=rp">Differences between TCP and UDP</a></p>
+<p>전송 계층은 <code>연결 지향 데이터 스트림 지원</code>, <code>신뢰성</code>, <code>흐름 제어</code>, 그리고 <code>다중화</code>와 같은 편리한 서비스를 제공합니다.  전송 프로토콜 중 가장 잘 알려진 것은 연결 지향 전속 방식을 사용하는 <code>TCP</code> 입니다. 보다 단순한 전송에서 사용되는 <code>UDP</code> 도 있습니다.</p>
+<p>전송 계층은 </p>
+<p>이 문서에서는 둘을 간단히 비교 정리하겠습니다.</p>
 <hr/>
-<h3 id="join">Join 의 의미<a class="headerlink" href="#join" title="Permanent link">¶</a></h3>
+<h3 id="tcp-vs-udp">TCP vs UDP 간단 비교<a class="headerlink" href="#tcp-vs-udp" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Basis</th>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>핵심 컨셉</td>
+<td>연결 지향 프로토콜 <br/> 연결 지향이란 데이터를 주고받기 전과 후에 연결을 수립하고 끊는 과정이 있어야 한다는 것을 의미</td>
+<td>데이터그램 지향 프로토콜 <br/> 연결을 맺고 유지, 종료하는 것에 대한 오버헤드가 없음 방송과 multicast 타입의 네트워크 전송에 효율적임</td>
+</tr>
+<tr>
+<td>단위</td>
+<td>Segment</td>
+<td>Datagram</td>
+</tr>
+<tr>
+<td>신뢰성</td>
+<td>TCP 는 목적지 라우터로의 데이터 전송에 신뢰성을 보장함</td>
+<td>UDP 는 목적지로의 데이터 전송에 대한 신뢰성을 하지 않음</td>
+</tr>
+<tr>
+<td>에러 체킹</td>
+<td>TCP 는 흐름 제어와 ack, checksum 을 통해 에러 체킹을 지원함</td>
+<td>UDP 는 Basic 한 checksum 방식의 에러 체킹만을 제공함</td>
+</tr>
+<tr>
+<td>ack</td>
+<td>Acknowledgment 세그먼트가 있음</td>
+<td>Acknowledgment 세그먼트가 없음</td>
+</tr>
+<tr>
+<td>sequence</td>
+<td>TCP 에서는 메시지가 보내진 순서를 보장함</td>
+<td>UDP 에서는 메시지 도착 순서를 예측할 수 없음    필요하다면 application 계층에서 제공해야함</td>
+</tr>
+<tr>
+<td>속도</td>
+<td>UDP 보다 느림</td>
+<td>TCP 보다 빠름</td>
+</tr>
+<tr>
+<td>재전송</td>
+<td>잃어버린 packet 에 대한 재전송 가능</td>
+<td>재전송 기능 없음</td>
+</tr>
+<tr>
+<td>크기</td>
+<td>무거움, 헤더 : 20~60 바이트</td>
+<td>가벼움, 헤더 : 8 바이트 고정</td>
+</tr>
+<tr>
+<td>Handshake</td>
+<td>연결 수립, 종료시 SYNm ACK, SYN-ACK 같은 Handshake 가 일어남</td>
+<td>UDP는 connectionless protocol 임 i.e. No handshake!</td>
+</tr>
+<tr>
+<td>Protocols</td>
+<td>TCP is used by HTTP, HTTPS, FTP, SMTP …</td>
+<td>UDP is used by DNS, DHCP, VoIP</td>
+</tr>
+<tr>
+<td>Stream Type</td>
+<td>byte stream</td>
+<td>message stream</td>
+</tr>
+<tr>
+<td>Overhead</td>
+<td>UDP 보다 큼</td>
+<td>낮음</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tcp">TCP 상태 다이어그램<a class="headerlink" href="#tcp" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/tcp-state-diagram.png"><img alt="tcp-state-diagram.png" src="../images/tcp-state-diagram.png"/></a></p>
+<h3 id="tcp-udp">TCP, UDP 와 관련된 질문들<a class="headerlink" href="#tcp-udp" title="Permanent link">¶</a></h3>
+<h4 id="1-tcp-handshake">1. TCP 의 Handshake 에 대해서 설명해주세요<a class="headerlink" href="#1-tcp-handshake" title="Permanent link">¶</a></h4>
 <ul>
-<li>두 개 이상의 table들에 있는 데이터를 한번에 조회 하는것</li>
+<li>TCP 는 연결지향형 프로토콜 입니다.</li>
+<li>TCP 는 연결 수립시 3-way handshake, 연결 종료시에는 4-way handshake 가 이루어집니다.</li>
+<li>이 연결은 물리적 연결과 같은 특별한 의미를 가지는 것은 아니고 그냥 앞으로 TCP 를 통해 요청, 응답을 주고 받을 수 있다는 논리적인 약속같은 의미를 가집니다.
+<br/></li>
+<li>연결 수립시에는 ISN, MSS, Window Size (rwnd, cwnd), 혼잡제어 정책 과 같은 정보를 주고 받습니다.</li>
+<li>handshake 과정에서 body 는 사용하지 않고 header 필드 만을 주고 받습니다.</li>
 </ul>
-<hr/>
-<h3 id="implicit-join">Implicit Join<a class="headerlink" href="#implicit-join" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="k">name</span><span class="w"></span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">E</span><span class="p">,</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">D</span><span class="w"></span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
+<h4 id="1-1-3-way-4-way-handshake">1-1. 연결 수립시에는 3-Way, 연결 종료시에는 4-Way Handshake 가 발생하는데 왜 그런 차이가 있을까요?<a class="headerlink" href="#1-1-3-way-4-way-handshake" title="Permanent link">¶</a></h4>
 <ul>
-<li>from 절에는 테이블들만 나열 하고 where 절에 join condition 을 작성함</li>
-<li>old-style join syntax</li>
-<li>join 이 명시적이지 않음, join condition 이 selection condition 과 함께 작성됨</li>
-</ul>
-<h3 id="explicit-join">Explicit Join<a class="headerlink" href="#explicit-join" title="Permanent link">¶</a></h3>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="k">name</span><span class="w"></span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">D</span><span class="w"></span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="k">ON</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
-- from 절에 JOIN 키워드와 함께 joined table 들을 명시함
-- from 절의 ON 뒤에 join condition 작성</p>
-<hr/>
-<ul>
-<li>예시 테이블</li>
-</ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/table-ex.png"><img alt="table-ex.png" src="../images/table-ex.png"/></a></p>
-<hr/>
-<h3 id="inner-join">Inner Join<a class="headerlink" href="#inner-join" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="p">(</span><span class="k">INNER</span><span class="p">)</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="n">D</span><span class="w"></span>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">ON</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
-<ul>
-<li>JOIN 이라고만 쓰면 자연스럽게 inner join 임</li>
-<li>두 테이블에서 join 컨디션을 만족 (<code>true</code>) 하는 tuple 만 선택한다.<ul>
-<li>3-valued-logic 결과가 <code>unknown</code> 혹은 <code>false</code> 인 tuple 은 선택하지 않는다.</li>
-</ul>
-</li>
-<li>join 컨디션에서는 <code>=</code> 뿐만이 아니래 <code>&lt;</code>, <code>&gt;</code>, <code>!=</code> 등 여러가지 연산자를 선택할 수 있다.</li>
-<li>결과</li>
-</ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/inner-join.png"><img alt="inner-join.png" src="../images/inner-join.png"/></a></p>
-<h3 id="outer-join">Outer Join<a class="headerlink" href="#outer-join" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="p">(</span><span class="k">OUTER</span><span class="p">)</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="n">D</span><span class="w"></span>
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1"># FROM employee E RIGHT (OUTER) JOIN department D</span><span class="w"></span>
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># FROM employee E FULL (OUTER) JOIN department D</span><span class="w"></span>
-<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="k">ON</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
-<ul>
-<li>LEFT JOIN, RIGHT JOIN, FULL JOIN 만 작성해도 된다.</li>
-<li>두 테이블에서 join 컨디션을 만족 (<code>true</code>) 하지 않는 tuple 도 선택한다.</li>
 <li>
-<p>join 컨디션에서는 <code>=</code> 뿐만이 아니래 <code>&lt;</code>, <code>&gt;</code>, <code>!=</code> 등 여러가지 연산자를 선택할 수 있다.</p>
+<p>연결 수립시 주고 받는 주요 Field 의 정보는 Syn, Syn-Ack, Ack 입니다. Syn 은 Sequence number 를 의미하고 요청, 응답의 ID 처럼 사용됩니다. Ack 은 이전 요청을 잘 받았음을 인정하는 신호입니다. 이전 전달 받은 Syn 필드의 값에 1을 더한 값을 응답합니다.</p>
 </li>
 <li>
-<p>LEFT OUTER JOIN 결과 </p>
+<p>연결 종료시에는 Fin, Ack, Fin, Ack 입니다. 이때 연결 수립시와 달리 서버는 Ack 과 Fin 을 한번에 보내지 않고 사이에 텀을 가집니다. 그 이유는 클라이언트의 연결 종료 요청 (Fin) 을 받은 시점에 서버가 추가적인 정보를 응답할 수 있는 시간을 남겨두는 것입니다.</p>
+</li>
+</ul>
+<h3 id="1-2-server-fin-routing-fin">1-2 만약 Server에서 FIN 플래그를 전송하기 전에 전송한 패킷이 Routing 지연이나 패킷 유실로 인한 재전송 등으로 인해 FIN 패킷보다 늦게 도착하는 상황이 발생하면 어떻게 될까요?<a class="headerlink" href="#1-2-server-fin-routing-fin" title="Permanent link">¶</a></h3>
 <ul>
-<li>Left Table 즉, Employee 테이블의 모든 튜플을 포함한다.</li>
-<li>다른쪽 테이블 즉, Deplartment 테이블의 에트리뷰트는 null 로 채운다.</li>
+<li>Client 는 서버의 FIN 응답을 받으면 바로 소켓을 닫는 것이 아니라 MSL (Maximum Segment Life) 의 두배 시간동안 Time-Wait 상태를 가진후 소켓을 닫습니다. 그 시간동안 클라이언트는 서버의 추가적인 패킷을 전달 받을 수 있습니다.</li>
+</ul>
+<h4 id="1-3-sequence-number-isn-0">1-3 초기 Sequence Number인 ISN을 0부터 시작하지 않고 난수를 생성해서 설정하는 이유?<a class="headerlink" href="#1-3-sequence-number-isn-0" title="Permanent link">¶</a></h4>
+<ul>
+<li>ISN 은 Initial Seqence Number 로 Handshake 시에  설정됩니다.</li>
+<li>이전의 요청으로 오해할 수 있는 가능성이 있기 때문입니다.</li>
+</ul>
+<h4 id="2-tcp-udp">2. TCP 가 UDP 보다 빠른 이유가 무엇일까요?<a class="headerlink" href="#2-tcp-udp" title="Permanent link">¶</a></h4>
+<ul>
+<li>
+<p>TCP는 UDP와 달리 연결지향형 프로토콜로 Handshake 에 대한 오버헤드가 있습니다.</p>
+<ul>
+<li>자세히 들어가서 TCP 기반에서 연결을 수립할 때에는 3-Way-Hadshake 과정이 필요하며, 여기에 암호화를 위해 TLS까지 적용된다면, 실제 통신이 이루어 지기 이전에 연결 수립만을 위한 지연이 약 4.5 RTT가 발생하게 됩니다.
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/tcp-rtt.png"><img alt="tcp-rtt.png" src="../images/tcp-rtt.png"/></a></li>
+</ul>
+</li>
+<li>
+<p>TCP는 UDP에 비해 Flow Control, Congestion Control 기능을 이용해 한번에 전송하는 패킷의 양을 조절하기 때문에 느립니다.</p>
+<ul>
+<li>Flow Control - 수신측의 rwnd 사이즈를 계속해서 전달받으며 수신측의 버퍼가 터지지 않도록 패킷 전송을 조절하는 것입니다. (Sliding window)</li>
+<li>Congestion Control - Ack 를 받기전에 계속해서 전송할 수 있는 패킷의 양 cwnd 사이즈를 통해 조절하는 것입니다.</li>
 </ul>
 </li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/left-outer-join.png"><img alt="left-outer-join.png" src="../images/left-outer-join.png"/></a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>mysql은 Full Outer Join 을 지원하지 않는다.</p>
+<h3 id="video-streaming-udp">Video Streaming 과 UDP<a class="headerlink" href="#video-streaming-udp" title="Permanent link">¶</a></h3>
+<div class="admonition warn">
+<p class="admonition-title">Warn</p>
+<p>Video Streaming 같은 작업은 항상 udp 를 활용한다는 것은 오해입니다.</p>
+<p>가장 널리 활용되는 비디오 전송 프로토콜인 HLS (HTTP Live Protocl) 는 TCP 를 활용하도록 설계되었습니다.</p>
 </div>
+<blockquote>
+<p><a href="https://www.cloudflare.com/learning/ddos/glossary/tcp-ip/">TCP</a>와 <a href="https://www.cloudflare.com/learning/ddos/glossary/user-datagram-protocol-udp/">UDP</a>는 전송 프로토콜로서 인터넷을 통한 콘텐츠 전송을 담당합니다. TCP는 UDP보다 데이터 전송 신뢰성이 높지만 UDP는 전송 중 일부 데이터가 손실될 수 있지만 전송 속도가 훨씬 빠릅니다.</p>
+<p>UDP가 빠르기 때문에 많은 스트리밍 프로토콜은 TCP 대신 UDP를 사용합니다. 하지만 HLS는 여러 가지 이유로 TCP를 사용합니다.</p>
+<ul>
+<li>CloudFlare  - <a href="https://www.cloudflare.com/ko-kr/learning/video/what-is-http-live-streaming/">HTTP 라이브 스트리밍이란 무엇입니까? | HLS 스트리밍</a></li>
+</ul>
+</blockquote>
 <hr/>
-<h3 id="equi-join">Equi Join<a class="headerlink" href="#equi-join" title="Permanent link">¶</a></h3>
-<ul>
-<li>join condition 에 <code>=</code> 을 사용한 join</li>
-</ul>
-<h3 id="using">Using<a class="headerlink" href="#using" title="Permanent link">¶</a></h3>
-<ul>
-<li>애트리뷰트의 이름이 같으면 그 애트리뷰트의 equal 조건을 join condition 으로 활용하라는 키워드</li>
-<li>Result Table 에도 해당 애트리뷰트는 한번만 표시된다.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="n">dept_id</span><span class="p">;</span><span class="w"></span>
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span><span class="n">dept_id</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
-<hr/>
-<h3 id="natural-join">Natural Join<a class="headerlink" href="#natural-join" title="Permanent link">¶</a></h3>
-<ul>
-<li>두 테이블에서 같은 이름을 가지는 모든 attribute pair 에 대해 equi join 을 수행</li>
-<li>join condition 을 명시하지 않음</li>
-<li>같은 이름을 가지는 모든 attribute pair 에 대해 USING 키워드를 사용하는 꼴임</li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>FROM table1 NATURAL [INNER] JOIN table2;
-FROM table1 NATURAL LEFT [OUTER] JOIN table2;
-FROM table1 NATURAL RIGHT [OUTER] JOIN table2;
-FROM table1 NATURAL FULL [OUTER] JOIN table2;</p>
-</div>
-<h3 id="cross-join">Cross Join<a class="headerlink" href="#cross-join" title="Permanent link">¶</a></h3>
-<ul>
-<li>두 테이블이 가질 수 있는 모든 tuple pair 의 조합 (Cartesian product) 을 result table 로 반환</li>
-<li>join condition 이 없음</li>
-</ul>
 <hr/>
 <div class="md-source-file">
 <small>
@@ -883,7 +871,7 @@ FROM table1 NATURAL FULL [OUTER] JOIN table2;</p>
       <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 24, 2022</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 24, 2022</span>
 </small>
 </div>
 </article>
@@ -891,34 +879,6 @@ FROM table1 NATURAL FULL [OUTER] JOIN table2;</p>
 </div>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 관계형 데이터베이스" class="md-footer__link md-footer__link--prev" href="../relational-database/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Previous
-              </span>
-              관계형 데이터베이스
-            </div>
-</div>
-</a>
-<a aria-label="Next: 데이터베이스 락" class="md-footer__link md-footer__link--next" href="../db-lock/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              데이터베이스 락
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
