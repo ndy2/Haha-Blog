@@ -5,7 +5,7 @@ edit_uri: blob/main/docs/
 site_author: Haha
 site_description: >-
   안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다.
-  잘 부탁드립니다!!
+  잘 부탁드립니다!
 
 # Repository
 repo_name: ndy2/Haha-Blog
@@ -86,7 +86,8 @@ nav:
       - 들어가기: bloggingtips/getting-started.md
   - 분야 별 학습:
       - 자바:
-          -  NIO: study/java/nio.md
+          -  String: study/java/string.md
+		  -  NIO: study/java/nio.md
           -  동시성 - synchrozied: study/java/synchronized.md
       - 아키텍처:
           -  MSA 장단점: study/architecture/msa-pros-cons.md
@@ -104,6 +105,7 @@ nav:
       - 네트워크:
           -  HTTP 버전별 특징: study/network/http-versions.md
           -  HTTPS: study/network/https.md
+          -  tcp vs udp: study/network/tcp-vs-udp.md
           -  tcp 흐름제어: study/network/tcp-flow-control.md
           -  tcp 혼잡제어: study/network/tcp-congestion-control.md
   - 기술 서적 정리/리뷰:
@@ -153,3 +155,6 @@ nav:
       - 2022-12-19: til/til/2022-12-19.md
       - 2022-12-20: til/til/2022-12-20.md
       - 2022-12-21: til/til/2022-12-21.md
+      - 2022-12-22: til/til/2022-12-22.md
+      - 2022-12-23: til/til/2022-12-23.md
+      - 2022-12-24: til/til/2022-12-24.md
