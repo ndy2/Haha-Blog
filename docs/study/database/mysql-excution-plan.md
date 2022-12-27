@@ -11,6 +11,7 @@ MySQL - [explain-output](https://dev.mysql.com/doc/refman/8.0/en/explain-output.
 ![mysql-kakao.png](images/mysql-kakao.png)
 ![mysql-coupang.png](images/mysql-coupang.png)
 
+<br>
 - 책에서 나오는 내용을 MySQL 로 따라해보려하니 가장 막히는 부분이 실행 계획을 읽는 부분이었습니다
 - 그래서 이 문서에서는 MySQL 의 Execution Plan 을 확인하고 해석하는 법을 간단히 정리해보고자 합니다.
 
@@ -25,7 +26,7 @@ MySQL - [explain-output](https://dev.mysql.com/doc/refman/8.0/en/explain-output.
 
 ### 1. 전체 테이블을 찍는 쿼리
 
-![explain-1.png](explain-1.png)
+![explain-1.png](images/explain-1.png)
 
 빈 값들은 `Null` 입니다. 일단 값이 있는 필드 먼저 살펴보겠습니다.
 
@@ -48,9 +49,12 @@ MySQL - [explain-output](https://dev.mysql.com/doc/refman/8.0/en/explain-output.
 	- 조회한 row 중 `WHERE` 절 필터링을 통해 남는 row 의 비율입니다.
 	- 즉 rows * filtered / 100 값이 결과의 예상 row 수 입니다.
 
+<br>
+
 MySQL 의 기본 Explain 키워드 만으로는 실행계획을 이해하기 어렵습니다.
 
 format="json" 을 통해 더 자세한 정보를 확인하거나 MySQL workbench 를 이용해 GUI 를 통해 실행계획을 확인할 수 있습니다. MySQL workbench  의 번개 + 돋보기 아이콘을 클릭하면 선택한 쿼리의 Explain 키워드를 실행한 결과를 Tabular 형식과 `json` 포멧을 통한 시각화 형태로 확인 할 수 있습니다.
+
 
 ![explain-2.png](images/explain-2.png)
 - 1.000 K rows 에 대해서 Full Table Scan 을 사용할 것이란 것을 알 수 있습니다.
@@ -60,9 +64,7 @@ format="json" 을 통해 더 자세한 정보를 확인하거나 MySQL workbench
 
 - 전체 아티클의 카운트를 조회하는 쿼리의 실행계획을 확인해보겠습니다.
 ![count-query.png](images/count-query.png)
-<br>
-- 실행 계획 visualize
- ![excution-plan-3.png](images/excution-plan-3.png)
+![excution-plan-3.png](images/excution-plan-3.png)
 
 - Full Index Scan 방식을 활용한다는 것을 알 수 있습니다.
 - 이때 대상 인덱스는 a.FK4g4r0.... 입니다.
@@ -78,7 +80,7 @@ format="json" 을 통해 더 자세한 정보를 확인하거나 MySQL workbench
 ![query-5.png](images/query-5.png)
 
 - 실행 계획
--![excution-plan-join.png](images/excution-plan-join.png)
+![excution-plan-join.png](images/excution-plan-join.png)
 
 ![excution-plain-join-table.png](images/excution-plain-join-table.png)
 
@@ -90,6 +92,7 @@ format="json" 을 통해 더 자세한 정보를 확인하거나 MySQL workbench
 <br>
 이번에는 힌트를 통해 join 순서를 강제해보겠습니다.
 ![query-hint-join-order-fix.png](images/query-hint-join-order-fix.png)
+
 ![excution-plain-6.png](images/excution-plain-6.png)
 
 MySQL 8.0 에 추가된 힌트인 `/*+ JOIN_FIXED_ORDER () */` 구문을 활용하면 from 절의 순서대로 join 순서를 강제할 수 있습니다. 실행계획 도 바뀐것을 확인 할 수 있습니다.
