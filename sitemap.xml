@@ -161,6 +161,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch11-sec03-batch-architecture/</loc>
+         <lastmod>2022-12-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/ReativeStack_NonBlocked.excalidraw/</loc>
          <lastmod>2022-12-27</lastmod>
          <changefreq>daily</changefreq>
@@ -172,6 +177,21 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/ServletStack_ThreadModel.excalidraw/</loc>
+         <lastmod>2022-12-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/batch-server-1.excalidraw/</loc>
+         <lastmod>2022-12-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/batch-server-2.excalidraw/</loc>
+         <lastmod>2022-12-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/batch-server-3.excalidraw/</loc>
          <lastmod>2022-12-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
