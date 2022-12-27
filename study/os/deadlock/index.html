@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/til/til/2022-12-17/" rel="canonical"/>
+<link href="https://ndy2.github.io/Haha-Blog/study/os/deadlock/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>2022-12-17 - Haha 블로그</title>
+<title>데드락 - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,9 +34,6 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#_1">
-          Skip to content
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -58,7 +55,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              2022-12-17
+              데드락
             
           </span>
 </div>
@@ -155,8 +152,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
@@ -180,17 +177,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/java/string/">
+<a class="md-nav__link" href="../../java/string/">
         String
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/java/nio/">
+<a class="md-nav__link" href="../../java/nio/">
         NIO
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/java/synchronized/">
+<a class="md-nav__link" href="../../java/synchronized/">
         동시성 - synchrozied
       </a>
 </li>
@@ -210,15 +207,15 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/architecture/msa-pros-cons/">
+<a class="md-nav__link" href="../../architecture/msa-pros-cons/">
         MSA 장단점
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_3">
           운영체제
           <span class="md-nav__icon md-icon"></span>
@@ -230,12 +227,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/os/process-vs-thread/">
+<a class="md-nav__link" href="../process-vs-thread/">
         프로세스 vs 쓰레드
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/os/deadlock/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
         데드락
       </a>
 </li>
@@ -255,62 +253,62 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/database-basic-terminologies/">
+<a class="md-nav__link" href="../../database/database-basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/relational-database/">
+<a class="md-nav__link" href="../../database/relational-database/">
         관계형 데이터베이스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/sql-join/">
+<a class="md-nav__link" href="../../database/sql-join/">
         SQL join
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-lock/">
+<a class="md-nav__link" href="../../database/db-lock/">
         데이터베이스 락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-index/">
+<a class="md-nav__link" href="../../database/db-index/">
         데이터베이스 인덱스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-anomaly/">
+<a class="md-nav__link" href="../../database/db-anomaly/">
         데이터베이스 이상현상
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-functional-dependency/">
+<a class="md-nav__link" href="../../database/db-functional-dependency/">
         데이터베이스 FD
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-normalization/">
+<a class="md-nav__link" href="../../database/db-normalization/">
         데이터베이스 정규화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/handle-olap/">
+<a class="md-nav__link" href="../../database/handle-olap/">
         OLAP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/clustering-replication-sharding/">
+<a class="md-nav__link" href="../../database/clustering-replication-sharding/">
         클러스터링, 리플리케이션, 샤딩
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/dbcp/">
+<a class="md-nav__link" href="../../database/dbcp/">
         DBCP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/mysql-excution-plan/">
+<a class="md-nav__link" href="../../database/mysql-excution-plan/">
         MySQL 실행계획 연습
       </a>
 </li>
@@ -330,27 +328,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/http-versions/">
+<a class="md-nav__link" href="../../network/http-versions/">
         HTTP 버전별 특징
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/https/">
+<a class="md-nav__link" href="../../network/https/">
         HTTPS
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/tcp-vs-udp/">
+<a class="md-nav__link" href="../../network/tcp-vs-udp/">
         tcp vs udp
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/tcp-flow-control/">
+<a class="md-nav__link" href="../../network/tcp-flow-control/">
         tcp 흐름제어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/tcp-congestion-control/">
+<a class="md-nav__link" href="../../network/tcp-congestion-control/">
         tcp 혼잡제어
       </a>
 </li>
@@ -630,8 +628,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5">
           TIL
           <span class="md-nav__icon md-icon"></span>
@@ -643,95 +641,72 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/">
+<a class="md-nav__link" href="../../../til/getting-started/">
         시작하기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2022-12-14/">
+<a class="md-nav__link" href="../../../til/til/2022-12-14/">
         2022-12-14
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2022-12-15/">
+<a class="md-nav__link" href="../../../til/til/2022-12-15/">
         2022-12-15
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2022-12-16/">
+<a class="md-nav__link" href="../../../til/til/2022-12-16/">
         2022-12-16
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          2022-12-17
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../til/til/2022-12-17/">
         2022-12-17
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    오늘 한 일
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    내일 할 일
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../2022-12-18/">
+<a class="md-nav__link" href="../../../til/til/2022-12-18/">
         2022-12-18
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2022-12-19/">
+<a class="md-nav__link" href="../../../til/til/2022-12-19/">
         2022-12-19
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2022-12-20/">
+<a class="md-nav__link" href="../../../til/til/2022-12-20/">
         2022-12-20
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2022-12-21/">
+<a class="md-nav__link" href="../../../til/til/2022-12-21/">
         2022-12-21
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2022-12-22/">
+<a class="md-nav__link" href="../../../til/til/2022-12-22/">
         2022-12-22
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2022-12-23/">
+<a class="md-nav__link" href="../../../til/til/2022-12-23/">
         2022-12-23
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2022-12-24/">
+<a class="md-nav__link" href="../../../til/til/2022-12-24/">
         2022-12-24
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2022-12-26/">
+<a class="md-nav__link" href="../../../til/til/2022-12-26/">
         2022-12-26
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2022-12-27/">
+<a class="md-nav__link" href="../../../til/til/2022-12-27/">
         2022-12-27
       </a>
 </li>
@@ -747,65 +722,31 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    오늘 한 일
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    내일 할 일
-  </a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/til/til/2022-12-17.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/os/deadlock/index.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>2022-12-17</h1>
-<h3 id="_1">오늘 한 일<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<h1>데드락</h1>
+<p>@참고 자료)</p>
 <ul>
-<li>네이버 파이낸셜 코딩테스트<ul>
-<li>3문제, 2시간 난이도는 그리 높지 않았다.</li>
-<li>1번 - 어디선가 본적 있는 단순 구현 문제였다. enum 을 활용하고 주석을 다는 것이 신경 썻다.</li>
-<li>2번 - 프로그래머스 - <a href="https://school.programmers.co.kr/learn/courses/30/lessons/42862">체육복</a> 이 문제와 유사한 그리디 스타일의 문제였다.</li>
-<li>3번 - 조금더 복잡한 그리디 문제였다. Step 을 잘 나누어 풀었다.</li>
+<li>하하</li>
 </ul>
-</li>
-<li>
-<p>주어진 tc 는 다 통과했는데 결과를 바로 알려주는 방식이 아니라 잘 모르겠다.</p>
-</li>
-<li>
-<p><a href="https://www.udemy.com/course/spring-webflux">udemy webflux 강의</a> 맛보기</p>
-<ul>
-<li>기대된다!</li>
-</ul>
-</li>
-</ul>
-<h3 id="_2">내일 할 일<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<ul>
-<li>msa 책 10장 부터는 익숙하지 않는 내용이라 바로 정리하기 어려울 것 같다.</li>
-<li>일요일 이기도 하니 10장 redis 파트를 간단하게 읽으면서 웜업을 먼저 해야겠다.</li>
-</ul>
+<hr/>
+<p>Deadlock</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 27, 2022</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 17, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 27, 2022</span>
 </small>
 </div>
 </article>
@@ -814,7 +755,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 2022-12-16" class="md-footer__link md-footer__link--prev" href="../2022-12-16/" rel="prev">
+<a aria-label="Previous: 프로세스 vs 쓰레드" class="md-footer__link md-footer__link--prev" href="../process-vs-thread/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -823,17 +764,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              2022-12-16
+              프로세스 vs 쓰레드
             </div>
 </div>
 </a>
-<a aria-label="Next: 2022-12-18" class="md-footer__link md-footer__link--next" href="../2022-12-18/" rel="next">
+<a aria-label="Next: 데이터베이스 기본 용어" class="md-footer__link md-footer__link--next" href="../../database/database-basic-terminologies/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              2022-12-18
+              데이터베이스 기본 용어
             </div>
 </div>
 <div class="md-footer__button md-icon">
