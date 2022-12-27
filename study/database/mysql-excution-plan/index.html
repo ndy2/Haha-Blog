@@ -10,7 +10,7 @@
 <link href="https://ndy2.github.io/Haha-Blog/study/database/mysql-excution-plan/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Mysql excution plan - Haha 블로그</title>
+<title>MySQL 실행계획 연습 - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Mysql excution plan
+              MySQL 실행계획 연습
             
           </span>
 </div>
@@ -155,8 +155,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
@@ -237,8 +237,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_4">
           데이터베이스
           <span class="md-nav__icon md-icon"></span>
@@ -303,6 +303,53 @@
 <a class="md-nav__link" href="../dbcp/">
         DBCP
       </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          MySQL 실행계획 연습
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        MySQL 실행계획 연습
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#0">
+    0. 들어가며
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-">
+    - 모든 항목을 정리하지는 않고 프로젝트에서 사용한 쿼리의 실행계획을 찍어보았을때 보이는 특이사항 위주로 정리하겠습니다.
+  </a>
+<nav aria-label="- 모든 항목을 정리하지는 않고 프로젝트에서 사용한 쿼리의 실행계획을 찍어보았을때 보이는 특이사항 위주로 정리하겠습니다." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 전체 테이블을 찍는 쿼리
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 카운트 쿼리
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-join">
+    3. Join 쿼리
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -718,6 +765,25 @@
 <a class="md-nav__link" href="#-">
     - 모든 항목을 정리하지는 않고 프로젝트에서 사용한 쿼리의 실행계획을 찍어보았을때 보이는 특이사항 위주로 정리하겠습니다.
   </a>
+<nav aria-label="- 모든 항목을 정리하지는 않고 프로젝트에서 사용한 쿼리의 실행계획을 찍어보았을때 보이는 특이사항 위주로 정리하겠습니다." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 전체 테이블을 찍는 쿼리
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 카운트 쿼리
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-join">
+    3. Join 쿼리
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -729,14 +795,15 @@
 <a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/database/mysql-excution-plan.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Mysql excution plan</h1>
-<p>@참고 자료)</p>
+<h1>MySQL 실행계획 연습</h1>
+<p>@참고 자료)
+MySQL - <a href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html">explain-output</a></p>
 <hr/>
 <h3 id="0">0. 들어가며<a class="headerlink" href="#0" title="Permanent link">¶</a></h3>
 <ul>
 <li><code>친절한 SQL</code> 을 읽다보니 oracle 에 기반한 책이라는 점이 아쉬웠습니다.</li>
 <li>
-<p>사실 MySQL 을 깊게 학습한 적이 있는 것은 아니라 이 기회에 Oracle DB 로 계속 학습을 이어나가면 어떨까도 생각했지만 여러 대기업에서 MySQL 을 적극적으로 사용하고 있다고 생각되어 M계속 MySQL로 학습하고자 합니다.
+<p>사실 MySQL 을 깊게 학습한 적이 있는 것은 아니라 이 기회에 Oracle DB 로 계속 학습을 이어나가면 어떨까도 생각했지만 여러 대기업에서 MySQL 을 적극적으로 사용하고 있다고 생각되어 계속 MySQL로 학습하고자 합니다.
 <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/mysql-kakao.png"><img alt="mysql-kakao.png" src="../images/mysql-kakao.png"/></a>
 <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/mysql-coupang.png"><img alt="mysql-coupang.png" src="../images/mysql-coupang.png"/></a></p>
 </li>
@@ -747,10 +814,91 @@
 <p>그래서 이 문서에서는 MySQL 의 Execution Plan 을 확인하고 해석하는 법을 간단히 정리해보고자 합니다.</p>
 </li>
 <li>
-<p>예시로 사용한 테이블 구조와 쿼리는 이전에 진행했던 프로젝트 중 하나인 <a href="https://github.com/prgrms-web-devcourse/Team-Meoguri-Linkocean-BE">링크오션</a> 의 테이블 구조와 쿼리를 사용하겠습니다. 자세한 테이블 구조가 궁금하신 분은 위 링크를 참고해주세요.</p>
+<p>예시로 사용한 테이블 구조와 쿼리는 이전에 진행했던 프로젝트 중 하나인 <a href="https://github.com/ndy2/realrealworld">리얼월드</a> 의 테이블 구조와 쿼리를 사용하겠습니다. 자세한 테이블 구조가 궁금하신 분은 위 링크를 참고해주세요.</p>
 </li>
 </ul>
 <h2 id="-">- 모든 항목을 정리하지는 않고 프로젝트에서 사용한 쿼리의 실행계획을 찍어보았을때 보이는 특이사항 위주로 정리하겠습니다.<a class="headerlink" href="#-" title="Permanent link">¶</a></h2>
+<h3 id="1">1. 전체 테이블을 찍는 쿼리<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="explain-1.png"><img alt="explain-1.png" src="explain-1.png"/></a></p>
+<p>빈 값들은 <code>Null</code> 입니다. 일단 값이 있는 필드 먼저 살펴보겠습니다.</p>
+<ul>
+<li>
+<p><code>id</code></p>
+<ul>
+<li><code>SELECT</code> 연산의 식별자입니다.</li>
+<li>위 쿼리의 실행계획은 SELECT 가 단 한번만 호출 되므로 하나의 row 를 가지고 있습니다.</li>
+</ul>
+</li>
+<li>
+<p><code>select_type</code></p>
+<ul>
+<li>SELECT 연산의 종류입니다.</li>
+</ul>
+</li>
+<li>
+<p><code>type</code></p>
+<ul>
+<li>join type 입니다.</li>
+<li><code>ALL</code> 은 full table scan 을 수행한다는 의미이며 일반적으로 피해야하는 신호입니다.</li>
+</ul>
+</li>
+<li>
+<p><code>rows</code></p>
+<ul>
+<li>현재의 쿼리 값으로 조회를 수행하는 rows 의 개수를 의미합니다.</li>
+<li>이는 MySQL 이 통계적으로 판단한 값이며 정확하지 않을 수 있습니다.</li>
+</ul>
+</li>
+<li>
+<p><code>filtered</code></p>
+<ul>
+<li>조회한 row 중 <code>WHERE</code> 절 필터링을 통해 남는 row 의 비율입니다.</li>
+<li>즉 rows * filtered / 100 값이 결과의 예상 row 수 입니다.</li>
+</ul>
+</li>
+</ul>
+<p>MySQL 의 기본 Explain 키워드 만으로는 실행계획을 이해하기 어렵습니다.</p>
+<p>format="json" 을 통해 더 자세한 정보를 확인하거나 MySQL workbench 를 이용해 GUI 를 통해 실행계획을 확인할 수 있습니다. MySQL workbench  의 번개 + 돋보기 아이콘을 클릭하면 선택한 쿼리의 Explain 키워드를 실행한 결과를 Tabular 형식과 <code>json</code> 포멧을 통한 시각화 형태로 확인 할 수 있습니다.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/explain-2.png"><img alt="explain-2.png" src="../images/explain-2.png"/></a>
+- 1.000 K rows 에 대해서 Full Table Scan 을 사용할 것이란 것을 알 수 있습니다.</p>
+<h3 id="2">2. 카운트 쿼리<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<ul>
+<li>전체 아티클의 카운트를 조회하는 쿼리의 실행계획을 확인해보겠습니다.
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/count-query.png"><img alt="count-query.png" src="../images/count-query.png"/></a>
+<br/></li>
+<li>
+<p>실행 계획 visualize
+ <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/excution-plan-3.png"><img alt="excution-plan-3.png" src="../images/excution-plan-3.png"/></a></p>
+</li>
+<li>
+<p>Full Index Scan 방식을 활용한다는 것을 알 수 있습니다.</p>
+</li>
+<li>이때 대상 인덱스는 a.FK4g4r0.... 입니다.</li>
+</ul>
+<p><br/>
+- USE INDEX 를 사용해 Primary Key 인덱스를 사용하도록 힌트를 주면 실행 계획이 아래와 같이 바뀝니다.
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/query-2.png"><img alt="query-2.png" src="../images/query-2.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/excution-plan-4.png"><img alt="excution-plan-4.png" src="../images/excution-plan-4.png"/></a>
+- a.PRIMARY 인덱스를 활용하는 것이 실행 계획에 잘 반영되었습니다.</p>
+<h3 id="3-join">3. Join 쿼리<a class="headerlink" href="#3-join" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/query-5.png"><img alt="query-5.png" src="../images/query-5.png"/></a></p>
+<ul>
+<li>실행 계획
+-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/excution-plan-join.png"><img alt="excution-plan-join.png" src="../images/excution-plan-join.png"/></a></li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/excution-plain-join-table.png"><img alt="excution-plain-join-table.png" src="../images/excution-plain-join-table.png"/></a></p>
+<ul>
+<li>이걸 어떻게 해석해야될까요?</li>
+<li>p 와 a 테이블을 NL 조인을 수행하는데 p 테이블에서는 Full Table Scan 을 a 테이블 에서는 <code>FK4g4r...</code> 인덱스에대해서 Non-Unique Key Lookup 방식을 활용한다고 해석하면 될것 같습니다.
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/indices-in-article.png"><img alt="indices-in-article.png" src="../images/indices-in-article.png"/></a></li>
+<li>저 인덱스는 article 테이블에서 profile 테이블에 대해 물고있는 author_id 외래키에 대한 인덱스입니다.</li>
+<li>Article 을 왼쪽에 Profile 을 오른쪽에 작성했지만 MySQL 이 똑똑하게 Profile 을 NL 조인의 Driving Table 로 설정한 것 같습니다.
+<br/>
+이번에는 힌트를 통해 join 순서를 강제해보겠습니다.
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/query-hint-join-order-fix.png"><img alt="query-hint-join-order-fix.png" src="../images/query-hint-join-order-fix.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/excution-plain-6.png"><img alt="excution-plain-6.png" src="../images/excution-plain-6.png"/></a></li>
+</ul>
+<p>MySQL 8.0 에 추가된 힌트인 <code>/*+ JOIN_FIXED_ORDER () */</code> 구문을 활용하면 from 절의 순서대로 join 순서를 강제할 수 있습니다. 실행계획 도 바뀐것을 확인 할 수 있습니다.</p>
 <hr/>
 <div class="md-source-file">
 <small>
@@ -767,6 +915,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: DBCP" class="md-footer__link md-footer__link--prev" href="../dbcp/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              DBCP
+            </div>
+</div>
+</a>
+<a aria-label="Next: HTTP 버전별 특징" class="md-footer__link md-footer__link--next" href="../../network/http-versions/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              HTTP 버전별 특징
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
