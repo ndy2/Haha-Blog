@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/study/database/db-functional-dependency/" rel="canonical"/>
+<link href="https://ndy2.github.io/Haha-Blog/til/til/2022-12-27/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>데이터베이스 FD - Haha 블로그</title>
+<title>2022-12-27 - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#1-functional-dependency">
+<a class="md-skip" href="#_1">
           Skip to content
         </a>
 </div>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              데이터베이스 FD
+              2022-12-27
             
           </span>
 </div>
@@ -155,8 +155,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
@@ -180,17 +180,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../java/string/">
+<a class="md-nav__link" href="../../../study/java/string/">
         String
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../java/nio/">
+<a class="md-nav__link" href="../../../study/java/nio/">
         NIO
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../java/synchronized/">
+<a class="md-nav__link" href="../../../study/java/synchronized/">
         동시성 - synchrozied
       </a>
 </li>
@@ -210,7 +210,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/msa-pros-cons/">
+<a class="md-nav__link" href="../../../study/architecture/msa-pros-cons/">
         MSA 장단점
       </a>
 </li>
@@ -230,15 +230,15 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../os/process-vs-thread/">
+<a class="md-nav__link" href="../../../study/os/process-vs-thread/">
         프로세스 vs 쓰레드
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_4">
           데이터베이스
           <span class="md-nav__icon md-icon"></span>
@@ -250,114 +250,62 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../database-basic-terminologies/">
+<a class="md-nav__link" href="../../../study/database/database-basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../relational-database/">
+<a class="md-nav__link" href="../../../study/database/relational-database/">
         관계형 데이터베이스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../sql-join/">
+<a class="md-nav__link" href="../../../study/database/sql-join/">
         SQL join
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-lock/">
+<a class="md-nav__link" href="../../../study/database/db-lock/">
         데이터베이스 락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-index/">
+<a class="md-nav__link" href="../../../study/database/db-index/">
         데이터베이스 인덱스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-anomaly/">
+<a class="md-nav__link" href="../../../study/database/db-anomaly/">
         데이터베이스 이상현상
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          데이터베이스 FD
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../study/database/db-functional-dependency/">
         데이터베이스 FD
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-functional-dependency">
-    1. Functional Dependency 란?
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-fd">
-    2. FD 주의 사항
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-fd">
-    3. FD 예시
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-fd">
-    4.  FD 의 종류
-  </a>
-<nav aria-label="4.  FD 의 종류" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#0-y">
-    0. {} -&gt;Y
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-trivial-fd-non-trivial-fd">
-    1. Trivial FD, Non-trivial FD
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-partial-fd-full-fd">
-    2. Partial FD, Full FD
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../db-normalization/">
+<a class="md-nav__link" href="../../../study/database/db-normalization/">
         데이터베이스 정규화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../handle-olap/">
+<a class="md-nav__link" href="../../../study/database/handle-olap/">
         OLAP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clustering-replication-sharding/">
+<a class="md-nav__link" href="../../../study/database/clustering-replication-sharding/">
         클러스터링, 리플리케이션, 샤딩
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../dbcp/">
+<a class="md-nav__link" href="../../../study/database/dbcp/">
         DBCP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../mysql-excution-plan/">
+<a class="md-nav__link" href="../../../study/database/mysql-excution-plan/">
         MySQL 실행계획 연습
       </a>
 </li>
@@ -377,27 +325,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/http-versions/">
+<a class="md-nav__link" href="../../../study/network/http-versions/">
         HTTP 버전별 특징
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/https/">
+<a class="md-nav__link" href="../../../study/network/https/">
         HTTPS
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/tcp-vs-udp/">
+<a class="md-nav__link" href="../../../study/network/tcp-vs-udp/">
         tcp vs udp
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/tcp-flow-control/">
+<a class="md-nav__link" href="../../../study/network/tcp-flow-control/">
         tcp 흐름제어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/tcp-congestion-control/">
+<a class="md-nav__link" href="../../../study/network/tcp-congestion-control/">
         tcp 혼잡제어
       </a>
 </li>
@@ -677,8 +625,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5">
           TIL
           <span class="md-nav__icon md-icon"></span>
@@ -690,74 +638,97 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/getting-started/">
+<a class="md-nav__link" href="../../getting-started/">
         시작하기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-14/">
+<a class="md-nav__link" href="../2022-12-14/">
         2022-12-14
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-15/">
+<a class="md-nav__link" href="../2022-12-15/">
         2022-12-15
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-16/">
+<a class="md-nav__link" href="../2022-12-16/">
         2022-12-16
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-17/">
+<a class="md-nav__link" href="../2022-12-17/">
         2022-12-17
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-18/">
+<a class="md-nav__link" href="../2022-12-18/">
         2022-12-18
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-19/">
+<a class="md-nav__link" href="../2022-12-19/">
         2022-12-19
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-20/">
+<a class="md-nav__link" href="../2022-12-20/">
         2022-12-20
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-21/">
+<a class="md-nav__link" href="../2022-12-21/">
         2022-12-21
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-22/">
+<a class="md-nav__link" href="../2022-12-22/">
         2022-12-22
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-23/">
+<a class="md-nav__link" href="../2022-12-23/">
         2022-12-23
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-24/">
+<a class="md-nav__link" href="../2022-12-24/">
         2022-12-24
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-26/">
+<a class="md-nav__link" href="../2022-12-26/">
         2022-12-26
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-27/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          2022-12-27
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         2022-12-27
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    오늘 한 일
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    내일 할 일
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -777,42 +748,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-functional-dependency">
-    1. Functional Dependency 란?
+<a class="md-nav__link" href="#_1">
+    오늘 한 일
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-fd">
-    2. FD 주의 사항
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-fd">
-    3. FD 예시
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-fd">
-    4.  FD 의 종류
-  </a>
-<nav aria-label="4.  FD 의 종류" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#0-y">
-    0. {} -&gt;Y
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-trivial-fd-non-trivial-fd">
-    1. Trivial FD, Non-trivial FD
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-partial-fd-full-fd">
-    2. Partial FD, Full FD
+<a class="md-nav__link" href="#_2">
+    내일 할 일
   </a>
 </li>
 </ul>
@@ -822,57 +764,27 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/database/db-functional-dependency.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/til/til/2022-12-27.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>데이터베이스 FD</h1>
-<p>@ 참고 자료)
-- 쉬운코드 - <a href="https://youtu.be/fw8hvolebLw">DB에서 functional dependency(FD : 함수 종속)을 설명합니다! 고고씽!!</a></p>
-<hr/>
-<h3 id="1-functional-dependency">1. Functional Dependency 란?<a class="headerlink" href="#1-functional-dependency" title="Permanent link">¶</a></h3>
+<h1>2022-12-27</h1>
+<h3 id="_1">오늘 한 일<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <ul>
-<li>한 테이블에 있는 두 개의 <code>attributes set</code> 사이의 <code>constraint</code></li>
-<li>집합 X 의 값에 따라 집합 Y 의 값이 유일하게 결정된때
-  'X 가 Y 를 함수적으로 결정한다. Y 가 X 에 함수적으로 의존한다' 라고 부르며 두 집합 사이의 이러한 제약 관계를 Functional Dependency (FD) 라고 부른다.</li>
+<li>Process vs Thread 정리</li>
+<li>webflux 강의 조금 듣기</li>
+<li>MySQL query hint 와 execution plan 실습</li>
+<li>msa 책 11장 정리</li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/fd.excalidraw.png"><img alt="fd.excalidraw.png" src="../excalidraws/fd.excalidraw.png"/></a></p>
-<p><code>X = {empl_id}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>Y = {empl_name, birt_date, position, salary}</code></p>
-<p>empl_id 값에 따라 나머지 모든 필드의 값은 의미적으로 unique 하게 결정된다.</p>
-<h3 id="2-fd">2. FD 주의 사항<a class="headerlink" href="#2-fd" title="Permanent link">¶</a></h3>
-<ul>
-<li>테이블의 특정 순간, 상태가 아니라 <strong>의미적으로 파악</strong>해야 한다.</li>
-<li>player
-| <ins>id</ins> | name  | team_id | backnumber |
-| ------ | ----- | ------- | ---------- |
-| 1      | messi | 2       | 10         |
-| 2      | sonny | 105     | 7          |
-| 3       | ronaldo  | null   | null  |</li>
-</ul>
-<p><code>{name}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{team_id}</code> 처럼 보이지만 id 3번과 동명이인인 브라질의 Ronaldo 선수는 team_id 값이 있을 수 있다!</p>
-<h3 id="3-fd">3. FD 예시<a class="headerlink" href="#3-fd" title="Permanent link">¶</a></h3>
-<ul>
-<li><code>{std_id}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{stu_name, birth_date, addr}</code></li>
-<li><code>{class_id}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{class_name, year, semester, credit}</code></li>
-<li><code>{stu_id, class_id}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{grde}</code></li>
-<li><code>{bank_name, bank_account}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{balance, open_date}</code></li>
-</ul>
-<h3 id="4-fd">4.  FD 의 종류<a class="headerlink" href="#4-fd" title="Permanent link">¶</a></h3>
-<h4 id="0-y">0. {} -&gt;Y<a class="headerlink" href="#0-y" title="Permanent link">¶</a></h4>
-<p>항상 Y 의 값이 일정하다면 공집합 즉, 아무 attribute 없이도 Y 값을 결정할 수 있고 이러한 FD 를 <code>{}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>Y</code> 처럼 표현 할 수 있다.</p>
-<h4 id="1-trivial-fd-non-trivial-fd">1. Trivial FD, Non-trivial FD<a class="headerlink" href="#1-trivial-fd-non-trivial-fd" title="Permanent link">¶</a></h4>
-<p>Y 가 X 의 subset 이라면 당연히 <code>X</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>Y</code> 가 성립하고 이런 FD 를 trivial FD 라 부른다.
-그렇지 않은 FD 는 non-trivial FD 라 부른다.</p>
-<h3 id="2-partial-fd-full-fd">2. Partial FD, Full FD<a class="headerlink" href="#2-partial-fd-full-fd" title="Permanent link">¶</a></h3>
-<p>X 의 proper subset 으로도 FD 가 성립하면 partial FD 라 부르고 그렇지 않다면 full FD 라 부른다.</p>
+<h3 id="_2">내일 할 일<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 27, 2022</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 27, 2022</span>
 </small>
 </div>
 </article>
@@ -881,7 +793,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 데이터베이스 이상현상" class="md-footer__link md-footer__link--prev" href="../db-anomaly/" rel="prev">
+<a aria-label="Previous: 2022-12-26" class="md-footer__link md-footer__link--prev" href="../2022-12-26/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -890,21 +802,8 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              데이터베이스 이상현상
+              2022-12-26
             </div>
-</div>
-</a>
-<a aria-label="Next: 데이터베이스 정규화" class="md-footer__link md-footer__link--next" href="../db-normalization/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              데이터베이스 정규화
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
 </div>
 </a>
 </nav>
