@@ -149,6 +149,7 @@ nav:
               - 레디스 HA : books/springboot-msa-component/ch10-sec01-redis-high-availability.md
               - 레디스 직렬화 설정 : books/springboot-msa-component/ch10-sec04-redis-serializer.md
               - 레디스의 다양한 활용: books/springboot-msa-component/ch10-sec05-redis-usages.md
+          - 11장 스프링 스케쥴링 테스크: books/springboot-msa-component/ch11-sec03-batch-architecture.md
   - TIL:
       - 시작하기: til/getting-started.md
       - 2022-12-14: til/til/2022-12-14.md
