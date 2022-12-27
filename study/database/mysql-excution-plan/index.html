@@ -325,12 +325,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#-">
-    - 모든 항목을 정리하지는 않고 프로젝트에서 사용한 쿼리의 실행계획을 찍어보았을때 보이는 특이사항 위주로 정리하겠습니다.
-  </a>
-<nav aria-label="- 모든 항목을 정리하지는 않고 프로젝트에서 사용한 쿼리의 실행계획을 찍어보았을때 보이는 특이사항 위주로 정리하겠습니다." class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#1">
     1. 전체 테이블을 찍는 쿼리
   </a>
@@ -343,6 +337,12 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3-join">
     3. Join 쿼리
+  </a>
+<nav aria-label="3. Join 쿼리" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31">
+    3.1 사용자 당 게시글 여러개인 경우 조인
   </a>
 </li>
 </ul>
@@ -762,12 +762,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#-">
-    - 모든 항목을 정리하지는 않고 프로젝트에서 사용한 쿼리의 실행계획을 찍어보았을때 보이는 특이사항 위주로 정리하겠습니다.
-  </a>
-<nav aria-label="- 모든 항목을 정리하지는 않고 프로젝트에서 사용한 쿼리의 실행계획을 찍어보았을때 보이는 특이사항 위주로 정리하겠습니다." class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#1">
     1. 전체 테이블을 찍는 쿼리
   </a>
@@ -780,6 +774,12 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3-join">
     3. Join 쿼리
+  </a>
+<nav aria-label="3. Join 쿼리" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31">
+    3.1 사용자 당 게시글 여러개인 경우 조인
   </a>
 </li>
 </ul>
@@ -802,24 +802,27 @@ MySQL - <a href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html">ex
 <h3 id="0">0. 들어가며<a class="headerlink" href="#0" title="Permanent link">¶</a></h3>
 <ul>
 <li><code>친절한 SQL</code> 을 읽다보니 oracle 에 기반한 책이라는 점이 아쉬웠습니다.</li>
-<li>
-<p>사실 MySQL 을 깊게 학습한 적이 있는 것은 아니라 이 기회에 Oracle DB 로 계속 학습을 이어나가면 어떨까도 생각했지만 여러 대기업에서 MySQL 을 적극적으로 사용하고 있다고 생각되어 계속 MySQL로 학습하고자 합니다.
+<li>사실 MySQL 을 깊게 학습한 적이 있는 것은 아니라 이 기회에 Oracle DB 로 계속 학습을 이어나가면 어떨까도 생각했지만 여러 대기업에서 MySQL 을 적극적으로 사용하고 있다고 생각되어 계속 MySQL로 학습하고자 합니다.
 <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/mysql-kakao.png"><img alt="mysql-kakao.png" src="../images/mysql-kakao.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/mysql-coupang.png"><img alt="mysql-coupang.png" src="../images/mysql-coupang.png"/></a></p>
-</li>
-<li>
-<p>책에서 나오는 내용을 MySQL 로 따라해보려하니 가장 막히는 부분이 실행 계획을 읽는 부분이었습니다</p>
-</li>
-<li>
-<p>그래서 이 문서에서는 MySQL 의 Execution Plan 을 확인하고 해석하는 법을 간단히 정리해보고자 합니다.</p>
-</li>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/mysql-coupang.png"><img alt="mysql-coupang.png" src="../images/mysql-coupang.png"/></a></li>
+</ul>
+<p><br/>
+- 책에서 나오는 내용을 MySQL 로 따라해보려하니 가장 막히는 부분이 실행 계획을 읽는 부분이었습니다
+- 그래서 이 문서에서는 MySQL 의 Execution Plan 을 확인하고 해석하는 법을 간단히 정리해보고자 합니다.</p>
+<ul>
 <li>
 <p>예시로 사용한 테이블 구조와 쿼리는 이전에 진행했던 프로젝트 중 하나인 <a href="https://github.com/ndy2/realrealworld">리얼월드</a> 의 테이블 구조와 쿼리를 사용하겠습니다. 자세한 테이블 구조가 궁금하신 분은 위 링크를 참고해주세요.</p>
 </li>
+<li>
+<p>모든 항목을 정리하지는 않고 프로젝트에서 사용한 쿼리의 실행계획을 찍어보았을때 보이는 특이사항 위주로 정리하겠습니다.</p>
+</li>
+<li>
+<p>Article, Profile 두가지의 테이블을 가지며 모든 Profile 은 한개의 Article 을 가지고 Profile 1000 개와 Article 1000 개를 초기데이터로 추가하였습니다.</p>
+</li>
 </ul>
-<h2 id="-">- 모든 항목을 정리하지는 않고 프로젝트에서 사용한 쿼리의 실행계획을 찍어보았을때 보이는 특이사항 위주로 정리하겠습니다.<a class="headerlink" href="#-" title="Permanent link">¶</a></h2>
+<hr/>
 <h3 id="1">1. 전체 테이블을 찍는 쿼리<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="explain-1.png"><img alt="explain-1.png" src="explain-1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/explain-1.png"><img alt="explain-1.png" src="../images/explain-1.png"/></a></p>
 <p>빈 값들은 <code>Null</code> 입니다. 일단 값이 있는 필드 먼저 살펴보겠습니다.</p>
 <ul>
 <li>
@@ -857,18 +860,17 @@ MySQL - <a href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html">ex
 </ul>
 </li>
 </ul>
+<p><br/></p>
 <p>MySQL 의 기본 Explain 키워드 만으로는 실행계획을 이해하기 어렵습니다.</p>
 <p>format="json" 을 통해 더 자세한 정보를 확인하거나 MySQL workbench 를 이용해 GUI 를 통해 실행계획을 확인할 수 있습니다. MySQL workbench  의 번개 + 돋보기 아이콘을 클릭하면 선택한 쿼리의 Explain 키워드를 실행한 결과를 Tabular 형식과 <code>json</code> 포멧을 통한 시각화 형태로 확인 할 수 있습니다.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/explain-2.png"><img alt="explain-2.png" src="../images/explain-2.png"/></a>
 - 1.000 K rows 에 대해서 Full Table Scan 을 사용할 것이란 것을 알 수 있습니다.</p>
 <h3 id="2">2. 카운트 쿼리<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
 <ul>
-<li>전체 아티클의 카운트를 조회하는 쿼리의 실행계획을 확인해보겠습니다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/count-query.png"><img alt="count-query.png" src="../images/count-query.png"/></a>
-<br/></li>
 <li>
-<p>실행 계획 visualize
- <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/excution-plan-3.png"><img alt="excution-plan-3.png" src="../images/excution-plan-3.png"/></a></p>
+<p>전체 아티클의 카운트를 조회하는 쿼리의 실행계획을 확인해보겠습니다.
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/count-query.png"><img alt="count-query.png" src="../images/count-query.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/excution-plan-3.png"><img alt="excution-plan-3.png" src="../images/excution-plan-3.png"/></a></p>
 </li>
 <li>
 <p>Full Index Scan 방식을 활용한다는 것을 알 수 있습니다.</p>
@@ -884,7 +886,7 @@ MySQL - <a href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html">ex
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/query-5.png"><img alt="query-5.png" src="../images/query-5.png"/></a></p>
 <ul>
 <li>실행 계획
--<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/excution-plan-join.png"><img alt="excution-plan-join.png" src="../images/excution-plan-join.png"/></a></li>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/excution-plan-join.png"><img alt="excution-plan-join.png" src="../images/excution-plan-join.png"/></a></li>
 </ul>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/excution-plain-join-table.png"><img alt="excution-plain-join-table.png" src="../images/excution-plain-join-table.png"/></a></p>
 <ul>
@@ -895,10 +897,17 @@ MySQL - <a href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html">ex
 <li>Article 을 왼쪽에 Profile 을 오른쪽에 작성했지만 MySQL 이 똑똑하게 Profile 을 NL 조인의 Driving Table 로 설정한 것 같습니다.
 <br/>
 이번에는 힌트를 통해 join 순서를 강제해보겠습니다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/query-hint-join-order-fix.png"><img alt="query-hint-join-order-fix.png" src="../images/query-hint-join-order-fix.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/excution-plain-6.png"><img alt="excution-plain-6.png" src="../images/excution-plain-6.png"/></a></li>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/query-hint-join-order-fix.png"><img alt="query-hint-join-order-fix.png" src="../images/query-hint-join-order-fix.png"/></a></li>
 </ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/excution-plain-6.png"><img alt="excution-plain-6.png" src="../images/excution-plain-6.png"/></a></p>
 <p>MySQL 8.0 에 추가된 힌트인 <code>/*+ JOIN_FIXED_ORDER () */</code> 구문을 활용하면 from 절의 순서대로 join 순서를 강제할 수 있습니다. 실행계획 도 바뀐것을 확인 할 수 있습니다.</p>
+<p>Query Cost 를 보니 사용자당 항상 하나의 게시글만을 가지고 있어서 그런지 <code>Article -&gt; Profile</code> 이나 <code>Profile -&gt; Article</code> 이나 Join 순서에 따른 <code>Query Cost</code> 차이가 거의 없습니다.</p>
+<p>사용자당 게시글을 여러개 가지는 경우에 MySQL 은 어떤 판단을 할까요?</p>
+<h4 id="31">3.1 사용자 당 게시글 여러개인 경우 조인<a class="headerlink" href="#31" title="Permanent link">¶</a></h4>
+<p>사용자당 총 10 개의 게시글, 그리고 1000 명의 사용자를 초기 데이터로 추가하였습니다.</p>
+<p>실행 계획을 visualize 한 결과는 아래와 같습니다.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/join-index.excalidraw.png"><img alt="join-index.excalidraw.png" src="../excalidraws/join-index.excalidraw.png"/></a></p>
+<p>Query Cost 값이 작은 왼쪽 플랜이 기본적으로 선택되었고 join order 를 <code>a -&gt; p</code> 로 강제한 오른쪽 플랜은 선택되지 않았습니다. 각 코스트를 자세히 살펴보면 p 를 full table scan 하는 비용과 a 를 full table scan 하는 비용에 큰 차이가 있는것을 알 수 있습니다. 또한 join 에 대해서는 오히려 <code>a -&gt; p</code> 를 하는 비용이 더 낮은데 이는 게시글 하나당 작성자 (profile_id) 항상 하나가 있기 때문에 Unique Key Lookup 을 사용할 수 있었기 때문으로 생각됩니다. 반명 Profile 을 기준으로 Article 은 몇게가 있을지 모르기 때문에 scan 의 종료지점 탐색을 위해 조금더 Scan 이 이루어 져야해서 코스트가 조금 더 높은것으로 보입니다.</p>
 <hr/>
 <div class="md-source-file">
 <small>
