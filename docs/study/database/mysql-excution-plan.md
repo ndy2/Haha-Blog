@@ -17,6 +17,9 @@ MySQL - [explain-output](https://dev.mysql.com/doc/refman/8.0/en/explain-output.
 - 예시로 사용한 테이블 구조와 쿼리는 이전에 진행했던 프로젝트 중 하나인 [리얼월드](https://github.com/ndy2/realrealworld) 의 테이블 구조와 쿼리를 사용하겠습니다. 자세한 테이블 구조가 궁금하신 분은 위 링크를 참고해주세요.
 
 - 모든 항목을 정리하지는 않고 프로젝트에서 사용한 쿼리의 실행계획을 찍어보았을때 보이는 특이사항 위주로 정리하겠습니다.
+
+- Article, Profile 두가지의 테이블을 가지며 모든 Profile 은 한개의 Article 을 가지고 Profile 1000 개와 Article 1000 개를 초기데이터로 추가하였습니다.
+
 ---
 
 
@@ -92,3 +95,15 @@ format="json" 을 통해 더 자세한 정보를 확인하거나 MySQL workbench
 MySQL 8.0 에 추가된 힌트인 `/*+ JOIN_FIXED_ORDER () */` 구문을 활용하면 from 절의 순서대로 join 순서를 강제할 수 있습니다. 실행계획 도 바뀐것을 확인 할 수 있습니다.
 
 
+Query Cost 를 보니 사용자당 항상 하나의 게시글만을 가지고 있어서 그런지 `Article -> Profile` 이나 `Profile -> Article` 이나 Join 순서에 따른 `Query Cost` 차이가 거의 없습니다.
+
+사용자당 게시글을 여러개 가지는 경우에 MySQL 은 어떤 판단을 할까요?
+
+#### 3.1 사용자 당 게시글 여러개인 경우 조인
+사용자당 총 10 개의 게시글, 그리고 1000 명의 사용자를 초기 데이터로 추가하였습니다.
+
+실행 계획을 visualize 한 결과는 아래와 같습니다.
+
+![join-index.excalidraw.png](excalidraws/join-index.excalidraw.png)
+
+Query Cost 값이 작은 왼쪽 플랜이 기본적으로 선택되었고 join order 를 `a -> p` 로 강제한 오른쪽 플랜은 선택되지 않았습니다. 각 코스트를 자세히 살펴보면 p 를 full table scan 하는 비용과 a 를 full table scan 하는 비용에 큰 차이가 있는것을 알 수 있습니다. 또한 join 에 대해서는 오히려 `a -> p` 를 하는 비용이 더 낮은데 이는 게시글 하나당 작성자 (profile_id) 항상 하나가 있기 때문에 Unique Key Lookup 을 사용할 수 있었기 때문으로 생각됩니다. 반명 Profile 을 기준으로 Article 은 몇게가 있을지 모르기 때문에 scan 의 종료지점 탐색을 위해 조금더 Scan 이 이루어 져야해서 코스트가 조금 더 높은것으로 보입니다.
