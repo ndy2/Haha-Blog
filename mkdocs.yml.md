@@ -92,6 +92,8 @@ nav:
           -  동시성 - synchrozied: study/java/synchronized.md
       - 아키텍처:
           -  MSA 장단점: study/architecture/msa-pros-cons.md
+      - 운영체제:
+          -  프로세스 vs 쓰레드: study/os/process-vs-thread.md
       - 데이터베이스:
           -  데이터베이스 기본 용어: study/database/database-basic-terminologies.md
           -  관계형 데이터베이스: study/database/relational-database.md
