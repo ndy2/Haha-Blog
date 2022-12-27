@@ -106,6 +106,7 @@ nav:
           -  OLAP: study/database/handle-olap.md
           -  클러스터링, 리플리케이션, 샤딩: study/database/clustering-replication-sharding.md
           -  DBCP: study/database/dbcp.md 
+          -  MySQL 실행계획 연습: study/database/mysql-excution-plan.md 
       - 네트워크:
           -  HTTP 버전별 특징: study/network/http-versions.md
           -  HTTPS: study/network/https.md
