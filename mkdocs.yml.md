@@ -104,7 +104,8 @@ nav:
           -  데이터베이스 FD: study/database/db-functional-dependency.md
           -  데이터베이스 정규화: study/database/db-normalization.md
           -  OLAP: study/database/handle-olap.md
-          - 클러스터링, 리플리케이션, 샤딩: study/database/clustering-replication-sharding.md
+          -  클러스터링, 리플리케이션, 샤딩: study/database/clustering-replication-sharding.md
+          -  DBCP: study/database/dbcp.md 
       - 네트워크:
           -  HTTP 버전별 특징: study/network/http-versions.md
           -  HTTPS: study/network/https.md
