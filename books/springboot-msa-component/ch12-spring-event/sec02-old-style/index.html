@@ -788,52 +788,53 @@
 <ul>
 <li>이벤트 클래스 - ApplicationEvent 상속</li>
 </ul>
-<p>```java title = "UserCouponEvent"
-@Getter
-public class UserCouponEvent extends ApplicationEvent {</p>
-<div class="highlight"><pre><span></span><code>private final String email;
-
-public UserCouponEvent(final Object source, final String email) {
-    super(source);
-    this.email = email;
-}
+<p><div class="highlight"><span class="filename">UserCouponEvent</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nd">@Getter</span><span class="w"></span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserCouponEvent</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ApplicationEvent</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">;</span><span class="w"></span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">UserCouponEvent</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">source</span><span class="p">);</span><span class="w"></span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">email</span><span class="p">;</span><span class="w"></span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>}
-<code>&lt;br&gt;
-
-- 리스너 클래스 - ApplicationListener 상속</code>java title = "UserCouponEventListner"
-@Slf4j
-@Component
-public class UserCouponEventListener implements ApplicationListener<usercouponevent> {
-
-    @Override
-    public void onApplicationEvent(final UserCouponEvent event) {
-        log.info("register user email : {}", event.getEmail());
-    }
-}
-```</usercouponevent></p>
+<br/></p>
+<ul>
+<li>리스너 클래스 - ApplicationListener 상속</li>
+</ul>
+<div class="highlight"><span class="filename">UserCouponEventListner</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nd">@Slf4j</span><span class="w"></span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nd">@Component</span><span class="w"></span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserCouponEventListener</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ApplicationListener</span><span class="o">&lt;</span><span class="n">UserCouponEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onApplicationEvent</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">UserCouponEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"register user email : {}"</span><span class="p">,</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">getEmail</span><span class="p">());</span><span class="w"></span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p><br/>
-- 사용하는 법
-```java title = "UserServiceImpl"
-import org.springframework.context.ApplicationEventPublisher;
-...</p>
-<p>@Service
-@RequiredArgsContructor
-public class UserServiceImpl implements UserService {</p>
-<div class="highlight"><pre><span></span><code>private final UserRepository userRepository;
-private final ApplicationEventPublisher eventPublisher;
-
-@Transactional
-@Override
-public void registerUser(UserRegisterRequest request){
-
-    ...
-    userRepository.save(user);
-    eventPublisher.publishEvent(new UserCouponEvent(user, user.email));
-}
+- 사용하는 법</p>
+<div class="highlight"><span class="filename">UserServiceImpl</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.ApplicationEventPublisher</span><span class="p">;</span><span class="w"></span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">...</span><span class="w"></span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nd">@Service</span><span class="w"></span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="nd">@RequiredArgsContructor</span><span class="w"></span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserServiceImpl</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">UserService</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">UserRepository</span><span class="w"> </span><span class="n">userRepository</span><span class="p">;</span><span class="w"></span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ApplicationEventPublisher</span><span class="w"> </span><span class="n">eventPublisher</span><span class="p">;</span><span class="w"></span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="nd">@Transactional</span><span class="w"></span>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerUser</span><span class="p">(</span><span class="n">UserRegisterRequest</span><span class="w"> </span><span class="n">request</span><span class="p">){</span><span class="w"></span>
+<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a>
+<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">        </span><span class="p">...</span><span class="w"></span>
+<a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">        </span><span class="n">userRepository</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">user</span><span class="p">);</span><span class="w"></span>
+<a href="#__codelineno-2-17" id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">        </span><span class="n">eventPublisher</span><span class="p">.</span><span class="na">publishEvent</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">UserCouponEvent</span><span class="p">(</span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">email</span><span class="p">));</span><span class="w"></span>
+<a href="#__codelineno-2-18" id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-2-19" id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>}</p>
-<p>```</p>
 <p>물론 event 를 퍼블리시 하는 책임을 user 자체로 넘기고 또한 ApplicationEventPublisher 를 감싼 도메인 서비스를 구축하는 방식으로 구체적인 기술을 조금 감출 수는 있습니다. 예시 코드에서는 간단히 사용 법 위주로 보아주세요.</p>
 <hr/>
 <p><code>ApplicationEventPublisher</code> 는 <code>ApplicationContext</code> 가 상속하는 이벤트 중 하나입니다.
