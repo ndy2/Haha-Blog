@@ -34,6 +34,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1-async">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -660,9 +663,36 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          비동기 이벤트 처리
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         비동기 이벤트 처리
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-async">
+    1. @Async 애너테이션을 사용할 때 두가지 주의 사항
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 설정 방법
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-transactionaleventlistener">
+    3.  @TransactionalEventListener
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../sec05-spring-event/">
@@ -772,6 +802,27 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-async">
+    1. @Async 애너테이션을 사용할 때 두가지 주의 사항
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 설정 방법
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-transactionaleventlistener">
+    3.  @TransactionalEventListener
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -782,6 +833,46 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1>비동기 이벤트 처리</h1>
+<p>별도의 처리를 하지 않으면 스프링 이벤트는 이벤트를 발행시킨 쓰레드에서 동기적으로 처리됩니다. @Async 애너테이션을 이벤트 리스너 클래스에 추가하면 스프링은 기본값으로 <code>SimpleAsyncTaskExecutor</code> 를 통해서 별도의 쓰레드에서 이벤트 리스너 메서드를 실행합니다.</p>
+<hr/>
+<h3 id="1-async">1. @Async 애너테이션을 사용할 때 두가지 주의 사항<a class="headerlink" href="#1-async" title="Permanent link">¶</a></h3>
+<ol>
+<li>
+<p>비동기 이벤트 리스너가 예외를 던진다면 호출자에게 전달되지 않습니다.</p>
+<ul>
+<li><code>비동기</code> 가 가지는 의미를 생각해보면 당연한 내용입니다.</li>
+<li><code>AsyncUncaughtExceptionHandler</code> 를 구현하여 커스텀 비동기 예외처리 로직을 구성할 수 있습니다.</li>
+</ul>
+</li>
+<li>
+<p>비동기 이벤트 리스너의 메서드의 반환값으로 새로운 이벤트를 발행할 수 없습니다.</p>
+<ul>
+<li>만약 메서드의 처리 이후 추가적인 이벤트 발행이 필요한 경우 ApplicationEventPublisher 를 통해 수동으로 발행해야 합니다</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h3 id="2">2. 설정 방법<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<ul>
+<li>설정 클래스에 <code>@EnableAsync</code> 애너테이션을 꼭 추가해야 합니다.</li>
+<li>추가적인 설정이 필요없다면 <code>@SpringBootApplication</code> 클래스에 추가해도 되지만 가능하면 별도의 <code>@Configuration</code> 클래스에서 비동기 처리 관련 설정을 해주는 것이 좋습니다.</li>
+</ul>
+<p><br/>
+- Aysnc 와 관련된 설정에는 크게 <code>Executor</code> 를 빈 등록하는 것과 <code>AsyncConfigurer</code> 를 구현하는 방식이 있습니다. </p>
+<hr/>
+<h3 id="3-transactionaleventlistener">3.  <code>@TransactionalEventListener</code><a class="headerlink" href="#3-transactionaleventlistener" title="Permanent link">¶</a></h3>
+<p>기본적인 @EventListner 에서는 이벤트 처리를 담당하는 쓰레드가 이벤트를 감지하는 즉시 이벤트 리스너 메서드가 동작합니다. <code>@TransactionalEventListener</code> 를 사용하면  <code>@Transactional</code> 와 연동해서 트랜잭션과 관련된 시점에 정교하게 이벤트 리스너 메서드 실행시점을 조작할 수 있습니다. </p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>TransactionPhase 에 따라 호출 되는 `EventLisner` 임
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>요 인터페이스를 구현 한 것과 같음 TransactionalApplicationListener
+</code></pre></div>
+<p>TransactionPhase 에 따라 정교하게 이벤트를 적용하고 싶다면 사용할 수 있습니다.</p>
+<p><code>TransactionPhase</code></p>
+<ul>
+<li>AFTER_COMMIT (기본값) - 트랜잭션이 성공적으로 마무리(commit)됬을 때 이벤트 실행</li>
+<li>AFTER_ROLLBACK – 트랜잭션이 rollback 됬을 때 이벤트 실행</li>
+<li>AFTER_COMPLETION – 트랜잭션이 마무리 됬을 때(commit or rollback) 이벤트 실행</li>
+<li>BEFORE_COMMIT - 트랜잭션의 커밋 전에 이벤트 실행</li>
+</ul>
 <hr/>
 <div class="md-source-file">
 <small>
