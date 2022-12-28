@@ -7,7 +7,8 @@
 
 - 이벤트 클래스 - ApplicationEvent 상속
 
-```java title = "UserCouponEvent"
+
+```java title="UserCouponEvent"
 @Getter
 public class UserCouponEvent extends ApplicationEvent {
 
@@ -23,7 +24,8 @@ public class UserCouponEvent extends ApplicationEvent {
 
 - 리스너 클래스 - ApplicationListener 상속
 
-```java title = "UserCouponEventListner"
+
+```java title="UserCouponEventListner"
 @Slf4j
 @Component
 public class UserCouponEventListener implements ApplicationListener<UserCouponEvent> {
@@ -37,7 +39,8 @@ public class UserCouponEventListener implements ApplicationListener<UserCouponEv
 
 <br>
 - 사용하는 법
-```java title = "UserServiceImpl"
+
+```java title="UserServiceImpl"
 import org.springframework.context.ApplicationEventPublisher;
 ...
 

@@ -5,7 +5,7 @@
 
 - 이벤트 클래스 - POJO 클래스
 
-```java title = "UserCouponEvent"
+```java title="UserCouponEvent"
 @Getter
 public class UserCouponEvent {
 
@@ -19,6 +19,7 @@ public class UserCouponEvent {
 
 <br>
 - 리스너 클래스
+
 ```java title="UserCouponEventListener"
 @Slf4j
 @Component
@@ -34,6 +35,7 @@ public class UserCouponEventListener {
 <br>
 
 - 사용하는 법
+
 ```java title = "UserServiceImpl"
 import org.springframework.context.ApplicationEventPublisher;
 ...
