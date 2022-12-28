@@ -196,6 +196,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch12-spring-event/excalidraws/spring-event-vs-middleware-event.excalidraw/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/ReativeStack_NonBlocked.excalidraw/</loc>
          <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>

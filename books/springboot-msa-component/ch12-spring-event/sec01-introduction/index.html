@@ -34,6 +34,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1-spring-event-sqs-sns-kafka-rabbitmq">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -640,9 +643,45 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          스프링 이벤트 소개
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         스프링 이벤트 소개
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-spring-event-sqs-sns-kafka-rabbitmq">
+    1. Spring Event 와 메시징 플랫폼 (SQS, SNS, Kafka, RabbitMQ) 비교
+  </a>
+<nav aria-label="1. Spring Event 와 메시징 플랫폼 (SQS, SNS, Kafka, RabbitMQ) 비교" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    공통점
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    차이점
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 이벤트를 사용하는 이유
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../sec02-old-style/">
@@ -767,6 +806,36 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-spring-event-sqs-sns-kafka-rabbitmq">
+    1. Spring Event 와 메시징 플랫폼 (SQS, SNS, Kafka, RabbitMQ) 비교
+  </a>
+<nav aria-label="1. Spring Event 와 메시징 플랫폼 (SQS, SNS, Kafka, RabbitMQ) 비교" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    공통점
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    차이점
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 이벤트를 사용하는 이유
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -777,6 +846,32 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1>스프링 이벤트 소개</h1>
+<h3 id="1-spring-event-sqs-sns-kafka-rabbitmq">1. Spring Event 와 메시징 플랫폼 (SQS, SNS, Kafka, RabbitMQ) 비교<a class="headerlink" href="#1-spring-event-sqs-sns-kafka-rabbitmq" title="Permanent link">¶</a></h3>
+<p>스프링 이벤트에 대한 학습을 시작하기에 앞서서 먼저 Spring Event 의 이벤트 처리와 SQS, Kafka 와 같은 외부 시스템 (미들웨어)을 이용한 이벤트 처리의 차이에 대해서 알고가면 좋을것 같습니다.</p>
+<h4 id="_1">공통점<a class="headerlink" href="#_1" title="Permanent link">¶</a></h4>
+<p>두 방식 모두 메시지(이벤트)를 게시하고 구독하는 시스템입니다. </p>
+<h4 id="_2">차이점<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
+<p>스프링 이벤트는 스프링 애플리케이션 내부에서 이벤트를 게시하고 구독하는 목적으로 사용됩니다.</p>
+<p>미들웨어를 이용한 이벤트 처리는 프로세스와 프로세스 또는 인스턴스와 인스턴스 사이에 이벤트 메시지를 게시하고 구독하는 목적으로 사용됩니다. MSA 환경 에서는 한 컴포넌트에서 다른 여러 컴포넌트에 데이터를 전파하는 목적으로 사용하거나 메시지 큐에 메시지를 쌓아 두고 주기적으로 배치 프로세싱하는 데 주로 사용합니다.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/spring-event-vs-middleware-event.excalidraw.png"><img alt="spring-event-vs-middleware-event.excalidraw.png" src="../excalidraws/spring-event-vs-middleware-event.excalidraw.png"/></a></p>
+<h3 id="2">2. 이벤트를 사용하는 이유<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<p>그렇다면 이벤트 처리를 외부 시스템과 한 애플리케이션 인스턴스 내에서도 이렇게나 적극적으로 활용하는 이유가 무엇일까요?</p>
+<p>그 이유는 </p>
+<ul>
+<li>Publisher 와 Subscriber 의 낮은 결합도 유지</li>
+<li>비동기 처리를 통한 시스템 자원의 효율적인 사용 및 성능 향상</li>
+<li>하나의 이벤트를 여러 Subscriber 가 구독할 수 있음</li>
+</ul>
+<p>등이 있습니다.</p>
+<p>첫번째 이유인 낮은 결합도, 의존 관계 분리의 역할이 가장 크고 이벤트 처리의 핵심입니다. 이 <a href="https://github.com/ndy2/study-with-code/tree/main/study-spring/spring-event">깃헙 링크</a> 에서 의존관계가 분리되지 않았을 때의 문제점과 이를 Spring 이벤트로 해결하는 예제를 확인 할 수 있습니다.</p>
+<hr/>
+<p>관심사가 다른 두 도메인 패키지간의 의존 관계를 분리하는 방법은 이벤트 처리 방식 외에도 </p>
+<ul>
+<li>중간 클래스를 도입하여 DIP 를 적용한다.</li>
+<li>도메인 엔티티가 아닌 ID 참조를 활용한다.</li>
+<li>이벤트 구독, 발행 모델을 활용한다.</li>
+</ul>
+<p>등이 있습니다. 이 방식들은 조영호님의 우아한 객체지향 (<a href="https://youtu.be/dJ5C4qRqAgA">링크</a>) 에서 예제를 통해 확인 할 수 있습니다.</p>
 <hr/>
 <div class="md-source-file">
 <small>
