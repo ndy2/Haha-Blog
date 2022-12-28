@@ -166,6 +166,36 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch12-spring-event/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch12-spring-event/sec01-introduction/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch12-spring-event/sec02-old-style/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch12-spring-event/sec03-new-style/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch12-spring-event/sec04-async-event/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch12-spring-event/sec05-spring-event/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/ReativeStack_NonBlocked.excalidraw/</loc>
          <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
