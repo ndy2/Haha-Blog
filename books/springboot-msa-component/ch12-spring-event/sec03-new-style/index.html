@@ -813,46 +813,43 @@
 <ul>
 <li>사용하는 법</li>
 </ul>
-<p>```java title = "UserServiceImpl"
-import org.springframework.context.ApplicationEventPublisher;
-...</p>
-<p>@Service
-@RequiredArgsContructor
-public class UserServiceImpl implements UserService {</p>
-<div class="highlight"><pre><span></span><code>private final UserRepository userRepository;
-private final ApplicationEventPublisher eventPublisher;
-
-@Transactional
-@Override
-public void registerUser(UserRegisterRequest request){
-
-    ...
-    userRepository.save(user);
-    eventPublisher.publishEvent(new UserCouponEvent(user.email));
-}
+<div class="highlight"><span class="filename">UserServiceImpl</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.ApplicationEventPublisher</span><span class="p">;</span><span class="w"></span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">...</span><span class="w"></span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nd">@Service</span><span class="w"></span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="nd">@RequiredArgsContructor</span><span class="w"></span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserServiceImpl</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">UserService</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">UserRepository</span><span class="w"> </span><span class="n">userRepository</span><span class="p">;</span><span class="w"></span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ApplicationEventPublisher</span><span class="w"> </span><span class="n">eventPublisher</span><span class="p">;</span><span class="w"></span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="nd">@Transactional</span><span class="w"></span>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerUser</span><span class="p">(</span><span class="n">UserRegisterRequest</span><span class="w"> </span><span class="n">request</span><span class="p">){</span><span class="w"></span>
+<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a>
+<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">        </span><span class="p">...</span><span class="w"></span>
+<a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">        </span><span class="n">userRepository</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">user</span><span class="p">);</span><span class="w"></span>
+<a href="#__codelineno-2-17" id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">        </span><span class="n">eventPublisher</span><span class="p">.</span><span class="na">publishEvent</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">UserCouponEvent</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="na">email</span><span class="p">));</span><span class="w"></span>
+<a href="#__codelineno-2-18" id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-2-19" id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>}</p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>앞선 방식의 단점이 모두 해결되었습니다!
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>@EventListenr 애너테이션의 JavaDoc 을 읽어 보면 아래와 같은 내용이 있습니다.
+<p>앞선 방식의 단점이 모두 해결되었습니다!</p>
+<p>@EventListenr 애너테이션의 JavaDoc 을 읽어 보면 아래와 같은 내용이 있습니다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>- 이벤트 처리의 핵심이 되는 애너테이션입니다.
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>- 이벤트 리스너 클래스 (빈 등록 필요) 에 정의된 메서드에 @EventListner 애너테이션을 추가하고 인자로 처리하고자 하는 이벤트의 타입을 추가하면 그 메서드가 이벤트 리스너로서 동작하게 됩니다.
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>- 애너테이션의 `classes` 프로퍼티를 통해 여러 이벤트를 동시에 처리 하도록 할 수 있습니다.
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>    - `javadoc` 에서는 이 방식을 그리 권장하지는 않습니다. 
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>    - 굳이 필요하다면 상속 계층을 고려하라고 합니다.
 </code></pre></div>
-- 이벤트 처리의 핵심이 되는 애너테이션입니다.
-- 이벤트 리스너 클래스 (빈 등록 필요) 에 정의된 메서드에 @EventListner 애너테이션을 추가하고 인자로 처리하고자 하는 이벤트의 타입을 추가하면 그 메서드가 이벤트 리스너로서 동작하게 됩니다.
-- 애너테이션의 <code>classes</code> 프로퍼티를 통해 여러 이벤트를 동시에 처리 하도록 할 수 있습니다.
-    - <code>javadoc</code> 에서는 이 방식을 그리 권장하지는 않습니다. 
-    - 굳이 필요하다면 상속 계층을 고려하라고 합니다.
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a> @EventListener 메서드가 처리할 수 있는 이벤트의 타입은 기존의 `ApplicationEvent` 혹은 임의의 `Object` 모두 가능합니다.
 </code></pre></div>
- @EventListener 메서드가 처리할 수 있는 이벤트의 타입은 기존의 <code>ApplicationEvent</code> 혹은 임의의 <code>Object</code> 모두 가능합니다.
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>EventListener 메서드의 호출을 내부적으로 `EventListenerMethodProcessor`에 의해서 이루어 진다. 
 </code></pre></div>
-EventListener 메서드의 호출을 내부적으로 <code>EventListenerMethodProcessor</code>에 의해서 이루어 진다. 
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>EventListener 메서드가 void 가 아닌 타입의 리턴을 가진다면
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>대상 메서드의 리턴은 새로운 이벤트로서 동작한다.
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>리턴 타입이 배열 혹은 컬렉션이라면 각 원소가 새로운 이벤트로서 발행된다.
 </code></pre></div>
-EventListener 메서드가 void 가 아닌 타입의 리턴을 가진다면
-대상 메서드의 리턴은 새로운 이벤트로서 동작한다.</p>
-<p>리턴 타입이 배열 혹은 컬렉션이라면 각 원소가 새로운 이벤트로서 발행된다.
-```</p>
 <p>추가로 event 를 비동기 처리할 때 @Async 애너테이션과 함께 사용할 때의 주의점을 이야기 하는데 이는 다음 페이지에서 알아보겠습니다.</p>
 <hr/>
 <div class="md-source-file">
