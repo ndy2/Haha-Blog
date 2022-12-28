@@ -152,6 +152,12 @@ nav:
               - 레디스 직렬화 설정 : books/springboot-msa-component/ch10-sec04-redis-serializer.md
               - 레디스의 다양한 활용: books/springboot-msa-component/ch10-sec05-redis-usages.md
           - 11장 스프링 스케쥴링 테스크: books/springboot-msa-component/ch11-sec03-batch-architecture.md
+          - 12장 스프링 이벤트: books/springboot-msa-component/ch12-spring-event/index.md
+              - 스프링 이벤트 소개 : books/springboot-msa-component/ch12-spring-event/sec01-introduction.md
+              - ApplicationEvent 와 ApplicationListner 상속 : books/springboot-msa-component/ch12-spring-event/sec02-old-style.md
+              - POJO 이벤트 클래스와 @EventListener : books/springboot-msa-component/ch12-spring-event/sec03-new-style.md
+              - 비동기 이벤트 처리 : books/springboot-msa-component/ch12-spring-event/sec04-async-event.md
+              - 스프링이 발행하는 이벤트 : books/springboot-msa-component/ch12-spring-event/sec05-spring-event.md
   - TIL:
       - 시작하기: til/getting-started.md
 ```
