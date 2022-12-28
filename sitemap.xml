@@ -411,12 +411,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/study/os/process-vs-thread/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/study/os/deadlock/</loc>
          <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/study/os/deadlock/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/study/os/process-vs-thread/process-vs-thread/</loc>
          <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
