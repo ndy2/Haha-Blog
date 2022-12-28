@@ -839,30 +839,37 @@
 <hr/>
 <h3 id="1-deadlock">1. Deadlock  이란?<a class="headerlink" href="#1-deadlock" title="Permanent link">¶</a></h3>
 <ul>
-<li>두개 이상의 서로다른 프로세스 (쓰레드)가 자신의 자원을 가진 상태에서 서로가 가진 자원을 원하여 더이상 진행될 수 없는 교착상태
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/deadlock.png"><img alt="deadlock.png" src="images/deadlock.png"/></a></li>
+<li>두개 이상의 서로다른 프로세스 (쓰레드)가 자신의 자원을 가진 상태에서 서로가 가진 자원을 원하여 더이상 진행될 수 없는 교착상태</li>
 </ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/deadlock.png"><img alt="deadlock.png" src="images/deadlock.png"/></a></p>
 <hr/>
 <h3 id="2-deadlock">2. Deadlock 필요 조건<a class="headerlink" href="#2-deadlock" title="Permanent link">¶</a></h3>
-<p>리소스의 조건
-- <code>Non-preemetive</code> - 리소스 반환은 오직 그 리소스를 취득한 프로세스 만이 할 수 있다.
-- <code>Mutual Exclusion</code> - 자원을 공유해서 사용할 수 없다.</p>
-<p>프로세스의 조건
-- <code>Circular Wait</code> - 프로세스들이 Circular 하게 서로의 자원을 요구한다.
-- <code>Hold and Wait</code> - 프로세스가 이미 하나 이상의 자원을 확보한 상태에서 다른 프로세스가 확보안 자원을 요구한다.</p>
+<p>리소스의 조건</p>
+<ul>
+<li><code>Non-preemetive</code> - 리소스 반환은 오직 그 리소스를 취득한 프로세스 만이 할 수 있다.</li>
+<li><code>Mutual Exclusion</code> - 자원을 공유해서 사용할 수 없다.</li>
+</ul>
+<p>프로세스의 조건</p>
+<ul>
+<li><code>Circular Wait</code> - 프로세스들이 Circular 하게 서로의 자원을 요구한다.</li>
+<li><code>Hold and Wait</code> - 프로세스가 이미 하나 이상의 자원을 확보한 상태에서 다른 프로세스가 확보안 자원을 요구한다.</li>
+</ul>
 <hr/>
 <h3 id="3-deadlock">3. Deadlock 해결 방법<a class="headerlink" href="#3-deadlock" title="Permanent link">¶</a></h3>
 <h4 id="1-deadlock_1">1. Deadlock 예방<a class="headerlink" href="#1-deadlock_1" title="Permanent link">¶</a></h4>
 <p>Deadlock 의 필요조건 네가지중 단 하나라도 성립되지 않으면 Deadlock 은 발생하지 않습니다. Deadlock 예방은 프로세스의 전체 흐름과 구성을 미리 파악해 필요조건이 발생하지 않도록 전체 시스템을 설계하는 것입니다.
 <br/>
-현실적으로 어렵습니다. 리소스의 특성상 Mutual Exclusion 이나 Non-preemetive 를 포기하게 만들기 어려운 경우가 많습니다. Hold and Wait 의 예방을 위해 자원을 모두 확보하고 프로세스를 진행하게 한다면 Starvation 이 발생하거나 자원 사용율이 매우 낮은 상황이 발생하게됩니다. Circular Wait 을 예방하는 방식으로 자원에 순서체계를 부여하고 오름차순으로만 요청할 수 있도록 설계하는 방식도 있습니다.</p>
+<br/>
+하지만 이 방법은 현실적으로 어렵습니다. 리소스의 특성상 Mutual Exclusion 이나 Non-preemetive 를 포기하게 만들기 어려운 경우가 많습니다. Hold and Wait 의 예방을 위해 자원을 모두 확보하고 프로세스를 진행하게 한다면 Starvation 이 발생하거나 자원 사용율이 매우 낮은 상황이 발생하게됩니다. Circular Wait 을 예방하는 방식으로 자원에 순서체계를 부여하고 오름차순으로만 요청할 수 있도록 설계하는 방식도 있습니다.</p>
 <h4 id="2-deadlock_1">2. Deadlock 회피<a class="headerlink" href="#2-deadlock_1" title="Permanent link">¶</a></h4>
 <p>Deadlock 회피는 시스템에 전체 할당된 자원의 수를 일정량 이하로 유지시켜서 Deadlock 이 발생하지 않도록 하는것입니다. 대표적으로 Banker 알고리즘이 여기에 속합니다. Banker 알고리즘은 자원 요청을 허락해줬을 때 데드락이 발생할 가능성이 있으면 요청을 거절하는 알고리즘입니다.</p>
 <h4 id="3-deadlock_1">3. Deadlock 감지와 복구<a class="headerlink" href="#3-deadlock_1" title="Permanent link">¶</a></h4>
 <p>Deadlock 을 허용하고 데드락이 발생하면 이를 복구하는 것입니다.</p>
-<p>복구 방법 
--  프로세스를 종료하여 해결하는 방법 (한번에/ 하나씩)
--  리소스의 일시적인 선점을 허용하여 해결</p>
+<p>복구 방법 </p>
+<ul>
+<li>프로세스를 종료하여 해결하는 방법 (한번에/ 하나씩)</li>
+<li>리소스의 일시적인 선점을 허용하여 해결</li>
+</ul>
 <h4 id="4-deadlock">4. Deadlock 무시<a class="headerlink" href="#4-deadlock" title="Permanent link">¶</a></h4>
 <p>Deadlock 을 무시해버리는 방법에서는 운영체제를 믿고 타임아웃등으로 알아서 처리되기를 기다립니다. 현실적으로 가장 많이 활용됩니다.</p>
 <hr/>
