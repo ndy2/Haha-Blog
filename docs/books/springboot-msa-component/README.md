@@ -13,7 +13,7 @@
 ### 읽는 중 ...
 
 - [1장 마이크로 서비스 아키텍처](ch01-msa.md)
-- [2장 프레임워크와 스프링 부트](ch02-framwork-and-springboot,md)
+- [2장 프레임워크와 스프링 부트](ch02-framwork-and-springboot.md)
 - [3장 스프링 애플리케이션 기본](ch03-springboot-basic.md)
 - [4장 스프링 웹 MVC 개요](ch04-spring-web-mvc-basic.md)
 - [5장 스프링 웹 MVC를 이양한 REST_API 개발](ch05-spring-web-mvc-with-restapi.md)
@@ -21,3 +21,9 @@
 - [7장 스프링 AOP와 테스트, 자동 설정 원리](ch07-spring-aop-and-test-and-autoconfiguration.md)
 - [8장 데이터 영속성](ch08-data-persistence.md)
 - [9장 애플리케이션 통합: REST-API](ch09-application-integration-restapi.md)
+- [10장 레디스와 스프링 캐시](ch10-sec01-redis-introduction.md)
+- [11장 스프링 스케쥴링 테스크](ch11-sec03-batch-architecture.md)
+- [12장 스프링 이벤트](ch12-spring-event/index.md)
+
+
+

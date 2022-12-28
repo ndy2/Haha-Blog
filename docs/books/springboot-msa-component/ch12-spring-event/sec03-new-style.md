@@ -36,7 +36,7 @@ public class UserCouponEventListener {
 
 - 사용하는 법
 
-```java title = "UserServiceImpl"
+```java title="UserServiceImpl"
 import org.springframework.context.ApplicationEventPublisher;
 ...
 
@@ -56,8 +56,8 @@ public class UserServiceImpl implements UserService {
 		eventPublisher.publishEvent(new UserCouponEvent(user.email));
 	}
 }
-
 ```
+
 
 
 앞선 방식의 단점이 모두 해결되었습니다!
