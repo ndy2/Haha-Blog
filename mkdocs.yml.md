@@ -96,6 +96,8 @@ nav:
       - 운영체제:
           -  프로세스 vs 쓰레드: study/os/process-vs-thread/index.md
           -  데드락: study/os/deadlock/index.md
+          -  가상메모리 기초: study/os/memory-management/virtual-memory-1.md
+          -  가상메모리 관리: study/os/memory-management/virtual-memory-2.md
       - 데이터베이스:
           -  데이터베이스 기본 용어: study/database/database-basic-terminologies.md
           -  관계형 데이터베이스: study/database/relational-database.md
