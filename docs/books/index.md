@@ -8,6 +8,7 @@
 - 이토 나오야, 등 - 서버/인프라를 지탱하는 기술
 - 조슈아 블로크 - 이펙티브 자바
 - 존 카넬, 일러리 후알리루포 산체스 - 스프링 마이크로서비스 코딩 공작소 2판
+- 조시형 - 친절한 SQL 튜닝
 
 - 조영호 - 오브젝트 - 🏁 [정리](https://running-cheetah.tistory.com/category/기술서적/오브젝트)
 - 이토 나오야, 다나카 신지 - 대규모 서비스를 지탱하는 기술 -🏁 [실습](https://ndy-dev.notion.site/e8610df528154180b10f803dfe13e334)
@@ -16,11 +17,10 @@
 - 조성호 - 쉽게 배우는 운영체제 (22.06) - [정리](쉽게 배우는 운영체제)
 - 만들면서 배우는 클린아키텍처 (22.07 ~ 22.08) - 🏁  [정리](https://ndy-dev.notion.site/d737675bbc324c09ae6d1721754b2dcb)
 - 도메인 주도 개발 시작하기 (22.08 ~ 22.09) - 🏁 [정리](https://ndy-dev.notion.site/4fb683c7b40c49bda079cffe5a4867f2)
-- 스프링 부트로 개발하는 MSA 컴포넌트 (22.12.08 ~ ) - 🏁  [정리](https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/)
+- 스프링 부트로 개발하는 MSA 컴포넌트 (22.12.08 ~ 22.12.28) - 🏁  [정리](springboot-msa-component/README.md)
 
 
 ### 읽을 책 목록
-- 조시형 - 친절한 SQL 튜닝
 - 드미트리 제메로프, 스베트라나 이사코바 - 코틀린 인 액션
 
 ### 기술 서적에 관한 개인적인 경험과 생각
