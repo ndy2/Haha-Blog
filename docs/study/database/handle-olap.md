@@ -46,5 +46,6 @@ A. 에... 그게... 효과적으로 잘 모아서 Read 만 발생할 수 있는 
 
 애플리케이션 레벨에서는 복잡한 쿼리는 JPA 가 아니라 네이티브 쿼리를 쉽게 다룰 수 있는 
 Data JDBC 나 MyBatis 같은 툴을 활용하는것이 더욱 좋습니다.
+
 - [김영한님 -복잡한 쿼리 처리하는 방법](https://www.inflearn.com/questions/40192/qdsl%EB%A1%9C-%EB%B3%B5%EC%9E%A1%ED%95%9C-%EC%BF%BC%EB%A6%AC%EB%A5%BC-%EC%96%B4%EB%8A%90%EC%A0%95%EB%8F%84-%EC%BB%A4%EB%B2%84-%EA%B0%80%EB%8A%A5%ED%95%9C%EA%B0%80%EC%9A%94) 
 - 스프링 부트로 개발하는 MSA 컴포넌트 - 7장 1절 JPA 장점과 잔점
