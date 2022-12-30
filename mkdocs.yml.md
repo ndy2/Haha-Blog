@@ -93,6 +93,7 @@ nav:
       - 아키텍처:
           -  MSA 장단점: study/architecture/msa-pros-cons.md
           -  Hexagonal Architecture: study/architecture/hexagonal-architecture/index.md
+          -  Resilient Pattern:  study/architecture/resilient-pattern/index.md
       - 운영체제:
           -  프로세스 vs 쓰레드: study/os/process-vs-thread/index.md
           -  데드락: study/os/deadlock/index.md
