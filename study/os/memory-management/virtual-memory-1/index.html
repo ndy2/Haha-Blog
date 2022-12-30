@@ -10,7 +10,7 @@
 <link href="https://ndy2.github.io/Haha-Blog/study/os/memory-management/virtual-memory-1/" rel="canonical"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Virtual memory 1 - Haha 블로그</title>
+<title>가상메모리 기초 - Haha 블로그</title>
 <link href="../../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Virtual memory 1
+              가상메모리 기초
             
           </span>
 </div>
@@ -155,8 +155,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
@@ -219,11 +219,16 @@
         Hexagonal Architecture
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/resilient-pattern/">
+        Resilient Pattern
+      </a>
+</li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_3">
           운영체제
           <span class="md-nav__icon md-icon"></span>
@@ -242,6 +247,44 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../deadlock/">
         데드락
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          가상메모리 기초
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        가상메모리 기초
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    페이징
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    세그멘테이션
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-">
+    세그멘테이션-페이징
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../virtual-memory-2/">
+        가상메모리 관리
       </a>
 </li>
 </ul>
@@ -772,6 +815,11 @@
         2022-12-29
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../til/til/2022-12-30/">
+        2022-12-30
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -814,7 +862,7 @@
 <a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/blob/main/docs/study/os/memory-management/virtual-memory-1.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Virtual memory 1</h1>
+<h1>가상메모리 기초</h1>
 <p>가상 메모리</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/virtual-memory.png"><img alt="virtual-memory.png" src="../images/virtual-memory.png"/></a></p>
 <p><code>가상 메모리</code>를 통해 프로세스가 물리 메모리의 크기와 상관없이 메모리를 마음대로 사용할 수 있다.</p>
@@ -865,6 +913,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: 데드락" class="md-footer__link md-footer__link--prev" href="../../deadlock/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              데드락
+            </div>
+</div>
+</a>
+<a aria-label="Next: 가상메모리 관리" class="md-footer__link md-footer__link--next" href="../virtual-memory-2/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              가상메모리 관리
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
