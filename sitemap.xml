@@ -271,6 +271,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/architecture/resilient-pattern/</loc>
+         <lastmod>2022-12-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/database/</loc>
          <lastmod>2022-12-30</lastmod>
          <changefreq>daily</changefreq>
