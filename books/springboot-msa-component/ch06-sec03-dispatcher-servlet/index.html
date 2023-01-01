@@ -855,6 +855,11 @@
         2022-12-31
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../til/til/2023-01-01/">
+        2023-01-01
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -961,19 +966,19 @@
 <p>핸들러 조회 및 실행, 사이 사이의 인터셉터 호출, 뷰 처리까지 모든 작업이 이 메서드에서 시작됩니다.</p>
 <h4 id="3-gethandler">3. <code>getHandler</code><a class="headerlink" href="#3-gethandler" title="Permanent link">¶</a></h4>
 <p><code>DispatcherServlet</code> 은 <code>List&lt;HandlerMapping&gt; handlerMapping</code> 필드를 가지고 있습니다.
-<div class="highlight"><span class="filename">o.s.web.servlet.HandlerMapping</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">HandlerMapping</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="n">HandlerExecutionChain</span><span class="w"> </span><span class="nf">getHandler</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="p">;</span><span class="w"></span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">}</span><span class="w"></span>
+<div class="highlight"><span class="filename">o.s.web.servlet.HandlerMapping</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">HandlerMapping</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="n">HandlerExecutionChain</span><span class="w"> </span><span class="nf">getHandler</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="p">;</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">}</span>
 </code></pre></div></p>
 <p>핸들러 매핑은 요청에 대해 <code>HandlerExecutionChain</code> 을 응답해줍니다. <code>HandlerExecutionChain</code> 은 
 간단히 표현해서 아래와 같은 클래스입니다.
-<div class="highlight"><span class="filename">o.s.web.servlet.HandlerExecutionChain</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HandlerExecutionChain</span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><span class="filename">o.s.web.servlet.HandlerExecutionChain</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HandlerExecutionChain</span><span class="p">{</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">handler</span><span class="p">;</span><span class="w">  </span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">HandlerInterceptor</span><span class="o">&gt;</span><span class="w"> </span><span class="n">interceptorList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">HandlerInterceptor</span><span class="o">&gt;</span><span class="w"> </span><span class="n">interceptorList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 <a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="c1">// 생략</span><span class="w"></span>
-<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="c1">// 생략</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="p">}</span>
 </code></pre></div></p>
 <p><code>DispatcherServlet</code> 은 이 핸들러매핑 목록을 순회하며 요청에 대해 적절한 <code>HandlerExecutionChain</code> 을 조회합니다. </p>
 <h4 id="4-gethandleradapter-support">4. <code>getHandlerAdapter</code> -&gt; <code>support</code><a class="headerlink" href="#4-gethandleradapter-support" title="Permanent link">¶</a></h4>
@@ -981,10 +986,10 @@
 Spring 은 DispatcherServlet 과 Handler 가 강하게 결합되는 설계를 피하기 위해서인지 DispatcherServlet 이 직접 Handler 를 호출하는 것이 아니라 중간에 어댑터를 하나 두었습니다.</p>
 <p>또한 <code>o.s.web.servlet</code> 패키지의 클래스내에 Handler 는 항상 <code>Object</code> 타입으로 표현하고 있습니다. 따라서 구체적인 Handler 의 타입에 따라 다를 수 있는 실행 로직은 <code>HandlerAdapter</code> 가 담당하게 하여 전형적인 어댑터 패턴을 적용한 사례입니다. 유연함과 확장성에 대한 스프링의 철학을 엿볼 수 있는 부분이라고 생각합니다.</p>
 <p>핸들러 어댑터는 두가지 추상 메서드를 가지는 인터페이스 입니다.</p>
-<div class="highlight"><span class="filename">o.s.web.servlet.HandlerAdapter</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">HandlerAdapter</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">supports</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">handler</span><span class="p">);</span><span class="w"> </span><span class="c1">// (1)</span><span class="w"></span>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="n">ModelAndView</span><span class="w"> </span><span class="nf">handle</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">handler</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="p">;</span><span class="w">  </span><span class="c1">// (2)</span><span class="w"></span>
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">}</span><span class="w"></span>
+<div class="highlight"><span class="filename">o.s.web.servlet.HandlerAdapter</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">HandlerAdapter</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">supports</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">handler</span><span class="p">);</span><span class="w"> </span><span class="c1">// (1)</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="n">ModelAndView</span><span class="w"> </span><span class="nf">handle</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">handler</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="p">;</span><span class="w">  </span><span class="c1">// (2)</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">}</span>
 </code></pre></div>
 <ol>
 <li>핸들러를 지원하는지 여부를 판별하는 support 메서드</li>

@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#today-i-learn">
+<a class="md-skip" href="#today-i-learn-2022">
           Skip to content
         </a>
 </div>
@@ -723,8 +723,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#today-i-learn">
-    Today I Learn!
+<a class="md-nav__link" href="#today-i-learn-2022">
+    Today I Learn! 2022
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#today-i-learn-2023">
+    Today I Learn! 2023
   </a>
 </li>
 </ul>
@@ -815,6 +820,11 @@
         2022-12-31
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../til/2023-01-01/">
+        2023-01-01
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -833,8 +843,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#today-i-learn">
-    Today I Learn!
+<a class="md-nav__link" href="#today-i-learn-2022">
+    Today I Learn! 2022
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#today-i-learn-2023">
+    Today I Learn! 2023
   </a>
 </li>
 </ul>
@@ -874,10 +889,50 @@
 <a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>
 <a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a>renderHeatmapCalendar(this.container, calendarData)
 </code></pre></div>
-<h2 id="today-i-learn">Today I Learn!<a class="headerlink" href="#today-i-learn" title="Permanent link">¶</a></h2>
+<h2 id="today-i-learn-2022">Today I Learn! 2022<a class="headerlink" href="#today-i-learn-2022" title="Permanent link">¶</a></h2>
 <p><vegachart class="vegalite" style="width: 100%">{
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": { "url" : "Haha-Blog/til/csv/2022.csv"},
+  "title": "Today I Learn",
+  "config": {
+    "mark": {
+      "width": 11,
+      "height": 11,
+      "cornerRadius": 2,
+      "outerRadius": 10,
+      "stroke": "#E8E8E8",
+      "strokeWidth": 1
+    }
+  },
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "date",
+      "timeUnit": "week",
+      "type": "nominal"
+    },
+    "y": {"field": "date", "timeUnit": "day", "type": "ordinal"},
+    "color": {
+      "field": "til",
+      "type": "quantitative",
+      "scale": {
+        "range": [
+          "#E8E8E8",
+          "#c6e48b",
+          "#7bc96f",
+          "#49af5d",
+          "#2e8840",
+          "#196127"
+        ]
+      },
+      "legend": null
+    }
+  }
+}</vegachart></p>
+<h2 id="today-i-learn-2023">Today I Learn! 2023<a class="headerlink" href="#today-i-learn-2023" title="Permanent link">¶</a></h2>
+<p><vegachart class="vegalite" style="width: 100%">{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": { "url" : "Haha-Blog/til/csv/2023.csv"},
   "title": "Today I Learn",
   "config": {
     "mark": {
@@ -919,7 +974,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 1, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2022</span>

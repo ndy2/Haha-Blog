@@ -820,6 +820,11 @@
         2022-12-31
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-01-01/">
+        2023-01-01
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -877,9 +882,9 @@
 <ul>
 <li>obsidian 에서 yml 파일을 다루기 조금더 수월해졌다
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># 첫 줄 지우기</span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>tail -n +2 test.txt &gt; tmp.txt <span class="o">&amp;&amp;</span> mv tmp.txt test.txt
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>tail<span class="w"> </span>-n<span class="w"> </span>+2<span class="w"> </span>test.txt<span class="w"> </span>&gt;<span class="w"> </span>tmp.txt<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>tmp.txt<span class="w"> </span>test.txt
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># 마지막 줄 지우기</span>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>ghead -n -1 test.txt &gt; temp.txt <span class="p">;</span> mv temp.txt test.txt
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>ghead<span class="w"> </span>-n<span class="w"> </span>-1<span class="w"> </span>test.txt<span class="w"> </span>&gt;<span class="w"> </span>temp.txt<span class="w"> </span><span class="p">;</span><span class="w"> </span>mv<span class="w"> </span>temp.txt<span class="w"> </span>test.txt
 </code></pre></div></li>
 </ul>
 </li>

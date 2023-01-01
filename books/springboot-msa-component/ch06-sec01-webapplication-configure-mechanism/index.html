@@ -849,6 +849,11 @@
         2022-12-31
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../til/til/2023-01-01/">
+        2023-01-01
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -918,16 +923,16 @@
 <h1>웹 애플리케이션 설정 메커니즘</h1>
 <p>앞서 <code>@EnableXXX</code> 애너테이션의 일반적인 활용 방식을 비롯해서 다양한 설정 클래스 활용방식을 살펴보았습니다. 이를 바탕으로 <code>@EnableWebMvc</code> 가 어떻게 동작하는지 구체적으로 살펴보겠습니다.</p>
 <h3 id="1-enablewebmvc-webmvcconfigurationsupport">1. @EnableWebMvc 와 WebMvcConfigurationSupport<a class="headerlink" href="#1-enablewebmvc-webmvcconfigurationsupport" title="Permanent link">¶</a></h3>
-<div class="highlight"><span class="filename">@EnableWebMvc 애너테이션과 DelegatingWebMvcConfiguration 클래스</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nd">@Import</span><span class="p">(</span><span class="n">DelegatingWebMvcConfiguration</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"> </span><span class="c1">// (1)</span><span class="w"></span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="nd">@interface</span><span class="w"> </span><span class="n">EnableWebMvc</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<div class="highlight"><span class="filename">@EnableWebMvc 애너테이션과 DelegatingWebMvcConfiguration 클래스</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nd">@Import</span><span class="p">(</span><span class="n">DelegatingWebMvcConfiguration</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"> </span><span class="c1">// (1)</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="nd">@interface</span><span class="w"> </span><span class="n">EnableWebMvc</span><span class="w"> </span><span class="p">{}</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DelegatingWebMvcConfiguration</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">WebMvcConfigurationSupport</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (2)</span><span class="w"></span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DelegatingWebMvcConfiguration</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">WebMvcConfigurationSupport</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (2)</span>
 <a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>
 <a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">webMvcConfiguerComposite</span><span class="w"> </span><span class="n">configurers</span><span class="w"> </span>
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebMvcConfigurerComposite</span><span class="p">;</span><span class="w"> </span><span class="c1">// (3)</span><span class="w"></span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebMvcConfigurerComposite</span><span class="p">;</span><span class="w"> </span><span class="c1">// (3)</span>
 <a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="c1">//  생략</span><span class="w"></span>
-<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="c1">//  생략</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">}</span>
 </code></pre></div>
 <ol>
 <li><code>WebMvcConfigurerComposite</code> 는 <code>List&lt;WebMvcConfigurer&gt;</code> 를 가지는 Wrapper 클래스이다. </li>
@@ -951,14 +956,14 @@
 <p>인터셉터는 사용자의 요청과 응답을 처리하는 과정에서 추가적인 작업을 할 수 있는 스프링 웹 MVC 의 기능입니다.</p>
 <h4 id="addcorsmapping"><code>addCorsMapping()</code><a class="headerlink" href="#addcorsmapping" title="Permanent link">¶</a></h4>
 <p>cors 의 의미와 preflight 과정을 포함한 cors 정책의 흐름에 대한부분은 생략하겠습니다.</p>
-<div class="highlight"><span class="filename">addCorsMapping()</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nd">@Override</span><span class="w"></span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addCorsMappings</span><span class="p">(</span><span class="n">CorsRegistry</span><span class="w"> </span><span class="n">registry</span><span class="p">){</span><span class="w"></span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">registry</span><span class="p">.</span><span class="na">addMapping</span><span class="p">(</span><span class="s">"/**"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (1)</span><span class="w"></span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">            </span><span class="p">.</span><span class="na">allowedOrigins</span><span class="p">(</span><span class="s">"www.springtour.io"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (2)</span><span class="w"></span>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">            </span><span class="p">.</span><span class="na">allowedMethods</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span><span class="w"> </span><span class="s">"POST"</span><span class="p">,</span><span class="w"> </span><span class="s">"PUT"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (3)</span><span class="w"></span>
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">            </span><span class="p">.</span><span class="na">allowedHeaders</span><span class="p">(</span><span class="s">"*"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (4)</span><span class="w"></span>
-<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">            </span><span class="p">.</span><span class="na">maxAge</span><span class="p">(</span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mo">06</span><span class="p">);</span><span class="w"> </span><span class="c1">// (5)</span><span class="w"></span>
-<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="p">}</span><span class="w"></span>
+<div class="highlight"><span class="filename">addCorsMapping()</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nd">@Override</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addCorsMappings</span><span class="p">(</span><span class="n">CorsRegistry</span><span class="w"> </span><span class="n">registry</span><span class="p">){</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">registry</span><span class="p">.</span><span class="na">addMapping</span><span class="p">(</span><span class="s">"/**"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (1)</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">            </span><span class="p">.</span><span class="na">allowedOrigins</span><span class="p">(</span><span class="s">"www.springtour.io"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (2)</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">            </span><span class="p">.</span><span class="na">allowedMethods</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span><span class="w"> </span><span class="s">"POST"</span><span class="p">,</span><span class="w"> </span><span class="s">"PUT"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (3)</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">            </span><span class="p">.</span><span class="na">allowedHeaders</span><span class="p">(</span><span class="s">"*"</span><span class="p">)</span><span class="w"> </span><span class="c1">// (4)</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">            </span><span class="p">.</span><span class="na">maxAge</span><span class="p">(</span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mo">06</span><span class="p">);</span><span class="w"> </span><span class="c1">// (5)</span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="p">}</span>
 </code></pre></div>
 <ol>
 <li>모든 리소스에 대해 CORS 를 적용한다.</li>
