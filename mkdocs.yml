@@ -164,4 +164,6 @@ nav:
               - 스프링이 발행하는 이벤트 : books/springboot-msa-component/ch12-spring-event/sec05-spring-event.md
   - TIL:
       - 시작하기: til/getting-started.md
-      
+      - 2023-01-01: til/til/2023-01-01.md
+      - 2023-01-02: til/til/2023-01-02.md
+
