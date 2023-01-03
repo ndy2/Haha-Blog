@@ -7,12 +7,11 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/study/database/relational-database/" rel="canonical"/>
-<link href="../database-basic-terminologies/" rel="prev"/>
-<link href="../sql-join/" rel="next"/>
+<link href="https://ndy2.github.io/Haha-Blog/til/til/2023-01-03/" rel="canonical"/>
+<link href="../2023-01-02/" rel="prev"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.1" name="generator"/>
-<title>관계형 데이터베이스 - Haha 블로그</title>
+<title>2023/01/03 - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.3bd4f189.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -36,7 +35,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#1-relation-in-mathematics">
+<a class="md-skip" href="#_1">
           Skip to content
         </a>
 </div>
@@ -60,7 +59,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              관계형 데이터베이스
+              2023/01/03
             
           </span>
 </div>
@@ -157,8 +156,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
@@ -182,17 +181,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../java/string/">
+<a class="md-nav__link" href="../../../study/java/string/">
         String
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../java/nio/">
+<a class="md-nav__link" href="../../../study/java/nio/">
         NIO
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../java/synchronized/">
+<a class="md-nav__link" href="../../../study/java/synchronized/">
         동시성 - synchrozied
       </a>
 </li>
@@ -212,17 +211,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/msa-pros-cons/">
+<a class="md-nav__link" href="../../../study/architecture/msa-pros-cons/">
         MSA 장단점
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/hexagonal-architecture/index.md">
+<a class="md-nav__link" href="../../../study/architecture/hexagonal-architecture/index.md">
         Hexagonal Architecture
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/resilient-pattern/">
+<a class="md-nav__link" href="../../../study/architecture/resilient-pattern/">
         Resilient Pattern
       </a>
 </li>
@@ -242,30 +241,30 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../os/process-vs-thread/">
+<a class="md-nav__link" href="../../../study/os/process-vs-thread/">
         프로세스 vs 쓰레드
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../os/deadlock/">
+<a class="md-nav__link" href="../../../study/os/deadlock/">
         데드락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../os/memory-management/virtual-memory-1/">
+<a class="md-nav__link" href="../../../study/os/memory-management/virtual-memory-1/">
         가상메모리 기초
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../os/memory-management/virtual-memory-2/">
+<a class="md-nav__link" href="../../../study/os/memory-management/virtual-memory-2/">
         가상메모리 관리
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_4">
           데이터베이스
           <span class="md-nav__icon md-icon"></span>
@@ -277,105 +276,62 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../database-basic-terminologies/">
+<a class="md-nav__link" href="../../../study/database/database-basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          관계형 데이터베이스
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../study/database/relational-database/">
         관계형 데이터베이스
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-relation-in-mathematics">
-    1. Relation in Mathematics
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-relational-data-model">
-    2. Relational Data Model
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-relational-database">
-    3. Relational Database
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-relation">
-    4. Relation 의 특징 들
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5-null">
-    5. NULL 의 의미
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#6-relation-key">
-    6. Relation 의 Key
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../sql-join/">
+<a class="md-nav__link" href="../../../study/database/sql-join/">
         SQL join
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-lock/">
+<a class="md-nav__link" href="../../../study/database/db-lock/">
         데이터베이스 락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-index/">
+<a class="md-nav__link" href="../../../study/database/db-index/">
         데이터베이스 인덱스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-anomaly/">
+<a class="md-nav__link" href="../../../study/database/db-anomaly/">
         데이터베이스 이상현상
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-functional-dependency/">
+<a class="md-nav__link" href="../../../study/database/db-functional-dependency/">
         데이터베이스 FD
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-normalization/">
+<a class="md-nav__link" href="../../../study/database/db-normalization/">
         데이터베이스 정규화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../handle-olap/">
+<a class="md-nav__link" href="../../../study/database/handle-olap/">
         OLAP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clustering-replication-sharding/">
+<a class="md-nav__link" href="../../../study/database/clustering-replication-sharding/">
         클러스터링, 리플리케이션, 샤딩
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../dbcp/">
+<a class="md-nav__link" href="../../../study/database/dbcp/">
         DBCP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../mysql-excution-plan/">
+<a class="md-nav__link" href="../../../study/database/mysql-excution-plan/">
         MySQL 실행계획 연습
       </a>
 </li>
@@ -395,27 +351,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/http-versions/">
+<a class="md-nav__link" href="../../../study/network/http-versions/">
         HTTP 버전별 특징
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/https/">
+<a class="md-nav__link" href="../../../study/network/https/">
         HTTPS
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/tcp-vs-udp/">
+<a class="md-nav__link" href="../../../study/network/tcp-vs-udp/">
         tcp vs udp
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/tcp-flow-control/">
+<a class="md-nav__link" href="../../../study/network/tcp-flow-control/">
         tcp 흐름제어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/tcp-congestion-control/">
+<a class="md-nav__link" href="../../../study/network/tcp-congestion-control/">
         tcp 혼잡제어
       </a>
 </li>
@@ -740,8 +696,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5">
           TIL
           <span class="md-nav__icon md-icon"></span>
@@ -753,104 +709,127 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/getting-started/">
+<a class="md-nav__link" href="../../getting-started/">
         시작하기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-15/">
+<a class="md-nav__link" href="../2022-12-15/">
         2022/12/15
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-16/">
+<a class="md-nav__link" href="../2022-12-16/">
         2022/12/16
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-17/">
+<a class="md-nav__link" href="../2022-12-17/">
         2022/12/17
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-18/">
+<a class="md-nav__link" href="../2022-12-18/">
         2022/12/18
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-19/">
+<a class="md-nav__link" href="../2022-12-19/">
         2022/12/19
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-20/">
+<a class="md-nav__link" href="../2022-12-20/">
         2022/12/20
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-21/">
+<a class="md-nav__link" href="../2022-12-21/">
         2022/12/21
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-22/">
+<a class="md-nav__link" href="../2022-12-22/">
         2022/12/22
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-23/">
+<a class="md-nav__link" href="../2022-12-23/">
         2022/12/23
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-24/">
+<a class="md-nav__link" href="../2022-12-24/">
         2022/12/24
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-26/">
+<a class="md-nav__link" href="../2022-12-26/">
         2022/12/26
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-27/">
+<a class="md-nav__link" href="../2022-12-27/">
         2022/12/27
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-28/">
+<a class="md-nav__link" href="../2022-12-28/">
         2022/12/28
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-29/">
+<a class="md-nav__link" href="../2022-12-29/">
         2022/12/29
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-30/">
+<a class="md-nav__link" href="../2022-12-30/">
         2022/12/30
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2022-12-31/">
+<a class="md-nav__link" href="../2022-12-31/">
         2022/12/31
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2023-01-01/">
+<a class="md-nav__link" href="../2023-01-01/">
         2023/01/01
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2023-01-02/">
+<a class="md-nav__link" href="../2023-01-02/">
         2023/01/02
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/til/2023-01-03/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          2023/01/03
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         2023/01/03
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    오늘 한 일
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    내일 할 일
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -870,33 +849,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-relation-in-mathematics">
-    1. Relation in Mathematics
+<a class="md-nav__link" href="#_1">
+    오늘 한 일
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-relational-data-model">
-    2. Relational Data Model
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-relational-database">
-    3. Relational Database
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-relation">
-    4. Relation 의 특징 들
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5-null">
-    5. NULL 의 의미
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#6-relation-key">
-    6. Relation 의 Key
+<a class="md-nav__link" href="#_2">
+    내일 할 일
   </a>
 </li>
 </ul>
@@ -906,54 +865,41 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>관계형 데이터베이스</h1>
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/gjcbqZjlXjM" title="YouTube video player" width="560"></iframe>
-<h3 id="1-relation-in-mathematics">1. <code>Relation</code> in Mathematics<a class="headerlink" href="#1-relation-in-mathematics" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/relation-in-mathematics.png"><img alt="relation-in-mathematics.png" src="../images/relation-in-mathematics.png"/></a></p>
-<p><code>relation</code> - subset of Cartesian product
-<code>tuple</code> - element of a relation</p>
-<h3 id="2-relational-data-model">2. Relational Data Model<a class="headerlink" href="#2-relational-data-model" title="Permanent link">¶</a></h3>
-<p>Student 개념을 Relational Data Model 로 표현해보자.    -&gt; <code>attribute</code> : relation 에서 가지는 역할의 이름
-- student_ids: 학번 집합, 7자리 integer                           <code>id</code>
-- human_names: 사람 이름 집합, 문자열                        <code>name</code>
-- university_grades: 대학교 학년 집합 ( {1,2,3,4} )                <code>grade</code> 
-- major_names: 대학교에서 배우는 전공 이름 집합                   <code>major</code>
-- phone_numbers: 핸드폰 번호 집합                          <code>phone_num</code>, <code>emer_phone_num</code></p>
-<p>-&gt; 홍길동 학생 <code>tuple</code> :<code>(1234567, "홍 길동", 1, "수학", "010-1234-5678", "010-1111-2222")</code></p>
-<h3 id="3-relational-database">3. Relational Database<a class="headerlink" href="#3-relational-database" title="Permanent link">¶</a></h3>
+<h1>2023/01/03</h1>
+<h3 id="_1">오늘 한 일<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<p>PS</p>
+<p><a href="https://github.com/ndy2/coding-test/tree/master/src/그래프/boj/Main_유니온파인드.kt">src/그래프/boj/Main_유니온파인드.kt</a>
+<a href="https://github.com/ndy2/coding-test/tree/master/src/단순구현/prgrms/Main_다항식_더하기.kt">src/단순구현/prgrms/Main_다항식_더하기.kt</a>
+<a href="https://github.com/ndy2/coding-test/tree/master/src/단순구현/prgrms/Main_옹알이.java">src/단순구현/prgrms/Main_옹알이.java</a>
+<a href="https://github.com/ndy2/coding-test/tree/master/src/단순구현/prgrms/Main_옹알이2.java">src/단순구현/prgrms/Main_옹알이2.java</a>
+<a href="https://github.com/ndy2/coding-test/tree/master/src/단순구현/prgrms/Main_점찍기.kt">src/단순구현/prgrms/Main_점찍기.kt</a>
+<a href="https://github.com/ndy2/coding-test/tree/master/src/수학/boj/Main_고층건물_1027.kt">src/수학/boj/Main_고층건물_1027.kt</a>
+<a href="https://github.com/ndy2/coding-test/tree/master/src/수학/boj/Main_알수없는번호_1338.kt">src/수학/boj/Main_알수없는번호_1338.kt</a>
+<a href="https://github.com/ndy2/coding-test/tree/master/src/이분탐색/programmers/Main_디펜스게임.kt">src/이분탐색/programmers/Main_디펜스게임.kt</a></p>
 <ul>
-<li>relational data model 에 기반하여 구조화된 database</li>
-<li>relational database 는 여러 개의 relations 로 구성된다.</li>
+<li>코틀린 인 액션을 구매했다.</li>
 </ul>
-<h3 id="4-relation">4. Relation 의 특징 들<a class="headerlink" href="#4-relation" title="Permanent link">¶</a></h3>
+<h3 id="_2">내일 할 일<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
 <ul>
-<li>relation 은 중복된 tuple 을 가질 수 없다.</li>
-<li>relation 에서 tuple 의 순서는 중요하지 않다.</li>
-<li>relation 에서 tuple 을 식별하기 위해 attributes 의 부분 집합을 key 로 설정한다.</li>
-<li>attribute 는 atomic 해야 한다.</li>
-</ul>
-<h3 id="5-null">5. NULL 의 의미<a class="headerlink" href="#5-null" title="Permanent link">¶</a></h3>
-<ul>
-<li>값이 존재하지 않음 - <code>STUDENT</code> 릴레이션의 <code>toeic_score</code> 애트리뷰트</li>
-<li>값이 존재하지만 그 값을 아직 모름 - <code>STUDENT</code> 릴레이션의 <code>gender</code> 애트리뷰트</li>
-<li>해당 사항과 관련이 없음</li>
-</ul>
-<h3 id="6-relation-key">6. Relation 의 Key<a class="headerlink" href="#6-relation-key" title="Permanent link">¶</a></h3>
-<ul>
-<li>Super Key - relation 에서 tuples 를 unique 하게 식별할 수 있는 attribute set</li>
-<li>Candidate Key - 최소한의 애트리뷰트 만을 가진 Super Key</li>
-<li>Primary Key - Candidate Key 중 선택된 것</li>
-<li>Foreign Key - 다른 relation 의 primary key 를 참조하는 애트리뷰트 셋</li>
+<li><a href="https://www.acmicpc.net/problem/1274">커피숍 1</a></li>
+<li><a href="https://www.acmicpc.net/problem/1275">커피숍 2</a></li>
+<li>
+<p><a href="https://www.acmicpc.net/problem/1700">멀티탭 스케쥴링</a></p>
+</li>
+<li>
+<p>CS 와 개발 관련 공부도 해야되는데... 손길이 잘 안간다.</p>
+</li>
+<li>웹 개발의 세션, 쿠키, 토큰에 대해서 정리하자</li>
 </ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 3, 2023</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 3, 2023</span>
 </small>
 </div>
 </article>
