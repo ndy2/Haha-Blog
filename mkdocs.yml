@@ -42,6 +42,7 @@ markdown_extensions:
   - attr_list
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.critic
   - pymdownx.tasklist:
       custom_checkbox: true
   - def_list
