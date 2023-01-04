@@ -11,12 +11,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/bloggingtips/admonitions/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/bloggingtips/feelings/</loc>
          <lastmod>2023-01-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/bloggingtips/getting-started/</loc>
+         <lastmod>2023-01-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/bloggingtips/render-test/</loc>
          <lastmod>2023-01-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
