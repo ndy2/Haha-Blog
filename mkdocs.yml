@@ -84,6 +84,7 @@ nav:
   - Home: index.md
   - 블로그 팁:
       - 들어가기: bloggingtips/getting-started.md
+      - 글 상자: bloggingtips/admonitions.md
   - 분야 별 학습:
       - 자바:
           -  String: study/java/string.md
