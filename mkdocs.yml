@@ -123,6 +123,8 @@ nav:
           -  tcp vs udp: study/network/tcp-vs-udp.md
           -  tcp 흐름제어: study/network/tcp-flow-control.md
           -  tcp 혼잡제어: study/network/tcp-congestion-control.md
+      - 웹 개발:
+          -  쿠키 세션 토큰: study/web/cookie-session-token/index.md
   - 기술 서적 정리/리뷰:
       - 책!: books/index.md
       - 클린 애자일: books/clean-agile/clean-agile.md
