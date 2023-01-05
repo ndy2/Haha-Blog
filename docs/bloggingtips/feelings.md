@@ -20,7 +20,7 @@
 
 === "글 상자 (admonitions)"
 
-     ![text-block.png](text/code-block.png)
+     ![text-block.png](images/text-block.png)
      다양한 아이콘을 사용할 수 있으며 상자의 접기 펴기 기능도 추가할 수 있습니다.
     아이콘의 커스텀도 가능합니다.
 
@@ -76,7 +76,7 @@ mkdocs-material 은 blog 플러그인을 통해 위 기능들을 제공하지만
 
 === "mkdocs 는 가능하다!"
 
-    ![tab-mkdocks.png](images/tab-mkdocks.png)
+    ![tab-mkdocs.png](images/tab-mkdocs.png)
 
 
 아래 처럼 obsidian 는 정상적으로 표현되었지만 
