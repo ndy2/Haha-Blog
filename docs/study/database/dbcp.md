@@ -14,7 +14,7 @@
 ---
 ### 1. DBCP의 개념과 원리
 
-![dbcp-con.excalidraw](excalidraws/dbcp-con.excalidraw)
+![dbcp-con.excalidraw](excalidraws/dbcp-con.excalidraw.png)
 
 -  매번 connection 을 열고 닫는 시간적인 비용이 발생합니다.
 - 서비스 성능에 좋지 않습니다.

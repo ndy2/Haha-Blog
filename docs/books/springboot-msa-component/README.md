@@ -13,7 +13,7 @@
 ### 읽는 중 ...
 
 - [1장 마이크로 서비스 아키텍처](ch01-msa.md)
-- [2장 프레임워크와 스프링 부트](ch02-framwork-and-springboot.md)
+- [2장 프레임워크와 스프링 부트](ch02-framework-and-springboot.md)
 - [3장 스프링 애플리케이션 기본](ch03-springboot-basic.md)
 - [4장 스프링 웹 MVC 개요](ch04-spring-web-mvc-basic.md)
 - [5장 스프링 웹 MVC를 이양한 REST_API 개발](ch05-spring-web-mvc-with-restapi.md)

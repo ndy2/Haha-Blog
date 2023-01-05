@@ -91,7 +91,7 @@ public interface HandlerAdapter {
 
 - `RequestMappingHandlerMapping`
  @Controller 클래스에 선언된 @RequestMapping 메서드의 @RequestMapping 어노테이션에 선언된 정보를 바탕으로 핸들러 메서드를 찾아서 반환 해 줍니다.
-![handler-execution-chain.png](handler-execution-chain.png)
+![handler-execution-chain.png](images/handler-execution-chain.png)
 
 - `RequestMappingHandlerAdapter`
 `HandlerMethod` 타입의 핸들러를 support 하는 어댑터입니다.
