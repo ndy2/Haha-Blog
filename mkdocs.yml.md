@@ -20,6 +20,7 @@ theme:
    text: Roboto
    code: Roboto Mono
   favicon: assets/favicon.ico
+  custom_dir: overrides
   admonition:
    note: octicons/tag-16
    abstract: octicons/checklist-16
