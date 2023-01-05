@@ -30,3 +30,7 @@
 
 ## 타임 라인
 ![my-timeline.excalidraw.png](my-timeline.excalidraw.png)
+
+### PS! - [ps 리포지토리](https://github/ndy2/coding-test)
+
+![emrdbs123's solved.ac stats](https://github-readme-solvedac.hyp3rflow.vercel.app/api/?handle=emrdbs123)
