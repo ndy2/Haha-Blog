@@ -1,4 +1,5 @@
 @참고 자료)
+
 - UWE FRIEDRICHSEN
 	- https://www.ufried.com/blog/resilience/
 	- https://www.ufried.com/blog/resilience_vs_fault_tolerance/
