@@ -1,3 +1,6 @@
+---
+comments: true
+---
 # 안녕하세요!
 ![my-profile.jpeg|200](my-profile.jpeg){ align=right width="200"}
 
