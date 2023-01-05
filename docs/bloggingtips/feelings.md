@@ -7,22 +7,22 @@
 
 아래의 방식들은 제가 자주 활용하는 표현 방식입니다. 이 외에도 [mkdocs-material 공식문서](https://squidfunk.github.io/mkdocs-material/reference)를 통해 다양한 표현방법을 확인 할 수 있습니다.
 
-    === "코드 블락에 이름"
+=== "코드 블락에 이름"
 
-        ![code-block.png](images/code-block.png)
-        일반적인 마크다운의 코드 블락 뿐만 아니라 코드블락에 이렇게 이름을 추가할 수 있습니다.
+    ![code-block.png](images/code-block.png)
+    일반적인 마크다운의 코드 블락 뿐만 아니라 코드블락에 이렇게 이름을 추가할 수 있습니다.
 
-    === "탭 표현 (content tab)"
+=== "탭 표현 (content tab)"
 
-        ![content-tab.png](images/content-tab.png)
-        가장 좋아하는 기능 중 하나입니다.
-       글 뿐만 아니라 코드, 심지어 요 탭 처럼 이미지도 포함 할 수 있습니다. 
+    ![content-tab.png](images/content-tab.png)
+    가장 좋아하는 기능 중 하나입니다.
+    글 뿐만 아니라 코드, 심지어 요 탭 처럼 이미지도 포함 할 수 있습니다. 
 
-    === "글 상자 (admonitions)"
+ === "글 상자 (admonitions)"
 
-        ![text-block.png](text/code-block.png)
-        다양한 아이콘을 사용할 수 있으며 상자의 접기 펴기 기능도 추가할 수 있습니다.
-        아이콘의 커스텀도 가능합니다.
+     ![text-block.png](text/code-block.png)
+     다양한 아이콘을 사용할 수 있으며 상자의 접기 펴기 기능도 추가할 수 있습니다.
+    아이콘의 커스텀도 가능합니다.
 
 
 #### 2. mkdocs 의 다양한 플러그인과 마크다운 확장
@@ -74,27 +74,25 @@ mkdocs-material 은 blog 플러그인을 통해 위 기능들을 제공하지만
 
 두 프로젝트가 문서를 렌더링 한 결과에는 당연히 차이가 있습니다.
 
-    === "obsidian 에서는 탭 표현이 당연히 안되지만"
+=== "obsidian 에서는 탭 표현이 당연히 안되지만"
 
-        ![tab-obsidian.png](imagestab-obsidian.png)
+    ![tab-obsidian.png](images/tab-obsidian.png)
 
+=== "mkdocs 는 가능하다!"
 
-    === "mkdocs 는 가능하다!"
-
-        ![tab-obsidian.png](imagestab-obsidian.png)
+    ![tab-obsidian.png](images/tab-obsidian.png)
 
 
 아래 처럼 obsidian 는 정상적으로 표현되었지만 
 mkdocs 에서는 비정상적으로 렌더링 된 경우도 있습니다.
 
-    === "obsidian 에서는 new line 이 먹은것 처럼 보이지만"
+=== "obsidian 에서는 new line 이 먹은것 처럼 보이지만"
 
-        ![new-line-obsidien.png](images/new-line-obsidien.png)
+    ![new-line-obsidien.png](images/new-line-obsidien.png)
 
-    === "mkdocs 에서는 렌더링 되지 않는다"
+=== "mkdocs 에서는 렌더링 되지 않는다"
 
-        ![new-line-mkdocs.png](images/new-line-mkdocs.png)
-
+    ![new-line-mkdocs.png](images/new-line-mkdocs.png)
 
 이런 문제를 확인 하기 위해서는 mkdocs 배포를 통해 화면을 확인하는 방법 밖에 없습니다. 깃헙 액션을 통해 화면을 확인하기 까지 길게는 5분 정도의 시간이 필요합니다.
 
