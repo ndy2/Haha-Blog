@@ -997,22 +997,23 @@
 <h3 id="1">1. 장점<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
 <h4 id="1_1">1.  마크다운 만을 이용함에도 문서의 표현력이 높다<a class="headerlink" href="#1_1" title="Permanent link">¶</a></h4>
 <p>아래의 방식들은 제가 자주 활용하는 표현 방식입니다. 이 외에도 <a href="https://squidfunk.github.io/mkdocs-material/reference">mkdocs-material 공식문서</a>를 통해 다양한 표현방법을 확인 할 수 있습니다.</p>
-<div class="highlight"><pre><span></span><code>=== "코드 블락에 이름"
-
-    ![code-block.png](images/code-block.png)
-    일반적인 마크다운의 코드 블락 뿐만 아니라 코드블락에 이렇게 이름을 추가할 수 있습니다.
-
-=== "탭 표현 (content tab)"
-
-    ![content-tab.png](images/content-tab.png)
-    가장 좋아하는 기능 중 하나입니다.
-   글 뿐만 아니라 코드, 심지어 요 탭 처럼 이미지도 포함 할 수 있습니다.
-
-=== "글 상자 (admonitions)"
-
-    ![text-block.png](text/code-block.png)
-    다양한 아이콘을 사용할 수 있으며 상자의 접기 펴기 기능도 추가할 수 있습니다.
-    아이콘의 커스텀도 가능합니다.
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">코드 블락에 이름</label><label for="__tabbed_1_2">탭 표현 (content tab)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/code-block.png"><img alt="code-block.png" src="../images/code-block.png"/></a>
+일반적인 마크다운의 코드 블락 뿐만 아니라 코드블락에 이렇게 이름을 추가할 수 있습니다.</p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/content-tab.png"><img alt="content-tab.png" src="../images/content-tab.png"/></a>
+가장 좋아하는 기능 중 하나입니다.
+글 뿐만 아니라 코드, 심지어 요 탭 처럼 이미지도 포함 할 수 있습니다. </p>
+</div>
+</div>
+</input></input></div>
+<p>=== "글 상자 (admonitions)"</p>
+<div class="highlight"><pre><span></span><code> ![text-block.png](text/code-block.png)
+ 다양한 아이콘을 사용할 수 있으며 상자의 접기 펴기 기능도 추가할 수 있습니다.
+아이콘의 커스텀도 가능합니다.
 </code></pre></div>
 <h4 id="2-mkdocs">2. mkdocs 의 다양한 플러그인과 마크다운 확장<a class="headerlink" href="#2-mkdocs" title="Permanent link">¶</a></h4>
 <p><code>mkdocs.yml</code> 파일에 한줄 추가 하는 것 만으로 다양한 플러그인과 마크다운 확장을 사용할 수 있습니다. <code>pymdownx</code> 관련 확장을 통해 마크다운에 밑줄, 강조표시 등을 쉽게 추가 할 수 있고 <code>vegalite</code> 을 통해 다양한 그래프를 생성할 수 있습니다.</p>
@@ -1031,33 +1032,32 @@
 <p>새로운 문서를 작성하거나 플러그인에 수정을 해야할 때면 <code>mkdocs.yml</code> 을 꼭 수정해야 하는데 그때 마다 메모장이나 vs 코드 등 다른 툴을 이용해야합니다.</p>
 <p>저는 mkdocs-excalidraw-plugin 가 md 파일로 이미지를 표현하는 것에 영감을 받아 <code>mkdocs.yml.md</code> 파일을 따로 두고 pre-commit 깃 훅을 통해 커밋 전에 <code>mkdocs.yml</code> 파일을 새로 덮어 쓰는 방식으로 어느정도는 이 문제를 해결하였습니다.</p>
 <h4 id="2-mkdocs_1">2. mkdocs는 블로그가 아닌 문서 관리 툴<a class="headerlink" href="#2-mkdocs_1" title="Permanent link">¶</a></h4>
-<p>mkdocs 는 기본적으로 블로그가 아닌 마크다운을 이용한 문서화 툴입니다. 따라서 블로깅을 위한 기능들 </p>
-<ul>
-<li>e.g.) 최신 포스트, 작성자 프로필, 일자별로 모아보기, 포스트에 태그 추가</li>
-</ul>
-<p>은 지원되지 않습니다.</p>
+<p>mkdocs 는 기본적으로 블로그가 아닌 마크다운을 이용한 문서화 툴입니다. 따라서 블로깅을 위한 기능들 (최신 포스트, 작성자 프로필, 일자별로 모아보기, 포스트에 태그 추가 ...) 은 지원되지 않습니다.</p>
 <p>mkdocs-material 은 blog 플러그인을 통해 위 기능들을 제공하지만... <strong>유료</strong> 입니다 ㅜ.ㅜ</p>
 <h4 id="3">3. 렌더링 차이<a class="headerlink" href="#3" title="Permanent link">¶</a></h4>
-<p>두 프로젝트가 문서를 렌더링 한 결과에는 당연히 차이가 있습니다.</p>
-<div class="highlight"><pre><span></span><code>=== "obsidian 에서는 탭 표현이 당연히 안되지만"
-
-    ![tab-obsidian.png](imagestab-obsidian.png)
-
-
-=== "mkdocs 는 가능하다!"
-
-    ![tab-obsidian.png](imagestab-obsidian.png)
-</code></pre></div>
+<p>두 프로젝트가 문서를 렌더링 한 결과에는 차이가 있습니다.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">obsidian 에서는 탭 표현이 당연히 안되지만</label><label for="__tabbed_2_2">mkdocs 는 가능하다!</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/tab-obsidian.png"><img alt="tab-obsidian.png" src="../images/tab-obsidian.png"/></a></p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/tab-obsidian.png"><img alt="tab-obsidian.png" src="../images/tab-obsidian.png"/></a></p>
+</div>
+</div>
+</input></input></div>
 <p>아래 처럼 obsidian 는 정상적으로 표현되었지만 
 mkdocs 에서는 비정상적으로 렌더링 된 경우도 있습니다.</p>
-<div class="highlight"><pre><span></span><code>=== "obsidian 에서는 new line 이 먹은것 처럼 보이지만"
-
-    ![new-line-obsidien.png](images/new-line-obsidien.png)
-
-=== "mkdocs 에서는 렌더링 되지 않는다"
-
-    ![new-line-mkdocs.png](images/new-line-mkdocs.png)
-</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">obsidian 에서는 new line 이 먹은것 처럼 보이지만</label><label for="__tabbed_3_2">mkdocs 에서는 렌더링 되지 않는다</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/new-line-obsidien.png"><img alt="new-line-obsidien.png" src="../images/new-line-obsidien.png"/></a></p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/new-line-mkdocs.png"><img alt="new-line-mkdocs.png" src="../images/new-line-mkdocs.png"/></a></p>
+</div>
+</div>
+</input></input></div>
 <p>이런 문제를 확인 하기 위해서는 mkdocs 배포를 통해 화면을 확인하는 방법 밖에 없습니다. 깃헙 액션을 통해 화면을 확인하기 까지 길게는 5분 정도의 시간이 필요합니다.</p>
 <p>점점 사용법에 익숙해지면 문제가 덜 느껴지겠지만 익숙해지기 까지는 큰 단점이라고 생각합니다. 혹은 mkdocs 환경을 로컬에 구축해서 화면을 확인하고 깃헙 CI 를 돌리는 방법도 있을것 같습니다.</p>
 <hr/>
