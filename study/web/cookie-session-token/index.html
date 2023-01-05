@@ -957,12 +957,16 @@
 <h3 id="1-http-stateless">1. HTTP 와 STATELESS<a class="headerlink" href="#1-http-stateless" title="Permanent link">¶</a></h3>
 <p>HTTP 는 무상태 프로토콜입니다. 즉 <ins class="critic">서버가 클라이언트의 상태를 보존하지 않습니다</ins>.</p>
 <p>이의 장점으로는 서버의 확장성이 높다는 것이 있고 단점으로는 클라이언트가 추가 데이터를 전송해야 한다는 점이 있습니다.</p>
-<p>=== "STATEFULL - 장애에 취약"</p>
-<div class="highlight"><pre><span></span><code>![http-statefull.png](images/http-statefull.png)
-</code></pre></div>
-<p>=== "STATELESS - 장애에 대응 가능, 수평 확장 유리."</p>
-<div class="highlight"><pre><span></span><code>![http-stateless.png](images/http-stateless.png)
-</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">STATEFULL - 장애에 취약</label><label for="__tabbed_1_2">STATELESS - 장애에 대응 가능, 수평 확장 유리.</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/http-statefull.png"><img alt="http-statefull.png" src="images/http-statefull.png"/></a></p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/http-stateless.png"><img alt="http-stateless.png" src="images/http-stateless.png"/></a></p>
+</div>
+</div>
+</input></input></div>
 <p>하지만 모든것을 무상태로 설계 할 수는 없습니다. 로그인기능을 구현하기 위해 매번 아이디와 비밀번호를 요청에 포함하는 것 혹은 장바구니 기능을 위해 매번 장바구니의 상태를 서버에게 전송하는 것은 합리적이지 않습니다. </p>
 <h3 id="2">2. 쿠키와 세션<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
 <h4 id="_1">쿠키<a class="headerlink" href="#_1" title="Permanent link">¶</a></h4>
