@@ -58,7 +58,13 @@ mkdocs-material 과 obsidien 모두 플러그인을 통해 기능을 확장하�
 
 새로운 문서를 작성하거나 플러그인에 수정을 해야할 때면 `mkdocs.yml` 을 꼭 수정해야 하는데 그때 마다 메모장이나 vs 코드 등 다른 툴을 이용해야합니다.
 
-저는 mkdocs-excalidraw-plugin 가 md 파일로 이미지를 표현하는 것에 영감을 받아 `mkdocs.yml.md` 파일을 따로 두고 pre-commit 깃 훅을 통해 커밋 전에 `mkdocs.yml` 파일을 새로 덮어 쓰는 방식으로 어느정도는 이 문제를 해결하였습니다.
+`ini`, `csv` 타입의 파일을 obsidian 에서 관리하기 위한 플러그인이 존재합니다.
+- ini - https://github.com/deathau/ini-obsidian
+- csv - https://github.com/deathau/csv-obsidian
+
+확인해보니 `csv-obsidian` 은 현재 동작하지 않고 `ini-obsidian` 은 사용할 수 있습니다. 모두 마지막 릴리즈가 2년전입니다 ㅜ.ㅜ
+
+
 
 #### 2. mkdocs는 블로그가 아닌 문서 관리 툴
 
