@@ -76,6 +76,9 @@ plugins:
       timezone: Asia/Seoul
       enable_creation_date: true
   - charts
+  - exclude:
+      glob:
+        - "*.excalidraw.md*
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/vega@5
