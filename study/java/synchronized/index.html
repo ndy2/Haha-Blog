@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!!" name="description"/>
+<meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
 <link href="https://ndy2.github.io/Haha-Blog/study/java/synchronized/" rel="canonical"/>
 <link href="../nio/" rel="prev"/>
@@ -964,6 +964,11 @@
         2023/01/04
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../til/til/2023-01-05/">
+        2023/01/05
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1081,10 +1086,12 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>동시성 - synchrozied</h1>
-<p>@참고 자료)
-- Jakob Jenkov - https://www.youtube.com/watch?v=eKWjfZ-TUdo
-- oracle java tutorial - https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html
-- 쉬운코드 - https://youtu.be/Dms1oBmRAlo?t=1275</p>
+<p>@참고 자료)</p>
+<ul>
+<li>Jakob Jenkov - https://www.youtube.com/watch?v=eKWjfZ-TUdo</li>
+<li>oracle java tutorial - https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html</li>
+<li>쉬운코드 - https://youtu.be/Dms1oBmRAlo?t=1275</li>
+</ul>
 <p>자바에는 동시성 처리를 위해 다양한 방식을 제공합니다.</p>
 <p>구체적인 이용 방식이나 효과는 모두 다르지만 보통</p>
 <ol>
@@ -1123,8 +1130,8 @@
 <a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">    </span><span class="p">}</span>
 <a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="p">}</span>
 </code></pre></div>
-<p>(1), (2) - <code>synchronzied method
-(3), (4) -</code>synchronized staement`</p>
+<p>(1), (2) - `synchronzied method</p>
+<p>(3), (4) - <code>synchronized staement</code></p>
 <p>synchronized 키워드에는 항상 monitor 가 전달되어야 합니다. 위 예시에서 <code>synchronized</code> 블락에는 <code>this</code> 로 객체 자신을 <code>모니터 오브젝트</code>로 활용 하였습니다. 메서드에 <code>synchronized</code> 키워드를 활용한다면 인스턴스 메서드에는 this 가 정적 메서드에는 <code>Class&lt;?&gt;</code> 객체가 <code>모니터 오브젝트</code>로 활용됩니다.</p>
 <p>자바의 <code>synchronized</code> 키워드는 항상이 모니터 객체와 함께 동작합니다. 이 객체는 종종 모든 객체가 가지는 내제적인 락 이라는 의미에서 <code>intrinsic lock</code> 혹은 <code>monitor lock</code> 혹은 그냥 <code>monitor</code> 라고도 불립니다. 이 문서에서는 개인적으로 입에 붙은 <code>모니터 객체</code>, <code>모니터 락</code> 이라는 표현을 주로 사용하겠습니다.</p>
 <p>모니터의 자세한 동작방식은 마지막에 알아보겠습니다.</p>
@@ -1340,7 +1347,7 @@ Thread 1과 Thread 2가 각자의 SynchronizedExchanger 객체를 가지는 경�
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 22, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 22, 2022</span>
