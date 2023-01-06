@@ -10,7 +10,7 @@
 -   `replacement` 정책
     -   메모리가 꽉 찼을 때 메모리 내에 있는 어떤 프로세스를 내보낼지 결정
 
-###  01 fetch 정책 - Demand Paging
+###  1. fetch 정책 - Demand Paging
 
 #### Demand Paging
 
@@ -50,7 +50,7 @@
 
 ![page-fault.png](images/page-fault.png)
 
-### 02 replacement 정책(페이지 교체 알고리즘)
+### 2. replacement 정책(페이지 교체 알고리즘)
 
 -   무작위, FIFO
 -   최적

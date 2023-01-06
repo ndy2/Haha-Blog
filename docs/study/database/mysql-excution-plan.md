@@ -1,5 +1,5 @@
-
 @참고 자료)
+
 MySQL - [explain-output](https://dev.mysql.com/doc/refman/8.0/en/explain-output.html)
 
 ---

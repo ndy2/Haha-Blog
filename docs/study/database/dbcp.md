@@ -1,4 +1,5 @@
 @ 참고 자료)
+
 - 쉬운코드 - [DBCP (DB connection pool)의 개념부터 설정 방법](https://youtu.be/zowzVqx3MQ4)
 - 쓰레드의 커넥션 조회, 반납 시나리오 - [링크](https://jaehun2841.github.io/2020/01/27/2020-01-27-hikaricp-maximum-pool-size-tuning/#Hikari%EB%8B%98-Connection-하나만-주세여)
 	- 아주 재미있습니다.

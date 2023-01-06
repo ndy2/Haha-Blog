@@ -1,5 +1,8 @@
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gjcbqZjlXjM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+@참고 자료)
 
+- 쉬운코드 -  https://www.youtube.com/embed/gjcbqZjlXjM
+
+---
 ### 1. `Relation` in Mathematics
 ![relation-in-mathematics.png](images/relation-in-mathematics.png)
 

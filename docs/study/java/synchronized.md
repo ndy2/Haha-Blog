@@ -1,4 +1,5 @@
 @참고 자료)
+
 - Jakob Jenkov - https://www.youtube.com/watch?v=eKWjfZ-TUdo
 - oracle java tutorial - https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html
 - 쉬운코드 - https://youtu.be/Dms1oBmRAlo?t=1275
@@ -49,6 +50,7 @@ public class SynchronizedExchanger {
 ```
 
 (1), (2) - `synchronzied method
+
 (3), (4) - `synchronized staement`
 
 synchronized 키워드에는 항상 monitor 가 전달되어야 합니다. 위 예시에서 `synchronized` 블락에는 `this` 로 객체 자신을 `모니터 오브젝트`로 활용 하였습니다. 메서드에 `synchronized` 키워드를 활용한다면 인스턴스 메서드에는 this 가 정적 메서드에는 `Class<?>` 객체가 `모니터 오브젝트`로 활용됩니다.
