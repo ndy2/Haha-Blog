@@ -32,6 +32,7 @@
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -66,6 +67,16 @@
 </div>
 </div>
 </div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
 <label class="md-header__button md-icon" for="__search">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
 </label>
@@ -960,21 +971,22 @@
 <hr/>
 <h3 id="1-http09-">1. HTTP/0.9 - 원 라인 프로토콜<a class="headerlink" href="#1-http09-" title="Permanent link">¶</a></h3>
 <p>HTTP 초기 버전에는 버전 번호가 없었습니다. HTTP/0.9는 이후에 차후 버전과 구별하기 위해 0.9로 불리게 됐습니다. HTTP/0.9는 극히 단순합니다. 요청은 단일 라인으로 구성되며 리소스에 대한 (프로토콜, 서버 그리고 포트는 서버가 연결되고 나면 불필요로 하므로 URL은 아닌) 경로로 가능한 메서드는 <code>GET</code>이 유일했습니다.
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>GET /mypage.html
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="err">GET /mypage.html</span>
 </code></pre></div></p>
 <p>응답 또한 극도로 단순합니다. 오로지 파일 내용 자체로 구성됩니다.
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>&lt;HTML&gt;
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">HTML</span><span class="p">&gt;</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>A very simple HTML page
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>&lt;/HTML&gt;
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="p">&lt;/</span><span class="nt">HTML</span><span class="p">&gt;</span>
 </code></pre></div></p>
 <p>헤더도 없고, 응답 코드도 없습니다. 메서드는 <code>GET</code> 이 유일했습니다.</p>
+<hr/>
 <h3 id="2-http10">2. HTTP/1.0<a class="headerlink" href="#2-http10" title="Permanent link">¶</a></h3>
 <p>HTTP/1.0 부터 조금은 익숙한 형태의 요청과 응답이 이루어 졌습니다.
 - HTTP 버전 정보나, 응답 상태 코드 같은 것이 Start-Line 에 추가되었습니다.
 - HTTP 헤더 개념이 추가되었습니다.
-- HTTP의 Content-Type 헤더 스펙으로 인해 HTML 파일 외 다른 문서를 전송할 수 있게 되었습니다.
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>GET /mypage.html HTTP/1.0
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)
+- HTTP의 Content-Type 헤더 스펙으로 인해 HTML 파일 외 다른 문서를 전송할 수 있게 되었습니다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nf">GET</span> <span class="nn">/mypage.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.0</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="na">User-Agent</span><span class="o">:</span> <span class="l">NCSA_Mosaic/2.0 (Windows 3.1)</span>
 <a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>
 <a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>200 OK
 <a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>Date: Tue, 15 Nov 1994 08:12:31 GMT
@@ -984,7 +996,8 @@
 <a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>A page with an image
 <a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a>  &lt;IMG SRC="/myimage.gif"&gt;
 <a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a>&lt;/HTML&gt;
-</code></pre></div></p>
+</code></pre></div>
+<hr/>
 <h3 id="3-http11">3. HTTP/1.1<a class="headerlink" href="#3-http11" title="Permanent link">¶</a></h3>
 <ul>
 <li>Persistent Connection 스펙 - Connection 을 재사용하는 기능이 추가되었습니다. (keep-alive)</li>
@@ -992,6 +1005,7 @@
 <li>ETag, Last-Modified 등 - 추가적인 캐시 제어 메커니즘이 도입되었습니다.</li>
 <li>현재 (2022) 가장 널리 활용되는 HTTP 버전입니다.</li>
 </ul>
+<hr/>
 <h3 id="4-http2-">4. HTTP/2 - 더 나은 성능!<a class="headerlink" href="#4-http2-" title="Permanent link">¶</a></h3>
 <ul>
 <li>구글의 자체적인 SPDY (스피디) 프로토콜을 표준으로 채택한 것입니다.</li>
@@ -1001,6 +1015,7 @@
 <li>허프만 인코딩을 통해 동일한 헤더를 압축 하였습니다.</li>
 <li>Server Push 메커니즘을 추가 하였습니다.</li>
 </ul>
+<hr/>
 <h3 id="5-http3-http-over-quic">5. HTTP/3 - HTTP over QUIC<a class="headerlink" href="#5-http3-http-over-quic" title="Permanent link">¶</a></h3>
 <ul>
 <li>구글이 UDP 를 기반으로 만든 새로운 전송계층 프로토콜인 QUIC 를 기반으로 동작합니다.</li>
@@ -1019,7 +1034,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
