@@ -78,7 +78,7 @@ plugins:
   - charts
   - exclude:
       glob:
-        - "*.excalidraw.md*
+        - "*.excalidraw.md"
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/vega@5
