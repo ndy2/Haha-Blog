@@ -5,7 +5,7 @@ Til 을 시작해 보자
 
 ```vegalite
 --8<--
-docs/til/resources/2023-til-heat-map-vega.json
+docs/til/resources/2022-til-heat-map-vega.json
 --8<--
 ```
 
