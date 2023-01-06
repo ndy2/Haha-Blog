@@ -246,6 +246,11 @@
     2. 동반 객체 - companion object
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-anoymous-object">
+    3. 익명 객체 - anoymous object
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -919,6 +924,11 @@
     2. 동반 객체 - companion object
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-anoymous-object">
+    3. 익명 객체 - anoymous object
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -940,13 +950,13 @@
 </div>
 <p>코틀린은 세가지 상황에서 <code>object</code> 키워드를 사용합니다.</p>
 <ul>
-<li><strong>객체 선언</strong>^object declaration^ - 싱글턴을 정의 하는 방법 중 하나입니다.</li>
-<li><strong>동반 객체</strong>^companion object^ - 자바의 static 메서드, 변수와 같은 역할을 합니다.</li>
-<li><strong>객체 식</strong>^object expression^ - 자바의 익명 클래스와 같은 역할을 합니다.</li>
+<li><strong>객체 선언</strong><sup>object</sup> <sup>declaration</sup> - 싱글턴을 정의 하는 방법 중 하나입니다.</li>
+<li><strong>동반 객체</strong><sup>companion</sup> <sup>object</sup> - 자바의 static 메서드, 변수와 같은 역할을 합니다.</li>
+<li><strong>익명 객체</strong><sup>anoymous</sup> <sup>object</sup> - 자바의 익명 클래스와 같은 역할을 합니다.</li>
 </ul>
 <h3 id="1-object-declaration">1. 객체 선언 - <code>object declaration</code><a class="headerlink" href="#1-object-declaration" title="Permanent link">¶</a></h3>
-<p>싱글턴 패턴^singleton pattern^은 클래스의 인스턴스가 오직 하나만 생성되도록 하는 디자인 패턴입니다. 자바에서는 보통 private 생성자를 통해 단하나의 인스턴스를 private static 필드로 생성 해 두고 이에대한 접근을 public static getInstance 와 같은 메서드를 통해 제어하는 방식으로 싱글턴 패턴을 구현합니다. </p>
-<p>코틀린은 언어에서 기본적으로 싱글턴 패턴을 지원합니다. 객체 선언^object declaration^은 클래스 선언과 그 클래스에 속한 단일 인스턴스의 선언을 합친 선언입니다.</p>
+<p>싱글턴 패턴<sup>singleton</sup> <sup>pattern</sup>은 클래스의 인스턴스가 오직 하나만 생성되도록 하는 디자인 패턴입니다. 자바에서는 보통 private 생성자를 통해 단하나의 인스턴스를 private static 필드로 생성 해 두고 이에대한 접근을 public static getInstance 와 같은 메서드를 통해 제어하는 방식으로 싱글턴 패턴을 구현합니다. </p>
+<p>코틀린은 언어에서 기본적으로 싱글턴 패턴을 지원합니다. 객체 선언<sup>object</sup> <sup>declaration</sup>은 클래스 선언과 그 클래스에 속한 단일 인스턴스의 선언을 합친 선언입니다.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">자바</label><label for="__tabbed_1_2">코틀린</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -961,7 +971,7 @@
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">object</span><span class="w"> </span><span class="nc">SingleTon</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">// 끝!</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">object</span><span class="w"> </span><span class="nc">SingleTon</span><span class="w"> </span><span class="c1">// 끝!</span>
 </code></pre></div>
 </div>
 </div>
@@ -1020,6 +1030,44 @@
 </div>
 </div>
 </input></input></div>
+<p>``</p>
+<ul>
+<li>
+<p>유틸리티 메서드는 자바에서는 <code>static</code> 메서드로 구현되곤 하지만 코틀린에서는 최상위 함수가 그 역할을 대신할 수 있습니다. </p>
+</li>
+<li>
+<p>또 자바에서는 앞서 살펴보았듯이 싱글턴 패턴의 구현을 위해서도 <code>static</code> 을 활용합니다. 이는 코틀린의 객체 선언으로 대체 가능합니다.</p>
+</li>
+<li>
+<p>자바에서는 객체 내부에 static 필드와 메서드(객체의 상태가 필요한) 를 가지는 경우가 있는데 이 경우에 동행 객체<sup>companion</sup> <sup>object</sup> 가 그 역할을 할 수 있습니다.</p>
+</li>
+</ul>
+<p>위 코틀린 <code>person</code> 클래스의 구성을 뜯어보면 <code>Person</code> 클래스와 그 안에 객체선언으로 <code>object</code>가 하나 정의 되어 있고 <code>object</code> 에는 <code>companion</code> 이라는 특별한 표시가 붙어있습니다.  companion object 는 클래스 안에 정의된 일반 객체입니다. 따라서 동반 객체에 이름을 붙이거나, 인터페이스를 상속하거나, 동반 객체 안에 확장 함수와 프로퍼티를 정의할 수도 있습니다.</p>
+<h3 id="3-anoymous-object">3. 익명 객체 - <code>anoymous object</code><a class="headerlink" href="#3-anoymous-object" title="Permanent link">¶</a></h3>
+<p>자바의 익명 클래스는 특정 인터페이스나 클래스를 상속받은 구현체를 일회성으로 사용할 때 사용하는 클래스 입니다.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">자바</label><label for="__tabbed_3_2">코틀린</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1">// 자바의 익명 클래스</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1">// 인터페이스에 new 키워드를 활용하고 구현을 바로 이어서 쓴다.</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">new</span><span class="w"> </span><span class="n">Movable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="nd">@Override</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"move!"</span><span class="p">)}</span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="nd">@Override</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">fly</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"fly!"</span><span class="p">)}</span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">// kotlin 의 익명 객체</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="c1">// new 키워드 대신 `object :` 을 사용한다는 점 외에 큰 차이가 없다.</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="k">object</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">Movable</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">println</span><span class="p">(</span><span class="s">"move!"</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">fly</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">println</span><span class="p">(</span><span class="s">"fly!"</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</input></input></div>
+<p>물론 객체 선언과 달리 싱글턴이 아니라 매번 익명 객체가 생성됩니다.</p>
 <hr/>
 <div class="md-source-file">
 <small>
