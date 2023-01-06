@@ -94,6 +94,8 @@ plugins:
   - exclude:
       glob:
         - "*.excalidraw.md"
+        - "*/til/til-template.md"
+        - "*/til/til/*.md"
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/vega@5
