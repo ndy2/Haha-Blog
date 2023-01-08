@@ -87,6 +87,7 @@ markdown_extensions:
       permalink: true
 
 plugins:
+  - replace
   - search
   - glightbox
   - git-revision-date-localized:
