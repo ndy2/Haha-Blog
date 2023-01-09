@@ -24,7 +24,7 @@
     [cloudflare] <br>
     네트워크는 두 대 이상의 연결된 컴퓨팅 장치의 그룹을 말합니다. 
     
-    네트워크에 연결된 컴퓨터는 서로 데이터를 전송할 수 있습니다. **컴퓨터 네트워크**는 마치 서로 알고 정보를 주고받으며 함께 활동하는 **소셜 서클** 과 같급니다.
+    네트워크에 연결된 컴퓨터는 서로 데이터를 전송할 수 있습니다. **컴퓨터 네트워크**는 마치 서로 알고 정보를 주고받으며 함께 활동하는 **소셜 서클** 과 같습니다.
        
     보통 하나의 네트워크에 있는 모든 장치는 중앙에 있는 하나의 허브 (e.g. 라우터)에 연결된 경우가 많습니다. 네트워크에는 해당 네트워크를 작게 구분한 서브네트워크가 포함되기도 합니다. 
     
@@ -95,7 +95,7 @@
 
 ### 3. 네트워크 계층의 프로토콜
 
-이 계층에서 주요 프로토콜은 IP^Internet^ ^Protocol^ 와 ICMP^Internet^ ^ Control^  ^Message^  ^ Protocol^  입니다. (+ARP ^Address^ ^Resolution^ ^Protocol^)
+이 계층에서 주요 프로토콜은 IP^Internet^ ^Protocol^ 와 ICMP^Internet^ ^Control^  ^Message^  ^Protocol^  입니다. (+ARP ^Address^ ^Resolution^ ^Protocol^)
 
 !!! note "인터넷 프로토콜(IP)란 무엇인가요?"
 
