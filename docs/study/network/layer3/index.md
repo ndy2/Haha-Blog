@@ -40,7 +40,7 @@
     ![host-switch-network.png](images/host-switch-network.png)
 
 
-!!!! note "인터넷이 동작하도록 하는 physical infrastructure에는 어떤것이 있나요?"
+!!! note "인터넷이 동작하도록 하는 physical infrastructure에는 어떤것이 있나요?"
 
     [cloudflare]
     다양한 하드웨어와 infrastructure 가 인터넷을 구성합니다. 가장 중요한 것들은 다음과 같습니다. - 라우터, 스위치, 웹 서버
