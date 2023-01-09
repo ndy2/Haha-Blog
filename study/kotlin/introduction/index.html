@@ -7,12 +7,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/" rel="canonical"/>
-<link href="../ch08-sec01-jpa-pros-and-cons/" rel="prev"/>
-<link href="../ch08-sec07-warning-on-%40Transactional/" rel="next"/>
+<link href="https://ndy2.github.io/Haha-Blog/study/kotlin/introduction/" rel="canonical"/>
+<link href="../../java/synchronized/" rel="prev"/>
+<link href="../object-keyword/" rel="next"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.3" name="generator"/>
-<title>엔티티 매니저와 영속성 컨텍스트 - Haha 블로그</title>
+<title>코틀린 소개, 특징, 철학 - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -37,7 +37,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#_1">
+<a class="md-skip" href="#1">
           Skip to content
         </a>
 </div>
@@ -61,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              엔티티 매니저와 영속성 컨텍스트
+              코틀린 소개, 특징, 철학
             
           </span>
 </div>
@@ -173,9 +173,9 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_3" tabindex="0">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label aria-expanded="true" class="md-nav__link" for="__nav_3" tabindex="0">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -198,26 +198,26 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/java/string/">
+<a class="md-nav__link" href="../../java/string/">
         String
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/java/nio/">
+<a class="md-nav__link" href="../../java/nio/">
         NIO
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/java/synchronized/">
+<a class="md-nav__link" href="../../java/synchronized/">
         동시성 - synchrozied
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_3_2" tabindex="0">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<label aria-expanded="true" class="md-nav__link" for="__nav_3_2" tabindex="0">
           코틀린
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -227,18 +227,89 @@
           코틀린
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/kotlin/introduction/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          코틀린 소개, 특징, 철학
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         코틀린 소개, 특징, 철학
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 코틀린 소개
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/kotlin/object-keyword/">
+<a class="md-nav__link" href="#2">
+    2. 코틀린의 특징
+  </a>
+<nav aria-label="2. 코틀린의 특징" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1_1">
+    1. 멀티 플랫폼 지원
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2_1">
+    2. 정적 타입 언어
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 함수형 프로그래밍 + 객체지향 프로그래밍
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3_1">
+    3. 코틀린의 철학
+  </a>
+<nav aria-label="3. 코틀린의 철학" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1_2">
+    1. 실용성
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2_2">
+    2. 간결성
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3_2">
+    3. 안정성
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 상호운용성
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../object-keyword/">
         object 키워드
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/kotlin/labmda/variable-capturing.md">
+<a class="md-nav__link" href="../labmda/variable-capturing.md">
         람다 변수 캡쳐링
       </a>
 </li>
@@ -258,17 +329,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/architecture/msa-pros-cons/">
+<a class="md-nav__link" href="../../architecture/msa-pros-cons/">
         MSA 장단점
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/architecture/hexagonal-architecture/">
+<a class="md-nav__link" href="../../architecture/hexagonal-architecture/">
         Hexagonal Architecture
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/architecture/resilient-pattern/">
+<a class="md-nav__link" href="../../architecture/resilient-pattern/">
         Resilient Pattern
       </a>
 </li>
@@ -288,22 +359,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/os/process-vs-thread/">
+<a class="md-nav__link" href="../../os/process-vs-thread/">
         프로세스 vs 쓰레드
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/os/deadlock/">
+<a class="md-nav__link" href="../../os/deadlock/">
         데드락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/os/memory-management/virtual-memory-1/">
+<a class="md-nav__link" href="../../os/memory-management/virtual-memory-1/">
         가상메모리 기초
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/os/memory-management/virtual-memory-2/">
+<a class="md-nav__link" href="../../os/memory-management/virtual-memory-2/">
         가상메모리 관리
       </a>
 </li>
@@ -323,62 +394,62 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/database-basic-terminologies/">
+<a class="md-nav__link" href="../../database/database-basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/relational-database/">
+<a class="md-nav__link" href="../../database/relational-database/">
         관계형 데이터베이스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/sql-join/">
+<a class="md-nav__link" href="../../database/sql-join/">
         SQL join
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-lock/">
+<a class="md-nav__link" href="../../database/db-lock/">
         데이터베이스 락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-index/">
+<a class="md-nav__link" href="../../database/db-index/">
         데이터베이스 인덱스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-anomaly/">
+<a class="md-nav__link" href="../../database/db-anomaly/">
         데이터베이스 이상현상
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-functional-dependency/">
+<a class="md-nav__link" href="../../database/db-functional-dependency/">
         데이터베이스 FD
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/db-normalization/">
+<a class="md-nav__link" href="../../database/db-normalization/">
         데이터베이스 정규화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/handle-olap/">
+<a class="md-nav__link" href="../../database/handle-olap/">
         OLAP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/clustering-replication-sharding/">
+<a class="md-nav__link" href="../../database/clustering-replication-sharding/">
         클러스터링, 리플리케이션, 샤딩
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/dbcp/">
+<a class="md-nav__link" href="../../database/dbcp/">
         DBCP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/mysql-excution-plan/">
+<a class="md-nav__link" href="../../database/mysql-excution-plan/">
         MySQL 실행계획 연습
       </a>
 </li>
@@ -410,7 +481,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/layer3/">
+<a class="md-nav__link" href="../../network/layer3/">
         네트워크 계층, 인터넷
       </a>
 </li>
@@ -430,17 +501,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/layer4/tcp-vs-udp/">
+<a class="md-nav__link" href="../../network/layer4/tcp-vs-udp/">
         TCP vs UDP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/layer4/tcp-flow-control/">
+<a class="md-nav__link" href="../../network/layer4/tcp-flow-control/">
         TCP 흐름제어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/layer4/tcp-flow-control/">
+<a class="md-nav__link" href="../../network/layer4/tcp-flow-control/">
         TCP 혼잡제어
       </a>
 </li>
@@ -460,12 +531,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/layer7/http-versions/">
+<a class="md-nav__link" href="../../network/layer7/http-versions/">
         HTTP 버전별 특징
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/network/layer7/https/">
+<a class="md-nav__link" href="../../network/layer7/https/">
         HTTPS
       </a>
 </li>
@@ -488,7 +559,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/web/cookie-session-token/">
+<a class="md-nav__link" href="../../web/cookie-session-token/">
         쿠키 세션 토큰
       </a>
 </li>
@@ -498,9 +569,9 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<label aria-expanded="true" class="md-nav__link" for="__nav_4" tabindex="0">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_4" tabindex="0">
           기술 서적 정리/리뷰
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -511,18 +582,18 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../">
+<a class="md-nav__link" href="../../../books/">
         책!
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../clean-agile/clean-agile/">
+<a class="md-nav__link" href="../../../books/clean-agile/clean-agile/">
         클린 애자일
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
-<label aria-expanded="true" class="md-nav__link" for="__nav_4_3" tabindex="0">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_4_3" tabindex="0">
           스프링 부트로 개발하는 MSA 컴포넌트
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -533,22 +604,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/">
         리뷰
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch01-msa/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch01-msa/">
         1장 마이크로서비스 아키텍처
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch02-framework-and-springboot/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch02-framework-and-springboot/">
         2장 프레임워크와 스프링부트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch03-springboot-basic/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch03-springboot-basic/">
         3장 스프링 애플리케이션 기본
       </a>
 </li>
@@ -565,17 +636,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch04-spring-web-mvc-basic/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-spring-web-mvc-basic/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch04-sec01-http/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-sec01-http/">
         파트 1 HTTP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch04-sec02-servlet-and-mvc/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
         파트 2 서블릿과 MVC
       </a>
 </li>
@@ -583,7 +654,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch05-spring-web-mvc-with-restapi/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
         5장 스프링 MVC를 이용한 REST-API 개발
       </a>
 </li>
@@ -600,22 +671,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-build-web-application-server/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-build-web-application-server/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
         EnableXXX의 동작과 빈 설정 모듈화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-sec01-webapplication-configure-mechanism/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
         웹 애플리케이션 설정 메커니즘
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch06-sec03-dispatcher-servlet/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
         DispatcherServlet
       </a>
 </li>
@@ -635,26 +706,26 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch07-spring-aop-and-test-and-autoconfiguration/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch07-sec01-spring-aop/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-sec01-spring-aop/">
         스프링 AOP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch07-sec03-autoconfiguration/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-sec03-autoconfiguration/">
         스프링 부트 자동 설정
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_9" id="__nav_4_3_9" type="checkbox"/>
-<label aria-expanded="true" class="md-nav__link" for="__nav_4_3_9" tabindex="0">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_9" id="__nav_4_3_9" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_4_3_9" tabindex="0">
           8장 데이터 영속성
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -665,50 +736,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-data-persistence/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-data-persistence/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec01-jpa-pros-and-cons/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
         JPA 장점과 단점
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          엔티티 매니저와 영속성 컨텍스트
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
         엔티티 매니저와 영속성 컨텍스트
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    엔티티의 생명주기
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    영속성 컨텍스트의 특징
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec07-warning-on-%40Transactional/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
         Transactional을 사용할 때 주의 사항
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch08-sec11-osiv/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec11-osiv/">
         OSIV
       </a>
 </li>
@@ -728,17 +776,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch09-application-integration-restapi/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-application-integration-restapi/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch09-sec01-resttemplate/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-sec01-resttemplate/">
         RestTemplate 클래스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch09-sec02-webclient/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-sec02-webclient/">
         WebClient 클래스
       </a>
 </li>
@@ -758,22 +806,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch10-sec01-redis-introduction/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec01-redis-introduction/">
         레디스 소개
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch10-sec01-redis-high-availability/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec01-redis-high-availability/">
         레디스 HA
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch10-sec04-redis-serializer/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec04-redis-serializer/">
         레디스 직렬화 설정
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch10-sec05-redis-usages/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec05-redis-usages/">
         레디스의 다양한 활용
       </a>
 </li>
@@ -781,7 +829,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch11-sec03-batch-architecture/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch11-sec03-batch-architecture/">
         11장 스프링 스케쥴링 테스크
       </a>
 </li>
@@ -798,32 +846,32 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch12-spring-event/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch12-spring-event/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch12-spring-event/sec01-introduction/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch12-spring-event/sec01-introduction/">
         스프링 이벤트 소개
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch12-spring-event/sec02-old-style/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch12-spring-event/sec02-old-style/">
         ApplicationEvent 와 ApplicationListner 상속
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch12-spring-event/sec03-new-style/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch12-spring-event/sec03-new-style/">
         POJO 이벤트 클래스와 @EventListener
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch12-spring-event/sec04-async-event/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch12-spring-event/sec04-async-event/">
         비동기 이벤트 처리
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ch12-spring-event/sec05-spring-event/">
+<a class="md-nav__link" href="../../../books/springboot-msa-component/ch12-spring-event/sec05-spring-event/">
         스프링이 발행하는 이벤트
       </a>
 </li>
@@ -871,14 +919,62 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    엔티티의 생명주기
+<a class="md-nav__link" href="#1">
+    1. 코틀린 소개
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    영속성 컨텍스트의 특징
+<a class="md-nav__link" href="#2">
+    2. 코틀린의 특징
   </a>
+<nav aria-label="2. 코틀린의 특징" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1_1">
+    1. 멀티 플랫폼 지원
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2_1">
+    2. 정적 타입 언어
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 함수형 프로그래밍 + 객체지향 프로그래밍
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3_1">
+    3. 코틀린의 철학
+  </a>
+<nav aria-label="3. 코틀린의 철학" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1_2">
+    1. 실용성
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2_2">
+    2. 간결성
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3_2">
+    3. 안정성
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 상호운용성
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -887,88 +983,74 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context.md" title="View source of this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/study/kotlin/introduction/index.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>엔티티 매니저와 영속성 컨텍스트</h1>
-<h3 id="_1">엔티티의 생명주기<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<p>영속성 컨텍스트 (persistence context)는 영속하려는 엔티티 객체의 집합을 의미하며, 엔티티 객체의 생명주기를 관리하는 컨텍스트 객체이다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/entity-lifecycle.png"><img alt="entity-lifecycle.png" src="../images/entity-lifecycle.png"/></a></p>
+<h1>코틀린 소개, 특징, 철학</h1>
+<p>@참고 자료)</p>
 <ul>
-<li>생성 상태 (NEW, TRANSIENT) <ul>
-<li>영속성 컨텍스트에 한번도 속하지 않는 new 로 생성된 객체이다.</li>
+<li>드미트리 제메로프, 스베트라나 이사코바 - Kotlin IN ACTION 1장</li>
+<li>Kotlinlang.org - <a href="https://kotlinlang.org/docs/multiplatform.html">Kotlin Multiplatform</a></li>
 </ul>
-</li>
+<hr/>
+<h3 id="1">1. 코틀린 소개<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="kotlin_logo.png"><img alt="kotlin_logo.png" src="kotlin_logo.png"/></a></p>
+<p><strong>Kotlin</strong>은 IntelliJ, Pycharm 등의 IDE 로 유명한 <em>JetBrains</em> 에서 개발한 프로그래밍 언어입니다.  코틀린은 <em>Better Language than Java</em> 를 표방하며 자바에 존재하던 많은 boilerplate 한 코드를 제거할 수 있도록 설계되었습니다.</p>
+<h3 id="2">2. 코틀린의 특징<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<h4 id="1_1">1. 멀티 플랫폼 지원<a class="headerlink" href="#1_1" title="Permanent link">¶</a></h4>
+<p>Kotlin Multiplatform Use cases</p>
+<ul>
+<li>Android and iOS applications</li>
+<li>Full-stack web applications</li>
+<li>Multiplatform libraries</li>
 </ul>
-<div class="admonition warn">
-<p class="admonition-title">Warn</p>
-<p>근데 여기서 한가지 주의할 점이 있다. JPA 가 내부적으로 NEW 상태임을 판단하는 기준은 ID 의 여부이다. 
-@Id 필드가 <code>Long</code>, <code>Integer</code> 같은 객체타입인 경우 <code>null</code>. <code>int</code>, <code>long</code> 같은 원시 타입인 경
-우 기본값(0, 0L) 이라면 NEW 상태의 엔티티 이지만 그렇지 않은 경우 준영속 상태로 판단해 save 메서드 호
-출시 em.persist 가 아니라 em.merge 가 호출된다. 이때 save 를 호출하였음에도 insert 쿼리가 아니라
-변경 감지기능이 동작하여 select 쿼리와 update 쿼리가 발생 할 수 있다.</p>
+<p>How Kotlin Multiplaform works</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/kotlin-multiplatform.png"><img alt="kotlin-multiplatform.png" src="images/kotlin-multiplatform.png"/></a></p>
+<p>코틀린에는 <code>Kotlin/JVM</code>, <code>Kotlin/Native</code>, <code>Kotlin/JS</code>의 세가지 platform-specific 버전이 존재합니다. </p>
+<p>이를 통해 JVM, JS and Native 와 같은 <code>platform native code</code> 에 접근 할 수 있게 됩니다.</p>
+<h4 id="2_1">2. 정적 타입 언어<a class="headerlink" href="#2_1" title="Permanent link">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">정적 타입 언어</p>
+<p>모든 프로그램 구성 요소의 타입을 컴파일 시점에 알 수 있고 프로그램 안에서 객체의 필드나 메서드를 사용할 때마다 컴파일러가 타입을 검증하는 언어</p>
 </div>
-<ul>
-<li>
-<p>영속 상태 (MANAGED)</p>
-<ul>
-<li>객체가 영속성 컨텍스트에 의해 관리되는 상태이다.</li>
-<li>영속성 컨텍스트에 의해 관리된다는 것은 영속성 컨텍스의 기능인 1차 캐시, 더티 체킹 등의 기능이 동작하는 상태라는 의미이다.</li>
-</ul>
-</li>
-<li>
-<p>준영속 상태 (DETACHED)</p>
-<ul>
-<li>Managed 상태의 객체는 <code>em.detach()</code> 를 통해 영속성 컨텍스트의 관리에서 빠져나갈 수 있다.</li>
-<li><code>em.merge()</code> 를 통해 다시 MANAGED 상태가 될 수 있다.</li>
-</ul>
-</li>
-<li>
-<p>삭제 상태 (REMOVED)</p>
-<ul>
-<li><code>em.remove()</code> 에 의해 삭제 된 상태이다.</li>
-<li><code>em.flush()</code> 가 호출되면 삭제 쿼리가 발생한다.</li>
-</ul>
-</li>
-</ul>
-<h3 id="_2">영속성 컨텍스트의 특징<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<ul>
-<li>1차 캐시<ul>
-<li>같은 트랜잭션에서 영속성 컨텍스트에 저장된 엔티티에 대해서 <strong><em>ID 로 조회 요청</em></strong>을 하면 영속성 컨텍스트 메모리 내에서 객체를 조회해 준다.</li>
-</ul>
-</li>
-<li>동일성 보장<ul>
-<li>마치 자바 컬렉션을 활용하는 것 처럼 같은 엔티티에 대해서는 identity 연산의 참이 보장된다.</li>
-</ul>
-</li>
-<li>변경 감지 (더티 체킹)<ul>
-<li>영속성 컨텍스트에서 조회한 엔티티를 수정하고 다시 이를 persist 한다거나 merge 할 필요가 없다.</li>
-<li>트랜잭션이 마무리 되는 시점에 영속성 컨텍스트는 트랜잭션 시작시점의 스냅샷과 비교하여 변경을 감지해 자동으로 update 쿼리를 발생시킨다.</li>
-</ul>
-</li>
-<li>지연 로딩<ul>
-<li>연관 관계에 있는 엔티티 객체들은 지연 로딩 설정에 따라 참조될 때 로딩할 수 있다.</li>
-</ul>
-</li>
-<li>쓰기 지연 (을 지원하는 SQL 저장소)<ul>
-<li>CUD 쿼리를 매번 데이터 베이스에 반영하지 않고 <code>em.flush()</code> 가 호출 될 때 한 번에 반영한다.</li>
-</ul>
-</li>
-</ul>
-<div class="admonition warn">
-<p class="admonition-title">Warn</p>
-<p>@GenratedValue 의 전략이 <code>GenerationType.IDENTITY</code> 즉 auto-increment 로 설정된 경우는 
-save 호출시 바로 insert 쿼리가 발생한다. 영속성 컨텍스트에의해 관리 되기 위해서는 id 값이 필요하기 때문이다.</p>
+<div class="admonition tip">
+<p class="admonition-title">정적 타입 언어의 장점</p>
+<p>성능 - 실행 시점에 어떤 메서드가 호출될 것인지 결정하는 과정 (Method Dispatch) 가 필요 없으므로 메서드 호출이 빠르다.</p>
+<p>신뢰성 - 컴파일러가 프로그램의 정확성을 검증하기 때문에 프로그램이 오류로 중단될 가능성이 더 적다.</p>
+<p>유지 보수성 - 객체 타입과 호출 메서드가 정적으로 결정되고 (dynamic dispatch 제외) 코드에 드러나기 때문에 처음 보는 코드를 이해하기 쉽다. 개인적으로 이런 기능이 지원되지 않는 python 이나 javascript 코드를 보는 것은 두렵다... </p>
+<p>도구 지원 - 컴파일러가 객체와 메서드에 대한 정보를 정적으로 획득 할 수 있기 때문에 이를 바탕으로한 IDE 의 리팩토링, 코드 자동완성 기능의 지원이 좋다.</p>
 </div>
+<p>정적 타입언어는 위와같은 장점이 있지만 일반적으로 코드는 길어지고 장황해지는 단점이 있습니다. 코틀린은 컴파일러의 강력한 타입추론을 통해 이러한 문제도 상당부분 해결하였습니다. </p>
+<h4 id="3">3. 함수형 프로그래밍 + 객체지향 프로그래밍<a class="headerlink" href="#3" title="Permanent link">¶</a></h4>
+<p>코틀린은 자바와 달리 처음부터 함수형 프로그래밍을 지원하기 위해 설계 되었습니다. 학술적으로 이야기 하면 함수가 일급 시민 (First-Class Citizen)으로 동작 할 수 있습니다.</p>
+<div class="admonition note">
+<p class="admonition-title">일급 시민 - First-Class Citizen</p>
+<ol>
+<li>메서드의 파라미터가 될 수 있다.</li>
+<li>메서드의 반환값이 될 수 있다.</li>
+<li>변수에 저장할 수 있다.</li>
+</ol>
+</div>
+<p>자바에서도 functional interface 와 labmda 를 통해 Java8 이후 부터는 함수형 프로그래밍을 지원하였지만 아쉬운점이 몇가지 있었습니다.</p>
+<ul>
+<li>함수... 이긴하지만 근본적으로는 일반 인터페이스으로 동작한다.</li>
+<li>함수를 직접 호출할 수 없다. - method call 방식으로 호출가능</li>
+</ul>
+<p>코틀린에서는 <code>함수 타입</code>의 도입으로 이런 아쉬운점을 해결하였습니다.</p>
+<h3 id="3_1">3. 코틀린의 철학<a class="headerlink" href="#3_1" title="Permanent link">¶</a></h3>
+<h4 id="1_2">1. 실용성<a class="headerlink" href="#1_2" title="Permanent link">¶</a></h4>
+<h4 id="2_2">2. 간결성<a class="headerlink" href="#2_2" title="Permanent link">¶</a></h4>
+<h4 id="3_2">3. 안정성<a class="headerlink" href="#3_2" title="Permanent link">¶</a></h4>
+<h4 id="4">4. 상호운용성<a class="headerlink" href="#4" title="Permanent link">¶</a></h4>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
 </small>
 </div>
 </article>
@@ -977,7 +1059,7 @@ save 호출시 바로 insert 쿼리가 발생한다. 영속성 컨텍스트에�
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: JPA 장점과 단점" class="md-footer__link md-footer__link--prev" href="../ch08-sec01-jpa-pros-and-cons/" rel="prev">
+<a aria-label="Previous: 동시성 - synchrozied" class="md-footer__link md-footer__link--prev" href="../../java/synchronized/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -986,17 +1068,17 @@ save 호출시 바로 insert 쿼리가 발생한다. 영속성 컨텍스트에�
 <span class="md-footer__direction">
                   Previous
                 </span>
-                JPA 장점과 단점
+                동시성 - synchrozied
               </div>
 </div>
 </a>
-<a aria-label="Next: Transactional을 사용할 때 주의 사항" class="md-footer__link md-footer__link--next" href="../ch08-sec07-warning-on-%40Transactional/" rel="next">
+<a aria-label="Next: object 키워드" class="md-footer__link md-footer__link--next" href="../object-keyword/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                Transactional을 사용할 때 주의 사항
+                object 키워드
               </div>
 </div>
 <div class="md-footer__button md-icon">

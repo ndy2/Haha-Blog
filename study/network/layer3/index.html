@@ -228,8 +228,18 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../kotlin/introduction/">
+        코틀린 소개, 특징, 철학
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../kotlin/object-keyword/">
         object 키워드
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kotlin/labmda/variable-capturing.md">
+        람다 변수 캡쳐링
       </a>
 </li>
 </ul>
@@ -916,7 +926,7 @@
 <li>cloud flare - <a href="https://www.cloudflare.com/ko-kr/learning/network-layer/what-is-the-network-layer/">학습센터/네트워크 계층</a></li>
 <li>널널한 개발자 <ul>
 <li><a href="https://youtu.be/kGst-VftN1w">Host, Switch, Network 이들의 관계에 대해</a></li>
-<li><a href="https://youtu.be/N8pE-vDsJ38">LAN과 WAN을 구별하는 방법</a>]</li>
+<li><a href="https://youtu.be/N8pE-vDsJ38">LAN과 WAN을 구별하는 방법</a></li>
 </ul>
 </li>
 <li>ibm - <a href="https://www.ibm.com/docs/ko/aix/7.1?topic=protocols-internet-network-level">네트워크 계층 프로토콜</a></li>
@@ -928,35 +938,36 @@
 <h3 id="1">1. 네트워크 계층이란? 네트워크란? 인터넷 이란?<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">네트워크 계층이란 무엇인가요?</p>
-<p>[cloudflare] 
+<p>[cloudflare] <br/>
 네트워크 계층은 OSI 모델에서 계층 3 이며, 상이한 네트워크들 간의 라우팅 및 데이터 전송을 담당합니다.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">네트워크란 무엇인가요?, 인터넷이란 무엇인가요</p>
-<p>[cloudflare] 
+<p>[cloudflare] <br/>
 네트워크는 두 대 이상의 연결된 컴퓨팅 장치의 그룹을 말합니다. </p>
-<p>네트워크에 연결된 컴퓨터는 서로 데이터를 전송할 수 있습니다. <strong>컴퓨터 네트워크</strong>는 마치 서로 알고 정보를 주고받으며 함께 활동하는 <strong>소셜 서클</strong> 과 같급니다.</p>
+<p>네트워크에 연결된 컴퓨터는 서로 데이터를 전송할 수 있습니다. <strong>컴퓨터 네트워크</strong>는 마치 서로 알고 정보를 주고받으며 함께 활동하는 <strong>소셜 서클</strong> 과 같습니다.</p>
 <p>보통 하나의 네트워크에 있는 모든 장치는 중앙에 있는 하나의 허브 (e.g. 라우터)에 연결된 경우가 많습니다. 네트워크에는 해당 네트워크를 작게 구분한 서브네트워크가 포함되기도 합니다. </p>
 <p>인터넷은 네트워크의 네트워크라고 생각할 수 있습니다. 이러한 인터넷이 동작하는 가장 중요한 두가지 컨셉은 <strong><em>패킷</em></strong> 과 <strong><em>프로토콜</em></strong>입니다.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">인터넷이란 무엇인가요?</p>
-<p>[널널한 개발자]
+<p>[널널한 개발자] <br/>
  인터넷은 가장 대표적인 네트워크의 한 종류입니다.
 인터넷을 구성하는 요소중 가장 중요한것 두가지는 <strong><em>라우터</em></strong>와 <strong><em>DNS</em></strong> 입니다.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/host-switch-network.png"><img alt="host-switch-network.png" src="images/host-switch-network.png"/></a></p>
 </div>
-<p>!!!! note "인터넷이 동작하도록 하는 physical infrastructure에는 어떤것이 있나요?"</p>
-<div class="highlight"><pre><span></span><code>[cloudflare]
-다양한 하드웨어와 infrastructure 가 인터넷을 구성합니다. 가장 중요한 것들은 다음과 같습니다. - 라우터, 스위치, 웹 서버
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">인터넷이 동작하도록 하는 physical infrastructure에는 어떤것이 있나요?</p>
+<p>[cloudflare] <br/>
+다양한 하드웨어와 infrastructure 가 인터넷을 구성합니다. 가장 중요한 것들은 다음과 같습니다. - 라우터, 스위치, 웹 서버</p>
+</div>
 <hr/>
 <h3 id="2">2. 라우터란? 스위치란? 웹 서버란?<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">라우터란?</p>
-<p>[cloudflare]
+<p>[cloudflare] <br/>
 라우터는 목적지 (IP 주소)를 기반으로 네트워크간 패킷 포워딩을 수행합니다. 라우터는 인터넷의 트래픽이 올바른 네트워크로 향하도록 하는 교통 경찰 (traffic cop)과 같습니다.</p>
-<p>[널널한 개발자]
+<p>[널널한 개발자] <br/>
 라우터는 <strong><em>경로 찾기<sup>Routing</sup></em></strong>를 목적으로 하는 L3 스위치입니다.</p>
 </div>
 <div class="admonition note">
@@ -970,12 +981,12 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">스위치란?</p>
-<p>[cloudflare]
+<p>[cloudflare] <br/>
 스위치는 네트워크를 공유하는 기기(device)를 연결합니다. 스위치는 올바른 기기에 패킷을 전달하는 <strong><em>패킷 스위칭^Packet Switching^</em></strong>을 수행합니다. </p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">웹 서버란?</p>
-<p>[cloudflare]
+<p>[cloudflare] <br/>
 웹 서버는 웹 페이지, 이미지, 비디오와 같은 컨텐츠를 저장하고 제공하기 위한 목적의 호스트입니다. 웹 서버는 또한 DNS 쿼리에 응답하는 등의 인터넷이 동작하도록 하는 중요한 역할등을 합니다.</p>
 <p>DNS 에 대해서는 다른 문서에서 추가적으로 이야기 하겠습니다.</p>
 </div>
@@ -983,41 +994,41 @@
 <h3 id="2-">2. 네트워크 계층의 데이터 단위 - 패킷!<a class="headerlink" href="#2-" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">패킷이란?</p>
-<p>[cloudflare]
+<p>[cloudflare] <br/>
 인터넷을 통해 발송되는 모든 데이터는 패킷이라는 작은 조각으로 나뉘어집니다. 패킷에는 패킷에 대한 메타데이터를 담는 헤더와 데이터 자체를 담은 바디로 두 부분이 있습니다.</p>
 <p>네트워크 계층은 패킷을 보낼 때 헤더를 추가하며 (encapsulation) 패킷을 받을 때 헤더를 이용해 패킷 처리 방법 (decapsulation or forwarding)을 이해할 수 있습니다.</p>
 <p>헤더에는 각 패킷의 내용, 출발지, 목적지에 대한 정보가 포함됩니다. 예를 들어 IP 헤더에는 각 패킷의 IP 주소, 패킷의 전체 크기, fragmentation 여부, 패킷이 통과한 네트워크 수 (~ TTL) 등이 포함됩니다.</p>
 </div>
 <hr/>
 <h3 id="3">3. 네트워크 계층의 프로토콜<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
-<p>이 계층에서 주요 프로토콜은 IP<sup>Internet</sup> <sup>Protocol</sup> 와 ICMP<sup>Internet</sup> ^ Control^  <sup>Message</sup>  ^ Protocol^  입니다. (+ARP <sup>Address</sup> <sup>Resolution</sup> <sup>Protocol</sup>)</p>
+<p>이 계층에서 주요 프로토콜은 IP<sup>Internet</sup> <sup>Protocol</sup> 와 ICMP<sup>Internet</sup> <sup>Control</sup> <sup>Message</sup> <sup>Protocol</sup>  입니다. (+ARP <sup>Address</sup> <sup>Resolution</sup> <sup>Protocol</sup>)</p>
 <div class="admonition note">
 <p class="admonition-title">인터넷 프로토콜(IP)란 무엇인가요?</p>
-<p>[cloudflare] 
+<p>[cloudflare] <br/>
 인터넷 프로토콜은 패킷의 라우팅과 주소에 대한 프로토콜입니다. IP의 목적은 패킷이 올바른 목적지로 도착하도록 하는 것입니다.</p>
-<p>[ibm]
+<p>[ibm] <br/>
 IP는 인터넷에 대해 신뢰할 수 없는 비연결 패킷 전달을 제공합니다.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">인터넷 제어 메시지 프로토콜 (ICMP)은 무엇인가요?</p>
-<p>[ibm] 
-ICMP는 오류를 처리하고 IP 메시지를 제어합니다. ICMP는 모든 IP 구현의 필수 부분입니다. 
-<img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:"/> - ICMP는 통신 환경의 문제점에 관한 피드백을 제공하지만 IP가 신뢰 가능하도록 만들지는 않습니다. 즉, ICMP는 IP 패킷이 확실하게 전달된다거나 IP 패킷이 전달되지 않을 때 또는 올바르지 않게 전달될 때 ICMP 메시지가 소스 호스트로 리턴된다고 보장하지 않습니다.</p>
+<p>[ibm] <br/>
+ICMP는 오류를 처리하고 IP 메시지를 제어합니다. ICMP는 모든 IP 구현의 필수 부분입니다. </p>
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:"/> ICMP는 통신 환경의 문제점에 관한 피드백을 제공하지만 IP가 신뢰 가능하도록 만들지는 않습니다. 즉, ICMP는 IP 패킷이 확실하게 전달된다거나 IP 패킷이 전달되지 않을 때 또는 올바르지 않게 전달될 때 ICMP 메시지가 소스 호스트로 리턴된다고 보장하지 않습니다.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">주소 해석 프로토콜(ARP)는 무엇인가요?</p>
-<p>[ibm]
+<p>[ibm] <br/>
 ARP는 IP를 MAC으로 동적으로 변환합니다. LAN (근거리 통신망) 내에서 노드는 MAC 을 통해 통신합니다.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">LAN 과 WAN은 어떻게 구분하나요?</p>
-<p>[널널한 개발자 - 널피셜]
-LAN(Local Area Network)과 WAN(Wide Area Network)은 지역의 크기로 구분되는 것이 아니다. 
-LAN 
--  물리적인 영역 (OSI - 1계층, 2계층, TCP/IP - Access 계층)에서 설명되는 영역
-- 즉, MAC Address 가 중요한 영역
-- ARP 방송 주소 (ARP Broadcast Address) 트레픽이 도달할 수 있는 영역
-WAN 
+<p>[널널한 개발자 - 널피셜] <br/>
+LAN(Local Area Network)과 WAN(Wide Area Network)은 지역의 크기로 구분되는 것이 아니다. </p>
+<p>LAN <br/>
+-  물리적인 영역 (OSI - 1계층, 2계층, TCP/IP - Access 계층)에서 설명되는 영역 <br/>
+- 즉, MAC Address 가 중요한 영역 <br/>
+- ARP 방송 주소 (ARP Broadcast Address) 트레픽이 도달할 수 있는 영역</p>
+<p>WAN <br/> 
 - 논리적인(가상의) 영역 (OSI - 3 계층(네트워크 계층), TCP - 인터넷 계층 이상) 에서 설명 되는 영역.</p>
 </div>
 <hr/>

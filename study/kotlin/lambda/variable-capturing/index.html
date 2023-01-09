@@ -226,8 +226,18 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/">
+        코틀린 소개, 특징, 철학
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../object-keyword/">
         object 키워드
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../labmda/variable-capturing.md">
+        람다 변수 캡쳐링
       </a>
 </li>
 </ul>
@@ -865,6 +875,7 @@
 <ul>
 <li>Kotlin In Action - 5장 람다로 프로그래밍 하기</li>
 </ul>
+<hr/>
 <h3 id="1-var">1. 코틀린의 람다 변수(var) 캡쳐링<a class="headerlink" href="#1-var" title="Permanent link">¶</a></h3>
 <p>자바에서는 <code>final</code> 변수만 람다에 전달 할 수 있습니다. 람다에 전달되는 모든 변수는 <code>final</code> 혹은 <code>effectively final</code> 입니다. 하지만 코틀린 에서는 <code>var</code> 변수를 람다식에 전달하고 값을 변경 까지 할 수 있습니다.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
@@ -936,6 +947,7 @@ import kotlin.jvm.internal.Ref;</p>
 <ol>
 <li>래핑한 값을 저장하는 필드, 퍼블릭 이다.</li>
 </ol>
+<hr/>
 <h3 id="2">2 <img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:"/> 람다와 비동기 실행<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>
@@ -961,6 +973,7 @@ import kotlin.jvm.internal.Ref;</p>
 <a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>[main] 1
 </code></pre></div>
 <p>main 쓰레드는 <code>Thread-0</code> 가 실행한 1 을 추가하는 결과가 적용되기 전 (사실은 실행도 하기 전) 에 첫번째 출력을 하러 갑니다. 따라서 위와 같은 순서로 출력됩니다.</p>
+<hr/>
 <h3 id="_1"><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:"/> 람다 캡쳐링과 쓰레드 안전<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.util.concurrent.CountDownLatch</span><span class="w">  </span>
 <a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.util.concurrent.Executors</span><span class="w">  </span>
@@ -1002,7 +1015,7 @@ import kotlin.jvm.internal.Ref;</p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2023</span>
