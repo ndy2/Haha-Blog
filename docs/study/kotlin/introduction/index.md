@@ -6,7 +6,7 @@
 
 ### 1. 코틀린 소개
 
-![kotlin_logo.png](kotlin_logo.png)
+![kotlin_logo.png](images/kotlin_logo.png)
 
 **Kotlin**은 IntelliJ, Pycharm 등의 IDE 로 유명한 *JetBrains* 에서 개발한 프로그래밍 언어입니다.  코틀린은 *Better Language than Java* 를 표방하며 자바에 존재하던 많은 boilerplate 한 코드를 제거할 수 있도록 설계되었습니다.
 

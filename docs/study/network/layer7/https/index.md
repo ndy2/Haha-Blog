@@ -35,7 +35,7 @@
 ### 3. TLS handshake protocol
 
 - Note - TLS handshake 는 TCP handshake 이후에 이루어 집니다.
-![tls-handshake.png](tls-handshake.png)
+![tls-handshake.png](images/tls-handshake.png)
 
 핸드세이크의 핵심은 암복호화 과정의 코스트가 큰 비대칭키의 사용을 최소한으로 사용하여 안전하게 대칭키를 공유해 일반적인 HTTP 요청시에는 비대칭키가 아닌 대칭키를 활용하는 것입니다.
 
