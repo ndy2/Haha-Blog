@@ -3,7 +3,7 @@
 - cloud flare - [학습센터/네트워크 계층](https://www.cloudflare.com/ko-kr/learning/network-layer/what-is-the-network-layer/)
 - 널널한 개발자 
     - [Host, Switch, Network 이들의 관계에 대해](https://youtu.be/kGst-VftN1w)
-    - [LAN과 WAN을 구별하는 방법](https://youtu.be/N8pE-vDsJ38)]
+    - [LAN과 WAN을 구별하는 방법](https://youtu.be/N8pE-vDsJ38)
 - ibm - [네트워크 계층 프로토콜](https://www.ibm.com/docs/ko/aix/7.1?topic=protocols-internet-network-level)
 ---
 ### 0. 들어가며

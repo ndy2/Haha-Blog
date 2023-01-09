@@ -117,7 +117,9 @@ nav:
           -  NIO: study/java/nio.md
           -  동시성 - synchrozied: study/java/synchronized.md
       - 코틀린:
+          -  코틀린 소개, 특징, 철학: study/kotlin/introduction/index.md
           -  object 키워드: study/kotlin/object-keyword/index.md
+          -  람다 변수 캡쳐링: study/kotlin/labmda/variable-capturing.md
       - 아키텍처:
           -  MSA 장단점: study/architecture/msa-pros-cons.md
           -  Hexagonal Architecture: study/architecture/hexagonal-architecture/index.md

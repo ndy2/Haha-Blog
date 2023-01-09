@@ -2,6 +2,7 @@
 
 - Kotlin In Action - 5장 람다로 프로그래밍 하기
 
+---
 ### 1. 코틀린의 람다 변수(var) 캡쳐링
 
 자바에서는 `final` 변수만 람다에 전달 할 수 있습니다. 람다에 전달되는 모든 변수는 `final` 혹은 `effectively final` 입니다. 하지만 코틀린 에서는 `var` 변수를 람다식에 전달하고 값을 변경 까지 할 수 있습니다.
@@ -90,7 +91,7 @@ public class Ref{
 
 1. 래핑한 값을 저장하는 필드, 퍼블릭 이다.
 
-
+---
 ### 2 :warning: 람다와 비동기 실행
 
 ```kotlin
@@ -122,7 +123,7 @@ class AdderThread(private val lambdaAdder: (Int) -> Unit) : Thread(){
 
 main 쓰레드는 `Thread-0` 가 실행한 1 을 추가하는 결과가 적용되기 전 (사실은 실행도 하기 전) 에 첫번째 출력을 하러 갑니다. 따라서 위와 같은 순서로 출력됩니다.
 
-
+---
 ### :warning: 람다 캡쳐링과 쓰레드 안전
 
 ```kotlin
