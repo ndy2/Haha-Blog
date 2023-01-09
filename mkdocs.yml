@@ -119,7 +119,7 @@ nav:
       - 코틀린:
           -  코틀린 소개, 특징, 철학: study/kotlin/introduction/index.md
           -  object 키워드: study/kotlin/object-keyword/index.md
-          -  람다 변수 캡쳐링: study/kotlin/labmda/variable-capturing.md
+          -  람다 변수 캡쳐링: study/kotlin/lambda/variable-capturing.md
       - 아키텍처:
           -  MSA 장단점: study/architecture/msa-pros-cons.md
           -  Hexagonal Architecture: study/architecture/hexagonal-architecture/index.md
@@ -148,7 +148,7 @@ nav:
           -  전송 계층:
               - TCP vs UDP: study/network/layer4/tcp-vs-udp/index.md
               - TCP 흐름제어: study/network/layer4/tcp-flow-control/index.md
-              - TCP 혼잡제어: study/network/layer4/tcp-flow-control/index.md
+              - TCP 혼잡제어: study/network/layer4/tcp-congestion-control/index.md
           -  응용 계층:
               -  HTTP 버전별 특징: study/network/layer7/http-versions/index.md
               -  HTTPS: study/network/layer7/https/index.md
