@@ -8,9 +8,11 @@
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
 <link href="https://ndy2.github.io/Haha-Blog/study/kotlin/lambda/variable-capturing/" rel="canonical"/>
+<link href="../../object-keyword/" rel="prev"/>
+<link href="../../../architecture/msa-pros-cons/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.3" name="generator"/>
-<title>Variable capturing - Haha 블로그</title>
+<title>람다 변수 캡쳐링 - Haha 블로그</title>
 <link href="../../../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -59,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Variable capturing
+              람다 변수 캡쳐링
             
           </span>
 </div>
@@ -171,9 +173,9 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_3" tabindex="0">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label aria-expanded="true" class="md-nav__link" for="__nav_3" tabindex="0">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -213,9 +215,9 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_3_2" tabindex="0">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<label aria-expanded="true" class="md-nav__link" for="__nav_3_2" tabindex="0">
           코틀린
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -235,10 +237,38 @@
         object 키워드
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../labmda/variable-capturing.md">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          람다 변수 캡쳐링
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         람다 변수 캡쳐링
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-var">
+    1. 코틀린의 람다 변수(var) 캡쳐링
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2  람다와 비동기 실행
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    람다 캡쳐링과 쓰레드 안전
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -438,7 +468,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../network/layer4/tcp-flow-control/">
+<a class="md-nav__link" href="../../../network/layer4/tcp-congestion-control/">
         TCP 혼잡제어
       </a>
 </li>
@@ -870,7 +900,7 @@
 <a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/study/kotlin/lambda/variable-capturing.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>Variable capturing</h1>
+<h1>람다 변수 캡쳐링</h1>
 <p>@ 참고 자료)</p>
 <ul>
 <li>Kotlin In Action - 5장 람다로 프로그래밍 하기</li>
@@ -1026,6 +1056,34 @@ import kotlin.jvm.internal.Ref;</p>
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: object 키워드" class="md-footer__link md-footer__link--prev" href="../../object-keyword/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Previous
+                </span>
+                object 키워드
+              </div>
+</div>
+</a>
+<a aria-label="Next: MSA 장단점" class="md-footer__link md-footer__link--next" href="../../../architecture/msa-pros-cons/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Next
+                </span>
+                MSA 장단점
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
