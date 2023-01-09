@@ -141,11 +141,15 @@ nav:
           -  DBCP: study/database/dbcp.md 
           -  MySQL 실행계획 연습: study/database/mysql-excution-plan.md 
       - 네트워크:
-          -  HTTP 버전별 특징: study/network/http-versions.md
-          -  HTTPS: study/network/https.md
-          -  tcp vs udp: study/network/tcp-vs-udp.md
-          -  tcp 흐름제어: study/network/tcp-flow-control.md
-          -  tcp 혼잡제어: study/network/tcp-congestion-control.md
+          -  네트워크 (인터넷) 계층:
+              - 네트워크 계층, 인터넷: study/network/layer3/index.md
+          -  전송 계층
+              - TCP vs UDP: study/network/layer4/tcp-vs-udp/index.md
+              - TCP 흐름제어: study/network/layer4/tcp-flow-control/index.md
+              - TCP 혼잡제어: study/network/layer4/tcp-flow-control/index.md
+          -  응용 계층
+              -  HTTP 버전별 특징: study/network/layer7/http-versions/index.md
+              -  HTTPS: study/network/layer7/https/index.md
       - 웹 개발:
           -  쿠키 세션 토큰: study/web/cookie-session-token/index.md
   - 기술 서적 정리/리뷰:

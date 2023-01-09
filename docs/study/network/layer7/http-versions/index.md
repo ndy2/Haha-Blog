@@ -1,6 +1,6 @@
 @참고 자료)
 
-- [모질라 - HTTP의 진화 ](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP#http2_%E2%80%93_%EB%8D%94_%EB%82%98%EC%9D%80_%EC%84%B1%EB%8A%A5%EC%9D%84_%EC%9C%84%ED%95%9C_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C)
+- [모질라 - HTTP의 진화 ](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP#http2_더_나은_성능을_위한_프로토콜)
 
 HTTP 의 버전별 특징을 정리한 문서입니다.
 

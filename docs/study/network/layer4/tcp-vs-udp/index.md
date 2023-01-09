@@ -33,7 +33,7 @@
 
 
 ### TCP 상태 다이어그램
-![tcp-state-diagram.png](images/tcp-state-diagram.png)
+![tcp-state-diagram.png](tcp-state-diagram.png)
 
 ### TCP, UDP 와 관련된 질문들
 
@@ -65,7 +65,7 @@
 
 - TCP는 UDP와 달리 연결지향형 프로토콜로 Handshake 에 대한 오버헤드가 있습니다.
 	- 자세히 들어가서 TCP 기반에서 연결을 수립할 때에는 3-Way-Hadshake 과정이 필요하며, 여기에 암호화를 위해 TLS까지 적용된다면, 실제 통신이 이루어 지기 이전에 연결 수립만을 위한 지연이 약 4.5 RTT가 발생하게 됩니다.
-	![tcp-rtt.png](images/tcp-rtt.png)
+	![tcp-rtt.png](tcp-rtt.png)
 
 
 - TCP는 UDP에 비해 Flow Control, Congestion Control 기능을 이용해 한번에 전송하는 패킷의 양을 조절하기 때문에 느립니다.
