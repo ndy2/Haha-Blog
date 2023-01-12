@@ -11,9 +11,9 @@
 <link href="../../object-keyword/" rel="prev"/>
 <link href="../../../architecture/msa-pros-cons/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.3" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.4" name="generator"/>
 <title>람다 변수 캡쳐링 - Haha 블로그</title>
-<link href="../../../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.9c788c91.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -978,7 +978,7 @@ import kotlin.jvm.internal.Ref;</p>
 <li>래핑한 값을 저장하는 필드, 퍼블릭 이다.</li>
 </ol>
 <hr/>
-<h3 id="2">2 <img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:"/> 람다와 비동기 실행<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<h3 id="2">2 <img alt="⚠" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26a0.svg" title=":warning:"/> 람다와 비동기 실행<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>
 <a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w">  </span>
@@ -1004,7 +1004,7 @@ import kotlin.jvm.internal.Ref;</p>
 </code></pre></div>
 <p>main 쓰레드는 <code>Thread-0</code> 가 실행한 1 을 추가하는 결과가 적용되기 전 (사실은 실행도 하기 전) 에 첫번째 출력을 하러 갑니다. 따라서 위와 같은 순서로 출력됩니다.</p>
 <hr/>
-<h3 id="_1"><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:"/> 람다 캡쳐링과 쓰레드 안전<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<h3 id="_1"><img alt="⚠" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26a0.svg" title=":warning:"/> 람다 캡쳐링과 쓰레드 안전<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.util.concurrent.CountDownLatch</span><span class="w">  </span>
 <a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.util.concurrent.Executors</span><span class="w">  </span>
 <a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>
