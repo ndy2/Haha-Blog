@@ -2,3 +2,4 @@
 .idea/*
 .obsidian/*
 .DS_Store
+__pycache__/*
