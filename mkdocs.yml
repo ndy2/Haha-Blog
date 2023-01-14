@@ -146,6 +146,7 @@ nav:
           -  네트워크 (인터넷) 계층:
               - 네트워크 계층, 인터넷: study/network/layer3/introduction/index.md
               - 라우터: study/network/layer3/router/index.md
+              - IPv4: study/network/layer3/ip/index.md
           -  전송 계층:
               - TCP vs UDP: study/network/layer4/tcp-vs-udp/index.md
               - TCP 흐름제어: study/network/layer4/tcp-flow-control/index.md

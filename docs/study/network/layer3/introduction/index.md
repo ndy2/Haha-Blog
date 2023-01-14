@@ -137,5 +137,5 @@
 !!! quote "더 자세히 알아볼 키워드 들"
 
     physical infrastructure - 라우터  
-    network layer protocol - IP/IP address, ICMP, ARP
+    network layer protocol - IP/IP address, ICMP
 
