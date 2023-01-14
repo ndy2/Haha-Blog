@@ -481,7 +481,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer3/">
+<a class="md-nav__link" href="../../network/layer3/index.md">
         네트워크 계층, 인터넷
       </a>
 </li>
@@ -995,7 +995,9 @@
 <hr/>
 <h3 id="1">1. 코틀린 소개<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/kotlin_logo.png"><img alt="kotlin_logo.png" src="images/kotlin_logo.png"/></a></p>
+<div class="admonition note">
 <p><strong>Kotlin</strong>은 IntelliJ, Pycharm 등의 IDE 로 유명한 <em>JetBrains</em> 에서 개발한 프로그래밍 언어입니다.  코틀린은 <em>Better Language than Java</em> 를 표방하며 자바에 존재하던 많은 boilerplate 한 코드를 제거할 수 있도록 설계되었습니다.</p>
+</div>
 <h3 id="2">2. 코틀린의 특징<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
 <h4 id="1_1">1. 멀티 플랫폼 지원<a class="headerlink" href="#1_1" title="Permanent link">¶</a></h4>
 <p>Kotlin Multiplatform Use cases</p>
@@ -1015,10 +1017,20 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">정적 타입 언어의 장점</p>
+<ol>
+<li>
 <p>성능 - 실행 시점에 어떤 메서드가 호출될 것인지 결정하는 과정 (Method Dispatch) 가 필요 없으므로 메서드 호출이 빠르다.</p>
+</li>
+<li>
 <p>신뢰성 - 컴파일러가 프로그램의 정확성을 검증하기 때문에 프로그램이 오류로 중단될 가능성이 더 적다.</p>
+</li>
+<li>
 <p>유지 보수성 - 객체 타입과 호출 메서드가 정적으로 결정되고 (dynamic dispatch 제외) 코드에 드러나기 때문에 처음 보는 코드를 이해하기 쉽다. 개인적으로 이런 기능이 지원되지 않는 python 이나 javascript 코드를 보는 것은 두렵다... </p>
+</li>
+<li>
 <p>도구 지원 - 컴파일러가 객체와 메서드에 대한 정보를 정적으로 획득 할 수 있기 때문에 이를 바탕으로한 IDE 의 리팩토링, 코드 자동완성 기능의 지원이 좋다.</p>
+</li>
+</ol>
 </div>
 <p>정적 타입언어는 위와같은 장점이 있지만 일반적으로 코드는 길어지고 장황해지는 단점이 있습니다. 코틀린은 컴파일러의 강력한 타입추론을 통해 이러한 문제도 상당부분 해결하였습니다. </p>
 <h4 id="3">3. 함수형 프로그래밍 + 객체지향 프로그래밍<a class="headerlink" href="#3" title="Permanent link">¶</a></h4>
@@ -1036,18 +1048,32 @@
 <li>함수... 이긴하지만 근본적으로는 일반 인터페이스으로 동작한다.</li>
 <li>함수를 직접 호출할 수 없다. - method call 방식으로 호출가능</li>
 </ul>
-<p>코틀린에서는 <code>함수 타입</code>의 도입으로 이런 아쉬운점을 해결하였습니다.</p>
+<p>코틀린에서는 <code>**함수 타**입</code>의 도입으로 이런 아쉬운점을 해결하였습니다.</p>
 <h3 id="3_1">3. 코틀린의 철학<a class="headerlink" href="#3_1" title="Permanent link">¶</a></h3>
 <h4 id="1_2">1. 실용성<a class="headerlink" href="#1_2" title="Permanent link">¶</a></h4>
+<ul>
+<li>코틀린은 실제 문제를 해결하기 위해 만들어진 실용적인 언어!</li>
+<li>프로그래밍 스타일이나 패러다임을 강제하지 않음<ul>
+<li>명령형 프로그래밍, 객체지향 프로그래밍, 함수형 프로그래밍 세가지의 대표적인 프로그래밍 패러다임을 모두 적용 할 수 있습니다.</li>
+</ul>
+</li>
+<li>IDE 를 개발하는 회사에서 만들 언어 답게 도구를 강조합니다.</li>
+</ul>
 <h4 id="2_2">2. 간결성<a class="headerlink" href="#2_2" title="Permanent link">¶</a></h4>
+<ul>
+<li>자바에 존재하는 여러 가지 준비 코드를 코틀린은 implicit 하게 제공합니다.</li>
+<li>코틀린의 표준 라이브러리는 자주 사용되는 복잡한 기능을 확장함수의 형태로 제공합니다. 특히, 컬렉션에 제공되는 확장함수는 아주 강력합니다.</li>
+</ul>
 <h4 id="3_2">3. 안정성<a class="headerlink" href="#3_2" title="Permanent link">¶</a></h4>
+<p>JVM 을 활용하는 <code>정적 타입 언어</code> 인 만큼 기본적으로 메모리 안전성, 버퍼 오버플로 방지, 애플리케이션의 타입 안정성 등 의 안정성이 보장됩니다. 코틀린은 더 나아가서 널이 될 수 있는 타입<sup>nullable</sup> <sup>type</sup> 을 도입하여 개발자가 타입의 널 가능성을 간결하게 체크 할 수 있도록 하였습니다.</p>
 <h4 id="4">4. 상호운용성<a class="headerlink" href="#4" title="Permanent link">¶</a></h4>
+<p>코틀린의 마지막 특징은 자바와의 상호운용성입니다. 자바 코드에서 코틀린 코드를 호출 할 수 있고 그 반대도 가능합니다. 코틀린의 표준 라이브러리도 자바의 표준 라이브러리에 의존하도록 구성되어 있습니다.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>

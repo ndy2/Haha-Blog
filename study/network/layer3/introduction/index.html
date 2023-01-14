@@ -7,19 +7,17 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/study/database/dbcp/" rel="canonical"/>
-<link href="../clustering-replication-sharding/" rel="prev"/>
-<link href="../mysql-excution-plan/" rel="next"/>
-<link href="../../../assets/favicon.ico" rel="icon"/>
+<link href="https://ndy2.github.io/Haha-Blog/study/network/layer3/introduction/" rel="canonical"/>
+<link href="../../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.4" name="generator"/>
-<title>DBCP - Haha 블로그</title>
-<link href="../../../assets/stylesheets/main.9c788c91.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<title>Index - Haha 블로그</title>
+<link href="../../../../assets/stylesheets/main.9c788c91.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -30,14 +28,14 @@
                 body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
                 body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+                </style><script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#1-dbcp">
+<a class="md-skip" href="#0">
           Skip to content
         </a>
 </div>
@@ -45,7 +43,7 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Haha 블로그" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Haha 블로그">
+<a aria-label="Haha 블로그" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Haha 블로그">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -61,7 +59,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              DBCP
+              Index
             
           </span>
 </div>
@@ -127,7 +125,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Haha 블로그" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Haha 블로그">
+<a aria-label="Haha 블로그" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Haha 블로그">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
     Haha 블로그
@@ -144,7 +142,7 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
+<a class="md-nav__link" href="../../../..">
         Home
       </a>
 </li>
@@ -161,21 +159,21 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../bloggingtips/getting-started/">
+<a class="md-nav__link" href="../../../../bloggingtips/getting-started/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../bloggingtips/feelings/">
+<a class="md-nav__link" href="../../../../bloggingtips/feelings/">
         느낀 점
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label aria-expanded="true" class="md-nav__link" for="__nav_3" tabindex="0">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_3" tabindex="0">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -198,17 +196,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../java/string/">
+<a class="md-nav__link" href="../../../java/string/">
         String
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../java/nio/">
+<a class="md-nav__link" href="../../../java/nio/">
         NIO
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../java/synchronized/">
+<a class="md-nav__link" href="../../../java/synchronized/">
         동시성 - synchrozied
       </a>
 </li>
@@ -228,17 +226,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/introduction/">
+<a class="md-nav__link" href="../../../kotlin/introduction/">
         코틀린 소개, 특징, 철학
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/object-keyword/">
+<a class="md-nav__link" href="../../../kotlin/object-keyword/">
         object 키워드
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/lambda/variable-capturing/">
+<a class="md-nav__link" href="../../../kotlin/lambda/variable-capturing/">
         람다 변수 캡쳐링
       </a>
 </li>
@@ -258,17 +256,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/msa-pros-cons/">
+<a class="md-nav__link" href="../../../architecture/msa-pros-cons/">
         MSA 장단점
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/hexagonal-architecture/">
+<a class="md-nav__link" href="../../../architecture/hexagonal-architecture/">
         Hexagonal Architecture
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/resilient-pattern/">
+<a class="md-nav__link" href="../../../architecture/resilient-pattern/">
         Resilient Pattern
       </a>
 </li>
@@ -288,31 +286,31 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../os/process-vs-thread/">
+<a class="md-nav__link" href="../../../os/process-vs-thread/">
         프로세스 vs 쓰레드
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../os/deadlock/">
+<a class="md-nav__link" href="../../../os/deadlock/">
         데드락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../os/memory-management/virtual-memory-1/">
+<a class="md-nav__link" href="../../../os/memory-management/virtual-memory-1/">
         가상메모리 기초
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../os/memory-management/virtual-memory-2/">
+<a class="md-nav__link" href="../../../os/memory-management/virtual-memory-2/">
         가상메모리 관리
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" id="__nav_3_5" type="checkbox"/>
-<label aria-expanded="true" class="md-nav__link" for="__nav_3_5" tabindex="0">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" id="__nav_3_5" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_3_5" tabindex="0">
           데이터베이스
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -323,128 +321,62 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../database-basic-terminologies/">
+<a class="md-nav__link" href="../../../database/database-basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../relational-database/">
+<a class="md-nav__link" href="../../../database/relational-database/">
         관계형 데이터베이스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../sql-join/">
+<a class="md-nav__link" href="../../../database/sql-join/">
         SQL join
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-lock/">
+<a class="md-nav__link" href="../../../database/db-lock/">
         데이터베이스 락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-index/">
+<a class="md-nav__link" href="../../../database/db-index/">
         데이터베이스 인덱스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-anomaly/">
+<a class="md-nav__link" href="../../../database/db-anomaly/">
         데이터베이스 이상현상
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-functional-dependency/">
+<a class="md-nav__link" href="../../../database/db-functional-dependency/">
         데이터베이스 FD
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-normalization/">
+<a class="md-nav__link" href="../../../database/db-normalization/">
         데이터베이스 정규화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../handle-olap/">
+<a class="md-nav__link" href="../../../database/handle-olap/">
         OLAP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clustering-replication-sharding/">
+<a class="md-nav__link" href="../../../database/clustering-replication-sharding/">
         클러스터링, 리플리케이션, 샤딩
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          DBCP
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/dbcp/">
         DBCP
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-dbcp">
-    1. DBCP의 개념과 원리
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-mysql">
-    2. MySql
-  </a>
-<nav aria-label="2. MySql" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-max_connections">
-    1. max_connections
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-mysql-wait_timeout">
-    2. MySQL - wait_timeout
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-hikaricp">
-    3. HikariCP 설정
-  </a>
-<nav aria-label="3. HikariCP 설정" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-minimumidle">
-    1. minimumIdle
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-maximumpoolsize">
-    2.  maximumPoolSize
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-maxlifetime">
-    3. maxLifetime
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-connectiontimeout">
-    4. connectionTimeout
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../mysql-excution-plan/">
+<a class="md-nav__link" href="../../../database/mysql-excution-plan/">
         MySQL 실행계획 연습
       </a>
 </li>
@@ -476,7 +408,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer3/index.md">
+<a class="md-nav__link" href="../index.md">
         네트워크 계층, 인터넷
       </a>
 </li>
@@ -496,17 +428,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer4/tcp-vs-udp/">
+<a class="md-nav__link" href="../../layer4/tcp-vs-udp/">
         TCP vs UDP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer4/tcp-flow-control/">
+<a class="md-nav__link" href="../../layer4/tcp-flow-control/">
         TCP 흐름제어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer4/tcp-congestion-control/">
+<a class="md-nav__link" href="../../layer4/tcp-congestion-control/">
         TCP 혼잡제어
       </a>
 </li>
@@ -526,12 +458,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer7/http-versions/">
+<a class="md-nav__link" href="../../layer7/http-versions/">
         HTTP 버전별 특징
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer7/https/">
+<a class="md-nav__link" href="../../layer7/https/">
         HTTPS
       </a>
 </li>
@@ -554,7 +486,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../web/cookie-session-token/">
+<a class="md-nav__link" href="../../../web/cookie-session-token/">
         쿠키 세션 토큰
       </a>
 </li>
@@ -577,12 +509,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/">
+<a class="md-nav__link" href="../../../../books/">
         책!
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/clean-agile/clean-agile/">
+<a class="md-nav__link" href="../../../../books/clean-agile/clean-agile/">
         클린 애자일
       </a>
 </li>
@@ -599,22 +531,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/">
         리뷰
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch01-msa/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch01-msa/">
         1장 마이크로서비스 아키텍처
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch02-framework-and-springboot/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch02-framework-and-springboot/">
         2장 프레임워크와 스프링부트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch03-springboot-basic/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch03-springboot-basic/">
         3장 스프링 애플리케이션 기본
       </a>
 </li>
@@ -631,17 +563,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-spring-web-mvc-basic/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch04-spring-web-mvc-basic/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-sec01-http/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch04-sec01-http/">
         파트 1 HTTP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
         파트 2 서블릿과 MVC
       </a>
 </li>
@@ -649,7 +581,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
         5장 스프링 MVC를 이용한 REST-API 개발
       </a>
 </li>
@@ -666,22 +598,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-build-web-application-server/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-build-web-application-server/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
         EnableXXX의 동작과 빈 설정 모듈화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
         웹 애플리케이션 설정 메커니즘
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
         DispatcherServlet
       </a>
 </li>
@@ -701,17 +633,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-sec01-spring-aop/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch07-sec01-spring-aop/">
         스프링 AOP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch07-sec03-autoconfiguration/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch07-sec03-autoconfiguration/">
         스프링 부트 자동 설정
       </a>
 </li>
@@ -731,27 +663,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-data-persistence/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-data-persistence/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
         JPA 장점과 단점
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
         엔티티 매니저와 영속성 컨텍스트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
         Transactional을 사용할 때 주의 사항
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch08-sec11-osiv/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec11-osiv/">
         OSIV
       </a>
 </li>
@@ -771,17 +703,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-application-integration-restapi/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch09-application-integration-restapi/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-sec01-resttemplate/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch09-sec01-resttemplate/">
         RestTemplate 클래스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch09-sec02-webclient/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch09-sec02-webclient/">
         WebClient 클래스
       </a>
 </li>
@@ -801,22 +733,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec01-redis-introduction/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec01-redis-introduction/">
         레디스 소개
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec01-redis-high-availability/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec01-redis-high-availability/">
         레디스 HA
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec04-redis-serializer/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec04-redis-serializer/">
         레디스 직렬화 설정
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch10-sec05-redis-usages/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec05-redis-usages/">
         레디스의 다양한 활용
       </a>
 </li>
@@ -824,7 +756,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch11-sec03-batch-architecture/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch11-sec03-batch-architecture/">
         11장 스프링 스케쥴링 테스크
       </a>
 </li>
@@ -841,32 +773,32 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch12-spring-event/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch12-spring-event/sec01-introduction/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec01-introduction/">
         스프링 이벤트 소개
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch12-spring-event/sec02-old-style/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec02-old-style/">
         ApplicationEvent 와 ApplicationListner 상속
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch12-spring-event/sec03-new-style/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec03-new-style/">
         POJO 이벤트 클래스와 @EventListener
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch12-spring-event/sec04-async-event/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec04-async-event/">
         비동기 이벤트 처리
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../books/springboot-msa-component/ch12-spring-event/sec05-spring-event/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec05-spring-event/">
         스프링이 발행하는 이벤트
       </a>
 </li>
@@ -892,7 +824,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/getting-started/">
+<a class="md-nav__link" href="../../../../til/getting-started/">
         시작하기
       </a>
 </li>
@@ -914,57 +846,29 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-dbcp">
-    1. DBCP의 개념과 원리
+<a class="md-nav__link" href="#0">
+    0. 들어가며
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-mysql">
-    2. MySql
-  </a>
-<nav aria-label="2. MySql" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-max_connections">
-    1. max_connections
+<a class="md-nav__link" href="#1">
+    1. 네트워크 계층이란? 네트워크란? 인터넷 이란?
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-mysql-wait_timeout">
-    2. MySQL - wait_timeout
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-hikaricp">
-    3. HikariCP 설정
-  </a>
-<nav aria-label="3. HikariCP 설정" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-minimumidle">
-    1. minimumIdle
+<a class="md-nav__link" href="#2">
+    2. 라우터란? 스위치란? 웹 서버란?
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-maximumpoolsize">
-    2.  maximumPoolSize
+<a class="md-nav__link" href="#2-">
+    2. 네트워크 계층의 데이터 단위 - 패킷!
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#3-maxlifetime">
-    3. maxLifetime
+<a class="md-nav__link" href="#3">
+    3. 네트워크 계층의 프로토콜
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-connectiontimeout">
-    4. connectionTimeout
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -973,117 +877,135 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/study/database/dbcp.md" title="View source of this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/study/network/layer3/introduction/index.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>DBCP</h1>
-<p>@ 참고 자료)</p>
+<h1>Index</h1>
+<p>@참고 자료)</p>
 <ul>
-<li>쉬운코드 - <a href="https://youtu.be/zowzVqx3MQ4">DBCP (DB connection pool)의 개념부터 설정 방법</a></li>
-<li>쓰레드의 커넥션 조회, 반납 시나리오 - <a href="https://jaehun2841.github.io/2020/01/27/2020-01-27-hikaricp-maximum-pool-size-tuning/#Hikari%EB%8B%98-Connection-하나만-주세여">링크</a><ul>
-<li>아주 재미있습니다.</li>
+<li>cloud flare - <a href="https://www.cloudflare.com/ko-kr/learning/network-layer/what-is-the-network-layer/">학습센터/네트워크 계층</a></li>
+<li>널널한 개발자 <ul>
+<li><a href="https://youtu.be/kGst-VftN1w">Host, Switch, Network 이들의 관계에 대해</a></li>
+<li><a href="https://youtu.be/N8pE-vDsJ38">LAN과 WAN을 구별하는 방법</a></li>
 </ul>
 </li>
-<li>
-<p>Naver D2 - <a href="https://d2.naver.com/helloworld/5102792">Commons DBCP 이해하기</a></p>
-</li>
-<li>
-<p><mark class="critic">SpringBoot Application</mark></p>
-</li>
-<li>SpringBoot 의 기본 DBCP 로 사용되는 <mark class="critic">HikariCP</mark></li>
-<li><mark class="critic">Mysql</mark> </li>
+<li>ibm - <a href="https://www.ibm.com/docs/ko/aix/7.1?topic=protocols-internet-network-level">네트워크 계층 프로토콜</a></li>
 </ul>
-<p>을 사용하여 DBCP 를 설정하는 방식을 알아보겠습니다.</p>
 <hr/>
-<h3 id="1-dbcp">1. DBCP의 개념과 원리<a class="headerlink" href="#1-dbcp" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/dbcp-con.excalidraw.png"><img alt="dbcp-con.excalidraw" src="../excalidraws/dbcp-con.excalidraw.png"/></a></p>
-<ul>
-<li>매번 connection 을 열고 닫는 시간적인 비용이 발생합니다.</li>
-<li>서비스 성능에 좋지 않습니다.</li>
-</ul>
-<p><strong>DBCP</strong> - Database Connection Pool</p>
-<p>=&gt; <mark class="critic">미리 커넥션을 만들어두고 Pool 처럼 관리하자! </mark>
-- 요청의 시작 전에 TCP 연결을 수립하고 해지 하지 않고 Pool 에서 커넥션을 조회하고 반납하자!</p>
-<h3 id="2-mysql">2. MySql<a class="headerlink" href="#2-mysql" title="Permanent link">¶</a></h3>
-<h4 id="1-max_connections">1. <code>max_connections</code><a class="headerlink" href="#1-max_connections" title="Permanent link">¶</a></h4>
-<ul>
-<li>client 와 맺을 수 있는 최대 connection 수 (default = 100)
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dbcp-max_connections.png"><img alt="dbcp-max_connections.png" src="../images/dbcp-max_connections.png"/></a></li>
-<li>
-<p>mysql 의 max_connections 값이 4로 설정된 경우</p>
-</li>
-<li>
-<p>이런 상황에서 새로운 애플리케이션을 추가하거나 <code>HikariCP</code> 의 커넥션 개수를 늘리려고 해도 동작하지 않습니다. 이럴 때는 MySQL의 max_connections 값을 늘려주어야 합니다.</p>
-</li>
-<li>
-<p>초과 분에 대해서는 <code>Too Many Connections</code> 에러가 발생합니다.</p>
-</li>
-<li>설정 및 확인 방법 - <a href="https://zetawiki.com/wiki/MySQL_max_connections_설정">링크</a></li>
-</ul>
-<h4 id="2-mysql-wait_timeout">2. MySQL - <code>wait_timeout</code><a class="headerlink" href="#2-mysql-wait_timeout" title="Permanent link">¶</a></h4>
-<ul>
-<li>connection 이 idle (inactive) 할 때 다시 요청이 오기까지 얼마의 시간을 기다린 뒤에 close 할 것인지 결정하는 값 (default - 8 시간 (28800 초))</li>
-<li>
-<p>한 쓰레드가 커넥션 풀에서 커넥션을 가져가서 사용하지도 않고 반환하지도 않는 경우 리소스 점유의 문제가 있습니다. 이 문제를 해결하기  MySQL 은 마지막 사용(요청) 시간을 기준으로 wait_timeout 시간이 초과된다면 connection 을 종료합니다.</p>
-</li>
-<li>
-<p>참고 링크</p>
-<ul>
-<li><a href="https://knight76.tistory.com/entry/30031445050">mysql 의 wait_timeout의 의미</a><ul>
-<li>wait_timeout 이 가장 중요하지만 mysql 의 다른 여러 timeout 과 관련된 설정들,</li>
-<li>wait_timeout 설정 꿀팁 </li>
-</ul>
-</li>
-<li>에 대한 글입니다.</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-hikaricp">3. HikariCP 설정<a class="headerlink" href="#3-hikaricp" title="Permanent link">¶</a></h3>
-<h4 id="1-minimumidle">1. <code>minimumIdle</code><a class="headerlink" href="#1-minimumidle" title="Permanent link">¶</a></h4>
-<ul>
-<li>Connection Pool 에서 유지하는 최소한의 idle connection 의 개수</li>
-<li>default - <code>maximumPoolSize</code> 와 같은 값을 가진다.</li>
-<li>권장사항<ul>
-<li>따로 건드리지 말고 maximumPoolSize 와 동일한 값을 써라</li>
-<li>이러면 Connection 의 개수가 고정이기 때문에 애플리케이션이 떠 있는 동안 커넥션이 생성되고 종료되지 않는다.</li>
-</ul>
-</li>
-</ul>
-<h4 id="2-maximumpoolsize">2.  <code>maximumPoolSize</code><a class="headerlink" href="#2-maximumpoolsize" title="Permanent link">¶</a></h4>
-<ul>
-<li>pool 이 가질 수 있는 최대 connection 수</li>
-<li>default - 10</li>
-<li>idle 과 active (in-use) 커넥션의 합</li>
-</ul>
+<h3 id="0">0. 들어가며<a class="headerlink" href="#0" title="Permanent link">¶</a></h3>
+<p>네트워크 계층, 인터넷에 대해서 알아봅시다!</p>
+<hr/>
+<h3 id="1">1. 네트워크 계층이란? 네트워크란? 인터넷 이란?<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code>maximumPoolSize</code> 가 <code>minimumIdle</code> 보다 우선 순위를 가집니다!
-<code>maximumPoolSize</code> = 4, <code>minimumIdle</code> = 2 인 설정으로 HikraiCP 를 시작하면</p>
-<p>minimumIdle 을 만족하기 위해 먼저 두개의 커넥션을 생성합니다.
-이 상태에서 하나의 요청이 와서 커넥션 하나가 <code>IN-USE</code> 상태가 된다면 minmumIdle 설정에 따라 Connection 이 하나 추가되고 idle connection 의 최솟값을 2로 유지할 수 있습니다.</p>
-<p>하지만 이 상태에서 추가적인 요청이 두개가 더 온다면 minimumIdle을 준수하기 위해 Connection을 두개 더 추가했다가는 maximumPoolSize 가 께지게 됩니다. HikariCP는 이 때 maximumPoolSize 설정이 minimuIdle 설정에 우선해서 동작하도록 합니다.</p>
-<p>참고 링크 - 쉬운코드님 영상 14:41</p>
+<p class="admonition-title">네트워크 계층이란 무엇인가요?</p>
+<p>[cloudflare] <br/>
+네트워크 계층은 OSI 모델에서 계층 3 이며, 상이한 네트워크들 간의 라우팅 및 데이터 전송을 담당합니다.</p>
 </div>
-<h4 id="3-maxlifetime">3. <code>maxLifetime</code><a class="headerlink" href="#3-maxlifetime" title="Permanent link">¶</a></h4>
-<ul>
-<li>pool 에서 connection의 최대 수명</li>
-<li>maxLifetime 을 넘기면 idle 인 경우 pool 에서 바로 제거 active 인 경우 pool로 반환된 후 제거</li>
-<li>db 의 connection timeout 보다 몇 초 짧게 설정해야한다.</li>
-</ul>
-<h4 id="4-connectiontimeout">4. <code>connectionTimeout</code><a class="headerlink" href="#4-connectiontimeout" title="Permanent link">¶</a></h4>
-<ul>
-<li>poll 에서 connection을 받기 위한 대기 시간</li>
-<li>default - 30 초</li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">네트워크란 무엇인가요?, 인터넷이란 무엇인가요</p>
+<p>[cloudflare] <br/>
+네트워크는 두 대 이상의 연결된 컴퓨팅 장치의 그룹을 말합니다. </p>
+<p>네트워크에 연결된 컴퓨터는 서로 데이터를 전송할 수 있습니다. <strong>컴퓨터 네트워크</strong>는 마치 서로 알고 정보를 주고받으며 함께 활동하는 <strong>소셜 서클</strong> 과 같습니다.</p>
+<p>보통 하나의 네트워크에 있는 모든 장치는 중앙에 있는 하나의 허브 (e.g. 라우터)에 연결된 경우가 많습니다. 네트워크에는 해당 네트워크를 작게 구분한 서브네트워크가 포함되기도 합니다. </p>
+<p>인터넷은 네트워크의 네트워크라고 생각할 수 있습니다. 이러한 인터넷이 동작하는 가장 중요한 두가지 컨셉은 <strong><em>패킷</em></strong> 과 <strong><em>프로토콜</em></strong>입니다.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">인터넷이란 무엇인가요?</p>
+<p>[널널한 개발자] <br/>
+ 인터넷은 가장 대표적인 네트워크의 한 종류입니다.
+인터넷을 구성하는 요소중 가장 중요한것 두가지는 <strong><em>라우터</em></strong>와 <strong><em>DNS</em></strong> 입니다.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/host-switch-network.png"><img alt="host-switch-network.png" src="images/host-switch-network.png"/></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">인터넷이 동작하도록 하는 physical infrastructure에는 어떤것이 있나요?</p>
+<p>[cloudflare] <br/>
+다양한 하드웨어와 infrastructure 가 인터넷을 구성합니다. 가장 중요한 것들은 다음과 같습니다. - 라우터, 스위치, 웹 서버</p>
+</div>
+<hr/>
+<h3 id="2">2. 라우터란? 스위치란? 웹 서버란?<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">라우터란?</p>
+<p>[cloudflare] <br/>
+라우터는 목적지 (IP 주소)를 기반으로 네트워크간 패킷 포워딩을 수행합니다. 라우터는 인터넷의 트래픽이 올바른 네트워크로 향하도록 하는 교통 경찰 (traffic cop)과 같습니다.</p>
+<p>[널널한 개발자] <br/>
+라우터는 <strong><em>경로 찾기<sup>Routing</sup></em></strong>를 목적으로 하는 L3 스위치입니다.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">호스트란? 엔드포인트란?</p>
+<p>[널널한 개발자]
+호스트 - 네트워크에 연결된 컴퓨터
+엔드포인드 - 네트워크를 이용하는 호스트
+                  - e.g. Peer, Server, Client, Web Server, ...
+스위치 - 네트워크 자체를 이루는 호스트
+           - e.g. Router, Firewall, IPS ...</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">스위치란?</p>
+<p>[cloudflare] <br/>
+스위치는 네트워크를 공유하는 기기(device)를 연결합니다. 스위치는 올바른 기기에 패킷을 전달하는 <strong><em>패킷 스위칭^Packet Switching^</em></strong>을 수행합니다. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">웹 서버란?</p>
+<p>[cloudflare] <br/>
+웹 서버는 웹 페이지, 이미지, 비디오와 같은 컨텐츠를 저장하고 제공하기 위한 목적의 호스트입니다. 웹 서버는 또한 DNS 쿼리에 응답하는 등의 인터넷이 동작하도록 하는 중요한 역할등을 합니다.</p>
+<p>DNS 에 대해서는 다른 문서에서 추가적으로 이야기 하겠습니다.</p>
+</div>
+<hr/>
+<h3 id="2-">2. 네트워크 계층의 데이터 단위 - 패킷!<a class="headerlink" href="#2-" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">패킷이란?</p>
+<p>[cloudflare] <br/>
+인터넷을 통해 발송되는 모든 데이터는 패킷이라는 작은 조각으로 나뉘어집니다. 패킷에는 패킷에 대한 메타데이터를 담는 헤더와 데이터 자체를 담은 바디로 두 부분이 있습니다.</p>
+<p>네트워크 계층은 패킷을 보낼 때 헤더를 추가하며 (encapsulation) 패킷을 받을 때 헤더를 이용해 패킷 처리 방법 (decapsulation or forwarding)을 이해할 수 있습니다.</p>
+<p>헤더에는 각 패킷의 내용, 출발지, 목적지에 대한 정보가 포함됩니다. 예를 들어 IP 헤더에는 각 패킷의 IP 주소, 패킷의 전체 크기, fragmentation 여부, 패킷이 통과한 네트워크 수 (~ TTL) 등이 포함됩니다.</p>
+</div>
+<hr/>
+<h3 id="3">3. 네트워크 계층의 프로토콜<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
+<p>이 계층에서 주요 프로토콜은 IP<sup>Internet</sup> <sup>Protocol</sup> 와 ICMP<sup>Internet</sup> <sup>Control</sup> <sup>Message</sup> <sup>Protocol</sup>  입니다. (+ARP <sup>Address</sup> <sup>Resolution</sup> <sup>Protocol</sup>)</p>
+<div class="admonition note">
+<p class="admonition-title">인터넷 프로토콜(IP)란 무엇인가요?</p>
+<p>[cloudflare] <br/>
+인터넷 프로토콜은 패킷의 라우팅과 주소에 대한 프로토콜입니다. IP의 목적은 패킷이 올바른 목적지로 도착하도록 하는 것입니다.</p>
+<p>[ibm] <br/>
+IP는 인터넷에 대해 신뢰할 수 없는 비연결 패킷 전달을 제공합니다.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">인터넷 제어 메시지 프로토콜 (ICMP)은 무엇인가요?</p>
+<p>[ibm] <br/>
+ICMP는 오류를 처리하고 IP 메시지를 제어합니다. ICMP는 모든 IP 구현의 필수 부분입니다. </p>
+<p><img alt="⚠" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26a0.svg" title=":warning:"/> ICMP는 통신 환경의 문제점에 관한 피드백을 제공하지만 IP가 신뢰 가능하도록 만들지는 않습니다. 즉, ICMP는 IP 패킷이 확실하게 전달된다거나 IP 패킷이 전달되지 않을 때 또는 올바르지 않게 전달될 때 ICMP 메시지가 소스 호스트로 리턴된다고 보장하지 않습니다.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">주소 해석 프로토콜(ARP)는 무엇인가요?</p>
+<p>[ibm] <br/>
+ARP는 IP를 MAC으로 동적으로 변환합니다. LAN (근거리 통신망) 내에서 노드는 MAC 을 통해 통신합니다.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">LAN 과 WAN은 어떻게 구분하나요?</p>
+<p>[널널한 개발자 - 널피셜] <br/>
+LAN(Local Area Network)과 WAN(Wide Area Network)은 지역의 크기로 구분되는 것이 아니다. </p>
+<p>LAN <br/>
+-  물리적인 영역 (OSI - 1계층, 2계층, TCP/IP - Access 계층)에서 설명되는 영역 <br/>
+- 즉, MAC Address 가 중요한 영역 <br/>
+- ARP 방송 주소 (ARP Broadcast Address) 트레픽이 도달할 수 있는 영역</p>
+<p>WAN <br/> 
+- 논리적인(가상의) 영역 (OSI - 3 계층(네트워크 계층), TCP - 인터넷 계층 이상) 에서 설명 되는 영역.</p>
+</div>
+<hr/>
+<div class="admonition quote">
+<p class="admonition-title">더 자세히 알아볼 키워드 들</p>
+<p>physical infrastructure - 라우터, DNS<br/>
+network layer protocol - IP/IP address, ICMP, ARP</p>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2023</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 26, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
 </small>
 </div>
 </article>
@@ -1091,34 +1013,6 @@
 </div>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 클러스터링, 리플리케이션, 샤딩" class="md-footer__link md-footer__link--prev" href="../clustering-replication-sharding/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                  Previous
-                </span>
-                클러스터링, 리플리케이션, 샤딩
-              </div>
-</div>
-</a>
-<a aria-label="Next: MySQL 실행계획 연습" class="md-footer__link md-footer__link--next" href="../mysql-excution-plan/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                  Next
-                </span>
-                MySQL 실행계획 연습
-              </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1139,9 +1033,9 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
-<script src="../../../js/mkdocs-charts-plugin.js"></script>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+<script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
