@@ -352,9 +352,39 @@
         데이터베이스 FD
       </a>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_7" id="__nav_3_5_7" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_3_5_7" tabindex="0">
+          데이터베이스 정규화
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="데이터베이스 정규화" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_7">
+<span class="md-nav__icon md-icon"></span>
+          데이터베이스 정규화
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/normalization/index.md">
-        데이터베이스 정규화
+<a class="md-nav__link" href="../../../study/database/normalization/db-normalization/">
+        개요
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../study/database/normalization/db-normalization-1nf-2nf/">
+        1NF, 2NF
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../study/database/normalization/db-normalization-3nf-bcnf/">
+        3NF, BCNF
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../study/database/transaction-acid/">
+        트랜잭션 ACID
       </a>
 </li>
 <li class="md-nav__item">
@@ -368,12 +398,12 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/dbcp/index.md">
+<a class="md-nav__link" href="../../../study/database/dbcp/">
         DBCP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../study/database/mysql-excution-plan/index.md">
+<a class="md-nav__link" href="../../../study/database/mysql-execution-plan/">
         MySQL 실행계획 연습
       </a>
 </li>
@@ -1013,7 +1043,7 @@
 </ul>
 <h3 id="2-resttemplate">2. RestTemplate 구조<a class="headerlink" href="#2-resttemplate" title="Permanent link">¶</a></h3>
 <p>restTemplate 을 구성하는 주요 클래스와 요청 처리흐름은 아래와 같다</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/resttemplate.png"><img alt="resttemplate.png" src="../excalidraws/resttemplate.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/resttemplate.excalidraw.png"><img alt="resttemplate.excalidraw.png" src="../excalidraws/resttemplate.excalidraw.png"/></a></p>
 <p><code>ClientHttpRequestFactory</code> 는 서버와 클라이언트 사이에 커넥션을 사용해 요청 전송 및 응답 수신 과정을 처리한다. <code>ClientHttpRequestInterceptor</code> 는 요청을 날리기 전 가로채서 추가적인 작업을 할 수 있다. 헤더를 추가하는 작업등을 할 수 있다. <code>RestponseErrorHandler</code> 는 응답 코드를 보고 예외를 발생시킨다.</p>
 <h3 id="3-connection-timeout-read-tieout">3. Connection Timeout 과 Read Tieout 설정<a class="headerlink" href="#3-connection-timeout-read-tieout" title="Permanent link">¶</a></h3>
 <p>ClientHttpRequestFactory 빈을 직접 RestTemplate 에 등록할 때는 connection timeout 과 read timeout 설정이 가장 중요하다.</p>
@@ -1036,7 +1066,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 16, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>

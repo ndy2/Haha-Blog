@@ -8,9 +8,11 @@
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
 <link href="https://ndy2.github.io/Haha-Blog/study/database/normalization/db-normalization-1nf-2nf/" rel="canonical"/>
+<link href="../db-normalization/" rel="prev"/>
+<link href="../db-normalization-3nf-bcnf/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.5" name="generator"/>
-<title>Db normalization 1nf 2nf - Haha 블로그</title>
+<title>1NF, 2NF - Haha 블로그</title>
 <link href="../../../../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -59,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Db normalization 1nf 2nf
+              1NF, 2NF
             
           </span>
 </div>
@@ -171,9 +173,9 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_3" tabindex="0">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label aria-expanded="true" class="md-nav__link" for="__nav_3" tabindex="0">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -308,9 +310,9 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" id="__nav_3_5" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_3_5" tabindex="0">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" id="__nav_3_5" type="checkbox"/>
+<label aria-expanded="true" class="md-nav__link" for="__nav_3_5" tabindex="0">
           데이터베이스
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -350,9 +352,62 @@
         데이터베이스 FD
       </a>
 </li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_7" id="__nav_3_5_7" type="checkbox"/>
+<label aria-expanded="true" class="md-nav__link" for="__nav_3_5_7" tabindex="0">
+          데이터베이스 정규화
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="데이터베이스 정규화" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_7">
+<span class="md-nav__icon md-icon"></span>
+          데이터베이스 정규화
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../index.md">
-        데이터베이스 정규화
+<a class="md-nav__link" href="../db-normalization/">
+        개요
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          1NF, 2NF
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        1NF, 2NF
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-1nf">
+    1. 1NF
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-2nf">
+    2. 2NF
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../db-normalization-3nf-bcnf/">
+        3NF, BCNF
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../transaction-acid/">
+        트랜잭션 ACID
       </a>
 </li>
 <li class="md-nav__item">
@@ -366,12 +421,12 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../dbcp/index.md">
+<a class="md-nav__link" href="../../dbcp/">
         DBCP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../mysql-excution-plan/index.md">
+<a class="md-nav__link" href="../../mysql-execution-plan/">
         MySQL 실행계획 연습
       </a>
 </li>
@@ -875,7 +930,7 @@
 <a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/study/database/normalization/db-normalization-1nf-2nf.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>Db normalization 1nf 2nf</h1>
+<h1>1NF, 2NF</h1>
 <p>@ 참고 자료)</p>
 <ul>
 <li>쉬운코드 - <a href="https://youtu.be/EdkjkifH-m8">(1부) DB 정규화(normalization)는 DB를 설계하는 공식적인 방법이죠~</a></li>
@@ -886,9 +941,9 @@
 <blockquote>
 <p>attribute 의 value 는 반드시 나누어 질 수 없는 단일한 값이어야 한다.</p>
 </blockquote>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="before-1nf.png"><img alt="before-1nf.png" src="before-1nf.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/before-1nf.png"><img alt="before-1nf.png" src="../images/before-1nf.png"/></a>
 card_id 에트리뷰트가 두개의 카드번호를 하나의 값으로 표현하고 있습니다. row 를 분리하는 방식으로 1NF 를 만족하도록 변경하면 아래와 같은 테이블이 나옵니다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="after-1nf.png"><img alt="after-1nf.png" src="after-1nf.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/after-1nf.png"><img alt="after-1nf.png" src="../images/after-1nf.png"/></a></p>
 <ul>
 <li>중복 데이터가 생겼습니다.</li>
 <li>ratio 의 개념이 이상해 졌습니다. (한 직원에 대해서 합이 2가되었습니다.)</li>
@@ -903,7 +958,7 @@ card_id 에트리뷰트가 두개의 카드번호를 하나의 값으로 표현�
 <p>변경된 non-prime attribute set 은 card_id 가 빠진 <code>{class, ratio, empl_id, empl_name}</code> 입니다.
 그럼 모든 후보 키 <code>{account_id, card_id}</code>, <code>{bank_name, account_num, card_id}</code> 가 non-prime attribute set  <code>{class, ratio, empl_id, empl_name}</code> 를 fully functional determine 하는지 살펴보면 그렇지 않습니다.</p>
 <p>FD 를 결정할때는 항상 의미론적으로 접근해야 한다는 사실을 주의해야합니다. 생각해보면 두 후보키에서 모드 card_id 가 없이 기존의 <code>{account_id}</code>, <code>{bank_name, account_num}</code> 만으로 non-prime attribute 를 determine 할 수 있다는 사실을 알 수 있습니다. 따라서 card_id 가 빠지는 것이 자연스럽습니다. 이를 위해 아래와 같이 테이블을 분리해 보겠습니다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="after-2nf.png"><img alt="after-2nf.png" src="after-2nf.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/after-2nf.png"><img alt="after-2nf.png" src="../images/after-2nf.png"/></a>
 확인해보면 두테이블 모두 2NF 를 만족 한다는 것을 알 수 있습니다.</p>
 <p><code>ACCOUNT_CARD</code> 테이블은 후보 키를 {account_id, card_id} 로 가집니다. (계좌 하나가 여러 카드에 연동될 수 있다는 사실을 잊지 말아 주세용) 따라서 non-prime attribute 는 공집합이고 2NF 를 만족한다는 것은 trivial 합니다.</p>
 <hr/>
@@ -922,6 +977,34 @@ card_id 에트리뷰트가 두개의 카드번호를 하나의 값으로 표현�
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: 개요" class="md-footer__link md-footer__link--prev" href="../db-normalization/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Previous
+                </span>
+                개요
+              </div>
+</div>
+</a>
+<a aria-label="Next: 3NF, BCNF" class="md-footer__link md-footer__link--next" href="../db-normalization-3nf-bcnf/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Next
+                </span>
+                3NF, BCNF
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">

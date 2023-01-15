@@ -16,11 +16,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/bloggingtips/render-test/</loc>
-         <lastmod>2023-01-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://ndy2.github.io/Haha-Blog/books/</loc>
          <lastmod>2023-01-15</lastmod>
          <changefreq>daily</changefreq>
@@ -201,11 +196,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/books/springboot-msa-component/excalidraws/resttemplate/</loc>
-         <lastmod>2023-01-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/architecture/msa-pros-cons/</loc>
          <lastmod>2023-01-15</lastmod>
          <changefreq>daily</changefreq>
@@ -241,7 +231,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/study/database/dpcp/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/study/database/dbcp/</loc>
          <lastmod>2023-01-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -332,11 +322,6 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/network/layer3/router/</loc>
-         <lastmod>2023-01-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ndy2.github.io/Haha-Blog/study/network/layer3/router/excalidraws/routing-process-1/</loc>
          <lastmod>2023-01-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -547,6 +532,11 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/til/til/2023-01-14/</loc>
+         <lastmod>2023-01-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/til/til/2023-01-15/</loc>
          <lastmod>2023-01-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
