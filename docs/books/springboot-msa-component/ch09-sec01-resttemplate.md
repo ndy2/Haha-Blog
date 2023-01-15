@@ -32,7 +32,7 @@
 ### 2. RestTemplate 구조
 restTemplate 을 구성하는 주요 클래스와 요청 처리흐름은 아래와 같다
 
-![resttemplate.png](excalidraws/resttemplate.png)
+![resttemplate.excalidraw.png](excalidraws/resttemplate.excalidraw.png)
 
 `ClientHttpRequestFactory` 는 서버와 클라이언트 사이에 커넥션을 사용해 요청 전송 및 응답 수신 과정을 처리한다. `ClientHttpRequestInterceptor` 는 요청을 날리기 전 가로채서 추가적인 작업을 할 수 있다. 헤더를 추가하는 작업등을 할 수 있다. `RestponseErrorHandler` 는 응답 코드를 보고 예외를 발생시킨다.
 

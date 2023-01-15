@@ -141,6 +141,7 @@ nav:
               - 1NF, 2NF: study/database/normalization/db-normalization-1nf-2nf.md
               - 3NF, BCNF: study/database/normalization/db-normalization-3nf-bcnf.md
 
+          -  트랜잭션 ACID: study/database/transaction-acid/index.md
           -  OLAP: study/database/olap/index.md
           -  클러스터링, 리플리케이션, 샤딩: study/database/clustering-replication-sharding/index.md
           -  DBCP: study/database/dbcp/index.md 

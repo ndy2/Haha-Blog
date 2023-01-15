@@ -70,7 +70,8 @@ format="json" 을 통해 더 자세한 정보를 확인하거나 MySQL workbench
 <br>
 - USE INDEX 를 사용해 Primary Key 인덱스를 사용하도록 힌트를 주면 실행 계획이 아래와 같이 바뀝니다.
 ![query-2.png](images/query-2.png)
-![excution-plan-4.png](images/excution-plan-4.png)
+
+![execution-plan-4.png](images/execution-plan-4.png)
 - a.PRIMARY 인덱스를 활용하는 것이 실행 계획에 잘 반영되었습니다.
 
 ### 3. Join 쿼리

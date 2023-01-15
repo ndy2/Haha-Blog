@@ -48,7 +48,7 @@
 
 ### 3. 라우팅 동작
 
-![routing-process-1](excalidraws/routing-process-1.png)
+![routing-process-1](excalidraws/routing-process-1.excalidraw.png)
 
 라우팅 과정은 라우터가 패킷을 받으며 시작합니다. 라우터는 라우팅 테이블에 따라 목적지로 보내기 위한 다음 디바이스의 IP 주소 즉, ***넥스트 홉***^Next^ ^Hope^ 을 결정합니다.
 
