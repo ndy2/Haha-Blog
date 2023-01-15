@@ -8,12 +8,12 @@
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
 <link href="https://ndy2.github.io/Haha-Blog/study/database/db-index/" rel="canonical"/>
-<link href="../db-lock/" rel="prev"/>
-<link href="../db-anomaly/" rel="next"/>
+<link href="../join/" rel="prev"/>
+<link href="../anomaly/" rel="next"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.4" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.5" name="generator"/>
 <title>데이터베이스 인덱스 - Haha 블로그</title>
-<link href="../../../assets/stylesheets/main.9c788c91.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -101,7 +101,7 @@
 <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -323,23 +323,18 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../database-basic-terminologies/">
+<a class="md-nav__link" href="../basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../relational-database/">
+<a class="md-nav__link" href="../rdb/">
         관계형 데이터베이스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../sql-join/">
+<a class="md-nav__link" href="../join/">
         SQL join
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../db-lock/">
-        데이터베이스 락
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
@@ -425,22 +420,22 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-anomaly/">
+<a class="md-nav__link" href="../anomaly/">
         데이터베이스 이상현상
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-functional-dependency/">
+<a class="md-nav__link" href="../fd/">
         데이터베이스 FD
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-normalization/">
+<a class="md-nav__link" href="../normalization/index.md">
         데이터베이스 정규화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../handle-olap/">
+<a class="md-nav__link" href="../olap/">
         OLAP
       </a>
 </li>
@@ -450,12 +445,12 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../dbcp/">
+<a class="md-nav__link" href="../dbcp/index.md">
         DBCP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../mysql-excution-plan/">
+<a class="md-nav__link" href="../mysql-excution-plan/index.md">
         MySQL 실행계획 연습
       </a>
 </li>
@@ -554,6 +549,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../network/layer7/https/">
         HTTPS
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../network/layer7/dns/">
+        DNS
       </a>
 </li>
 </ul>
@@ -1005,7 +1005,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/study/database/db-index.md" title="View source of this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/study/database/db-index/index.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
 <h1>데이터베이스 인덱스</h1>
@@ -1055,7 +1055,7 @@
 <a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="p">);</span>
 </code></pre></div>
 <h3 id="3-show-index-from-">3. <code>SHOW INDEX FROM</code> - 테이블의 인덱스 목록 조회<a class="headerlink" href="#3-show-index-from-" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/show-index-from.png"><img alt="show-index-from.png" src="../images/show-index-from.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/show-index-from.png"><img alt="show-index-from.png" src="images/show-index-from.png"/></a></p>
 <h3 id="4-b-tree">4. B-tree 기반의 인덱스가 동작하는 방식<a class="headerlink" href="#4-b-tree" title="Permanent link">¶</a></h3>
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/IMDH4iAQ6zM?start=508" title="YouTube video player" width="560"></iframe>
 <h3 id="5-explain-sql-index">5. EXPLAIN - SQL 이 실행할 INDEX 확인<a class="headerlink" href="#5-explain-sql-index" title="Permanent link">¶</a></h3>
@@ -1092,7 +1092,7 @@
 <li>테이블당 하나만 가질 수 있음</li>
 <li>인덱스의 Leaf Node 자체가 데이터임</li>
 <li>성능이 더 빠르다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/clustered_index.png"><img alt="clustered_index.png" src="../images/clustered_index.png"/></a></li>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/clustered_index.png"><img alt="clustered_index.png" src="images/clustered_index.png"/></a></li>
 </ul>
 </li>
 <li>
@@ -1101,7 +1101,7 @@
 <li>기본적으로 Unique Constraint 와 추가되는 Index 에 사용됨</li>
 <li>한 테이블에 여러개 생성 가능</li>
 <li>Leaf Node 에는 실제 데이터의 주소가 저장되어 있음
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/non-clustered-index.png"><img alt="non-clustered-index.png" src="../images/non-clustered-index.png"/></a></li>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/non-clustered-index.png"><img alt="non-clustered-index.png" src="images/non-clustered-index.png"/></a></li>
 </ul>
 </li>
 </ul>
@@ -1120,7 +1120,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 15, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
@@ -1132,7 +1132,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 데이터베이스 락" class="md-footer__link md-footer__link--prev" href="../db-lock/" rel="prev">
+<a aria-label="Previous: SQL join" class="md-footer__link md-footer__link--prev" href="../join/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -1141,11 +1141,11 @@
 <span class="md-footer__direction">
                   Previous
                 </span>
-                데이터베이스 락
+                SQL join
               </div>
 </div>
 </a>
-<a aria-label="Next: 데이터베이스 이상현상" class="md-footer__link md-footer__link--next" href="../db-anomaly/" rel="next">
+<a aria-label="Next: 데이터베이스 이상현상" class="md-footer__link md-footer__link--next" href="../anomaly/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
@@ -1180,7 +1180,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+<script src="../../../assets/javascripts/bundle.51d95adb.min.js"></script>
 <script src="../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

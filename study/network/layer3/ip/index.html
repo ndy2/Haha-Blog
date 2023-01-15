@@ -11,9 +11,9 @@
 <link href="../router/" rel="prev"/>
 <link href="../../layer4/tcp-vs-udp/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.4" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.5" name="generator"/>
 <title>IPv4 - Haha 블로그</title>
-<link href="../../../../assets/stylesheets/main.9c788c91.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -101,7 +101,7 @@
 <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -323,23 +323,18 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../database/database-basic-terminologies/">
+<a class="md-nav__link" href="../../../database/basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../database/relational-database/">
+<a class="md-nav__link" href="../../../database/rdb/">
         관계형 데이터베이스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../database/sql-join/">
+<a class="md-nav__link" href="../../../database/join/">
         SQL join
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../database/db-lock/">
-        데이터베이스 락
       </a>
 </li>
 <li class="md-nav__item">
@@ -348,22 +343,22 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../database/db-anomaly/">
+<a class="md-nav__link" href="../../../database/anomaly/">
         데이터베이스 이상현상
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../database/db-functional-dependency/">
+<a class="md-nav__link" href="../../../database/fd/">
         데이터베이스 FD
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../database/db-normalization/">
+<a class="md-nav__link" href="../../../database/normalization/index.md">
         데이터베이스 정규화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../database/handle-olap/">
+<a class="md-nav__link" href="../../../database/olap/">
         OLAP
       </a>
 </li>
@@ -373,12 +368,12 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../database/dbcp/">
+<a class="md-nav__link" href="../../../database/dbcp/index.md">
         DBCP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../database/mysql-excution-plan/">
+<a class="md-nav__link" href="../../../database/mysql-excution-plan/index.md">
         MySQL 실행계획 연습
       </a>
 </li>
@@ -445,8 +440,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#3-public-ip-private-ip">
-    3. Public IP, Private IP
+<a class="md-nav__link" href="#3-public-ip-private-ip-loopback-ip">
+    3. Public IP, Private IP 그리고 Loopback IP
   </a>
 </li>
 </ul>
@@ -505,6 +500,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../layer7/https/">
         HTTPS
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer7/dns/">
+        DNS
       </a>
 </li>
 </ul>
@@ -896,8 +896,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#3-public-ip-private-ip">
-    3. Public IP, Private IP
+<a class="md-nav__link" href="#3-public-ip-private-ip-loopback-ip">
+    3. Public IP, Private IP 그리고 Loopback IP
   </a>
 </li>
 </ul>
@@ -913,7 +913,7 @@
 <h1>IPv4</h1>
 <p>@ 참고 자료)</p>
 <ul>
-<li>wikipidia<ul>
+<li>wikipidia<ul>
 <li><a href="https://en.wikipedia.org/wiki/Internet_Protocol">Internet Protocol</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Internet_Protocol_version_4">Internet Protocol version 4</a></li>
 </ul>
@@ -922,6 +922,7 @@
 <li><a href="https://youtu.be/gOMljj6K2V0">IPv4 주소 체계에 대한 암기사항</a></li>
 </ul>
 </li>
+<li>meridianoutpost.com - <a href="https://www.meridianoutpost.com/resources/articles/IP-classes.php">Classes of IPv4 Addresses</a></li>
 </ul>
 <hr/>
 <h3 id="1-ip">1. IP<a class="headerlink" href="#1-ip" title="Permanent link">¶</a></h3>
@@ -959,17 +960,98 @@
 </li>
 </ul>
 <hr/>
-<h3 id="3-public-ip-private-ip">3. Public IP, Private IP<a class="headerlink" href="#3-public-ip-private-ip" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://dummyimage.com/600x400/f5f5f5/aaaaaa&amp;text=–%20Image%20–"><img align="left" alt="Image title" src="https://dummyimage.com/600x400/f5f5f5/aaaaaa&amp;text=–%20Image%20–" width="300"/></a></p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-massa, nec semper lorem quam in massa.</p>
+<h3 id="3-public-ip-private-ip-loopback-ip">3. Public IP, Private IP 그리고 Loopback IP<a class="headerlink" href="#3-public-ip-private-ip-loopback-ip" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/ips.png"><img alt="ips.png" src="images/ips.png"/></a></p>
+<p>Public IP (왼쪽) 와 Private IP (오른쪽)</p>
+<p><code>Public IP</code> vs <code>Private IP</code></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>공인 IP (Public IP a.k.a Global IP)</th>
+<th>사설 IP (Private IP)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>할당 주체</td>
+<td>ISP (Internet Service Provider)</td>
+<td>라우터 (공유기)</td>
+</tr>
+<tr>
+<td>할당 대상</td>
+<td>개인 또는 회사의 서버(라우터)</td>
+<td>개인 또는 회사의 기기</td>
+</tr>
+<tr>
+<td>고유성</td>
+<td>인터넷 (전 세계)에서 유일한 값</td>
+<td>하나의 네트워크 안에서 유일</td>
+</tr>
+<tr>
+<td>공개 여부</td>
+<td>내/외부 접근 가능</td>
+<td>외부 접근 불가능</td>
+</tr>
+<tr>
+<td>Routing</td>
+<td>Router 가 처리 함</td>
+<td>Router 가 기본적으로 라우팅 하지 않음</td>
+</tr>
+</tbody>
+</table>
+<p><code>Private IP</code> 의 주소 대역</p>
+<table>
+<thead>
+<tr>
+<th>클래스</th>
+<th>사설 IP 주소 대역</th>
+<th>Host Id</th>
+<th>Network Id</th>
+<th>사용처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Class A</td>
+<td>10.0.0.0 ~ 10.255.255.255</td>
+<td>24bit</td>
+<td>8bit</td>
+<td>초 거대 네트워크</td>
+</tr>
+<tr>
+<td>Class B</td>
+<td>172.16.0.0 ~ 172.31.255.255</td>
+<td>16bit</td>
+<td>16bit</td>
+<td>대학교 수준</td>
+</tr>
+<tr>
+<td>Class C</td>
+<td>192.16.0.0 ~ 192.168.255.255</td>
+<td>8bit</td>
+<td>24bit</td>
+<td>일반 기업, 공유기</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>:exclamation: IPv4 에는 A ~ E 다섯 클래스가 있으며 각각에 대해서 공인 IP, 사설 IP 의 범위가 정해져 있다. 보통 A ~ C 클래스가 인터넷 디바이스의 대부분을 차지 하며 D 와 E 클래스는 특별한 이유로 사용된다.
+</code></pre></div>
+<p><code>Loopback IP</code></p>
+<ul>
+<li>자기 자신을 가르키는 특별한 IP 주소.</li>
+<li>IPv4 에서는 보통 127.0.0.1 을 주로 사용한다.<ul>
+<li>원래는 127.0.0.X 에 해당하는 모든 주소가 루프백이다.</li>
+</ul>
+</li>
+<li>도착지가 Loopback IP 라면 IP 는 패킷을 생성해서 더 아래 계층 (Data Link 계층, Physical 계층)으로 보내는 것이 아니라 다시 윗 계층으로 올려보낸다.</li>
+</ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 15, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2023</span>
@@ -1029,7 +1111,7 @@ massa, nec semper lorem quam in massa.</p>
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.51d95adb.min.js"></script>
 <script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
