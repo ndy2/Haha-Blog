@@ -1,11 +1,12 @@
 
 @ 참고 자료)
 
-- wikipidia
+- wikipidia
 	- [Internet Protocol](https://en.wikipedia.org/wiki/Internet_Protocol)
 	- [Internet Protocol version 4](https://en.wikipedia.org/wiki/Internet_Protocol_version_4)
 - 널널한 개발자
 	- [IPv4 주소 체계에 대한 암기사항](https://youtu.be/gOMljj6K2V0)
+- meridianoutpost.com - [Classes of IPv4 Addresses](https://www.meridianoutpost.com/resources/articles/IP-classes.php)
 
 ---
 
@@ -42,11 +43,38 @@ IP, IPv4 에 대한 주요 특징은 다음과 같습니다.
 
 ---
 
-### 3. Public IP, Private IP
+### 3. Public IP, Private IP 그리고 Loopback IP
 
-![Image title](https://dummyimage.com/600x400/f5f5f5/aaaaaa&text=–%20Image%20–){ align=left width=300 }
+![ips.png](images/ips.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-massa, nec semper lorem quam in massa.
+Public IP (왼쪽) 와 Private IP (오른쪽)
 
+`Public IP` vs `Private IP`
+
+|           | 공인 IP (Public IP a.k.a Global IP) | 사설 IP (Private IP)                  |
+| --------- | ----------------------------------- | ------------------------------------- |
+| 할당 주체 | ISP (Internet Service Provider)     | 라우터 (공유기)                       |
+| 할당 대상 | 개인 또는 회사의 서버(라우터)       | 개인 또는 회사의 기기                 |
+| 고유성    | 인터넷 (전 세계)에서 유일한 값      | 하나의 네트워크 안에서 유일           |
+| 공개 여부 | 내/외부 접근 가능                   | 외부 접근 불가능                      |
+| Routing   | Router 가 처리 함                   | Router 가 기본적으로 라우팅 하지 않음 |
+
+
+`Private IP` 의 주소 대역
+
+| 클래스  | 사설 IP 주소 대역            | Host Id | Network Id | 사용처            |
+| ------- | ---------------------------- | ------- | ---------- | ----------------- |
+| Class A | 10.0.0.0 ~ 10.255.255.255    | 24bit   | 8bit       | 초 거대 네트워크  |
+| Class B | 172.16.0.0 ~ 172.31.255.255  | 16bit   | 16bit      | 대학교 수준       |
+| Class C | 192.16.0.0 ~ 192.168.255.255 | 8bit    | 24bit      | 일반 기업, 공유기 |
+
+```
+:exclamation: IPv4 에는 A ~ E 다섯 클래스가 있으며 각각에 대해서 공인 IP, 사설 IP 의 범위가 정해져 있다. 보통 A ~ C 클래스가 인터넷 디바이스의 대부분을 차지 하며 D 와 E 클래스는 특별한 이유로 사용된다.
+```
+
+`Loopback IP`
+
+- 자기 자신을 가르키는 특별한 IP 주소.
+- IPv4 에서는 보통 127.0.0.1 을 주로 사용한다.
+    - 원래는 127.0.0.X 에 해당하는 모든 주소가 루프백이다.
+- 도착지가 Loopback IP 라면 IP 는 패킷을 생성해서 더 아래 계층 (Data Link 계층, Physical 계층)으로 보내는 것이 아니라 다시 윗 계층으로 올려보낸다.
