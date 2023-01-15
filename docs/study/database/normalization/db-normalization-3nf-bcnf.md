@@ -16,7 +16,7 @@
 > unless either Y or Z is NOT subset of any key
 
 - 2NF 까지 적용한 상태의 테이블 구조
-![after-2nf.png](images/after-2nf.png)
+![after-2nf.png](after-2nf.png)
 
 살펴보면 (e1, Sony) 튜플이 중복으로 존재한다는 사실을 알 수 있습니다.
 
@@ -28,7 +28,7 @@
 
 
 Employee 테이블을 분리하여 3NF 를 만족하도록 변경하면 아래와 같습니다.
-![after-3nf.png](images/after-3nf.png)
+![after-3nf.png](after-3nf.png)
 
 
 ### 3.5 BCNF
@@ -38,7 +38,7 @@ EMPLOYEE_ACCOUNT 테이블의 {class} -> {bank_name} FD 는 위 제약사항을 
 class 의 값인 BRONZE, LOYAL 만으로는 tuple 을 식별할 수 없습니다.
 
 테이블을 나누어 BCNF 를 만족하도록 변경해보면 아래와 같습니다.
-![after-bcnf.png](images/after-bcnf.png)
+![after-bcnf.png](after-bcnf.png)
 
 ### 4. 역정규화
 

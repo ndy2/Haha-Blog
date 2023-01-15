@@ -40,6 +40,3 @@
 #### 2. FD 식별
 주요 FD 는 아래와 같습니다.
 ![table-fd.png](images/table-fd.png)
-
-
-### 

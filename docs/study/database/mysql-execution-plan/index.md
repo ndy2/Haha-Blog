@@ -8,8 +8,8 @@ MySQL - [explain-output](https://dev.mysql.com/doc/refman/8.0/en/explain-output.
 
 - `친절한 SQL` 을 읽다보니 oracle 에 기반한 책이라는 점이 아쉬웠습니다.
 - 사실 MySQL 을 깊게 학습한 적이 있는 것은 아니라 이 기회에 Oracle DB 로 계속 학습을 이어나가면 어떨까도 생각했지만 여러 대기업에서 MySQL 을 적극적으로 사용하고 있다고 생각되어 계속 MySQL로 학습하고자 합니다.
-![mysql-kakao.png](images/mysql-kakao.png)
-![mysql-coupang.png](images/mysql-coupang.png)
+![mysql-kakao.png](mysql-kakao.png)
+![mysql-coupang.png](mysql-coupang.png)
 
 <br>
 - 책에서 나오는 내용을 MySQL 로 따라해보려하니 가장 막히는 부분이 실행 계획을 읽는 부분이었습니다
