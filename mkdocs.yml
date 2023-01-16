@@ -153,10 +153,13 @@ nav:
           -  DBCP: study/database/dbcp/index.md 
           -  MySQL 실행계획 연습: study/database/mysql-execution-plan/index.md 
       - 네트워크:
+          -  데이터 링크 계층:
+              - ARP, 주소 결정 프로토콜: study/network/layer2/arp/index.md
           -  네트워크 (인터넷) 계층:
               - 네트워크 계층, 인터넷: study/network/layer3/introduction/index.md
               - 라우터: study/network/layer3/router/index.md
               - IPv4: study/network/layer3/ip/index.md
+              - ICMP: study/network/layer3/icmp/index.md
           -  전송 계층:
               - TCP vs UDP: study/network/layer4/tcp-vs-udp/index.md
               - TCP 흐름제어: study/network/layer4/tcp-flow-control/index.md
