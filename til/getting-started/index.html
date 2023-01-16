@@ -424,11 +424,31 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6_1" id="__nav_3_6_1" type="checkbox"/>
 <label aria-expanded="false" class="md-nav__link" for="__nav_3_6_1" tabindex="0">
+          데이터 링크 계층
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="데이터 링크 계층" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_6_1">
+<span class="md-nav__icon md-icon"></span>
+          데이터 링크 계층
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../study/network/layer2/arp/">
+        ARP, 주소 결정 프로토콜
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6_2" id="__nav_3_6_2" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_3_6_2" tabindex="0">
           네트워크 (인터넷) 계층
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="네트워크 (인터넷) 계층" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_6_1">
+<label class="md-nav__title" for="__nav_3_6_2">
 <span class="md-nav__icon md-icon"></span>
           네트워크 (인터넷) 계층
         </label>
@@ -448,17 +468,22 @@
         IPv4
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../study/network/layer3/icmp/">
+        ICMP
+      </a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6_2" id="__nav_3_6_2" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_3_6_2" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6_3" id="__nav_3_6_3" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_3_6_3" tabindex="0">
           전송 계층
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="전송 계층" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_6_2">
+<label class="md-nav__title" for="__nav_3_6_3">
 <span class="md-nav__icon md-icon"></span>
           전송 계층
         </label>
@@ -482,13 +507,13 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6_3" id="__nav_3_6_3" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_3_6_3" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6_4" id="__nav_3_6_4" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_3_6_4" tabindex="0">
           응용 계층
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="응용 계층" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_6_3">
+<label class="md-nav__title" for="__nav_3_6_4">
 <span class="md-nav__icon md-icon"></span>
           응용 계층
         </label>
@@ -944,148 +969,10 @@
 <p>아래 그래프의 색칠된 부분을 클릭하면 해당 날짜의 TIL 로 이동합니다.</p>
 <p>색칠된 정도는 1~4의 숫자로 스스로 공부한 정도를 체크해서 기록한 것입니다.</p>
 <h2 id="today-i-learn-2022">Today I Learn! 2022<a class="headerlink" href="#today-i-learn-2022" title="Permanent link">¶</a></h2>
-<p><vegachart class="vegalite" style="width: 100%">{
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://ndy2.github.io/Haha-Blog/til/resources/2022.csv"
-    },
-    "title": "Today I Learn",
-    "transform": [
-      {
-        "calculate": "'../til/' + utcFormat(datum.date,'%Y-%m-%d') +'/'",
-        "as": "til-link"
-      },
-      {
-        "calculate": "utcFormat(datum.date,'%Y-%m-%d')",
-        "as": "til-date"
-      }
-    ],
-    "mark": {
-      "type": "rect",
-      "width": 11,
-      "height": 11,
-      "cornerRadius": 2,
-      "outerRadius": 10,
-      "stroke": "#E8E8E8",
-      "strokeWidth": 1,
-      "tooltip": true
-    },
-    "encoding": {
-      "x": {
-        "field": "date",
-        "timeUnit": "yearweek",
-        "type": "nominal"
-      },
-      "y": {
-        "field": "date",
-        "timeUnit": "day",
-        "type": "ordinal"
-      },
-      "color": {
-        "field": "til",
-        "type": "quantitative",
-        "scale": {
-          "range": [
-            "#E8E8E8",
-            "#c6e48b",
-            "#7bc96f",
-            "#49af5d",
-            "#2e8840",
-            "#196127"
-          ]
-        },
-        "legend": null
-      },
-      "href": {
-        "condition": {
-          "test": "datum['til'] == 0 ",
-          "value": ""
-        },
-        "field": "til-link"
-      },
-      "tooltip": [
-        {
-          "field": "til",
-          "type": "quantitative"
-        },
-        {
-          "field": "til-date"
-        }
-      ]
-    }
-  }</vegachart></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://kroki.io/vegalite/png/eNrT1bWw0dXlSslPLtYvyczRL0otzi8tSk4t1jcyMDLSBQrpZqQmlujmJhbolqWmJ-plFefncelCdAEAVgwS9w==?"><img alt="Kroki" src="https://kroki.io/vegalite/png/eNrT1bWw0dXlSslPLtYvyczRL0otzi8tSk4t1jcyMDLSBQrpZqQmlujmJhbolqWmJ-plFefncelCdAEAVgwS9w==?"/></a></p>
 <hr/>
 <h2 id="today-i-learn-2023">Today I Learn! 2023<a class="headerlink" href="#today-i-learn-2023" title="Permanent link">¶</a></h2>
-<p><vegachart class="vegalite" style="width: 100%">{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {
-    "url": "https://ndy2.github.io/Haha-Blog/til/resources/2023.csv"
-  },
-  "title": "Today I Learn",
-  "transform": [
-    {
-      "calculate": "'../til/' + utcFormat(datum.date,'%Y-%m-%d') +'/'",
-      "as": "til-link"
-    },
-    {
-      "calculate": "utcFormat(datum.date,'%Y-%m-%d')",
-      "as": "til-date"
-    }
-  ],
-  "mark": {
-    "type": "rect",
-    "width": 11,
-    "height": 11,
-    "cornerRadius": 2,
-    "outerRadius": 10,
-    "stroke": "#E8E8E8",
-    "strokeWidth": 1,
-    "tooltip": true
-  },
-  "encoding": {
-    "x": {
-      "field": "date",
-      "timeUnit": "yearweek",
-      "type": "nominal"
-    },
-    "y": {
-      "field": "date",
-      "timeUnit": "day",
-      "type": "ordinal"
-    },
-    "color": {
-      "field": "til",
-      "type": "quantitative",
-      "scale": {
-        "range": [
-          "#E8E8E8",
-          "#c6e48b",
-          "#7bc96f",
-          "#49af5d",
-          "#2e8840",
-          "#196127"
-        ]
-      },
-      "legend": null
-    },
-    "href": {
-      "condition": {
-        "test": "datum['til'] == 0 ",
-        "value": ""
-      },
-      "field": "til-link"
-    },
-    "tooltip": [
-      {
-        "field": "til",
-        "type": "quantitative"
-      },
-      {
-        "field": "til-date"
-      }
-    ]
-  }
-}</vegachart></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://kroki.io/vegalite/png/eNrT1bWw0dXlSslPLtYvyczRL0otzi8tSk4t1jcyMDLWBQrpZqQmlujmJhbolqWmJ-plFefncelCdAEAViwS-A==?"><img alt="Kroki" src="https://kroki.io/vegalite/png/eNrT1bWw0dXlSslPLtYvyczRL0otzi8tSk4t1jcyMDLWBQrpZqQmlujmJhbolqWmJ-plFefncelCdAEAViwS-A==?"/></a></p>
 <hr/>
 <div class="md-source-file">
 <small>

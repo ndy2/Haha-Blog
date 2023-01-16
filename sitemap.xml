@@ -311,6 +311,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/network/layer2/arp/</loc>
+         <lastmod>2023-01-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/network/layer3/icmp/</loc>
+         <lastmod>2023-01-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/network/layer3/introduction/</loc>
          <lastmod>2023-01-16</lastmod>
          <changefreq>daily</changefreq>
