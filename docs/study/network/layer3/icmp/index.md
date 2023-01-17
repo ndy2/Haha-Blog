@@ -5,7 +5,7 @@ ICMP 는 네트워크 계층의 다른 주제들 (IP/IP 주소, 라우터)에 �
 
 ### 1. ICMP - 인터넷 제어 메시지 프로토콜
 
-```packetdiag no-transparency=false
+```packetdiag
 packetdiag {
   colwidth = 32;
   node_height = 20;
