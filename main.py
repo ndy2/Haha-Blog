@@ -11,3 +11,10 @@ def define_env(env):
     @env.macro
     def ps(path ="", value = "풀이"):
         return f'[{value}](https://github.com/ndy2/coding-test/blob/master/{path})'
+
+    @env.macro
+    def vega_til(year):
+        file = open("resources/vega/til-heat-map.json")
+        vega_content = file.read()
+        file.close()
+        return vega_content.replace("YEAR",year,1)
