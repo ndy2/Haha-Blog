@@ -24,7 +24,7 @@ ICMP 는 네트워크 계층의 다른 주제들 (IP/IP 주소, 라우터)에 �
 
 `A general header for ICMPv4`
 
-```packetdiag
+```kroki-packetdiag
 packetdiag {
   fontsize = 20
   colwidth = 32;
