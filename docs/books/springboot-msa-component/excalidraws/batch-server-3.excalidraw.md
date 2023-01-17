@@ -20,7 +20,7 @@ REST-API EndPoint ^dLPwxU4F
 
 
 # Embedded files
-0692203312780ede6962ecf0f69b65b68eb1549d: [[server.png]]
+0692203312780ede6962ecf0f69b65b68eb1549d: [[docs/books/springboot-msa-component/excalidraws/images/server.png]]
 c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 025de099be4482bf315469c62eba383ef5e70757: [[Pasted Image 20221227210308_923.png]]
 

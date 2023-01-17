@@ -20,7 +20,7 @@ load balancer ^yOnm1eK6
 
 
 # Embedded files
-0692203312780ede6962ecf0f69b65b68eb1549d: [[server.png]]
+0692203312780ede6962ecf0f69b65b68eb1549d: [[docs/books/springboot-msa-component/excalidraws/images/server.png]]
 db892745bba5a7a16b36c8c2a08ece3788e6f2d3: [[redis-master.png]]
 c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 
