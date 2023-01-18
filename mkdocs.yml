@@ -88,8 +88,7 @@ markdown_extensions:
 
 plugins:
   - macros:
-      modules:
-        - resources/macro/main
+      module_name: 'resources/macro/main'
   - search
   - glightbox
   - git-revision-date-localized:
