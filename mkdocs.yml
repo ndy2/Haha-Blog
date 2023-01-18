@@ -126,6 +126,9 @@ nav:
           -  MSA 장단점: study/architecture/msa-pros-cons.md
           -  Hexagonal Architecture: study/architecture/hexagonal-architecture/index.md
           -  Resilient Pattern:  study/architecture/resilient-pattern/index.md
+          -  Load Balancing:
+              - 로드 밸런싱 개요와 알고리즘: study/architecture/load-balancing/index.md
+              - L4 로드 밸런싱 vs L7 로드 밸런싱: study/architecture/load-balancing/l4-lb-vs-l7-lb.md
       - 운영체제:
           -  프로세스 vs 쓰레드: study/os/process-vs-thread/index.md
           -  데드락: study/os/deadlock/index.md
@@ -153,7 +156,9 @@ nav:
               - ARP, 주소 결정 프로토콜: study/network/layer2/arp/index.md
           -  네트워크 (인터넷) 계층:
               - 네트워크 계층, 인터넷: study/network/layer3/introduction/index.md
-              - 라우터: study/network/layer3/router/index.md
+              - 라우터: 
+                  - 라우터 개요: study/network/layer3/router/index.md
+                  - NAT: study/network/layer3/router/nat.md
               - IPv4: study/network/layer3/ip/index.md
               - ICMP: study/network/layer3/icmp/index.md
           -  전송 계층:
