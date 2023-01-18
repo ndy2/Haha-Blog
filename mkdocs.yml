@@ -87,7 +87,9 @@ markdown_extensions:
       permalink: true
 
 plugins:
-  - macros
+  - macros:
+      modules:
+        - resources/macro/main
   - search
   - glightbox
   - git-revision-date-localized:
