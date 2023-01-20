@@ -170,6 +170,10 @@ nav:
               -  HTTP 버전별 특징: study/network/layer7/http-versions/index.md
               -  HTTPS: study/network/layer7/https/index.md
               -  DNS: study/network/layer7/dns/index.md
+      - 알고리즘:
+          -  Union-Find 알고리즘:
+              - Union-Find 알고리즘: study/algorithm/union-find/index.md
+              - Union-By-Rank: study/algorithm/union-find/union-by-rank.md
       - 웹 개발:
           -  쿠키 세션 토큰: study/web/cookie-session-token/index.md
   - 기술 서적 정리/리뷰:
