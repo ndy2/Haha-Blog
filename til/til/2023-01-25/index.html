@@ -7,12 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/study/java/nio/" rel="canonical"/>
-<link href="../string/" rel="prev"/>
-<link href="../synchronized/" rel="next"/>
+<link href="https://ndy2.github.io/Haha-Blog/til/til/2023-01-25/" rel="canonical"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.6" name="generator"/>
-<title>NIO - Haha 블로그</title>
+<title>2023 01 25 - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -37,7 +35,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#1-nio-io">
+<a class="md-skip" href="#_1">
           Skip to content
         </a>
 </div>
@@ -61,7 +59,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              NIO
+              2023 01 25
             
           </span>
 </div>
@@ -173,9 +171,9 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label aria-expanded="true" class="md-nav__link" for="__nav_3" tabindex="0">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_3" tabindex="0">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -185,9 +183,9 @@
           분야 별 학습
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
-<label aria-expanded="true" class="md-nav__link" for="__nav_3_1" tabindex="0">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" id="__nav_3_1" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_3_1" tabindex="0">
           자바
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -198,50 +196,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../string/">
+<a class="md-nav__link" href="../../../study/java/string/">
         String
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          NIO
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../study/java/nio/">
         NIO
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-nio-io">
-    1. NIO 는 IO와 무엇이 다를까요?
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-nio-bio">
-    2. NIO 가 BIO에 비해서 빠른 이유는 무엇일까요?
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-nio">
-    3. 항상 NIO 를 사용하는 것이 좋을까요?
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-was-nio">
-    4. WAS 와 NIO
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../synchronized/">
+<a class="md-nav__link" href="../../../study/java/synchronized/">
         동시성 - synchrozied
       </a>
 </li>
@@ -261,17 +226,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/introduction/">
+<a class="md-nav__link" href="../../../study/kotlin/introduction/">
         코틀린 소개, 특징, 철학
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/object-keyword/">
+<a class="md-nav__link" href="../../../study/kotlin/object-keyword/">
         object 키워드
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/lambda/variable-capturing/">
+<a class="md-nav__link" href="../../../study/kotlin/lambda/variable-capturing/">
         람다 변수 캡쳐링
       </a>
 </li>
@@ -291,17 +256,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/msa-pros-cons/">
+<a class="md-nav__link" href="../../../study/architecture/msa-pros-cons/">
         MSA 장단점
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/hexagonal-architecture/">
+<a class="md-nav__link" href="../../../study/architecture/hexagonal-architecture/">
         Hexagonal Architecture
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/resilient-pattern/">
+<a class="md-nav__link" href="../../../study/architecture/resilient-pattern/">
         Resilient Pattern
       </a>
 </li>
@@ -318,12 +283,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/load-balancing/">
+<a class="md-nav__link" href="../../../study/architecture/load-balancing/">
         로드 밸런싱 개요와 알고리즘
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/load-balancing/l4-lb-vs-l7-lb/">
+<a class="md-nav__link" href="../../../study/architecture/load-balancing/l4-lb-vs-l7-lb/">
         L4 로드 밸런싱 vs L7 로드 밸런싱
       </a>
 </li>
@@ -346,22 +311,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../os/process-vs-thread/">
+<a class="md-nav__link" href="../../../study/os/process-vs-thread/">
         프로세스 vs 쓰레드
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../os/deadlock/">
+<a class="md-nav__link" href="../../../study/os/deadlock/">
         데드락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../os/memory-management/virtual-memory-1/">
+<a class="md-nav__link" href="../../../study/os/memory-management/virtual-memory-1/">
         가상메모리 기초
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../os/memory-management/virtual-memory-2/">
+<a class="md-nav__link" href="../../../study/os/memory-management/virtual-memory-2/">
         가상메모리 관리
       </a>
 </li>
@@ -381,32 +346,32 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/basic-terminologies/">
+<a class="md-nav__link" href="../../../study/database/basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/rdb/">
+<a class="md-nav__link" href="../../../study/database/rdb/">
         관계형 데이터베이스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/join/">
+<a class="md-nav__link" href="../../../study/database/join/">
         SQL join
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/db-index/">
+<a class="md-nav__link" href="../../../study/database/db-index/">
         데이터베이스 인덱스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/anomaly/">
+<a class="md-nav__link" href="../../../study/database/anomaly/">
         데이터베이스 이상현상
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/fd/">
+<a class="md-nav__link" href="../../../study/database/fd/">
         데이터베이스 FD
       </a>
 </li>
@@ -423,17 +388,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/normalization/db-normalization/">
+<a class="md-nav__link" href="../../../study/database/normalization/db-normalization/">
         개요
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/normalization/db-normalization-1nf-2nf/">
+<a class="md-nav__link" href="../../../study/database/normalization/db-normalization-1nf-2nf/">
         1NF, 2NF
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/normalization/db-normalization-3nf-bcnf/">
+<a class="md-nav__link" href="../../../study/database/normalization/db-normalization-3nf-bcnf/">
         3NF, BCNF
       </a>
 </li>
@@ -441,27 +406,27 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/transaction-acid/">
+<a class="md-nav__link" href="../../../study/database/transaction-acid/">
         트랜잭션 ACID
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/olap/">
+<a class="md-nav__link" href="../../../study/database/olap/">
         OLAP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/clustering-replication-sharding/">
+<a class="md-nav__link" href="../../../study/database/clustering-replication-sharding/">
         클러스터링, 리플리케이션, 샤딩
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/dbcp/">
+<a class="md-nav__link" href="../../../study/database/dbcp/">
         DBCP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../database/mysql-execution-plan/">
+<a class="md-nav__link" href="../../../study/database/mysql-execution-plan/">
         MySQL 실행계획 연습
       </a>
 </li>
@@ -493,7 +458,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer2/arp/">
+<a class="md-nav__link" href="../../../study/network/layer2/arp/">
         ARP, 주소 결정 프로토콜
       </a>
 </li>
@@ -513,7 +478,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer3/introduction/">
+<a class="md-nav__link" href="../../../study/network/layer3/introduction/">
         네트워크 계층, 인터넷
       </a>
 </li>
@@ -530,12 +495,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer3/router/">
+<a class="md-nav__link" href="../../../study/network/layer3/router/">
         라우터 개요
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer3/router/nat/">
+<a class="md-nav__link" href="../../../study/network/layer3/router/nat/">
         NAT
       </a>
 </li>
@@ -543,12 +508,12 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer3/ip/">
+<a class="md-nav__link" href="../../../study/network/layer3/ip/">
         IPv4
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer3/icmp/">
+<a class="md-nav__link" href="../../../study/network/layer3/icmp/">
         ICMP
       </a>
 </li>
@@ -568,17 +533,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer4/tcp-vs-udp/">
+<a class="md-nav__link" href="../../../study/network/layer4/tcp-vs-udp/">
         TCP vs UDP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer4/tcp-flow-control/">
+<a class="md-nav__link" href="../../../study/network/layer4/tcp-flow-control/">
         TCP 흐름제어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer4/tcp-congestion-control/">
+<a class="md-nav__link" href="../../../study/network/layer4/tcp-congestion-control/">
         TCP 혼잡제어
       </a>
 </li>
@@ -598,17 +563,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer7/http-versions/">
+<a class="md-nav__link" href="../../../study/network/layer7/http-versions/">
         HTTP 버전별 특징
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer7/https/">
+<a class="md-nav__link" href="../../../study/network/layer7/https/">
         HTTPS
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../network/layer7/dns/">
+<a class="md-nav__link" href="../../../study/network/layer7/dns/">
         DNS
       </a>
 </li>
@@ -643,12 +608,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../algorithm/union-find/">
+<a class="md-nav__link" href="../../../study/algorithm/union-find/">
         Union-Find 알고리즘
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../algorithm/union-find/union-by-rank/">
+<a class="md-nav__link" href="../../../study/algorithm/union-find/union-by-rank/">
         Union-By-Rank
       </a>
 </li>
@@ -671,7 +636,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../web/cookie-session-token/">
+<a class="md-nav__link" href="../../../study/web/cookie-session-token/">
         쿠키 세션 토큰
       </a>
 </li>
@@ -1032,7 +997,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../til/getting-started/">
+<a class="md-nav__link" href="../../getting-started/">
         TIL
       </a>
 </li>
@@ -1056,23 +1021,8 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-nio-io">
-    1. NIO 는 IO와 무엇이 다를까요?
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-nio-bio">
-    2. NIO 가 BIO에 비해서 빠른 이유는 무엇일까요?
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-nio">
-    3. 항상 NIO 를 사용하는 것이 좋을까요?
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-was-nio">
-    4. WAS 와 NIO
+<a class="md-nav__link" href="#_1">
+    오늘 한 일
   </a>
 </li>
 </ul>
@@ -1082,117 +1032,24 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/study/java/nio.md" title="View source of this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/til/til/2023-01-25.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>NIO</h1>
-<p>@참고 자료)</p>
-<ul>
-<li>sightstudio - https://sightstudio.tistory.com/15</li>
-<li>Jakob Jenkov - https://jenkov.com/tutorials/java-nio/index.html</li>
-<li>enics - http://eincs.com/2009/08/java-nio-bytebuffer-channel-file/</li>
-</ul>
-<p><strong>요약</strong></p>
-<table>
-<thead>
-<tr>
-<th>구분</th>
-<th>IO</th>
-<th>NIO</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>입출력 방식</td>
-<td>Stream Oriented</td>
-<td>Buffer Oriented</td>
-</tr>
-<tr>
-<td>버퍼 방식</td>
-<td>Non-Buffer→ BufferedXXX 로 지원</td>
-<td>Buffer</td>
-</tr>
-<tr>
-<td>비동기 방식 지원</td>
-<td>X</td>
-<td>O</td>
-</tr>
-<tr>
-<td>Blocking/Non-Blocking 방식</td>
-<td>Blocking Only</td>
-<td>Both</td>
-</tr>
-<tr>
-<td>사용 케이스</td>
-<td>연결 클라이언트가 적고, IO 가 큰 경우(대용량)</td>
-<td>연결 클라이언트가 많고, IO 처리가 작은 경우(저용량)</td>
-</tr>
-<tr>
-<td>커널 버퍼</td>
-<td>직접 핸들링 할 수 없음</td>
-<td>Direct Buffer 로 커널 버퍼를 직접 핸들링가능 (ByteBuffer)</td>
-</tr>
-</tbody>
-</table>
-<hr/>
-<p>자바의 NIO (New IO) 는 자바 4에 추가된 IO API로 기존 자바 IO 와는 다른 방식으로 동작합니다. NIO 는 Non-blocking IO의 줄임말 처럼 생각될 수 있지만 NIO는 실제로 Non-blocking IO 와 Blocking IO 방식 모두 지원합니다. 기존의 Java IO 를 BIO 라고 부르기도 합니다.</p>
-<p>자바 7부터는 NIO2 가 지원되었습니다.</p>
-<h3 id="1-nio-io">1. NIO 는 IO와 무엇이 다를까요?<a class="headerlink" href="#1-nio-io" title="Permanent link">¶</a></h3>
-<ul>
-<li>IO 는 Stream 을 통해 동작하고 NIO는 Channel 과 Buffer 를 통해 동작합니다.</li>
-<li>Channel은 Stream 과 달리 양방향 통신을 지원합니다.</li>
-<li>NIO 는 Non-Blocking IO 를 지원합니다.</li>
-<li>NIO 는 Selector 라는 개념을 통해 하나의 쓰레드로 여러 Channel 을 관리할 수 있습니다.</li>
-</ul>
-<h3 id="2-nio-bio">2. NIO 가 BIO에 비해서 빠른 이유는 무엇일까요?<a class="headerlink" href="#2-nio-bio" title="Permanent link">¶</a></h3>
-<ul>
-<li>NIO 는  non-blocking IO 를 사용합니다. 따라서 쓰레드의 컨텍스트 스위치 발생 횟수를 줄일 수 있습니다.</li>
-<li>BIO 의 <code>read()</code>  과정<ul>
-<li><code>JVM -&gt; 커널-&gt; 시스템 콜 -&gt; 디스크 컨트롤러 -&gt; DMA가 커널버퍼로 복사 -&gt; JVM 버퍼에 복사</code>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/bio-read.png"><img alt="bio-read.png" src="../images/bio-read.png"/></a></li>
-</ul>
-</li>
-</ul>
-<p>이때 발생할 수 있는 문제로는 </p>
-<div class="highlight"><pre><span></span><code>1.  JVM으로 내부 버퍼 복사시 CPU가 관여 -&gt; CPU 오버헤드
-
-2. 복사된 Buffer는 활용 후 GC 대상이됨. -&gt; **Stop-the-World**로 인한 성능 저하
-
-3. 복사중인 I/O 요청 스레드는 블로킹 상태 -&gt; 처리속도 저하
-</code></pre></div>
-<p>가 있습니다.</p>
-<ul>
-<li>NIO 는 BIO 와 달리 Direct Buffer 를 사용해 커널 버퍼를 직접 핸들링하여 이런 문제를 해결합니다.</li>
-</ul>
-<h3 id="3-nio">3. 항상 NIO 를 사용하는 것이 좋을까요?<a class="headerlink" href="#3-nio" title="Permanent link">¶</a></h3>
-<p>일반적으로</p>
-<ul>
-<li>커넥션이 많고, IO 처리가 작은 경우에는 (e.g.) web server, p2p network) NIO 가 좋습니다.</li>
-<li>커넥션이 적고, IO 처리가 큰 경우에는 Classic IO 즉, BIO 가 좋습니다.</li>
-</ul>
-<h3 id="4-was-nio">4. WAS 와 NIO<a class="headerlink" href="#4-was-nio" title="Permanent link">¶</a></h3>
-<ul>
-<li>톰캣은 9.0 버전 이후 부터 NIO 방식의 Connector 를 기본적으로 활용한다.</li>
-<li>톰캣의 <code>Connector</code> 는 Socket Connection 을 통해 HttpServletRequest 객체로 변환하여 Servlet 에 전달 하는 역할을 합니다.</li>
-<li>하지만 톰캣은 기본적으로 Thread-Per-Request 로 동작한다.</li>
-<li>
-<p>NIO 의 장점을 못 누리는 중 이라고 생각됨....</p>
-</li>
-<li>
-<p>네티는 기본적으로 NIO 를 활용한다.</p>
-</li>
-<li>네티는 적은수의 Thread 로 많은 요청을 처리한다.</li>
-<li>NIO 의 장점을 누릴 수 있다!</li>
+<h1>2023 01 25</h1>
+<h2 id="_1">오늘 한 일<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> haha</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> papa</li>
 </ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2023</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2022</span>
 </small>
 </div>
 </article>
@@ -1200,34 +1057,6 @@
 </div>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: String" class="md-footer__link md-footer__link--prev" href="../string/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                  Previous
-                </span>
-                String
-              </div>
-</div>
-</a>
-<a aria-label="Next: 동시성 - synchrozied" class="md-footer__link md-footer__link--next" href="../synchronized/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                  Next
-                </span>
-                동시성 - synchrozied
-              </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">

@@ -201,6 +201,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/toby-springboot-hello/ch01/</loc>
+         <lastmod>2023-01-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/algorithm/union-find/</loc>
          <lastmod>2023-01-24</lastmod>
          <changefreq>daily</changefreq>
@@ -597,6 +602,11 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/til/til/2023-01-24/</loc>
+         <lastmod>2023-01-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/til/til/2023-01-25/</loc>
          <lastmod>2023-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
