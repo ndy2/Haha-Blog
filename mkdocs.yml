@@ -224,5 +224,6 @@ nav:
   - 강의들: 
       - 토비의 스프링부트 이해와원리: 
           - 스프링부트 시작하기: lectures/toby-springboot-hello/ch01/index.html
-  - TIL: til/getting-started.md
+          - 독립 실행형 서블릿 애플리케이션: lectures/toby-springboot-hello/ch03/index.html
+- TIL: til/getting-started.md
   - 북마크: bookmarks/bookmarks.md
