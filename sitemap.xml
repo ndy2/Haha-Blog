@@ -336,6 +336,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/java/sort/collection/</loc>
+         <lastmod>2023-01-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/kotlin/introduction/</loc>
          <lastmod>2023-01-29</lastmod>
          <changefreq>daily</changefreq>
