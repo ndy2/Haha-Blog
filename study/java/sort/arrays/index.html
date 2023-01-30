@@ -7,13 +7,13 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/study/java/sort/collection/" rel="canonical"/>
-<link href="../../synchronized/" rel="prev"/>
+<link href="https://ndy2.github.io/Haha-Blog/study/java/sort/arrays/" rel="canonical"/>
+<link href="../collections/" rel="prev"/>
 <link href="../../../kotlin/introduction/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.7" name="generator"/>
-<title>컬렉션(List)의 정렬 - Haha 블로그</title>
-<link href="../../../../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.8" name="generator"/>
+<title>배열(Array)의 정렬 - Haha 블로그</title>
+<link href="../../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -61,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              컬렉션(List)의 정렬
+              배열(Array)의 정렬
             
           </span>
 </div>
@@ -224,14 +224,19 @@
           정렬
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../collections/">
+        컬렉션(List)의 정렬
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          컬렉션(List)의 정렬
+          배열(Array)의 정렬
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        컬렉션(List)의 정렬
+        배열(Array)의 정렬
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -245,28 +250,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1.  컬렉션 정렬
+<a class="md-nav__link" href="#1-arrayssort">
+    1. Arrays.sort
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2. 리스트 정렬
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-arraylist">
-    3. ArrayList 정렬
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4">
-    4. 나머지 리스트 구현체 정렬
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5">
-    5. 결론
+<a class="md-nav__link" href="#2-comparabletimsort-vs-timsort">
+    2. ComparableTimsort vs Timsort
   </a>
 </li>
 </ul>
@@ -1056,28 +1046,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1.  컬렉션 정렬
+<a class="md-nav__link" href="#1-arrayssort">
+    1. Arrays.sort
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2. 리스트 정렬
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-arraylist">
-    3. ArrayList 정렬
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4">
-    4. 나머지 리스트 구현체 정렬
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5">
-    5. 결론
+<a class="md-nav__link" href="#2-comparabletimsort-vs-timsort">
+    2. ComparableTimsort vs Timsort
   </a>
 </li>
 </ul>
@@ -1087,125 +1062,136 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/study/java/sort/collection.md" title="View source of this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/study/java/sort/arrays.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>컬렉션(List)의 정렬</h1>
+<h1>배열(Array)의 정렬</h1>
 <h3 id="0">0. 들어가며<a class="headerlink" href="#0" title="Permanent link">¶</a></h3>
-<p>자바는 <code>java.util</code> 패키지를 통해 정렬 기능을 제공한다. 이들의 동작 방식과 주의 사항에 대해 알아보자!</p>
+<p><a href="collections">이전 글</a>에서는 <code>Collections</code>.<em><code>sort</code></em> 의 동작 방식에 대해 알아보았다. 컬렉션의 정렬 API 는 단순히 배열의 정렬 API - <code>Arrays</code>.<em><code>sort</code></em> 를 활용하고있었다. 오늘은 배열의 정렬 API 에 대해서 알아보자.</p>
 <hr/>
-<h3 id="1">1.  컬렉션 정렬<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
+<h3 id="1-arrayssort">1. Arrays.<em>sort</em><a class="headerlink" href="#1-arrayssort" title="Permanent link">¶</a></h3>
+<p>전통적이고 대표적이고 가장 널리 활용되는 정렬 API 이다.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">java.util</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Collections</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Arrays</span><span class="p">{</span>
 <a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">super</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="n">DualPivotQuicksort</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">);</span><span class="w">  </span>
 <a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="p">}</span>
 <a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="n">Comparator</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">super</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w">  </span>
-<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
-<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">}</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fromIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">toIndex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="n">rangeCheck</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">,</span><span class="w"> </span><span class="n">fromIndex</span><span class="p">,</span><span class="w"> </span><span class="n">toIndex</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="n">DualPivotQuicksort</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">fromIndex</span><span class="p">,</span><span class="w"> </span><span class="n">toIndex</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="c1">// </span>
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="c1">// ... 다른 primitive type sort 메서드</span>
+<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="c1">//</span>
+<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>
+<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">LegacyMergeSort</span><span class="p">.</span><span class="na">userRequested</span><span class="p">)</span><span class="w">  </span><span class="n">legacyMergeSort</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">ComparableTimSort</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>
+<a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="n">T</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Comparator</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">super</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">            </span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">LegacyMergeSort</span><span class="p">.</span><span class="na">userRequested</span><span class="p">)</span><span class="w">  </span><span class="n">legacyMergeSort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="n">TimSort</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">        </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">    </span><span class="c1">// ...</span>
+<a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="p">}</span>
 </code></pre></div>
-<p>컬렉션 정렬 API 는 <code>Collections.</code> <em><code>sort( )</code></em> 이다. 정렬하고자 하는 <code>List</code> 를 기본적으로 받으며 오버로딩을 통해 <code>Comparator</code> 를 명시적으로 받는 것과 그렇지 않은 방식 두가지가 제공된다. </p>
-<p>구현을 살펴보면 배열의 sort 메서드 <code>List.sort()</code> 를 그대로 넘겨서 호출한다. 별로 살펴볼게 없다! <img alt="👍" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f44d.svg" title=":thumbsup:"/></p>
-<hr/>
-<h3 id="2">2. 리스트 정렬<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
-<p><span class="keys"><kbd class="key-option">Option</kbd><span>+</span><kbd class="key-b">B</kbd></span> 를 눌러 List 의 구현을 살펴보자 ! </p>
-<div class="highlight"><span class="filename">java.util.List#sort()</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="n">Comparator</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">super</span><span class="w"> </span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">toArray</span><span class="p">();</span><span class="w">  </span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">Comparator</span><span class="p">)</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w">  </span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="n">ListIterator</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">listIterator</span><span class="p">();</span><span class="w">  </span>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="n">i</span><span class="p">.</span><span class="na">next</span><span class="p">();</span><span class="w">  </span>
-<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">        </span><span class="n">i</span><span class="p">.</span><span class="na">set</span><span class="p">((</span><span class="n">E</span><span class="p">)</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w">  </span>
-<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
-<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">}</span>
-</code></pre></div>
-<p>사실 List 는 인터페이스 이기때문에 구현이라는 표현은 애매하지만 java 8 에 추가된 default method 를 통해 sort 의 기능을 간단하게 구현하고 있다. 컬렉션을 배열로 바꾸어 배열의 정렬 api (<code>Arrays#sort( )</code>) 를 그대로 활용하고 있다.</p>
-<p>특이한점으로는 배열의 값을 바꾸는 과정에 listIterator 를 활용한다는 점이다. 이렇게되면 값을 바꿀때 매번 index 를 찾아가는 것이 아니라 참조 자체를 순회하는 방식이기 때문에 효율적인것 같다.</p>
-<hr/>
-<p>다시  <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-option">Option</kbd><span>+</span><kbd class="key-b">B</kbd></span> 를 눌러 이 인터페이스를 구현한 녀석을 살펴보자.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/List.sort.png"><img alt="List.sort.png" src="../images/List.sort.png"/></a></p>
-<h3 id="3-arraylist">3. ArrayList 정렬<a class="headerlink" href="#3-arraylist" title="Permanent link">¶</a></h3>
-<p><code>ArrayList</code> 가 눈에 띈다! 살펴보자!</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nd">@Override</span>
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nd">@SuppressWarnings</span><span class="p">(</span><span class="s">"unchecked"</span><span class="p">)</span>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="n">Comparator</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">super</span><span class="w"> </span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">expectedModCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modCount</span><span class="p">;</span><span class="w">  </span>
-<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">((</span><span class="n">E</span><span class="o">[]</span><span class="p">)</span><span class="w"> </span><span class="n">elementData</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w">  </span>
-<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">modCount</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">expectedModCount</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConcurrentModificationException</span><span class="p">();</span><span class="w">  </span>
-<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="n">modCount</span><span class="o">++</span><span class="p">;</span><span class="w">  </span>
-<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="p">}</span>
-</code></pre></div>
-<p><code>ArrayList</code> 는 말그대로 Array 를 내부에 가지고 있기 때문에 (위 코드의 <code>elementData</code> 필드) 이를 그대로 활용하는 방식으로 오버라이딩해서 구현하였다. 또한 <code>modCount</code> 라는 필드를 통해 여러 쓰레드가 동시에 리스트를 수정하는 경우를 간단하게 제어하고 있다. </p>
-<hr/>
-<h3 id="4">4. 나머지 리스트 구현체 정렬<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
-<p>그런데 위 목록을 살펴보니 <code>LinkedList</code> 와 <code>Stack</code> 이 보이지 않는다. (<em>deprecated</em> 된 <code>Vector</code> 같은 경우는 <code>ArrayList</code> 와 구현 방식이 같다.)</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/ListCollection.png"><img alt="ListCollection.png" src="../images/ListCollection.png"/></a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Stack Sort</label><label for="__tabbed_1_2">LinkedList Sort</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Comparator</span><span class="p">;</span><span class="w">  </span>
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Stack</span><span class="p">;</span><span class="w">  </span>
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">        </span><span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">  </span>
-<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">        </span><span class="n">stack</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w">  </span>
-<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">        </span><span class="n">stack</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">  </span>
-<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">        </span><span class="n">stack</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">  </span>
-<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">        </span><span class="n">stack</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span><span class="w">  </span>
-<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>
-<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">        </span><span class="n">stack</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">naturalOrder</span><span class="p">());</span><span class="w">  </span>
-<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span><span class="w">  </span>
-<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">());</span><span class="w">  </span>
-<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">        </span><span class="p">}</span><span class="w">  </span>
-<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
-<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="p">}</span>
-<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="c1">// 7 5 3 1</span>
-</code></pre></div>
+<p><code>Arrays</code>.<em><code>sort</code></em> 는 우선 구간을 지정하는 방식과 구간을 지정하지 않는 방식이 있다. <code>fromIndex</code>, <code>toIndex</code> 두 인덱스를 전달 받아 범위 체크를 해주고 정렬을 수행한다. 이때 범위 지정 방식에서 주의할 점은 <code>fromIndex</code> 는 Inclusive 이고 <code>toIndex</code> 는 Exclusive 하다는 점이다. 즉, fromIndex 는 포함하고 toIndex 는 포함하지 않는다. 다른 모든 정렬 api 도 범위를 지정하는 메서드를 제공하지만 구현이 크게 다르지 않기 때문에 위 코드에는 추가하지 않았다.</p>
+<div class="admonition note">
+<p class="admonition-title">범위 정렬 메서드의 파라미터 Javadoc</p>
+<p>Params:
+a – the array to be sorted 
+fromIndex – the index of the first element (inclusive) to be sorted 
+toIndex – the index of the last element (exclusive) to be sorted</p>
 </div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Comparator</span><span class="p">;</span><span class="w">  </span>
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span><span class="w">  </span>
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
-<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">        </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">linkedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">  </span>
-<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">        </span><span class="n">linkedList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w">  </span>
-<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">        </span><span class="n">linkedList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">  </span>
-<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">        </span><span class="n">linkedList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">  </span>
-<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">        </span><span class="n">linkedList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span><span class="w">  </span>
-<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a>
-<a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">        </span><span class="n">linkedList</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">naturalOrder</span><span class="p">());</span><span class="w">  </span>
-<a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">linkedList</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span><span class="w">  </span>
-<a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">linkedList</span><span class="p">.</span><span class="na">pop</span><span class="p">());</span><span class="w">  </span>
-<a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">        </span><span class="p">}</span><span class="w">  </span>
-<a href="#__codelineno-4-17" id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
-<a href="#__codelineno-4-18" id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="p">}</span>
-<a href="#__codelineno-4-19" id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="c1">// 1 3 5 7</span>
+<p>구현을 살펴보면 드디어 정렬 알고리즘과 관련된 이름들이 보이기 시작한다. 또한 primitive type 과 Object 타입에 대해서 구현 방식이 다른 것을 알 수 있다. </p>
+<div class="admonition note">
+<ul>
+<li>primitive type -&gt; <code>DualPivotQuicksort</code>.<em><code>sort</code></em></li>
+<li>객체 타입 (<code>Object[]</code> ) -&gt; <code>ComparableTimsort</code>.<em><code>sort</code></em> </li>
+<li>객체 타입 + <code>Comparator</code> (<code>T[] and Comparator&lt;? super T&gt;</code> )) -&gt; <code>Timsort</code>.<em><code>sort</code></em></li>
+</ul>
+</div>
+<p>객체 타입의 경우 하위호환성을 위해 사용자의 요구에 따라 merge sort 를 사용하도록 지정할 수 있다. 하지만 이후 릴리즈 버전에서는 언제라도 제거 될 수 있고 굳이 사용할 이유가 없기 때문에 사용하면 안된다.  (VM option :  <code>-Djava.util.Arrays.useLegacyMergeSort=true</code> )</p>
+<p>추후에 알고리즘 쪽에서 정렬에 관해 한번 정리 할때 추가적으로 정리 하는 것이 더 좋을거 같아서 이 글에서 DulPivotQuicksort 나 Timsort 의 구현까지 들어가보지는 않을것이다.</p>
+<p>자바가 왜 primitive type 과 객체 타입에 대해서 서로 다른 알고리즘을 적용하였을지 생각해보다가 javadoc 을 보고 힌트를 얻을 수 있었다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>&lt;Arrays 클래스의 Javadoc 일부&gt;
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>sort(Object[])} does not have to be a MergeSort, but it does have to be stable
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>&lt;모든 객체 타입 정렬 메서드의 Javadoc 일부&gt;
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>This sort is guaranteed to be stable: equal elements will not be reordered as a result of the sort.
 </code></pre></div>
+<p>정렬 메서드가 Stable 하다는 것의 의미는 equal 한 경우 순서가 유지된다는 것을 의미한다. Timsort 의 구현을 이후에 살펴보겠지만 Timsort 는 기본적으로 Stable 한 두가지 정렬 <em>Merge sort</em> 와 <em>Insertion sort</em> 를 결합하였기 때문에 Stable 하다. 반면 <em>Quicksort</em> 의 변형인 <em>DualPivotQuicksort</em> 는 Stable 하지 않다. 하지만 생각해보면 primitive 배열이 stable 할 필요가 없다. 왜냐하면 두 값이 equal 하다면 그 값이 표현하는 모든 논리적인 의미가 같다는 것이고 순서를 유지하는것이 의미가 없기 때문이다. 아마 이러한 이유로 자바의 개발자들은 primitive 타입과 객체 타입의 정렬 알고리즘을 별도로 구현한것 같다. (뇌피셜)</p>
+<hr/>
+<h3 id="2-comparabletimsort-vs-timsort">2. <code>ComparableTimsort</code> vs <code>Timsort</code><a class="headerlink" href="#2-comparabletimsort-vs-timsort" title="Permanent link">¶</a></h3>
+<p>사실 정렬 API 에 관해 정리를 시작하게된 이유도 바로 이 주제에 대해서 알아보기 위해서였다. 이전에 자바의 정렬 API 에 대해서 학습을 했을때에는 아래와 같은 정리를 많은 다른 블로그를 통해 확인하고 결론을 내렸었다.</p>
+<div class="admonition note">
+<ul>
+<li>컬렉션 -&gt; 팀 소트</li>
+<li>배열<ul>
+<li>primitive type 배열 -&gt; Dual Pivot Quicksort</li>
+<li>Object Type 배열 -&gt; 팀 소트</li>
+</ul>
+</li>
+</ul>
 </div>
+<p>맞는 말이고 이 까지만 해도 충분한것 같다. 그런데 정렬에 관한 알고리즘 문제를 풀다가 이상한 점을 발견했다. </p>
+<hr/>
+<p>문제 - <a href="https://www.acmicpc.net/problem/2887"><span class="twemoji"><svg data-name="레이어 1" id="레이어_1" viewbox="0 0 400 512" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:#27e2a4;}.cls-2{fill:#fff;}</style></defs><title>16</title><polygon class="cls-1" points="0 0 0 419.74 199.77 512 400 419.74 400 0 0 0"></polygon><polygon class="cls-2" points="0 339.02 0 378.94 199.77 471.2 400 378.94 400 339.02 199.77 431.28 0 339.02"></polygon><path class="cls-2" d="M293.24,239.07q0,23.42-8.28,40.5a80.79,80.79,0,0,1-22.14,28.26,95.4,95.4,0,0,1-31.5,16.74,122,122,0,0,1-69.3,1.08,105,105,0,0,1-28.44-12.78,86.12,86.12,0,0,1-22-20.34,81.21,81.21,0,0,1-13.5-27.18l55.08-16.92a42.82,42.82,0,0,0,14.94,22q11,8.64,26.1,8.64a40.76,40.76,0,0,0,26.82-9.36Q232.4,260.33,232.4,242q0-11.14-4.68-18.72a36.31,36.31,0,0,0-12.06-12.06,50.2,50.2,0,0,0-16.74-6.3,98.92,98.92,0,0,0-18.72-1.8,183.54,183.54,0,0,0-31.14,3.06,181.34,181.34,0,0,0-31.14,8.1L124,68.43H280.28v51.84H177.68l-2.16,40.32a78.33,78.33,0,0,1,12.78-2q7-.54,12.78-.54a125.49,125.49,0,0,1,36,5,82.55,82.55,0,0,1,29.34,15.3A73.33,73.33,0,0,1,286,203.79Q293.24,218.91,293.24,239.07Z" transform="translate(0)"></path></svg></span> 행성 터널 2887번</a>  는 <em>최소 스패닝 트리</em><sup>Mininum Spanning Tree</sup> 에 관한 문제이다. 이 문제의 특징은 MST 를 판별하는데 필요한 <code>Edge</code> 를 단순히 가능한 모든 <code>Edge</code> 를 넣게 된다면 메모리 초과를 피할 수 없다는 것이다. 관련 질답 - <a href="https://www.acmicpc.net/board/view/50645">링크</a></p>
+<p>따라서 정렬을 이용해 <code>MST</code> 의 edge 가 될 수 있는 후보군 <code>Edge</code> 를 O(n) 으로 (실제는 O(3n)) 하여 Space Complexity 를 선형적으로 가져가는 것이 문제 풀이의 핵심이다. 단순히 <code>Edge</code> 를 때려박으면 메모리가 터진 다는 것을 알았지만 해결할 방법이 잘 생각나지 않아 다른 분들의 풀이를 참고했고 (링크) 내 방식의 코드로 옮겼다. (링크) 그런데 암만봐도 두 코드가 똑같은데 여전에 메모리 초과가 발생했다 !! (맞왜틀....)</p>
+<p>약 1시간 가량 맞왜틀을 시전한 후에 문제점을 알아냈다. 바로 이장의 주제인 ComparableTimsort 와 Timsort 의 차이이다.</p>
+<p>```kotlin "실패한 코드 일부"
+private data class Point(val idx: Int, val value: Int)</p>
+<p>fun main(){
+    val x = mutableListOf<point>()
+    //...
+    x.sortBy {it.value}
+    //...
+}
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>```kotlin "성공한 코드 일부"
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>private data class Point(val idx: Int, val value: Int) : Comparable&lt;Point&gt; {  
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>    override fun compareTo(other: Point) = value - other.value  
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>}
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>fun main(){
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>    val x = mutableListOf&lt;Point&gt;()
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>    //...
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>    x.sort()
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a>    //...
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a>}
+</code></pre></div></point></p>
+<p>실패한 코드에서는 <code>sortBy { }</code> 를 활용하였다. <code>Comparable</code> 을 구현하지 않고 직접 <code>Comparator</code> 를 하나 생성해서 전달하였다. 성공한 코드에서는 <code>sort()</code> 를 활용하였고 <code>Comparable</code> 을 구현하였다. </p>
+<p>이 장에서 다루지 않은 Kotlin 과 관련된 call stack 이 조금 등장하긴 하지만 둘의 callstack 을 따라가다 보면 다음과 같은 차이가 나온다.</p>
+<p><code>sortBy</code> (<code>Comparator</code> 제공)</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/sortby-callstack.png"><img alt="sortby-callstack.png" src="../images/sortby-callstack.png"/></a></p>
+<p><code>sort</code> (<code>Comparator</code> 미제공, <code>Comparable</code> 구현)</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/sort-callstack.png"><img alt="sort-callstack.png" src="../images/sort-callstack.png"/></a></p>
+<p>Timsort 와 ComparableTimsort 의 해당 라인을 살펴보면 그 이름과 콜 스택에서 알 수 있듯이 ComparableTimsort 는 원소를 비교하는 방식에서 <code>Comparable</code> 을 이용하는가 혹은 전달받는 <code>Comparator</code> 를 이용하는가 에 대한 차이만 있다.</p>
+<div class="admonition note">
+<ul>
+<li><code>ComparableTimsort</code> line 325 - <code>((Comparable) a[runHi]).compareTo(a[runHi - 1])</code> </li>
+<li><code>Timsort</code> line <em>296</em> - <code>c.compare(pivot, a[mid])</code></li>
+</ul>
 </div>
-</input></input></div>
-<p>이들 모두 잘 동작한다. <code>Stack</code> 은 <code>Vector</code> 를 상속하기 때문에 내부적으로 배열을 통해 데이터를 저장하고 있다. 따라서 <code>Stack</code> 은 <code>List.sort</code> 호출시 가장 가까운 부모의 오버라이드 메서드인 <code>Vector</code> 의 구현에 따라 정렬을 수행한다. 사실 이는 잘못된 구현이고 자바의 실수입니다. (<a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4475301">관련 링크</a>) Stack 은 LIFO 구조를 만족하기 위해 인덱스를 이용한 접근이나 정렬 기능을 제공하면 안되지만 Vector 를 상속하기 때문에 배열과 관련된 모든 api 가 노출되어야 합니다.</p>
-<p>반면 <code>LinkedList</code> 는 위에서 살펴본 <code>List.sort</code> 의 <code>default</code> 구현을 통해 정렬이 수행되는것을 확인 할 수 있다.</p>
-<h3 id="5">5. 결론<a class="headerlink" href="#5" title="Permanent link">¶</a></h3>
-<p>컬렉션과 관련된 정렬 API 를 살펴보면 결국 모두 배열의 컬렉션 API - <code>Arrays.sort</code> 를 이용한다는 것을 알 수 있다. 다음 시간에는 이녀석을 파해쳐 보자!</p>
+<p>야심차게 이 문제의 원인이 Timsort 와 ComparableTimsort 의 구현방식에서의 차이라고 생각하고 실험과 정리를 하던 중 진짜 문제점을 찾아내었다. 문제는 자바 쪽이 아니고 코틀린 쪽에 있었다.</p>
+<p>내용이 너무 길어지고 자바와는 관련이 없어질 것 같아 이쯤에서 마무리하고 코틀린 쪽에서 이 내용을 추가로 다루어보자!</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2023</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
 </small>
 </div>
 </article>
@@ -1214,7 +1200,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 동시성 - synchrozied" class="md-footer__link md-footer__link--prev" href="../../synchronized/" rel="prev">
+<a aria-label="Previous: 컬렉션(List)의 정렬" class="md-footer__link md-footer__link--prev" href="../collections/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -1223,7 +1209,7 @@
 <span class="md-footer__direction">
                   Previous
                 </span>
-                동시성 - synchrozied
+                컬렉션(List)의 정렬
               </div>
 </div>
 </a>
