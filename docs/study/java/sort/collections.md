@@ -129,7 +129,7 @@ public void sort(Comparator<? super E> c) {
 
 이들 모두 잘 동작한다. `Stack` 은 `Vector` 를 상속하기 때문에 내부적으로 배열을 통해 데이터를 저장하고 있다. 따라서 `Stack` 은 `List.sort` 호출시 가장 가까운 부모의 오버라이드 메서드인 `Vector` 의 구현에 따라 정렬을 수행한다. 사실 이는 잘못된 구현이고 자바의 실수입니다. ([관련 링크](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4475301)) Stack 은 LIFO 구조를 만족하기 위해 인덱스를 이용한 접근이나 정렬 기능을 제공하면 안되지만 Vector 를 상속하기 때문에 배열과 관련된 모든 api 가 노출되어야 합니다.
 
-반면 `LinkedList` 는 위에서 살펴본 `List.sort` 의 `default` 구현을 통해 정렬이 수행되는것을 확인 할 수 있다.
+반면 `LinkedList` 는 위에서 살펴본 `List.sort` 의 `default` 구현을 통해 정렬이 수행되는것을 확인 할 수 있다. `LinkedList` 를 정렬한다는 것은 `Stack` 과는 달리 논리적인 결함이 있지는 않다. 하지만 정말 이 경우 `LinkedList` 자료구조가 적절한지 고민해볼 필요가 있다.
 
 
 ### 5. 결론
