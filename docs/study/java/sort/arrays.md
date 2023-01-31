@@ -62,92 +62,135 @@ public class Arrays{
 
 객체 타입의 경우 하위호환성을 위해 사용자의 요구에 따라 merge sort 를 사용하도록 지정할 수 있다. 하지만 이후 릴리즈 버전에서는 언제라도 제거 될 수 있고 굳이 사용할 이유가 없기 때문에 사용하면 안된다.  (VM option :  `-Djava.util.Arrays.useLegacyMergeSort=true` )
 
-추후에 알고리즘 쪽에서 정렬에 관해 한번 정리 할때 추가적으로 정리 하는 것이 더 좋을거 같아서 이 글에서 DulPivotQuicksort 나 Timsort 의 구현까지 들어가보지는 않을것이다.
+추후에 알고리즘 쪽에서 정렬에 관해 한번 정리 할때 추가적으로 정리 하는 것이 더 좋을거 같아서 이 글에서 `DulPivotQuicksort` 나 `Timsort` 의 구현까지 들어가보지는 않을것이다. 객체 타입의 경우 `Comparator` 를 지정해주면 그냥 `Timsort` 를 사용하고 그렇지 않고 `Comparable` 을 상속한 경우에는 `ComparableTimsort` 를 사용한다. 둘의 차이는 두 객체의 비교 연산에 `Comparable` 을 사용하가, `Comparable` 을 사용하는가 이다. 메서드 호출에 따른 성능차이가 있을 수 있긴 하지만 optimized 된 VM 을 사용한다면 큰 의미는 없다고 한다.
+
+---
+
+### 2. 왜 서로 다른 알고리즘을 사용했을까? (뇌피셜)
 
 자바가 왜 primitive type 과 객체 타입에 대해서 서로 다른 알고리즘을 적용하였을지 생각해보다가 javadoc 을 보고 힌트를 얻을 수 있었다.
 
-```
-<Arrays 클래스의 Javadoc 일부>
-sort(Object[])} does not have to be a MergeSort, but it does have to be stable
+!!! quote "Arrays 클래스와 정렬 메서드의 Javadoc 일부"
+    sort(Object[])} does not have to be a MergeSort, but it does have to be stable
 
-<모든 객체 타입 정렬 메서드의 Javadoc 일부>
-This sort is guaranteed to be stable: equal elements will not be reordered as a result of the sort.
-```
- 
-정렬 메서드가 Stable 하다는 것의 의미는 equal 한 경우 순서가 유지된다는 것을 의미한다. Timsort 의 구현을 이후에 살펴보겠지만 Timsort 는 기본적으로 Stable 한 두가지 정렬 *Merge sort* 와 *Insertion sort* 를 결합하였기 때문에 Stable 하다. 반면 *Quicksort* 의 변형인 *DualPivotQuicksort* 는 Stable 하지 않다. 하지만 생각해보면 primitive 배열이 stable 할 필요가 없다. 왜냐하면 두 값이 equal 하다면 그 값이 표현하는 모든 논리적인 의미가 같다는 것이고 순서를 유지하는것이 의미가 없기 때문이다. 아마 이러한 이유로 자바의 개발자들은 primitive 타입과 객체 타입의 정렬 알고리즘을 별도로 구현한것 같다. (뇌피셜)
+    This sort is guaranteed to be stable: 
+    equal elements will not be reordered as a result of the sort.
 
 
----
+정렬 메서드가 Stable 하다는 것의 의미는 equal 한 경우 순서가 유지된다는 것을 의미한다. Timsort 의 구현을 이후에 살펴보겠지만 Timsort 는 기본적으로 Stable 한 두가지 정렬 *Merge sort* 와 *Insertion sort* 를 결합하였기 때문에 Stable 하다. 
 
-### 2. `ComparableTimsort` vs `Timsort`
-
-사실 정렬 API 에 관해 정리를 시작하게된 이유도 바로 이 주제에 대해서 알아보기 위해서였다. 이전에 자바의 정렬 API 에 대해서 학습을 했을때에는 아래와 같은 정리를 많은 다른 블로그를 통해 확인하고 결론을 내렸었다.
-
-!!! note ""
-
-    * 컬렉션 -> 팀 소트
-    * 배열
-        * primitive type 배열 -> Dual Pivot Quicksort
-        * Object Type 배열 -> 팀 소트
-
-맞는 말이고 이 까지만 해도 충분한것 같다. 그런데 정렬에 관한 알고리즘 문제를 풀다가 이상한 점을 발견했다. 
+반면 *Quicksort* 의 변형인 *DualPivotQuicksort* 는 Stable 하지 않다. 하지만 생각해보면 primitive 배열이 stable 할 필요가 없다. 왜냐하면 두 값이 equal 하다면 그 값이 표현하는 모든 논리적인 의미가 같다는 것이고 순서를 유지하는것이 의미가 없기 때문이다. 아마 이러한 이유로 자바의 개발자들은 primitive 타입과 객체 타입의 정렬 알고리즘을 별도로 구현한것 같다.
 
 ---
 
-문제 - {{ boj(":p5: 행성 터널", 2887) }}  는 *최소 스패닝 트리*<sup>Mininum Spanning Tree</sup> 에 관한 문제이다. 이 문제의 특징은 MST 를 판별하는데 필요한 `Edge` 를 단순히 가능한 모든 `Edge` 를 넣게 된다면 메모리 초과를 피할 수 없다는 것이다. 관련 질답 - [링크](https://www.acmicpc.net/board/view/50645)
+### 3. Arrays.*parallelSort*
 
-따라서 정렬을 이용해 `MST` 의 edge 가 될 수 있는 후보군 `Edge` 를 O(n) 으로 (실제는 O(3n)) 하여 Space Complexity 를 선형적으로 가져가는 것이 문제 풀이의 핵심이다. 단순히 `Edge` 를 때려박으면 메모리가 터진 다는 것을 알았지만 해결할 방법이 잘 생각나지 않아 다른 분들의 풀이를 참고했고 (링크) 내 방식의 코드로 옮겼다. (링크) 그런데 암만봐도 두 코드가 똑같은데 여전에 메모리 초과가 발생했다 !! (맞왜틀....)
+`java.util.Arrays` 에는 sort 외에 *parallelSort* 라고하는 정렬 API 가 하나 더 있다. 그 이름에서도 알수 있듯이 여러 쓰레드를 통해 병렬적으로 정렬을 수행하는 API 이다.
 
-약 1시간 가량 맞왜틀을 시전한 후에 문제점을 알아냈다. 바로 이장의 주제인 ComparableTimsort 와 Timsort 의 차이이다.
+```java
+package java.util
 
-```kotlin "실패한 코드 일부"
-private data class Point(val idx: Int, val value: Int)
+public class Arrays{
 
-fun main(){
-    val x = mutableListOf<Point>()
-    //...
-    x.sortBy {it.value}
-    //...
+    public static void parallelSort(int[] a) {  
+        DualPivotQuicksort.sort(a, ForkJoinPool.getCommonPoolParallelism(), 0, a.length);  
+    }
+
+    // sort() 시리즈와 마찬가지로 범위를 지정할 수 있다. 
+    public static void parallelSort(int[] a, int fromIndex, int toIndex) {  
+        rangeCheck(a.length, fromIndex, toIndex);  
+        DualPivotQuicksort.sort(a, ForkJoinPool.getCommonPoolParallelism(), fromIndex, toIndex);  
+    }
+
+    // 몇몇 primitive 타입은 parallelSort 를 내부적으로 지원하지 않는다?! 왜 와이?
+    public static void sort(byte[] a) {  
+        DualPivotQuicksort.sort(a, 0, a.length);  
+    }
+
+    public static void parallelSort(short[] a) {  
+        DualPivotQuicksort.sort(a, 0, a.length);  
+    }
+
+    /* The minimum array length below which a parallel sorting
+     * algorithm will not further partition the sorting task. Using 
+     * smaller sizes typically results in memory contention across 
+     * tasks that makes parallel speedups unlikely. */
+     private static final int MIN_ARRAY_SORT_GRAN = 1 << 13;
+
+    // 객체타입의 parallelSort API
+    public static <T extends Comparable<? super T>> void parallelSort(T[] a) {  
+        int n = a.length, p, g;  
+        
+        if (n <= MIN_ARRAY_SORT_GRAN ||  
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)  {
+            TimSort.sort(a, 0, n, NaturalOrder.INSTANCE, null, 0, 0);  
+        }
+        else { 
+            new ArraysParallelSortHelpers.FJObject.Sorter<>  (
+                 null, a,  
+                 (T[])Array.newInstance(a.getClass().getComponentType(), n),  
+                 0, n, 0, 
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?  
+                 MIN_ARRAY_SORT_GRAN : g, NaturalOrder.INSTANCE
+             )
+             .invoke();  
+            }
+        }
+}
+
+```
+
+
+`Arrays`.*`sort`* 에서 다루지 않았던 정수 배열을 받는 `DualPivotQuicksort`.*`sort`* api 의 두번째 인자의 정체가 드러났다. 두번째 인자는 바로 parallelism 을 받는 인자로 병렬성을 나타내는 인자였다. 그렇기 때문에 그냥 *sort( )* 에서는 항상 0을 제공하였던 것이다. 참고로 병렬성은 0 based 로 사용하는 코어 (쓰레드)의 개수 -1 로 표현된다. - 자바 기본 쓰레드 풀인 `ForkJoinPool` 의 *`getCommonPoolParallelism()`* 을 확인해 보면 알 수 있다. ([참고 링크](https://ssdragon.tistory.com/119))
+
+----
+
+#### 1. 특이사항
+
+또한 byte (1byte), char (2byte), short (2byte) 과 같은 사이즈가 작은 primitive 타입에 대해서는 `Arrays`.*`parallelSort`* API 를 제공하지만 내부적으로는 parallelism 을 제공하지도 않고 내부 구현도 그냥 `Arrays`.*`sort`* 와 같다는 점이 눈에 띈다.
+
+-  `DualPivotQuicksort`.*`sort( )`* 의 오버로드 메서드들
+![DualPivotQuicksort.sort.png](images/DualPivotQuicksort.sort.png)
+
+---
+
+### 2.  parallelism 이 적용되는 조건, 적용되는 방식 간단 확인
+
+먼저 primitive 타입 중 parallelism 인자를 가지고 있는 int, long, double, float 의 DualPivoQuicksort.sort( ) 를 확인해보자.
+
+``` java title="DualPivoQuicksort#sort(int[], ...)"
+/* Min array size to perform sorting in parallel. */
+private static final int MIN_PARALLEL_SORT_SIZE = 4 << 10;
+
+static void sort(int[] a, int parallelism, int low, int high) {  
+    int size = high - low;  
+  
+    if (parallelism > 1 && size > MIN_PARALLEL_SORT_SIZE) {  
+        int depth = getDepth(parallelism, size >> 12);  
+        int[] b = depth == 0 ? null : new int[size];  
+        new Sorter(null, a, b, low, size, low, depth).invoke();  
+    } else {  
+        sort(null, a, 0, low, high);  
+    }  
 }
 ```
 
-```kotlin "성공한 코드 일부"
-private data class Point(val idx: Int, val value: Int) : Comparable<Point> {  
-    override fun compareTo(other: Point) = value - other.value  
-}
 
-fun main(){
-    val x = mutableListOf<Point>()
-    //...
-    x.sort()
-    //...
-}
-```
+parallelism 이 1 보다 크고 정렬을 수행할 데이터의 개수가 2<sup>12</sup> (4096) 보다 많은 경우에만 병렬 정렬이 수행된다. 
 
-실패한 코드에서는 `sortBy { }` 를 활용하였다. `Comparable` 을 구현하지 않고 직접 `Comparator` 를 하나 생성해서 전달하였다. 성공한 코드에서는 `sort()` 를 활용하였고 `Comparable` 을 구현하였다. 
+정렬은 `Sorter` 라고 하는 클래스로 수행되고 이들의 병합은 `Merger` 라고하는 내부 클래스가 수행한다. 이들은 모두 `ForkJoinTask` 라고 하는 녀석을 상속하고 있으며 정렬과 병합작업을 위해 재귀적으로 호출되어 `ForkJoinPool` 에서 쓰레드를 할당받아 각각 작업을 수행하는 것 같다. (어렵네용..)
 
-이 장에서 다루지 않은 Kotlin 과 관련된 call stack 이 조금 등장하긴 하지만 둘의 callstack 을 따라가다 보면 다음과 같은 차이가 나온다.
+객체 타입의 경우에는 2<sup>13</sup> (8192) 개 보다 많은 데이터에 대해서만 병렬성을 지원하는 것을 알 수 있다.
 
-`sortBy` (`Comparator` 제공)
+`Arrays`.*`sort`* 와 `Arrays`.*`parallelSort`* 의 성능을 비교한 내용은 [여기](https://www.baeldung.com/java-arrays-sort-vs-parallelsort#comparison) 에서 확인해보자.
 
-![sortby-callstack.png](images/sortby-callstack.png)
+---
 
+### 4. 마무리...
 
-`sort` (`Comparator` 미제공, `Comparable` 구현)
+알고리즘을 건드리지 않는 선에서 정렬의 동작 방식을 최대한 깊게 파해쳐 본것 같다.
 
-![sort-callstack.png](images/sort-callstack.png)
+요 내용은 어느정도 알던 내용이지만 시간을 내 글을 통해 정리하면서 좀더 지식이 정제된것 같은 느낌이 든다. 
 
-Timsort 와 ComparableTimsort 의 해당 라인을 살펴보면 그 이름과 콜 스택에서 알 수 있듯이 ComparableTimsort 는 원소를 비교하는 방식에서 `Comparable` 을 이용하는가 혹은 전달받는 `Comparator` 를 이용하는가 에 대한 차이만 있다.
-
-!!! note ""
-
-    - `ComparableTimsort` line 325 - `((Comparable) a[runHi]).compareTo(a[runHi - 1])` 
-    - `Timsort` line *296* - `c.compare(pivot, a[mid])`
-
-야심차게 이 문제의 원인이 Timsort 와 ComparableTimsort 의 구현방식에서의 차이라고 생각하고 실험과 정리를 하던 중 진짜 문제점을 찾아내었다. 문제는 자바 쪽이 아니고 코틀린 쪽에 있었다.
-
-내용이 너무 길어지고 자바와는 관련이 없어질 것 같아 이쯤에서 마무리하고 코틀린 쪽에서 이 내용을 추가로 다루어보자!
-
-
-
+사실 이 글은 알고리즘 문제를 풀다가 시작된 한 의문점에서 시작되었다. 정렬 문제를 코틀린으로 푸는 도중 자바와 코틀린의 코드가 똑같아 보이는데 메모리 사용량에서 큰 차이가 나는 것을 발견했다. 이에 관해 흥미가 있으신 분은 여기를 참고해주세용  [관련 깃헙 링크](https://github.com/ndy2/sort-memory-test)
 
