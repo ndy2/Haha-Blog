@@ -22,4 +22,5 @@ jobs:
       - run: pip3 install mkdocs-git-authors-plugin
       - run: pip3 install mkdocs-charts-plugin
       - run: pip install mkdocs-kroki-plugin
+      - run: pip install markdown-exec
       - run: mkdocs gh-deploy --force

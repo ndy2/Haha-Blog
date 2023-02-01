@@ -67,6 +67,10 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
+        - name: python
+          class: python
+          validator: !!python/name:markdown_exec.validator
+          format: !!python/name:markdown_exec.formatter
         - name: vegalite
           class: vegalite
           format: !!python/name:mkdocs_charts_plugin.fences.fence_vegalite
