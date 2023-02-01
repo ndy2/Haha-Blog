@@ -1,3 +1,7 @@
+---
+title: 1부 B-tree 의 특징과 삽입 연산
+---
+
 @ 참고 자료)
 
 - 쉬운코드 -  https://youtu.be/bqkcoSm_rCs
