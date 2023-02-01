@@ -186,7 +186,7 @@ nav:
               - Trie: study/data-structure/tree/trie/index.md
               - Segment Tree: study/data-structure/tree/segment-tree/index.md
               - B-tree:
-                   - study/data-structure/tree/b-tree/one.md
+                   - study/data-structure/tree/b-tree/1.md
             
               
       - 웹 개발:
