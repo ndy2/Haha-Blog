@@ -21,6 +21,8 @@ title: O(n^2) 정렬 알고리즘
 
 ### 1. 버블 정렬 Bubble Sort
 
+#### 1. python code
+
 ```python title="Bubble Sort!" exec="true" source="material-block"
 # Python program for implementation of Bubble Sort
 def bubbleSort(arr):
@@ -45,16 +47,19 @@ for i in range(len(arr)):
 	print("%d" % arr[i], end=" ")
 ```
 
-**`실행 흐름`**
+
+#### 2. 실행 흐름
 
 다음 순서로 비교와 스왑을 진행한다.
+
 - arr[0],arr[1] ->  arr[1], arr[2] -> ...........-> arr[n-3],arr[n-2]  ->  arr[n-2], arr[n-1] 
 - arr[0],arr[1] ->  arr[1], arr[2] -> ............-> arr[n-3],arr[n-2]
 - ....
 - arr[0],arr[1] ->  arr[1], arr[2]
 - arr[0],arr[1]
 
-특징
+#### 3. 특징
+
 - 버블 정렬은 가장 기초적인 정렬 알고리즘 이다.
 - Stable Sort
 - 시간 복잡도 - O(n<sup>2</sup>), 보조 메모리 - O(1) (`temp` 저장용 하나)
@@ -67,6 +72,8 @@ for i in range(len(arr)):
 ---
 
 ### 2. 선택 정렬 (Selection Sort)
+
+#### 1. python code
 
 ```python title="Selection Sort!" exec="true" source="material-block"
 # Python program for implementation of Selection
@@ -95,23 +102,25 @@ for i in range(len(A)):
 
 ```
 
-`실행 흐름`
+#### 2. 실행 흐름
 
-  		i		`최소 값 찾기` Comp n-i-1 회  ->        Swap - 무조건 발생
+-      i		`최소 값 찾기` Comp n-i-1 회                   ->        Swap - 무조건 발생
  -      `0`     arr[0], arr[1], .... arr[n-2], arr[n-1]        ->  swap(arr[0], arr[min_idx<sub>0~n-1</sub>])
 -       `1`                 arr[1], .... arr[n-2], arr[n-1]       ->  swap(arr[1], arr[min_idx<sub>1~n-1</sub>])
 -      `n-2`                               arr[n-2], arr[n-1]      ->  swap(arr[n-2], arr[min_idx<sub>n-2~n-1</sub>])
 -      `n-1`                                                  arr[n-1]      ->  swap(arr[n-1], arr[min_idx<sub>n-1~n-1</sub>])  // 생략
 
-`특징`
+#### 3. 특징
 
 - 정렬의 형태에 관계없이 최선의 경우, 최악의 경우 성능이 일정하다.
 - Stable Sort
-- 시간 복잡도 - comp - `O(n<sup>2</sup>)`, swap - O(n), 보조 공간 - `O(1)`
+- 시간 복잡도 - comp - `O(n^2)`, swap - O(n), 보조 공간 - `O(1)`
 
 ---
 
 ### 3. 삽입 정렬 (Insertion sort)
+
+#### 1. python code
 
 ```python title="Selection Sort!" exec="true" source="material-block"
 # Python program for implementation of Insertion Sort
@@ -137,13 +146,14 @@ def insertionSort(arr):
 # Driver code to test above
 arr = [12, 11, 13, 5, 6]
 insertionSort(arr)
+print ("Sorted array")
 for i in range(len(arr)):
 	print ("% d" % arr[i])
 
 # This code is contributed by Mohit Kumra
 ```
 
-`실행 흐름` 
+#### 2. 실행 흐름
 
 key 를 고른다 -> *적당한 위치*에 삽입한다.
 
@@ -152,9 +162,10 @@ key 를 고른다 -> *적당한 위치*에 삽입한다.
 - 2 -> arr[2]   ->  j = 1/ key 와 arr[j] 비교 -> key 가 더 작으면 계속 arr[j+1] 과 [j] 변경
 
 ...
+
 - n -> arr[n] -> 이미 정렬된 arr[0-n-1] 에서 앞으로 이동하며 arr[n] 의 위치를 잡아준다
 
-`특징`
+#### 3. 특징
 
 - 개수가 적은 경우, 이미 어느정도 정렬 된 경우 매우 강력하다. 역순으로 정렬된 최악의 경우 성능이 매우 안 좋다.
 - key 를 삽입할 위치를 찾는 과정에서 앞 배열이 이미 정렬 되었다는 점을 이용해 비교 연산의 횟수를 O(nlogn) 수준으로 낮추는 `이진 삽입 정렬` 이라는 변형이 존재한다.
