@@ -176,7 +176,7 @@ nav:
       - 알고리즘:
           -  정렬 알고리즘:
               - study/algorithm/sort/n-square/index.md
-              - study/algorithm/sort/n-logn/merge-sort/index.md
+              - study/algorithm/sort/merge-sort/index.md
           -  Union-Find 알고리즘:
               - Union-Find 알고리즘: study/algorithm/union-find/index.md
               - Union-By-Rank: study/algorithm/union-find/union-by-rank.md
