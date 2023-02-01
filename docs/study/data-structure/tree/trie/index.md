@@ -3,15 +3,15 @@
 
 문자열이 다른 데이터 타입에 비해서 가지는 특징은 길이를 가진다는 것이다. 따라서 문자열의 비교는 `int`, `float` 데이터를 비교하는 것과 달리 문자열의 길이에 영향을 받는다. `Trie` 는 이를 극복하기 위한 자료구조이다.
 
-!!! note
+!!! note ""
 
 	`{"haha", "haker", "hakerton", "pin", "pine", "pinterest", "zzz"}`
 
-위와 같은 집합을 여러 자료구조에 담아놓고 검색을 수행해보자. 
-n = 7 - 문자열의 개수
-m = 9 - 문자열의 최대 길이, 삽입이나 조회 시에는 현재 문자열의 길이인 경우도 있지만 대충 문자열의 길이를 표현하는 변수로 퉁 치겠음
+위와 같은 집합을 여러 자료구조에 담아놓고 검색을 수행해보자.
 
-## 1. 트라이와 다른 자료구조들
+- n = 7 - 문자열의 개수
+- m = 9 - 문자열의 최대 길이, 삽입이나 조회 시에는 현재 문자열의 길이인 경우도 있지만 대충 문자열의 길이를 표현하는 변수로 퉁 치겠음
+
 
 ### 1. 배열 (Array)
 
@@ -31,10 +31,10 @@ m = 9 - 문자열의 최대 길이, 삽입이나 조회 시에는 현재 문자�
 
 따라서 n 개의 문자열으로 HashSet 자료구조를 구성하는데 `O(nm)` 타임이 필요하다.
 
-!!! note "`polynomial rolling hash function `"
+!!! note "polynomial rolling hash function"
 
      typical hash function for string
-     자바는 p 를 31 로 설정하여 사용한다.
+     자바는 p 를 31 로 설정하여 사용한다. <br>
     ![polynomial-rolling-hash-function.png](images/polynomial-rolling-hash-function.png)
     
     (수식의 m 은 hash table 의 bucket size 임)
@@ -47,7 +47,7 @@ m = 9 - 문자열의 최대 길이, 삽입이나 조회 시에는 현재 문자�
 
 ![trie-example.excalidraw.png](excalidraws/trie-example.excalidraw.png)
 
-Trie 는 문자열을 위 그림 처럼 저장한다.
+Trie 는 문자열 집합을 위 그림 처럼 저장한다.
 
 트라이는 삽입시 O(m) 타임이 필요하다. 따라서 트라이를 구성하는데 O(nm) 시간 복잡도가 필요하다.
 
