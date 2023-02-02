@@ -251,6 +251,6 @@ nav:
   
   - Notes: 
       - notes/bookmarks/bookmarks.md
-      - cheetsheet:
+      - cheetsheets:
           - git:
-              - notes/git/git-clone.md
+              - notes/cheetsheets/git/git-clone.md
