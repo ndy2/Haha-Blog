@@ -82,7 +82,7 @@
 
 - 규칙: 왼쪽 자식 : `idx*2` , 오른쪽 자식 : `idx*2+1` 
 
-![segment-tree-index.excalidraw.png](images/segment-tree-index.excalidraw.png)
+![segment-tree-index.excalidraw.png](excalidraws/segment-tree-index.excalidraw.png)
 
 - 보통 Segment Tree 의 배열 크기는 `4 * n` 으로 잡고 시작하는 경우가 많다. 그 이유는 수학적으로 `(최대 segment Index) / n` 의 값이 n 이 무한대로 향함에따라 4 의 아래에서 4로 수렴 함이 증명되었기 때문이다. - [관련 링크와 증명](https://www.quora.com/Why-does-4-*-N-space-have-to-be-allocated-for-a-segment-tree-where-N-is-the-size-of-the-original-array)
 
