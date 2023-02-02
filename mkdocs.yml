@@ -180,11 +180,12 @@ nav:
       - 자료구조:
           - ADT: study/data-structure/adt/index.md
           - Tree: 
+              - study/data-structure/tree/heap/index.md
               - Trie: study/data-structure/tree/trie/index.md
               - Segment Tree: study/data-structure/tree/segment-tree/index.md
               - B-tree:
                    - 1부 B-tree 의 특징과 삽입 연산: study/data-structure/tree/b-tree/one.md
-            
+               
               
       - 웹 개발:
           -  쿠키 세션 토큰: study/web/cookie-session-token/index.md
