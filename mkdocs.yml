@@ -115,9 +115,13 @@ extra_javascript:
 # Page tree
 nav:
   - Home: index.md
+  
+  
   - 블로그 팁:
       - 들어가기: bloggingtips/getting-started.md
       - 느낀 점: bloggingtips/feelings.md
+  
+  
   - 분야 별 학습:
       - 자바:
           -  String: study/java/string.md
@@ -195,6 +199,8 @@ nav:
               
       - 웹 개발:
           -  쿠키 세션 토큰: study/web/cookie-session-token/index.md
+  
+  
   - 기술 서적 정리/리뷰:
       - 책!: books/index.md
       - 클린 애자일: books/clean-agile/clean-agile.md
@@ -240,5 +246,11 @@ nav:
               - POJO 이벤트 클래스와 @EventListener : books/springboot-msa-component/ch12-spring-event/sec03-new-style.md
               - 비동기 이벤트 처리 : books/springboot-msa-component/ch12-spring-event/sec04-async-event.md
               - 스프링이 발행하는 이벤트 : books/springboot-msa-component/ch12-spring-event/sec05-spring-event.md
+  
   - TIL: til/getting-started.md
-  - 북마크: bookmarks/bookmarks.md
+  
+  - Notes: 
+      - notes/bookmarks/bookmarks.md
+      - cheetsheet:
+          - git:
+              - notes/git/git-clone.md
