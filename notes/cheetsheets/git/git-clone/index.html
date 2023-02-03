@@ -7,19 +7,18 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/study/data-structure/tree/b-tree/one/" rel="canonical"/>
-<link href="../../segment-tree/" rel="prev"/>
-<link href="../../../../web/cookie-session-token/" rel="next"/>
-<link href="../../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.9" name="generator"/>
-<title>1부 B-tree 의 특징과 삽입 연산 - Haha 블로그</title>
-<link href="../../../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
-<link href="../../../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link href="https://ndy2.github.io/Haha-Blog/notes/cheetsheets/git/git-clone/" rel="canonical"/>
+<link href="../../../bookmarks/bookmarks/" rel="prev"/>
+<link href="../../../../assets/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.10" name="generator"/>
+<title>git clone - Haha 블로그</title>
+<link href="../../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -30,14 +29,14 @@
                 body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
                 body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
+                </style><script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#1-b-tree-bst">
+<a class="md-skip" href="#1-file-clone">
           Skip to content
         </a>
 </div>
@@ -45,7 +44,7 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Haha 블로그" class="md-header__button md-logo" data-md-component="logo" href="../../../../.." title="Haha 블로그">
+<a aria-label="Haha 블로그" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Haha 블로그">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -61,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              1부 B-tree 의 특징과 삽입 연산
+              git clone
             
           </span>
 </div>
@@ -127,7 +126,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Haha 블로그" class="md-nav__button md-logo" data-md-component="logo" href="../../../../.." title="Haha 블로그">
+<a aria-label="Haha 블로그" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Haha 블로그">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
     Haha 블로그
@@ -144,7 +143,7 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../..">
+<a class="md-nav__link" href="../../../..">
         Home
       </a>
 </li>
@@ -161,25 +160,25 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../bloggingtips/getting-started/">
+<a class="md-nav__link" href="../../../../bloggingtips/getting-started/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../bloggingtips/feelings/">
+<a class="md-nav__link" href="../../../../bloggingtips/feelings/">
         느낀 점
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
           분야 별 학습
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           분야 별 학습
@@ -198,17 +197,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../java/string/">
+<a class="md-nav__link" href="../../../../study/java/string/">
         String
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../java/nio/">
+<a class="md-nav__link" href="../../../../study/java/nio/">
         NIO
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../java/synchronized/">
+<a class="md-nav__link" href="../../../../study/java/synchronized/">
         동시성 - synchrozied
       </a>
 </li>
@@ -225,12 +224,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../java/sort/collections/">
+<a class="md-nav__link" href="../../../../study/java/sort/collections/">
         컬렉션(List)의 정렬
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../java/sort/arrays/">
+<a class="md-nav__link" href="../../../../study/java/sort/arrays/">
         배열(Array)의 정렬
       </a>
 </li>
@@ -253,17 +252,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/introduction/">
+<a class="md-nav__link" href="../../../../study/kotlin/introduction/">
         코틀린 소개, 특징, 철학
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/object-keyword/">
+<a class="md-nav__link" href="../../../../study/kotlin/object-keyword/">
         object 키워드
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/lambda/variable-capturing/">
+<a class="md-nav__link" href="../../../../study/kotlin/lambda/variable-capturing/">
         람다 변수 캡쳐링
       </a>
 </li>
@@ -283,17 +282,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/msa-pros-cons/">
+<a class="md-nav__link" href="../../../../study/architecture/msa-pros-cons/">
         MSA 장단점
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/hexagonal-architecture/">
+<a class="md-nav__link" href="../../../../study/architecture/hexagonal-architecture/">
         Hexagonal Architecture
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/resilient-pattern/">
+<a class="md-nav__link" href="../../../../study/architecture/resilient-pattern/">
         Resilient Pattern
       </a>
 </li>
@@ -310,12 +309,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/load-balancing/">
+<a class="md-nav__link" href="../../../../study/architecture/load-balancing/">
         로드 밸런싱 개요와 알고리즘
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/load-balancing/l4-lb-vs-l7-lb/">
+<a class="md-nav__link" href="../../../../study/architecture/load-balancing/l4-lb-vs-l7-lb/">
         L4 로드 밸런싱 vs L7 로드 밸런싱
       </a>
 </li>
@@ -338,22 +337,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../os/process-vs-thread/">
+<a class="md-nav__link" href="../../../../study/os/process-vs-thread/">
         프로세스 vs 쓰레드
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../os/deadlock/">
+<a class="md-nav__link" href="../../../../study/os/deadlock/">
         데드락
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../os/memory-management/virtual-memory-1/">
+<a class="md-nav__link" href="../../../../study/os/memory-management/virtual-memory-1/">
         가상메모리 기초
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../os/memory-management/virtual-memory-2/">
+<a class="md-nav__link" href="../../../../study/os/memory-management/virtual-memory-2/">
         가상메모리 관리
       </a>
 </li>
@@ -373,32 +372,32 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/basic-terminologies/">
+<a class="md-nav__link" href="../../../../study/database/basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/rdb/">
+<a class="md-nav__link" href="../../../../study/database/rdb/">
         관계형 데이터베이스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/join/">
+<a class="md-nav__link" href="../../../../study/database/join/">
         SQL join
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/db-index/">
+<a class="md-nav__link" href="../../../../study/database/db-index/">
         데이터베이스 인덱스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/anomaly/">
+<a class="md-nav__link" href="../../../../study/database/anomaly/">
         데이터베이스 이상현상
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/fd/">
+<a class="md-nav__link" href="../../../../study/database/fd/">
         데이터베이스 FD
       </a>
 </li>
@@ -415,17 +414,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/normalization/db-normalization/">
+<a class="md-nav__link" href="../../../../study/database/normalization/db-normalization/">
         개요
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/normalization/db-normalization-1nf-2nf/">
+<a class="md-nav__link" href="../../../../study/database/normalization/db-normalization-1nf-2nf/">
         1NF, 2NF
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/normalization/db-normalization-3nf-bcnf/">
+<a class="md-nav__link" href="../../../../study/database/normalization/db-normalization-3nf-bcnf/">
         3NF, BCNF
       </a>
 </li>
@@ -433,27 +432,27 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/transaction-acid/">
+<a class="md-nav__link" href="../../../../study/database/transaction-acid/">
         트랜잭션 ACID
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/olap/">
+<a class="md-nav__link" href="../../../../study/database/olap/">
         OLAP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/clustering-replication-sharding/">
+<a class="md-nav__link" href="../../../../study/database/clustering-replication-sharding/">
         클러스터링, 리플리케이션, 샤딩
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/dbcp/">
+<a class="md-nav__link" href="../../../../study/database/dbcp/">
         DBCP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/mysql-execution-plan/">
+<a class="md-nav__link" href="../../../../study/database/mysql-execution-plan/">
         MySQL 실행계획 연습
       </a>
 </li>
@@ -485,7 +484,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer2/arp/">
+<a class="md-nav__link" href="../../../../study/network/layer2/arp/">
         ARP, 주소 결정 프로토콜
       </a>
 </li>
@@ -505,7 +504,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer3/introduction/">
+<a class="md-nav__link" href="../../../../study/network/layer3/introduction/">
         네트워크 계층, 인터넷
       </a>
 </li>
@@ -522,12 +521,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer3/router/">
+<a class="md-nav__link" href="../../../../study/network/layer3/router/">
         라우터 개요
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer3/router/nat/">
+<a class="md-nav__link" href="../../../../study/network/layer3/router/nat/">
         NAT
       </a>
 </li>
@@ -535,12 +534,12 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer3/ip/">
+<a class="md-nav__link" href="../../../../study/network/layer3/ip/">
         IPv4
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer3/icmp/">
+<a class="md-nav__link" href="../../../../study/network/layer3/icmp/">
         ICMP
       </a>
 </li>
@@ -560,17 +559,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer4/tcp-vs-udp/">
+<a class="md-nav__link" href="../../../../study/network/layer4/tcp-vs-udp/">
         TCP vs UDP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer4/tcp-flow-control/">
+<a class="md-nav__link" href="../../../../study/network/layer4/tcp-flow-control/">
         TCP 흐름제어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer4/tcp-congestion-control/">
+<a class="md-nav__link" href="../../../../study/network/layer4/tcp-congestion-control/">
         TCP 혼잡제어
       </a>
 </li>
@@ -590,17 +589,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer7/http-versions/">
+<a class="md-nav__link" href="../../../../study/network/layer7/http-versions/">
         HTTP 버전별 특징
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer7/https/">
+<a class="md-nav__link" href="../../../../study/network/layer7/https/">
         HTTPS
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer7/dns/">
+<a class="md-nav__link" href="../../../../study/network/layer7/dns/">
         DNS
       </a>
 </li>
@@ -625,22 +624,47 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_7_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_7_1" id="__nav_3_7_1_label" tabindex="0">
-          Union-Find 알고리즘
+          정렬 알고리즘
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_3_7_1_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_3_7_1">
 <span class="md-nav__icon md-icon"></span>
+          정렬 알고리즘
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../study/algorithm/sort/n-square/">
+        O(n^2) 정렬 알고리즘
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../study/algorithm/sort/merge-sort/">
+        병합 정렬(Merge sort)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_7_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_7_2" id="__nav_3_7_2_label" tabindex="0">
+          Union-Find 알고리즘
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_7_2">
+<span class="md-nav__icon md-icon"></span>
           Union-Find 알고리즘
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../algorithm/union-find/">
+<a class="md-nav__link" href="../../../../study/algorithm/union-find/">
         Union-Find 알고리즘
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../algorithm/union-find/union-by-rank/">
+<a class="md-nav__link" href="../../../../study/algorithm/union-find/union-by-rank/">
         Union-By-Rank
       </a>
 </li>
@@ -650,104 +674,66 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_8" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_8" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
           자료구조
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_8_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_3_8_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_8">
 <span class="md-nav__icon md-icon"></span>
           자료구조
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../adt/">
+<a class="md-nav__link" href="../../../../study/data-structure/adt/">
         ADT
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_8_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_8_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_8_2" id="__nav_3_8_2_label" tabindex="0">
           Tree
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_8_2_label" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_3_8_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_3_8_2">
 <span class="md-nav__icon md-icon"></span>
           Tree
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../heap/">
+<a class="md-nav__link" href="../../../../study/data-structure/tree/heap/">
         힙 (Heap)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../trie/">
+<a class="md-nav__link" href="../../../../study/data-structure/tree/trie/">
         Trie
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../segment-tree/">
+<a class="md-nav__link" href="../../../../study/data-structure/tree/segment-tree/">
         Segment Tree
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_8_2_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_8_2_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_8_2_4" id="__nav_3_8_2_4_label" tabindex="0">
           B-tree
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_8_2_4_label" class="md-nav" data-md-level="4">
+<nav aria-expanded="false" aria-labelledby="__nav_3_8_2_4_label" class="md-nav" data-md-level="4">
 <label class="md-nav__title" for="__nav_3_8_2_4">
 <span class="md-nav__icon md-icon"></span>
           B-tree
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          1부 B-tree 의 특징과 삽입 연산
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-        1부 B-tree 의 특징과 삽입 연산
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../study/data-structure/tree/b-tree/1/">
+        1. 특징과 삽입 연산
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-b-tree-bst">
-    1. B-Tree 는 확장된 BST!
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-b-tree">
-    2. B-Tree 의 파라미터
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-b-tree">
-    3. B-Tree 의 규칙
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4">
-    4. 데이터 삽입
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5-b-tree">
-    5. B tree 의 특징
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -771,7 +757,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/cookie-session-token/">
+<a class="md-nav__link" href="../../../../study/web/cookie-session-token/">
         쿠키 세션 토큰
       </a>
 </li>
@@ -794,12 +780,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/">
+<a class="md-nav__link" href="../../../../books/">
         책!
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/clean-agile/clean-agile/">
+<a class="md-nav__link" href="../../../../books/clean-agile/clean-agile/">
         클린 애자일
       </a>
 </li>
@@ -816,22 +802,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/">
         리뷰
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch01-msa/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch01-msa/">
         1장 마이크로서비스 아키텍처
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch02-framework-and-springboot/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch02-framework-and-springboot/">
         2장 프레임워크와 스프링부트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch03-springboot-basic/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch03-springboot-basic/">
         3장 스프링 애플리케이션 기본
       </a>
 </li>
@@ -848,17 +834,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch04-spring-web-mvc-basic/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch04-spring-web-mvc-basic/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch04-sec01-http/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch04-sec01-http/">
         파트 1 HTTP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
         파트 2 서블릿과 MVC
       </a>
 </li>
@@ -866,7 +852,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
         5장 스프링 MVC를 이용한 REST-API 개발
       </a>
 </li>
@@ -883,22 +869,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch06-build-web-application-server/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-build-web-application-server/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
         EnableXXX의 동작과 빈 설정 모듈화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
         웹 애플리케이션 설정 메커니즘
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
         DispatcherServlet
       </a>
 </li>
@@ -918,17 +904,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch07-sec01-spring-aop/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch07-sec01-spring-aop/">
         스프링 AOP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch07-sec03-autoconfiguration/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch07-sec03-autoconfiguration/">
         스프링 부트 자동 설정
       </a>
 </li>
@@ -948,27 +934,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch08-data-persistence/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-data-persistence/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
         JPA 장점과 단점
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
         엔티티 매니저와 영속성 컨텍스트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
         Transactional을 사용할 때 주의 사항
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch08-sec11-osiv/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec11-osiv/">
         OSIV
       </a>
 </li>
@@ -988,17 +974,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch09-application-integration-restapi/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch09-application-integration-restapi/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch09-sec01-resttemplate/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch09-sec01-resttemplate/">
         RestTemplate 클래스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch09-sec02-webclient/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch09-sec02-webclient/">
         WebClient 클래스
       </a>
 </li>
@@ -1018,22 +1004,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch10-sec01-redis-introduction/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec01-redis-introduction/">
         레디스 소개
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch10-sec01-redis-high-availability/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec01-redis-high-availability/">
         레디스 HA
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch10-sec04-redis-serializer/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec04-redis-serializer/">
         레디스 직렬화 설정
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch10-sec05-redis-usages/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec05-redis-usages/">
         레디스의 다양한 활용
       </a>
 </li>
@@ -1041,7 +1027,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch11-sec03-batch-architecture/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch11-sec03-batch-architecture/">
         11장 스프링 스케쥴링 테스크
       </a>
 </li>
@@ -1058,32 +1044,32 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch12-spring-event/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch12-spring-event/sec01-introduction/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec01-introduction/">
         스프링 이벤트 소개
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch12-spring-event/sec02-old-style/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec02-old-style/">
         ApplicationEvent 와 ApplicationListner 상속
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch12-spring-event/sec03-new-style/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec03-new-style/">
         POJO 이벤트 클래스와 @EventListener
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch12-spring-event/sec04-async-event/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec04-async-event/">
         비동기 이벤트 처리
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch12-spring-event/sec05-spring-event/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec05-spring-event/">
         스프링이 발행하는 이벤트
       </a>
 </li>
@@ -1097,14 +1083,96 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../til/getting-started/">
+<a class="md-nav__link" href="../../../../til/getting-started/">
         TIL
       </a>
 </li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../bookmarks/bookmarks/">
+<a class="md-nav__link" href="../../../bookmarks/bookmarks/">
         북마크
       </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+          cheetsheets
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+          cheetsheets
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2_1" id="__nav_6_2_1_label" tabindex="0">
+          git
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_6_2_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_6_2_1">
+<span class="md-nav__icon md-icon"></span>
+          git
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          git clone
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        git clone
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-file-clone">
+    1. 디렉토리나 file 하나만 Clone 하는 방법
+  </a>
+<nav aria-label="1. 디렉토리나 file 하나만 Clone 하는 방법" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#script">
+    Script
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example">
+    Example
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1121,29 +1189,23 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-b-tree-bst">
-    1. B-Tree 는 확장된 BST!
+<a class="md-nav__link" href="#1-file-clone">
+    1. 디렉토리나 file 하나만 Clone 하는 방법
+  </a>
+<nav aria-label="1. 디렉토리나 file 하나만 Clone 하는 방법" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#script">
+    Script
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-b-tree">
-    2. B-Tree 의 파라미터
+<a class="md-nav__link" href="#example">
+    Example
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-b-tree">
-    3. B-Tree 의 규칙
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4">
-    4. 데이터 삽입
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5-b-tree">
-    5. B tree 의 특징
-  </a>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1152,77 +1214,67 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/study/data-structure/tree/b-tree/one.md" title="View source of this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/notes/cheetsheets/git/git-clone.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>1부 B-tree 의 특징과 삽입 연산</h1>
-<p>@ 참고 자료)</p>
+<h1>git clone</h1>
+<h3 id="1-file-clone">1. 디렉토리나 file 하나만 Clone 하는 방법<a class="headerlink" href="#1-file-clone" title="Permanent link">¶</a></h3>
 <ul>
-<li>쉬운코드 -  https://youtu.be/bqkcoSm_rCs</li>
-<li>B-Tree Visualization - https://www.cs.usfca.edu/~galles/visualization/BTree.html</li>
+<li><a href="https://nurilee.com/2020/05/23/github에서-sub-directory-또는-file-1개만-가져오는-방법/">참고 링크</a></li>
 </ul>
-<hr/>
-<h3 id="1-b-tree-bst">1. B-Tree 는 확장된 BST!<a class="headerlink" href="#1-b-tree-bst" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/b-tree-1.excalidraw.png"><img alt="b-tree-1.excalidraw.png" src="../excalidraws/b-tree-1.excalidraw.png"/></a></p>
-<ul>
-<li>자녀 노드의 개수를 여러개 가질 수 있다.</li>
-<li>최대 몇개의 자녀 노드를 가질 것인지는 B-tree 의 가장 중요한 파라미터</li>
-</ul>
-<hr/>
-<h3 id="2-b-tree">2. B-Tree 의 파라미터<a class="headerlink" href="#2-b-tree" title="Permanent link">¶</a></h3>
-<ul>
-<li><code>M</code> - 각 노드의 <strong>최대</strong> 자녀 노드 수 (Max. Degree)</li>
-<li><code>M - 1</code> - 각 노드의 <strong>최대</strong> Key 수 </li>
-<li><code>ceil (M/2)</code> - 각 노드의 <strong>최소</strong> 자녀 노드 수 (<img alt="⚠" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26a0.svg" title=":warning:"/> root-node, leaf-node 제외)</li>
-<li><code>ceil (M/2) - 1</code> - 각 노드의 <strong>최소</strong> Key 수 (<img alt="⚠" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26a0.svg" title=":warning:"/> root-node)</li>
-</ul>
-<hr/>
-<h3 id="3-b-tree">3. B-Tree 의 규칙<a class="headerlink" href="#3-b-tree" title="Permanent link">¶</a></h3>
-<div class="admonition note">
-<p>internal-node 의 key 가 x 라면 자녀 노드의 수는 항상 x+1 개이다.</p>
-</div>
-<ul>
-<li>Rule violation</li>
-</ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/b-tree-rule-1-violation.excalidraw.png"><img alt="b-tree-rule-1-violation.excalidraw.png" src="../excalidraws/b-tree-rule-1-violation.excalidraw.png"/></a></p>
-<ul>
-<li>따름 규칙<ul>
-<li><code>M</code>과 관계없이 internal-node 는 <strong>최소</strong> 두 개의 자녀는 가진다.</li>
-<li><code>M</code>이 정해지면 internal 노드는 <strong>최소</strong> <code>ceil(M/2)</code> 개의 자녀 노드를 가질 수 있게 된다.</li>
-</ul>
-</li>
-</ul>
-<h3 id="4">4. 데이터 삽입<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
-<ul>
-<li>추가는 항상 leaf 노드에 한다</li>
-<li>
-<p>노드가 넘치면 가운데 (median) key 를 기준으로 
-   좌우 key 들은 분할하고 가운데 key는 승진한다.</p>
-</li>
-<li>
-<p>영상을 보자! ( M = 3 인 경우 )</p>
-</li>
-</ul>
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="240" src="https://www.youtube.com/embed/bqkcoSm_rCs" title="(1부) B tree의 개념과 특징, 데이터 삽입이 어떻게 동작하는지를 설명합니다! (DB 인덱스과 관련있는 자료 구조)" width="341"></iframe>
-<ul>
-<li>pesudocode 도 보자!  ( M = 4 인 경우) <ul>
-<li>https://www.cs.utexas.edu/users/djimenez/utsa/cs3343/lecture17.html</li>
-</ul>
-</li>
-</ul>
-<h3 id="5-b-tree">5. B tree 의 특징<a class="headerlink" href="#5-b-tree" title="Permanent link">¶</a></h3>
-<div class="admonition note">
-<p>B-tree 는 AVL Tree (Auto Balancing Tree) 이다.</p>
-</div>
+<h4 id="script">Script<a class="headerlink" href="#script" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>mkdir<span class="w"> </span><span class="o">[</span>Directory<span class="o">]</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span><span class="o">[</span>Directory<span class="o">]</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>git<span class="w"> </span>init
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>git<span class="w"> </span>config<span class="w"> </span>core.sparseCheckout<span class="w"> </span><span class="nb">true</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>-f<span class="w"> </span>origin<span class="w"> </span><span class="o">[</span>remote-url<span class="o">]</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nb">echo</span><span class="w"> </span><span class="o">[</span>target-path<span class="o">]</span><span class="w"> </span>&gt;<span class="w"> </span>.git/info/sparse-checkout
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
+</code></pre></div>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>╭─deukyun@namdeug-yun-ui-Macmini<span class="w"> </span>~/Desktop
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>╰─$<span class="w"> </span>mkdir<span class="w"> </span>study-webrtc
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>╭─deukyun@namdeug-yun-ui-Macmini<span class="w"> </span>~/Desktop
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>╰─$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>study-webrtc
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>╭─deukyun@namdeug-yun-ui-Macmini<span class="w"> </span>~/Desktop/study-webrtc
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>╰─$<span class="w"> </span>git<span class="w"> </span>init
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>╭─deukyun@namdeug-yun-ui-Macmini<span class="w"> </span>~/Desktop/study-webrtc<span class="w"> </span>‹master›
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>╰─$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>core.sparseCheckout<span class="w"> </span><span class="nb">true</span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>╭─deukyun@namdeug-yun-ui-Macmini<span class="w"> </span>~/Desktop/study-webrtc<span class="w"> </span>‹master›
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>╰─$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>-f<span class="w"> </span>origin<span class="w"> </span>https://github.com/eugenp/tutorials.git
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>Updating<span class="w"> </span>origin
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a>remote:<span class="w"> </span>Enumerating<span class="w"> </span>objects:<span class="w"> </span><span class="m">334397</span>,<span class="w"> </span><span class="k">done</span>.
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a>remote:<span class="w"> </span>Counting<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">1</span>/1<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a>remote:<span class="w"> </span>Total<span class="w"> </span><span class="m">334397</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>reused<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>pack-reused<span class="w"> </span><span class="m">334396</span>
+<a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a>Receiving<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">334397</span>/334397<span class="o">)</span>,<span class="w"> </span><span class="m">354</span>.31<span class="w"> </span>MiB<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">19</span>.34<span class="w"> </span>MiB/s,<span class="w"> </span><span class="k">done</span>.
+<a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a>Resolving<span class="w"> </span>deltas:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">95585</span>/95585<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+<a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a>From<span class="w"> </span>https://github.com/eugenp/tutorials
+<a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w"> </span>*<span class="w"> </span><span class="o">[</span>new<span class="w"> </span>branch<span class="o">]</span><span class="w">            </span>JAVA-12714-eugen<span class="w"> </span>-&gt;<span class="w"> </span>origin/JAVA-12714-eugen
+<a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w"> </span>*<span class="w"> </span><span class="o">[</span>new<span class="w"> </span>branch<span class="o">]</span><span class="w">            </span>fix_givenOneThreadIsWriting_whenAnotherThreadWritesAtSameKey_thenWaitAndGetCorrectValue<span class="w"> </span>-&gt;<span class="w"> </span>origin/fix_givenOneThreadIsWriting_whenAnotherThreadWritesAtSameKey_thenWaitAndGetCorrectValue
+<a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="w"> </span>*<span class="w"> </span><span class="o">[</span>new<span class="w"> </span>branch<span class="o">]</span><span class="w">            </span>master<span class="w">           </span>-&gt;<span class="w"> </span>origin/master
+<a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a>
+<a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a>╭─deukyun@namdeug-yun-ui-Macmini<span class="w"> </span>~/Desktop/study-webrtc<span class="w"> </span>‹master›
+<a href="#__codelineno-1-24" id="__codelineno-1-24" name="__codelineno-1-24"></a>╰─$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"webrtc"</span><span class="w"> </span>&gt;<span class="w"> </span>.git/info/sparse-checkout
+<a href="#__codelineno-1-25" id="__codelineno-1-25" name="__codelineno-1-25"></a>
+<a href="#__codelineno-1-26" id="__codelineno-1-26" name="__codelineno-1-26"></a>╭─deukyun@namdeug-yun-ui-Macmini<span class="w"> </span>~/Desktop/study-webrtc<span class="w"> </span>‹master›
+<a href="#__codelineno-1-27" id="__codelineno-1-27" name="__codelineno-1-27"></a>╰─$<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
+<a href="#__codelineno-1-28" id="__codelineno-1-28" name="__codelineno-1-28"></a>
+<a href="#__codelineno-1-29" id="__codelineno-1-29" name="__codelineno-1-29"></a>From<span class="w"> </span>https://github.com/eugenp/tutorials
+<a href="#__codelineno-1-30" id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="w"> </span>*<span class="w"> </span>branch<span class="w">                  </span>master<span class="w">     </span>-&gt;<span class="w"> </span>FETCH_HEAD
+<a href="#__codelineno-1-31" id="__codelineno-1-31" name="__codelineno-1-31"></a>╭─deukyun@namdeug-yun-ui-Macmini<span class="w"> </span>~/Desktop/study-webrtc<span class="w"> </span>‹master›
+<a href="#__codelineno-1-32" id="__codelineno-1-32" name="__codelineno-1-32"></a>╰─$<span class="w"> </span>ls
+<a href="#__codelineno-1-33" id="__codelineno-1-33" name="__codelineno-1-33"></a>webrtc
+</code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 31, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 31, 2023</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
 </small>
 </div>
 </article>
@@ -1231,7 +1283,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Segment Tree" class="md-footer__link md-footer__link--prev" href="../../segment-tree/" rel="prev">
+<a aria-label="Previous: 북마크" class="md-footer__link md-footer__link--prev" href="../../../bookmarks/bookmarks/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -1240,21 +1292,8 @@
 <span class="md-footer__direction">
                   Previous
                 </span>
-                Segment Tree
+                북마크
               </div>
-</div>
-</a>
-<a aria-label="Next: 쿠키 세션 토큰" class="md-footer__link md-footer__link--next" href="../../../../web/cookie-session-token/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                  Next
-                </span>
-                쿠키 세션 토큰
-              </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
 </div>
 </a>
 </nav>
@@ -1278,9 +1317,9 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer"], "search": "../../../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
-<script src="../../../../../js/mkdocs-charts-plugin.js"></script>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../../assets/javascripts/bundle.6df46069.min.js"></script>
+<script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
