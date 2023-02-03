@@ -1,3 +1,7 @@
+---
+title: 웹 소켓 자동 설정
+date: 2023-02-03
+---
 ### 의존성
 
 `implementation("org.springframework.boot:spring-boot-starter-websocket")`
