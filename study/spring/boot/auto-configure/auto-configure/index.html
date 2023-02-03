@@ -1299,6 +1299,36 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2_2" id="__nav_6_2_2_label" tabindex="0">
+          kafka
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_6_2_2">
+<span class="md-nav__icon md-icon"></span>
+          kafka
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../notes/cheetsheets/kafka/install/">
+        설치
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../notes/cheetsheets/kafka/use/">
+        사용
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../notes/cheetsheets/kafka/troubleshooting/">
+        문제 해결
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -1373,7 +1403,7 @@
 <p>title: 스프링 부트의 자동 설정 동작 원리
 date: 2023-02-03</p>
 <hr/>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="EnableAutoConfiguration.excalidraw.png"><img alt="EnableAutoConfiguration.excalidraw.png" src="EnableAutoConfiguration.excalidraw.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/EnableAutoConfiguration.excalidraw.png"><img alt="EnableAutoConfiguration.excalidraw.png" src="../excalidraws/EnableAutoConfiguration.excalidraw.png"/></a></p>
 <p><code>@EnableAutoConfiguration</code> 은 최종적으로 두개의 <code>@Import</code> 애너테이션을 포함합니다.</p>
 <h3 id="2-autoconfigurationpackage">2. <code>@AutoConfigurationPackage</code><a class="headerlink" href="#2-autoconfigurationpackage" title="Permanent link">¶</a></h3>
 <p><code>@AutoConfigurationPackage</code> 는 빈을 직접 등록 한다기 보다는 추후 관리를 위해서 <code>BeanDefinitionRegistry</code> 에 <code>Bean Definition</code> 을 등록하는 과정이 필요한데 자동 설정 빈에 대해 이러한 작업을 수행해주는 <code>AutoConfigurationPackages.Registrar</code> 를 빈으로 등록해주는 역할을 합니다.
