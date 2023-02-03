@@ -221,6 +221,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/notes/cheetsheets/kafka/error-handling/</loc>
+         <lastmod>2023-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/notes/cheetsheets/kafka/install/</loc>
+         <lastmod>2023-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/notes/cheetsheets/kafka/use/</loc>
+         <lastmod>2023-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/algorithm/sort/merge-sort/</loc>
          <lastmod>2023-02-03</lastmod>
          <changefreq>daily</changefreq>
@@ -481,7 +496,47 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/spring/boot/auto-configure/auto-configure/</loc>
+         <lastmod>2023-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/spring/boot/auto-configure/bean-role/</loc>
+         <lastmod>2023-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/spring/boot/auto-configure/configuration-proxybeanmethods/</loc>
+         <lastmod>2023-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/spring/boot/auto-configure/how-to-analysis/</loc>
+         <lastmod>2023-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/spring/boot/auto-configure/meta-annotations-composed-annotation/</loc>
+         <lastmod>2023-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/spring/websocket/auto-configure/</loc>
+         <lastmod>2023-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/spring/websocket/excalidraws/code/</loc>
+         <lastmod>2023-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/web/cookie-session-token/</loc>
+         <lastmod>2023-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/web/websocket/bookmarks/</loc>
          <lastmod>2023-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
