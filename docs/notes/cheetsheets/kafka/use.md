@@ -15,7 +15,7 @@ date: 2023-02-03
 
 ### 토픽 생성
 
-```bash title = "topic 생성"
+```bash title="topic 생성"
 ./bin/kafka-topics.sh --create \
 --topic quickstart-event \
 --bootstrap-server \
