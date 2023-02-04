@@ -114,7 +114,7 @@ extra_javascript:
 
 # Page tree
 nav:
-  - Home: index.md
+  - index.md
   
   
   - 블로그 팁:
@@ -196,6 +196,7 @@ nav:
           -  정렬 알고리즘:
               - study/algorithm/sort/n-square/index.md
               - study/algorithm/sort/merge-sort/index.md
+              - study/algorithm/sort/quicksort/index.md
           -  Union-Find 알고리즘:
               - Union-Find 알고리즘: study/algorithm/union-find/index.md
               - Union-By-Rank: study/algorithm/union-find/union-by-rank.md

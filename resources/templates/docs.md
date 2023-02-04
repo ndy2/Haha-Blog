@@ -1,4 +1,4 @@
 ---
 title: 제목
-date: {{date}}
+date: <% tp.date.now() %>
 ---
