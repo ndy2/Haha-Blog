@@ -1296,21 +1296,26 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    토픽 정보 확인
+    토픽 목록 확인
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    토픽 삭제
+    토픽 정보 확인
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_4">
-    메시지 생산
+    토픽 삭제
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_5">
+    메시지 생산
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
     메시지 소비
   </a>
 </li>
@@ -1357,21 +1362,26 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    토픽 정보 확인
+    토픽 목록 확인
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    토픽 삭제
+    토픽 정보 확인
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_4">
-    메시지 생산
+    토픽 삭제
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_5">
+    메시지 생산
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
     메시지 소비
   </a>
 </li>
@@ -1392,45 +1402,43 @@
 <div class="highlight"><span class="filename">kafka 서버 구동</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>./bin/kafka-server-start.sh<span class="w"> </span>./config/server.properties
 </code></pre></div>
 <h3 id="_1">토픽 생성<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<p>```bash title = "topic 생성"
-./bin/kafka-topics.sh --create \
---topic quickstart-event \
---bootstrap-server \
-localhost:9092 \
---partitions 1
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>### 토픽 목록 확인
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>```bash title="토픽 목록 확인"
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>./bin/kafka-topics.sh \
-<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>--bootstrap-server localhost:9092 --list
-</code></pre></div></p>
-<h3 id="_2">토픽 정보 확인<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<div class="highlight"><span class="filename">토픽 정보 확인</span><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>./bin/kafka-topics.sh<span class="w"> </span>--describe<span class="w"> </span><span class="se">\</span>
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>--topic<span class="w"> </span>quickstart-events<span class="w"> </span><span class="se">\</span>
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>--bootstrap-server<span class="w"> </span>localhost:9092
+<div class="highlight"><span class="filename">topic 생성</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>./bin/kafka-topics.sh<span class="w"> </span>--create<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>--topic<span class="w"> </span>quickstart-event<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>--bootstrap-server<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>localhost:9092<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>--partitions<span class="w"> </span><span class="m">1</span>
 </code></pre></div>
-<h3 id="_3">토픽 삭제<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
-<div class="highlight"><span class="filename">토픽 삭제</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>./bin/kafka-topics.sh<span class="w"> </span><span class="se">\</span>
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>--bootstrap-server<span class="w"> </span>localhost:9092<span class="w"> </span><span class="se">\</span>
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>--delete<span class="w"> </span>--topic<span class="w"> </span>topic
+<h3 id="_2">토픽 목록 확인<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<div class="highlight"><span class="filename">토픽 목록 확인</span><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>./bin/kafka-topics.sh<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>--bootstrap-server<span class="w"> </span>localhost:9092<span class="w"> </span>--list
 </code></pre></div>
-<h3 id="_4">메시지 생산<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
-<div class="highlight"><span class="filename">메시지 생산</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>./bin/kafka-console-producer.sh<span class="w"> </span><span class="se">\</span>
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>--broker-list<span class="w"> </span>localhost:9092<span class="w"> </span><span class="se">\</span>
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>--topic<span class="w"> </span>quickstart-events
+<h3 id="_3">토픽 정보 확인<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<div class="highlight"><span class="filename">토픽 정보 확인</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>./bin/kafka-topics.sh<span class="w"> </span>--describe<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>--topic<span class="w"> </span>quickstart-events<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>--bootstrap-server<span class="w"> </span>localhost:9092
 </code></pre></div>
-<h3 id="_5">메시지 소비<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
-<div class="highlight"><span class="filename">메시지 소비</span><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>./bin/kafka-console-consumer.sh<span class="w"> </span><span class="se">\</span>
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>--bootstrap-server<span class="w"> </span>localhost:9092<span class="w"> </span><span class="se">\</span>
-<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>--topic<span class="w"> </span>quickstart-events<span class="w"> </span><span class="se">\</span>
-<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>--from-beginning
+<h3 id="_4">토픽 삭제<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<div class="highlight"><span class="filename">토픽 삭제</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>./bin/kafka-topics.sh<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>--bootstrap-server<span class="w"> </span>localhost:9092<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>--delete<span class="w"> </span>--topic<span class="w"> </span>topic
+</code></pre></div>
+<h3 id="_5">메시지 생산<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<div class="highlight"><span class="filename">메시지 생산</span><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>./bin/kafka-console-producer.sh<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>--broker-list<span class="w"> </span>localhost:9092<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>--topic<span class="w"> </span>quickstart-events
+</code></pre></div>
+<h3 id="_6">메시지 소비<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<div class="highlight"><span class="filename">메시지 소비</span><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>./bin/kafka-console-consumer.sh<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>--bootstrap-server<span class="w"> </span>localhost:9092<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>--topic<span class="w"> </span>quickstart-events<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>--from-beginning
 </code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 4, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2023</span>
