@@ -38,6 +38,14 @@ localhost:9092 \
 --bootstrap-server localhost:9092
 ```
 
+### 토픽 삭제
+
+```zsh title="토픽 삭제"
+./bin/kafka-topics.sh \
+--bootstrap-server localhost:9092 \
+--delete --topic topic
+```
+
 
 ### 메시지 생산
 
