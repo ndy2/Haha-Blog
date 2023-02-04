@@ -246,6 +246,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/algorithm/sort/quicksort/</loc>
+         <lastmod>2023-02-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/algorithm/union-find/</loc>
          <lastmod>2023-02-04</lastmod>
          <changefreq>daily</changefreq>
