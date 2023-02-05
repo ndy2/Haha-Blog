@@ -121,6 +121,8 @@ nav:
       - 들어가기: bloggingtips/getting-started.md
       - 느낀 점: bloggingtips/feelings.md
   
+  - 프로젝트:
+      - projects/slack-clone-coding/index.md
   
   - 분야 별 학습:
       - 자바:
