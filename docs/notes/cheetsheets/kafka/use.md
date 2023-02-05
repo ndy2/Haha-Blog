@@ -15,7 +15,7 @@ date: 2023-02-03
 
 ### 토픽 생성
 
-```bash title = "topic 생성"
+```bash title="topic 생성"
 ./bin/kafka-topics.sh --create \
 --topic quickstart-event \
 --bootstrap-server \
@@ -36,6 +36,14 @@ localhost:9092 \
 ./bin/kafka-topics.sh --describe \
 --topic quickstart-events \
 --bootstrap-server localhost:9092
+```
+
+### 토픽 삭제
+
+```zsh title="토픽 삭제"
+./bin/kafka-topics.sh \
+--bootstrap-server localhost:9092 \
+--delete --topic topic
 ```
 
 
