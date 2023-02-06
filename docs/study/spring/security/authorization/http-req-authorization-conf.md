@@ -104,22 +104,28 @@ fun filterChain(
         .build()  
 }
 
-@Bean // 물론 굳이 Bean 으로 관리하지 않고 별도의 클래스로 관리 해도 됩니다.
+// 별도의 클래스로 구성해도 된다.
+@Bean  
 fun requestMatcherAuthorizationManager(introspector: HandlerMappingIntrospector): AuthorizationManager<RequestAuthorizationContext> {  
-    val permitAll = OrRequestMatcher(  
-        MvcRequestMatcher(introspector, "/webjars/**"),  
-        MvcRequestMatcher(introspector, "/error/**"),  
-        MvcRequestMatcher(introspector, "/"),  
-        MvcRequestMatcher(introspector, ".ico"),  
-    )  // 물론 풀어서 쓸 수도 있습니다.
-    val user: RequestMatcher = MvcRequestMatcher(introspector, "/chat/**")  
+    fun toAllRequestMatcher(vararg list: String) =  
+        OrRequestMatcher(list.map { MvcRequestMatcher(introspector, it) })  
   
+    // permit all  
+    val permitAllPath = toAllRequestMatcher("/webjars/**", "/error/**", "/", "/favicon.ico")  
+    val permitAll = AuthorizationManager<RequestAuthorizationContext> { _, _ -> AuthorizationDecision(true) }  
+  
+    // role user  
+    val roleUserPath = toAllRequestMatcher("/chat/**", "/ws-stomp/**")  
+    val roleUser = AuthorityAuthorizationManager.hasRole<RequestAuthorizationContext>("USER")  
+  
+    // build RequestMatcherDelegatingAuthorizationManager  
     val manager = RequestMatcherDelegatingAuthorizationManager.builder()  
-        .add(permitAll) { _, _ -> AuthorizationDecision(true) }  
-        .add(user, AuthorityAuthorizationManager.hasRole("USER"))  
+        .add(permitAllPath, permitAll)  
+        .add(roleUserPath, roleUser)  
         .build()  
+  
+    //warp manager and return  
     return AuthorizationManager { a, context -> manager.check(a, context.request) }  
-}
 ```
 
 
