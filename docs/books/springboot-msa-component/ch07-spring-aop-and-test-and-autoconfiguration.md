@@ -12,6 +12,6 @@
 저자분이 뭔가 다루긴 해야하는데 한장 한장 다루기에는 내용이나 분량상 다루기 애매한 것들을 모아놓은 느낌이네요. 그렇지만 중요한 내용들 이니 잘 이해하고 정리해 보겠습니다 ㅎ.ㅎ
 
 <figure markdown>
-  ![my-profile.jpeg](../../my-profile.jpeg)
+  ![my-profile.jpeg](../../images/my-profile.jpeg)
   <figcaption> 렛츠 고! </figcaption>
 </figure>

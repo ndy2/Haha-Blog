@@ -146,10 +146,10 @@ nav:
                   - study/spring/boot/auto-configure/configuration-proxybeanmethods.md
           - security:
               -authorization:
-                  -study/spring/security/authorization/index.md
-                  -study/spring/security/authorization/authorization-architecture.md
-                  -study/spring/security/authorization/http-req-authorization-proc.md
-                  -study/spring/security/authorization/http-req-authorization-conf.md
+                  - study/spring/security/authorization/index.md
+                  - study/spring/security/authorization/authorization-architecture.md
+                  - study/spring/security/authorization/http-req-authorization-proc.md
+                  - study/spring/security/authorization/http-req-authorization-conf.md
           - websocket:
               - study/spring/websocket/auto-configure.md
       - 아키텍처:

@@ -67,7 +67,7 @@ print(f'Sorted array: {array}')
 
 ### 3. 퀵 정렬 파티션 동작 흐름
 
-![quicksort.excalidraw.png](quicksort.excalidraw.png)
+![quicksort.excalidraw.png](excalidraws/quicksort.excalidraw.png)
 
 1. `lo` 가 `hi` 보다 크거나 같다면 정렬할 필요가 없다. `break`!
 2. 피봇을 정한다
