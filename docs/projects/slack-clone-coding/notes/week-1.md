@@ -19,4 +19,4 @@ date: 2023-02-05
     
 -   [x] `Slack` 기능 분석 - [링크](../features/slack-feature-analyze-by-me.md)
     
--   [ ] `GitLab` 써보기
+-   [x] `GitLab` 써보기
