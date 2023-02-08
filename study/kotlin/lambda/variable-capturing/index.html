@@ -1520,122 +1520,122 @@
 <div class="highlight"><span class="filename">실행 결과</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>10
 </code></pre></div>
 <p>자바와 다르게 아무 오류없이 기대한 값을 받아볼 수 있습니다. 바이트 코드를 디컴파일 해서 코틀린 컴파일러가 이를 어떻게 처리 하는지 확인해보겠습니다.</p>
-<p>```java title ="코틀린 바이트코드 디컴파일 결과 (약간 정리)"
-import kotlin.Unit;<br/>
-import kotlin.jvm.functions.Function1;<br/>
-import kotlin.jvm.internal.Ref;</p>
-<p>public final class LambdaTesKt {  </p>
-<p>public static void main(String[] var0) {<br/>
-      final Ref.IntRef result = new Ref.IntRef();  // (1) 
-      result.element = 0;<br/>
-      Function1 lambdaAdder = (Function1)(new Function1() {  </p>
-<div class="highlight"><pre><span></span><code>    public Object invoke(Object var1) {  
-        this.invoke(((Number)var1).intValue());  
-        return Unit.INSTANCE;  
-     }
-
-     public final void invoke(int input) {  
-        Ref.IntRef var10000 = result;  
-        var10000.element += input;  
-     }  
-  });  
-  lambdaAdder.invoke(10);  // (2)
-  System.out.println(result.element);
+<div class="highlight"><span class="filename">코틀린 바이트코드 디컴파일 결과 (약간 정리)</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">kotlin.Unit</span><span class="p">;</span><span class="w">  </span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">kotlin.jvm.functions.Function1</span><span class="p">;</span><span class="w">  </span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">kotlin.jvm.internal.Ref</span><span class="p">;</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LambdaTesKt</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">var0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">      </span><span class="kd">final</span><span class="w"> </span><span class="n">Ref</span><span class="p">.</span><span class="na">IntRef</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Ref</span><span class="p">.</span><span class="na">IntRef</span><span class="p">();</span><span class="w">  </span><span class="c1">// (1)</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">      </span><span class="n">result</span><span class="p">.</span><span class="na">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">      </span><span class="n">Function1</span><span class="w"> </span><span class="n">lambdaAdder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Function1</span><span class="p">)(</span><span class="k">new</span><span class="w"> </span><span class="n">Function1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">invoke</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">var1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">invoke</span><span class="p">(((</span><span class="n">Number</span><span class="p">)</span><span class="n">var1</span><span class="p">).</span><span class="na">intValue</span><span class="p">());</span><span class="w">  </span>
+<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">Unit</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">;</span><span class="w">  </span>
+<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">         </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a>
+<a href="#__codelineno-2-17" id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">         </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">invoke</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-2-18" id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">            </span><span class="n">Ref</span><span class="p">.</span><span class="na">IntRef</span><span class="w"> </span><span class="n">var10000</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w">  </span>
+<a href="#__codelineno-2-19" id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">            </span><span class="n">var10000</span><span class="p">.</span><span class="na">element</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">input</span><span class="p">;</span><span class="w">  </span>
+<a href="#__codelineno-2-20" id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">         </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-2-21" id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">      </span><span class="p">});</span><span class="w">  </span>
+<a href="#__codelineno-2-22" id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="w">      </span><span class="n">lambdaAdder</span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w">  </span><span class="c1">// (2)</span>
+<a href="#__codelineno-2-23" id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="na">element</span><span class="p">);</span><span class="w">   </span>
+<a href="#__codelineno-2-24" id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">   </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-2-25" id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="p">}</span>
 </code></pre></div>
-<p>}<br/>
-}</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>1. 변경 가능한 변수 포획 - result 를 Ref 클래스로 감싸서 람다에 넘긴다.
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>2. 인자를 하나 받는 람다가 Function1 클래스로 컴파일 되었다. 코틀린 1.0에서 인라인 되지 않은 모든 람다 식은 익명 클래스로 컴파일 됩니다. 람다가 변수를 캡쳐링 하면 그 변수를 저장하는 필드가 생깁니다.
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>본적없는 두개의 임포트가 추가 되었습니다. 
-<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>
-<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>Function1 은 하나의 인자를 받는 인터페이스 입니다.
-<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>
-<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>```kotlin
-<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>/** A function that takes 1 argument. */  
-<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a>public interface Function1&lt;in P1, out R&gt; : Function&lt;R&gt; {  
-<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a>    /** Invokes the function with the specified argument. */  
-<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a>    public operator fun invoke(p1: P1): R  
-<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a>}
+<ol>
+<li>변경 가능한 변수 포획 - result 를 Ref 클래스로 감싸서 람다에 넘긴다.</li>
+<li>인자를 하나 받는 람다가 Function1 클래스로 컴파일 되었다. 코틀린 1.0에서 인라인 되지 않은 모든 람다 식은 익명 클래스로 컴파일 됩니다. 람다가 변수를 캡쳐링 하면 그 변수를 저장하는 필드가 생깁니다.</li>
+</ol>
+<p>본적없는 두개의 임포트가 추가 되었습니다. </p>
+<p>Function1 은 하나의 인자를 받는 인터페이스 입니다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cm">/** A function that takes 1 argument. */</span><span class="w">  </span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nc">Function1</span><span class="o">&lt;</span><span class="k">in</span><span class="w"> </span><span class="n">P1</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="cm">/** Invokes the function with the specified argument. */</span><span class="w">  </span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">invoke</span><span class="p">(</span><span class="n">p1</span><span class="p">:</span><span class="w"> </span><span class="n">P1</span><span class="p">):</span><span class="w"> </span><span class="n">R</span><span class="w">  </span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="p">}</span>
 </code></pre></div>
 <p>Ref 는 람다식 내부에서 변경되는 외부 참조를 감싸는 래퍼클래스입니다.</p>
 <p>신기하게 여기는 자바로 코딩되어 있는데 자세한 이유는 모르겠습니다.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Ref</span><span class="p">{</span>
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="c1">// ObjectRef, ByteRef, ShortRef, LongRef, ... 모든 타입의 Ref 존재</span>
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>
-<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="n">public</span><span class="w"> </span><span class="n">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">IntRef</span><span class="w"> </span><span class="n">implements</span><span class="w"> </span><span class="n">Serializable</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">        </span><span class="n">public</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="n">element</span><span class="p">;</span><span class="w">  </span><span class="c1">// (1)</span>
-<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>
-<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">        </span><span class="nd">@Override</span><span class="w">  </span>
-<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">        </span><span class="n">public</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kt">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">element</span><span class="p">);</span><span class="w">  </span>
-<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">        </span><span class="p">}</span><span class="w">  </span>
-<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="p">}</span>
-<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Ref</span><span class="p">{</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="c1">// ObjectRef, ByteRef, ShortRef, LongRef, ... 모든 타입의 Ref 존재</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="n">public</span><span class="w"> </span><span class="n">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">IntRef</span><span class="w"> </span><span class="n">implements</span><span class="w"> </span><span class="n">Serializable</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">        </span><span class="n">public</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="n">element</span><span class="p">;</span><span class="w">  </span><span class="c1">// (1)</span>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a>
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">        </span><span class="nd">@Override</span><span class="w">  </span>
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">        </span><span class="n">public</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kt">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">element</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">        </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="p">}</span>
 </code></pre></div>
 <ol>
 <li>래핑한 값을 저장하는 필드, 퍼블릭 이다.</li>
 </ol>
 <hr/>
 <h3 id="2">2 <img alt="⚠" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26a0.svg" title=":warning:"/> 람다와 비동기 실행<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w">  </span>
-<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="n">AdderThread</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">input</span><span class="p">:</span><span class="kt">Int</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">result</span><span class="o">+=</span><span class="n">input</span><span class="w"> </span><span class="p">}.</span><span class="na">start</span><span class="p">()</span><span class="w">  </span>
-<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"[</span><span class="si">${</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">name</span><span class="si">}</span><span class="s">] </span><span class="si">$</span><span class="n">result</span><span class="s">"</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a>
-<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="m">1000</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"[</span><span class="si">${</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">name</span><span class="si">}</span><span class="s">] </span><span class="si">$</span><span class="n">result</span><span class="s">"</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="p">}</span><span class="w">  </span>
-<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a>
-<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="kd">class</span><span class="w"> </span><span class="nc">AdderThread</span><span class="p">(</span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">lambdaAdder</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Thread</span><span class="p">(){</span><span class="w">  </span>
-<a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a>
-<a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="s">"[</span><span class="si">${</span><span class="n">name</span><span class="si">}</span><span class="s">] run!"</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">        </span><span class="n">lambdaAdder</span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-4-17" id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
-<a href="#__codelineno-4-18" id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w">  </span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="n">AdderThread</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">input</span><span class="p">:</span><span class="kt">Int</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">result</span><span class="o">+=</span><span class="n">input</span><span class="w"> </span><span class="p">}.</span><span class="na">start</span><span class="p">()</span><span class="w">  </span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"[</span><span class="si">${</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">name</span><span class="si">}</span><span class="s">] </span><span class="si">$</span><span class="n">result</span><span class="s">"</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a>
+<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="m">1000</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"[</span><span class="si">${</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">name</span><span class="si">}</span><span class="s">] </span><span class="si">$</span><span class="n">result</span><span class="s">"</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a>
+<a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="kd">class</span><span class="w"> </span><span class="nc">AdderThread</span><span class="p">(</span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">lambdaAdder</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Thread</span><span class="p">(){</span><span class="w">  </span>
+<a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a>
+<a href="#__codelineno-5-14" id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-5-15" id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="s">"[</span><span class="si">${</span><span class="n">name</span><span class="si">}</span><span class="s">] run!"</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-5-16" id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">        </span><span class="n">lambdaAdder</span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<a href="#__codelineno-5-17" id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-5-18" id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">실행 결과</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>[main] 0
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>[Thread-0] run!
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>[main] 1
+<div class="highlight"><span class="filename">실행 결과</span><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>[main] 0
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>[Thread-0] run!
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>[main] 1
 </code></pre></div>
 <p>main 쓰레드는 <code>Thread-0</code> 가 실행한 1 을 추가하는 결과가 적용되기 전 (사실은 실행도 하기 전) 에 첫번째 출력을 하러 갑니다. 따라서 위와 같은 순서로 출력됩니다.</p>
 <hr/>
 <h3 id="_1"><img alt="⚠" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26a0.svg" title=":warning:"/> 람다 캡쳐링과 쓰레드 안전<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.util.concurrent.CountDownLatch</span><span class="w">  </span>
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.util.concurrent.Executors</span><span class="w">  </span>
-<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>
-<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Counter</span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w">  </span>
-<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="p">}</span><span class="w">  </span>
-<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a>
-<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a>
-<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w">  </span>
-<a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Counter</span><span class="p">()</span><span class="w">  </span>
-<a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a>
-<a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">numberOfThreads</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10000</span><span class="w">  </span>
-<a href="#__codelineno-6-14" id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Executors</span><span class="p">.</span><span class="na">newFixedThreadPool</span><span class="p">(</span><span class="m">10000</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-6-15" id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">latch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="p">(</span><span class="m">10000</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-6-16" id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="n">until</span><span class="w"> </span><span class="n">numberOfThreads</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-6-17" id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">        </span><span class="n">service</span><span class="p">.</span><span class="na">execute</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-6-18" id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">            </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="m">100</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-6-19" id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">            </span><span class="n">result</span><span class="o">++</span><span class="w">  </span>
-<a href="#__codelineno-6-20" id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">            </span><span class="n">counter</span><span class="p">.</span><span class="na">count</span><span class="o">++</span><span class="w">  </span>
-<a href="#__codelineno-6-21" id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="w">            </span><span class="n">latch</span><span class="p">.</span><span class="na">countDown</span><span class="p">()</span><span class="w">  </span>
-<a href="#__codelineno-6-22" id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">        </span><span class="p">}</span><span class="w">  </span>
-<a href="#__codelineno-6-23" id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
-<a href="#__codelineno-6-24" id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="w">    </span><span class="n">latch</span><span class="p">.</span><span class="na">await</span><span class="p">()</span><span class="w">  </span>
-<a href="#__codelineno-6-25" id="__codelineno-6-25" name="__codelineno-6-25"></a>
-<a href="#__codelineno-6-26" id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-6-27" id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="n">counter</span><span class="p">.</span><span class="na">count</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-6-28" id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.util.concurrent.CountDownLatch</span><span class="w">  </span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.util.concurrent.Executors</span><span class="w">  </span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Counter</span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w">  </span>
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a>
+<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a>
+<a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w">  </span>
+<a href="#__codelineno-7-11" id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Counter</span><span class="p">()</span><span class="w">  </span>
+<a href="#__codelineno-7-12" id="__codelineno-7-12" name="__codelineno-7-12"></a>
+<a href="#__codelineno-7-13" id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">numberOfThreads</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10000</span><span class="w">  </span>
+<a href="#__codelineno-7-14" id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Executors</span><span class="p">.</span><span class="na">newFixedThreadPool</span><span class="p">(</span><span class="m">10000</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-7-15" id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">latch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="p">(</span><span class="m">10000</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-7-16" id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="n">until</span><span class="w"> </span><span class="n">numberOfThreads</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-7-17" id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">        </span><span class="n">service</span><span class="p">.</span><span class="na">execute</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-7-18" id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">            </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="m">100</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-7-19" id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">            </span><span class="n">result</span><span class="o">++</span><span class="w">  </span>
+<a href="#__codelineno-7-20" id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">            </span><span class="n">counter</span><span class="p">.</span><span class="na">count</span><span class="o">++</span><span class="w">  </span>
+<a href="#__codelineno-7-21" id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">            </span><span class="n">latch</span><span class="p">.</span><span class="na">countDown</span><span class="p">()</span><span class="w">  </span>
+<a href="#__codelineno-7-22" id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="w">        </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-7-23" id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-7-24" id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="w">    </span><span class="n">latch</span><span class="p">.</span><span class="na">await</span><span class="p">()</span><span class="w">  </span>
+<a href="#__codelineno-7-25" id="__codelineno-7-25" name="__codelineno-7-25"></a>
+<a href="#__codelineno-7-26" id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-7-27" id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="n">counter</span><span class="p">.</span><span class="na">count</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-7-28" id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">실행 결과</span><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>9985
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>9989
+<div class="highlight"><span class="filename">실행 결과</span><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>9985
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>9989
 </code></pre></div>
 <p>코틀린애서 멀티쓰레드를 테스트 하는 적절한 방법을 몰라서 일단 익숙한 방식으로 테스트 해보았습니다.</p>
 <p>코틀린이 지원하는 변수 캡쳐링을 통해 boilerplate 한 참조를 래핑하는 클래스를 제거할 수는 있지만 이는 쓰레드 안전<sup>Thread</sup> <sup>Safe</sup> 과는 별개입니다.</p>
@@ -1645,7 +1645,7 @@ import kotlin.jvm.internal.Ref;</p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2023</span>
@@ -1704,7 +1704,7 @@ import kotlin.jvm.internal.Ref;</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
 <script src="../../../../assets/javascripts/bundle.6df46069.min.js"></script>
 <script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
