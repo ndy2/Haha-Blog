@@ -12,7 +12,7 @@
 <link href="../../kafka/install/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.11" name="generator"/>
-<title>제목 - Haha 블로그</title>
+<title>Scope Function 활용 예시 - Haha 블로그</title>
 <link href="../../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -61,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              제목
+              Scope Function 활용 예시
             
           </span>
 </div>
@@ -636,6 +636,11 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../study/data-structure/tree/binary-indexed-tree/">
+        Binary-Indexed-Tree
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -737,6 +742,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../study/kotlin/lambda/variable-capturing/">
         람다 변수 캡쳐링
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../study/kotlin/scope-functions/">
+        scope functions
       </a>
 </li>
 </ul>
@@ -1382,11 +1392,11 @@
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          제목
+          Scope Function 활용 예시
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        제목
+        Scope Function 활용 예시
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -1410,6 +1420,11 @@
     1. 함수에 바로 달아서 사용하기
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-toentitytodto">
+    2. toEntity/toDto
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1422,6 +1437,15 @@
 <a class="md-nav__link" href="#4-apply">
     4. apply
   </a>
+<nav aria-label="4. apply" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-test-fixture">
+    1. test fixture 생성시
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#5-also">
@@ -1509,6 +1533,11 @@
     1. 함수에 바로 달아서 사용하기
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-toentitytodto">
+    2. toEntity/toDto
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1521,6 +1550,15 @@
 <a class="md-nav__link" href="#4-apply">
     4. apply
   </a>
+<nav aria-label="4. apply" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-test-fixture">
+    1. test fixture 생성시
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#5-also">
@@ -1546,50 +1584,70 @@
 <a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/notes/cheetsheets/kotlin/scope-functions.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>제목</h1>
+<h1>Scope Function 활용 예시</h1>
 <p>Scope Function 활용 예시</p>
 <h3 id="1-let">1. let<a class="headerlink" href="#1-let" title="Permanent link">¶</a></h3>
 <h3 id="2-with">2. with<a class="headerlink" href="#2-with" title="Permanent link">¶</a></h3>
 <h4 id="1">1. 함수에 바로 달아서 사용하기<a class="headerlink" href="#1" title="Permanent link">¶</a></h4>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
 <ul>
 <li>
-<ul>
-<li>IntelliJ 의 implicit receiver hint 를 통해 this 가 BufferedReader 타입이 됨을 확인 할 수 있다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/scope-functions.png"><img alt="scope-functions.png" src="../images/scope-functions.png"/></a></li>
-</ul>
 <p>코테에서 자주 활용되는 템플릿</p>
 <ul>
-<li>다른 방식으로는 use 를 활용하는 방법이 있다. 이경우 br 을 바로 close 해 주어 더 좋은것 같다.</li>
+<li>
+<p>IntelliJ 의 implicit receiver hint 를 통해 this 가 BufferedReader 타입이 됨을 확인 할 수 있다.
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/scope-functions.png"><img alt="scope-functions.png" src="../images/scope-functions.png"/></a></p>
+</li>
+<li>
+<p>다른 방식으로는 use 를 활용하는 방법이 있다. 이경우 br 을 바로 close 해 주어 더 좋은것 같다.
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/scope-functions2.png"><img alt="scope-functions2.png" src="../images/scope-functions2.png"/></a></p>
+</li>
 </ul>
 </li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/scope-functions2.png"><img alt="scope-functions2.png" src="../images/scope-functions2.png"/></a></p>
-</div>
+<h4 id="2-toentitytodto">2. toEntity/toDto<a class="headerlink" href="#2-toentitytodto" title="Permanent link">¶</a></h4>
+<p>this 를 생략 할 수 있어 필드가 많아도 코드가 간결해진다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">return</span><span class="w"> </span><span class="n">with</span><span class="p">(</span><span class="n">person</span><span class="p">){</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="n">PersonDto</span><span class="p">(</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">,</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">,</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="p">)</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">}</span>
+</code></pre></div>
 <h3 id="3-run">3. run<a class="headerlink" href="#3-run" title="Permanent link">¶</a></h3>
 <h3 id="4-apply">4. apply<a class="headerlink" href="#4-apply" title="Permanent link">¶</a></h3>
+<h4 id="1-test-fixture">1. test fixture 생성시<a class="headerlink" href="#1-test-fixture" title="Permanent link">¶</a></h4>
+<p>생성자에 존재 하지 않는 값을 바로 apply 를 활용한 method chaining 으로 세팅 한다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">createPerson</span><span class="p">(</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="n">hobby</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">,</span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">,</span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="p">).</span><span class="na">apply</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">hobby</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hobby</span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="p">}</span>
+</code></pre></div>
 <h3 id="5-also">5. also<a class="headerlink" href="#5-also" title="Permanent link">¶</a></h3>
 <h4 id="1_1">1. 생성자에 달아서 바로 후처리 하기<a class="headerlink" href="#1_1" title="Permanent link">¶</a></h4>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
 <ul>
 <li>채팅 방 생성 후 바로 리포지 토리에 저장하고 관련 이벤트 발행</li>
 </ul>
-<div class="highlight"><span class="filename">채팅 방 생성</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">createChatRoom</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">):</span><span class="w"> </span><span class="n">ChatRoom</span><span class="w"> </span><span class="p">{</span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ChatRoom</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="na">also</span><span class="w"> </span><span class="p">{</span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="n">chatRoomRepository</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="nb">it</span><span class="p">)</span>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="n">eventPublisher</span><span class="p">.</span><span class="na">publishEvent</span><span class="p">(</span><span class="n">ChatRoomCreatedEvent</span><span class="p">(</span><span class="nb">it</span><span class="p">.</span><span class="na">roomId</span><span class="p">,</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">name</span><span class="p">))</span>
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="p">}</span>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">채팅 방 생성</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">createChatRoom</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">):</span><span class="w"> </span><span class="n">ChatRoom</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ChatRoom</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="na">also</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="n">chatRoomRepository</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="nb">it</span><span class="p">)</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="n">eventPublisher</span><span class="p">.</span><span class="na">publishEvent</span><span class="p">(</span><span class="n">ChatRoomCreatedEvent</span><span class="p">(</span><span class="nb">it</span><span class="p">.</span><span class="na">roomId</span><span class="p">,</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">name</span><span class="p">))</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="p">}</span>
 </code></pre></div>
-</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 4, 2023</span>
