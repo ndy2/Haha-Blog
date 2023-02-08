@@ -180,7 +180,8 @@ nav:
                   - Trie: study/data-structure/tree/trie/index.md
                   - Segment Tree: study/data-structure/tree/segment-tree/index.md
                   - B-tree:
-                       - study/data-structure/tree/b-tree/1.md
+                      - study/data-structure/tree/b-tree/1.md
+                  - Binary-Indexed-Tree : study/data-structure/tree/binary-indexed-tree/index.md
 
       - 언어 :
           - 자바:
