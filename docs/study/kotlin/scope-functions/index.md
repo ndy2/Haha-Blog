@@ -50,12 +50,12 @@ import kotlin.contracts.*
 
 public class NotImplementedError(message: String = "An operation is not implemented.") : Error(message)
 
-// (1)
+// 1. (1)
 public inline fun TODO(): Nothing = throw NotImplementedError()
 
 public inline fun TODO(reason: String): Nothing = throw NotImplementedError("An operation is not implemented: $reason")
 
-// (2)
+// 2. (2)
 public inline fun <R> run(block: () -> R): R { /* 생략 */ }
 
 public inline fun <T, R> T.run(block: T.() -> R): R { /* 생략 */ }
@@ -68,12 +68,12 @@ public inline fun <T> T.also(block: (T) -> Unit): T { /* 생략 */ }
 
 public inline fun <T, R> T.let(block: (T) -> R): R { /* 생략 */ }
 
-// (3)
+// 3. (3)
 public inline fun <T> T.takeIf(predicate: (T) -> Boolean): T? { /* 생략 */}
 
 public inline fun <T> T.takeUnless(predicate: (T) -> Boolean): T? { /* 생략 */}
 
-// (4)
+// 4. (4)
 public inline fun repeat(times: Int, action: (Int) -> Unit) { /* 생략 */}
 ```
 
@@ -90,7 +90,7 @@ public inline fun repeat(times: Int, action: (Int) -> Unit) { /* 생략 */}
 `Standard.kt` 파일에서 눈길이 가는 또 다른 부분은 바로 `contract` 의 활용입니다.  `contract` 를 사용하면 코틀린 컴파일러에게 추가적인 정보를 전달하여 타입 추론을 돕고 기타 불필요한 컴파일 에러를 방지할 수 있습니다.   `contract` 문법에 관한 내용은 [여기 링크](https://medium.com/harrythegreat/kotlin-contracts-문법-쉽게-배워보기-9ffdc399aa75) 를 참고해주세요.  이 문서의 아래 코드에서는 `contract` 부분을 생략하고 scope function 의 구현과 동작에 대해서 다루겠습니다.
 
 ```kotlin title="Standard.kt 에 포함된 contract 의 활용!"
-// (2), (3) 메서드의 시작 부분에 공통적으로 포함된 라인
+// 2, 3  메서드의 시작 부분에 공통적으로 포함된 라인
 public inline fun xxx(yyy) : zzz {
     contract {  
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)  

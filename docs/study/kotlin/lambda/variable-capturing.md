@@ -24,7 +24,8 @@ fun main() {
 
 자바와 다르게 아무 오류없이 기대한 값을 받아볼 수 있습니다. 바이트 코드를 디컴파일 해서 코틀린 컴파일러가 이를 어떻게 처리 하는지 확인해보겠습니다.
 
-```java title ="코틀린 바이트코드 디컴파일 결과 (약간 정리)"
+
+```java title="코틀린 바이트코드 디컴파일 결과 (약간 정리)"
 import kotlin.Unit;  
 import kotlin.jvm.functions.Function1;  
 import kotlin.jvm.internal.Ref;
@@ -32,7 +33,7 @@ import kotlin.jvm.internal.Ref;
 public final class LambdaTesKt {  
 
  public static void main(String[] var0) {  
-      final Ref.IntRef result = new Ref.IntRef();  // (1) 
+      final Ref.IntRef result = new Ref.IntRef();  // (1)
       result.element = 0;  
       Function1 lambdaAdder = (Function1)(new Function1() {  
 
@@ -110,7 +111,7 @@ class AdderThread(private val lambdaAdder: (Int) -> Unit) : Thread(){
   
     override fun run() {  
         println("[${name}] run!")  
-        lambdaAdder.invoke(1)  
+        lambdaAdder.invoke(1)
     }  
 }
 ```
