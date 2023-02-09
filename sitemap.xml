@@ -241,17 +241,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/projects/slack-clone-coding/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/projects/kakaotalk-clone-coding/</loc>
          <lastmod>2023-02-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/projects/slack-clone-coding/features/slack-feature-analyze-by-me/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/projects/kakaotalk-clone-coding/chatapp/</loc>
          <lastmod>2023-02-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/projects/slack-clone-coding/notes/week-1/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/projects/kakaotalk-clone-coding/features/slack-feature-analyze-by-me/</loc>
+         <lastmod>2023-02-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/projects/kakaotalk-clone-coding/notes/week-1/</loc>
+         <lastmod>2023-02-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/projects/kakaotalk-clone-coding/notes/week2/</loc>
          <lastmod>2023-02-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -282,6 +292,16 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/architecture/msa-pros-cons/</loc>
+         <lastmod>2023-02-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/architecture/cap-throrem/</loc>
+         <lastmod>2023-02-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/architecture/consistent-hash/</loc>
          <lastmod>2023-02-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -407,6 +427,16 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/dev-general/gitlab/gitlab-ci-cd/</loc>
+         <lastmod>2023-02-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/dev-general/uml/</loc>
+         <lastmod>2023-02-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/dev-general/uml/class-diagram/</loc>
          <lastmod>2023-02-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
