@@ -5,7 +5,7 @@ date: 2023-02-05
 
 ### Slack Image
 
-![slack-image.png](../images/slack-image.png)
+![slack-image.png](slack-image.png)
 
 ### 1. 회원
 
@@ -98,7 +98,7 @@ date: 2023-02-05
 ### 6. 앱
 
 - `멤버`는 `앱`을 `워크스페이스`에 설치할 수 있다.
-![slack-apps.png](../images/slack-apps.png)
+![slack-apps.png](slack-apps.png)
 
 ### 6. 메시지
 
