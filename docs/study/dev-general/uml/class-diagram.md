@@ -6,6 +6,7 @@ date: 2023-02-09
 
 - 최범균님 - UML 기초 강의 on [Youtube](https://www.youtube.com/@madvirus)
 - UML for Java Programmers by Robert C. Martin 
+- mermaid syntax - [classDiagram](https://mermaid.js.org/syntax/classDiagram.html)
 ---
 
 ### 클래스 다이어그램
