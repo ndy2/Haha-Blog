@@ -82,6 +82,13 @@ class Order {
 }
 ```
 
+### 관계 기호 요약
+
+![class-relations-uml.png](images/class-relations-uml.png)
+
+- 연관관계 - 협력을 위해 필요한 영구적인 탐색 구조
+- 의존관계 - 협력을 위해 일시적으로 필요한 의존성 (파라미터, 리턴타입, 지역변수)
+
 ### 연관 (association)
 
 #### association with label
