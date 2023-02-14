@@ -51,7 +51,7 @@ date: 2023-02-13
 
 !!! note "참고자료"
 
-    * 로버트 C. 마틴 `『클린 애자일』 [정리 링크](../../books/clean-agile/clean-agile)
+    * 로버트 C. 마틴 `『클린 애자일』 [정리 링크](../../../books/clean-agile/clean-agile)
 
 - [ ] waterfall vs agile
 
@@ -64,7 +64,7 @@ date: 2023-02-13
 
 !!! note "참고 자료"
 
-    * 비동기적 커뮤니케이션 - [링크](../../study/dev-general/collaborate/async-communication)
+    * 비동기적 커뮤니케이션 - [링크](../../../study/dev-general/collaborate/async-communication)
 
 - [ ] tools
     - [ ] kakaotalk
