@@ -17,13 +17,20 @@ date: 2023-02-13
 #### 1. Version Management
 
 - [ ] remote git repository
-    - github
+    - **github**
     - gitlab
 
 - [ ] git-commit strategy
     - git-flow
     - github-flow
     - custom
+
+main 
+dev 
+feature 
+
+
+
 
 - [ ] how to write commit messages
 
