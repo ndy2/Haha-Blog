@@ -12,14 +12,14 @@ date: 2023-02-16
 
 ### 1. 고차 함수
 
-!!! "고차 함수 <sup>high order function</sup>"
+!!! note "고차 함수 <sup>high order function</sup>"
 
      * 람다를 인자로 받고나 반환하는 함수
      * 고차 함수를 활용하면 코드 중복을 없애고 더 나은 추상화를 구축할 수 있다.
 
 !!! example 
 
-    `list.filter { x > 0 }` 의 `filter` - [코드 링크](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter.html) 
+    * `list.filter { x > 0 }` 의 `filter` - [코드 링크](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter.html) 
 
 위 filter 함수의 시그니쳐를 코드는 아래와 같다.
 
@@ -40,18 +40,18 @@ public inline fun <T> Iterable<T>.filter(predicate: (T) -> Boolean): List<T> {
 
 ### 2. 함수 타입
 
-#### 코틀린 함수 타입 문법
+#### a. 코틀린 함수 타입 문법
 
 -  `(A, B) -> C`
 - `val myFun : (A, B) -> C = ...` 와 같이 활용할 수 있다.
 - 이때 `myFun` 함수는 `A`, `B` 타입 두개의 아규먼트를 받아 `C` 타입의 값을 반환한다.
 
-#### :warning: Unit 과 함수 타입
+#### b. :warning: Unit 과 함수 타입
 
 - 파라미터의 타입 목록은 빌 수 있다. (e.g. `val aSupplier :  ( ) -> A = ...`)
 - 하지만 `Unit` 리턴 타입은 생략 될 수 없다. (e.g.  `val aConsummer : A -> = ...`)
 
-### 파라미터 이름과 함수 타입
+#### c. 파라미터 이름과 함수 타입
 
 ```kotlin
 fun performReq(
@@ -65,7 +65,7 @@ fun performReq(
 - 파라미터 이름을 지정해 가독성을 높일 수 있다.
 - 컴파일러는 타입 검사시에 파라미터 이름은 무시한다.
 
-#### *Receiver Type* 과 함수 타입
+#### d. *Receiver Type* 과 함수 타입
 
 ```kotlin
 fun main() {  
@@ -89,7 +89,7 @@ i am 2, isEvenEqualIt is true
 i am 2, isEvenEqualIt is false
 ```
 
-#### 이 외 다양한 형태의 함수 타입활용
+#### e. 이 외 다양한 형태의 함수 타입활용
 
 - 함수 타입 자체가 nullable 한 경우 : `((Int, Int) -> Int)?`
 - 인자 혹은 리턴 타입이 nullable 한 경우 : `(Int?, Int) -> Int?`
@@ -106,20 +106,20 @@ i am 2, isEvenEqualIt is false
 
 함수 타입 인스턴스를 얻는 방식에는 몇가지가 있습니다.
 
-#### 람다 식
+#### a. 람다 식
 
 ```kotlin
 val intAdd : (Int, Int) -> Int = { a: Int, b: Int -> a + b }
 ```
 
-#### 익명(?) 함수
+#### b. 익명(?) 함수
 
 ```kotlin
 val intAdd2 : (Int, Int) -> Int = fun(a: Int, b: Int) = a + b
 ```
 
 
-#### callable reference 활용 
+#### c. callable reference 활용 
 
 ```kotlin
 fun main() {  
@@ -136,7 +136,7 @@ fun main() {
 fun intAdd3(a: Int, b: Int) = a + b
 ```
 
-#### 함수 타입을 구현하는 클래스를 정의하고 생성하기
+#### d. 함수 타입을 구현하는 클래스를 정의하고 생성하기
 
 ```kotlin
 fun main() {  
@@ -179,7 +179,7 @@ class IntAdder : (Int, Int) -> Int {
 
     컴파일된 코드 안에서 함수 타입은 일반 인터페이스로 바뀐다. 즉 함수 타입의 변수는 FunctionN 인터페이스를 구현하는 객체를 저장한다. 코틀린 표준 라이브러리는 함수 인자의 개수에 따라 Function0<R>, Function1<P1,R> 등의 인터페이스를 제공한다. 각 인터페이스에는 invoke 메서드 정의가 하나 들어 있다.
 
-![functions.png](functions.png)
+![functions.png](images/functions.png)
 
 #### byte code decompiled
 
