@@ -461,6 +461,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/dev-general/uml/sequence-diagram/</loc>
+         <lastmod>2023-02-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/java/nio/</loc>
          <lastmod>2023-02-16</lastmod>
          <changefreq>daily</changefreq>
@@ -487,6 +492,11 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/kotlin/hof-and-function-type/</loc>
+         <lastmod>2023-02-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/kotlin/inline-function/</loc>
          <lastmod>2023-02-16</lastmod>
          <changefreq>daily</changefreq>
     </url>

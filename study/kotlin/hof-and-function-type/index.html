@@ -9,7 +9,7 @@
 <meta content="Haha" name="author"/>
 <link href="https://ndy2.github.io/Haha-Blog/study/kotlin/hof-and-function-type/" rel="canonical"/>
 <link href="../scope-functions/" rel="prev"/>
-<link href="../../dev-general/uml/" rel="next"/>
+<link href="../inline-function/" rel="next"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
 <title>고차 함수 (Higher-Order-Function)와 함수 타입 (Function Type) - Haha 블로그</title>
@@ -801,32 +801,28 @@
 <nav aria-label="2. 함수 타입" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    코틀린 함수 타입 문법
+<a class="md-nav__link" href="#a">
+    a. 코틀린 함수 타입 문법
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#unit">
-    Unit 과 함수 타입
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    파라미터 이름과 함수 타입
-  </a>
-<nav aria-label="파라미터 이름과 함수 타입" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#receiver-type">
-    Receiver Type 과 함수 타입
+<a class="md-nav__link" href="#b-unit">
+    b.  Unit 과 함수 타입
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    이 외 다양한 형태의 함수 타입활용
+<a class="md-nav__link" href="#c">
+    c. 파라미터 이름과 함수 타입
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#d-receiver-type">
+    d. Receiver Type 과 함수 타입
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#e">
+    e. 이 외 다양한 형태의 함수 타입활용
   </a>
 </li>
 </ul>
@@ -839,23 +835,23 @@
 <nav aria-label="3. 함수 타입을 생성하는 방법" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    람다 식
+<a class="md-nav__link" href="#a_1">
+    a. 람다 식
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
-    익명(?) 함수
+<a class="md-nav__link" href="#b">
+    b. 익명(?) 함수
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#callable-reference">
-    callable reference 활용
+<a class="md-nav__link" href="#c-callable-reference">
+    c. callable reference 활용
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
-    함수 타입을 구현하는 클래스를 정의하고 생성하기
+<a class="md-nav__link" href="#d">
+    d. 함수 타입을 구현하는 클래스를 정의하고 생성하기
   </a>
 </li>
 </ul>
@@ -882,6 +878,11 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../inline-function/">
+        inline 함수
+      </a>
 </li>
 </ul>
 </nav>
@@ -925,7 +926,12 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../dev-general/uml/package-diagram/">
-        Package diagram
+        패키지 다이어그램
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev-general/uml/sequence-diagram/">
+        시퀀스 다이어그램
       </a>
 </li>
 </ul>
@@ -1643,32 +1649,28 @@
 <nav aria-label="2. 함수 타입" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    코틀린 함수 타입 문법
+<a class="md-nav__link" href="#a">
+    a. 코틀린 함수 타입 문법
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#unit">
-    Unit 과 함수 타입
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    파라미터 이름과 함수 타입
-  </a>
-<nav aria-label="파라미터 이름과 함수 타입" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#receiver-type">
-    Receiver Type 과 함수 타입
+<a class="md-nav__link" href="#b-unit">
+    b.  Unit 과 함수 타입
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    이 외 다양한 형태의 함수 타입활용
+<a class="md-nav__link" href="#c">
+    c. 파라미터 이름과 함수 타입
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#d-receiver-type">
+    d. Receiver Type 과 함수 타입
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#e">
+    e. 이 외 다양한 형태의 함수 타입활용
   </a>
 </li>
 </ul>
@@ -1681,23 +1683,23 @@
 <nav aria-label="3. 함수 타입을 생성하는 방법" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    람다 식
+<a class="md-nav__link" href="#a_1">
+    a. 람다 식
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
-    익명(?) 함수
+<a class="md-nav__link" href="#b">
+    b. 익명(?) 함수
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#callable-reference">
-    callable reference 활용
+<a class="md-nav__link" href="#c-callable-reference">
+    c. callable reference 활용
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
-    함수 타입을 구현하는 클래스를 정의하고 생성하기
+<a class="md-nav__link" href="#d">
+    d. 함수 타입을 구현하는 클래스를 정의하고 생성하기
   </a>
 </li>
 </ul>
@@ -1743,13 +1745,18 @@
 </ul>
 <hr/>
 <h3 id="1">1. 고차 함수<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
-<p>!!! "고차 함수 <sup>high order function</sup>"</p>
-<div class="highlight"><pre><span></span><code> * 람다를 인자로 받고나 반환하는 함수
- * 고차 함수를 활용하면 코드 중복을 없애고 더 나은 추상화를 구축할 수 있다.
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">고차 함수 <sup>high order function</sup></p>
+<ul>
+<li>람다를 인자로 받고나 반환하는 함수</li>
+<li>고차 함수를 활용하면 코드 중복을 없애고 더 나은 추상화를 구축할 수 있다.</li>
+</ul>
+</div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><code>list.filter { x &gt; 0 }</code> 의 <code>filter</code> - <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter.html">코드 링크</a> </p>
+<ul>
+<li><code>list.filter { x &gt; 0 }</code> 의 <code>filter</code> - <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter.html">코드 링크</a> </li>
+</ul>
 </div>
 <p>위 filter 함수의 시그니쳐를 코드는 아래와 같다.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">inline</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">Iterable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">predicate</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Boolean</span><span class="p">):</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -1764,18 +1771,18 @@
 <p>가 바로 그것들이다. 이 장에서는 함수 타입에 대해서 알아보고 인라인 함수는 별도의 문서를 통해 정리해보자!</p>
 <hr/>
 <h3 id="2">2. 함수 타입<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
-<h4 id="_1">코틀린 함수 타입 문법<a class="headerlink" href="#_1" title="Permanent link">¶</a></h4>
+<h4 id="a">a. 코틀린 함수 타입 문법<a class="headerlink" href="#a" title="Permanent link">¶</a></h4>
 <ul>
 <li><code>(A, B) -&gt; C</code></li>
 <li><code>val myFun : (A, B) -&gt; C = ...</code> 와 같이 활용할 수 있다.</li>
 <li>이때 <code>myFun</code> 함수는 <code>A</code>, <code>B</code> 타입 두개의 아규먼트를 받아 <code>C</code> 타입의 값을 반환한다.</li>
 </ul>
-<h4 id="unit"><img alt="⚠" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26a0.svg" title=":warning:"/> Unit 과 함수 타입<a class="headerlink" href="#unit" title="Permanent link">¶</a></h4>
+<h4 id="b-unit">b. <img alt="⚠" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26a0.svg" title=":warning:"/> Unit 과 함수 타입<a class="headerlink" href="#b-unit" title="Permanent link">¶</a></h4>
 <ul>
 <li>파라미터의 타입 목록은 빌 수 있다. (e.g. <code>val aSupplier :  ( ) -&gt; A = ...</code>)</li>
 <li>하지만 <code>Unit</code> 리턴 타입은 생략 될 수 없다. (e.g.  <code>val aConsummer : A -&gt; = ...</code>)</li>
 </ul>
-<h3 id="_2">파라미터 이름과 함수 타입<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<h4 id="c">c. 파라미터 이름과 함수 타입<a class="headerlink" href="#c" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">performReq</span><span class="p">(</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">url</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">callback</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">code</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">content</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span>
@@ -1787,7 +1794,7 @@
 <li>파라미터 이름을 지정해 가독성을 높일 수 있다.</li>
 <li>컴파일러는 타입 검사시에 파라미터 이름은 무시한다.</li>
 </ul>
-<h4 id="receiver-type"><em>Receiver Type</em> 과 함수 타입<a class="headerlink" href="#receiver-type" title="Permanent link">¶</a></h4>
+<h4 id="d-receiver-type">d. <em>Receiver Type</em> 과 함수 타입<a class="headerlink" href="#d-receiver-type" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">my</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">.(</span><span class="kt">Boolean</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="cm">/* this:Int, it:Boolean */</span>
 <a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">isEvenEqualIt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">it</span><span class="w">  </span>
@@ -1805,7 +1812,7 @@
 <a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>i am 2, isEvenEqualIt is true
 <a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>i am 2, isEvenEqualIt is false
 </code></pre></div>
-<h4 id="_3">이 외 다양한 형태의 함수 타입활용<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
+<h4 id="e">e. 이 외 다양한 형태의 함수 타입활용<a class="headerlink" href="#e" title="Permanent link">¶</a></h4>
 <ul>
 <li>함수 타입 자체가 nullable 한 경우 : <code>((Int, Int) -&gt; Int)?</code></li>
 <li>인자 혹은 리턴 타입이 nullable 한 경우 : <code>(Int?, Int) -&gt; Int?</code></li>
@@ -1819,13 +1826,13 @@
 <p>ref - <a href="https://kotlinlang.org/docs/lambdas.html#instantiating-a-function-type">kotlin documentation/#intantiating a function type</a></p>
 </div>
 <p>함수 타입 인스턴스를 얻는 방식에는 몇가지가 있습니다.</p>
-<h4 id="_4">람다 식<a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
+<h4 id="a_1">a. 람다 식<a class="headerlink" href="#a_1" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">intAdd</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<h4 id="_5">익명(?) 함수<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<h4 id="b">b. 익명(?) 함수<a class="headerlink" href="#b" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">intAdd2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fun</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
 </code></pre></div>
-<h4 id="callable-reference">callable reference 활용<a class="headerlink" href="#callable-reference" title="Permanent link">¶</a></h4>
+<h4 id="c-callable-reference">c. callable reference 활용<a class="headerlink" href="#c-callable-reference" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">intAdd3</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">::</span><span class="n">intAdd3</span><span class="w">  </span>
 <a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="c1">// 이렇게 직접 타입을 넣어줘도 문제 없다.</span>
@@ -1839,7 +1846,7 @@
 <a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a>
 <a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">intAdd3</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
 </code></pre></div>
-<h4 id="_6">함수 타입을 구현하는 클래스를 정의하고 생성하기<a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
+<h4 id="d">d. 함수 타입을 구현하는 클래스를 정의하고 생성하기<a class="headerlink" href="#d" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">intAdd5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IntAdder</span><span class="p">()</span><span class="w">  </span>
 <a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="p">}</span>
@@ -1873,7 +1880,7 @@
 <p class="admonition-title"><code>『kotlin in action』</code> p.352</p>
 <p>컴파일된 코드 안에서 함수 타입은 일반 인터페이스로 바뀐다. 즉 함수 타입의 변수는 FunctionN 인터페이스를 구현하는 객체를 저장한다. 코틀린 표준 라이브러리는 함수 인자의 개수에 따라 Function0<r>, Function1<p1,r> 등의 인터페이스를 제공한다. 각 인터페이스에는 invoke 메서드 정의가 하나 들어 있다.</p1,r></r></p>
 </div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="functions.png"><img alt="functions.png" src="functions.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/functions.png"><img alt="functions.png" src="images/functions.png"/></a></p>
 <h4 id="byte-code-decompiled">byte code decompiled<a class="headerlink" href="#byte-code-decompiled" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1">// IntAdder.java  </span>
 <a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">kotlin.Metadata</span><span class="p">;</span><span class="w">  </span>
@@ -1949,13 +1956,13 @@
               </div>
 </div>
 </a>
-<a aria-label="Next: UML 시작" class="md-footer__link md-footer__link--next" href="../../dev-general/uml/" rel="next">
+<a aria-label="Next: inline 함수" class="md-footer__link md-footer__link--next" href="../inline-function/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                UML 시작
+                inline 함수
               </div>
 </div>
 <div class="md-footer__button md-icon">
