@@ -24,6 +24,7 @@ lock(l) { foo() }
 ```
 
 - 컴파일된 코드
+
 ```kotlin
 l.lock()
 try { foo() }
