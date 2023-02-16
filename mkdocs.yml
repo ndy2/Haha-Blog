@@ -126,7 +126,7 @@ nav:
   
   - 프로젝트:
       - 공통 :
-          - projects/common/on-startup.md
+          - projects/common/on-startup/index.md
           - projects/common/intellij-tasks-server-and-commit-push/index.md
       - projects/kakaotalk-clone-coding/index.md
   
