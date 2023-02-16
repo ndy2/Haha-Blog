@@ -203,10 +203,12 @@ nav:
               -  object 키워드: study/kotlin/object-keyword/index.md
               -  람다 변수 캡쳐링: study/kotlin/lambda/variable-capturing.md
               -  scope functions: study/kotlin/scope-functions/index.md
+              -  study/kotlin/hof-and-function-type/index.md
       - 개발 일반 :
           - UML : 
               - study/dev-general/uml/index.md
               - study/dev-general/uml/class-diagram.md
+              - study/dev-general/uml/package-diagram.md
       
       - 백엔드 서버 개발 :
           - spring :
