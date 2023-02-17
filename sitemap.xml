@@ -241,6 +241,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/projects/common/intellij-style/</loc>
+         <lastmod>2023-02-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/projects/common/intellij-tasks-server-and-commit-push/</loc>
          <lastmod>2023-02-17</lastmod>
          <changefreq>daily</changefreq>
