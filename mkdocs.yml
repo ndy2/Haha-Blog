@@ -204,7 +204,9 @@ nav:
               -  람다 변수 캡쳐링: study/kotlin/lambda/variable-capturing.md
               -  scope functions: study/kotlin/scope-functions/index.md
               -  study/kotlin/hof-and-function-type/index.md
-              - study/kotlin/inline-function/index.md
+              -  study/kotlin/inline-function/index.md
+              -  제네릭스 (generics) :
+                  - study/kotlin/generics/basic.md
               
       - 개발 일반 :
           - UML : 
