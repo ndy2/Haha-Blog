@@ -215,7 +215,7 @@ nav:
               - study/dev-general/uml/package-diagram/index.md
               - study/dev-general/uml/sequence-diagram/index.md
           - 협업 :
-              - study/dev-general/collaborate/aync-communication.md
+              - study/dev-general/collaborate/async-communication.md
           - github actions :
               - study/dev-general/github-actions/self-hosted-runner/index.md
       

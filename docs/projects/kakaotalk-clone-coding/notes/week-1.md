@@ -17,6 +17,6 @@ date: 2023-02-05
     -   [10분 테코톡] ✨ [아론의 웹소켓&스프링](https://youtu.be/rvss-_t6gzg)
 -   → Q: 채팅/화면공유에 더 알맞는 것은 `websocket` or `webrtc` ?
     
--   [x] `Slack` 기능 분석 - [링크](../slack-feature-analyze-by-me.md)
+-   [x] `Slack` 기능 분석 - [링크](../features/slack-feature-analyze-by-me.md)
     
 -   [x] `GitLab` 써보기
