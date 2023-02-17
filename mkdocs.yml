@@ -99,10 +99,14 @@ plugins:
       module_name: 'resources/macro/main'
   - search
   - glightbox
+  - gen-files:
+      scripts:
+        - resources/gen-pages/gen_pages.py
   - git-revision-date-localized:
       type: date
       timezone: Asia/Seoul
       enable_creation_date: true
+      fallback_to_build_date: true
   - charts
   - exclude:
       glob:
@@ -120,6 +124,8 @@ extra_javascript:
 nav:
   - index.md
   
+  - 아카이브: docs.md
+
   - 블로그 팁:
       - 들어가기: bloggingtips/getting-started.md
       - 느낀 점: bloggingtips/feelings.md
