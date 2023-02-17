@@ -85,11 +85,7 @@ public static void main(){
 	if (1 == 1) notFound(Product.class, "product-1")
 }
 
-public void notFound(Class<?> clazz, Long id){
-	String entityName = clazz.class.simpleName
-	throw new NotFoundException(entityName, id) 
-}
-public void notFound(Class<?> clazz, String id){
+public void notFound(Class<?> clazz, Object id){
 	String entityName = clazz.class.simpleName
 	throw new NotFoundException(entityName, id) 
 }
@@ -131,4 +127,6 @@ class NotFoundException(entityName: String, id: Any) : RuntimeException("$entity
 
 개인적으로 코틀린 코드가 훨씬 깔끔하게 보인다. 
 
-또한 자바에서는 각 오버로딩 된 `notFound` 메서드에 옳은 타입의 엔티티 클래스 객체가 전달되었는지 확인 할 수 없다. 즉 `notFound(Product.class, 1L)` 같은 코드도 컴파일 및 실행에 성공한다. 반면 코틀린 에서는 `notFound<Proudct>(1L)` 과 같은 호출은 컴파일러의 타입체킹에 의해 걸러질 수 있다!
+또한 자바에서는 각 오버로딩 된 `notFound` 메서드에 옳은 타입의 엔티티 클래스 객체가 전달되었는지 확인 할 수 없다. 즉 `notFound(Product.class, 1L)` 같은 코드도 컴파일 및 실행에 성공한다. 반면 코틀린 에서는 각각 가능한 id 타입 별로 `notFound` 메서드가 추가 되는 단점이 있지만 `notFound<Proudct>(1L)` 과 같은 호출은 컴파일러의 타입체킹에 의해 걸러질 수 있다!
+
+`refied E` 타입이 상속하는 BaseIdEntity 타입의 타입 체킹을 위해서 메서드가 추가되기는 했지만 더 좋은것 같다. 일반적인 방법으로는 E 가 상속하는 BaseIdEntity 의 Id 타입을 획득하는 것은 불가능한 것 같다.
