@@ -127,8 +127,8 @@ nav:
   - 아카이브: docs.md
 
   - 블로그 팁:
-      - 들어가기: bloggingtips/getting-started.md
-      - 느낀 점: bloggingtips/feelings.md
+      - bloggingtips/getting-started.md
+      - bloggingtips/feelings.md
   
   - 프로젝트:
       - 공통 :

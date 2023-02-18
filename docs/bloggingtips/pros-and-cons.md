@@ -1,3 +1,9 @@
+---
+prefix: mkdocs-material & obsidian
+title: 장 단점
+date: 2023-01-04
+---
+
 
 약 한달간 mkdocs-material 와 obsidian 을 이용해 요 블로그를 꾸며나가면서 느꼇던 이 방식의 장단점에 대해서 얘기해보겠습니다. 참고로 저는 jekyll 을 사용해본적이 없어서 jekyll 과의 직접적인 비교는 어려울것 같습니다.
 
