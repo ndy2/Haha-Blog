@@ -5,6 +5,8 @@ date: 2023-02-09
 @참고 자료)
 
 - 최범균님 - UML 기초 강의 on [Youtube](https://www.youtube.com/@madvirus)
+- 널널한 개발자님 - UML 이야기 첫 번째, 클래스 다이어그램 on [Youtube](https://youtu.be/CM61UST1gsQ)
+- nextree - [UML: 클래스 다이어그램과 소스코드 매핑](https://www.nextree.co.kr/p6753/)
 - UML for Java Programmers by Robert C. Martin 
 - mermaid syntax - [classDiagram](https://mermaid.js.org/syntax/classDiagram.html)
 ---
