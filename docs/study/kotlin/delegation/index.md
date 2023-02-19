@@ -8,8 +8,7 @@ date: 2023-02-19
 
     * 참고 자료
     * kotlin documentation - [Delegation](https://kotlinlang.org/docs/delegation.html)
-    * kotlin examples = [Delegation/DelegationPattern](https://play.kotlinlang.org/byExample/07_Delegation/01_delegationPattern)
-    * 
+    * kotlin examples - [Delegation/DelegationPattern](https://play.kotlinlang.org/byExample/07_Delegation/01_delegationPattern)
 
 ---
 
@@ -90,7 +89,7 @@ public final class MainKt {
 
 ---
 
-위임 클래스의 일부 메서드만 오버라이딩 할 수도 있다.
+### 2. 위임 클래스의 일부 메서드만 오버라이딩 할 수도 있다.
 
 ```kotlin
 interface Base {
@@ -115,3 +114,28 @@ fun main() {
 ```
 
 1. printMessage 는 직접 처리한다.
+
+```java
+public final class Derived implements Base {  
+   // $FF: synthetic field  
+   private final Base $$delegate_0;  
+  
+   public void printMessage() {  
+      String var1 = "abc";  
+      System.out.print(var1);  // (1)
+   }  
+  
+   public Derived(@NotNull Base b) {  
+      Intrinsics.checkNotNullParameter(b, "b");  
+      super();  
+      this.$$delegate_0 = b;  
+   }  
+  
+   public void printMessageLine() {  
+      this.$$delegate_0.printMessageLine();  // (2)
+   }  
+}
+```
+
+1. printMessage 메서드는 직접 처리한다.
+2. printMessageLine 메서드는 delegation 으로 처리한다.
