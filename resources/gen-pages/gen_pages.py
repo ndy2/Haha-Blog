@@ -33,6 +33,8 @@ with mkdocs_gen_files.open("docs.md", "w") as f:
         print(f'### {yearMonth[0]} 년 {yearMonth[1]} 월', file = f)
 
         for doc in docs:
+
+
             ## 작성 일
             createdAtDate = doc[3].date().strftime("%Y-%m-%d")
 
@@ -42,13 +44,25 @@ with mkdocs_gen_files.open("docs.md", "w") as f:
             if docPath.endswith("/index") :
                 docPath = docPath[:-5]
             docPath = "Haha-Blog/../../" + docPath
-            
-            ## 문서 제목
-            docTitle = docPath
-            try :
-                docTitle = frontmatter.load(doc[0]).get('title')
-            except :
-                pass
 
+            try :
+                yaml = frontmatter.load(doc[0])
+            except :
+                yaml = {"title" : docPath}
+
+            ## tags
+            docTags = yaml.get('tags')
+            if(docTags is None) :
+                docTags = []
+
+            docTagConcat = ""
+            for tag in docTags :
+                docTagConcat = docTagConcat + "<code>" + tag + "</code>" +" "
+
+            ## 문서 제목
+            docTitle = yaml.get('title')
+            if(docTitle is None) :
+                docTitle = docPath
             
-            print(f'{createdAtDate} [{docTitle}]({docPath}) \n', file= f)
+            
+            print(f'{createdAtDate} {docTagConcat} [{docTitle}]({docPath}) \n', file= f)
