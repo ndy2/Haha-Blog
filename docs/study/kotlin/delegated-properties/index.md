@@ -1,6 +1,6 @@
 ---
-tags: []
-title: 제목
+tags: [kotlin]
+title: 위임 프로퍼티 (delegated properties)
 date: 2023-02-19
 ---
 
@@ -15,3 +15,19 @@ date: 2023-02-19
 ---
 
 ### 1. 
+
+>[!tip] haha
+>papa
+
+
+> [!quote]
+> This is an admonition!
+
+
+> [!info] 
+> Here's a callout block. 
+> It supports **Markdown**, [[Internal link|Wikilinks]], and [[Embed files|embeds]]! 
+
+> [!tip] Callouts can have custom titles 
+> Like this one.
+
