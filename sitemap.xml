@@ -461,6 +461,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/kotlin/delegated-properties/</loc>
+         <lastmod>2023-02-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/kotlin/delegation/</loc>
          <lastmod>2023-02-19</lastmod>
          <changefreq>daily</changefreq>
@@ -667,6 +672,16 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/web/websocket/bookmarks/</loc>
+         <lastmod>2023-02-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/test/Untitled%201/</loc>
+         <lastmod>2023-02-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/test/Untitled/</loc>
          <lastmod>2023-02-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -962,6 +977,11 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/tools/github/actions/self-hosted-runner/</loc>
+         <lastmod>2023-02-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/tools/github/pages/</loc>
          <lastmod>2023-02-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
