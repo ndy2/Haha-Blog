@@ -20,4 +20,35 @@ date: 2023-02-20
 
 
 
+>[!note] note with code block
 >
+>```kotlin
+>fun main() {
+>	println("hello world")
+>}
+
+>[!note] note with content tab
+>
+>=== "C"
+>
+>  ``` c
+> #include <stdio.h>
+>
+>  int main(void) {
+>      printf("Hello world!\n");
+>      return 0;
+>  }
+> ```
+>
+>=== "Kotlin"
+>
+>```kotlin
+>fun main(){
+>	println("Hello world!")
+>}
+>```
+
+
+
+
+
