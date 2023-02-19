@@ -416,16 +416,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/study/dev-general/github-actions/self-hosted-runner/</loc>
-         <lastmod>2023-02-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ndy2.github.io/Haha-Blog/study/dev-general/gitlab/gitlab-ci-cd/</loc>
-         <lastmod>2023-02-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/dev-general/uml/</loc>
          <lastmod>2023-02-19</lastmod>
          <changefreq>daily</changefreq>
@@ -957,6 +947,11 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/tools/git/clone/</loc>
+         <lastmod>2023-02-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/tools/github/actions/self-hosted-runner/</loc>
          <lastmod>2023-02-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
