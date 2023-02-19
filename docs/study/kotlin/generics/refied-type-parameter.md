@@ -1,4 +1,5 @@
 ---
+tags: [코틀린, 제네릭스]
 title: 실체화된 타입 파라미터 (refied-type-parameter)
 date: 2023-02-17
 ---

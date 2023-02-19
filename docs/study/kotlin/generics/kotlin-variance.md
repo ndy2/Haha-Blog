@@ -1,5 +1,5 @@
 ---
-pre: 코틀린 제네릭스
+tags: [코틀린, 제네릭스]
 title: 변성 in Kotlin
 date: 2023-02-18
 ---

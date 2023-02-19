@@ -133,10 +133,22 @@ nav:
   - 프로젝트:
       - 공통 :
           - projects/common/on-startup/index.md
-          - projects/common/intellij-tasks-server-and-commit-push/index.md
-          - projects/common/intellij-style/index.md
       - projects/kakaotalk-clone-coding/index.md
   
+  - 도구 :
+      - git :
+          - tools/git/clone.md
+      - github :
+          - actions :
+              - tools/github/actions/self-hosted-runner/index.md
+      - intellij :
+          - tools/intellij/style/index.md
+          - tools/intellij/tasks-server-and-commit-push/index.md
+      - kafka :
+          - tools/kafka/install.md
+          - tools/kafka/use.md
+          - tools/kafka/troubleshooting.md
+
   - 분야 별 학습:
       - CS :
           - 운영체제:
@@ -227,8 +239,6 @@ nav:
               - study/dev-general/uml/sequence-diagram/index.md
           - 협업 :
               - study/dev-general/collaborate/async-communication.md
-          - github actions :
-              - study/dev-general/github-actions/self-hosted-runner/index.md
       
       - 백엔드 서버 개발 :
           - spring :
@@ -308,18 +318,8 @@ nav:
   
   
   - TIL: til/getting-started.md
-  
-  
   - Notes: 
       - notes/bookmarks/bookmarks.md
-      - cheetsheets:
-          - git:
-              - notes/cheetsheets/git/git-clone.md
-          - kotlin:
-              - notes/cheetsheets/kotlin/scope-functions.md
-          - kafka:
-              - notes/cheetsheets/kafka/install.md
-              - notes/cheetsheets/kafka/use.md
-              - notes/cheetsheets/kafka/troubleshooting.md
+
               
               
