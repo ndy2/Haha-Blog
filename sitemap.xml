@@ -461,6 +461,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/kotlin/delegation/</loc>
+         <lastmod>2023-02-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/kotlin/generics/basic/</loc>
          <lastmod>2023-02-19</lastmod>
          <changefreq>daily</changefreq>
@@ -502,6 +507,11 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/kotlin/object-keyword/</loc>
+         <lastmod>2023-02-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/kotlin/operator-overloading/</loc>
          <lastmod>2023-02-19</lastmod>
          <changefreq>daily</changefreq>
     </url>

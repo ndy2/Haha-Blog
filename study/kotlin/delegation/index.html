@@ -7,12 +7,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다" name="description"/>
 <meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/study/database/olap/" rel="canonical"/>
-<link href="../transaction-acid/" rel="prev"/>
-<link href="../clustering-replication-sharding/" rel="next"/>
+<link href="https://ndy2.github.io/Haha-Blog/study/kotlin/delegation/" rel="canonical"/>
+<link href="../operator-overloading/" rel="prev"/>
+<link href="../../dev-general/uml/" rel="next"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.13" name="generator"/>
-<title>OLAP - Haha 블로그</title>
+<title>위임 (Delegation) - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.ffa9267a.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -37,7 +37,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#olap">
+<a class="md-skip" href="#1">
           Skip to content
         </a>
 </div>
@@ -61,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              OLAP
+              위임 (Delegation)
             
           </span>
 </div>
@@ -355,13 +355,13 @@
           분야 별 학습
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
           CS
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_6_1_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_6_1_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_6_1">
 <span class="md-nav__icon md-icon"></span>
           CS
@@ -402,45 +402,45 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_1_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_1_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6_1_2" id="__nav_6_1_2_label" tabindex="0">
           데이터베이스
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_6_1_2_label" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_6_1_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_6_1_2">
 <span class="md-nav__icon md-icon"></span>
           데이터베이스
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../basic-terminologies/">
+<a class="md-nav__link" href="../../database/basic-terminologies/">
         데이터베이스 기본 용어
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../rdb/">
+<a class="md-nav__link" href="../../database/rdb/">
         관계형 데이터베이스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../join/">
+<a class="md-nav__link" href="../../database/join/">
         SQL join
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-index/">
+<a class="md-nav__link" href="../../database/db-index/">
         데이터베이스 인덱스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../anomaly/">
+<a class="md-nav__link" href="../../database/anomaly/">
         데이터베이스 이상현상
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../fd/">
+<a class="md-nav__link" href="../../database/fd/">
         데이터베이스 FD
       </a>
 </li>
@@ -457,17 +457,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../normalization/db-normalization/">
+<a class="md-nav__link" href="../../database/normalization/db-normalization/">
         개요
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../normalization/db-normalization-1nf-2nf/">
+<a class="md-nav__link" href="../../database/normalization/db-normalization-1nf-2nf/">
         1NF, 2NF
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../normalization/db-normalization-3nf-bcnf/">
+<a class="md-nav__link" href="../../database/normalization/db-normalization-3nf-bcnf/">
         3NF, BCNF
       </a>
 </li>
@@ -475,55 +475,27 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../transaction-acid/">
+<a class="md-nav__link" href="../../database/transaction-acid/">
         트랜잭션 ACID
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          OLAP
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../database/olap/">
         OLAP
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#olap">
-    OLAP 이란?
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    데이터베이스 레벨
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    애플리케이션 레벨
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../clustering-replication-sharding/">
+<a class="md-nav__link" href="../../database/clustering-replication-sharding/">
         클러스터링, 리플리케이션, 샤딩
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../dbcp/">
+<a class="md-nav__link" href="../../database/dbcp/">
         DBCP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../mysql-execution-plan/">
+<a class="md-nav__link" href="../../database/mysql-execution-plan/">
         MySQL 실행계획 연습
       </a>
 </li>
@@ -828,13 +800,13 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
           언어
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_6_2">
 <span class="md-nav__icon md-icon"></span>
           언어
@@ -895,45 +867,45 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6_2_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_2_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6_2_2" id="__nav_6_2_2_label" tabindex="0">
           코틀린
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_2_2_label" class="md-nav" data-md-level="3">
+<nav aria-expanded="true" aria-labelledby="__nav_6_2_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_6_2_2">
 <span class="md-nav__icon md-icon"></span>
           코틀린
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/introduction/">
+<a class="md-nav__link" href="../introduction/">
         코틀린 소개, 특징, 철학
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/object-keyword/">
+<a class="md-nav__link" href="../object-keyword/">
         object 키워드
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/lambda/variable-capturing/">
+<a class="md-nav__link" href="../lambda/variable-capturing/">
         람다 변수 캡쳐링
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/scope-functions/">
+<a class="md-nav__link" href="../scope-functions/">
         scope functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/hof-and-function-type/">
+<a class="md-nav__link" href="../hof-and-function-type/">
         고차 함수 (Higher-Order-Function)와 함수 타입 (Function Type)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/inline-function/">
+<a class="md-nav__link" href="../inline-function/">
         inline 함수
       </a>
 </li>
@@ -950,22 +922,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/generics/basic/">
+<a class="md-nav__link" href="../generics/basic/">
         제네릭스 (generics) 기초
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/generics/refied-type-parameter/">
+<a class="md-nav__link" href="../generics/refied-type-parameter/">
         실체화된 타입 파라미터 (refied-type-parameter)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/generics/java-variance/">
+<a class="md-nav__link" href="../generics/java-variance/">
         변성 with Java
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/generics/kotlin-variance/">
+<a class="md-nav__link" href="../generics/kotlin-variance/">
         변성 in Kotlin
       </a>
 </li>
@@ -973,14 +945,32 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/operator-overloading/">
+<a class="md-nav__link" href="../operator-overloading/">
         연산자 오버로딩
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/delegation/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          위임 (Delegation)
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         위임 (Delegation)
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 바로 예시를 보자
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1671,18 +1661,8 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#olap">
-    OLAP 이란?
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    데이터베이스 레벨
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    애플리케이션 레벨
+<a class="md-nav__link" href="#1">
+    1. 바로 예시를 보자
   </a>
 </li>
 </ul>
@@ -1692,52 +1672,125 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/study/database/olap/index.md" title="View source of this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/raw/main/docs/study/kotlin/delegation/index.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>OLAP</h1>
-<p>@참고 자료)</p>
-<ul>
-<li>우아한형제들 기술블로그 - <a href="https://techblog.woowahan.com/6550/">정지원,# Aurora MySQL vs Aurora PostgreSQL</a></li>
-<li>microsoft - <a href="https://learn.microsoft.com/ko-kr/azure/architecture/data-guide/relational-data/online-analytical-processing"># OLAP(온라인 분석 처리)</a></li>
-</ul>
-<p>면접에서 아래와 같은 꼬리질문을 받았다.</p>
-<p>Q. MSA 에서 데이터베이스의 독립적인 구성이 중요하다고 해주셨는데 왜 그런지 말씀해 주실 수 있나요?</p>
-<p>A. 물리적으로 데이터베이스를 분리하는것은 여러 관점에서 중요합니다. 첫째로는 MSA의 독립성을 위해서입니다. MSA의 가장큰 장점은 Micro-Service 컴포넌트간의 의존성을 낮추어 독립성을 바탕으로 확장성, Business Agility 같은 여러 장점을 얻을 수 있습니다. 애플리케이션 레벨에서 아무리 열심히 메시지 큐와 같은 미들웨어로 독립성을 갖추었다고 할지라도 데이터베이스에서 서로 join을 통해 모든 영역의 데이터를 한번에 조회한다면 이는 아무 의미가 없을 것입니다. 그래서 최소한 MSA 를 활용한다면 데이터베이스를 논리적인 관점에서라도 분리하는 것이 필수입니다.</p>
-<p>두번째는 장애 대응입니다. MSA에서 또한 가장 중요한 것은 Micro-Service 컴포넌트의 장애가 다른 컴포넌트로 전파되지 않도록 관리하는 것입니다. 데이터베이스를 분리하지 않는다면 데이터베이스가 단일 장애 지점이 되어 큰 문제가 될 수 있습니다.</p>
-<p><code>물론 위와 같이 정리해서 답변 하지는 못했다...</code></p>
-<p>Q. 그럼 그런 분리된 데이터베이스 구조에서 통계성 쿼리를 처리하는 방법이 있을까요?</p>
-<p>A. 에... 그게... 효과적으로 잘 모아서 Read 만 발생할 수 있는 서버에다가 어쩌구 저쩌구....</p>
-<p><code>물론 위 처럼 횡설수설 하면서 대답했다...</code></p>
-<p>추후에 찾아보니 OLTP (Online Transaction Processing) 와 OLAP (Online Analytical Processing) 이라는 키워드가 있다. 여기서는 통계성 쿼리 처리, 즉 OLAP 를 효과적으로 처리하기 위한 일반적인 접근방식을 찾아보자!</p>
-<hr/>
-<h3 id="olap">OLAP 이란?<a class="headerlink" href="#olap" title="Permanent link">¶</a></h3>
+<h1>위임 (Delegation)</h1>
 <div class="admonition quote">
-<p class="admonition-title">Quote</p>
-<p>OLAP(온라인 분석 처리)는 대규모 비즈니스 데이터베이스를 구성하고 복잡한 분석을 지원하는 기술입니다. 트랜잭션 시스템에 부정적인 영향을 주지 않고 복잡한 분석 쿼리를 수행하는 데 사용할 수 있습니다.</p>
-<p>기업에서 모든 트랜잭션 및 레코드를 저장하는 데 사용하는 데이터베이스를 <a href="https://learn.microsoft.com/ko-kr/azure/architecture/data-guide/relational-data/online-transaction-processing">OLTP(온라인 트랜잭션 처리)</a> 데이터베이스라고 합니다. 일반적으로 이러한 데이터베이스의 레코드는 한 번에 하나씩 입력됩니다. 종종 이러한 데이터베이스는 조직에 귀중한 정보를 풍부하게 포함합니다. 그러나 OLTP에 사용되는 데이터베이스는 분석용으로 디자인되지 않았습니다. 따라서 이러한 데이터베이스에서 답변을 검색할 때는 시간과 노력이 많이 듭니다. OLAP 시스템은 고효율적 방식으로 데이터에서 이러한 비즈니스 인텔리전스 정보를 추출하는 데 도움이 되도록 디자인되었습니다. OLAP 데이터베이스가 과도한 읽기, 낮은 쓰기 워크로드에 최적화되어 있기 때문입니다.</p>
-<p>miscrosoft - olap</p>
-</div>
-<h3 id="_1">데이터베이스 레벨<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<p>찾아보니 대용량 통계성 쿼리를 위해 별도의 테이블을 관리하고 이를 OLAP 방식으로 처리하는 것이 일반적인것 같다.</p>
-<p>이런 OLAP 를 위해서는 어떤 데이터베이스를 사용하는 가는 데이터의 특성이나 인덱스를 적용하는 방식에 따라 달라 너무 많은 의견있는것 같습니다. 보통 MySQL 과 PostgreSQL 을 두고 고민하는데 직접 데이터를 추가해 쿼리를 날려보고 튜닝하며 성능을 측정하는것이 이런 선택에서는 필수로 보입니다.</p>
-<p>혹은 OLAP 를 위해 특별히 설계된 데이터 웨어하우스 툴 (Amazon Redshit, Azure data lake) 을 고려하기도 합니다.</p>
-<h3 id="_2">애플리케이션 레벨<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<p>애플리케이션 레벨에서는 복잡한 쿼리는 JPA 가 아니라 네이티브 쿼리를 쉽게 다룰 수 있는 
-Data JDBC 나 MyBatis 같은 툴을 활용하는것이 더욱 좋습니다.</p>
+<p class="admonition-title">참고 자료</p>
 <ul>
-<li><a href="https://www.inflearn.com/questions/40192/qdsl%EB%A1%9C-%EB%B3%B5%EC%9E%A1%ED%95%9C-%EC%BF%BC%EB%A6%AC%EB%A5%BC-%EC%96%B4%EB%8A%90%EC%A0%95%EB%8F%84-%EC%BB%A4%EB%B2%84-%EA%B0%80%EB%8A%A5%ED%95%9C%EA%B0%80%EC%9A%94">김영한님 -복잡한 쿼리 처리하는 방법</a> </li>
-<li>스프링 부트로 개발하는 MSA 컴포넌트 - 7장 1절 JPA 장점과 잔점</li>
+<li>참고 자료</li>
+<li>kotlin documentation - <a href="https://kotlinlang.org/docs/delegation.html">Delegation</a></li>
+<li>kotlin examples = <a href="https://play.kotlinlang.org/byExample/07_Delegation/01_delegationPattern">Delegation/DelegationPattern</a></li>
+<li></li>
 </ul>
+</div>
+<hr/>
+<h3 id="1">1. 바로 예시를 보자<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
+<div class="highlight"><span class="filename">위임 예제</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nc">Base</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">}</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kd">class</span><span class="w"> </span><span class="nc">BaseImpl</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">x</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">}</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Derived</span><span class="p">(</span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="n">Base</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="c1">// (1)</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BaseImpl</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="n">Derived</span><span class="p">(</span><span class="n">b</span><span class="p">).</span><span class="na">print</span><span class="p">()</span>
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>by 절을 이용해 b 를 내부에 저장하고 Base 인터페이스의 메서드가 b 에의해 위힘 처리 되도록한다.</li>
+</ol>
+<div class="highlight"><span class="filename">바이트 코드 디컴파일</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Base</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">   </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">();</span><span class="w">  </span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="p">}</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BaseImpl</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">   </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w">  </span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">var1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">x</span><span class="p">;</span><span class="w">  </span>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">var1</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">   </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getX</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">x</span><span class="p">;</span><span class="w">  </span>
+<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">   </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a>
+<a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="nf">BaseImpl</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w">  </span>
+<a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">   </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="p">}</span>
+<a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a>
+<a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Derived</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">   </span><span class="c1">// $FF: synthetic field  </span>
+<a href="#__codelineno-1-24" id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">   </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="n">$$delegate_0</span><span class="p">;</span><span class="w">  </span><span class="c1">// (1)</span>
+<a href="#__codelineno-1-25" id="__codelineno-1-25" name="__codelineno-1-25"></a>
+<a href="#__codelineno-1-26" id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="nf">Derived</span><span class="p">(</span><span class="nd">@NotNull</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-1-27" id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">      </span><span class="n">Intrinsics</span><span class="p">.</span><span class="na">checkNotNullParameter</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="s">"b"</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-1-28" id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="w">      </span><span class="kd">super</span><span class="p">();</span><span class="w">  </span>
+<a href="#__codelineno-1-29" id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="na">$$delegate_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// (1)</span>
+<a href="#__codelineno-1-30" id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="w">   </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-1-31" id="__codelineno-1-31" name="__codelineno-1-31"></a>
+<a href="#__codelineno-1-32" id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-1-33" id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="na">$$delegate_0</span><span class="p">.</span><span class="na">print</span><span class="p">();</span><span class="w">  </span><span class="c1">// (2)</span>
+<a href="#__codelineno-1-34" id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="w">   </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-1-35" id="__codelineno-1-35" name="__codelineno-1-35"></a><span class="p">}</span>
+<a href="#__codelineno-1-36" id="__codelineno-1-36" name="__codelineno-1-36"></a>
+<a href="#__codelineno-1-37" id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainKt</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-1-38" id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-1-39" id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="w">      </span><span class="n">BaseImpl</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BaseImpl</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w">  </span>
+<a href="#__codelineno-1-40" id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="w">      </span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Derived</span><span class="p">((</span><span class="n">Base</span><span class="p">)</span><span class="n">b</span><span class="p">)).</span><span class="na">print</span><span class="p">();</span><span class="w">  </span>
+<a href="#__codelineno-1-41" id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="w">   </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-1-42" id="__codelineno-1-42" name="__codelineno-1-42"></a>
+<a href="#__codelineno-1-43" id="__codelineno-1-43" name="__codelineno-1-43"></a><span class="w">   </span><span class="c1">// $FF: synthetic method  </span>
+<a href="#__codelineno-1-44" id="__codelineno-1-44" name="__codelineno-1-44"></a><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">var0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-1-45" id="__codelineno-1-45" name="__codelineno-1-45"></a><span class="w">      </span><span class="n">main</span><span class="p">();</span><span class="w">  </span>
+<a href="#__codelineno-1-46" id="__codelineno-1-46" name="__codelineno-1-46"></a><span class="w">   </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-1-47" id="__codelineno-1-47" name="__codelineno-1-47"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>생성자에서 b 를 받아 내부에 저장한다.</li>
+<li>위임 방식으로 오버라이딩을 처리한다.</li>
+</ol>
+<hr/>
+<p>위임 클래스의 일부 메서드만 오버라이딩 할 수도 있다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nc">Base</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">printMessage</span><span class="p">()</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">printMessageLine</span><span class="p">()</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">}</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="kd">class</span><span class="w"> </span><span class="nc">BaseImpl</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">x</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">printMessage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">printMessageLine</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="p">}</span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Derived</span><span class="p">(</span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="n">Base</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">printMessage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="s">"abc"</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// (1) </span>
+<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="p">}</span>
+<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a>
+<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BaseImpl</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<a href="#__codelineno-2-17" id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">    </span><span class="n">Derived</span><span class="p">(</span><span class="n">b</span><span class="p">).</span><span class="na">printMessage</span><span class="p">()</span>
+<a href="#__codelineno-2-18" id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">    </span><span class="n">Derived</span><span class="p">(</span><span class="n">b</span><span class="p">).</span><span class="na">printMessageLine</span><span class="p">()</span>
+<a href="#__codelineno-2-19" id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>printMessage 는 직접 처리한다.</li>
+</ol>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 19, 2023</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 19, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 19, 2023</span>
 </small>
 </div>
 </article>
@@ -1746,7 +1799,7 @@ Data JDBC 나 MyBatis 같은 툴을 활용하는것이 더욱 좋습니다.</p>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 트랜잭션 ACID" class="md-footer__link md-footer__link--prev" href="../transaction-acid/" rel="prev">
+<a aria-label="Previous: 연산자 오버로딩" class="md-footer__link md-footer__link--prev" href="../operator-overloading/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -1755,17 +1808,17 @@ Data JDBC 나 MyBatis 같은 툴을 활용하는것이 더욱 좋습니다.</p>
 <span class="md-footer__direction">
                   Previous
                 </span>
-                트랜잭션 ACID
+                연산자 오버로딩
               </div>
 </div>
 </a>
-<a aria-label="Next: 클러스터링, 리플리케이션, 샤딩" class="md-footer__link md-footer__link--next" href="../clustering-replication-sharding/" rel="next">
+<a aria-label="Next: UML 시작" class="md-footer__link md-footer__link--next" href="../../dev-general/uml/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                클러스터링, 리플리케이션, 샤딩
+                UML 시작
               </div>
 </div>
 <div class="md-footer__button md-icon">
