@@ -16,7 +16,7 @@ date: 2023-02-20
 1. 아래의 `+ Add Item` 버튼을 통해 `📋 Backlog` 타입의 아이탬을 생성 할 수 있다.
 2. 생성만 하면 `◌ Draft` 표시가 붙어있다.
 
-### 2. Conver `project item` to `Repository Issue`
+### 2. Convert `project item` to `Repository Issue`
 
 ![[images/2.png]]
 
