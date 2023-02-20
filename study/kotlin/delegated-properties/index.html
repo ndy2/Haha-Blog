@@ -883,6 +883,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../tips/">
+        꿀팁 모음
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../object-keyword/">
         object 키워드
       </a>
@@ -908,13 +913,13 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6_2_2_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_2_2_7" id="__nav_6_2_2_7_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2_2_8" id="__nav_6_2_2_8_label" tabindex="0">
           제네릭스 (generics)
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_2_2_7_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_6_2_2_7">
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_2_8_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_6_2_2_8">
 <span class="md-nav__icon md-icon"></span>
           제네릭스 (generics)
         </label>
@@ -950,6 +955,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../delegation/">
         위임 (Delegation)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../delegation-properties/index.md">
+        None
       </a>
 </li>
 </ul>
@@ -1642,7 +1652,27 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1">
-    1.
+    1. 위임 프로퍼티
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-lazy-delegation">
+    2. Lazy Delegation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-observable-properties">
+    3. Observable properties﻿
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 컴파일러가 어떻게 처리하는가?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-providedelegate">
+    5. provideDelegate 연산자
   </a>
 </li>
 </ul>
@@ -1659,7 +1689,6 @@
 <div class="admonition quote">
 <p class="admonition-title">참고 자료</p>
 <ul>
-<li>참고 자료</li>
 <li><a href="http://www.yes24.com/Product/Goods/55148593"><code>『코틀린 인 액션』</code></a> by 드미트리 제메로프, 스베트라나 이사코바 <ul>
 <li>7장 연산자 오버로딩과 기타 관례</li>
 </ul>
@@ -1669,20 +1698,203 @@
 </ul>
 </div>
 <hr/>
-<h3 id="1">1.<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
-<div class="admonition tip">
-<p class="admonition-title">haha</p>
-<p>papa</p>
-</div>
+<h3 id="1">1. 위임 프로퍼티<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Example</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">p</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">Delegate</span><span class="p">()</span><span class="w"> </span><span class="c1">// (1)</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>syntax : <code>val/var &lt;property name&gt;: &lt;Type&gt; by &lt;expression&gt;</code></li>
+</ol>
+<p><code>by</code> 절 이후의 expression 을 <em>delegate</em> 이라고 부른다. 프로퍼티의 게터와 세터는 <em>delegate</em> 의 <code>getValue()</code>, <code>setValue()</code> 메서드에 위임처리된다.</p>
+<div class="highlight"><span class="filename">example Degegate</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlin.reflect.KProperty</span><span class="w"> </span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Delegate</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="kd">operator</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getValue</span><span class="p">(</span><span class="n">thisRef</span><span class="p">:</span><span class="w"> </span><span class="kt">Any?</span><span class="p">,</span><span class="w"> </span><span class="n">property</span><span class="p">:</span><span class="w"> </span><span class="n">KProperty</span><span class="o">&lt;*&gt;</span><span class="p">):</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"</span><span class="si">$</span><span class="n">thisRef</span><span class="s">, thank you for delegating '</span><span class="si">${</span><span class="n">property</span><span class="p">.</span><span class="na">name</span><span class="si">}</span><span class="s">' to me!"</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="kd">operator</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">setValue</span><span class="p">(</span><span class="n">thisRef</span><span class="p">:</span><span class="w"> </span><span class="kt">Any?</span><span class="p">,</span><span class="w"> </span><span class="n">property</span><span class="p">:</span><span class="w"> </span><span class="n">KProperty</span><span class="o">&lt;*&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="si">$</span><span class="n">value</span><span class="s"> has been assigned to '</span><span class="si">${</span><span class="n">property</span><span class="p">.</span><span class="na">name</span><span class="si">}</span><span class="s">' in </span><span class="si">$</span><span class="n">thisRef</span><span class="s">."</span><span class="p">)</span><span class="w"> </span>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">delegated getter</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Example</span><span class="p">()</span><span class="w"> </span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">p</span><span class="p">)</span><span class="w"> </span><span class="c1">// (1)</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">e</span><span class="p">.</span><span class="na">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"NEW"</span><span class="w"> </span><span class="c1">// (2)</span>
+</code></pre></div>
+<ol>
+<li>result - <code>Example@33a17727, thank you for delegating 'p' to me!</code></li>
+<li><code>NEW has been assigned to 'p' in Example@33a17727.</code></li>
+</ol>
+<h3 id="2-lazy-delegation">2. Lazy Delegation<a class="headerlink" href="#2-lazy-delegation" title="Permanent link">¶</a></h3>
+<p>코틀린 표준 라이브러리는 유용한 형태의 <code>delegation</code> 팩토리 메서드를 몇가지 제공합니다. 먼저 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/lazy.html"><code>lazy()</code></a> 에 대해서 알아보겠습니다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">lazyValue</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">lazy</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"computed!"</span><span class="p">)</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="s">"Hello"</span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="p">}</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="n">lazyValue</span><span class="p">)</span>
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="n">lazyValue</span><span class="p">)</span>
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">실행 결과</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>computed!
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>Hello
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>Hello
+</code></pre></div>
+<p><code>get()</code> 이 처음 호출 되면 람다식을 실행해서 그 결과값을 <code>Lazy&lt;T&gt;</code> 인스턴스에 저장합니다.
+<code>get()</code> 이 추가적으로 호출 되는 경우 람다식을 실행하지 않고 저장된 값을 반환합니다.</p>
+<p>아주 매력적입니다. <code>lazy()</code> 의 구현을 더 자세히 살펴보겠습니다.</p>
+<div class="highlight"><span class="filename">LazyJVM.kt - kotlin.LazyKt</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">package</span><span class="w"> </span><span class="nn">kotlin</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">actual</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">lazy</span><span class="p">(</span><span class="n">initializer</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">T</span><span class="p">):</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SynchronizedLazyImpl</span><span class="p">(</span><span class="n">initializer</span><span class="p">)</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">actual</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">lazy</span><span class="p">(</span><span class="n">mode</span><span class="p">:</span><span class="w"> </span><span class="n">LazyThreadSafetyMode</span><span class="p">,</span><span class="w"> </span><span class="n">initializer</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">T</span><span class="p">):</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">        </span><span class="n">LazyThreadSafetyMode</span><span class="p">.</span><span class="na">SYNCHRONIZED</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">SynchronizedLazyImpl</span><span class="p">(</span><span class="n">initializer</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">        </span><span class="n">LazyThreadSafetyMode</span><span class="p">.</span><span class="na">PUBLICATION</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">SafePublicationLazyImpl</span><span class="p">(</span><span class="n">initializer</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">        </span><span class="n">LazyThreadSafetyMode</span><span class="p">.</span><span class="na">NONE</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">UnsafeLazyImpl</span><span class="p">(</span><span class="n">initializer</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a>
+<a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="kd">public</span><span class="w"> </span><span class="kd">actual</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">lazy</span><span class="p">(</span><span class="n">lock</span><span class="p">:</span><span class="w"> </span><span class="kt">Any?</span><span class="p">,</span><span class="w"> </span><span class="n">initializer</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">T</span><span class="p">):</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SynchronizedLazyImpl</span><span class="p">(</span><span class="n">initializer</span><span class="p">,</span><span class="w"> </span><span class="n">lock</span><span class="p">)</span>
+<a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a>
+<a href="#__codelineno-5-14" id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="kd">private</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">SynchronizedLazyImpl</span><span class="o">&lt;</span><span class="k">out</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">initializer</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">lock</span><span class="p">:</span><span class="w"> </span><span class="kt">Any?</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">Serializable</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* 구현 구현 */</span><span class="w"> </span><span class="p">}</span>
+<a href="#__codelineno-5-15" id="__codelineno-5-15" name="__codelineno-5-15"></a>
+<a href="#__codelineno-5-16" id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="kd">private</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">SafePublicationLazyImpl</span><span class="o">&lt;</span><span class="k">out</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">initializer</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">Serializable</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* */</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Lazy.kt - kotlin.LazyKt</span><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">package</span><span class="w"> </span><span class="nn">kotlin</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nc">Lazy</span><span class="o">&lt;</span><span class="k">out</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// (1)</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">value</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="w">  </span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">isInitialized</span><span class="p">():</span><span class="w"> </span><span class="kt">Boolean</span><span class="w">  </span>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="p">}</span><span class="w"> </span>
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a>
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="nd">@kotlin.internal.InlineOnly</span><span class="w">  </span>
+<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="kd">public</span><span class="w"> </span><span class="kd">inline</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">Lazy</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">thisRef</span><span class="p">:</span><span class="w"> </span><span class="kt">Any?</span><span class="p">,</span><span class="w"> </span><span class="n">property</span><span class="p">:</span><span class="w"> </span><span class="n">KProperty</span><span class="o">&lt;*&gt;</span><span class="p">):</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="c1">// (2)</span>
+<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a>
+<a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">LazyThreadSafetyMode</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// (3)</span>
+<a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="n">SYNCHRONIZED</span><span class="p">,</span><span class="w">  </span>
+<a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="n">PUBLICATION</span><span class="p">,</span><span class="w">  </span>
+<a href="#__codelineno-6-14" id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">    </span><span class="n">NONE</span><span class="p">,</span><span class="w">  </span>
+<a href="#__codelineno-6-15" id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="p">}</span>
+<a href="#__codelineno-6-16" id="__codelineno-6-16" name="__codelineno-6-16"></a>
+<a href="#__codelineno-6-17" id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="kd">internal</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">UnsafeLazyImpl</span><span class="o">&lt;</span><span class="k">out</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">initializer</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">Serializable</span><span class="w"> </span><span class="p">{</span><span class="cm">/* 구현 구현 */</span><span class="p">}</span>
+<a href="#__codelineno-6-18" id="__codelineno-6-18" name="__codelineno-6-18"></a>
+<a href="#__codelineno-6-19" id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="kd">public</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">lazyOf</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="p">):</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitializedLazyImpl</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<a href="#__codelineno-6-20" id="__codelineno-6-20" name="__codelineno-6-20"></a>
+<a href="#__codelineno-6-21" id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="kd">internal</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">InitializedLazyImpl</span><span class="o">&lt;</span><span class="k">out</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="kd">override</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">value</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">Serializable</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="cm">/* 구현 구현 */</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Lazy 인터페이스 - 저장 값의 게터와 초기화 여부를 제공합니다. </li>
+<li><em>delegate</em> 로 동작하는 expression 은 <code>getValue</code> 를 제공해야 합니다. <code>Lazy&lt;T&gt;</code> 에 대한 <code>getValue</code> 연산자를 확장함수로 제공함으로써 Lazy 구현체가 delagate 로 동작 할 수 있습니다.</li>
+<li><code>lazy</code> 팩토리 메서드의 LazyThreadSaftetyMode 를 통해 세가지 타입의 Lazy 구현체를 제공합니다. 나머지 하나는 초기화가 다 되었다는 정보를 포함하는 <code>InitializedLazyImpl</code> 이므로 <code>lazyOf</code> 메서드로 따로 제공하고 람다를 받지도 않습니다.</li>
+</ol>
+<pre class="mermaid"><code>classDiagram
+    direction TB
+    Lazy --|&gt; SynchronizedLazyImpl
+    Lazy --|&gt; SafePublicationLazyImpl
+    Lazy --|&gt; UnsafeLazyImpl
+    Lazy --|&gt; InitializedLazyImpl</code></pre>
+<p>기본적으로 활용되는 타입의 <code>Lazy</code> 구현체는 <code>SynchronizedLazyImpl</code> 입니다. 이 녀석의 가장 중요한 프로퍼티인 value 가 어떻게 오버라이드 되어 있는지 코드를 확인 해 보겠습니다.</p>
+<div class="highlight"><span class="filename">SynchronizedLazyImpl 일부</span><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nd">@Volatile</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">_value</span><span class="p">:</span><span class="w"> </span><span class="kt">Any?</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UNINITIALIZED_VALUE</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kd">override</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">value</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="w">  </span><span class="c1">// (1)</span>
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="k">get</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">_v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_value</span><span class="w">  </span>
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_v1</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="n">UNINITIALIZED_VALUE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// (2)</span>
+<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">            </span><span class="nd">@Suppress</span><span class="p">(</span><span class="s">"UNCHECKED_CAST"</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">_v1</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">T</span><span class="w">  </span>
+<a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">        </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a>
+<a href="#__codelineno-7-11" id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">synchronized</span><span class="p">(</span><span class="n">lock</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// (3)</span>
+<a href="#__codelineno-7-12" id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">            </span><span class="kd">val</span><span class="w"> </span><span class="nv">_v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_value</span><span class="w">  </span>
+<a href="#__codelineno-7-13" id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_v2</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="n">UNINITIALIZED_VALUE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// (4)</span>
+<a href="#__codelineno-7-14" id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">                </span><span class="nd">@Suppress</span><span class="p">(</span><span class="s">"UNCHECKED_CAST"</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">_v2</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-7-15" id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-7-16" id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">                </span><span class="kd">val</span><span class="w"> </span><span class="nv">typedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">initializer</span><span class="o">!!</span><span class="p">()</span><span class="w"> </span><span class="c1">// (5)</span>
+<a href="#__codelineno-7-17" id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">                </span><span class="n">_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">typedValue</span><span class="w">  </span>
+<a href="#__codelineno-7-18" id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">                </span><span class="n">initializer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="w">  </span>
+<a href="#__codelineno-7-19" id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">                </span><span class="n">typedValue</span><span class="w">  </span>
+<a href="#__codelineno-7-20" id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">            </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-7-21" id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">        </span><span class="p">}</span><span class="w">  </span>
+<a href="#__codelineno-7-22" id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>프로퍼티 오버라이딩을 활용한 모습이 인상적입니다.</li>
+<li>초기화 되었다면 그 값을 반환</li>
+<li>그렇지 않다면 synchronized 블락에서 처리</li>
+<li>여기서 한번 더 확인 하는 모습도 인상적입니다.</li>
+<li>function type 을 실행 한다. 여기서 <code>initializer</code> 의 값을 <code>null</code> 로 변경 해 주어서 이 구문이 단 한번만 실행 하도록 보장하는 모습이 인상적입니다.</li>
+</ol>
+<h3 id="3-observable-properties">3. Observable properties﻿<a class="headerlink" href="#3-observable-properties" title="Permanent link">¶</a></h3>
+<p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/observable.html"><code>Delegates.observable()</code></a> 는 <code>초기 값</code>과 <code>핸들러</code> 두가지 인자를 가집니다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlin.properties.Delegates</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kd">class</span><span class="w"> </span><span class="nc">User</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">Delegates</span><span class="p">.</span><span class="na">observable</span><span class="p">(</span><span class="s">"&lt;no name&gt;"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">        </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="n">old</span><span class="p">,</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="o">-&gt;</span>
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="si">${</span><span class="n">prop</span><span class="p">.</span><span class="na">name</span><span class="si">}</span><span class="s"> : </span><span class="si">$</span><span class="n">old</span><span class="s"> -&gt; </span><span class="si">$</span><span class="n">new</span><span class="s">"</span><span class="p">)</span>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="p">}</span>
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a>
+<a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="p">()</span>
+<a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span><span class="n">user</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"first"</span>
+<a href="#__codelineno-8-13" id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">    </span><span class="n">user</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"second"</span>
+<a href="#__codelineno-8-14" id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">실행 결과</span><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>name : &lt;no name&gt; -&gt; first 
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>name : first -&gt; second
+</code></pre></div>
+<p>이번에는 게터 보다 세터와 조금더 연관이 깊은 <em>delegation</em> 입니다. <code>Delegates.observable</code> 은 setValue 연산자에 대한 오버라이딩을 제공하여 이전값, 현재값을 저장하고 있다가 값에 변경이 일어나는 경우 <code>Handler</code> 를 호출 할 수 있습니다.</p>
+<p><em>kotlin documentation</em> 에서 설명하는 내용 중 핸들러의 호출시점에 대해서는 꼭 알고가야할 것 같습니다. <code>Delegates.observable()</code> 의 핸들러는 값의 할당이 이루어 진 이후에 호출됩니다. 값의 할당이 이루어 지기 전 핸들러를 호출하는 <em>delegation</em> 인 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/vetoable.html"><code>Delegates.vetoable()</code></a>  이라는 녀석도 있습니다.  이녀석을 활용하면 값의 변경이 이루어지기 전 값을 검증하는 등의 역할을 수행 할 수도 있습니다. </p>
+<h3 id="4">4. 컴파일러가 어떻게 처리하는가?<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
+<p>공식 문서 및 다양한 예제를 보면 위에서 정리한 <code>Lazy</code>, 나 <code>Delegation.observable()</code>, <code>vetoable()</code> 외의 몇가지 흥미로운 활용방식을 더 소개합니다.</p>
 <blockquote>
-<p>[!quote]
-This is an admonition!</p>
-<p>[!info] 
-Here's a callout block. 
-It supports <strong>Markdown</strong>, [[Internal link|Wikilinks]], and [[Embed files|embeds]]! </p>
-<p>[!tip] Callouts can have custom titles 
-Like this one.</p>
+<p>[!example] 다른 흥미로운 활용 방식들
+- <a href="https://kotlinlang.org/docs/delegated-properties.html#delegating-to-another-property">다른 프로퍼티에 위임</a>
+- <a href="https://kotlinlang.org/docs/delegated-properties.html#storing-properties-in-a-map">맵에 위임</a>
+- ...</p>
 </blockquote>
+<p>위 방식들은 나중에 사용할 기회가 있으면 더 알아보는 것으로 하고 컴파일러가 이 위임 <em>Delegation</em> 을 어떻게 처리하는가에 대해서 알아보겠습니다.</p>
+<p>사실 이전에 살펴본 <a href="../delegation">class 레벨의 delegation</a>에서 바이트코드 디 컴파일을 통해 어느정도 동작방식을 살펴보았습니다. 컴파일러는 위임 프로퍼티에 대해 보조 프로퍼티를 생성하여 이를 처리합니다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">C</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">prop</span><span class="p">:</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">MyDelegate</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="c1">// this code is generated by the compiler instead: </span>
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="kd">class</span><span class="w"> </span><span class="nc">C</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">prop</span><span class="err">$</span><span class="n">delegate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyDelegate</span><span class="p">()</span><span class="w"> </span><span class="c1">// 보조 프로퍼티 생성</span>
+<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">prop</span><span class="p">:</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span>
+<a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">        </span><span class="k">get</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prop</span><span class="err">$</span><span class="n">delegate</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">::</span><span class="n">prop</span><span class="p">)</span><span class="w"> </span><span class="c1">// 게터 위임</span>
+<a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">        </span><span class="k">set</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">Type</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prop</span><span class="err">$</span><span class="n">delegate</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">::</span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="c1">// 세터 위임 </span>
+<a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="p">}</span>
+</code></pre></div>
+<p>기본적인 룰은 위와 같습니다. 컴파일러는 더 나아가서 최적화가 가능한 몇몇 경우에 보조 프로퍼티를 생성하지 않는 등의 최적화를 수행하기도 합니다.</p>
+<hr/>
+<h3 id="5-providedelegate">5. <code>provideDelegate</code> 연산자<a class="headerlink" href="#5-providedelegate" title="Permanent link">¶</a></h3>
+<p>지금껏 <code>getValue</code> 와 <code>setValue</code> 연산자를 재 정의하여 <em>delegation</em> 을 제공하는 방법과 kotlin standard library 에서 제공하는 유용한 <em>delegation</em> 을 몇가지 알아보았습니다. kotlin 에는 delegation 와 관련된 연산자가 하나 더 있습니다. 바로바로 <code>provideDelegate</code> 입니다.</p>
+<p><code>lazy</code> 와 <code>Delegates.observable</code> 은 람다식을 통해 <em>delegation</em> 을 팩토리 메서드로 제공합니다. <em>delegation</em> 을 제공하는 클래스 자체를 구현하고 싶다면 <code>provideDelegate</code> 연산자를 오버로딩 할 수 있습니다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">C</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">prop</span><span class="p">:</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">MyDelegate</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="c1">// this code is generated by the compiler </span>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="c1">// when the 'provideDelegate' function is available: </span>
+<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="kd">class</span><span class="w"> </span><span class="nc">C</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">    </span><span class="c1">// calling "provideDelegate" to create the additional "delegate" property </span>
+<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">prop</span><span class="err">$</span><span class="n">delegate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyDelegate</span><span class="p">().</span><span class="na">provideDelegate</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">::</span><span class="n">prop</span><span class="p">)</span><span class="w"> </span><span class="c1">// (1)</span>
+<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">prop</span><span class="p">:</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span>
+<a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">        </span><span class="k">get</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prop</span><span class="err">$</span><span class="n">delegate</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">::</span><span class="n">prop</span><span class="p">)</span><span class="w"> </span>
+<a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">        </span><span class="k">set</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">Type</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prop</span><span class="err">$</span><span class="n">delegate</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">::</span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span>
+<a href="#__codelineno-11-11" id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li><code>MyDelegate</code> 은 <code>provideDelegate</code> 연산자를 오버로딩하여 <code>getValue</code> 와 <code>setValue</code> 연산자를 오버로딩 한 <em>delegate</em> 을 제공한다.</li>
+</ol>
+<p>표준 라이브러리의 <code>PropertyDelegateProvider</code> 인터페이스를 통해 별도의 클래스 없이 위임 제공자를 생성할 수도 있습니다.</p>
+<div class="highlight"><span class="filename">게터만 제 정의하는 *Delegation* 을 제공하는 위임 제공자.</span><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PropertyDelegateProvider</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">thisRef</span><span class="p">:</span><span class="w"> </span><span class="kt">Any?</span><span class="p">,</span><span class="w"> </span><span class="n">property</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span>
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">        </span><span class="n">ReadOnlyProperty</span><span class="o">&lt;</span><span class="kt">Any?</span><span class="p">,</span><span class="w"> </span><span class="kt">Int</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">property</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
+<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="p">}</span><span class="w"> </span>
+<a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="kd">val</span><span class="w"> </span><span class="nv">delegate</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">provider</span>
+</code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
