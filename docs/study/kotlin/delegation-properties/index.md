@@ -127,6 +127,11 @@ classDiagram
     Lazy --|> SafePublicationLazyImpl
     Lazy --|> UnsafeLazyImpl
     Lazy --|> InitializedLazyImpl
+	class Lazy{
+        <<Interface>>
+        + value
+        + isInitialized() Boolean
+    }
 ```
 
 기본적으로 활용되는 타입의 `Lazy` 구현체는 `SynchronizedLazyImpl` 입니다. 이 녀석의 가장 중요한 프로퍼티인 value 가 어떻게 오버라이드 되어 있는지 코드를 확인 해 보겠습니다.
@@ -198,9 +203,9 @@ name : first -> second
 공식 문서 및 다양한 예제를 보면 위에서 정리한 `Lazy`, 나 `Delegation.observable()`, `vetoable()` 외의 몇가지 흥미로운 활용방식을 더 소개합니다.
 
 > [!example] 다른 흥미로운 활용 방식들
-> - [다른 프로퍼티에 위임](https://kotlinlang.org/docs/delegated-properties.html#delegating-to-another-property)
-> - [맵에 위임](https://kotlinlang.org/docs/delegated-properties.html#storing-properties-in-a-map)
-> - ...
+> * [다른 프로퍼티에 위임](https://kotlinlang.org/docs/delegated-properties.html#delegating-to-another-property)
+> * [맵에 위임](https://kotlinlang.org/docs/delegated-properties.html#storing-properties-in-a-map)
+> * ...
 
 위 방식들은 나중에 사용할 기회가 있으면 더 알아보는 것으로 하고 컴파일러가 이 위임 *Delegation* 을 어떻게 처리하는가에 대해서 알아보겠습니다.
 
@@ -247,7 +252,7 @@ class C {
 
 표준 라이브러리의 `PropertyDelegateProvider` 인터페이스를 통해 별도의 클래스 없이 위임 제공자를 생성할 수도 있습니다.
 
-```kotlin title="게터만 제 정의하는 *Delegation* 을 제공하는 위임 제공자."
+```kotlin title="게터만 재정의하는 Delegation 을 제공하는 위임 제공자."
 val provider = PropertyDelegateProvider { thisRef: Any?, property -> 
         ReadOnlyProperty<Any?, Int> {_, property -> 42 } 
 } 

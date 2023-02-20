@@ -142,6 +142,10 @@ nav:
       - github :
           - actions :
               - tools/github/actions/self-hosted-runner/index.md
+          - project : 
+              - tools/github/project/index.md
+          - pages : 
+              - tools/github/pages/index.md
       - intellij :
           - tools/intellij/style/index.md
           - tools/intellij/tasks-server-and-commit-push/index.md
