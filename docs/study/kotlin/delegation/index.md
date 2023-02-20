@@ -3,13 +3,9 @@ tags: [kotlin]
 title: 위임 (Delegation)
 date: 2023-02-19
 ---
-
-!!! quote "참고 자료"
-
-    * 참고 자료
-    * kotlin documentation - [Delegation](https://kotlinlang.org/docs/delegation.html)
-    * kotlin examples - [Delegation/DelegationPattern](https://play.kotlinlang.org/byExample/07_Delegation/01_delegationPattern)
-
+>[!quote] 참고 자료
+> * kotlin documentation - [Delegation](https://kotlinlang.org/docs/delegation.html)
+> * kotlin examples - [Delegation/DelegationPattern](https://play.kotlinlang.org/byExample/07_Delegation/01_delegationPattern)
 ---
 
 ### 1. 바로 예시를 보자
