@@ -42,11 +42,11 @@ MSA,  ^tHBcPQCA
 
 
 # Embedded files
-7b45458258949a747999fc3c65edac4e4494785d: [[java_logo.png]]
-1d38048479de3db9920cbdc1d1bbbc48ac29126b: [[spring_logo.png]]
-afedf03c63b51b618afe830588df8d72f625dfa1: [[jpa_logo.png]]
-1d3edbe984ee547f9d6137a94f9e378ded86e435: [[spring_cloud_logo.png]]
-d22a39d4872e640fb251c37bb8e51cd130d55c18: [[kotlin_logo.png]]
+7b45458258949a747999fc3c65edac4e4494785d: [[../images/java_logo.png]]
+1d38048479de3db9920cbdc1d1bbbc48ac29126b: [[../images/spring_logo.png]]
+afedf03c63b51b618afe830588df8d72f625dfa1: [[../images/jpa_logo.png]]
+1d3edbe984ee547f9d6137a94f9e378ded86e435: [[../images/spring_cloud_logo.png]]
+d22a39d4872e640fb251c37bb8e51cd130d55c18: [[../images/kotlin_logo.png]]
 
 %%
 # Drawing

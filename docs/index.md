@@ -2,7 +2,7 @@
 title: 안녕하세요!
 comments: true
 ---
-![[images/my-profile.jpeg|200]]
+![[assets/my-profile.jpeg|200]]
 
 *좋은 설계*와 *객체지향 방법론*에 관심이 많은 ==미래의 백엔드 개발자 남득윤== 입니다. 
 
@@ -14,7 +14,7 @@ comments: true
 <br />
 
 ## 타임 라인
-![my-timeline.excalidraw.png](excalidraws/my-timeline.excalidraw.png)
+![[assets/my-timeline.excalidraw.png]]
 
 ## PS! - [ps 리포지토리](https://github/ndy2/coding-test)
 

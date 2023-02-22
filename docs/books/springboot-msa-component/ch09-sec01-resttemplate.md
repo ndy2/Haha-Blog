@@ -1,9 +1,6 @@
 `o.s.web.client.RestTemplate` 클래스를 몇번 사용해보긴 했지만 그때마다 관련 코드를 찾아보고 혹은 intellij의 code assitant 의 도움을 크게 받으면서 코드를 작성했었습니다. 또한 대충 이름만 보고 템플릿 메서드 패턴을 활용한 다는 것은 알았지만 내부 구조가 어떻게 동작하는 지는 알지 못했습니다. 이번 정리를 통해 확실히 정리하겠습니다.
 
-<figure markdown>
-  ![my-profile.jpeg](../../images/my-profile.jpeg)
-  <figcaption> 렛츠 고! </figcaption>
-</figure>
+![[../../assets/my-profile.jpeg|렛츠 고!]]
 
 ---
 
