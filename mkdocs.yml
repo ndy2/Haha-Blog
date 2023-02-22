@@ -94,7 +94,11 @@ markdown_extensions:
 
 plugins:
   - obsidian-support
+  - awesome-pages
   - blogging:
+      locale: ko_kr
+      time_fromat: '%Y-%m-%d %H:%M:%S'
+      meta_time_format: '%Y-%m-%d %H:%M:%S'
       dirs: [categories]
       template: resources/blogging-plugin/custom-blog.html
       categories:
@@ -152,9 +156,6 @@ plugins:
           index_page: tags.md
       theme:
         name: card
-      locale: ko_kr
-      time_fromat: '%Y-%m-%d %H:%M:%S'
-      meta_time_format: '%Y-%m-%d %H:%M:%S'
   - macros:
       module_name: 'resources/macro/main'
   - search
