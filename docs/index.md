@@ -2,9 +2,9 @@
 title: 안녕하세요!
 comments: true
 ---
-![my-profile.jpeg|200](images/my-profile.jpeg){ align=right width="200"}
+![[images/my-profile.jpeg|200]]
 
-*좋은 설계*와 *객체지향 방법론*에 관심이 많은 {==미래의 백엔드 개발자 남득윤==}입니다. 
+*좋은 설계*와 *객체지향 방법론*에 관심이 많은 ==미래의 백엔드 개발자 남득윤== 입니다. 
 
 저는 `하하` 라는 닉네임을 사용하고 오른쪽 이미지를 프로필 이미지로 자주 사용합니다.
 

@@ -7,14 +7,16 @@
 
 ## Today I Learn! 2022
 
-```vegalite
+<!-- ```vegalite
 {{ vega_til("2022") }}
-```
+``` -->
 
 ---
 
 ## Today I Learn! 2023
 
-```vegalite
+<!-- ```vegalite
 {{ vega_til("2023") }}
-```
+``` -->
+
+{{ blog_content til }}
