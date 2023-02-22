@@ -9,11 +9,11 @@ from mkdocs_git_revision_date_localized_plugin.util import Util
 from babel.dates import get_timezone
 from dateutil import tz
 
-with mkdocs_gen_files.open("docs.md", "w") as f:
+with mkdocs_gen_files.open("archive.md", "w") as f:
     print("### 모든 문서 들\n", file=f)
 
     print("이 문서는 mkdocs-gen-files 플러그인을 통해 생성되었습니다.\n", file=f)
-    print("자세한 동작 방식은 해당 플러그인과 이 [링크](https://github.com/ndy2/Haha-Blog/blob/main/resources/gen-pages/gen_pages.py) 를 참고해주세요.\n", file=f)
+    print("자세한 동작 방식은 해당 플러그인과 이 [링크](https://github.com/ndy2/Haha-Blog/blob/main/resources/gen-pages/archive.md.py) 를 참고해주세요.\n", file=f)
 
     util = Util()
     docs = []

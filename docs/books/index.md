@@ -1,3 +1,9 @@
+---
+tags: [books]
+title: Study with Books
+date: 2022-12-14
+---
+
 # study-with-book
 
 ### 읽은 책 목록

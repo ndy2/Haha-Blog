@@ -1,3 +1,9 @@
+---
+tags: [algorithm, union-find]
+title: union by rank
+date: 2023-02-04
+---
+
 @) 참고 자료
 
 - **Union By Rank and Path Compression in Union-Find Algorithm** - on [geeksforgeeks](https://www.geeksforgeeks.org/union-by-rank-and-path-compression-in-union-find-algorithm/)

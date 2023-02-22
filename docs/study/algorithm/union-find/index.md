@@ -1,4 +1,8 @@
-
+---
+tags: [algorithm, union-find]
+title: 유니온 파인드 (Union-Find)
+date: 2023-02-04
+---
 ### 1. Union-Find 알고리즘
 
 ***Union-Find 알고리즘***은 *Disjoint-Set* 자료구조를 효율적으로 구현하기 위한 알고리즘 입니다.

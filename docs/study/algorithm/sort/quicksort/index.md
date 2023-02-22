@@ -1,4 +1,5 @@
 ---
+tags: [algorithm, sort]
 title: 퀵 소트 (Quicksort)
 date: 2023-02-04
 ---

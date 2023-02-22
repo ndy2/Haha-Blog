@@ -1,10 +1,9 @@
+---
+tags: [books, collaborate]
+title: Clean Agile
+---
 
-<figure markdown>
-  ![book_cover.png](images/book_cover.png){ width="200" }
-  <figcaption> 
-  <a href="http://www.yes24.com/Product/Goods/95728889"> 로버트 C. 마틴 - 클린 애자일  </a>
-  </figcaption>
-</figure>
+![[images/book_cover.png|로버트 C. 마틴 - 클린 애자일|200]]
 
 
 > **Individuals and interactions** over processes and tools
