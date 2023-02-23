@@ -3,8 +3,7 @@ tags: [db]
 title: Clustering Replication Sharding
 author: ndy2
 ---
-
-
+ 
 > [!quote] 참고 자료
 > * 테리의 일상 [클러스터링](https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81Clustering),  [리플리케이션](https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EB%A0%88%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98Replication),[샤딩](https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%83%A4%EB%94%A9Sharding?category=805412)
 > * Be A Better Dev - [데이터베이스 샤딩이란?](https://www.youtube.com/watch?v=hdxdhCpgYo8)
@@ -13,7 +12,7 @@ author: ndy2
 
 ---
 
->![tip]
+>[!tip]
 >`클러스터링`, `레플리케이션`, `샤딩/파티셔닝`은 모두 데이터베이스 다중화를 위한 기법입니다.
 
 ## 1. 클러스터링 (clustering)
