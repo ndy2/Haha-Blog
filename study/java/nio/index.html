@@ -1653,15 +1653,48 @@
 * Jakob Jenkov - https://jenkov.com/tutorials/java-nio/index.html
 * enics - http://eincs.com/2009/08/java-nio-bytebuffer-channel-file/</p>
 </blockquote>
-<p><strong>요약</strong>
-| 구분 | IO | NIO |
-| --- | --- | --- |
-| 입출력 방식 | Stream Oriented | Buffer Oriented |
-| 버퍼 방식 | Non-Buffer→ BufferedXXX 로 지원 | Buffer |
-| 비동기 방식 지원 | X | O |
-| Blocking/Non-Blocking 방식 | Blocking Only | Both |
-| 사용 케이스 | 연결 클라이언트가 적고, IO 가 큰 경우(대용량) | 연결 클라이언트가 많고, IO 처리가 작은 경우(저용량) |
-| 커널 버퍼 | 직접 핸들링 할 수 없음 | Direct Buffer 로 커널 버퍼를 직접 핸들링가능 (ByteBuffer) |</p>
+<p><strong>요약</strong></p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>IO</th>
+<th>NIO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>입출력 방식</td>
+<td>Stream Oriented</td>
+<td>Buffer Oriented</td>
+</tr>
+<tr>
+<td>버퍼 방식</td>
+<td>Non-Buffer→ BufferedXXX 로 지원</td>
+<td>Buffer</td>
+</tr>
+<tr>
+<td>비동기 방식 지원</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr>
+<td>Blocking/Non-Blocking 방식</td>
+<td>Blocking Only</td>
+<td>Both</td>
+</tr>
+<tr>
+<td>사용 케이스</td>
+<td>연결 클라이언트가 적고, IO 가 큰 경우(대용량)</td>
+<td>연결 클라이언트가 많고, IO 처리가 작은 경우(저용량)</td>
+</tr>
+<tr>
+<td>커널 버퍼</td>
+<td>직접 핸들링 할 수 없음</td>
+<td>Direct Buffer 로 커널 버퍼를 직접 핸들링가능 (ByteBuffer)</td>
+</tr>
+</tbody>
+</table>
 <hr/>
 <p>자바의 NIO (New IO) 는 자바 4에 추가된 IO API로 기존 자바 IO 와는 다른 방식으로 동작합니다. NIO 는 Non-blocking IO의 줄임말 처럼 생각될 수 있지만 NIO는 실제로 Non-blocking IO 와 Blocking IO 방식 모두 지원합니다. 기존의 Java IO 를 BIO 라고 부르기도 합니다.</p>
 <p>자바 7부터는 NIO2 가 지원되었습니다.</p>

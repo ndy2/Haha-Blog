@@ -1836,19 +1836,19 @@
 <a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">    </span><span class="p">}</span>
 <a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="p">}</span>
 </code></pre></div>
-<p>(1), (2) - `synchronzied method</p>
+<p>(1), (2) - <code>synchronzied method</code></p>
 <p>(3), (4) - <code>synchronized staement</code></p>
 <p>synchronized 키워드에는 항상 monitor 가 전달되어야 합니다. 위 예시에서 <code>synchronized</code> 블락에는 <code>this</code> 로 객체 자신을 <code>모니터 오브젝트</code>로 활용 하였습니다. 메서드에 <code>synchronized</code> 키워드를 활용한다면 인스턴스 메서드에는 this 가 정적 메서드에는 <code>Class&lt;?&gt;</code> 객체가 <code>모니터 오브젝트</code>로 활용됩니다.</p>
 <p>자바의 <code>synchronized</code> 키워드는 항상이 모니터 객체와 함께 동작합니다. 이 객체는 종종 모든 객체가 가지는 내제적인 락 이라는 의미에서 <code>intrinsic lock</code> 혹은 <code>monitor lock</code> 혹은 그냥 <code>monitor</code> 라고도 불립니다. 이 문서에서는 개인적으로 입에 붙은 <code>모니터 객체</code>, <code>모니터 락</code> 이라는 표현을 주로 사용하겠습니다.</p>
 <p>모니터의 자세한 동작방식은 마지막에 알아보겠습니다.</p>
 <h3 id="2-synchronzied">2. 그림으로 보는 synchronzied 키워드<a class="headerlink" href="#2-synchronzied" title="Permanent link">¶</a></h3>
 <h4 id="1">1. 같은 객체 공유<a class="headerlink" href="#1" title="Permanent link">¶</a></h4>
-<p>![[images/synchronized-1.png]]
-Thread 1과 Thread 2가 동일한 SynchronizedExchanger 객체를 공유하는 경우</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/synchronized-1.png"><img alt="images/synchronized-1.png" src="../images/synchronized-1.png"/></a></p>
+<p>Thread 1과 Thread 2가 동일한 SynchronizedExchanger 객체를 공유하는 경우</p>
 <p>위 코드에서 모든 메서드는 같은 monitor 객체 (this)를 가지기 때문에 Thread 1 이 setObject를 호출하는 순간 Thread 2는 getObject를 호출 할 수 없습니다. (동기화 블럭으로 선언된 xxxObj 메서드 들도 마찬가지)</p>
 <h4 id="2">2. 서로 다른 객체 활용<a class="headerlink" href="#2" title="Permanent link">¶</a></h4>
-<p>![[images/synchronized-2.png]]
-Thread 1과 Thread 2가 각자의 SynchronizedExchanger 객체를 가지는 경우</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/synchronized-2.png"><img alt="images/synchronized-2.png" src="../images/synchronized-2.png"/></a></p>
+<p>Thread 1과 Thread 2가 각자의 SynchronizedExchanger 객체를 가지는 경우</p>
 <p>이렇게 활용하게 되면 Thread1 과 Thread2에서는 syncrhonized 를 활용하는 의미가 없습니다. 각 쓰레드가 자신의 SynchronizedExchanger 의 모니터 락을 획득하여 동기화 메서드, 블락에 진입할수 있기 때문입니다. (사실 당연합니다.)</p>
 <h4 id="3-static-synchronzied">3. Static 메서드와 synchronzied 키워드<a class="headerlink" href="#3-static-synchronzied" title="Permanent link">¶</a></h4>
 <div class="highlight"><span class="filename">StaticSynchronizedExchanger 클래스 객체를 모니터 락으로 활용한다!</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StaticSynchronizedExchanger</span><span class="w"> </span><span class="p">{</span>
@@ -1876,7 +1876,7 @@ Thread 1과 Thread 2가 각자의 SynchronizedExchanger 객체를 가지는 경�
 <a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">    </span><span class="p">}</span>
 <a href="#__codelineno-1-24" id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="p">}</span>
 </code></pre></div>
-<p>![[images/synchronized-3.png]]</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/synchronized-3.png"><img alt="images/synchronized-3.png" src="../images/synchronized-3.png"/></a></p>
 <p>전체 쓰레드에서 한 쓰레드만이 synchronized static 메서드를 호출 할 수 있습니다.</p>
 <h3 id="3">3. 복잡하게 모니터 객체를 활용하는 예제 코드<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
 <h4 id="1-static-instance-synchronized">1. static, instance 메서드에 모두 synchronized 활용하기<a class="headerlink" href="#1-static-instance-synchronized" title="Permanent link">¶</a></h4>
@@ -1992,14 +1992,16 @@ Thread 1과 Thread 2가 각자의 SynchronizedExchanger 객체를 가지는 경�
 </li>
 </ul>
 <h3 id="6-synchronized">6. synchronized 블락과 성능 오버헤드<a class="headerlink" href="#6-synchronized" title="Permanent link">¶</a></h3>
-<p>![[images/synchronized-overhead.png]]</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/synchronized-overhead.png"><img alt="images/synchronized-overhead.png" src="../images/synchronized-overhead.png"/></a></p>
 <ul>
 <li>경쟁이 발생하여 쓰레드가 대기하는 상황이 발생한다면 오버헤드가 큽니다.</li>
 <li>경쟁이 발생하지 않는다고 해도 Lock을 획득하고 Release 하는 약간의 오버헤드는 발생하게 됩니다.</li>
 </ul>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+</div>
 <blockquote>
-<p>[!question]
-싱글 쓰레드 환경이라면 StringBuilder 와 StringBuffer 의 성능은 동일할까요?</p>
+<p>싱글 쓰레드 환경이라면 StringBuilder 와 StringBuffer 의 성능은 동일할까요?</p>
 </blockquote>
 <h3 id="7">7. 자바에서 모니터란?<a class="headerlink" href="#7" title="Permanent link">¶</a></h3>
 <ul>
