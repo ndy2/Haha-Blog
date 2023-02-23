@@ -1774,13 +1774,11 @@
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
-<blockquote>
 <ul>
 <li><code>inline</code> 변경자는 함수 자기 자신과 인자로 받는 람다식 모두에게 영향을 끼칩니다.</li>
 <li>컴파일러에 의해 둘 모두 호출 시점에 inline 처리가 됩니다.</li>
 </ul>
-</blockquote>
+</div>
 <h3 id="2-noinline">2. <code>noinline</code> 변경자<a class="headerlink" href="#2-noinline" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kd">inline</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="n">inlined</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w"> </span><span class="n">noinline</span><span class="w"> </span><span class="n">notInlined</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>

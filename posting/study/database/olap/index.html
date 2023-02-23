@@ -1751,19 +1751,15 @@
 <p>면접에서 아래와 같은 꼬리질문을 받았다.</p>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
-</div>
-<blockquote>
 <p>MSA 에서 데이터베이스의 독립적인 구성이 중요하다고 해주셨는데 왜 그런지 말씀해 주실 수 있나요?</p>
-</blockquote>
+</div>
 <p>A. 물리적으로 데이터베이스를 분리하는것은 여러 관점에서 중요합니다. 첫째로는 MSA의 독립성을 위해서입니다. MSA의 가장큰 장점은 Micro-Service 컴포넌트간의 의존성을 낮추어 독립성을 바탕으로 확장성, Business Agility 같은 여러 장점을 얻을 수 있습니다. 애플리케이션 레벨에서 아무리 열심히 메시지 큐와 같은 미들웨어로 독립성을 갖추었다고 할지라도 데이터베이스에서 서로 join을 통해 모든 영역의 데이터를 한번에 조회한다면 이는 아무 의미가 없을 것입니다. 그래서 최소한 MSA 를 활용한다면 데이터베이스를 논리적인 관점에서라도 분리하는 것이 필수입니다.</p>
 <p>두번째는 장애 대응입니다. MSA에서 또한 가장 중요한 것은 Micro-Service 컴포넌트의 장애가 다른 컴포넌트로 전파되지 않도록 관리하는 것입니다. 데이터베이스를 분리하지 않는다면 데이터베이스가 단일 장애 지점이 되어 큰 문제가 될 수 있습니다.</p>
 <p><code>물론 위와 같이 정리해서 답변 하지는 못했다...</code></p>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
-</div>
-<blockquote>
 <p>그럼 그런 분리된 데이터베이스 구조에서 통계성 쿼리를 처리하는 방법이 있을까요?</p>
-</blockquote>
+</div>
 <p>A. 에... 그게... 효과적으로 잘 모아서 Read 만 발생할 수 있는 서버에다가 어쩌구 저쩌구....</p>
 <p><code>물론 위 처럼 횡설수설 하면서 대답했다...</code></p>
 <p>추후에 찾아보니 OLTP (Online Transaction Processing) 와 OLAP (Online Analytical Processing) 이라는 키워드가 있다. 여기서는 통계성 쿼리 처리, 즉 OLAP 를 효과적으로 처리하기 위한 일반적인 접근방식을 찾아보자!</p>

@@ -1964,14 +1964,12 @@
 <p>파티셔닝은 <code>column</code>을 기준으로 테이블을 나누는 <code>vertical partitioning</code> 과 <code>row</code> 를 기준으로 테이블을 나누는 <code>horizontal partitioning</code> 이 있다. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
-<blockquote>
 <ul>
 <li>샤딩과 Horizontal 파티셔닝은 동작방식이 동일하다.</li>
 <li>샤딩은 분리된 데이터를 <code>샤드</code> 라고 부르고 서로 다른 데이터베이스 서버 인스턴스로 관리한다.</li>
 <li>Horinotal 파티셔닝에서는 분리된 데이터는 <code>파티션</code> 이라고 부르고 같은 데이터베이스 서버 내의 다른 테이블 혹은 스키마로 관리한다.</li>
 </ul>
-</blockquote>
+</div>
 <p>그럼 이제 <code>vertical partitioning</code> 에 대해 알아보자!</p>
 <p><code>Vertical Partitioning</code> 은 <code>column을</code> 기준으로 테이블을 나누는 것이다. VP 를 수행하는 경우는 크게 정규화가 있다. <code>정규화</code>란 데이터의 중복을 없에고 CUD 연산의 이상현상을 없애기 위해 테이블을 잘게 나누는 것을 의미한다. 하지만 VP 에는 정규화만있는 것은 아니다.</p>
 <p>정규화는 추후에 별도로 알아보도록 하고 오늘은 <code>성능 개선</code>을 위해 VP 를 수행할 수 있는 상황에 대해 알아보자.</p>

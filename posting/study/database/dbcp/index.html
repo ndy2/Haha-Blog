@@ -1889,15 +1889,13 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
-<blockquote>
 <p><code>maximumPoolSize</code> 가 <code>minimumIdle</code> 보다 우선 순위를 가집니다!
 <code>maximumPoolSize</code> = 4, <code>minimumIdle</code> = 2 인 설정으로 HikraiCP 를 시작하면
 minimumIdle 을 만족하기 위해 먼저 두개의 커넥션을 생성합니다.
 이 상태에서 하나의 요청이 와서 커넥션 하나가 <code>IN-USE</code> 상태가 된다면 minmumIdle 설정에 따라 Connection 이 하나 추가되고 idle connection 의 최솟값을 2로 유지할 수 있습니다.</p>
 <p>하지만 이 상태에서 추가적인 요청이 두개가 더 온다면 minimumIdle을 준수하기 위해 Connection을 두개 더 추가했다가는 maximumPoolSize 가 께지게 됩니다. HikariCP는 이 때 maximumPoolSize 설정이 minimuIdle 설정에 우선해서 동작하도록 합니다.</p>
 <p>참고 링크 - 쉬운코드님 영상 14:41</p>
-</blockquote>
+</div>
 <h4 id="3-maxlifetime">3. <code>maxLifetime</code><a class="headerlink" href="#3-maxlifetime" title="Permanent link">¶</a></h4>
 <ul>
 <li>pool 에서 connection의 최대 수명</li>
