@@ -1,0 +1,1954 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
+<meta content="ndy2" name="author"/>
+<link href="https://ndy2.github.io/Haha-Blog/posting/study/network/layer3/introduction/" rel="canonical"/>
+<link href="../icmp/" rel="prev"/>
+<link href="../ip/" rel="next"/>
+<link href="../../../../../assets/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.13" name="generator"/>
+<title>Network Layer, Internet - Haha 블로그</title>
+<link href="../../../../../assets/stylesheets/main.ffa9267a.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#0">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Haha 블로그" class="md-header__button md-logo" data-md-component="logo" href="../../../../.." title="Haha 블로그">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Haha 블로그
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Network Layer, Internet
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ndy2/Haha-Blog" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    ndy2/Haha-Blog
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../..">
+      안녕하세요!
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../../../../til/getting-started/">
+        Posting
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../../archive/categories/">
+        Archive
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Haha 블로그" class="md-nav__button md-logo" data-md-component="logo" href="../../../../.." title="Haha 블로그">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Haha 블로그
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ndy2/Haha-Blog" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    ndy2/Haha-Blog
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../..">
+        안녕하세요!
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Posting
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Posting
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Til
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+          Til
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../til/getting-started/">
+        Today I Learned
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          학습 정리
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          학습 정리
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+          Operating System
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_1">
+<span class="md-nav__icon md-icon"></span>
+          Operating System
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../os/process-vs-thread/">
+        Process vs Thread
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../os/deadlock/">
+        Deadlock
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_1_3" id="__nav_2_2_1_3_label" tabindex="0">
+          Memory management
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_1_3_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_1_3">
+<span class="md-nav__icon md-icon"></span>
+          Memory management
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../os/memory-management/virtual-memory-1/">
+        Virtual Memory 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../os/memory-management/virtual-memory-2/">
+        Virtual Memory 2
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+          Database
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+          Database
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/anomaly/">
+        Anomaly
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/basic-terminologies/">
+        Basic Terminologies
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/clustering-replication-sharding/">
+        Clustering Replication Sharding
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/db-index/">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/dbcp/">
+        Database Connection Pool
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/fd/">
+        Functional Dependency
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/join/">
+        Join
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/mysql-execution-plan/">
+        Mysql Excution Plan
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2_9" id="__nav_2_2_2_9_label" tabindex="0">
+          Normalization
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_9_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_2_9">
+<span class="md-nav__icon md-icon"></span>
+          Normalization
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/normalization/db-normalization-1nf-2nf/">
+        1NF &amp; 2NF
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/normalization/db-normalization-3nf-bcnf/">
+        3NF &amp; BCNF
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/normalization/db-normalization/">
+        What is Normalization
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/olap/">
+        OLAP
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/rdb/">
+        Relational DB
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../database/transaction-acid/">
+        Transaction
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+          Network
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_3">
+<span class="md-nav__icon md-icon"></span>
+          Network
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer2/arp/">
+        ARP
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_2" id="__nav_2_2_3_2_label" tabindex="0">
+          Layer3
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_3_2_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_2">
+<span class="md-nav__icon md-icon"></span>
+          Layer3
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../icmp/">
+        ICMP
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Network Layer, Internet
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Network Layer, Internet
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#0">
+    0. 들어가며
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 네트워크 계층이란? 네트워크란? 인터넷 이란?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 라우터란? 스위치란? 웹 서버란?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-">
+    2. 네트워크 계층의 데이터 단위 - 패킷!
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 네트워크 계층의 프로토콜
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ip/">
+        IP
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_2_4" id="__nav_2_2_3_2_4_label" tabindex="0">
+          Router
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_2_4_label" class="md-nav" data-md-level="5">
+<label class="md-nav__title" for="__nav_2_2_3_2_4">
+<span class="md-nav__icon md-icon"></span>
+          Router
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../router/">
+        Router
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../router/nat/">
+        NAT
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_3" id="__nav_2_2_3_3_label" tabindex="0">
+          Layer4
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_3_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_3">
+<span class="md-nav__icon md-icon"></span>
+          Layer4
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer4/tcp-congestion-control/">
+        TCP Congestion Control
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer4/tcp-flow-control/">
+        TCP flow control
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer4/tcp-vs-udp/">
+        TCP vs UDP
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_4" id="__nav_2_2_3_4_label" tabindex="0">
+          Layer7
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_4_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_4">
+<span class="md-nav__icon md-icon"></span>
+          Layer7
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer7/dns/">
+        DNS
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer7/http-versions/">
+        HTTP Versions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer7/https/">
+        HTTPS
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+          Algorithm
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_4">
+<span class="md-nav__icon md-icon"></span>
+          Algorithm
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_4_1" id="__nav_2_2_4_1_label" tabindex="0">
+          정렬 알고리즘
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_4_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          정렬 알고리즘
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../algorithm/sort/n-square/">
+        O(n^2) 정렬 알고리즘
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../algorithm/sort/merge-sort/">
+        병합 정렬(Merge sort)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../algorithm/sort/quicksort/">
+        퀵 소트 (Quicksort)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_4_2" id="__nav_2_2_4_2_label" tabindex="0">
+          유니온 파인드
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_4_2_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+          유니온 파인드
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../algorithm/union-find/">
+        유니온 파인드 (Union-Find)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../algorithm/union-find/union-by-rank/">
+        union by rank
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+          Data structure
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_5">
+<span class="md-nav__icon md-icon"></span>
+          Data structure
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../data-structure/adt/">
+        ADT
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_5_2" id="__nav_2_2_5_2_label" tabindex="0">
+          Tree
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_5_2_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_5_2">
+<span class="md-nav__icon md-icon"></span>
+          Tree
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../data-structure/tree/b-tree/1/">
+        B-tree 특징과 삽입 연산
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../data-structure/tree/binary-indexed-tree/">
+        Binary-Indexed-Tree
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../data-structure/tree/heap/">
+        힙 (Heap)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../data-structure/tree/segment-tree/">
+        Segment Tree
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../data-structure/tree/trie/">
+        Trie
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
+          java
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_6_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_6">
+<span class="md-nav__icon md-icon"></span>
+          java
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../java/nio/">
+        NIO
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../java/string/">
+        String
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../java/synchronized/">
+        synchronized
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_6_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_6_4" id="__nav_2_2_6_4_label" tabindex="0">
+          Sort
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_6_4_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_6_4">
+<span class="md-nav__icon md-icon"></span>
+          Sort
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../java/sort/arrays/">
+        Arrays.sort
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../java/sort/collections/">
+        Collections.sort
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_7" id="__nav_2_2_7_label" tabindex="0">
+          Kotlin
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_7_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_7">
+<span class="md-nav__icon md-icon"></span>
+          Kotlin
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/delegation/">
+        위임 (Delegation)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/delegation-properties/">
+        위임 프로퍼티 (delegated properties)
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_7_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_7_3" id="__nav_2_2_7_3_label" tabindex="0">
+          Generics
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_7_3_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_7_3">
+<span class="md-nav__icon md-icon"></span>
+          Generics
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/generics/basic/">
+        제네릭스 (generics) 기초
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/generics/java-variance/">
+        변성 with Java
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/generics/kotlin-variance/">
+        변성 in Kotlin
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/generics/refied-type-parameter/">
+        실체화된 타입 파라미터 (refied-type-parameter)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/hof-and-function-type/">
+        고차 함수 (Higher-Order-Function)와 함수 타입 (Function Type)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/inline-function/">
+        inline 함수
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/lambda/variable-capturing/">
+        변수 캡쳐링
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/object-keyword/">
+        object 키워드 활용
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/operator-overloading/">
+        연산자 오버로딩
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_7_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_7_10" id="__nav_2_2_7_10_label" tabindex="0">
+          Scope functions
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_7_10_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_7_10">
+<span class="md-nav__icon md-icon"></span>
+          Scope functions
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/scope-functions/">
+        scope functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/scope-functions/examples/">
+        Scope Function 활용 예시
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../kotlin/tips/">
+        꿀팁 모음
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_8" id="__nav_2_2_8_label" tabindex="0">
+          Spring
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_8_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_8">
+<span class="md-nav__icon md-icon"></span>
+          Spring
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_8_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_8_1" id="__nav_2_2_8_1_label" tabindex="0">
+          Auto configure
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_8_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_8_1">
+<span class="md-nav__icon md-icon"></span>
+          Auto configure
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../spring/boot/auto-configure/auto-configure/">
+        스프링 부트의 자동 설정 동작 원리
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../spring/boot/auto-configure/bean-role/">
+        빈 오브젝트의 역할과 구분
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../spring/boot/auto-configure/configuration-proxybeanmethods/">
+        Configuration과 proxyBeanmethods
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../spring/boot/auto-configure/how-to-analysis/">
+        자동 구성 분석 방법
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../spring/boot/auto-configure/meta-annotations-composed-annotation/">
+        자동 구성 기반 애플리케이션
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_8_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_8_2" id="__nav_2_2_8_2_label" tabindex="0">
+          Authorization
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_8_2_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_8_2">
+<span class="md-nav__icon md-icon"></span>
+          Authorization
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../spring/security/authorization/">
+        인가 프로세스 업데이트
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../spring/security/authorization/authorization-architecture/">
+        Authorization Architecture
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../spring/security/authorization/http-req-authorization-conf/">
+        Http 요청 인가 설정
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../spring/security/authorization/http-req-authorization-proc/">
+        Http 요청 인가 프로세스
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../spring/websocket/auto-configure/">
+        웹 소켓 자동 설정
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
+          Architecture
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_9_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_9">
+<span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/cap-theorem/">
+        CAP Theorem
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/consistent-hash/">
+        Consistent Hash
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/hexagonal-architecture/">
+        Hexagonal Architecture
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_9_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_9_4" id="__nav_2_2_9_4_label" tabindex="0">
+          Load balancing
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_9_4_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_9_4">
+<span class="md-nav__icon md-icon"></span>
+          Load balancing
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/load-balancing/">
+        Load Balancing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/load-balancing/l4-lb-vs-l7-lb/">
+        L4 LB vs L7 LB
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/msa/msa-pros-cons/">
+        MSA 장단점
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/resilient-pattern/">
+        Resilient Pattern
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_10" id="__nav_2_2_10_label" tabindex="0">
+          Web
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_10_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_10">
+<span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/cookie-session-token/">
+        Cookie, Session and Token
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/websocket/bookmarks/">
+        참고 링크
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_11" id="__nav_2_2_11_label" tabindex="0">
+          개발 일반
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_11">
+<span class="md-nav__icon md-icon"></span>
+          개발 일반
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_11_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_11_1" id="__nav_2_2_11_1_label" tabindex="0">
+          Uml
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_11_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_11_1">
+<span class="md-nav__icon md-icon"></span>
+          Uml
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev-general/uml/">
+        UML 시작
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev-general/uml/class-diagram/">
+        클래스 다이어그램
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev-general/uml/package-diagram/">
+        패키지 다이어그램
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev-general/uml/sequence-diagram/">
+        시퀀스 다이어그램
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev-general/collaborate/async-communication/">
+        비동기적 커뮤니케이션
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          학습 서적 리뷰/정리
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+          학습 서적 리뷰/정리
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/">
+        Study with Books
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/clean-agile/">
+        Clean Agile
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+          Springboot msa component
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_3">
+<span class="md-nav__icon md-icon"></span>
+          Springboot msa component
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch01-msa/">
+        Ch01 msa
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch02-framework-and-springboot/">
+        Ch02 framework and springboot
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch03-springboot-basic/">
+        Ch03 springboot basic
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch04-sec01-http/">
+        Ch04 sec01 http
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
+        Ch04 sec02 servlet and mvc
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch04-spring-web-mvc-basic/">
+        Ch04 spring web mvc basic
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
+        Ch05 spring web mvc with restapi
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-build-web-application-server/">
+        Ch06 build web application server
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
+        ch06 sec00 @EnableXXX and bean modulerlize
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
+        Ch06 sec01 webapplication configure mechanism
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
+        Ch06 sec03 dispatcher servlet
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch07-sec01-spring-aop/">
+        Ch07 sec01 spring aop
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch07-sec03-autoconfiguration/">
+        Ch07 sec03 autoconfiguration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
+        Ch07 spring aop and test and autoconfiguration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-data-persistence/">
+        Ch08 data persistence
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
+        Ch08 sec01 jpa pros and cons
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
+        ch08 sec07 warning on @Transactional
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
+        Ch08 sec08 entitymanager and persistence context
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec11-osiv/">
+        Ch08 sec11 osiv
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch09-application-integration-restapi/">
+        Ch09 application integration restapi
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch09-sec01-resttemplate/">
+        Ch09 sec01 resttemplate
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch09-sec02-webclient/">
+        Ch09 sec02 webclient
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec01-redis-high-availability/">
+        Ch10 sec01 redis high availability
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec01-redis-introduction/">
+        Ch10 sec01 redis introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec04-redis-serializer/">
+        Ch10 sec04 redis serializer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec05-redis-usages/">
+        Ch10 sec05 redis usages
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch11-sec03-batch-architecture/">
+        Ch11 sec03 batch architecture
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_3_29" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_3_29" id="__nav_2_3_3_29_label" tabindex="0">
+          Ch12 spring event
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_3_29_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_3_3_29">
+<span class="md-nav__icon md-icon"></span>
+          Ch12 spring event
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec01-introduction/">
+        Sec01 introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec02-old-style/">
+        Sec02 old style
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec03-new-style/">
+        Sec03 new style
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec04-async-event/">
+        Sec04 async event
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec05-spring-event/">
+        Sec05 spring event
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          프로젝트
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+          프로젝트
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../projects/common/on-startup/">
+        시작 단계의 체크리스트
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+          Kakaotalk clone coding
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+          Kakaotalk clone coding
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../projects/kakaotalk-clone-coding/">
+        카카오톡 클론 코딩
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../projects/kakaotalk-clone-coding/chatapp/">
+        채팅 앱
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../projects/kakaotalk-clone-coding/features/slack-feature-analyze-by-me/">
+        제목
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../projects/kakaotalk-clone-coding/notes/week-1/">
+        1 주차 (2023-01-31 ~ 2023-02-05)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          블로깅
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+          블로깅
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../bloggingtips/getting-started/">
+        들어가기
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../bloggingtips/pros-and-cons/">
+        장 단점
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_1" id="__nav_2_6_1_label" tabindex="0">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_1">
+<span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../tools/git/clone/">
+        git clone
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../tools/git/rebase/">
+        git rebase
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_2" id="__nav_2_6_2_label" tabindex="0">
+          Github
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_2">
+<span class="md-nav__icon md-icon"></span>
+          Github
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../tools/github/actions/self-hosted-runner/">
+        self-hosted runners
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../tools/github/pages/">
+        깃헙 페이지 지원 깃헙 액션 워크플로우
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../tools/github/project/">
+        프로젝트를 이용한 이슈 관리 및 PR 연동 흐름
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_3" id="__nav_2_6_3_label" tabindex="0">
+          Intellij
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_3">
+<span class="md-nav__icon md-icon"></span>
+          Intellij
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../tools/intellij/style/">
+        인텔리제이 코드 스타일/포멧팅
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../tools/intellij/tasks-server-and-commit-push/">
+        인텔리제이 tasks server 추가 및 활용
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_4" id="__nav_2_6_4_label" tabindex="0">
+          Kafka
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_4">
+<span class="md-nav__icon md-icon"></span>
+          Kafka
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../tools/kafka/install/">
+        설치
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../tools/kafka/troubleshooting/">
+        문제 해결
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../tools/kafka/use/">
+        사용
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7_1" id="__nav_2_7_1_label" tabindex="0">
+          Bookmarks
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_7_1">
+<span class="md-nav__icon md-icon"></span>
+          Bookmarks
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../notes/bookmarks/bookmarks/">
+        북마크
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Archive
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Archive
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          카테고리별 포스팅 모음
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          카테고리별 포스팅 모음
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/">
+        카테고리별
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/algorithm/">
+        알고리즘
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/architecture/">
+        아키텍쳐
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/avalon-chat/">
+        아발론 챗
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/blog/">
+        블로그, mkdocs 와 obsidian
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/books/">
+        개발 프로젝트 공통
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/collaborate/">
+        협업
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/data-structure/">
+        자료구조
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/database/">
+        데이터베이스
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/java/">
+        Java
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/kotlin/">
+        kotlin
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/network/">
+        네트워크
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/os/">
+        운영체제
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/project/">
+        개발 프로젝트 공통
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/spring/">
+        스프링
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/til/">
+        Today I Learned
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/uml/">
+        UML
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/categories/web/">
+        웹 개발
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Tags
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+          Tags
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../archive/tags/">
+        태그별 포스팅 모음
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#0">
+    0. 들어가며
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 네트워크 계층이란? 네트워크란? 인터넷 이란?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 라우터란? 스위치란? 웹 서버란?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-">
+    2. 네트워크 계층의 데이터 단위 - 패킷!
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 네트워크 계층의 프로토콜
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/tree/main/docs/posting/study/network/layer3/introduction/index.md" title="View source of this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
+</a>
+<h1>Network Layer, Internet</h1>
+<div class="blogging-tags-grid">
+<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/tags#network"><code>#network</code></a>
+<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/tags#layer3"><code>#layer3</code></a>
+</div>
+<style>
+    .md-typeset .blogging-tags-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .md-typeset .blogging-tag {
+        color: var(--md-typeset-color);
+        background-color: var(--md-typeset-code-color);
+    }
+
+    .md-typeset .blogging-tag code {
+        border-radius: 5px;
+    }
+</style>
+<p>@참고 자료)</p>
+<ul>
+<li>cloud flare - <a href="https://www.cloudflare.com/ko-kr/learning/network-layer/what-is-the-network-layer/">학습센터/네트워크 계층</a></li>
+<li>널널한 개발자 <ul>
+<li><a href="https://youtu.be/kGst-VftN1w">Host, Switch, Network 이들의 관계에 대해</a></li>
+<li><a href="https://youtu.be/N8pE-vDsJ38">LAN과 WAN을 구별하는 방법</a></li>
+</ul>
+</li>
+<li>ibm - <a href="https://www.ibm.com/docs/ko/aix/7.1?topic=protocols-internet-network-level">네트워크 계층 프로토콜</a></li>
+</ul>
+<hr/>
+<h3 id="0">0. 들어가며<a class="headerlink" href="#0" title="Permanent link">¶</a></h3>
+<p>네트워크 계층, 인터넷에 대해서 알아봅시다!</p>
+<hr/>
+<h3 id="1">1. 네트워크 계층이란? 네트워크란? 인터넷 이란?<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">네트워크 계층이란 무엇인가요?</p>
+<p>[cloudflare] <br/>
+네트워크 계층은 OSI 모델에서 계층 3 이며, 상이한 네트워크들 간의 라우팅 및 데이터 전송을 담당합니다.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">네트워크란 무엇인가요?, 인터넷이란 무엇인가요</p>
+<p>[cloudflare] <br/>
+네트워크는 두 대 이상의 연결된 컴퓨팅 장치의 그룹을 말합니다. </p>
+<p>네트워크에 연결된 컴퓨터는 서로 데이터를 전송할 수 있습니다. <strong>컴퓨터 네트워크</strong>는 마치 서로 알고 정보를 주고받으며 함께 활동하는 <strong>소셜 서클</strong> 과 같습니다.</p>
+<p>보통 하나의 네트워크에 있는 모든 장치는 중앙에 있는 하나의 허브 (e.g. 라우터)에 연결된 경우가 많습니다. 네트워크에는 해당 네트워크를 작게 구분한 서브네트워크가 포함되기도 합니다. </p>
+<p>인터넷은 네트워크의 네트워크라고 생각할 수 있습니다. 이러한 인터넷이 동작하는 가장 중요한 두가지 컨셉은 <strong><em>패킷</em></strong> 과 <strong><em>프로토콜</em></strong>입니다.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">인터넷이란 무엇인가요?</p>
+<p>[널널한 개발자] <br/>
+ 인터넷은 가장 대표적인 네트워크의 한 종류입니다.
+인터넷을 구성하는 요소중 가장 중요한것 두가지는 <strong><em>라우터</em></strong>와 <strong><em>DNS</em></strong> 입니다.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/host-switch-network.png"><img alt="host-switch-network.png" src="images/host-switch-network.png"/></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">인터넷이 동작하도록 하는 physical infrastructure에는 어떤것이 있나요?</p>
+<p>[cloudflare] <br/>
+다양한 하드웨어와 infrastructure 가 인터넷을 구성합니다. 가장 중요한 것들은 다음과 같습니다. - 라우터, 스위치, 웹 서버</p>
+</div>
+<hr/>
+<h3 id="2">2. 라우터란? 스위치란? 웹 서버란?<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">라우터란?</p>
+<p>[cloudflare] <br/>
+라우터는 목적지 (IP 주소)를 기반으로 네트워크간 패킷 포워딩을 수행합니다. 라우터는 인터넷의 트래픽이 올바른 네트워크로 향하도록 하는 교통 경찰 (traffic cop)과 같습니다.</p>
+<p>[널널한 개발자] <br/>
+라우터는 <strong><em>경로 찾기<sup>Routing</sup></em></strong>를 목적으로 하는 L3 스위치입니다.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">호스트란? 엔드포인트란?</p>
+<p>[널널한 개발자]
+호스트 - 네트워크에 연결된 컴퓨터
+엔드포인드 - 네트워크를 이용하는 호스트
+                  - e.g. Peer, Server, Client, Web Server, ...
+스위치 - 네트워크 자체를 이루는 호스트
+           - e.g. Router, Firewall, IPS ...</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">스위치란?</p>
+<p>[cloudflare] <br/>
+스위치는 네트워크를 공유하는 기기(device)를 연결합니다. 스위치는 올바른 기기에 패킷을 전달하는 <strong><em>패킷 스위칭</em></strong> <sup>Packet</sup> <sup>Switching</sup>을 수행합니다. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">웹 서버란?</p>
+<p>[cloudflare] <br/>
+웹 서버는 웹 페이지, 이미지, 비디오와 같은 컨텐츠를 저장하고 제공하기 위한 목적의 호스트입니다. 웹 서버는 또한 DNS 쿼리에 응답하는 등의 인터넷이 동작하도록 하는 중요한 역할등을 합니다.</p>
+<p>DNS 에 대해서는 다른 문서에서 추가적으로 이야기 하겠습니다.</p>
+</div>
+<hr/>
+<h3 id="2-">2. 네트워크 계층의 데이터 단위 - 패킷!<a class="headerlink" href="#2-" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">패킷이란?</p>
+<p>[cloudflare] <br/>
+인터넷을 통해 발송되는 모든 데이터는 패킷이라는 작은 조각으로 나뉘어집니다. 패킷에는 패킷에 대한 메타데이터를 담는 헤더와 데이터 자체를 담은 바디로 두 부분이 있습니다.</p>
+<p>네트워크 계층은 패킷을 보낼 때 헤더를 추가하며 (encapsulation) 패킷을 받을 때 헤더를 이용해 패킷 처리 방법 (decapsulation or forwarding)을 이해할 수 있습니다.</p>
+<p>헤더에는 각 패킷의 내용, 출발지, 목적지에 대한 정보가 포함됩니다. 예를 들어 IP 헤더에는 각 패킷의 IP 주소, 패킷의 전체 크기, fragmentation 여부, 패킷이 통과한 네트워크 수 (~ TTL) 등이 포함됩니다.</p>
+</div>
+<hr/>
+<h3 id="3">3. 네트워크 계층의 프로토콜<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
+<p>이 계층에서 주요 프로토콜은 IP<sup>Internet</sup> <sup>Protocol</sup> 와 ICMP<sup>Internet</sup> <sup>Control</sup> <sup>Message</sup> <sup>Protocol</sup>  입니다. (+ARP <sup>Address</sup> <sup>Resolution</sup> <sup>Protocol</sup>)</p>
+<div class="admonition note">
+<p class="admonition-title">인터넷 프로토콜(IP)란 무엇인가요?</p>
+<p>[cloudflare] <br/>
+인터넷 프로토콜은 패킷의 라우팅과 주소에 대한 프로토콜입니다. IP의 목적은 패킷이 올바른 목적지로 도착하도록 하는 것입니다.</p>
+<p>[ibm] <br/>
+IP는 인터넷에 대해 신뢰할 수 없는 비연결 패킷 전달을 제공합니다.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">인터넷 제어 메시지 프로토콜 (ICMP)은 무엇인가요?</p>
+<p>[ibm] <br/>
+ICMP는 오류를 처리하고 IP 메시지를 제어합니다. ICMP는 모든 IP 구현의 필수 부분입니다. </p>
+<p>⚠️ ICMP는 통신 환경의 문제점에 관한 피드백을 제공하지만 IP가 신뢰 가능하도록 만들지는 않습니다. 즉, ICMP는 IP 패킷이 확실하게 전달된다거나 IP 패킷이 전달되지 않을 때 또는 올바르지 않게 전달될 때 ICMP 메시지가 소스 호스트로 리턴된다고 보장하지 않습니다.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">주소 해석 프로토콜(ARP)는 무엇인가요?</p>
+<p>[ibm] <br/>
+ARP는 IP를 MAC으로 동적으로 변환합니다. LAN (근거리 통신망) 내에서 노드는 MAC 을 통해 통신합니다.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">LAN 과 WAN은 어떻게 구분하나요?</p>
+<p>[널널한 개발자 - 널피셜] <br/>
+LAN(Local Area Network)과 WAN(Wide Area Network)은 지역의 크기로 구분되는 것이 아니다. </p>
+<p>LAN <br/>
+-  물리적인 영역 (OSI - 1계층, 2계층, TCP/IP - Access 계층)에서 설명되는 영역 <br/>
+- 즉, MAC Address 가 중요한 영역 <br/>
+- ARP 방송 주소 (ARP Broadcast Address) 트레픽이 도달할 수 있는 영역</p>
+<p>WAN <br/> 
+- 논리적인(가상의) 영역 (OSI - 3 계층(네트워크 계층), TCP - 인터넷 계층 이상) 에서 설명 되는 영역.</p>
+</div>
+<hr/>
+<div class="admonition quote">
+<p class="admonition-title">더 자세히 알아볼 키워드 들</p>
+<p>physical infrastructure - 라우터<br/>
+network layer protocol - IP/IP address, ICMP</p>
+</div>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+<br/>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
+</small>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: ICMP" class="md-footer__link md-footer__link--prev" href="../icmp/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Previous
+                </span>
+                ICMP
+              </div>
+</div>
+</a>
+<a aria-label="Next: IP" class="md-footer__link md-footer__link--next" href="../ip/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Next
+                </span>
+                IP
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2022 - 2023 ndy2
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+<script src="../../../../../js/mkdocs-charts-plugin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
