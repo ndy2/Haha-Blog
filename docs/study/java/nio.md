@@ -9,7 +9,9 @@ author: ndy2
 >* Jakob Jenkov - https://jenkov.com/tutorials/java-nio/index.html
 >* enics - http://eincs.com/2009/08/java-nio-bytebuffer-channel-file/
 
+
 **요약**
+
 | 구분 | IO | NIO |
 | --- | --- | --- |
 | 입출력 방식 | Stream Oriented | Buffer Oriented |

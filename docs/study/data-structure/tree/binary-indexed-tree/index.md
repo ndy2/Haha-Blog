@@ -10,7 +10,7 @@ date: 2023-02-08
 
 ### 1. Range Query - O(logn)
 
-![bit-query.png](images/bit-query.png)
+![[images/bit-query.png]]
 
 - 끝자리가 겹치지 않는다.
 - sum(0,10) = BIT[0] + BIT[8] + BIT[10] + BIT[11]
@@ -22,7 +22,7 @@ date: 2023-02-08
 
 ### 2. Point Update - O(logn)
 
-![bit-update.png](images/bit-update.png)
+![[images/bit-update.png]]
 
 - update(4, delta)
     - BIT[5] += delta  // 5 = 00101<sub>2</sub> (-> + 1<sub>2</sub>)
@@ -32,4 +32,4 @@ date: 2023-02-08
 
 ### 3. Range Update
 
-{==TODO!==}
+==TODO!==

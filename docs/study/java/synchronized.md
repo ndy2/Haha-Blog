@@ -55,7 +55,7 @@ public class SynchronizedExchanger {
 }
 ```
 
-(1), (2) - `synchronzied method
+(1), (2) - `synchronzied method`
 
 (3), (4) - `synchronized staement`
 
@@ -70,6 +70,7 @@ synchronized 키워드에는 항상 monitor 가 전달되어야 합니다. 위 �
 #### 1. 같은 객체 공유
 
 ![[images/synchronized-1.png]]
+
 Thread 1과 Thread 2가 동일한 SynchronizedExchanger 객체를 공유하는 경우
 
 위 코드에서 모든 메서드는 같은 monitor 객체 (this)를 가지기 때문에 Thread 1 이 setObject를 호출하는 순간 Thread 2는 getObject를 호출 할 수 없습니다. (동기화 블럭으로 선언된 xxxObj 메서드 들도 마찬가지)
@@ -77,6 +78,7 @@ Thread 1과 Thread 2가 동일한 SynchronizedExchanger 객체를 공유하는 �
 #### 2. 서로 다른 객체 활용
 
 ![[images/synchronized-2.png]]
+
 Thread 1과 Thread 2가 각자의 SynchronizedExchanger 객체를 가지는 경우
 
 이렇게 활용하게 되면 Thread1 과 Thread2에서는 syncrhonized 를 활용하는 의미가 없습니다. 각 쓰레드가 자신의 SynchronizedExchanger 의 모니터 락을 획득하여 동기화 메서드, 블락에 진입할수 있기 때문입니다. (사실 당연합니다.)

@@ -45,7 +45,7 @@ date: 2023-02-02
 
 - Max Heap 과 Min Heap 이 있다.
 
-![heap.excalidraw.png](excalidraws/heap.excalidraw.png)
+![[excalidraws/heap.excalidraw.png]]
 
 #### 3. Insert
 
