@@ -1,6 +1,6 @@
 ---
-tags: [database]
-title: index
+tags: [db]
+title: Index
 author: ndy2
 ---
 

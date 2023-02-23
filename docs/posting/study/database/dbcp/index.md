@@ -1,5 +1,5 @@
 ---
-tags: [database]
+tags: [db]
 title: Database Connection Pool
 author: ndy2
 ---

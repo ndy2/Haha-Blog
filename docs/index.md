@@ -1,7 +1,8 @@
 ---
+tags: [haha, hello]
 title: 안녕하세요!
 comments: true
-tags: [haha, hello]
+hide: [toc]
 ---
 ![[assets/my-profile.jpeg|200]]
 
