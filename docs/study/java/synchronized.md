@@ -68,12 +68,14 @@ synchronized 키워드에는 항상 monitor 가 전달되어야 합니다. 위 �
 ### 2. 그림으로 보는 synchronzied 키워드
 
 #### 1. 같은 객체 공유
+
 ![[images/synchronized-1.png]]
 Thread 1과 Thread 2가 동일한 SynchronizedExchanger 객체를 공유하는 경우
 
 위 코드에서 모든 메서드는 같은 monitor 객체 (this)를 가지기 때문에 Thread 1 이 setObject를 호출하는 순간 Thread 2는 getObject를 호출 할 수 없습니다. (동기화 블럭으로 선언된 xxxObj 메서드 들도 마찬가지)
 
 #### 2. 서로 다른 객체 활용
+
 ![[images/synchronized-2.png]]
 Thread 1과 Thread 2가 각자의 SynchronizedExchanger 객체를 가지는 경우
 
@@ -108,6 +110,7 @@ public class StaticSynchronizedExchanger {
 ```
 
 ![[images/synchronized-3.png]]
+
 전체 쓰레드에서 한 쓰레드만이 synchronized static 메서드를 호출 할 수 있습니다.
 
 ### 3. 복잡하게 모니터 객체를 활용하는 예제 코드
@@ -232,6 +235,7 @@ public class SharedMonitorObject {
 	- 여러 JVM 인스턴스에서 동시성을 보장하기 위해서는 분산락의 활용이 필요합니다. 
 
 ### 6. synchronized 블락과 성능 오버헤드
+
 ![[images/synchronized-overhead.png]]
 
 - 경쟁이 발생하여 쓰레드가 대기하는 상황이 발생한다면 오버헤드가 큽니다.
