@@ -1,4 +1,5 @@
 ---
+tags:[kotlin]
 title: scope functions
 date: 2023-02-08
 ---

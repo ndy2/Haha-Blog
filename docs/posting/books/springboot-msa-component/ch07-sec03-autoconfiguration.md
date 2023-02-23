@@ -2,7 +2,7 @@
 
 코드를 통해 자동 설정 클래스가 필요한 빈들을 애플리케이션에 등록하는 원리를 확인해 봅시다!
 
-![[../../assets/my-profile.jpeg|렛츠 고!]]
+![[../../../assets/my-profile.jpeg|렛츠 고!]]
 
 
 먼저 @EnableAutoConfiguration의 코드를 살펴봅시다!

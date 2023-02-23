@@ -161,9 +161,6 @@ plugins:
       module_name: 'resources/macro/main'
   - search
   - glightbox
-  - gen-files:
-      scripts:
-        - resources/gen-pages/archive.md.py
   - git-revision-date-localized:
       type: date
       timezone: Asia/Seoul
