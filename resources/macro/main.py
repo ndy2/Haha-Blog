@@ -36,8 +36,8 @@ def define_env(env):
 
         result = ""
         KST = tz.gettz('Asia/Seoul')
-        for filename in glob.iglob("docs/" + '**/**.md', recursive=True):
-            if(not filename.endswith("excalidraw.md") and not filename.startswith("docs/til/til")) :
+        for filename in glob.iglob("docs/posting/" + '**/**.md', recursive=True):
+            if(not filename.endswith("excalidraw.md") and not filename.startswith("docs/posting/til/til")) :
                 createdAtTimestamp = util.get_git_commit_timestamp(filename, True) 
                 updateAtTimestamp = util.get_git_commit_timestamp(filename)
 
