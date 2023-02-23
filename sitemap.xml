@@ -301,7 +301,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/notes/bookmarks/bookmarks/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/notes/bookmarks/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -446,17 +446,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/normalization/</loc>
+         <lastmod>2023-02-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/normalization/db-normalization-1nf-2nf/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/normalization/db-normalization-3nf-bcnf/</loc>
-         <lastmod>2023-02-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/normalization/db-normalization/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -526,6 +526,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/kotlin/</loc>
+         <lastmod>2023-02-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/kotlin/delegation/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
@@ -566,11 +571,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/study/kotlin/introduction/</loc>
-         <lastmod>2023-02-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/kotlin/lambda/variable-capturing/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
@@ -606,12 +606,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/study/network/layer3/icmp/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/network/layer3/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/study/network/layer3/introduction/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/network/layer3/icmp/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -746,282 +746,282 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-15/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-15/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-16/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-16/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-17/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-17/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-18/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-18/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-19/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-19/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-20/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-20/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-21/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-21/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-22/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-22/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-23/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-23/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-24/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-24/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-26/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-26/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-27/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-27/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-28/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-28/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-29/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-29/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-30/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-30/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2022-12-31/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2022-12-31/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-01/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-01/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-02/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-02/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-03/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-03/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-04/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-04/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-05/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-05/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-06/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-06/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-07/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-07/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-08/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-08/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-09/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-09/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-10/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-10/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-11/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-11/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-12/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-12/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-13/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-13/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-14/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-14/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-15/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-15/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-16/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-16/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-17/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-17/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-20/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-20/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-24/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-24/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-25/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-25/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-26/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-26/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-27/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-27/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-28/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-28/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-29/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-29/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-30/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-30/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-01-31/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-01-31/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-01/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-01/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-02/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-02/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-03/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-03/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-04/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-04/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-05/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-05/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-06/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-06/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-07/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-07/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-08/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-08/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-09/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-09/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-10/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-10/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-13/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-13/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-15/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-15/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-16/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-16/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/til/til/2023-02-17/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-17/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
