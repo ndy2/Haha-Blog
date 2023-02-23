@@ -1,10 +1,8 @@
 ---
-tags: [cs, database]
+tags: [cs, database, collection]
 title: 데이터베이스
 date: 2023-02-22
 ignore_macros: true
 ---
-
-# 데이터베이스
 
 {{ blog_content database }}

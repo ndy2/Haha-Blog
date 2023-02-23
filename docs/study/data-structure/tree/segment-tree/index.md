@@ -1,3 +1,9 @@
+---
+tags: [data-structure, algorithm, tree]
+title: Segment Tree
+author: ndy2
+---
+
 @ 참고 자료)
 
 - 개발자 영맨 - [[Range Query] Segment Tree 1/2 - introduction](https://youtu.be/075fcq7oCC8)
@@ -9,7 +15,7 @@
 
     세그먼트 트리<sup>segment tree</sup> (a.k.a. statistic tree)는 Interval 이나 Segment 에 대한 정보를 저장하기 위한 트리 자료 구조입니다. 세그먼트 트리에 저장된 세그먼트가 주어진 point 를 포함하고 있는가 질의 할 수 있습니다. 원칙적으로 세그먼트 트리는 static structure 이며 한번 구성되면 수정 될 수 없습니다. 비슷한 자료구조에는 interval tree 가 있습니다.
 
-![segment-tree.excalidraw.png](excalidraws/segment-tree.excalidraw.png)
+![[excalidraws/segment-tree.excalidraw.png]]
 
 ---
 
@@ -43,7 +49,7 @@
 - update : 특정 위치 (또는 구간)에 대한 업데이트를 O(logn) 에 가능
 - query : 구간에 대한 연산을 O(logn) 에 계산
 
-![segment-tree.png](images/segment-tree.png)
+![[images/segment-tree.png]]
 
 - 세그먼트 트리는 자신의 구간을 반으로 나누어 자식 노드에게 나누어준다.
 - :warning: 일반적으로 Complete Binary Tree 아님
@@ -63,7 +69,7 @@
 
     이미 구성된 트리의 값 중 쿼리의 범위를 포함하는 큰 구간의 값을 계속 찾아 재귀적으로 연산한다.
 
-![segment-tree-query.excalidraw.png](excalidraws/segment-tree-query.excalidraw.png)
+![[excalidraws/segment-tree-query.excalidraw.png]]
 
 
 #### 3. 동작 - update
@@ -72,7 +78,7 @@
 
     업데이트 하는 구간을 포함하는 범위의 트리의 값을 모두 업데이트 한다.
 
-![segment-tree-update.excalidraw.png](excalidraws/segment-tree-update.excalidraw.png)
+![[excalidraws/segment-tree-update.excalidraw.png]]
 
 ### 4. 세그먼트 트리의 구현과 관련 문제
 
@@ -82,7 +88,7 @@
 
 - 규칙: 왼쪽 자식 : `idx*2` , 오른쪽 자식 : `idx*2+1` 
 
-![segment-tree-index.excalidraw.png](excalidraws/segment-tree-index.excalidraw.png)
+![[excalidraws/segment-tree-index.excalidraw.png]]
 
 - 보통 Segment Tree 의 배열 크기는 `4 * n` 으로 잡고 시작하는 경우가 많다. 그 이유는 수학적으로 `(최대 segment Index) / n` 의 값이 n 이 무한대로 향함에따라 4 의 아래에서 4로 수렴 함이 증명되었기 때문이다. - [관련 링크와 증명](https://www.quora.com/Why-does-4-*-N-space-have-to-be-allocated-for-a-segment-tree-where-N-is-the-size-of-the-original-array)
 

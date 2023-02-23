@@ -1,4 +1,5 @@
 ---
+tags: [spring, spring-boot]
 title: 빈 오브젝트의 역할과 구분
 date: 2023-02-03
 ---

@@ -1,4 +1,5 @@
 ---
+tags: [spring, spring-security, authorization]
 title: Http 요청 인가 설정
 date: 2023-02-06
 ---
@@ -12,7 +13,7 @@ date: 2023-02-06
 authorizeHttpRequests 설정을 하며 shouldFilterAllDispatcherTypes flag 를 설정 할 수 있습니다.
 이 flag 는 아래 세가지 옵션을 한번에 변경하는 flag 입니다.
 
-![should-filter-all-dispatcher-types.png](images/should-filter-all-dispatcher-types.png)
+![[images/should-filter-all-dispatcher-types.png]]
 
 ---
 
@@ -133,6 +134,6 @@ fun requestMatcherAuthorizationManager(introspector: HandlerMappingIntrospector)
 
 위 처럼 설정을 하게되면 AccessManager 구조는 아래 그림 처럼 설정됩니다.
 
-![accessmanager-tree.excalidraw.png](excalidraws/accessmanager-tree.excalidraw.png)
+![[excalidraws/accessmanager-tree.excalidraw.png]]
 
 구조적으로 더 이뻐보이고 뭔가 Spring Security 를 더 잘 활용하는 것 같은 느낌이 들지만 괜히 코드만 복잡해지는 것 같은 느낌도 있습니다. 큰 규모의 프로젝트나 http 요청에 대한 인가 프로세스가 복잡한 경우라면 좋은 방식 같습니다.

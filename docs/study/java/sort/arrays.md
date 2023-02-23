@@ -1,3 +1,9 @@
+---
+tags: [java, sort]
+title: Arrays.sort
+author: ndy2
+---
+
 ### 0. 들어가며
 
 [이전 글](collections)에서는 `Collections`.*`sort`* 의 동작 방식에 대해 알아보았다. 컬렉션의 정렬 API 는 단순히 배열의 정렬 API - `Arrays`.*`sort`* 를 활용하고있었다. 오늘은 배열의 정렬 API 에 대해서 알아보자.
@@ -150,7 +156,7 @@ public class Arrays{
 또한 byte (1byte), char (2byte), short (2byte) 과 같은 사이즈가 작은 primitive 타입에 대해서는 `Arrays`.*`parallelSort`* API 를 제공하지만 내부적으로는 parallelism 을 제공하지도 않고 내부 구현도 그냥 `Arrays`.*`sort`* 와 같다는 점이 눈에 띈다.
 
 -  `DualPivotQuicksort`.*`sort( )`* 의 오버로드 메서드들
-![DualPivotQuicksort.sort.png](images/DualPivotQuicksort.sort.png)
+![[images/DualPivotQuicksort.sort.png]]
 
 ---
 

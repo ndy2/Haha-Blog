@@ -1,5 +1,5 @@
 ---
-prefix: mkdocs-material & obsidian
+tags: [blog, mkdocs, obsidian]
 title: 장 단점
 date: 2023-01-04
 ---

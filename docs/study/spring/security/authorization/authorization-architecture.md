@@ -1,4 +1,5 @@
 ---
+tags: [spring, spring-security, authorization]
 title: Authorization Architecture
 date: 2023-02-06
 ---
@@ -46,9 +47,6 @@ default AuthorizationDecision verify(Supplier<Authentication> authentication, T 
 
 
 - `verify` 메서드는 `check` 를 호출하고 `ACCESS_DENIED` 인 경우 `AccessDeniedException` 예외를 던집니다.
-
----
-
 
 ---
 

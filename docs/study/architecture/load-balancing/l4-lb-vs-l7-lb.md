@@ -1,5 +1,5 @@
 ---
-tags: [architecture]
+tags: [architecture, load-balancing]
 title: L4 LB vs L7 LB
 date: 2023-02-23
 ---

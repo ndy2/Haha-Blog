@@ -1,4 +1,5 @@
 ---
+tags: [spring, spring-boot, auto-configure]
 title: 자동 구성 기반 애플리케이션
 date: 2023-02-03
 ---

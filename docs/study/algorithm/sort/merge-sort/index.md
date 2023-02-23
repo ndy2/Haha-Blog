@@ -1,4 +1,5 @@
 ---
+tags: [algorithm, sort]
 title: 병합 정렬(Merge sort)
 date: 2023-02-05
 ---
@@ -81,7 +82,7 @@ if __name__ == '__main__':
 
 ### 3. 병합 정렬 동작 흐름
 
-![mergesort.png](images/mergesort.png)
+![[images/mergesort.png]]
 
 1. 나뉜 배열의 크기가 1이 될 때까지 재귀적으로 나눈다.
 2. 합친다.

@@ -1,4 +1,5 @@
 ---
+tags: [data-structure, tree]
 title: Binary-Indexed-Tree
 date: 2023-02-08
 ---

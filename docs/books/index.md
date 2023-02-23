@@ -3,9 +3,6 @@ tags: [books]
 title: Study with Books
 date: 2022-12-14
 ---
-
-# study-with-book
-
 ### 읽은 책 목록
 - 신용권 - 이것이 자바다 1,2
 - 이일민(토비) - 토비의 스프링 3.1 VOL1, VOL2 

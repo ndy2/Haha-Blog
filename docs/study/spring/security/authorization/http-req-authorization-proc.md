@@ -1,4 +1,5 @@
 ---
+tags: [spring, spring-security, authorization]
 title: Http 요청 인가 프로세스
 date: 2023-02-06
 ---
@@ -45,7 +46,7 @@ fun filterChain(http: HttpSecurity): SecurityFilterChain {
 
 1. FilterChainproxy$VirtualFilterChain 에서 시작한다.
 
-![security-chain-1.png](images/security-chain-1.png)
+![[images/security-chain-1.png]]
 
 2. 모든 앞 필터를 다 통과하고 `AuthorizationFilter` 에 도착한다.
 3. 그 과정에서 `SecurityContextHolder` 에는 `AnonymousAuthenticationFilter` 에 의해 `AnonymousAuthenticationToken` 이 저장된다.
@@ -53,13 +54,13 @@ fun filterChain(http: HttpSecurity): SecurityFilterChain {
 
 4. 권한 부여 대상이 아닌 경우를 판단 하기 위해 전처리를 살짝 해 준다.
 
-![authorizationfilter-dofilter.png](images/authorizationfilter-dofilter.png)
+![[images/authorizationfilter-dofilter.png]]
 
 
 
 5. 가지고 있는 authorizationManager 의 check 을 통해 AccessDecision 획득하고 이를 통해 ACCESS_ABSTAIN 혹은 ACCESS_DENIED 라면 직접 예외를 터트린다.
 
-![authorizationfilter-dofilter-2.png](images/authorizationfilter-dofilter-2.png)
+![[images/authorizationfilter-dofilter-2.png]]
 
 
 #### 2. AuthorizationManager 의 동작 - [참고 링크](https://docs.spring.io/spring-security/reference/6.0.0-M5/servlet/authorization/architecture.html#authz-delegate-authorization-manager)
@@ -70,7 +71,7 @@ fun filterChain(http: HttpSecurity): SecurityFilterChain {
 
 설정에 의해 추가 된 `RequestMatcherDelegatingAuthorizationManager` 의 `mappings` 필드와 그 녀석의 check 메서드의 동작방식은 아래 그림과 같습니다.
 
-![requestmatcherdelegatingauthorizationmanager.excalidraw.png](excalidraws/requestmatcherdelegatingauthorizationmanager.excalidraw.png)
+![[excalidraws/requestmatcherdelegatingauthorizationmanager.excalidraw.png]]
 
 - `RequestMatcherDelegatingAuthorizationManager` 
 	 - implements  `AuthorizationManager<HttpServletRequest>` 

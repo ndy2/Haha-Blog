@@ -1,4 +1,5 @@
 ---
+tags: [spring, spring-security, authorization]
 title: 인가 프로세스 업데이트
 date: 2023-02-06
 ---
@@ -24,7 +25,7 @@ date: 2023-02-06
 
 ### 1. 주요 @Deprecated 된 인가 프로세스 관련 타입들
 
-![legacy-authorization-process.png](images/legacy-authorization-process.png)
+![[images/legacy-authorization-process.png]]
 
 - `FilterSecurityInterceptor`
 	- Use `AuthorizationFilter` instead

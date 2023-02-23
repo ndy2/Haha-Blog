@@ -1,3 +1,8 @@
+---
+tags: [data-sturcture]
+title: ADT
+author: ndy2
+---
 
 ### 1. 추상 자료 구조 (ADT)
 

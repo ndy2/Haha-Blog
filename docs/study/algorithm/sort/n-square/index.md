@@ -1,4 +1,5 @@
 ---
+tags: [algorithm, sort]
 title: O(n^2) 정렬 알고리즘
 ---
 

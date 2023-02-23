@@ -1,4 +1,5 @@
 ---
+tags: [data-structure, tree]
 title: 힙 (Heap)
 date: 2023-02-02
 ---

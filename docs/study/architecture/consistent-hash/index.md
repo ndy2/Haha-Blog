@@ -41,7 +41,7 @@ serverIndex = hash(key) % N
 - `hash space` - `hash function` 의 공역
 - `hash ring` - `hash space` 를 환형으로 이해하는 것
 
-![hash-ring-1.excalidraw.png](excalidraws/hash-ring-1.excalidraw.png)
+![[excalidraws/hash-ring-1.excalidraw.png]]
 
 - Consistent Hash 에서 Key 가 서버를 조회하기 위해서 modulo 연산을 하는 것이 아니라 시계방향으로 탐색을 한다.
 
@@ -55,11 +55,11 @@ serverIndex = hash(key) % N
 - 가상 노드는 실제 노드 또는 서버를 가리키는 노드이다.
 - 키가 서버를 시계 방향으로 탐색하다 가상 노드를 만나도 실제 노드를 조회 한 것과 동일하게 취급한다.
 
-![virtual-node.excalidraw.png](excalidraws/virtual-node.excalidraw.png)
+![[excalidraws/virtual-node.excalidraw.png]]
 
 - 가상 노드를 많이 사용할 수록 키의 분포를 균등하게 만들 수 있다.
 - 그러나 가상 노드 데이터를 저장할 공간은 더 많이 필요해 진다. `tradeoff` 가 필요하다.
 
-![virtual-node-add.excalidraw.png](excalidraws/virtual-node-add.excalidraw.png)
+![[excalidraws/virtual-node-add.excalidraw.png]]
 
 - 위 그림들에서 가상 노드의 위치를 실제 서버의 해시값을 시작으로 `Hash Table Size / Number of Virtual Nodes` 만큼 시계방향으로 rotate 한 위치로 가정했는데 이 방법이 일반적인지는 잘 모르겠다.

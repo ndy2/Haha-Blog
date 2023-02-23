@@ -1,8 +1,9 @@
 ---
-title: 스프링 부트의 자동 설정 동작 원리
+tags: [spring, spring-boot, auto-configure]
+title: 스프링 부트의 자동 설정 동작 원리
 date: 2023-02-03
 ---
-![EnableAutoConfiguration.excalidraw.png](excalidraws/EnableAutoConfiguration.excalidraw.png)
+![[excalidraws/EnableAutoConfiguration.excalidraw.png]]
 
 `@EnableAutoConfiguration` 은 최종적으로 두개의 `@Import` 애너테이션을 포함합니다.
 

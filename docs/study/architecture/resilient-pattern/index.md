@@ -44,7 +44,7 @@ Resilient 라는 특성은 IT 분야 뿐만 아니라 많은 영역에서 중요
 
 ### 1. Timeout Pattern
 
-![timeout-1.png](images/timeout-1.png)
+![[images/timeout-1.png]]
 
 Timeout 패턴은 매 요청시 타임아웃을 걸고 타임아웃 내에 응답이 오지 않는다면 더이상 기다리지 않고 쓰레드를 진행시키는 패턴입니다. 이 때 응답값이 별로 중요하지 않다면 기본값을 채울 수도 있고 응답값이 중요한 값이라면 예외를 발생 시킬 수도 있습니다.
 
@@ -52,13 +52,13 @@ Timeout 패턴은 매 요청시 타임아웃을 걸고 타임아웃 내에 응�
 
 
 ### 2. Retry Pattern
-![retry-1.png](images/retry-1.png)
+![[images/retry-1.png]]
 
 Retry 패턴은 요청이 실패하면 재요청을 보내는 패턴입니다. 이때 재요청의 횟수를 제한하거나 요청 시 간격을 둘 수도 있습니다. 또한 첫번째 요청과 두번째 이상의 요청 (재 요청) 메서드 (fallback)를 다르게 가져갈 수도 있습니다.
 
 ### 3. Circuit Breaker Pattern
 
-![circuit-breaker-1.png](images/circuit-breaker-1.png)
+![[images/circuit-breaker-1.png]]
 
 
 서킷 브레이커 패턴은 요청 클라이언트와 응답 서버 사이에 Circuit Breker (회로 차단기) 를 추가로 두어 서킷 브레이커가 서버의 상태를 나름의 기준으로 판단하여 서버의 상태가 좋지 않은 경우 이를 차단하는 패턴입니다. 한번씩 요청을 보내서 서버의 상태를 판단해보고 괜찮다고 판단되면 다시 회복합니다. 서킷 브레이커는 서버의 상태를 OPEN (장애) CLOSED(정상) HALF-OPEN(반 장애) 로 구분합니다.
@@ -67,7 +67,7 @@ Retry 패턴은 요청이 실패하면 재요청을 보내는 패턴입니다. �
 
 
 ### 4. Bulkhead Pattern
-![bulkhead-1.png](images/bulkhead-1.png)
+![[images/bulkhead-1.png]]
 
 Bulkhead Pattern (격벽 패턴) 은 애플리케이션의 요소를 격리하여 관리함으로써 한 요소의 실패가 다른 요소로 전파되지 않도록합니다. 
 
@@ -77,6 +77,6 @@ Worlkload 1 와 Workload2 의 커넥션 풀을 나누어 Workload 1 의 문제�
 
 ### 5. Rate Limiter Pattern
 
-![rate-limmiter-1.png](images/rate-limmiter-1.png)
+![[images/rate-limmiter-1.png]]
 
 Rate Limiter 패턴은 일정 시간 (윈도우) 동안 보낼 수 있는 요청의 횟수를 제한하여 서버의 리소스를 보호하는 패턴입니다.

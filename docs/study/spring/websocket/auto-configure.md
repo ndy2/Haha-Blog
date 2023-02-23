@@ -1,4 +1,5 @@
 ---
+tags: [spring, web-socket, auto-configure]
 title: 웹 소켓 자동 설정
 date: 2023-02-03
 ---
@@ -51,7 +52,7 @@ org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoCon
 
 사용 간단 프로젝트 - [링크](https://github.com/ndy2/study-webrtc-and-websocket/tree/aa92d61f92faf8bd76cc9fe720c86463509939f1)
 
-![auto-configure-1.excalidraw.png](excalidraws/auto-configure-1.excalidraw.png)
+![[excalidraws/auto-configure-1.excalidraw.png|400]]
 
 
 
@@ -74,7 +75,7 @@ org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoCon
 
 세가지 메시지 컨버터를 등록한다.
 
-![auto-configure-2.excalidraw.png](excalidraws/auto-configure-2.excalidraw.png)
+![[excalidraws/auto-configure-2.excalidraw.png]]
 
 ---
 

@@ -1,11 +1,12 @@
 ---
+tags: [spring, spring-boot, auto-configure]
 title: 자동 구성 분석 방법
 date: 2023-02-03
 ---
 
 ### 1. -Ddebug, --debug
 
-![how-to-analysis-1.png](images/how-to-analysis-1.png)
+![[images/how-to-analysis-1.png]]
 
 ```text title="디버그 옵션 추가 후 StartUp 로그"
 
@@ -118,4 +119,4 @@ org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration#task
 
 - 아래 사진 [링크](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#documentation.web)
 
-![how-to-analysis.png](images/how-to-analysis.png)
+![[images/how-to-analysis.png]]

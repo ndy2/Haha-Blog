@@ -1,3 +1,8 @@
+---
+tags: [data-structure, algorithm, tree]
+title: Trie
+author: ndy2
+---
 
 트라이 <sup>Trie</sup> 는 *문자열의 집합*을 표현하는 트리 자료구조이다.
 
@@ -15,7 +20,7 @@
 
 ### 1. 배열 (Array)
 
-![excalidraws/array.excalidraw.png](excalidraws/array.excalidraw.png)
+![[excalidraws/array.excalidraw.png]]
 
 문자열 검색의 시간 복잡도는 `O(nm)` 이다. 
 
@@ -45,7 +50,7 @@
 
 ### 3. 트라이 (Trie)
 
-![trie-example.excalidraw.png](excalidraws/trie-example.excalidraw.png)
+![[excalidraws/trie-example.excalidraw.png|400]]
 
 Trie 는 문자열 집합을 위 그림 처럼 저장한다.
 

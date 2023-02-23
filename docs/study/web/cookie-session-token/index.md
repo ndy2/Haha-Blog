@@ -1,3 +1,9 @@
+---
+tags: [web]
+title: Cookie, Session and Token
+author: ndy2
+---
+
 @참고 자료)
 
 - 인프런 김영한 - [모든 개발자를 위한 HTTP 웹 네트워크](https://www.inflearn.com/course/http-웹-네트워크)
@@ -8,7 +14,8 @@
 
 HTTP 의 중요한 특징 두가지는 STATELESS 와 CONNECTIONLESS 입니다. 두 특성은 커지는 전세계 네트워크에도 프로토콜 자체의 확장성과 가벼움을 유지하는데 그 의의를 가집니다. 하지만 현실적으로 두가지를 모두 만족하는 네트워크 통신을 하는 것은 불가능합니다.
 
-{++STATELESS++} 가 가지는 문제점은 {++쿠키/세션/토큰++} 등을 통해  {==CONNECTIONLESS==} 가 가지는 문제점은 {==HTTP 1.1에 추가된 Persistent Connection(keep-alive 스펙)==}을 통해 어느정도 해결할 수 있습니다.
+- *STATELESS* 가 가지는 문제점은 ==쿠키/세션/토큰== 등을 통해
+- *CONNECTIONLESS* 가 가지는 문제점은 ==HTTP 1.1에 추가된 Persistent Connection(keep-alive 스펙)== 을 통해 어느정도 해결할 수 있습니다.
 
 이 문서에서는 {++STATELESS++} 가 가지는 문제점과 이를 해결하기 위해 등장한 {++쿠키/세션/토큰++}에 대해서 알아보겠습니다.
 

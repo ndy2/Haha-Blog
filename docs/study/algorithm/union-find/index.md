@@ -46,7 +46,7 @@ fun find(a: Int): Int {
 
 아래 그래프에 대해 Union-Find 알고리즘을 적용해 보겠습니다.
 
-![graph.excalidraw.png](excalidraws/graph.excalidraw.png)
+![[excalidraws/graph.excalidraw.png]]
 
 
 union-find 알고리즘은 흔히 배열을 이용해 구현됩니다.
@@ -86,11 +86,11 @@ fun isInSameSet(a: Int, b: Int){
 
 `union 적용 전`
 
-![graph-before.excalidraw.png](excalidraws/graph-before.excalidraw.png)
+![[excalidraws/graph-before.excalidraw.png]]
 
 `union 적용 후`
 
-![graph-after.excalidraw.png](excalidraws/graph-after.excalidraw.png)
+![[excalidraws/graph-after.excalidraw.png]]
 
 1번 노드를 보면 `parents` 배열은 그 자체가 disjoint-set 의 대표값을 표현하지는 못하지만 `find` 를 연쇄적으로 호출함으로써 결국 자신의 대표값을 찾을 수 있다는 것을 알 수 있습니다.
 

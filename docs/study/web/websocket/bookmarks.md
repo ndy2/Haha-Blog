@@ -1,4 +1,5 @@
 ---
+tags: [bookmarks]
 title: 참고 링크
 date: 2023-02-03
 ---
