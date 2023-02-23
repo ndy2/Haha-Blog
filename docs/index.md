@@ -10,11 +10,6 @@ hide: [toc]
 
 저는 `하하` 라는 닉네임을 사용하고 위 이미지를 프로필 이미지로 자주 사용합니다.
 
-<br />
-<br />
-<br />
-<br />
-
 ## 타임 라인
 ![[assets/my-timeline.excalidraw.png]]
 
