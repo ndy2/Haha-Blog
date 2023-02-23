@@ -6,13 +6,13 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
-<meta content="Haha" name="author"/>
+<meta content="ndy2" name="author"/>
 <link href="https://ndy2.github.io/Haha-Blog/study/database/clustering-replication-sharding/" rel="canonical"/>
 <link href="../basic-terminologies/" rel="prev"/>
 <link href="../db-index/" rel="next"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.13" name="generator"/>
-<title>Index - Haha 블로그</title>
+<title>Clustering Replication Sharding - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.ffa9267a.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -61,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Index
+              Clustering Replication Sharding
             
           </span>
 </div>
@@ -224,22 +224,22 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../anomaly/">
-        Index
+        Anomaly
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../basic-terminologies/">
-        Index
+        Basic Terminologies
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Index
+          Clustering Replication Sharding
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Index
+        Clustering Replication Sharding
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -329,27 +329,27 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../db-index/">
-        Index
+        index
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../dbcp/">
-        Index
+        Database Connection Pool
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../fd/">
-        Index
+        Functional Dependency
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../join/">
-        Index
+        Join
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../mysql-execution-plan/">
-        Index
+        Mysql Excution Plan
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -366,17 +366,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../normalization/db-normalization-1nf-2nf/">
-        Db normalization 1nf 2nf
+        1NF &amp; 2NF
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../normalization/db-normalization-3nf-bcnf/">
-        Db normalization 3nf bcnf
+        3NF &amp; BCNF
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../normalization/db-normalization/">
-        Db normalization
+        What is Normalization
       </a>
 </li>
 </ul>
@@ -384,17 +384,17 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../olap/">
-        Index
+        OLAP
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../rdb/">
-        Index
+        Relational DB
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../transaction-acid/">
-        Index
+        Transaction
       </a>
 </li>
 </ul>
@@ -1759,27 +1759,46 @@
 <a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/tree/main/docs/study/database/clustering-replication-sharding/index.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>Index</h1>
-<p>@)참고</p>
-<ul>
-<li>테리의 일상<ul>
-<li><a href="https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81Clustering">클러스터링,</a></li>
-<li><a href="https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EB%A0%88%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98Replication">리플리케이션,</a></li>
-<li><a href="https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%83%A4%EB%94%A9Sharding?category=805412">샤딩</a></li>
-</ul>
-</li>
-<li>Be A Better Dev - <a href="https://www.youtube.com/watch?v=hdxdhCpgYo8">데이터베이스 샤딩이란?</a></li>
-<li>망나니 개발자 - <a href="https://mangkyu.tistory.com/97">[Database] 리플리케이션(Replication) vs 클러스터링(Clustering)</a></li>
-<li>쉬운코드 - <a href="https://www.youtube.com/watch?v=P7LqaEO-nGU">[DB] 파티셔닝? 샤딩? 레플리케이션 (partitioning? sharding? replication?)</a></li>
-</ul>
+<h1>Clustering Replication Sharding</h1>
+<div class="blogging-tags-grid">
+<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/tags#database"><code>#database</code></a>
+</div>
+<style>
+    .md-typeset .blogging-tags-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .md-typeset .blogging-tag {
+        color: var(--md-typeset-color);
+        background-color: var(--md-typeset-code-color);
+    }
+
+    .md-typeset .blogging-tag code {
+        border-radius: 5px;
+    }
+</style>
+<blockquote>
+<p>[!quote] 참고 자료
+* 테리의 일상 <a href="https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81Clustering">클러스터링</a>,  <a href="https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EB%A0%88%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98Replication">리플리케이션</a>,<a href="https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%83%A4%EB%94%A9Sharding?category=805412">샤딩</a>
+* Be A Better Dev - <a href="https://www.youtube.com/watch?v=hdxdhCpgYo8">데이터베이스 샤딩이란?</a>
+* 망나니 개발자 - <a href="https://mangkyu.tistory.com/97">[Database] 리플리케이션(Replication) vs 클러스터링(Clustering)</a>
+* 쉬운코드 - <a href="https://www.youtube.com/watch?v=P7LqaEO-nGU">[DB] 파티셔닝? 샤딩? 레플리케이션 (partitioning? sharding? replication?)</a></p>
+</blockquote>
 <hr/>
-<p><code>클러스터링</code>, <code>레플리케이션</code>, <code>샤딩/파티셔닝</code>은 모두 데이터베이스 다중화를 위한 기법입니다.</p>
+<blockquote>
+<p>![tip]
+<code>클러스터링</code>, <code>레플리케이션</code>, <code>샤딩/파티셔닝</code>은 모두 데이터베이스 다중화를 위한 기법입니다.</p>
+</blockquote>
 <h2 id="1-clustering">1. 클러스터링 (clustering)<a class="headerlink" href="#1-clustering" title="Permanent link">¶</a></h2>
 <ul>
 <li>여러 개의 DB를 수평적인 구조로 구축하는 방식</li>
 <li>동기 방식으로 노드들간의 데이터를 동기화 한다.</li>
 <li>Active-Active 방식과 Active-Standby 방식이 있다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/clustering.png"><img alt="clustering.png" src="images/clustering.png"/></a></li>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/clustering.png"><img alt="images/clustering.png" src="images/clustering.png"/></a></li>
 </ul>
 <h3 id="_1">장점<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <ul>
@@ -1796,7 +1815,7 @@
 <li>여러 개의 DB를 <code>수직적인 구조(Master-Slave)</code>로 구축하는 방식</li>
 <li><code>비동기 방식</code>으로 노드들 간의 데이터를 동기화 한다.</li>
 <li>Master 노드는 Create, Update, Delete 연산을 수행하고 Slave 노드는 Read 연산을 수행하여 로드를 분산할 수 있다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/replication.png"><img alt="replication.png" src="images/replication.png"/></a></li>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/replication.png"><img alt="images/replication.png" src="images/replication.png"/></a></li>
 </ul>
 <h3 id="_3">장점<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <ul>
@@ -1813,7 +1832,7 @@
 <li>테이블을 row 단위로 나누어 저장해 DB 용량을 줄이고 검색 성능을 올리는 기법</li>
 <li>기존 테이블과 같은 스키마를 가지는 <code>샤드</code> 라는 작은 단위로 나누어 저장하는 방식</li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/sharding.png"><img alt="sharding.png" src="images/sharding.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/sharding.png"><img alt="images/sharding.png" src="images/sharding.png"/></a></p>
 <ul>
 <li><code>샤드키</code> - 나누어진 샤드 중 어떤 샤드를 선택할 지 결정하는 키</li>
 </ul>
@@ -1857,17 +1876,22 @@
 <h2 id="4">4. 파티셔닝<a class="headerlink" href="#4" title="Permanent link">¶</a></h2>
 <p>파티셔닝은 데이터베이스 테이블을 더 작은 테이블로 나누는 것이다.</p>
 <p>파티셔닝은 <code>column</code>을 기준으로 테이블을 나누는 <code>vertical partitioning</code> 과 <code>row</code> 를 기준으로 테이블을 나누는 <code>horizontal partitioning</code> 이 있다. </p>
-<p>!!!! note</p>
-<div class="highlight"><pre><span></span><code>샤딩과 Horizontal 파티셔닝은 동작방식이 동일하다.
-샤딩은 분리된 데이터를 `샤드` 라고 부르고 서로 다른 데이터베이스 서버 인스턴스로 관리한다.
-Horinotal 파티셔닝에서는 분리된 데이터는 `파티션` 이라고 부르고 같은 데이터베이스 서버 내의 다른 테이블 혹은 스키마로 관리한다.
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<blockquote>
+<ul>
+<li>샤딩과 Horizontal 파티셔닝은 동작방식이 동일하다.</li>
+<li>샤딩은 분리된 데이터를 <code>샤드</code> 라고 부르고 서로 다른 데이터베이스 서버 인스턴스로 관리한다.</li>
+<li>Horinotal 파티셔닝에서는 분리된 데이터는 <code>파티션</code> 이라고 부르고 같은 데이터베이스 서버 내의 다른 테이블 혹은 스키마로 관리한다.</li>
+</ul>
+</blockquote>
 <p>그럼 이제 <code>vertical partitioning</code> 에 대해 알아보자!</p>
 <p><code>Vertical Partitioning</code> 은 <code>column을</code> 기준으로 테이블을 나누는 것이다. VP 를 수행하는 경우는 크게 정규화가 있다. <code>정규화</code>란 데이터의 중복을 없에고 CUD 연산의 이상현상을 없애기 위해 테이블을 잘게 나누는 것을 의미한다. 하지만 VP 에는 정규화만있는 것은 아니다.</p>
 <p>정규화는 추후에 별도로 알아보도록 하고 오늘은 <code>성능 개선</code>을 위해 VP 를 수행할 수 있는 상황에 대해 알아보자.</p>
 <p>아래와 같은 게시판의 목록 화면을 띄우기 위해서 Article 테이블에는 어떤 쿼리가 발생해야 할까?
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/article-table.png"><img alt="article-table.png" src="images/article-table.png"/></a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/articles.png"><img alt="articles.png" src="images/articles.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/article-table.png"><img alt="images/article-table.png" src="images/article-table.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/articles.png"><img alt="images/articles.png" src="images/articles.png"/></a></p>
 <p>예상 쿼리
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">article</span>
@@ -1875,13 +1899,13 @@ Horinotal 파티셔닝에서는 분리된 데이터는 `파티션` 이라고 부
 </code></pre></div></p>
 <p>놀라운 사실은 개발자가 SELECT 절에 필드를 명시했다고 할지라도 article 테이블의 where 절에 해당되는 row의 모든 필드 데이터를 메모리에 올리고 SELECT 절의 필드에 대한 프로젝션을 데이터베이스에서 수행한다는 것이다. 이는 데이터베이스가 일반적으로 데이터를 row 단위로 관리하기 때문이다. (Column-oriented DBMS vs Row-oriented DBMS)</p>
 <p>이때 아래와 같이 Column 을 기준으로 테이블을 파티셔닝하면 게시판의 목록 조회에 대해서 content를 IO 해야 한다는 부당함을 덜 수 있다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/article-table-partitioning.png"><img alt="article-table-partitioning.png" src="images/article-table-partitioning.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/article-table-partitioning.png"><img alt="images/article-table-partitioning.png" src="images/article-table-partitioning.png"/></a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 19, 2022</span>
@@ -1893,7 +1917,7 @@ Horinotal 파티셔닝에서는 분리된 데이터는 `파티션` 이라고 부
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Index" class="md-footer__link md-footer__link--prev" href="../basic-terminologies/" rel="prev">
+<a aria-label="Previous: Basic Terminologies" class="md-footer__link md-footer__link--prev" href="../basic-terminologies/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -1902,17 +1926,17 @@ Horinotal 파티셔닝에서는 분리된 데이터는 `파티션` 이라고 부
 <span class="md-footer__direction">
                   Previous
                 </span>
-                Index
+                Basic Terminologies
               </div>
 </div>
 </a>
-<a aria-label="Next: Index" class="md-footer__link md-footer__link--next" href="../db-index/" rel="next">
+<a aria-label="Next: index" class="md-footer__link md-footer__link--next" href="../db-index/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                Index
+                index
               </div>
 </div>
 <div class="md-footer__button md-icon">

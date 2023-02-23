@@ -6,13 +6,13 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
-<meta content="Haha" name="author"/>
+<meta content="ndy2" name="author"/>
 <link href="https://ndy2.github.io/Haha-Blog/study/database/dbcp/" rel="canonical"/>
 <link href="../db-index/" rel="prev"/>
 <link href="../fd/" rel="next"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.13" name="generator"/>
-<title>Index - Haha 블로그</title>
+<title>Database Connection Pool - Haha 블로그</title>
 <link href="../../../assets/stylesheets/main.ffa9267a.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -61,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Index
+              Database Connection Pool
             
           </span>
 </div>
@@ -224,32 +224,32 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../anomaly/">
-        Index
+        Anomaly
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../basic-terminologies/">
-        Index
+        Basic Terminologies
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../clustering-replication-sharding/">
-        Index
+        Clustering Replication Sharding
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../db-index/">
-        Index
+        index
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Index
+          Database Connection Pool
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Index
+        Database Connection Pool
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -315,17 +315,17 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../fd/">
-        Index
+        Functional Dependency
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../join/">
-        Index
+        Join
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../mysql-execution-plan/">
-        Index
+        Mysql Excution Plan
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -342,17 +342,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../normalization/db-normalization-1nf-2nf/">
-        Db normalization 1nf 2nf
+        1NF &amp; 2NF
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../normalization/db-normalization-3nf-bcnf/">
-        Db normalization 3nf bcnf
+        3NF &amp; BCNF
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../normalization/db-normalization/">
-        Db normalization
+        What is Normalization
       </a>
 </li>
 </ul>
@@ -360,17 +360,17 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../olap/">
-        Index
+        OLAP
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../rdb/">
-        Index
+        Relational DB
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../transaction-acid/">
-        Index
+        Transaction
       </a>
 </li>
 </ul>
@@ -1711,39 +1711,55 @@
 <a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/tree/main/docs/study/database/dbcp/index.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>Index</h1>
-<p>@ 참고 자료)</p>
+<h1>Database Connection Pool</h1>
+<div class="blogging-tags-grid">
+<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/tags#database"><code>#database</code></a>
+</div>
+<style>
+    .md-typeset .blogging-tags-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .md-typeset .blogging-tag {
+        color: var(--md-typeset-color);
+        background-color: var(--md-typeset-code-color);
+    }
+
+    .md-typeset .blogging-tag code {
+        border-radius: 5px;
+    }
+</style>
+<blockquote>
+<p>[!quote] 참고 자료
+* 쉬운코드 - <a href="https://youtu.be/zowzVqx3MQ4">DBCP (DB connection pool)의 개념부터 설정 방법</a>
+* 쓰레드의 커넥션 조회, 반납 시나리오 - <a href="https://jaehun2841.github.io/2020/01/27/2020-01-27-hikaricp-maximum-pool-size-tuning/#Hikari%EB%8B%98-Connection-하나만-주세여">링크</a>
+* Naver D2 - <a href="https://d2.naver.com/helloworld/5102792">Commons DBCP 이해하기</a></p>
+</blockquote>
 <ul>
-<li>쉬운코드 - <a href="https://youtu.be/zowzVqx3MQ4">DBCP (DB connection pool)의 개념부터 설정 방법</a></li>
-<li>쓰레드의 커넥션 조회, 반납 시나리오 - <a href="https://jaehun2841.github.io/2020/01/27/2020-01-27-hikaricp-maximum-pool-size-tuning/#Hikari%EB%8B%98-Connection-하나만-주세여">링크</a><ul>
-<li>아주 재미있습니다.</li>
-</ul>
-</li>
-<li>
-<p>Naver D2 - <a href="https://d2.naver.com/helloworld/5102792">Commons DBCP 이해하기</a></p>
-</li>
-<li>
-<p>{<mark>SpringBoot Application</mark>}</p>
-</li>
-<li>SpringBoot 의 기본 DBCP 로 사용되는 {<mark>HikariCP</mark>}</li>
-<li>{<mark>Mysql</mark>} </li>
+<li><mark>SpringBoot Application</mark></li>
+<li>SpringBoot 의 기본 DBCP 로 사용되는 <mark>HikariCP</mark></li>
+<li><mark>Mysql</mark></li>
 </ul>
 <p>을 사용하여 DBCP 를 설정하는 방식을 알아보겠습니다.</p>
 <hr/>
 <h3 id="1-dbcp">1. DBCP의 개념과 원리<a class="headerlink" href="#1-dbcp" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="excalidraws/dbcp-con.excalidraw.png"><img alt="dbcp-con.excalidraw" src="excalidraws/dbcp-con.excalidraw.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="excalidraws/dbcp-con.excalidraw.png"><img alt="excalidraws/dbcp-con.excalidraw.png" src="excalidraws/dbcp-con.excalidraw.png"/></a></p>
 <ul>
 <li>매번 connection 을 열고 닫는 시간적인 비용이 발생합니다.</li>
 <li>서비스 성능에 좋지 않습니다.</li>
 </ul>
 <p><strong>DBCP</strong> - Database Connection Pool</p>
-<p>=&gt; {==미리 커넥션을 만들어두고 Pool 처럼 관리하자! ==}
+<p>=&gt; <mark>미리 커넥션을 만들어두고 Pool 처럼 관리하자!</mark>
 - 요청의 시작 전에 TCP 연결을 수립하고 해지 하지 않고 Pool 에서 커넥션을 조회하고 반납하자!</p>
 <h3 id="2-mysql">2. MySql<a class="headerlink" href="#2-mysql" title="Permanent link">¶</a></h3>
 <h4 id="1-max_connections">1. <code>max_connections</code><a class="headerlink" href="#1-max_connections" title="Permanent link">¶</a></h4>
 <ul>
 <li>client 와 맺을 수 있는 최대 connection 수 (default = 100)
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/dbcp-max_connections.png"><img alt="dbcp-max_connections.png" src="images/dbcp-max_connections.png"/></a></li>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/dbcp-max_connections.png"><img alt="images/dbcp-max_connections.png" src="images/dbcp-max_connections.png"/></a></li>
 <li>
 <p>mysql 의 max_connections 값이 4로 설정된 경우</p>
 </li>
@@ -1758,21 +1774,16 @@
 <h4 id="2-mysql-wait_timeout">2. MySQL - <code>wait_timeout</code><a class="headerlink" href="#2-mysql-wait_timeout" title="Permanent link">¶</a></h4>
 <ul>
 <li>connection 이 idle (inactive) 할 때 다시 요청이 오기까지 얼마의 시간을 기다린 뒤에 close 할 것인지 결정하는 값 (default - 8 시간 (28800 초))</li>
-<li>
-<p>한 쓰레드가 커넥션 풀에서 커넥션을 가져가서 사용하지도 않고 반환하지도 않는 경우 리소스 점유의 문제가 있습니다. 이 문제를 해결하기  MySQL 은 마지막 사용(요청) 시간을 기준으로 wait_timeout 시간이 초과된다면 connection 을 종료합니다.</p>
-</li>
-<li>
-<p>참고 링크</p>
+<li>한 쓰레드가 커넥션 풀에서 커넥션을 가져가서 사용하지도 않고 반환하지도 않는 경우 리소스 점유의 문제가 있습니다. 이 문제를 해결하기  MySQL 은 마지막 사용(요청) 시간을 기준으로 wait_timeout 시간이 초과된다면 connection 을 종료합니다.</li>
+</ul>
+<div class="admonition quote">
+<p class="admonition-title">참고 자료</p>
 <ul>
-<li><a href="https://knight76.tistory.com/entry/30031445050">mysql 의 wait_timeout의 의미</a><ul>
+<li><a href="https://knight76.tistory.com/entry/30031445050">mysql 의 wait_timeout의 의미</a></li>
 <li>wait_timeout 이 가장 중요하지만 mysql 의 다른 여러 timeout 과 관련된 설정들,</li>
-<li>wait_timeout 설정 꿀팁 </li>
+<li>wait_timeout 설정 꿀팁 에 대한 글입니다.</li>
 </ul>
-</li>
-<li>에 대한 글입니다.</li>
-</ul>
-</li>
-</ul>
+</div>
 <h3 id="3-hikaricp">3. HikariCP 설정<a class="headerlink" href="#3-hikaricp" title="Permanent link">¶</a></h3>
 <h4 id="1-minimumidle">1. <code>minimumIdle</code><a class="headerlink" href="#1-minimumidle" title="Permanent link">¶</a></h4>
 <ul>
@@ -1792,13 +1803,15 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+</div>
+<blockquote>
 <p><code>maximumPoolSize</code> 가 <code>minimumIdle</code> 보다 우선 순위를 가집니다!
-<code>maximumPoolSize</code> = 4, <code>minimumIdle</code> = 2 인 설정으로 HikraiCP 를 시작하면</p>
-<p>minimumIdle 을 만족하기 위해 먼저 두개의 커넥션을 생성합니다.
+<code>maximumPoolSize</code> = 4, <code>minimumIdle</code> = 2 인 설정으로 HikraiCP 를 시작하면
+minimumIdle 을 만족하기 위해 먼저 두개의 커넥션을 생성합니다.
 이 상태에서 하나의 요청이 와서 커넥션 하나가 <code>IN-USE</code> 상태가 된다면 minmumIdle 설정에 따라 Connection 이 하나 추가되고 idle connection 의 최솟값을 2로 유지할 수 있습니다.</p>
 <p>하지만 이 상태에서 추가적인 요청이 두개가 더 온다면 minimumIdle을 준수하기 위해 Connection을 두개 더 추가했다가는 maximumPoolSize 가 께지게 됩니다. HikariCP는 이 때 maximumPoolSize 설정이 minimuIdle 설정에 우선해서 동작하도록 합니다.</p>
 <p>참고 링크 - 쉬운코드님 영상 14:41</p>
-</div>
+</blockquote>
 <h4 id="3-maxlifetime">3. <code>maxLifetime</code><a class="headerlink" href="#3-maxlifetime" title="Permanent link">¶</a></h4>
 <ul>
 <li>pool 에서 connection의 최대 수명</li>
@@ -1815,7 +1828,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 26, 2022</span>
@@ -1827,7 +1840,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Index" class="md-footer__link md-footer__link--prev" href="../db-index/" rel="prev">
+<a aria-label="Previous: index" class="md-footer__link md-footer__link--prev" href="../db-index/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -1836,17 +1849,17 @@
 <span class="md-footer__direction">
                   Previous
                 </span>
-                Index
+                index
               </div>
 </div>
 </a>
-<a aria-label="Next: Index" class="md-footer__link md-footer__link--next" href="../fd/" rel="next">
+<a aria-label="Next: Functional Dependency" class="md-footer__link md-footer__link--next" href="../fd/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                Index
+                Functional Dependency
               </div>
 </div>
 <div class="md-footer__button md-icon">
