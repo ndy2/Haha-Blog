@@ -25,6 +25,8 @@ jobs:
       - run: pip install mkdocs-kroki-plugin
       - run: pip install markdown-exec
       - run: pip install mkdocs-obsidian-support-plugin
+      - run: pip install mkdocs-awesome-pages-plugin
+      - run: pip install mkdocs-obsidian-bridge
       - run: pip install mkdocs-exclude-search
       - run: pip3 install mkdocs-blogging-plugin
       - run: mkdocs gh-deploy --force
