@@ -1,3 +1,8 @@
+---
+tags: [os]
+title: Virtual Memory 2
+---
+
 
 메모리 관리자 MMU 세가지 정책에 따라 메모리를 관리한다.
 
@@ -21,7 +26,7 @@
 
 #### Page Table Entry
 
-![page-table-entry.png](images/page-table-entry.png)
+![[images/page-table-entry.png|PTE (Page Table Entry)]]
 `access bit`
 
 -   메모리에 올라 온 후 사용한 적이 있는지 알려주는 비트

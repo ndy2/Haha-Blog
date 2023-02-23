@@ -1,10 +1,11 @@
-
-@참고 자료)
-
-- 조성호 - [쉽게 배우는 운영체제](http://www.yes24.com/Product/Goods/62054527) 3장 프로세스와 스레드
-
+---
+tags: [os]
+title: Process vs Thread
+date: 2023-02-23
 ---
 
+>[!quote] 참고 자료
+>* 조성호 - [쉽게 배우는 운영체제](http://www.yes24.com/Product/Goods/62054527) 3장 프로세스와 스레드
 ### 0. 들어가며
 
 운영체제의 첫 문서는 `프로세스 vs 쓰레드` 로 정했습니다.. 그만큼 중요하고 면접에도 자주나오는 질문입니다. 신입 개발자 면접을 보면 열번중에 다섯번 정도는 가볍게 물어보는 질문입니다. 물론 보통 여기서 멈추지 않고 `멀티 쓰레드 프로그래밍 이란?`, `멀티 쓰레드 프로그래밍의 주의 사항`, `동시성 프로그래밍` ... 등등 무시무시한 꼬리질문 들이 따라옵니다.
@@ -15,7 +16,7 @@
 - 할당 받는 시스템 자원에는 CPU 타임, 메모리 영역(가상 메모리), 2차 메모리 등이 있습니다.
 - 프로세스는 독립적인 가상 메모리 영역 (Virtual Memory Space) 을 가집니다.
 
-![process-memory.png](images/process-memory.png)
+![[images/process-memory.png]]
 
 #### 1. 특징
 
@@ -28,7 +29,7 @@
 #### 2. 프로세스의 상태
 
 - 프로세스는 5가지 활성 상태 (NEW(CREATE), READY, RUNNING, BLOCKING(WAIT), TERMINATE) 와 두가지 대기 상태 (SUSPENDED READY, SUSPENDED BLOCKING) 상태를 가지며 아래와 같은 상태 다이어그램을 가집니다.
-![process-state-diagram.png](images/process-state-diagram.png)
+![[images/process-state-diagram.png|프로세스 상태 다이어그램]]
 
 - 이런 상태는 운영체제의 프로세스 스케쥴링에 의해 이루어집니다. 스케쥴링의 핵심은 Ready Queue 에서 실행될 프로세스를 선정하는 것입니다. 보통 프로세스의 우선순위를 바탕으로한 Multilevel Feedback Queue 방식이 활용되며 이외에도 다양한 스케쥴링 알고리즘이 있습니다.
 
@@ -45,7 +46,7 @@
 - 프로세스의 코드에 정의된 절차에 따라 CPU에 작업 요청을 하는 실행 흐름의 단위
 - 같은 프로세스내의 쓰레드 간에는 가상 메모리 영역 (VMS) 을 공유합니다.
 	- HEAP, CODE, DATA 영역은 공유하고 STACK 영역에서는 각 쓰레드별 지역변수와 함수 콜스택 등을 관리합기위해 공유하지 않습니다.
-![thread.png](images/thread.png)
+![[images/thread.png]]
 
 
 #### 1. 특징
@@ -66,9 +67,7 @@
 
 <br>
 유저 쓰레드를 커널 쓰레드에 매핑 시키는 방법을 쓰레드 모델이라고 하며 크게 세가지 방법이 있습니다.
-![thread-models.png](images/thread-models.png)
-
-
+![[images/thread-models.png]]
 
 #### 3. 자바 쓰레드
 

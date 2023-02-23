@@ -1,6 +1,11 @@
+---
+tags: [os]
+title: Virtual Memory 1
+---
+
 가상 메모리
 
-![virtual-memory.png](images/virtual-memory.png)
+![[images/virtual-memory.png|가상 메모리 구조]]
 
 `가상 메모리`를 통해 프로세스가 물리 메모리의 크기와 상관없이 메모리를 마음대로 사용할 수 있다.
 
@@ -13,7 +18,7 @@ DAT (Dynamic Address Transformation)
 
 ### 페이징
 
-![paging.png](images/paging.png)
+![[images/paging.png|페이징]]
 
 -   DAT : VA=<p,offset> → PA =<f, offset>
 -   사실 page table도 사용시에는 메인 메모리의 커널 영역에 있음
@@ -22,13 +27,13 @@ DAT (Dynamic Address Transformation)
 
 ### 세그멘테이션
 
-![segmentation.png](images/segmentation.png)
+![[images/segmentation.png|세그멘테이션]]
 
 DAT : VA=<s,offset> → 물리주소
 
 ### 세그멘테이션-페이징
 
-![segmented-paging.png](images/segmented-paging.png)
+![[images/segmented-paging.png|세그멘테이션-페이징]]
 
 The advantages of segmented paging are-
 
