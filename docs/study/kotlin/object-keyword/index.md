@@ -1,3 +1,9 @@
+---
+tags: [kotlin]
+title: object 키워드 활용
+author: ndy2
+---
+
 @참고 자료)
 
 - 인프런/최태현 - 자바 개발자를 위한 코틀린 입문

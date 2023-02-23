@@ -1,6 +1,6 @@
 ---
 tags: [spring, spring-boot]
-title: @Configuration 과 proxyBeanmethods
+title: Configuration과 proxyBeanmethods
 date: 2023-02-03
 ---
 

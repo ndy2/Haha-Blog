@@ -1,6 +1,6 @@
 ---
 tags: [network, layer4, tcp, udp]
-title: 제목
+title: TCP vs UDP
 author: ndy2
 date: 2023-02-23
 ---

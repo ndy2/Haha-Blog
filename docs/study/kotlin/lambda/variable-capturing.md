@@ -1,3 +1,9 @@
+---
+tags: [kotlin, lambda]
+title: 변수 캡쳐링
+author: ndy2
+---
+
 @ 참고 자료)
 
 - Kotlin In Action - 5장 람다로 프로그래밍 하기
