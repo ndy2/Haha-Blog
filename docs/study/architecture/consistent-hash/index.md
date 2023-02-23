@@ -1,6 +1,6 @@
-
 ---
-title: 제목
+tags: [architecture]
+title: Consistent Hash
 date: 2023-02-09
 ---
 @참고 자료)

@@ -1,3 +1,9 @@
+---
+tags: [architecture]
+title: Resilient Pattern
+date: 2023-02-23
+---
+
 @참고 자료)
 
 - UWE FRIEDRICHSEN

@@ -1,9 +1,12 @@
-@ 참고 자료)
+---
+tags: [architecture]
+title: Hexagonal Architecture
+---
 
-- 데브원영 - [[마틴 파울러] 소프트웨어 아키텍처의 중요성 (한글 자막)](https://youtu.be/4E1BHTvhB7Y)
-- 톰 홈버그 - `만들면서 배우는 클린 아키텍처`
-- 인프런/한정현 - `실무에서 전하는 따끈한 마이크로서비스 아키텍처(MSA) 이야기` 
-
+> [!quote] 참고 자료
+> * 데브원영 - [[마틴 파울러] 소프트웨어 아키텍처의 중요성 (한글 자막)](https://youtu.be/4E1BHTvhB7Y)
+> * 톰 홈버그 - `만들면서 배우는 클린 아키텍처`
+> * 인프런/한정현 - `실무에서 전하는 따끈한 마이크로서비스 아키텍처(MSA) 이야기` 
 
 ### 0. 들어가며
 
@@ -32,7 +35,7 @@
 마틴은 경제적인 관점에서 아키텍처의 중요성을 강조하며 아래의 그래프로 이를 설명합니다.
 
 [Design Stamina Hypothesis](https://martinfowler.com/bliki/DesignStaminaHypothesis.html)
-![DesignStaminaHypothesis.png](images/DesignStaminaHypothesis.png)
+![[images/DesignStaminaHypothesis.png|Design Stamina Hypothesis]]
 
 이 그래프는 좋은 아키텍처 (디자인)를 가지고 있으면 초기에는 개발속도가 느리지만 일정 시점 (Design payoff line) 이후에도 기능을 추가하는 속도가 항상 선형적일수 있다는 것을 보여줍니다. 마틴은 자신의 저서인 `리팩토링` 에서도 이 그래프를 언급하며 리팩토링을 하는 이유 역시 좋은 Design 을 유지하여 기능 추가에 따른 코스트를 선형으로 유지하기 위함이라고 하였습니다.
 
@@ -47,7 +50,7 @@
 
 - 마이크로서비스의 내부 구조를 계층형으로 구성.
 - 호출은 위에서 아래로, 아래에서 위 호출 불가
-![layered-architecture.png](images/layered-architecture.png)
+![[images/layered-architecture.png|계층형 아키텍처의 여러가지 형태]]
 
 계층형 아키텍처는 간단하지만 레이어간 호출방향에 대한 룰 외에는 정해진 룰이 없어서 확장성 측면에서 불리합니다. 특히 도메인별 참조와 컴포넌트의 너비 (Width) 에 대한 룰을 정하지 않아 흔히 이야기 하는 스파게티 코드가 되기 쉽상입니다. 
 
@@ -66,11 +69,11 @@ Clean Architecture 와 Hexagonal Architecture 는 DIP 적인 컨셉을 더 강�
 > `Hexagonal Architecture` 는 엘리스터 콕번이 제안한 아키텍쳐이고 로버트 마틴이 제안한 Clean Architecture 의 한 형태입니다. 
 
 클린아키텍처는 애플리케이션을 계층형태가 아니라  중앙을 향하는 의존성을 가진 여러 동심원 형태로 표현합니다. 원의 가장 중앙에는 애플리케이션의 가장중요한 가치 바로 도메인이 자리합니다. 그래서 클린 아키텍처를 양파 아키텍처라고도 부릅니다.
-![onion-architecture.png](images/onion-architecture.png)
+![[images/onion-architecture.png|양파 껍질과 같은 클린 아키텍쳐]]
 
 
 헥사고날 아키텍처는 아키텍처를 구성하는 중요한 요소인 포트와 어댑트의 이름을 그대로 딴 `Port and Adapter 아키텍처` 라고도 불립니다. 추가로 클린 아키텍처와 헥사고날 아키텍처를 비교하면 클린아키텍처는 추상적인 개념이며 헥사고날 아키텍처는 클린아키텍처를 구체적으로 (패키지 구조 형태로) 구현한 인스턴스라고 볼 수 있습니다.
-![hexagonal-architecture.png](images/hexagonal-architecture.png)
+![[images/hexagonal-architecture.png|Hexagonal Architecture]]
 
 -   `Port`
     -   포트는 바로 인터페이스입니다.
