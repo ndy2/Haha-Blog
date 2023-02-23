@@ -1,4 +1,3 @@
-import mkdocs_gen_files
 import glob
 import frontmatter
 
