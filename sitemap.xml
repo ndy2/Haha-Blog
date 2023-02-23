@@ -106,12 +106,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/bloggingtips/getting-started/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/bloggingtips/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/bloggingtips/pros-and-cons/</loc>
+         <lastmod>2023-02-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/bloggingtips/todo/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
