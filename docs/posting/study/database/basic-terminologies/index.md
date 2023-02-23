@@ -3,7 +3,7 @@ tags: [db]
 title: Basic Terminologies
 author: ndy2
 ---
-
+ 
 > [!quote] 참고 자료
 > * 쉬운코드 - https://www.youtube.com/embed/aL0XXc1yGPs
 

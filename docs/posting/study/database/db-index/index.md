@@ -3,7 +3,7 @@ tags: [db]
 title: Index
 author: ndy2
 ---
-
+ 
 > [!quote] 참고 자료
 > * [Rebro의 코딩 일기장 - 인덱스(Index) - (1) 개념, 장단점, B+Tree 등](https://rebro.kr/167)
 > * [쉬운코드 - DB 인덱스 !! 핵심만 모아서 설명합니다](https://www.youtube.com/embed/IMDH4iAQ6zM)

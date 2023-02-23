@@ -3,7 +3,7 @@ tags: [architecture]
 title: CAP Theorem
 date: 2023-02-09
 ---
-
+ 
 > [!quote] 참고 자료
 > * Jung-Haeng Lee - [CAP Theorem, 오해와 진실](http://eincs.com/2013/07/misleading-and-truth-of-cap-theorem
 >   * 무조건 읽을 것

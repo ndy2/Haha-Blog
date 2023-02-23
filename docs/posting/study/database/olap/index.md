@@ -3,7 +3,7 @@ tags: [database]
 title: OLAP
 author: ndy2
 ---
-
+ 
 > [!quote] 참고 자료
 > * 우아한형제들 기술블로그 - [정지원,# Aurora MySQL vs Aurora PostgreSQL](https://techblog.woowahan.com/6550/)
 > * microsoft - [# OLAP(온라인 분석 처리)](https://learn.microsoft.com/ko-kr/azure/architecture/data-guide/relational-data/online-analytical-processing)

@@ -4,7 +4,7 @@ title: What is Normalization
 author: ndy2
 date: 2023-02-23
 ---
-
+ 
 > [!quote] 참고 자료
 > * 쉬운코드 - [(1부) DB 정규화(normalization)는 DB를 설계하는 공식적인 방법이죠~](https://youtu.be/EdkjkifH-m8)
 > * 쉬운코드 - [(2부) DB 정규화(normalization) 2부입니다!!]

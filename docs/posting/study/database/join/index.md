@@ -3,7 +3,7 @@ tags: [db]
 title: Join
 author: ndy2
 ---
-
+ 
 > [!quote] 참고 자료
 > * 쉬운 코드 - [join 의 의미와 여러 종류 ... ](https://www.youtube.com/watch?v=E-khvKjjVv4)
 

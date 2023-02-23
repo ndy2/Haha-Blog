@@ -3,7 +3,7 @@ tags: [db]
 title: Anomaly
 author: ndy2
 ---
-
+ 
 > [!quote] 참고 자료
 > * 쉬운코드
 >     * DB 테이블 설계 잘못하면 어떤 문제가 생길 수 있을까요?

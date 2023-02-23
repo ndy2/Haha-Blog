@@ -3,7 +3,7 @@ tags: [java]
 title: synchronized
 author: ndy2
 ---
-
+ 
 > [!quote] 참고 자료
 > * haha
 >* Jakob Jenkov - https://www.youtube.com/watch?v=eKWjfZ-TUdo

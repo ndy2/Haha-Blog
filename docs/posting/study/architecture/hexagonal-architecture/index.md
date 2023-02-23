@@ -2,7 +2,7 @@
 tags: [architecture]
 title: Hexagonal Architecture
 ---
-
+ 
 > [!quote] 참고 자료
 > * 데브원영 - [[마틴 파울러] 소프트웨어 아키텍처의 중요성 (한글 자막)](https://youtu.be/4E1BHTvhB7Y)
 > * 톰 홈버그 - `만들면서 배우는 클린 아키텍처`

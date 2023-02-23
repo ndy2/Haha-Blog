@@ -3,7 +3,7 @@ tags: [db, mysql]
 title: Mysql Excution Plan
 author: ndy2
 ---
-
+ 
 > [!quote] 참고 자료
 > * MySQL - [explain-output](https://dev.mysql.com/doc/refman/8.0/en/explain-output.html)
 

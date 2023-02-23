@@ -3,7 +3,7 @@ tags: [db]
 title: Functional Dependency
 author: ndy2
 ---
-
+ 
 > [!quote] 참고 자료
 > * 쉬운코드 - [DB에서 functional dependency(FD : 함수 종속)을 설명합니다! 고고씽!!](https://youtu.be/fw8hvolebLw)
 
