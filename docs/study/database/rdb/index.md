@@ -1,10 +1,15 @@
-@참고 자료)
+---
+tags: [database]
+title: Relational DB
+author: ndy2
+---
 
-- 쉬운코드 -  https://www.youtube.com/embed/gjcbqZjlXjM
+> [!quote] 참고 자료
+> * 쉬운코드 -  https://www.youtube.com/embed/gjcbqZjlXjM
 
 ---
 ### 1. `Relation` in Mathematics
-![relation-in-mathematics.png](images/relation-in-mathematics.png)
+![[images/relation-in-mathematics.png]]
 
 `relation` - subset of Cartesian product
 `tuple` - element of a relation

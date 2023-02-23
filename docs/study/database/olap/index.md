@@ -1,12 +1,16 @@
-@참고 자료)
+---
+tags: [database]
+title: OLAP
+author: ndy2
+---
 
-- 우아한형제들 기술블로그 - [정지원,# Aurora MySQL vs Aurora PostgreSQL](https://techblog.woowahan.com/6550/)
-- microsoft - [# OLAP(온라인 분석 처리)](https://learn.microsoft.com/ko-kr/azure/architecture/data-guide/relational-data/online-analytical-processing)
-
+> [!quote] 참고 자료
+> * 우아한형제들 기술블로그 - [정지원,# Aurora MySQL vs Aurora PostgreSQL](https://techblog.woowahan.com/6550/)
+> * microsoft - [# OLAP(온라인 분석 처리)](https://learn.microsoft.com/ko-kr/azure/architecture/data-guide/relational-data/online-analytical-processing)
 
 면접에서 아래와 같은 꼬리질문을 받았다.
-
-Q. MSA 에서 데이터베이스의 독립적인 구성이 중요하다고 해주셨는데 왜 그런지 말씀해 주실 수 있나요?
+>[!question]
+>MSA 에서 데이터베이스의 독립적인 구성이 중요하다고 해주셨는데 왜 그런지 말씀해 주실 수 있나요?
 
 A. 물리적으로 데이터베이스를 분리하는것은 여러 관점에서 중요합니다. 첫째로는 MSA의 독립성을 위해서입니다. MSA의 가장큰 장점은 Micro-Service 컴포넌트간의 의존성을 낮추어 독립성을 바탕으로 확장성, Business Agility 같은 여러 장점을 얻을 수 있습니다. 애플리케이션 레벨에서 아무리 열심히 메시지 큐와 같은 미들웨어로 독립성을 갖추었다고 할지라도 데이터베이스에서 서로 join을 통해 모든 영역의 데이터를 한번에 조회한다면 이는 아무 의미가 없을 것입니다. 그래서 최소한 MSA 를 활용한다면 데이터베이스를 논리적인 관점에서라도 분리하는 것이 필수입니다.
 
@@ -14,7 +18,8 @@ A. 물리적으로 데이터베이스를 분리하는것은 여러 관점에서 
 
 `물론 위와 같이 정리해서 답변 하지는 못했다...`
 
-Q. 그럼 그런 분리된 데이터베이스 구조에서 통계성 쿼리를 처리하는 방법이 있을까요?
+>[!question]
+>그럼 그런 분리된 데이터베이스 구조에서 통계성 쿼리를 처리하는 방법이 있을까요?
 
 A. 에... 그게... 효과적으로 잘 모아서 Read 만 발생할 수 있는 서버에다가 어쩌구 저쩌구....
 
@@ -25,13 +30,11 @@ A. 에... 그게... 효과적으로 잘 모아서 Read 만 발생할 수 있는 
 ---
 ### OLAP 이란?
 
-!!! quote
 
-    OLAP(온라인 분석 처리)는 대규모 비즈니스 데이터베이스를 구성하고 복잡한 분석을 지원하는 기술입니다. 트랜잭션 시스템에 부정적인 영향을 주지 않고 복잡한 분석 쿼리를 수행하는 데 사용할 수 있습니다.
-    
-    기업에서 모든 트랜잭션 및 레코드를 저장하는 데 사용하는 데이터베이스를 [OLTP(온라인 트랜잭션 처리)](https://learn.microsoft.com/ko-kr/azure/architecture/data-guide/relational-data/online-transaction-processing) 데이터베이스라고 합니다. 일반적으로 이러한 데이터베이스의 레코드는 한 번에 하나씩 입력됩니다. 종종 이러한 데이터베이스는 조직에 귀중한 정보를 풍부하게 포함합니다. 그러나 OLTP에 사용되는 데이터베이스는 분석용으로 디자인되지 않았습니다. 따라서 이러한 데이터베이스에서 답변을 검색할 때는 시간과 노력이 많이 듭니다. OLAP 시스템은 고효율적 방식으로 데이터에서 이러한 비즈니스 인텔리전스 정보를 추출하는 데 도움이 되도록 디자인되었습니다. OLAP 데이터베이스가 과도한 읽기, 낮은 쓰기 워크로드에 최적화되어 있기 때문입니다.
-    
-    miscrosoft - olap
+> [!quote] miscrosoft - olap
+> OLAP(온라인 분석 처리)는 대규모 비즈니스 데이터베이스를 구성하고 복잡한 분석을 지원하는 기술입니다. 트랜잭션 시스템에 부정적인 영향을 주지 않고 복잡한 분석 쿼리를 수행하는 데 사용할 수 있습니다.
+> 
+> 기업에서 모든 트랜잭션 및 레코드를 저장하는 데 사용하는 데이터베이스를 [OLTP(온라인 트랜잭션 처리)](https://learn.microsoft.com/ko-kr/azure/architecture/data-guide/relational-data/online-transaction-processing) 데이터베이스라고 합니다. 일반적으로 이러한 데이터베이스의 레코드는 한 번에 하나씩 입력됩니다. 종종 이러한 데이터베이스는 조직에 귀중한 정보를 풍부하게 포함합니다. 그러나 OLTP에 사용되는 데이터베이스는 분석용으로 디자인되지 않았습니다. 따라서 이러한 데이터베이스에서 답변을 검색할 때는 시간과 노력이 많이 듭니다. OLAP 시스템은 고효율적 방식으로 데이터에서 이러한 비즈니스 인텔리전스 정보를 추출하는 데 도움이 되도록 디자인되었습니다. OLAP 데이터베이스가 과도한 읽기, 낮은 쓰기 워크로드에 최적화되어 있기 때문입니다.
 
 
 ### 데이터베이스 레벨

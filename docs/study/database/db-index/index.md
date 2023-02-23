@@ -1,8 +1,12 @@
-@ 참고 자료)
-
-- [Rebro의 코딩 일기장 - 인덱스(Index) - (1) 개념, 장단점, B+Tree 등](https://rebro.kr/167)
-- [쉬운코드 - DB 인덱스 !! 핵심만 모아서 설명합니다](https://www.youtube.com/embed/IMDH4iAQ6zM)
 ---
+tags: [database]
+title: index
+author: ndy2
+---
+
+> [!quote] 참고 자료
+> * [Rebro의 코딩 일기장 - 인덱스(Index) - (1) 개념, 장단점, B+Tree 등](https://rebro.kr/167)
+> * [쉬운코드 - DB 인덱스 !! 핵심만 모아서 설명합니다](https://www.youtube.com/embed/IMDH4iAQ6zM)
 
 ### 1. 인덱스를 사용하는 이유
 - 조건에 맞는 튜플(들)을 **빠르게 조회**하기 위한 자료구조
@@ -46,7 +50,7 @@ CREATE TABLE player(
 ```
 
 ### 3. `SHOW INDEX FROM` - 테이블의 인덱스 목록 조회
-![show-index-from.png](images/show-index-from.png)
+![[images/show-index-from.png]]
 
 ### 4. B-tree 기반의 인덱스가 동작하는 방식
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IMDH4iAQ6zM?start=508" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -80,20 +84,21 @@ SELECT * FROM plyaer FORCE INDEX (player_name_idx);            ## 더 강하게 
 
 ### 9. Clustered Index 와 Non-Clustered Index
 
-@ 참고 자료) -  [# Clustered vs. Nonclustered Index Structures in SQL Server](https://www.youtube.com/@VoluntaryDBA)
+> [!quote] 참고 자료
+> * [Clustered vs. Nonclustered Index Structures in SQL Server](https://www.youtube.com/@VoluntaryDBA)
 
 - Clustered-Index
 	- 기본적으로 PK에 걸림
 	- 테이블당 하나만 가질 수 있음
 	- 인덱스의 Leaf Node 자체가 데이터임
 	- 성능이 더 빠르다.
-![clustered_index.png](images/clustered_index.png)
+![[images/clustered_index.png]]
 
 - Non-clustered Index
 	- 기본적으로 Unique Constraint 와 추가되는 Index 에 사용됨
 	- 한 테이블에 여러개 생성 가능
 	- Leaf Node 에는 실제 데이터의 주소가 저장되어 있음
-![non-clustered-index.png](images/non-clustered-index.png)
+![[images/non-clustered-index.png]]
 
 ### 10. B-Tree 인덱스 vs Hash Table 인덱스
 

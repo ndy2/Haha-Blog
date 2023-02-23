@@ -1,15 +1,17 @@
-@ 참고 자료)
-
-- 쉬운 코드 - [join 의 의미와 여러 종류 ... ](https://www.youtube.com/watch?v=E-khvKjjVv4)
-
 ---
+tags: [database]
+title: Join
+author: ndy2
+---
+
+> [!quote] 참고 자료
+> * 쉬운 코드 - [join 의 의미와 여러 종류 ... ](https://www.youtube.com/watch?v=E-khvKjjVv4)
 
 ### Join 의 의미 
 
 - 두 개 이상의 table들에 있는 데이터를 한번에 조회 하는것
 
 ---
-
 ### Implicit Join
 
 ```mysql
@@ -21,8 +23,7 @@ WHERE E.id = 1 and E.dept_id = D.id;
 - from 절에는 테이블들만 나열 하고 where 절에 join condition 을 작성함
 - old-style join syntax
 - join 이 명시적이지 않음, join condition 이 selection condition 과 함께 작성됨
-
-
+---
 ### Explicit Join
 ```mysql
 SELECT D.name
@@ -36,7 +37,7 @@ WHERE E.id = 1;
 ---
 - 예시 테이블
 
-![table-ex.png](images/table-ex.png)
+![[images/table-ex.png]]
 
 ---
 ### Inner Join
@@ -53,7 +54,7 @@ ON E.dept_id = D.id;
 - join 컨디션에서는 `=` 뿐만이 아니래 `<`, `>`, `!=` 등 여러가지 연산자를 선택할 수 있다.
 - 결과
 
-![inner-join.png](images/inner-join.png)
+![[images/inner-join.png]]
 
 
 ### Outer Join
@@ -73,14 +74,11 @@ ON E.dept_id = D.id;
 	- Left Table 즉, Employee 테이블의 모든 튜플을 포함한다.
 	- 다른쪽 테이블 즉, Deplartment 테이블의 에트리뷰트는 null 로 채운다.
 
-![left-outer-join.png](images/left-outer-join.png)
-
-!!! note
-
-    mysql은 Full Outer Join 을 지원하지 않는다.
+![[images/left-outer-join.png]]
+>[!note]
+>mysql은 Full Outer Join 을 지원하지 않는다.
 
 ---
-
 ### Equi Join
 
 - join condition 에 `=` 을 사용한 join
@@ -103,17 +101,13 @@ SELECT * FROM employee E INNER JOIN department D USING (dept_id)
 - join condition 을 명시하지 않음
 - 같은 이름을 가지는 모든 attribute pair 에 대해 USING 키워드를 사용하는 꼴임
 
-!!! example
-
-    FROM table1 NATURAL [INNER] JOIN table2;
-    FROM table1 NATURAL LEFT [OUTER] JOIN table2;
-    FROM table1 NATURAL RIGHT [OUTER] JOIN table2;
-    FROM table1 NATURAL FULL [OUTER] JOIN table2;
-
+>[!example]
+>* FROM table1 NATURAL [INNER] JOIN table2;
+>* FROM table1 NATURAL LEFT [OUTER] JOIN table2;
+>* FROM table1 NATURAL RIGHT [OUTER] JOIN table2;
+>* FROM table1 NATURAL FULL [OUTER] JOIN table2;
 
 ### Cross Join
 
 - 두 테이블이 가질 수 있는 모든 tuple pair 의 조합 (Cartesian product) 을 result table 로 반환
 - join condition 이 없음
-
-

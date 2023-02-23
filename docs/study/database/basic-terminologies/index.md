@@ -1,7 +1,11 @@
-@ 참고)
+---
+tags: [database]
+title: Basic Terminologies
+author: ndy2
+---
 
-- 쉬운코드 - https://www.youtube.com/embed/aL0XXc1yGPs
-
+> [!quote] 참고 자료
+> * 쉬운코드 - https://www.youtube.com/embed/aL0XXc1yGPs
 
 ### Database
 - 전자적(electronically)으로 저장되고 사용되는
@@ -18,7 +22,7 @@
 ### 데이터베이스 시스템
 - database + DBMS + 연관된 애플리케이션
 - 줄여서 그냥 database 라고 부르기도 함
-![database-system.png](images/database-system.png)
+![[images/database-system.png]]
 
 ### Data Models
 - DB의 구조를 기술하는데 사용될 수 있는 개념들이 모인 집합
@@ -63,7 +67,7 @@
 - user-application 으로 부터 물리적인 database를 분리 시키는 목적
 - 세 가지 level이 존재, 각각의 level 마다 schema가 존재한다.
 
-![three-schema-architecture.png](images/three-schema-architecture.png)
+![[images/three-schema-architecture.png]]
 
 
 ### Database Language

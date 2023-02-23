@@ -1,22 +1,26 @@
-
-@)참고
-
--   테리의 일상
-    -   [클러스터링,](https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81Clustering)
-    -   [리플리케이션,](https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EB%A0%88%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98Replication)
-    -   [샤딩](https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%83%A4%EB%94%A9Sharding?category=805412)
--   Be A Better Dev - [데이터베이스 샤딩이란?](https://www.youtube.com/watch?v=hdxdhCpgYo8)
--  망나니 개발자 - [[Database] 리플리케이션(Replication) vs 클러스터링(Clustering)](https://mangkyu.tistory.com/97)
--  쉬운코드 - [[DB] 파티셔닝? 샤딩? 레플리케이션 (partitioning? sharding? replication?)](https://www.youtube.com/watch?v=P7LqaEO-nGU)
+---
+tags: [database]
+title: Clustering Replication Sharding
+author: ndy2
 ---
 
-`클러스터링`, `레플리케이션`, `샤딩/파티셔닝`은 모두 데이터베이스 다중화를 위한 기법입니다.
+
+> [!quote] 참고 자료
+> * 테리의 일상 [클러스터링](https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81Clustering),  [리플리케이션](https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EB%A0%88%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98Replication),[샤딩](https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%83%A4%EB%94%A9Sharding?category=805412)
+> * Be A Better Dev - [데이터베이스 샤딩이란?](https://www.youtube.com/watch?v=hdxdhCpgYo8)
+> * 망나니 개발자 - [[Database] 리플리케이션(Replication) vs 클러스터링(Clustering)](https://mangkyu.tistory.com/97)
+> * 쉬운코드 - [[DB] 파티셔닝? 샤딩? 레플리케이션 (partitioning? sharding? replication?)](https://www.youtube.com/watch?v=P7LqaEO-nGU)
+
+---
+
+>![tip]
+>`클러스터링`, `레플리케이션`, `샤딩/파티셔닝`은 모두 데이터베이스 다중화를 위한 기법입니다.
 
 ## 1. 클러스터링 (clustering)
 - 여러 개의 DB를 수평적인 구조로 구축하는 방식
 - 동기 방식으로 노드들간의 데이터를 동기화 한다.
 - Active-Active 방식과 Active-Standby 방식이 있다.
-![clustering.png](images/clustering.png)
+![[images/clustering.png]]
 
 ### 장점
 
@@ -33,7 +37,7 @@
 -   여러 개의 DB를 `수직적인 구조(Master-Slave)`로 구축하는 방식
 -   `비동기 방식`으로 노드들 간의 데이터를 동기화 한다.
 -   Master 노드는 Create, Update, Delete 연산을 수행하고 Slave 노드는 Read 연산을 수행하여 로드를 분산할 수 있다.
-![replication.png](images/replication.png)
+![[images/replication.png]]
 
 ### 장점
 
@@ -51,7 +55,7 @@
 -   테이블을 row 단위로 나누어 저장해 DB 용량을 줄이고 검색 성능을 올리는 기법
 -   기존 테이블과 같은 스키마를 가지는 `샤드` 라는 작은 단위로 나누어 저장하는 방식
 
-![sharding.png](images/sharding.png)
+![[images/sharding.png]]
 
 -   `샤드키` - 나누어진 샤드 중 어떤 샤드를 선택할 지 결정하는 키
 
@@ -102,12 +106,10 @@
 
 파티셔닝은 `column`을 기준으로 테이블을 나누는 `vertical partitioning` 과 `row` 를 기준으로 테이블을 나누는 `horizontal partitioning` 이 있다. 
 
-!!!! note
-
-    샤딩과 Horizontal 파티셔닝은 동작방식이 동일하다.
-    샤딩은 분리된 데이터를 `샤드` 라고 부르고 서로 다른 데이터베이스 서버 인스턴스로 관리한다.
-    Horinotal 파티셔닝에서는 분리된 데이터는 `파티션` 이라고 부르고 같은 데이터베이스 서버 내의 다른 테이블 혹은 스키마로 관리한다.
-
+>[!note]
+>* 샤딩과 Horizontal 파티셔닝은 동작방식이 동일하다.
+>* 샤딩은 분리된 데이터를 `샤드` 라고 부르고 서로 다른 데이터베이스 서버 인스턴스로 관리한다.
+>* Horinotal 파티셔닝에서는 분리된 데이터는 `파티션` 이라고 부르고 같은 데이터베이스 서버 내의 다른 테이블 혹은 스키마로 관리한다.
 
 그럼 이제 `vertical partitioning` 에 대해 알아보자!
 
@@ -116,9 +118,9 @@
 정규화는 추후에 별도로 알아보도록 하고 오늘은 `성능 개선`을 위해 VP 를 수행할 수 있는 상황에 대해 알아보자.
 
 아래와 같은 게시판의 목록 화면을 띄우기 위해서 Article 테이블에는 어떤 쿼리가 발생해야 할까?
-![article-table.png](images/article-table.png)
+![[images/article-table.png]]
 
-![articles.png](images/articles.png)
+![[images/articles.png]]
 
 예상 쿼리
 ```sql
@@ -131,4 +133,4 @@ WHERE ...
 
 이때 아래와 같이 Column 을 기준으로 테이블을 파티셔닝하면 게시판의 목록 조회에 대해서 content를 IO 해야 한다는 부당함을 덜 수 있다.
 
-![article-table-partitioning.png](images/article-table-partitioning.png)
+![[images/article-table-partitioning.png]]

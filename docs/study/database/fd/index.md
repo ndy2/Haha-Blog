@@ -1,8 +1,11 @@
-@ 참고 자료)
-
-- 쉬운코드 - [DB에서 functional dependency(FD : 함수 종속)을 설명합니다! 고고씽!!](https://youtu.be/fw8hvolebLw)
-
 ---
+tags: [database]
+title: Functional Dependency
+author: ndy2
+---
+
+> [!quote] 참고 자료
+> * 쉬운코드 - [DB에서 functional dependency(FD : 함수 종속)을 설명합니다! 고고씽!!](https://youtu.be/fw8hvolebLw)
 
 ### 1. Functional Dependency 란?
 
@@ -10,7 +13,7 @@
 - 집합 X 의 값에 따라 집합 Y 의 값이 유일하게 결정된때
   'X 가 Y 를 함수적으로 결정한다. Y 가 X 에 함수적으로 의존한다' 라고 부르며 두 집합 사이의 이러한 제약 관계를 Functional Dependency (FD) 라고 부른다.
 
-![fd.excalidraw.png](excalidraws/fd.excalidraw.png)
+![[excalidraws/fd.excalidraw.png]]
 
 `X = {empl_id}` :material-arrow-right: `Y = {empl_name, birt_date, position, salary}`
 

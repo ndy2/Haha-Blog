@@ -1,14 +1,18 @@
-@참고 자료)
+---
+tags: [database]
+title: Anomaly
+author: ndy2
+---
 
-- 쉬운코드
-	- DB 테이블 설계 잘못하면 어떤 문제가 생길 수 있을까요?
-	- DB에서 functional dependency(FD : 함수 종속)을 설명합니다! 고고씽!!
-
+> [!quote] 참고 자료
+> * 쉬운코드
+>     * DB 테이블 설계 잘못하면 어떤 문제가 생길 수 있을까요?
+>     * DB에서 functional dependency(FD : 함수 종속)을 설명합니다! 고고씽!! 
 
 ### 1. 이상현상 (Anomalies)
 
 #### 1. Insertion Anomaly
-![insertion-anomaly.png](images/insertion-anomaly.png)
+![[images/insertion-anomaly.png]]
 
 **문제점**
 - 저장 공간 낭비
@@ -20,14 +24,13 @@
 
 
 ### 2. Deletion Anomaly
-![deletion-anomaly.png](images/deletion-anomaly.png)
+![[images/deletion-anomaly.png]]
 **문제점**
 - QA 부서 최후의 1인인 YUJIN 을 삭제하려면?
 - QA 문서 자체가 사라진다, 자연스럽지도 않다.
 
 **발생이유** 
 - 별개의 관심사가 한 테이블에 있음 - `EMPLOYEE`, `DEPARTMENT`
-
 
 ### Update Anomaly
 개발팀의 부서이름이 DEV -> DEV1 로 업데이트 된다면?
@@ -41,7 +44,7 @@
 ### 2. Spurious Tuple
 
 - 두 테이블의 Join 을 잘못 된 방식으로 해서 발생한 이상한 튜플
-![spurious-tuple.png](images/spurious-tuple.png)
+![[images/spurious-tuple.png]]
 
 
 ### 3. null 값이 많아짐으로 인한 문제
