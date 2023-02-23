@@ -1,3 +1,8 @@
+---
+tags: [network, layer7]
+title: DNS
+author: ndy2
+---
 
 ### 0. 들어가며
 
@@ -72,12 +77,12 @@ Windows IP 구성
 - 크롬 - chrome://net-internals/#dns 이 주소에 접속하면 크롬 브라우저의 DNS ~~캐시를 확인하고~~ 초기화 할 수 있습니다. 
     - dns 캐시 엔트리 목록을 확인하는 화면은 더이상 제공 되지 않는것 같습니다.
 
-![crhome-dns.png](images/crhome-dns.png)
+![[images/crhome-dns.png]]
 
 ### 3. DNS-Query
-- 위의 모든 단계를 거쳐도 IP 주소를 확인 할 수 없었다면 DNS 질의 ^DNS^ ^Query^ 가 이루어집니다. 
+- 위의 모든 단계를 거쳐도 IP 주소를 확인 할 수 없었다면 DNS 질의 <sup>DNS Query</sup> 가 이루어집니다. 
 
-![how-dns-works.png](images/how-dns-works.png)
+![[images/how-dns-works.png]]
 
 DNS 질의 응답 메시지는 아래와 같은 구조로 이루어 져 있습니다.
 
@@ -120,4 +125,4 @@ DNS 서버는 자신이 DNS 엔트리를 가지고 응답을 내려줄 수 있�
     - 그 이하는 Second DNS server, Sub-Domain DNS server 등으로 불립니다.
 
 - DNS 쿼리는 Iterative 혹은 Recursive 한 방식으로 처리 됩니다.
-![dns-query.png](excalidraws/dns-query.excalidraw.png)
+![[excalidraws/dns-query.excalidraw.png]]

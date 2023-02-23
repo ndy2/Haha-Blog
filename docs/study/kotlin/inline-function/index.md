@@ -1,4 +1,5 @@
 ---
+tags: [kotlin]
 title: inline 함수
 date: 2023-02-16
 ---
@@ -37,12 +38,9 @@ finally { l.unlock() }
 inline fun <T> lock(lock: Lock, body: () -> T): T { ... }
 ```
 
-
-!!! note ""
-
-    * `inline` 변경자는 함수 자기 자신과 인자로 받는 람다식 모두에게 영향을 끼칩니다.
-    * 컴파일러에 의해 둘 모두 호출 시점에 inline 처리가 됩니다.
-
+>[!note]
+>* `inline` 변경자는 함수 자기 자신과 인자로 받는 람다식 모두에게 영향을 끼칩니다.
+>* 컴파일러에 의해 둘 모두 호출 시점에 inline 처리가 됩니다.
 
 ### 2. `noinline` 변경자
 

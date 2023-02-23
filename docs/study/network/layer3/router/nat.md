@@ -1,3 +1,9 @@
+---
+tags: [network, layer3, router]
+title: NAT
+author: ndy2
+---
+
 ### 0. 들어가며
 
 라우터는 경로찾기와 패킷 스위칭이라는 기본적인 역할 외에도
@@ -19,11 +25,11 @@ NAT<sup>Network Address Translation</sup> 은 IP 패킷의 TCP/UDP 포트 숫자
 
 NAT 를 이용하는 이유는 대부분 사설 네트워크에 속한 여러 개의 호스트가 하나의 Public IP 를 이용해 네트워크에 접속하기 위해서 입니다.
 
-![nat.excalidraw.png](excalidraws/nat.excalidraw.png)
+![[excalidraws/nat.excalidraw.png]]
 
 ### 2. 동작 원리
 
-![nat.png](images/nat.png)
+![[images/nat.png]]
 
 - SNAT<sup>Source Network Adress Translation</sup> 
     - 공공 IP 대역으로 나갈 때는 출발지 IP 가 공유기의 Public IP 로 변경됩니다.

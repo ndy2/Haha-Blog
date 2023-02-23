@@ -1,11 +1,15 @@
-@참고 자료)
+---
+tags: [java]
+title: NIO
+author: ndy2
+---
 
-- sightstudio - https://sightstudio.tistory.com/15
-- Jakob Jenkov - https://jenkov.com/tutorials/java-nio/index.html
-- enics - http://eincs.com/2009/08/java-nio-bytebuffer-channel-file/
+> [!quote] 참고 자료
+>* sightstudio - https://sightstudio.tistory.com/15
+>* Jakob Jenkov - https://jenkov.com/tutorials/java-nio/index.html
+>* enics - http://eincs.com/2009/08/java-nio-bytebuffer-channel-file/
 
 **요약**
-
 | 구분 | IO | NIO |
 | --- | --- | --- |
 | 입출력 방식 | Stream Oriented | Buffer Oriented |
@@ -31,7 +35,7 @@
 - NIO 는  non-blocking IO 를 사용합니다. 따라서 쓰레드의 컨텍스트 스위치 발생 횟수를 줄일 수 있습니다.
 - BIO 의 `read()`  과정
 	- `JVM -> 커널-> 시스템 콜 -> 디스크 컨트롤러 -> DMA가 커널버퍼로 복사 -> JVM 버퍼에 복사`
-![bio-read.png](images/bio-read.png)
+![[images/bio-read.png]]
 
  
  이때 발생할 수 있는 문제로는 

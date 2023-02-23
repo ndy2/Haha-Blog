@@ -1,16 +1,17 @@
 ---
+tags: [intellij]
 title: 인텔리제이 코드 스타일/포멧팅
 date: 2023-02-17
 ---
 
 ### 1. formatter 적용
 
-![images/1.png](images/1.png)
+![[images/1.png]]
 
 
 ### 2. 파일의 마지막 줄 항상 new line 추가 하기
 
-![images/2.png](images/2.png)
+![[images/2.png]]
 
 ### 3. check style 추가
 
@@ -64,6 +65,6 @@ tab_width = 4
 trim_trailing_whitespace = true
 ```
 
-![images/3.png](images/3.png)
+![[images/3.png]]
 
 

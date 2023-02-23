@@ -1,4 +1,5 @@
 ---
+tags: [kafka]
 title: 설치
 date: 2023-02-03
 ---
@@ -8,7 +9,7 @@ date: 2023-02-03
 
 - [다운로드 링크](https://kafka.apache.org/downloads)
 
-![install.png](images/install.png)
+![[images/install.png]]
 
 2. 압축 해제
 

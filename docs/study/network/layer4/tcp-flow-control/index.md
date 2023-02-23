@@ -1,3 +1,9 @@
+---
+tags: [network, layer4, tcp]
+title: TCP flow control
+author: ndy2
+---
+
 @참고 자료)
 
 - Brian Storti - [tcp-flow-control](https://www.brianstorti.com/tcp-flow-control/)
@@ -30,7 +36,7 @@ TCP 의 주요한 특징은연결 지향 프로토콜 이면서 신뢰성있는 
 
 - sliding window 동작
 
-![sliding-window.png](images/sliding-window.png)
+![[images/sliding-window.png]]
 
 - 먼저 윈도우에 포함되는 모든 패킷을 전송하고, 그 패킷들의 전달이 확인되는대로 이 윈도우를 옆으로 옮김으로써 그 다음 패킷들을 전송합니다.
 - 이 방식으로 현재 공중에 떠있는 패킷 수를 항상 sliding window 의 사이즈 보다 작거나 같도록 유지 할 수 있습니다.

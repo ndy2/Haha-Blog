@@ -1,4 +1,5 @@
 ---
+tags: [bookmarks]
 title: 북마크
 date: 2023-02-02
 ---

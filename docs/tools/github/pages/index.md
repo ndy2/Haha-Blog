@@ -1,5 +1,5 @@
 ---
-tags: [도구]
+tags: [github, github-pages]
 title: 깃헙 페이지 지원 깃헙 액션 워크플로우
 date: 2023-02-19
 ---

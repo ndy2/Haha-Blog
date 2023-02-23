@@ -1,5 +1,11 @@
-@ 참고 차료)
+---
+tags: [network, layer7, http]
+title: HTTPS
+author: ndy2
+---
 
+
+@ 참고 차료)
 - 생활 코딩 - [HTTPS와 SSL 인증서](https://opentutorials.org/course/228/4894)
 - Alysa Chan - [TCP and TLS handshake](https://medium.com/@alysachan830/tcp-and-tls-handshake-what-happens-from-typing-in-a-url-to-displaying-a-website-part-2-243862438cd9)
 - `RFC 2818` - HTTP Over TLS [링크](https://web.archive.org/web/20050607073343/http://www.ietf.org/rfc/rfc2818.txt)
@@ -35,7 +41,7 @@
 ### 3. TLS handshake protocol
 
 - Note - TLS handshake 는 TCP handshake 이후에 이루어 집니다.
-![tls-handshake.png](images/tls-handshake.png)
+![[images/tls-handshake.png]]
 
 핸드세이크의 핵심은 암복호화 과정의 코스트가 큰 비대칭키의 사용을 최소한으로 사용하여 안전하게 대칭키를 공유해 일반적인 HTTP 요청시에는 비대칭키가 아닌 대칭키를 활용하는 것입니다.
 

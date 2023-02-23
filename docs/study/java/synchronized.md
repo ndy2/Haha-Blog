@@ -1,8 +1,14 @@
-@참고 자료)
+---
+tags: [java]
+title: synchronized
+author: ndy2
+---
 
-- Jakob Jenkov - https://www.youtube.com/watch?v=eKWjfZ-TUdo
-- oracle java tutorial - https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html
-- 쉬운코드 - https://youtu.be/Dms1oBmRAlo?t=1275
+> [!quote] 참고 자료
+> * haha
+>* Jakob Jenkov - https://www.youtube.com/watch?v=eKWjfZ-TUdo
+>*  oracle java tutorial - https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html
+>*  쉬운코드 - https://youtu.be/Dms1oBmRAlo?t=1275
 
 자바에는 동시성 처리를 위해 다양한 방식을 제공합니다.
 
@@ -62,13 +68,13 @@ synchronized 키워드에는 항상 monitor 가 전달되어야 합니다. 위 �
 ### 2. 그림으로 보는 synchronzied 키워드
 
 #### 1. 같은 객체 공유
-![synchronized-1.png](images/synchronized-1.png)
+![[images/synchronized-1.png]]
 Thread 1과 Thread 2가 동일한 SynchronizedExchanger 객체를 공유하는 경우
 
 위 코드에서 모든 메서드는 같은 monitor 객체 (this)를 가지기 때문에 Thread 1 이 setObject를 호출하는 순간 Thread 2는 getObject를 호출 할 수 없습니다. (동기화 블럭으로 선언된 xxxObj 메서드 들도 마찬가지)
 
 #### 2. 서로 다른 객체 활용
-![synchronized-2.png](images/synchronized-2.png)
+![[images/synchronized-2.png]]
 Thread 1과 Thread 2가 각자의 SynchronizedExchanger 객체를 가지는 경우
 
 이렇게 활용하게 되면 Thread1 과 Thread2에서는 syncrhonized 를 활용하는 의미가 없습니다. 각 쓰레드가 자신의 SynchronizedExchanger 의 모니터 락을 획득하여 동기화 메서드, 블락에 진입할수 있기 때문입니다. (사실 당연합니다.)
@@ -101,7 +107,7 @@ public class StaticSynchronizedExchanger {
 }
 ```
 
-![synchronized-3.png](images/synchronized-3.png)
+![[images/synchronized-3.png]]
 전체 쓰레드에서 한 쓰레드만이 synchronized static 메서드를 호출 할 수 있습니다.
 
 ### 3. 복잡하게 모니터 객체를 활용하는 예제 코드
@@ -226,16 +232,13 @@ public class SharedMonitorObject {
 	- 여러 JVM 인스턴스에서 동시성을 보장하기 위해서는 분산락의 활용이 필요합니다. 
 
 ### 6. synchronized 블락과 성능 오버헤드
-![synchronized-overhead.png](images/synchronized-overhead.png)
+![[images/synchronized-overhead.png]]
 
 - 경쟁이 발생하여 쓰레드가 대기하는 상황이 발생한다면 오버헤드가 큽니다.
 - 경쟁이 발생하지 않는다고 해도 Lock을 획득하고 Release 하는 약간의 오버헤드는 발생하게 됩니다.
 
-!!! question
-
-    이와 관련하여 생각해볼만한 질문.
-    싱글 쓰레드 환경이라면 StringBuilder 와 StringBuffer 의 성능은 동일할까요?
-
+>[!question]
+>싱글 쓰레드 환경이라면 StringBuilder 와 StringBuffer 의 성능은 동일할까요?
 
 ### 7. 자바에서 모니터란?
 

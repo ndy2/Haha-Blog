@@ -1,3 +1,9 @@
+---
+tags: [network, layer7, http]
+title: HTTP Versions
+author: ndy2
+---
+
 @참고 자료)
 
 - [모질라 - HTTP의 진화 ](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP#http2_더_나은_성능을_위한_프로토콜)

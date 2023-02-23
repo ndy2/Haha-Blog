@@ -1,4 +1,5 @@
 ---
+tags: [kafka, troubleshooting]
 title: 문제 해결
 date: 2023-02-03
 ---

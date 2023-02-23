@@ -1,3 +1,8 @@
+---
+tags: [network, layer3]
+title: Network Layer, Internet
+author: ndy2
+---
 @참고 자료)
 
 - cloud flare - [학습센터/네트워크 계층](https://www.cloudflare.com/ko-kr/learning/network-layer/what-is-the-network-layer/)

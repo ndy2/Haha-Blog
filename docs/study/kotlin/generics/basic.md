@@ -1,5 +1,5 @@
 ---
-tags: [코틀린, 제네릭스]
+tags: [kotlin, generics]
 title: 제네릭스 (generics) 기초
 date: 2023-02-17
 ---
@@ -38,16 +38,16 @@ date: 2023-02-17
 
 #### 1. 제네릭 함수 선언
 
-![excalidraws/1.excalidraw.png](excalidraws/1.excalidraw.png)
+![[excalidraws/1.excalidraw.png]]
 
 #### 2. 제네릭 함수 호출
 
-![images/2.png](images/2.png)
+![[images/2.png]]
 
 
 #### 3. 제네릭 확장 프로퍼티 정의와 활용
 
-![images/3.png](images/3.png)
+![[images/3.png]]
 
 ---
 
@@ -83,7 +83,7 @@ class ArrayList<T> : List<T> {
     * 클래스나 함수에 사용할 수 있는 타입 인자를 제한하는 기능
     * 예를 들어 리스트에 속한 모든 원소의 합을 구하는 sum 함수는 List<Int>, List<Double> 등에는 적용할 수 있지만 List<String> 등에는 적용할 수 없다.
 
-![images/4.png](images/4.png)
+![[images/4.png]]
 
 이런 식으로 동작하는 타입 파라미터 제약을 가진 sum 함수의 선언은 아래와 같을 수 있다.
 

@@ -1,3 +1,9 @@
+---
+tags: [network, layer4, tcp]
+title: TCP Congestion Control
+author: ndy2
+---
+
 @참고 자료)
 
 - 한국기술교육대학교박승철교수 - https://youtu.be/R2dWNQTABcI
@@ -33,7 +39,7 @@ TCP 의 주요한 특징은연결 지향 프로토콜 이면서 신뢰성있는 
 - 혼잡 제어를 위한 TCP 전송률 제어
 	- 마지막 송신 바이트 번호 - 마지막 수신 확인 바이트 번호 <= min(수신 윈도우, 혼잡 윈도우)
 	- LastByteSent - LastByteAcked <= min (rwnd, cwnd)
-- {==혼잡 윈도우란 ack 를 수신하지 않고 보낼 수 있는 세그먼트의 양을 의미합니다.==}
+- ==혼잡 윈도우란 ack 를 수신하지 않고 보낼 수 있는 세그먼트의 양을 의미합니다.==
 
 ### 혼잡 제어 방식
 

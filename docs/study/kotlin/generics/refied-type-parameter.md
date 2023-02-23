@@ -1,5 +1,5 @@
 ---
-tags: [코틀린, 제네릭스]
+tags: [kotlin, generics]
 title: 실체화된 타입 파라미터 (refied-type-parameter)
 date: 2023-02-17
 ---
@@ -52,15 +52,14 @@ intellij 에서 확인 - 너무 똑똑하다.
 
 `그냥 활용`
 
-![images/5.png](images/5.png)
+![[images/5.png]]
 
 ++option+enter++
-
-![images/6.png](images/6.png)
+![[images/6.png]]
 
 `inline 함수 에서만  refied 를 사용할 수 있고 refied 를 사용하지 않으면 여전히 타입 실체화가 되지 않는다.`
 
-![images/7.png](images/7.png)
+![[images/7.png]]
 
 ---
 

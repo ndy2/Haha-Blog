@@ -1,5 +1,5 @@
 ---
-tags: [github]
+tags: [github, github-project]
 title: 프로젝트를 이용한 이슈 관리 및 PR 연동 흐름
 date: 2023-02-20
 ---

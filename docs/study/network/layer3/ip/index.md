@@ -1,3 +1,8 @@
+---
+tags: [network, layer3]
+title: IP
+author: ndy2
+---
 
 @ 참고 자료)
 
@@ -12,9 +17,9 @@
 
 ### 1. IP
 
-![encapsulation.png](images/encapsulation.png){ align=right }
+![[images/encapsulation.png]]
 
-IP ^Internet^ ^Protocol^ 는 네트워크 계층의 통신 프로토콜 입니다. IP 는 패킷 헤더의 IP 주소^IP^ ^Address^ 를 통해 패킷을 송신 호스트에서 수신 호스트로 전달합니다. 이러한 목적으로 인터넷 프로토콜은 패킷의 구조를 정의하고 이를 캡슐화 하는 방식을 정의합니다. 또한 송/수신 정보를 통해 아래 계층의 데이터 단위인 Datagram 을 레이블링 하는 방법또한 정의합니다. 
+IP <sup>Internet Protocol</sup> 는 네트워크 계층의 통신 프로토콜 입니다. IP 는 패킷 헤더의 IP 주소<sup>IP Address</sup> 를 통해 패킷을 송신 호스트에서 수신 호스트로 전달합니다. 이러한 목적으로 인터넷 프로토콜은 패킷의 구조를 정의하고 이를 캡슐화 하는 방식을 정의합니다. 또한 송/수신 정보를 통해 아래 계층의 데이터 단위인 Datagram 을 레이블링 하는 방법또한 정의합니다. 
 
 ---
 
@@ -22,7 +27,7 @@ IP ^Internet^ ^Protocol^ 는 네트워크 계층의 통신 프로토콜 입니�
 
 IP 에는 `IPv4` 와 `IPv6` 두가지 주요 버전이 있습니다. 그중 현재 (2023년) 널리 활용되는 IPv4 에 대해서 알아보겠습니다. 
 
-![ipv4.png](images/ipv4.png)
+![[images/ipv4.png]]
 
 IP, IPv4 에 대한 주요 특징은 다음과 같습니다.
 
@@ -45,7 +50,7 @@ IP, IPv4 에 대한 주요 특징은 다음과 같습니다.
 
 ### 3. Public IP, Private IP 그리고 Loopback IP
 
-![ips.png](images/ips.png)
+![[images/ips.png]]
 
 Public IP (왼쪽) 와 Private IP (오른쪽)
 

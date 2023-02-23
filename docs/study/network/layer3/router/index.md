@@ -1,3 +1,9 @@
+---
+tags: [network, layer3, router]
+title: Router
+author: ndy2
+---
+
 @ 참고 자료)
 
 - 비전공개발자 주니 키우기 - [그림으로 배우는 네트워크 원리 스터디 영상](https://youtu.be/aRv1NWdYKfs)
@@ -14,7 +20,7 @@
     
     라우팅을 통해 네트워크 통신의 효율성을 높일 수 있습니다.
 
-![routing.png](images/routing.png)
+![[images/routing.png]]
 
 !!! note "Network Router - 라우터란?"
 
@@ -48,7 +54,7 @@
 
 ### 3. 라우팅 동작
 
-![routing-process-1](excalidraws/routing-process-1.excalidraw.png)
+![[excalidraws/routing-process-1.excalidraw.png]]
 
 라우팅 과정은 라우터가 패킷을 받으며 시작합니다. 라우터는 라우팅 테이블에 따라 목적지로 보내기 위한 다음 디바이스의 IP 주소 즉, ***넥스트 홉***^Next^ ^Hope^ 을 결정합니다.
 
@@ -75,7 +81,7 @@
 
 ### 4. 라우팅 테이블
 
-![routing-table.png](images/routing-table.png)
+![[images/routing-table.png]]
 **`라우팅 테이블`**
 
 위 라우팅 테이블의 엔트리를 해석하면 다음과 같습니다.

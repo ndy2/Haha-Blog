@@ -1,4 +1,5 @@
 ---
+tags: [git]
 title: git clone
 date: 2023-02-02
 ---

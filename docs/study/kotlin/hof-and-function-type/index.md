@@ -1,14 +1,13 @@
 ---
+tags: [kotlin]
 title: 고차 함수 (Higher-Order-Function)와 함수 타입 (Function Type)
 date: 2023-02-16
 ---
 
-@ 참고 자료)
-
-- [`『코틀린 인 액션』`](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바 
-    - 8장 고차 함수: 파라미터와 반환 값으로 람다 사용
-- kotlin documentation - [High-order functions and lambdas](https://kotlinlang.org/docs/lambdas.html)
----
+> [!quote] 참고 자료
+>* [`『코틀린 인 액션』`](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바 
+>     * 8장 고차 함수: 파라미터와 반환 값으로 람다 사용
+>* kotlin documentation - [High-order functions and lambdas](https://kotlinlang.org/docs/lambdas.html)
 
 ### 1. 고차 함수
 
@@ -179,7 +178,7 @@ class IntAdder : (Int, Int) -> Int {
 
     컴파일된 코드 안에서 함수 타입은 일반 인터페이스로 바뀐다. 즉 함수 타입의 변수는 FunctionN 인터페이스를 구현하는 객체를 저장한다. 코틀린 표준 라이브러리는 함수 인자의 개수에 따라 Function0<R>, Function1<P1,R> 등의 인터페이스를 제공한다. 각 인터페이스에는 invoke 메서드 정의가 하나 들어 있다.
 
-![functions.png](images/functions.png)
+![[images/functions.png]]
 
 #### byte code decompiled
 

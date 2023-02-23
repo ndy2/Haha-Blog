@@ -1,4 +1,5 @@
 ---
+tags: [kafka]
 title: 사용
 date: 2023-02-03
 ---

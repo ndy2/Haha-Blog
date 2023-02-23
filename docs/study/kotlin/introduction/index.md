@@ -1,17 +1,20 @@
-@참고 자료)
-
-- 드미트리 제메로프, 스베트라나 이사코바 - Kotlin IN ACTION 1장
-- Kotlinlang.org - [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)
 ---
+tags: [kotlin]
+title: Introduction
+author: ndy2
+---
+
+> [!quote] 참고 자료
+>* 드미트리 제메로프, 스베트라나 이사코바 - Kotlin IN ACTION 1장
+>* Kotlinlang.org - [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)
 
 ### 1. 코틀린 소개
 
-![kotlin_logo.png](images/kotlin_logo.png)
+![[images/kotlin_logo.png]]
 
-!!! note ""
-
-    **Kotlin**은 IntelliJ, Pycharm 등의 IDE 로 유명한 *JetBrains* 에서 개발한 프로그래밍 언어입니다.  코틀린은 *Better Language than Java* 를 표방하며 자바에 존재하던 많은 boilerplate 한 코드를 제거할 수 있도록 설계되었습니다.
-
+>[!note]
+>**Kotlin**은 IntelliJ, Pycharm 등의 IDE 로 유명한 *JetBrains* 에서 개발한 프로그래밍 언어입니다.  코틀린은 *Better Language than Java* 를 표방하며 자바에 존재하던 많은 boilerplate 한 코드를 제거할 수 있도록 설계되었습니다.
+    
 ### 2. 코틀린의 특징
 
 #### 1. 멀티 플랫폼 지원
@@ -24,7 +27,7 @@ Kotlin Multiplatform Use cases
 
 How Kotlin Multiplaform works
 
-![kotlin-multiplatform.png](images/kotlin-multiplatform.png)
+![[images/kotlin-multiplatform.png|300]]
 
 코틀린에는 `Kotlin/JVM`, `Kotlin/Native`, `Kotlin/JS`의 세가지 platform-specific 버전이 존재합니다. 
 

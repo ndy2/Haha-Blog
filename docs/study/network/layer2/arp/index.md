@@ -1,3 +1,9 @@
+---
+tags: [network, layer2]
+title: ARP
+author: ndy2
+---
+
 ### 0. 들어가며 들어가며
 
 ARP^Address^ ^Resolution^ ^Protocol^ 는 개인적으로 전송 계층 이하의 프로토콜 중에 기본 캡슐화와 직접적으로 관련이 깊은 부동의 4탑 `TCP`,`UDP`, `IP`, `Ethernet` 를 제외하면 가장 중요하다고 생각합니다. 오늘은 이 ARP 에 대해서 이해해봅시다!
@@ -7,7 +13,7 @@ ARP^Address^ ^Resolution^ ^Protocol^ 는 개인적으로 전송 계층 이하의
 ### 0.5 들어가기 전에
 
 ARP 에 관한 자료를 찾아보면 가장 의문스러운 점은 이 녀석은 도대체 어느 계층의 프로토콜인가 하는 점입니다.
-![what-layer-arp-blongs-to.excalidraw.png](excalidraws/what-layer-arp-blongs-to.excalidraw.png)
+![[excalidraws/what-layer-arp-blongs-to.excalidraw.png]]
 
 실제로 다양한 문서에서 ARP 를 Layer 2, 혹은 Layer 3 으로 나타내고 있었습니다. 이에 관해선 마지막에 알아보겠습니다.
 
@@ -21,16 +27,16 @@ ARP^Address^ ^Resolution^ ^Protocol^ 는 같은 ***네트워크 내에서*** 통
 
 `ARP 요청`
 
-![arp-req.excalidraw.png](excalidraws/arp-req.excalidraw.png)
+![[excalidraws/arp-req.excalidraw.png]]
 
 `ARP 응답`
 
-![arp-resp.excalidraw.png](excalidraws/arp-resp.excalidraw.png)
+![[excalidraws/arp-resp.excalidraw.png]]
 
 ARP Process 가 적용 될 수 있는 경우는 아래와 같이 다양합니다 . 원리는 같으니 아래 캡쳐를 따라 그림을 상상하며 따라가면 그 과정을 이해 할 수 있습니다! 위 그림은 `CASE-1 - Use ARP to find another hosts's physical address` 과정입니다.
 
 
-![arp-cases.png](images/arp-cases.png)
+![[images/arp-cases.png]]
 ### 2. What layer ARP belongs to? 
 
 관련 Wikipedia 링크 - [여기](https://en.wikipedia.org/wiki/Address_Resolution_Protocol#Layering)

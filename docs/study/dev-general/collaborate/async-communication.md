@@ -1,11 +1,11 @@
 ---
+tags: [collaborate]
 title: 비동기적 커뮤니케이션
 date: 2023-02-13
 ---
-@ 출처)
 
-- 프로그래머스 데브코스 中 스펜서의 글
----
+> [!quote] 출처
+> * 프로그래머스 데브코스 中 스펜서의 글
 
 # 비동기적 커뮤니케이션
 
@@ -41,8 +41,8 @@ date: 2023-02-13
 
 **사례1 : 동기적커뮤니케이션**
 
-![imagesasync-1.png](images/imagesasync-1.png)
+![[images/imagesasync-1.png]]
 
 **사례2 : 비동기적 커뮤니케이션**
 
-![imagesasync-2.png](images/imagesasync-2.png)
+![[images/imagesasync-2.png]]

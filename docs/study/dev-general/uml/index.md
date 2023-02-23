@@ -1,4 +1,5 @@
 ---
+tags: [uml]
 title: UML 시작
 date: 2023-02-09
 ---

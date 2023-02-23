@@ -1,4 +1,5 @@
 ---
+tags: [github, github-actions]
 title: self-hosted runners
 date: 2023-02-16
 ---
@@ -10,11 +11,11 @@ date: 2023-02-16
 ---
 ### 1. Create self-hosted runner
 
-![images/1.png](images/1.png)
+![[images/1.png]]
 
 #### 1. Download
 
-![images/2.png](images/2.png)
+![[images/2.png]]
 #### 2. Configure
 
-![images/3.png](images/3.png)
+![[images/3.png]]
