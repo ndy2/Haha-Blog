@@ -3,25 +3,20 @@ tags: [network, layer7, http]
 title: HTTPS
 author: ndy2
 ---
+ 
+> [!quote] 참고 자료
+> - 생활 코딩 - [HTTPS와 SSL 인증서](https://opentutorials.org/course/228/4894)
+> - Alysa Chan - [TCP and TLS handshake](https://medium.com/@alysachan830/tcp-and-tls-handshake-what-happens-from-typing-in-a-url-to-displaying-a-website-part-2-243862438cd9)
+> - `RFC 2818` - HTTP Over TLS [링크](https://web.archive.org/web/20050607073343/http://www.ietf.org/rfc/rfc2818.txt)
+> - `RFC 5246` - TLS [링크](https://datatracker.ietf.org/doc/html/rfc5246)
 
-
-@ 참고 차료)
-- 생활 코딩 - [HTTPS와 SSL 인증서](https://opentutorials.org/course/228/4894)
-- Alysa Chan - [TCP and TLS handshake](https://medium.com/@alysachan830/tcp-and-tls-handshake-what-happens-from-typing-in-a-url-to-displaying-a-website-part-2-243862438cd9)
-- `RFC 2818` - HTTP Over TLS [링크](https://web.archive.org/web/20050607073343/http://www.ietf.org/rfc/rfc2818.txt)
-- `RFC 5246` - TLS [링크](https://datatracker.ietf.org/doc/html/rfc5246)
-
-
-!!! note
-
-    HTTPS 란 channel-oriented security 를 제공하기 위해 고안된 TLS [RFC 2246] 를 HTTP 위에 얹어서 사용하는 것이다.
-    
-    TLS protocol의 목적은 두 커뮤니케이션하는 애플리케이션의 privacy와 data integrity를 보장하는 것이다.
+>[!note]
+>* HTTPS 란 channel-oriented security 를 제공하기 위해 고안된 TLS [RFC 2246] 를 HTTP 위에 얹어서 사용하는 것이다.
+>* TLS protocol의 목적은 두 커뮤니케이션하는 애플리케이션의 privacy와 data integrity를 보장하는 것이다.
 
 이 문서에서는 TLS 의 `privacy` 를 위한 하위 프로토콜인 핸드세이크 프로토콜에 대해 자세히 알아보겠습니다.
 
 ---
-
 
 ### 1. HTTP Over TLS
 

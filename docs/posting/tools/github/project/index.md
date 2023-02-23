@@ -3,7 +3,7 @@ tags: [github, github-project]
 title: 프로젝트를 이용한 이슈 관리 및 PR 연동 흐름
 date: 2023-02-20
 ---
-
+ 
 >[!quote] 참고 자료
 >* [`Planning and tracking with Projects`](https://docs.github.com/en/issues/planning-and-tracking-with-projects) on Github Docs
 
@@ -13,7 +13,7 @@ date: 2023-02-20
 ![[images/1.png]]
 
 
-1. 아래의 `+ Add Item` 버튼을 통해 `📋 Backlog` 타입의 아이탬을 생성 할 수 있다.
+1. 아래의 `+ Add Item` 버튼을 통해 `📋 Backlog` 타입의 아이탬을 생성 할 수 있다.
 2. 생성만 하면 `◌ Draft` 표시가 붙어있다.
 
 ### 2. Convert `project item` to `Repository Issue`

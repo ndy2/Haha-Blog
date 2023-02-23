@@ -3,7 +3,7 @@ tags: [kotlin, tips]
 title: 꿀팁 모음
 date: 2023-02-20
 ---
-
+ 
 >[!quote] 참고 자료
 >* Kotlin by Jetbrains on Youtube - playlist [`『Kotlin Tips 2023』`](https://www.youtube.com/watch?v=i-kyPp1qFBA&list=PLlFc5cFwUnmyDrc-mwwAL9cYFkSHoHHz7)
 

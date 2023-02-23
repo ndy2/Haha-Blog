@@ -2,6 +2,8 @@
 tags: [spring, spring-security, authorization]
 title: 인가 프로세스 업데이트
 date: 2023-02-06
+description: >-
+  Spring Security 5.8 업데이트에 따라 변경된 부분 및 인가 처리 프로세스를 정리해보자
 ---
 
 @ 참고 자료)
