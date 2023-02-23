@@ -1,5 +1,5 @@
 ---
-tags: [database]
+tags: [db]
 title: Anomaly
 author: ndy2
 ---

@@ -1,5 +1,5 @@
 ---
-tags: [database]
+tags: [db]
 title: Join
 author: ndy2
 ---

@@ -1,5 +1,5 @@
 ---
-tags: [database]
+tags: [db]
 title: Transaction
 author: ndy2
 ---

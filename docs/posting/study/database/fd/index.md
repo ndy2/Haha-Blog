@@ -1,5 +1,5 @@
 ---
-tags: [database]
+tags: [db]
 title: Functional Dependency
 author: ndy2
 ---

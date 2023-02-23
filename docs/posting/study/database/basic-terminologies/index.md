@@ -1,5 +1,5 @@
 ---
-tags: [database]
+tags: [db]
 title: Basic Terminologies
 author: ndy2
 ---

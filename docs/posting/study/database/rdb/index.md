@@ -1,5 +1,5 @@
 ---
-tags: [database]
+tags: [db]
 title: Relational DB
 author: ndy2
 ---

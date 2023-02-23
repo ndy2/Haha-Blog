@@ -1,5 +1,5 @@
 ---
-tags: [database]
+tags: [db]
 title: Clustering Replication Sharding
 author: ndy2
 ---

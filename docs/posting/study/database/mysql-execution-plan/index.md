@@ -1,5 +1,5 @@
 ---
-tags: [database, mysql]
+tags: [db, mysql]
 title: Mysql Excution Plan
 author: ndy2
 ---
