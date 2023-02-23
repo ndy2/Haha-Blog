@@ -24,6 +24,8 @@ theme:
     - content.code.copy
     - content.action.view
     - navigation.footer
+    - navigation.tabs
+    - navigation.sections
     - content.code.annotate 
   admonition:
    note: octicons/tag-16
