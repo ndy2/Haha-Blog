@@ -2,8 +2,6 @@
 tags: [os]
 title: Virtual Memory 2
 ---
-
-
 메모리 관리자 MMU 세가지 정책에 따라 메모리를 관리한다.
 
 -   `fetch` 정책
@@ -53,7 +51,7 @@ title: Virtual Memory 2
 -   프로세스가 요청한 페이지가 메모리에 없고 스왑 영역에 있을때 (valid bit 가 1 일때)
 -   MMU 는 replacement policy 에 따라 해당 페이지를 스왑 영역에서 램으로 옮겨야 한다.
 
-![page-fault.png](images/page-fault.png)
+![[images/page-fault.png|page fault]]
 
 ### 2. replacement 정책(페이지 교체 알고리즘)
 

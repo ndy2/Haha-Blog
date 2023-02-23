@@ -2,7 +2,8 @@
 tags: [os]
 title: Deadlock
 ---
->[!quote] 참고 자료
+
+> [!quote] 참고 자료
 > * 조성호 - 쉽게 배우는 운영체제 (6장 - 교착상태)
 > * 쉬운코드 - [데드락(교착상태)은 프로그램에 치명적이죠](https://youtu.be/ESXCSNGFVto)>)
 

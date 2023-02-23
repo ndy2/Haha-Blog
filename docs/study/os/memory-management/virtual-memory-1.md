@@ -2,9 +2,6 @@
 tags: [os]
 title: Virtual Memory 1
 ---
-
-가상 메모리
-
 ![[images/virtual-memory.png|가상 메모리 구조]]
 
 `가상 메모리`를 통해 프로세스가 물리 메모리의 크기와 상관없이 메모리를 마음대로 사용할 수 있다.
