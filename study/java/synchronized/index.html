@@ -1896,8 +1896,8 @@ Thread 1과 Thread 2가 각자의 SynchronizedExchanger 객체를 가지는 경�
 <a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">    </span><span class="p">}</span>
 <a href="#__codelineno-1-24" id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="p">}</span>
 </code></pre></div>
-<p>![[images/synchronized-3.png]]
-전체 쓰레드에서 한 쓰레드만이 synchronized static 메서드를 호출 할 수 있습니다.</p>
+<p>![[images/synchronized-3.png]]</p>
+<p>전체 쓰레드에서 한 쓰레드만이 synchronized static 메서드를 호출 할 수 있습니다.</p>
 <h3 id="3">3. 복잡하게 모니터 객체를 활용하는 예제 코드<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
 <h4 id="1-static-instance-synchronized">1. static, instance 메서드에 모두 synchronized 활용하기<a class="headerlink" href="#1-static-instance-synchronized" title="Permanent link">¶</a></h4>
 <div class="highlight"><span class="filename">MixedSynchronizedExchanger</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MixedSynchronizedExchanger</span><span class="w"> </span><span class="p">{</span>
