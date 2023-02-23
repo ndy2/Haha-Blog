@@ -97,8 +97,6 @@ markdown_extensions:
 
 plugins:
   - obsidian-support
-  - awesome-pages:
-      collapse_single_pages: true
   - blogging:
       locale: ko_kr
       dirs: [archive/categories]
