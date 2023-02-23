@@ -6,13 +6,13 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
-<meta content="Haha" name="author"/>
+<meta content="ndy2" name="author"/>
 <link href="https://ndy2.github.io/Haha-Blog/study/java/sort/arrays/" rel="canonical"/>
 <link href="../../synchronized/" rel="prev"/>
 <link href="../collections/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.13" name="generator"/>
-<title>Arrays - Haha 블로그</title>
+<title>Arrays.sort - Haha 블로그</title>
 <link href="../../../../assets/stylesheets/main.ffa9267a.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -61,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Arrays
+              Arrays.sort
             
           </span>
 </div>
@@ -529,7 +529,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../data-structure/adt/">
-        Index
+        ADT
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -561,12 +561,12 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../data-structure/tree/segment-tree/">
-        Index
+        Segment Tree
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../data-structure/tree/trie/">
-        Index
+        Trie
       </a>
 </li>
 </ul>
@@ -617,11 +617,11 @@
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Arrays
+          Arrays.sort
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Arrays
+        Arrays.sort
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -673,7 +673,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../collections/">
-        Collections
+        Collections.sort
       </a>
 </li>
 </ul>
@@ -828,7 +828,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../spring/boot/auto-configure/auto-configure/">
-        Auto configure
+        스프링 부트의 자동 설정 동작 원리
       </a>
 </li>
 <li class="md-nav__item">
@@ -910,11 +910,6 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../architecture/msa-pros-cons/">
-        Msa pros cons
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../../../architecture/cap-theorem/">
         CAP Theorem
       </a>
@@ -930,13 +925,13 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_9_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_9_5" id="__nav_2_9_5_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9_4" id="__nav_2_9_4_label" tabindex="0">
           Load balancing
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_9_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_9_5">
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_9_4">
 <span class="md-nav__icon md-icon"></span>
           Load balancing
         </label>
@@ -953,6 +948,11 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/msa/msa-pros-cons/">
+        MSA 장단점
+      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../architecture/resilient-pattern/">
@@ -976,7 +976,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../web/cookie-session-token/">
-        Index
+        Cookie, Session and Token
       </a>
 </li>
 <li class="md-nav__item">
@@ -1683,7 +1683,29 @@
 <a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/tree/main/docs/study/java/sort/arrays.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>Arrays</h1>
+<h1>Arrays.sort</h1>
+<div class="blogging-tags-grid">
+<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/tags#java"><code>#java</code></a>
+<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/tags#sort"><code>#sort</code></a>
+</div>
+<style>
+    .md-typeset .blogging-tags-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .md-typeset .blogging-tag {
+        color: var(--md-typeset-color);
+        background-color: var(--md-typeset-code-color);
+    }
+
+    .md-typeset .blogging-tag code {
+        border-radius: 5px;
+    }
+</style>
 <h3 id="0">0. 들어가며<a class="headerlink" href="#0" title="Permanent link">¶</a></h3>
 <p><a href="collections">이전 글</a>에서는 <code>Collections</code>.<em><code>sort</code></em> 의 동작 방식에 대해 알아보았다. 컬렉션의 정렬 API 는 단순히 배열의 정렬 API - <code>Arrays</code>.<em><code>sort</code></em> 를 활용하고있었다. 오늘은 배열의 정렬 API 에 대해서 알아보자.</p>
 <hr/>
@@ -1810,7 +1832,7 @@ equal elements will not be reordered as a result of the sort.</p>
 <p>또한 byte (1byte), char (2byte), short (2byte) 과 같은 사이즈가 작은 primitive 타입에 대해서는 <code>Arrays</code>.<em><code>parallelSort</code></em> API 를 제공하지만 내부적으로는 parallelism 을 제공하지도 않고 내부 구현도 그냥 <code>Arrays</code>.<em><code>sort</code></em> 와 같다는 점이 눈에 띈다.</p>
 <ul>
 <li><code>DualPivotQuicksort</code>.<em><code>sort( )</code></em> 의 오버로드 메서드들
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/DualPivotQuicksort.sort.png"><img alt="DualPivotQuicksort.sort.png" src="../images/DualPivotQuicksort.sort.png"/></a></li>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/DualPivotQuicksort.sort.png"><img alt="images/DualPivotQuicksort.sort.png" src="../images/DualPivotQuicksort.sort.png"/></a></li>
 </ul>
 <hr/>
 <h3 id="2-parallelism">2.  parallelism 이 적용되는 조건, 적용되는 방식 간단 확인<a class="headerlink" href="#2-parallelism" title="Permanent link">¶</a></h3>
@@ -1844,7 +1866,7 @@ equal elements will not be reordered as a result of the sort.</p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 31, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
@@ -1869,13 +1891,13 @@ equal elements will not be reordered as a result of the sort.</p>
               </div>
 </div>
 </a>
-<a aria-label="Next: Collections" class="md-footer__link md-footer__link--next" href="../collections/" rel="next">
+<a aria-label="Next: Collections.sort" class="md-footer__link md-footer__link--next" href="../collections/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                Collections
+                Collections.sort
               </div>
 </div>
 <div class="md-footer__button md-icon">

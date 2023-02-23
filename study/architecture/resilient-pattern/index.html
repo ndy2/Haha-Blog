@@ -8,7 +8,7 @@
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="Haha" name="author"/>
 <link href="https://ndy2.github.io/Haha-Blog/study/architecture/resilient-pattern/" rel="canonical"/>
-<link href="../load-balancing/l4-lb-vs-l7-lb/" rel="prev"/>
+<link href="../msa/msa-pros-cons/" rel="prev"/>
 <link href="../../web/cookie-session-token/" rel="next"/>
 <link href="../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.13" name="generator"/>
@@ -529,7 +529,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../data-structure/adt/">
-        Index
+        ADT
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -561,12 +561,12 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../data-structure/tree/segment-tree/">
-        Index
+        Segment Tree
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../data-structure/tree/trie/">
-        Index
+        Trie
       </a>
 </li>
 </ul>
@@ -616,12 +616,12 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../java/sort/arrays/">
-        Arrays
+        Arrays.sort
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../java/sort/collections/">
-        Collections
+        Collections.sort
       </a>
 </li>
 </ul>
@@ -776,7 +776,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../spring/boot/auto-configure/auto-configure/">
-        Auto configure
+        스프링 부트의 자동 설정 동작 원리
       </a>
 </li>
 <li class="md-nav__item">
@@ -858,11 +858,6 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msa-pros-cons/">
-        Msa pros cons
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../cap-theorem/">
         CAP Theorem
       </a>
@@ -878,13 +873,13 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_9_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_9_5" id="__nav_2_9_5_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9_4" id="__nav_2_9_4_label" tabindex="0">
           Load balancing
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_9_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_9_5">
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_9_4">
 <span class="md-nav__icon md-icon"></span>
           Load balancing
         </label>
@@ -901,6 +896,11 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msa/msa-pros-cons/">
+        MSA 장단점
+      </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
@@ -967,7 +967,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../web/cookie-session-token/">
-        Index
+        Cookie, Session and Token
       </a>
 </li>
 <li class="md-nav__item">
@@ -1729,23 +1729,23 @@ Resilient 라는 특성은 IT 분야 뿐만 아니라 많은 영역에서 중요
 <p>이제 MSA 에서 Resilient 특성을 갖추기 위해 활용되는 Resilient Pattern 을 알아보겠습니다.</p>
 <hr/>
 <h3 id="1-timeout-pattern">1. Timeout Pattern<a class="headerlink" href="#1-timeout-pattern" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/timeout-1.png"><img alt="timeout-1.png" src="images/timeout-1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/timeout-1.png"><img alt="images/timeout-1.png" src="images/timeout-1.png"/></a></p>
 <p>Timeout 패턴은 매 요청시 타임아웃을 걸고 타임아웃 내에 응답이 오지 않는다면 더이상 기다리지 않고 쓰레드를 진행시키는 패턴입니다. 이 때 응답값이 별로 중요하지 않다면 기본값을 채울 수도 있고 응답값이 중요한 값이라면 예외를 발생 시킬 수도 있습니다.</p>
 <p>타임아웃 방식은 요청 쓰레드가 타임아웃 시간동안 계속 요청을 물고 있어야 하기 때문에 동시 요청이 많은 시스템에서는 문제가 될 수 있습니다.</p>
 <h3 id="2-retry-pattern">2. Retry Pattern<a class="headerlink" href="#2-retry-pattern" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/retry-1.png"><img alt="retry-1.png" src="images/retry-1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/retry-1.png"><img alt="images/retry-1.png" src="images/retry-1.png"/></a></p>
 <p>Retry 패턴은 요청이 실패하면 재요청을 보내는 패턴입니다. 이때 재요청의 횟수를 제한하거나 요청 시 간격을 둘 수도 있습니다. 또한 첫번째 요청과 두번째 이상의 요청 (재 요청) 메서드 (fallback)를 다르게 가져갈 수도 있습니다.</p>
 <h3 id="3-circuit-breaker-pattern">3. Circuit Breaker Pattern<a class="headerlink" href="#3-circuit-breaker-pattern" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/circuit-breaker-1.png"><img alt="circuit-breaker-1.png" src="images/circuit-breaker-1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/circuit-breaker-1.png"><img alt="images/circuit-breaker-1.png" src="images/circuit-breaker-1.png"/></a></p>
 <p>서킷 브레이커 패턴은 요청 클라이언트와 응답 서버 사이에 Circuit Breker (회로 차단기) 를 추가로 두어 서킷 브레이커가 서버의 상태를 나름의 기준으로 판단하여 서버의 상태가 좋지 않은 경우 이를 차단하는 패턴입니다. 한번씩 요청을 보내서 서버의 상태를 판단해보고 괜찮다고 판단되면 다시 회복합니다. 서킷 브레이커는 서버의 상태를 OPEN (장애) CLOSED(정상) HALF-OPEN(반 장애) 로 구분합니다.</p>
 <p>이 패턴은 Retry 패턴이 회복되지도 않을 서버에 계속해서 재시도 요청을 하여 발생할 수 있는 리소스 낭비의 문제를 어느정도 해결합니다. 프록시 패턴의 일종입니다.</p>
 <h3 id="4-bulkhead-pattern">4. Bulkhead Pattern<a class="headerlink" href="#4-bulkhead-pattern" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/bulkhead-1.png"><img alt="bulkhead-1.png" src="images/bulkhead-1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/bulkhead-1.png"><img alt="images/bulkhead-1.png" src="images/bulkhead-1.png"/></a></p>
 <p>Bulkhead Pattern (격벽 패턴) 은 애플리케이션의 요소를 격리하여 관리함으로써 한 요소의 실패가 다른 요소로 전파되지 않도록합니다. </p>
 <p>Worlkload 1 와 Workload2 의 커넥션 풀을 나누어 Workload 1 의 문제가 Workload 2 로 전파되지 않도록할 수 있습니다.</p>
 <p>요청 흐름에 따라 리소스를 나누어 놓았기 때문에 리소스 사용 효율성이 떨어 질 수도 있습니다.</p>
 <h3 id="5-rate-limiter-pattern">5. Rate Limiter Pattern<a class="headerlink" href="#5-rate-limiter-pattern" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/rate-limmiter-1.png"><img alt="rate-limmiter-1.png" src="images/rate-limmiter-1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/rate-limmiter-1.png"><img alt="images/rate-limmiter-1.png" src="images/rate-limmiter-1.png"/></a></p>
 <p>Rate Limiter 패턴은 일정 시간 (윈도우) 동안 보낼 수 있는 요청의 횟수를 제한하여 서버의 리소스를 보호하는 패턴입니다.</p>
 <hr/>
 <div class="md-source-file">
@@ -1764,7 +1764,7 @@ Resilient 라는 특성은 IT 분야 뿐만 아니라 많은 영역에서 중요
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: L4 LB vs L7 LB" class="md-footer__link md-footer__link--prev" href="../load-balancing/l4-lb-vs-l7-lb/" rel="prev">
+<a aria-label="Previous: MSA 장단점" class="md-footer__link md-footer__link--prev" href="../msa/msa-pros-cons/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -1773,17 +1773,17 @@ Resilient 라는 특성은 IT 분야 뿐만 아니라 많은 영역에서 중요
 <span class="md-footer__direction">
                   Previous
                 </span>
-                L4 LB vs L7 LB
+                MSA 장단점
               </div>
 </div>
 </a>
-<a aria-label="Next: Index" class="md-footer__link md-footer__link--next" href="../../web/cookie-session-token/" rel="next">
+<a aria-label="Next: Cookie, Session and Token" class="md-footer__link md-footer__link--next" href="../../web/cookie-session-token/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                Index
+                Cookie, Session and Token
               </div>
 </div>
 <div class="md-footer__button md-icon">

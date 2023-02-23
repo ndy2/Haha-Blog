@@ -12,7 +12,7 @@
 <link href="../bean-role/" rel="next"/>
 <link href="../../../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.13" name="generator"/>
-<title>Auto configure - Haha 블로그</title>
+<title>스프링 부트의 자동 설정 동작 원리 - Haha 블로그</title>
 <link href="../../../../../assets/stylesheets/main.ffa9267a.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -61,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Auto configure
+              스프링 부트의 자동 설정 동작 원리
             
           </span>
 </div>
@@ -529,7 +529,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../data-structure/adt/">
-        Index
+        ADT
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -561,12 +561,12 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../data-structure/tree/segment-tree/">
-        Index
+        Segment Tree
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../data-structure/tree/trie/">
-        Index
+        Trie
       </a>
 </li>
 </ul>
@@ -616,12 +616,12 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../java/sort/arrays/">
-        Arrays
+        Arrays.sort
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../java/sort/collections/">
-        Collections
+        Collections.sort
       </a>
 </li>
 </ul>
@@ -777,11 +777,11 @@
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Auto configure
+          스프링 부트의 자동 설정 동작 원리
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Auto configure
+        스프링 부트의 자동 설정 동작 원리
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -910,11 +910,6 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/msa-pros-cons/">
-        Msa pros cons
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../../../../architecture/cap-theorem/">
         CAP Theorem
       </a>
@@ -930,13 +925,13 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_9_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_9_5" id="__nav_2_9_5_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9_4" id="__nav_2_9_4_label" tabindex="0">
           Load balancing
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_9_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_9_5">
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_9_4">
 <span class="md-nav__icon md-icon"></span>
           Load balancing
         </label>
@@ -953,6 +948,11 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../architecture/msa/msa-pros-cons/">
+        MSA 장단점
+      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../architecture/resilient-pattern/">
@@ -976,7 +976,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../web/cookie-session-token/">
-        Index
+        Cookie, Session and Token
       </a>
 </li>
 <li class="md-nav__item">
@@ -1683,12 +1683,31 @@
 <a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/tree/main/docs/study/spring/boot/auto-configure/auto-configure.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>Auto configure</h1>
-<hr/>
-<p>title: 스프링 부트의 자동 설정 동작 원리
-date: 2023-02-03</p>
-<hr/>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/EnableAutoConfiguration.excalidraw.png"><img alt="EnableAutoConfiguration.excalidraw.png" src="../excalidraws/EnableAutoConfiguration.excalidraw.png"/></a></p>
+<h1>스프링 부트의 자동 설정 동작 원리</h1>
+<div class="blogging-tags-grid">
+<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/tags#spring"><code>#spring</code></a>
+<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/tags#spring-boot"><code>#spring-boot</code></a>
+<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/tags#auto-configure"><code>#auto-configure</code></a>
+</div>
+<style>
+    .md-typeset .blogging-tags-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .md-typeset .blogging-tag {
+        color: var(--md-typeset-color);
+        background-color: var(--md-typeset-code-color);
+    }
+
+    .md-typeset .blogging-tag code {
+        border-radius: 5px;
+    }
+</style>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/EnableAutoConfiguration.excalidraw.png"><img alt="excalidraws/EnableAutoConfiguration.excalidraw.png" src="../excalidraws/EnableAutoConfiguration.excalidraw.png"/></a></p>
 <p><code>@EnableAutoConfiguration</code> 은 최종적으로 두개의 <code>@Import</code> 애너테이션을 포함합니다.</p>
 <h3 id="2-autoconfigurationpackage">2. <code>@AutoConfigurationPackage</code><a class="headerlink" href="#2-autoconfigurationpackage" title="Permanent link">¶</a></h3>
 <p><code>@AutoConfigurationPackage</code> 는 빈을 직접 등록 한다기 보다는 추후 관리를 위해서 <code>BeanDefinitionRegistry</code> 에 <code>Bean Definition</code> 을 등록하는 과정이 필요한데 자동 설정 빈에 대해 이러한 작업을 수행해주는 <code>AutoConfigurationPackages.Registrar</code> 를 빈으로 등록해주는 역할을 합니다.
@@ -1786,7 +1805,7 @@ date: 2023-02-03</p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2023</span>

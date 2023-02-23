@@ -9,7 +9,7 @@
 <meta content="Haha" name="author"/>
 <link href="https://ndy2.github.io/Haha-Blog/study/spring/websocket/auto-configure/" rel="canonical"/>
 <link href="../../security/authorization/http-req-authorization-proc/" rel="prev"/>
-<link href="../../../architecture/msa-pros-cons/" rel="next"/>
+<link href="../../../architecture/cap-theorem/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.13" name="generator"/>
 <title>웹 소켓 자동 설정 - Haha 블로그</title>
@@ -529,7 +529,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../data-structure/adt/">
-        Index
+        ADT
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -561,12 +561,12 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../data-structure/tree/segment-tree/">
-        Index
+        Segment Tree
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../data-structure/tree/trie/">
-        Index
+        Trie
       </a>
 </li>
 </ul>
@@ -616,12 +616,12 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../java/sort/arrays/">
-        Arrays
+        Arrays.sort
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../java/sort/collections/">
-        Collections
+        Collections.sort
       </a>
 </li>
 </ul>
@@ -776,7 +776,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../boot/auto-configure/auto-configure/">
-        Auto configure
+        스프링 부트의 자동 설정 동작 원리
       </a>
 </li>
 <li class="md-nav__item">
@@ -905,11 +905,6 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../architecture/msa-pros-cons/">
-        Msa pros cons
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../../../architecture/cap-theorem/">
         CAP Theorem
       </a>
@@ -925,13 +920,13 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_9_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_9_5" id="__nav_2_9_5_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9_4" id="__nav_2_9_4_label" tabindex="0">
           Load balancing
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_9_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_9_5">
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_9_4">
 <span class="md-nav__icon md-icon"></span>
           Load balancing
         </label>
@@ -948,6 +943,11 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/msa/msa-pros-cons/">
+        MSA 장단점
+      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../architecture/resilient-pattern/">
@@ -971,7 +971,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../web/cookie-session-token/">
-        Index
+        Cookie, Session and Token
       </a>
 </li>
 <li class="md-nav__item">
@@ -1674,6 +1674,29 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
 <h1>웹 소켓 자동 설정</h1>
+<div class="blogging-tags-grid">
+<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/tags#spring"><code>#spring</code></a>
+<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/tags#web-socket"><code>#web-socket</code></a>
+<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/tags#auto-configure"><code>#auto-configure</code></a>
+</div>
+<style>
+    .md-typeset .blogging-tags-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .md-typeset .blogging-tag {
+        color: var(--md-typeset-color);
+        background-color: var(--md-typeset-code-color);
+    }
+
+    .md-typeset .blogging-tag code {
+        border-radius: 5px;
+    }
+</style>
 <h3 id="_1">의존성<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <p><code>implementation("org.springframework.boot:spring-boot-starter-websocket")</code></p>
 <h3 id="0">0. 자동 설정 뿌시기<a class="headerlink" href="#0" title="Permanent link">¶</a></h3>
@@ -1712,7 +1735,9 @@
 <h3 id="1-enablewebsocket-enablewebsocketmessagebroker">1. @EnableWebSocket, @EnableWebSocketMessageBroker<a class="headerlink" href="#1-enablewebsocket-enablewebsocketmessagebroker" title="Permanent link">¶</a></h3>
 <h4 id="1-enablewebsocket">1. @EnableWebSocket<a class="headerlink" href="#1-enablewebsocket" title="Permanent link">¶</a></h4>
 <p>사용 간단 프로젝트 - <a href="https://github.com/ndy2/study-webrtc-and-websocket/tree/aa92d61f92faf8bd76cc9fe720c86463509939f1">링크</a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/auto-configure-1.excalidraw.png"><img alt="auto-configure-1.excalidraw.png" src="../excalidraws/auto-configure-1.excalidraw.png"/></a></p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/auto-configure-1.excalidraw.png"><img alt="excalidraws/auto-configure-1.excalidraw.png" src="../excalidraws/auto-configure-1.excalidraw.png" width="400"/></a></p>
+</figure>
 <h4 id="2-enablewebsocketmessagebroker">2. @EnableWebSocketMessageBroker<a class="headerlink" href="#2-enablewebsocketmessagebroker" title="Permanent link">¶</a></h4>
 <p>사용 간단 프로젝트 - <a href="https://github.com/ndy2/study-webrtc-and-websocket/tree/fae9f20b84571701ff9134a0dfce5c6a87982f08">링크</a> </p>
 <ul>
@@ -1730,7 +1755,7 @@
 - ByteArrayMessageConverter
 - MappingJackson2MessageConverter   </p>
 <p>세가지 메시지 컨버터를 등록한다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/auto-configure-2.excalidraw.png"><img alt="auto-configure-2.excalidraw.png" src="../excalidraws/auto-configure-2.excalidraw.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/auto-configure-2.excalidraw.png"><img alt="excalidraws/auto-configure-2.excalidraw.png" src="../excalidraws/auto-configure-2.excalidraw.png"/></a></p>
 <hr/>
 <h3 id="2-websocketservletautoconfiguration">2. WebSocketServletAutoConfiguration<a class="headerlink" href="#2-websocketservletautoconfiguration" title="Permanent link">¶</a></h3>
 <p>웹 소켓 자동 설정에는 </p>
@@ -1758,7 +1783,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2023</span>
@@ -1783,13 +1808,13 @@
               </div>
 </div>
 </a>
-<a aria-label="Next: Msa pros cons" class="md-footer__link md-footer__link--next" href="../../../architecture/msa-pros-cons/" rel="next">
+<a aria-label="Next: CAP Theorem" class="md-footer__link md-footer__link--next" href="../../../architecture/cap-theorem/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                Msa pros cons
+                CAP Theorem
               </div>
 </div>
 <div class="md-footer__button md-icon">

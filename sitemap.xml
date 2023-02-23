@@ -356,11 +356,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/study/architecture/msa-pros-cons/</loc>
-         <lastmod>2023-02-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/architecture/cap-theorem/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
@@ -382,6 +377,11 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/study/architecture/load-balancing/l4-lb-vs-l7-lb/</loc>
+         <lastmod>2023-02-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/study/architecture/msa/msa-pros-cons/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
