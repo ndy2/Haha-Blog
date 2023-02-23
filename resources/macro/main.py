@@ -37,7 +37,7 @@ def define_env(env):
         result = ""
         KST = tz.gettz('Asia/Seoul')
         for filename in glob.iglob("docs/posting/" + '**/**.md', recursive=True):
-            if(not filename.endswith("excalidraw.md") and not filename.startswith("docs/posting/til/til")) :
+            if(not filename.endswith("excalidraw.md") and not filename.startswith("docs/posting/til")) :
                 createdAtTimestamp = util.get_git_commit_timestamp(filename, True) 
                 updateAtTimestamp = util.get_git_commit_timestamp(filename)
 
@@ -60,6 +60,8 @@ def define_env(env):
                 docPath = docPath[5:]
                 if docPath.endswith("/index") :
                     docPath = docPath[:-5]
+                elif docPath.endswith("/README") :
+                    docPath = docPath[:-6]
                 docPath = "Haha-Blog/../../" + docPath
 
                 try :

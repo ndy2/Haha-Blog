@@ -22,7 +22,7 @@ date: 2022-12-14
 - 조성호 - 쉽게 배우는 운영체제 (22.06) - [정리](쉽게 배우는 운영체제)
 - 만들면서 배우는 클린아키텍처 (22.07 ~ 22.08) - 🏁  [정리](https://ndy-dev.notion.site/d737675bbc324c09ae6d1721754b2dcb)
 - 도메인 주도 개발 시작하기 (22.08 ~ 22.09) - 🏁 [정리](https://ndy-dev.notion.site/4fb683c7b40c49bda079cffe5a4867f2)
-- 스프링 부트로 개발하는 MSA 컴포넌트 (22.12.08 ~ 22.12.28) - 🏁  [정리](springboot-msa-component/index.md)
+- 스프링 부트로 개발하는 MSA 컴포넌트 (22.12.08 ~ 22.12.28) - 🏁  [정리](springboot-msa-component/README.md)
 
 ### 읽는 중 ...
 
