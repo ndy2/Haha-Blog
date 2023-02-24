@@ -177,7 +177,7 @@ plugins:
       FencePrefix: 'kroki-'
 
 extra_css:
-  - stylesheets/obsidian-rich-links.css
+  - assets/stylesheets/obsidian-rich-links.css
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/vega@5
