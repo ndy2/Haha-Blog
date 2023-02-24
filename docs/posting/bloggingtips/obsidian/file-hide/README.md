@@ -1,6 +1,6 @@
 ---
 tags: [blog, obsidian]
-title: file hide with snippet
+title: File hide with snippet
 author: ndy2
 date: 2023-02-24
 ---
