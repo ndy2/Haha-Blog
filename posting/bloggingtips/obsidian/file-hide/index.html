@@ -1697,7 +1697,6 @@
 <a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/tree/main/docs/posting/bloggingtips/obsidian/file-hide/README.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>File hide with snippet</h1>
 <div class="blogging-tags-grid">
 <a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/archive/tags#blog"><code>#blog</code></a>
 <a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/archive/tags#obsidian"><code>#obsidian</code></a>
@@ -1725,22 +1724,40 @@
 <p>평소에 보기 싫은 파일을 File Explore View 에서 숨겨보자!</p>
 </div>
 <h3 id="1-plugin-file-hider">1. plugin file-hider<a class="headerlink" href="#1-plugin-file-hider" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a> - https://github.com/Oliver-Akins/file-hider
-</code></pre></div>
+<div class="rich-link-card-container">
+<a class="rich-link-card" href="https://github.com/Oliver-Akins/file-hider" target="_blank">
+<div class="rich-link-image-container">
+<div class="rich-link-image" style="background-image: url('https://opengraph.githubassets.com/d7fe57145d5a29a16c989ce70e807ca4ac6dbf351af78dd1a9e25f743a053d88/Oliver-Akins/file-hider')"></div>
+</div>
+<div class="rich-link-card-text">
+<h1 class="rich-link-card-title">GitHub</h1>
+<p class="rich-link-card-description">A plugin for https://obsidian.md that allows hiding specific files and folders from the file explorer. - GitHub - Oliver-Akins/file-hider: A plugin for https://obsidian.md that allows hiding specif...</p>
+<p class="rich-link-href">https://github.com/Oliver-Akins/file-hider</p>
+</div>
+</a></div>
 <p>관련 <code>plugin</code> 이 존재한다. 하지만 설치하고 적용해 보니 파일이 많아지는 경우 <code>file explore</code> 화면이 깨지는 문제가 있었다.</p>
 <h3 id="2-obsidiansnippets">2. <code>.obsidian/snippets</code> 활용<a class="headerlink" href="#2-obsidiansnippets" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a> * https://www.reddit.com/r/ObsidianMD/comments/wlltgh/hide_folders_in_my_vault/
-</code></pre></div>
+<div class="rich-link-card-container">
+<a class="rich-link-card" href="https://www.reddit.com/r/ObsidianMD/comments/wlltgh/hide_folders_in_my_vault/" target="_blank">
+<div class="rich-link-image-container">
+<div class="rich-link-image" style="background-image: url('')"></div>
+</div>
+<div class="rich-link-card-text">
+<h1 class="rich-link-card-title">reddit</h1>
+<p class="rich-link-card-description">4 votes and 10 comments so far on Reddit</p>
+<p class="rich-link-href">https://www.reddit.com/r/ObsidianMD/comments/wlltgh/hide_folders_in_my_vault/</p>
+</div>
+</a></div>
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/file-hide.png"><img alt="file-hide.png" src="images/file-hide.png"/></a>
 </p>
 <figcaption>Settings -&gt; Appearance -&gt; CSS Snippets</figcaption>
 </figure>
 <p>CSS snippets 를 직접 넣어주어 원하는 폴더/파일을 숨길 수 있다.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'resources'</span><span class="o">],</span><span class="w"> </span><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'resources'</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">div</span><span class="p">.</span><span class="nc">nav-folder-children</span><span class="w"> </span><span class="p">{</span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;}</span>
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'docs/archive'</span><span class="o">],</span><span class="w"> </span><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'docs/archive'</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">div</span><span class="p">.</span><span class="nc">nav-folder-children</span><span class="w"> </span><span class="p">{</span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;}</span>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'docs/assets'</span><span class="o">],</span><span class="w"> </span><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'docs/assets'</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">div</span><span class="p">.</span><span class="nc">nav-folder-children</span><span class="w"> </span><span class="p">{</span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;}</span>
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'LICENSE'</span><span class="o">]</span><span class="w"> </span><span class="p">{</span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'resources'</span><span class="o">],</span><span class="w"> </span><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'resources'</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">div</span><span class="p">.</span><span class="nc">nav-folder-children</span><span class="w"> </span><span class="p">{</span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;}</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'docs/archive'</span><span class="o">],</span><span class="w"> </span><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'docs/archive'</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">div</span><span class="p">.</span><span class="nc">nav-folder-children</span><span class="w"> </span><span class="p">{</span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;}</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'docs/assets'</span><span class="o">],</span><span class="w"> </span><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'docs/assets'</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">div</span><span class="p">.</span><span class="nc">nav-folder-children</span><span class="w"> </span><span class="p">{</span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;}</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nt">div</span><span class="o">[</span><span class="nt">data-path</span><span class="o">=</span><span class="s1">'LICENSE'</span><span class="o">]</span><span class="w"> </span><span class="p">{</span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;}</span>
 </code></pre></div>
 <p>평소에는 잘 보지 않는 폴더 세가지와 라이센스 파일 하나를 기본 화면에서 제거하였다.</p>
 <figure>
