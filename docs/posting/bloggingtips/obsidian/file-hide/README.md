@@ -26,7 +26,7 @@ date: 2023-02-24
 	</div>
 </a></div>
 
-관련 `plugin` 이 존재하한다. 하지만 설치하고 적용해 보니 파일이 많아지는 경우 `file explore` 화면이 깨지는 문제가 있었다.
+관련 `plugin` 이 존재한다. 하지만 설치하고 적용해 보니 파일이 많아지는 경우 `file explore` 화면이 깨지는 문제가 있었다.
 
 ### 2. `.obsidian/snippets` 활용
 
