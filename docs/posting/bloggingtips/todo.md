@@ -17,6 +17,6 @@ description: >-
 - [ ] mkdocs external link preview plugin 개발
 
 ```preview
-- paka2 : https://www.youtube.com/@paka2
+- https://www.youtube.com/@paka2
 - https://www.google.com
 ```
