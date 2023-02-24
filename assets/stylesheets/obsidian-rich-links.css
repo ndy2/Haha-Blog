@@ -1,11 +1,6 @@
-#box {
-    width:100px; height:100px;
-    border:solid red;
-    border-width:0 10px;
-}
-
 .rich-link-card {
-  border:2px solid grey;
+  border:2px solid darkgrey;
+  border-radius :10px;
   margin: 20px 0;
   width: 100%;
   display: flex;
@@ -22,7 +17,7 @@
   content: " ";
   width: 100%;
   height: 3px;
-  background-color: white
+  background-color: white;
   bottom: -10px;
 }
 
@@ -31,7 +26,7 @@
   width: 35%;
   min-width: 120px;
   overflow: hidden;
-  border-right: 2px solid grey;
+  border-right: 2px solid darkgrey;
 }
 
 .rich-link-card .rich-link-image {
@@ -42,13 +37,14 @@
 }
 
 .rich-link-card .rich-link-card-text {
-  padding: 4px;
+  padding: 2px;
   width: 75%;
 }
 
 .rich-link-card .rich-link-card-title {
   font-family: sans-serif;
   font-size: 16px;
+  font-weight: bold;
   margin: 0 0 4px 0;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -70,8 +66,8 @@
 
 .rich-link-card .rich-link-href {
   font-family: sans-serif;
-  font-size: 14px;
-  margin: 0;
+  font-size: 12px;
+  margin: 10;
   color: grey;
   display: -webkit-box;
   -webkit-line-clamp: 1;
