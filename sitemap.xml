@@ -1061,6 +1061,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/tools/intellij/new-ui/</loc>
+         <lastmod>2023-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/tools/intellij/style/</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
@@ -1082,6 +1087,11 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/tools/kafka/use/</loc>
+         <lastmod>2023-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/tools/mac/activity-monitor/kill-process/</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
