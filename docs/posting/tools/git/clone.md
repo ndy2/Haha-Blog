@@ -57,3 +57,15 @@ From https://github.com/eugenp/tutorials
 ╰─$ ls
 webrtc
 ```
+
+
+### 2. git clone --single branch
+
+ 
+> [!quote] 참고 자료
+> * https://www.slipp.net/questions/577
+
+```
+git clone -b {branch_name} --single-branch {저장소 URL} 
+ex) git clone -b javajigi --single-branch https://github.com/javajigi/java-racingcar
+```
