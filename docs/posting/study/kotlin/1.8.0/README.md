@@ -120,14 +120,6 @@ fun main() {
 
 2. 파일 재귀적 복사/ 재귀적 삭제 API
 
-```text title="before"
-├─from
-│  │ index.md
-│  └─inside
-│        haha.txt
-└─to
-```
-
 ```kotlin
 import java.nio.file.Paths  
 import kotlin.io.path.copyToRecursively  
@@ -144,16 +136,28 @@ fun main() {
 }
 ```
 
-```text title="After"
-├─from
-│  │ index.md
-│  └─inside
-│        haha.txt
-└─to
-    │ index.md
-    └─inside
-          haha.txt
-```
+=== "Before"
+    
+    ```text title="before"
+    ├─from
+    │  │ index.md
+    │  └─inside
+    │        haha.txt
+    └─to
+    ```
+    
+=== "After"
+    
+    ```text title="After"
+    ├─from
+    │  │ index.md
+    │  └─inside
+    │        haha.txt
+    └─to
+        │ index.md
+        └─inside
+              haha.txt
+    ```
 
 `followLinks` 파라미터는 symbolic link 까지 복사하는지 결정하는 flag 이다. symbolic link 는 바로가기 같은 참조를 저장하는 파일을 의미한다.
 
