@@ -10,6 +10,21 @@ from dateutil import tz
 
 def define_env(env):
    
+    env.variables['ctrl'] = "control"
+    env.variables['control'] = "control"
+    env.variables['option'] = "option"
+    env.variables['shift'] = "shift"
+    env.variables['enter'] = "enter"
+    env.variables['space'] = "space"
+    env.variables['alt'] = "alt"
+    env.variables['command'] = "command"
+    env.variables['esc'] = "esc"
+    env.variables['fn'] = "fn"
+
+
+    env.variables['b'] = "b"
+    env.variables['n'] = "n"
+
     @env.macro
     def boj(probName = "백준 문제", probId = "1000"):
         return f'[{probName} {probId}번](https://www.acmicpc.net/problem/{probId})'
@@ -28,6 +43,10 @@ def define_env(env):
         vega_content = file.read()
         file.close()
         return vega_content.replace("YEAR",year,1)
+
+    @env.macro
+    def keyboard(*args):
+        return f"++{'+'.join(args)}++"
 
     @env.macro
     def archive():
