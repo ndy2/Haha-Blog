@@ -176,6 +176,9 @@ plugins:
         - "til/til-template.md"
   - kroki:
       FencePrefix: 'kroki-'
+  - mkdocs-simple-hooks:
+      hooks:
+          on_pre_build: "resources.simple-hooks.hooks:create_til_csv"
 
 extra_css:
   - assets/stylesheets/obsidian-rich-links.css

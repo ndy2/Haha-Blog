@@ -31,4 +31,5 @@ jobs:
       - run: pip3 install mkdocs-blogging-plugin
       - run: pip install beautifulsoup4
       - run: pip install mkdocs-link-preview-plugin
+      - run: pip install mkdocs-simple-hooks
       - run: mkdocs gh-deploy --force
