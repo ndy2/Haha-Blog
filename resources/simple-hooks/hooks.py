@@ -4,12 +4,17 @@ from datetime import date
 from dateutil.rrule import rrule, DAILY
 
 def create_til_csv(*args, **kwargs):
+    try:
+        os.makedirs("docs/posting/til/resources")
+    except FileExistsError:
+        pass
+
     create_til_csv_of(2022)
     create_til_csv_of(2023)
 
 
 def create_til_csv_of(year):
-    f = open(f"docs/posting/til/resources/{year}.csv", "w")
+    f = open(f"docs/posting/til/resources/{year}.csv", "w+")
     f.write("date,til\n")
 
     new_year_date = date(year, 1, 1)
