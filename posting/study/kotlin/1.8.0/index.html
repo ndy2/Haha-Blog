@@ -1829,26 +1829,31 @@
 <ol>
 <li>파일 재귀적 복사/ 재귀적 삭제 API</li>
 </ol>
-<div class="highlight"><span class="filename">before</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>├─from
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>│  │ index.md
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>│  └─inside
-<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>│        haha.txt
-<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>└─to
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.nio.file.Paths</span><span class="w">  </span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlin.io.path.copyToRecursively</span><span class="w">  </span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="nd">@OptIn</span><span class="p">(</span><span class="n">kotlin</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">path</span><span class="p">.</span><span class="na">ExperimentalPathApi</span><span class="o">::</span><span class="n">class</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"./src/main/resources/from/"</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"./src/main/resources/to"</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a>
+<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="n">from</span><span class="p">.</span><span class="na">copyToRecursively</span><span class="p">(</span><span class="w">  </span>
+<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">        </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w">  </span>
+<a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">        </span><span class="n">followLinks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w">  </span>
+<a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">    </span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.nio.file.Paths</span><span class="w">  </span>
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlin.io.path.copyToRecursively</span><span class="w">  </span>
-<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>
-<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="nd">@OptIn</span><span class="p">(</span><span class="n">kotlin</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">path</span><span class="p">.</span><span class="na">ExperimentalPathApi</span><span class="o">::</span><span class="n">class</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"./src/main/resources/from/"</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"./src/main/resources/to"</span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a>
-<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span><span class="n">from</span><span class="p">.</span><span class="na">copyToRecursively</span><span class="p">(</span><span class="w">  </span>
-<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">        </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w">  </span>
-<a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">        </span><span class="n">followLinks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w">  </span>
-<a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="p">)</span><span class="w">  </span>
-<a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="p">}</span>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Before</label><label for="__tabbed_1_2">After</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">before</span><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>├─from
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>│  │ index.md
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>│  └─inside
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>│        haha.txt
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>└─to
 </code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><span class="filename">After</span><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>├─from
 <a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>│  │ index.md
 <a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>│  └─inside
@@ -1858,6 +1863,9 @@
 <a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a>    └─inside
 <a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a>          haha.txt
 </code></pre></div>
+</div>
+</div>
+</input></input></div>
 <p><code>followLinks</code> 파라미터는 symbolic link 까지 복사하는지 결정하는 flag 이다. symbolic link 는 바로가기 같은 참조를 저장하는 파일을 의미한다.</p>
 <p>또한 람다식을 통해 예외가 발생했을시 처리하는 방법을 제공한다던가 덮어쓰기를 허용하는 flag 라던가 다양한 옵션들을 제공한다.</p>
 <p>resources 의 모든 파일을 <code>deleteRecusively</code> api 를 이용해 제거해보자.</p>
