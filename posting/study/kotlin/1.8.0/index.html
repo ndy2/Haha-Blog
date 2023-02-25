@@ -5,14 +5,14 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
+<meta content="코틀린 1.8.0에 추가된 내용들을 알아보자." name="description"/>
 <meta content="ndy2" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/posting/study/database/mysql-execution-plan/" rel="canonical"/>
-<link href="../join/" rel="prev"/>
-<link href="../normalization/" rel="next"/>
+<link href="https://ndy2.github.io/Haha-Blog/posting/study/kotlin/1.8.0/" rel="canonical"/>
+<link href="../" rel="prev"/>
+<link href="../delegation/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.14" name="generator"/>
-<title>Mysql Excution Plan - Haha 블로그</title>
+<title>Kotlin 1.8.0 - Haha 블로그</title>
 <link href="../../../../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -38,7 +38,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#0">
+<a class="md-skip" href="#1-stable">
           Skip to content
         </a>
 </div>
@@ -62,7 +62,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Mysql Excution Plan
+              Kotlin 1.8.0
             
           </span>
 </div>
@@ -264,99 +264,57 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
           Database
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_2">
 <span class="md-nav__icon md-icon"></span>
           Database
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../anomaly/">
+<a class="md-nav__link" href="../../database/anomaly/">
         Anomaly
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../basic-terminologies/">
+<a class="md-nav__link" href="../../database/basic-terminologies/">
         Basic Terminologies
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clustering-replication-sharding/">
+<a class="md-nav__link" href="../../database/clustering-replication-sharding/">
         Clustering Replication Sharding
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../db-index/">
+<a class="md-nav__link" href="../../database/db-index/">
         Index
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../dbcp/">
+<a class="md-nav__link" href="../../database/dbcp/">
         Database Connection Pool
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../fd/">
+<a class="md-nav__link" href="../../database/fd/">
         Functional Dependency
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../join/">
+<a class="md-nav__link" href="../../database/join/">
         Join
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Mysql Excution Plan
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../database/mysql-execution-plan/">
         Mysql Excution Plan
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#0">
-    0. 들어가며
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1. 전체 테이블을 찍는 쿼리
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2. 카운트 쿼리
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-join">
-    3. Join 쿼리
-  </a>
-<nav aria-label="3. Join 쿼리" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#31">
-    3.1 사용자 당 게시글 여러개인 경우 조인
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2_2_9" type="checkbox"/>
@@ -371,17 +329,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../normalization/">
+<a class="md-nav__link" href="../../database/normalization/">
         What is Normalization
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../normalization/db-normalization-1nf-2nf/">
+<a class="md-nav__link" href="../../database/normalization/db-normalization-1nf-2nf/">
         1NF &amp; 2NF
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../normalization/db-normalization-3nf-bcnf/">
+<a class="md-nav__link" href="../../database/normalization/db-normalization-3nf-bcnf/">
         3NF &amp; BCNF
       </a>
 </li>
@@ -389,17 +347,17 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../olap/">
+<a class="md-nav__link" href="../../database/olap/">
         OLAP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../rdb/">
+<a class="md-nav__link" href="../../database/rdb/">
         Relational DB
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../transaction-acid/">
+<a class="md-nav__link" href="../../database/transaction-acid/">
         Transaction
       </a>
 </li>
@@ -726,35 +684,58 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_7" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_7" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2_7" id="__nav_2_2_7_label" tabindex="0">
           Kotlin
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_7_label" class="md-nav" data-md-level="3">
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_7_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_7">
 <span class="md-nav__icon md-icon"></span>
           Kotlin
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/">
+<a class="md-nav__link" href="../">
         Introduction
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/1.8.0/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Kotlin 1.8.0
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Kotlin 1.8.0
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-stable">
+    1. Stable 된 내용들
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/delegation/">
+<a class="md-nav__link" href="#2-experimental-apis">
+    2. Experimental APIs
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../delegation/">
         위임 (Delegation)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/delegation-properties/">
+<a class="md-nav__link" href="../delegation-properties/">
         위임 프로퍼티 (delegated properties)
       </a>
 </li>
@@ -771,22 +752,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/generics/basic/">
+<a class="md-nav__link" href="../generics/basic/">
         제네릭스 (generics) 기초
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/generics/java-variance/">
+<a class="md-nav__link" href="../generics/java-variance/">
         변성 with Java
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/generics/kotlin-variance/">
+<a class="md-nav__link" href="../generics/kotlin-variance/">
         변성 in Kotlin
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/generics/refied-type-parameter/">
+<a class="md-nav__link" href="../generics/refied-type-parameter/">
         실체화된 타입 파라미터 (refied-type-parameter)
       </a>
 </li>
@@ -794,27 +775,27 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/hof-and-function-type/">
+<a class="md-nav__link" href="../hof-and-function-type/">
         고차 함수 (Higher-Order-Function)와 함수 타입 (Function Type)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/inline-function/">
+<a class="md-nav__link" href="../inline-function/">
         inline 함수
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/lambda/variable-capturing/">
+<a class="md-nav__link" href="../lambda/variable-capturing/">
         변수 캡쳐링
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/object-keyword/">
+<a class="md-nav__link" href="../object-keyword/">
         object 키워드 활용
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/operator-overloading/">
+<a class="md-nav__link" href="../operator-overloading/">
         연산자 오버로딩
       </a>
 </li>
@@ -831,12 +812,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/scope-functions/">
+<a class="md-nav__link" href="../scope-functions/">
         Index
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/scope-functions/examples/">
+<a class="md-nav__link" href="../scope-functions/examples/">
         Scope Function 활용 예시
       </a>
 </li>
@@ -844,7 +825,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kotlin/tips/">
+<a class="md-nav__link" href="../tips/">
         꿀팁 모음
       </a>
 </li>
@@ -1702,33 +1683,14 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#0">
-    0. 들어가며
+<a class="md-nav__link" href="#1-stable">
+    1. Stable 된 내용들
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1. 전체 테이블을 찍는 쿼리
+<a class="md-nav__link" href="#2-experimental-apis">
+    2. Experimental APIs
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2. 카운트 쿼리
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-join">
-    3. Join 쿼리
-  </a>
-<nav aria-label="3. Join 쿼리" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#31">
-    3.1 사용자 당 게시글 여러개인 경우 조인
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -1737,13 +1699,12 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/tree/main/docs/posting/study/database/mysql-execution-plan/README.md" title="View source of this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/tree/main/docs/posting/study/kotlin/1.8.0/README.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>Mysql Excution Plan</h1>
+<h1>Kotlin 1.8.0</h1>
 <div class="blogging-tags-grid">
-<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/archive/tags#db"><code>#db</code></a>
-<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/archive/tags#mysql"><code>#mysql</code></a>
+<a class="blogging-tag" href="https://ndy2.github.io//Haha-Blog/archive/tags#kotlin"><code>#kotlin</code></a>
 </div>
 <style>
     .md-typeset .blogging-tags-grid {
@@ -1766,126 +1727,159 @@
 <div class="admonition quote">
 <p class="admonition-title">참고 자료</p>
 <ul>
-<li>MySQL - <a href="https://dev.mysql.com/doc/refman/8.0/en/explain-output.html">explain-output</a></li>
+<li>kotlin documentation - <a href="https://kotlinlang.org/docs/whatsnew18.html">What's new in Kotlin 1.8.0</a></li>
+<li><a href="https://youtu.be/cLyTx5wSPbg">What's New in Kotlin 1.8.0 - Standard Libray Udates</a> by <code>『Kotlin by JetBrains』</code></li>
 </ul>
 </div>
-<h3 id="0">0. 들어가며<a class="headerlink" href="#0" title="Permanent link">¶</a></h3>
+<h3 id="1-stable">1. Stable 된 내용들<a class="headerlink" href="#1-stable" title="Permanent link">¶</a></h3>
+<ol>
+<li><code>kotlin.math.cbrt</code></li>
+</ol>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlin.math.cbrt</span><span class="w">  </span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlin.math.pow</span><span class="w">  </span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">27.0</span><span class="w">  </span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">negNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">num</span><span class="w">  </span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="si">${</span><span class="n">num</span><span class="si">}</span><span class="s">의 세제곱근은 </span><span class="si">${</span><span class="n">cbrt</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="si">}</span><span class="s"> 입니다."</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="si">${</span><span class="n">negNum</span><span class="si">}</span><span class="s">의 세제곱근은 </span><span class="si">${</span><span class="n">cbrt</span><span class="p">(</span><span class="n">negNum</span><span class="p">)</span><span class="si">}</span><span class="s"> 입니다."</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="si">${</span><span class="n">num</span><span class="si">}</span><span class="s">의 세제곱근은 </span><span class="si">${</span><span class="n">num</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">3</span><span class="p">)</span><span class="si">}</span><span class="s"> 입니다."</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="si">${</span><span class="n">negNum</span><span class="si">}</span><span class="s">의 세제곱근은 </span><span class="si">${</span><span class="n">negNum</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">3</span><span class="p">)</span><span class="si">}</span><span class="s"> 입니다."</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">실행 결과</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>27.0의 세제곱근은 3.0 입니다.
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>-27.0의 세제곱근은 -3.0 입니다.
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>27.0의 세제곱근은 1.0 입니다.
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>-27.0의 세제곱근은 1.0 입니다.
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>pow</code> 함수는 special case 에 대해서 정확한 값을 기대하기 어렵다.</p>
+</div>
+<ol>
+<li><code>java &lt;-&gt; kotlin</code> 간의 시간 단위 전환</li>
+</ol>
+<p>java 는 <code>java.util.concurrent.TimeUnit</code>을 kotlin 은 <code>kotlin.time.Duration</code> 을 주로 활용한다. 이제 확장 함수를 이용해 이들의 전환을 쉽게 할 수 있다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="n">DurationUnit</span><span class="p">.</span><span class="nf">toTimeUnit</span><span class="p">():</span><span class="w"> </span><span class="n">TimeUnit</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="n">TimeUnit</span><span class="p">.</span><span class="nf">toDurationUnit</span><span class="p">():</span><span class="w"> </span><span class="n">DurationUnit</span>
+</code></pre></div>
+<ol>
+<li><code>Optional</code> 관련 확장함수들</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.util.Optional</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlin.jvm.optionals.getOrDefault</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlin.jvm.optionals.getOrElse</span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlin.jvm.optionals.getOrNull</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="kd">val</span><span class="w"> </span><span class="nv">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"O"</span><span class="p">)</span>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="n">println</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="na">getOrNull</span><span class="p">())</span><span class="w"> </span><span class="c1">// "O"</span>
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="kd">val</span><span class="w"> </span><span class="nv">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">()</span>
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="n">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getOrNull</span><span class="p">())</span><span class="w"> </span><span class="c1">// null</span>
+<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="n">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="s">"default"</span><span class="p">))</span><span class="w"> </span><span class="c1">// "default"</span>
+<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="n">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getOrElse</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"print me if empty"</span><span class="p">)</span>
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">    </span><span class="s">"default"</span>
+<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="p">})</span>
+<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1">// "print me if empty"</span>
+<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="c1">// "default"</span>
+</code></pre></div>
+<h3 id="2-experimental-apis">2. Experimental APIs<a class="headerlink" href="#2-experimental-apis" title="Permanent link">¶</a></h3>
+<ol>
+<li>TimeMark 확장</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <ul>
-<li><code>친절한 SQL</code> 을 읽다보니 oracle 에 기반한 책이라는 점이 아쉬웠습니다.</li>
-<li>
-<p>사실 MySQL 을 깊게 학습한 적이 있는 것은 아니라 이 기회에 Oracle DB 로 계속 학습을 이어나가면 어떨까도 생각했지만 여러 대기업에서 MySQL 을 적극적으로 사용하고 있다고 생각되어 계속 MySQL로 학습하고자 합니다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/mysql-kakao.png"><img alt="images/mysql-kakao.png" src="images/mysql-kakao.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/mysql-coupang.png"><img alt="images/mysql-coupang.png" src="images/mysql-coupang.png"/></a></p>
-</li>
-<li>
-<p>책에서 나오는 내용을 MySQL 로 따라해보려하니 가장 막히는 부분이 실행 계획을 읽는 부분이었습니다</p>
-</li>
-<li>
-<p>그래서 이 문서에서는 MySQL 의 Execution Plan 을 확인하고 해석하는 법을 간단히 정리해보고자 합니다.</p>
-</li>
-<li>
-<p>모든 항목을 정리하지는 않고 프로젝트에서 사용한 쿼리의 실행계획을 찍어보았을때 보이는 특이사항 위주로 정리하겠습니다.</p>
-</li>
-<li>
-<p>Article, Profile 두가지의 테이블을 가지며 모든 Profile 은 한개의 Article 을 가지고 Profile 1000 개와 Article 1000 개를 초기데이터로 추가하였습니다.</p>
-</li>
+<li><code>TimeMark.elapsedNow</code> - mark 로 부터 소요된 시간을 반환</li>
 </ul>
-<hr/>
-<h3 id="1">1. 전체 테이블을 찍는 쿼리<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/explain-1.png"><img alt="images/explain-1.png" src="images/explain-1.png"/></a></p>
-<p>빈 값들은 <code>Null</code> 입니다. 일단 값이 있는 필드 먼저 살펴보겠습니다.</p>
-<ul>
-<li>
-<p><code>id</code></p>
-<ul>
-<li><code>SELECT</code> 연산의 식별자입니다.</li>
-<li>위 쿼리의 실행계획은 SELECT 가 단 한번만 호출 되므로 하나의 row 를 가지고 있습니다.</li>
-</ul>
-</li>
-<li>
-<p><code>select_type</code></p>
-<ul>
-<li>SELECT 연산의 종류입니다.</li>
-</ul>
-</li>
-<li>
-<p><code>type</code></p>
-<ul>
-<li>join type 입니다.</li>
-<li><code>ALL</code> 은 full table scan 을 수행한다는 의미이며 일반적으로 피해야하는 신호입니다.</li>
-</ul>
-</li>
-<li>
-<p><code>rows</code></p>
-<ul>
-<li>현재의 쿼리 값으로 조회를 수행하는 rows 의 개수를 의미합니다.</li>
-<li>이는 MySQL 이 통계적으로 판단한 값이며 정확하지 않을 수 있습니다.</li>
-</ul>
-</li>
-<li>
-<p><code>filtered</code></p>
-<ul>
-<li>조회한 row 중 <code>WHERE</code> 절 필터링을 통해 남는 row 의 비율입니다.</li>
-<li>즉 rows * filtered / 100 값이 결과의 예상 row 수 입니다.</li>
-</ul>
-</li>
-</ul>
-<p><br/></p>
-<p>MySQL 의 기본 Explain 키워드 만으로는 실행계획을 이해하기 어렵습니다.</p>
-<p>format="json" 을 통해 더 자세한 정보를 확인하거나 MySQL workbench 를 이용해 GUI 를 통해 실행계획을 확인할 수 있습니다. MySQL workbench  의 번개 + 돋보기 아이콘을 클릭하면 선택한 쿼리의 Explain 키워드를 실행한 결과를 Tabular 형식과 <code>json</code> 포멧을 통한 시각화 형태로 확인 할 수 있습니다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/explain-2.png"><img alt="images/explain-2.png" src="images/explain-2.png"/></a>
-- 1.000 K rows 에 대해서 Full Table Scan 을 사용할 것이란 것을 알 수 있습니다.</p>
-<h3 id="2">2. 카운트 쿼리<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
-<ul>
-<li>
-<p>전체 아티클의 카운트를 조회하는 쿼리의 실행계획을 확인해보겠습니다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/count-query.png"><img alt="images/count-query.png" src="images/count-query.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/excution-plan-3.png"><img alt="images/excution-plan-3.png" src="images/excution-plan-3.png"/></a></p>
-</li>
-<li>
-<p>Full Index Scan 방식을 활용한다는 것을 알 수 있습니다.</p>
-</li>
-<li>이때 대상 인덱스는 a.FK4g4r0.... 입니다.</li>
-</ul>
-<p><br/>
-- USE INDEX 를 사용해 Primary Key 인덱스를 사용하도록 힌트를 주면 실행 계획이 아래와 같이 바뀝니다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/query-2.png"><img alt="images/query-2.png" src="images/query-2.png"/></a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/execution-plan-4.png"><img alt="images/execution-plan-4.png" src="images/execution-plan-4.png"/></a>
-- a.PRIMARY 인덱스를 활용하는 것이 실행 계획에 잘 반영되었습니다.</p>
-<h3 id="3-join">3. Join 쿼리<a class="headerlink" href="#3-join" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/query-5.png"><img alt="images/query-5.png" src="images/query-5.png"/></a></p>
-<ul>
-<li>실행 계획
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/excution-plan-join.png"><img alt="images/excution-plan-join.png" src="images/excution-plan-join.png"/></a></li>
-</ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/excution-plain-join-table.png"><img alt="images/excution-plain-join-table.png" src="images/excution-plain-join-table.png"/></a></p>
-<ul>
-<li>이걸 어떻게 해석해야될까요?</li>
-<li>p 와 a 테이블을 NL 조인을 수행하는데 p 테이블에서는 Full Table Scan 을 a 테이블 에서는 <code>FK4g4r...</code> 인덱스에대해서 Non-Unique Key Lookup 방식을 활용한다고 해석하면 될것 같습니다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/indices-in-article.png"><img alt="images/indices-in-article.png" src="images/indices-in-article.png"/></a></li>
-<li>저 인덱스는 article 테이블에서 profile 테이블에 대해 물고있는 author_id 외래키에 대한 인덱스입니다.</li>
-<li>Article 을 왼쪽에 Profile 을 오른쪽에 작성했지만 MySQL 이 똑똑하게 Profile 을 NL 조인의 Driving Table 로 설정한 것 같습니다.</li>
-</ul>
-<p>이번에는 힌트를 통해 join 순서를 강제해보겠습니다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/query-hint-join-order-fix.png"><img alt="images/query-hint-join-order-fix.png" src="images/query-hint-join-order-fix.png"/></a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/excution-plain-6.png"><img alt="images/excution-plain-6.png" src="images/excution-plain-6.png"/></a></p>
-<p>MySQL 8.0 에 추가된 힌트인 <code>/*+ JOIN_FIXED_ORDER () */</code> 구문을 활용하면 from 절의 순서대로 join 순서를 강제할 수 있습니다. 실행계획 도 바뀐것을 확인 할 수 있습니다.</p>
-<p>Query Cost 를 보니 사용자당 항상 하나의 게시글만을 가지고 있어서 그런지 <code>Article -&gt; Profile</code> 이나 <code>Profile -&gt; Article</code> 이나 Join 순서에 따른 <code>Query Cost</code> 차이가 거의 없습니다.</p>
-<p>사용자당 게시글을 여러개 가지는 경우에 MySQL 은 어떤 판단을 할까요?</p>
-<h4 id="31">3.1 사용자 당 게시글 여러개인 경우 조인<a class="headerlink" href="#31" title="Permanent link">¶</a></h4>
-<p>사용자당 총 10 개의 게시글, 그리고 1000 명의 사용자를 초기 데이터로 추가하였습니다.</p>
-<p>실행 계획을 visualize 한 결과는 아래와 같습니다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="excalidraws/join-index.excalidraw.png"><img alt="excalidraws/join-index.excalidraw.png" src="excalidraws/join-index.excalidraw.png"/></a></p>
-<p>Query Cost 값이 작은 왼쪽 플랜이 기본적으로 선택되었고 join order 를 <code>a -&gt; p</code> 로 강제한 오른쪽 플랜은 선택되지 않았습니다. 각 코스트를 자세히 살펴보면 p 를 full table scan 하는 비용과 a 를 full table scan 하는 비용에 큰 차이가 있는것을 알 수 있습니다. 또한 join 에 대해서는 오히려 <code>a -&gt; p</code> 를 하는 비용이 더 낮은데 이는 게시글 하나당 작성자 (profile_id) 항상 하나가 있기 때문에 Unique Key Lookup 을 사용할 수 있었기 때문으로 생각됩니다. 반명 Profile 을 기준으로 Article 은 몇게가 있을지 모르기 때문에 scan 의 종료지점 탐색을 위해 조금더 Scan 이 이루어 져야해서 코스트가 조금 더 높은것으로 보입니다.</p>
+</div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nd">@OptIn</span><span class="p">(</span><span class="n">ExperimentalTime</span><span class="o">::</span><span class="n">class</span><span class="p">)</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">timeSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeSource</span><span class="p">.</span><span class="na">Monotonic</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">mark1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timeSource</span><span class="p">.</span><span class="na">markNow</span><span class="p">()</span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="m">500</span><span class="p">)</span><span class="w"> </span><span class="c1">// sleep 0.5 seconds.</span>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">mark2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timeSource</span><span class="p">.</span><span class="na">markNow</span><span class="p">()</span>
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="c1">// Before 1.8</span>
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="n">repeat</span><span class="p">(</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">elapsed1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mark1</span><span class="p">.</span><span class="na">elapsedNow</span><span class="p">()</span>
+<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">elapsed2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mark2</span><span class="p">.</span><span class="na">elapsedNow</span><span class="p">()</span>
+<a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a>
+<a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="s">"Mesurement </span><span class="si">${</span><span class="nb">it</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="si">}</span><span class="s"> : elapsed1 = </span><span class="si">$</span><span class="n">elapsed1</span><span class="s">, elapsed2 = </span><span class="si">$</span><span class="n">elapsed2</span><span class="s">, diff = </span><span class="si">${</span><span class="n">elapsed1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">elapsed2</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a>
+<a href="#__codelineno-4-17" id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">    </span><span class="c1">// Since 1.8</span>
+<a href="#__codelineno-4-18" id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">    </span><span class="n">repeat</span><span class="p">(</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-4-19" id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">mark3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timeSource</span><span class="p">.</span><span class="na">markNow</span><span class="p">()</span>
+<a href="#__codelineno-4-20" id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">elapsed1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mark3</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mark1</span>
+<a href="#__codelineno-4-21" id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">elapsed2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mark3</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mark2</span>
+<a href="#__codelineno-4-22" id="__codelineno-4-22" name="__codelineno-4-22"></a>
+<a href="#__codelineno-4-23" id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="s">"Mesurement </span><span class="si">${</span><span class="nb">it</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="si">}</span><span class="s"> : elapsed1 = </span><span class="si">$</span><span class="n">elapsed1</span><span class="s">, elapsed2 = </span><span class="si">$</span><span class="n">elapsed2</span><span class="s">, diff = </span><span class="si">${</span><span class="n">elapsed1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">elapsed2</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<a href="#__codelineno-4-24" id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-4-25" id="__codelineno-4-25" name="__codelineno-4-25"></a>
+<a href="#__codelineno-4-26" id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="n">mark2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">mark1</span><span class="p">)</span><span class="w"> </span><span class="c1">// prints true - comparable 하다!</span>
+<a href="#__codelineno-4-27" id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="p">}</span>
+</code></pre></div>
+<p>아래와 같이 바꿀 작성할 수 있게 되면서 아래의 경우 <code>diff</code> 값이 <code>mark2 - mark1</code> 값으로 항상 일정하다는 것이 보장되었다. 위 코드에서는 각각 elapsed1, elapsed2 를 생성하는 코드 호출 시간이 있으므로 약간의 차이가 발생하고 코드 작성 의도를 생각했을때 오류라고 볼 수도 있다.</p>
+<ol>
+<li>파일 재귀적 복사/ 재귀적 삭제 API</li>
+</ol>
+<div class="highlight"><span class="filename">before</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>├─from
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>│  │ index.md
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>│  └─inside
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>│        haha.txt
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>└─to
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.nio.file.Paths</span><span class="w">  </span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlin.io.path.copyToRecursively</span><span class="w">  </span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="nd">@OptIn</span><span class="p">(</span><span class="n">kotlin</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">path</span><span class="p">.</span><span class="na">ExperimentalPathApi</span><span class="o">::</span><span class="n">class</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"./src/main/resources/from/"</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"./src/main/resources/to"</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a>
+<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span><span class="n">from</span><span class="p">.</span><span class="na">copyToRecursively</span><span class="p">(</span><span class="w">  </span>
+<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">        </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w">  </span>
+<a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">        </span><span class="n">followLinks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w">  </span>
+<a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">After</span><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>├─from
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>│  │ index.md
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>│  └─inside
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>│        haha.txt
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>└─to
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a>    │ index.md
+<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a>    └─inside
+<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a>          haha.txt
+</code></pre></div>
+<p><code>followLinks</code> 파라미터는 symbolic link 까지 복사하는지 결정하는 flag 이다. symbolic link 는 바로가기 같은 참조를 저장하는 파일을 의미한다.</p>
+<p>또한 람다식을 통해 예외가 발생했을시 처리하는 방법을 제공한다던가 덮어쓰기를 허용하는 flag 라던가 다양한 옵션들을 제공한다.</p>
+<p>resources 의 모든 파일을 <code>deleteRecusively</code> api 를 이용해 제거해보자.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">java.nio.file.Paths</span><span class="w">  </span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlin.io.path.deleteRecursively</span><span class="w">  </span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="nd">@OptIn</span><span class="p">(</span><span class="n">kotlin</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">path</span><span class="p">.</span><span class="na">ExperimentalPathApi</span><span class="o">::</span><span class="n">class</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">resources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"./src/main/resources/"</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="n">resources</span><span class="p">.</span><span class="na">deleteRecursively</span><span class="p">()</span><span class="w">  </span>
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="p">}</span>
+</code></pre></div>
+<p>resources 폴더까지 모두 사라졌다. 지정한 root 폴더는 남겨놓는 옵션이 있으면 좋을거 같은데 이 api는 별도의 파라미터를 받지않는 형태로 정의되어있다.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2023</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 27, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2023</span>
 </small>
 </div>
 </article>
@@ -1894,7 +1888,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Join" class="md-footer__link md-footer__link--prev" href="../join/" rel="prev">
+<a aria-label="Previous: Introduction" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -1903,17 +1897,17 @@
 <span class="md-footer__direction">
                   Previous
                 </span>
-                Join
+                Introduction
               </div>
 </div>
 </a>
-<a aria-label="Next: What is Normalization" class="md-footer__link md-footer__link--next" href="../normalization/" rel="next">
+<a aria-label="Next: 위임 (Delegation)" class="md-footer__link md-footer__link--next" href="../delegation/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                What is Normalization
+                위임 (Delegation)
               </div>
 </div>
 <div class="md-footer__button md-icon">
