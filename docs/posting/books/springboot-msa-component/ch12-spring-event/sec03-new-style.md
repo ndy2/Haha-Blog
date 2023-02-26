@@ -1,4 +1,3 @@
-
 스프링 4.2 이후 등장한 새로운 이벤트 처리 방법에 따라 아래와 같이 변경될 수 있습니다.
 
 ---
@@ -58,8 +57,6 @@ public class UserServiceImpl implements UserService {
 }
 ```
 
-
-
 앞선 방식의 단점이 모두 해결되었습니다!
 
 @EventListenr 애너테이션의 JavaDoc 을 읽어 보면 아래와 같은 내용이 있습니다.
@@ -71,7 +68,6 @@ public class UserServiceImpl implements UserService {
 	- `javadoc` 에서는 이 방식을 그리 권장하지는 않습니다. 
 	- 굳이 필요하다면 상속 계층을 고려하라고 합니다.
 ```
-
 
 ```
  @EventListener 메서드가 처리할 수 있는 이벤트의 타입은 기존의 `ApplicationEvent` 혹은 임의의 `Object` 모두 가능합니다.

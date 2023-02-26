@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 15 ^bNNHg31s
 
 12 ^PWkreJCm
@@ -33,10 +34,13 @@ Delete ( ) ^61AtJmO9
 Step 4 ^z6cIB0VO
 
 자식이 더 크다
+
 -> swap ^kku786u0
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1196,4 +1200,5 @@ Step 4 ^z6cIB0VO
 	"files": {}
 }
 ```
+
 %%

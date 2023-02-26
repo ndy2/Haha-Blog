@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 기본 ^CdCiOKgD
 
  ^GeBNIKge
@@ -16,13 +17,16 @@ tags: [excalidraw]
 
 Query Cost ^sfkCkbNI
 
+# Embedded Files
 
-# Embedded files
 65ebab709539f0f7a2656aac061bde96e28803c1: [[execution-plain-diag-1.png]]
+
 07c50103b198a0c58fdcd16c86e214badcd89227: [[execution-plain-diag-2.png]]
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -344,4 +348,5 @@ Query Cost ^sfkCkbNI
 	"files": {}
 }
 ```
+
 %%

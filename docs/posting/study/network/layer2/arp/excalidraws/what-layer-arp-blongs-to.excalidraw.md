@@ -4,23 +4,27 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 Wikipedia, OSI model based ^GDHE94hW
 
 ibm, OSI + TCP/IP model ^RLjN7Vch
 
 What layer ARP belongs to ??? ^fVob32px
 
+# Embedded Files
 
-# Embedded files
 c92ef6a872f4e8e809bd0edba99c47ff90ecc274: [[arp-wikipedia.png]]
+
 6c854e12fc96d634eb7746f765c26124c72370c4: [[ibm-arp.png]]
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -381,4 +385,5 @@ c92ef6a872f4e8e809bd0edba99c47ff90ecc274: [[arp-wikipedia.png]]
 	"files": {}
 }
 ```
+
 %%

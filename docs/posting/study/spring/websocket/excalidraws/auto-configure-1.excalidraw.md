@@ -4,19 +4,20 @@ excalidraw-plugin: raw
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 @EnableWebSocket ^aNjkQv6F
 
 @Import(DelegatingWebSocketConfiguration.class)
+
  ^0D8sv6PO
 
 DelegatingWebSocketConfiguration ^mXKniHKO
 
-1. 추가 적으로 등록된 WebSocketConfigurer 처리  ^39xIOoTk
-
+1. 추가 적으로 등록된 WebSocketConfigurer 처리 ^39xIOoTk
 2. WebSocketConfigurationSupport 를 상속함
  이안에서 등록하는 빈 등록
 
@@ -25,13 +26,17 @@ DelegatingWebSocketConfiguration ^mXKniHKO
 @Bean ^mcVJI9Ph
 
 @Bean
+
 defaultSockJsSchedulerContainer() : 
+
     DefaultSockJsSchedulerContainer ^2FBEvKbG
 
 webSocketHandlerMapping : HandlerMapping ^tYbKQGL8
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1333,4 +1338,5 @@ webSocketHandlerMapping : HandlerMapping ^tYbKQGL8
 	"files": {}
 }
 ```
+
 %%

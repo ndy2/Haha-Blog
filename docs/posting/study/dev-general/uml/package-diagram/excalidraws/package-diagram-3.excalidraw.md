@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 api ^tRYdExfD
 
 member ^G8NiHCcF
@@ -19,12 +20,15 @@ domain ^2DxEOwjw
 의존 ^enE3Mz2p
 
 <<global>>
+
 common ^7Gfr4YUh
 
 stereotype ^6E06IN3n
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -818,4 +822,5 @@ stereotype ^6E06IN3n
 	"files": {}
 }
 ```
+
 %%

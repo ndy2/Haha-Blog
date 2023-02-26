@@ -8,7 +8,7 @@ date: 2023-02-24
 > [!tip]
 > 평소에 보기 싫은 파일을 File Explore View 에서 숨겨보자!
 
-### 1. plugin file-hider
+### 1. Plugin File-hider
 
 ```preview
  - https://github.com/Oliver-Akins/file-hider

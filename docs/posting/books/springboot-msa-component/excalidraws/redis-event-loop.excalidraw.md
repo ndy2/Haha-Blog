@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 Cient #1 ^zYAStZqF
 
 Cient #2 ^LpOGayFx
@@ -23,7 +24,9 @@ Redis Core Thread ^KikpVrPx
 ... ^mMl9s4G6
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1191,4 +1194,5 @@ Redis Core Thread ^KikpVrPx
 	"files": {}
 }
 ```
+
 %%

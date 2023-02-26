@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 master #1 ^uPpQexzx
 
 slave #1 ^uQfYJ9NO
@@ -23,6 +24,7 @@ slave #3 ^DN8ZbR9k
 Redis Cluster ^XPT1dvvk
 
 Redis Client (Spring Application)
+
 on port 8080 ^nr8VkaqV
 
 Application Instance ^cnPrXvBq
@@ -31,13 +33,16 @@ redis gossip protocol ^Csl98Rig
 
 master slave replication ^unU66hdj
 
+# Embedded Files
 
-# Embedded files
 5bd221bcb71f71c29915a962751efde937c9fb06: [[redis-slave.png]]
+
 0e2d469ce791ced4a2bc97e4bc77b83145b6959b: [[redis-master.png]]
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1556,4 +1561,5 @@ master slave replication ^unU66hdj
 	"files": {}
 }
 ```
+
 %%

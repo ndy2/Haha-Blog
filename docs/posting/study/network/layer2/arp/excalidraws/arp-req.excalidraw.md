@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 L3 Router ^XVg4UdJ5
 
 L2 Switch ^QXgqEJhr
@@ -25,19 +26,25 @@ Eth ^bHzZ5ZJP
 Host C ^ZnE2guUP
 
 IP : 192.168.0.10
+
 MAC : aa.aa.aa.aa.aa.aa ^7tRVA93r
 
 IP : 192.168.0.40
+
 MAC : aa.aa.aa.aa.aa.dd ^v1SPMXWP
 
 IP : 192.168.0.20
+
 MAC : aa.aa.aa.aa.aa.bb ^wckrS64M
 
 IP : 192.168.0.30
+
 MAC : aa.aa.aa.aa.aa.cc ^ZF5ZKnX0
 
 목적지의 MAC 주소
+
 FF.FF.FF.FF.FF.FF- broadcasthost 주소
+
 로 보낸다. ^blvAIdI8
 
 1 ^w6nRYePb
@@ -51,19 +58,25 @@ FF.FF.FF.FF.FF.FF- broadcasthost 주소
 broadcast!! ^GWMG2Cyt
 
 2계층 decapsulation 후
+
  broadcast! ^9PqB2GvG
 
 타겟 IP - 192.168.0.20 ^HV9Ri2GJ
 
+# Embedded Files
 
-# Embedded files
 10acf9a6374fb860dc921cf91b2b86fcd0b2a02d: [[host.png]]
+
 1c88663465db65a225cc28a887a4b0efcd151827: [[switch.png]]
+
 4732e0830e68ce9c31d1059bc5410600f4dcee84: [[router.png]]
+
 bee465a85a5cb79b264eee7f09a0b9510a09bd1b: [[internet-cloud-icon.png]]
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1932,4 +1945,5 @@ bee465a85a5cb79b264eee7f09a0b9510a09bd1b: [[internet-cloud-icon.png]]
 	"files": {}
 }
 ```
+
 %%

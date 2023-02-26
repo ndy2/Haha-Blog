@@ -7,7 +7,9 @@ spring.jpa.open-in-view = false
 책에서 소개하는 아래 그림이 entityManager, connection, transaction 의 생명주기를 아주 잘 나타내 줍니다.
 
 ### OSIV - on
+
 ![excalidraws/osiv-on.excalidraw.png](excalidraws/osiv-on.excalidraw.png)
 
 ### OSIV - off
+
 ![excalidraws/osiv-on.excalidraw.png](excalidraws/osiv-off.excalidraw.png)

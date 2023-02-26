@@ -9,7 +9,7 @@ author: ndy2
 
 ### Database
 
-* 전자적 (electronically) 으로 저장되고 사용되는  관련있는 (related) 데이터들의 조직화된 집합 (organized collection)
+* 전자적 (electronically) 으로 저장되고 사용되는 관련있는 (related) 데이터들의 조직화된 집합 (organized collection)
 
 ### DMBS (Database Management Systems)
 

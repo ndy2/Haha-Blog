@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 Router 1 ^6WxsbpHH
 
 Router 2 ^ab4ELlxh
@@ -22,14 +23,18 @@ NAT 테이블 1 ^ZxGZR4lo
 
 NAT 테이블 2 ^1u6Jp7bC
 
+# Embedded Files
 
-# Embedded files
 10acf9a6374fb860dc921cf91b2b86fcd0b2a02d: [[host.png]]
+
 4732e0830e68ce9c31d1059bc5410600f4dcee84: [[router.png]]
+
 1c88663465db65a225cc28a887a4b0efcd151827: [[switch.png]]
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1066,4 +1071,5 @@ NAT 테이블 2 ^1u6Jp7bC
 	"files": {}
 }
 ```
+
 %%

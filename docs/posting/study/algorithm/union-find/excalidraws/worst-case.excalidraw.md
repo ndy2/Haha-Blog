@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 1 ^OTc2ki73
 
 2 ^EOoBsZDD
@@ -26,7 +27,7 @@ tags: [excalidraw]
 
 find(2) = 2 (1) ^B9ydBCHR
 
-find(1) = 1  (1) ^H9vamGy7
+find(1) = 1 (1) ^H9vamGy7
 
 union(1,2) (2) ^1eSG4pTF
 
@@ -61,7 +62,9 @@ find(4) = 4 (1) ^X1I9DXxk
 Worst Case of Union-Find algorithm with Naive Implementation ^5Sf1Tjzq
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -2223,4 +2226,5 @@ Worst Case of Union-Find algorithm with Naive Implementation ^5Sf1Tjzq
 	"files": {}
 }
 ```
+
 %%

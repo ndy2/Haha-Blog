@@ -13,7 +13,6 @@ description: >-
 - [x] TIL csv 자동화
 - mkdocs-obsidian-support-plugin
 	- [ ] content tab convert 기능 추가
-
 - [x] mkdocs external link preview plugin 개발
 
 ```preview

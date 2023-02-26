@@ -4,13 +4,13 @@ title: Collections.sort
 author: ndy2
 ---
 
-### 0. 들어가며 
+### 0. 들어가며
 
 자바는 `java.util` 패키지를 통해 정렬 기능을 제공한다. 이들의 동작 방식과 주의 사항에 대해 알아보자!
 
 ---
 
-### 1.  컬렉션 정렬
+### 1. 컬렉션 정렬
 
 ```java
 package java.util
@@ -32,6 +32,7 @@ public class Collections {
 구현을 살펴보면 배열의 sort 메서드 `List.sort()` 를 그대로 넘겨서 호출한다. 별로 살펴볼게 없다! :thumbsup:
 
 ---
+
 ### 2. 리스트 정렬
 
 ++option+b++ 를 눌러 List 의 구현을 살펴보자 ! 
@@ -54,7 +55,7 @@ default void sort(Comparator<? super E> c) {
 
 ---
 
-다시  ++shift+option+b++ 를 눌러 이 인터페이스를 구현한 녀석을 살펴보자.
+다시 ++shift+option+b++ 를 눌러 이 인터페이스를 구현한 녀석을 살펴보자.
 
 ![List.sort.png](images/List.sort.png)
 
@@ -85,6 +86,7 @@ public void sort(Comparator<? super E> c) {
 ![ListCollection.png](images/ListCollection.png)
 
 === "Stack Sort"
+
    
 	```java
 	import java.util.Comparator;  
@@ -135,7 +137,6 @@ public void sort(Comparator<? super E> c) {
 이들 모두 잘 동작한다. `Stack` 은 `Vector` 를 상속하기 때문에 내부적으로 배열을 통해 데이터를 저장하고 있다. 따라서 `Stack` 은 `List.sort` 호출시 가장 가까운 부모의 오버라이드 메서드인 `Vector` 의 구현에 따라 정렬을 수행한다. 사실 이는 잘못된 구현이고 자바의 실수입니다. ([관련 링크](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4475301)) Stack 은 LIFO 구조를 만족하기 위해 인덱스를 이용한 접근이나 정렬 기능을 제공하면 안되지만 Vector 를 상속하기 때문에 배열과 관련된 모든 api 가 노출되어야 합니다.
 
 반면 `LinkedList` 는 위에서 살펴본 `List.sort` 의 `default` 구현을 통해 정렬이 수행되는것을 확인 할 수 있다. `LinkedList` 를 정렬한다는 것은 `Stack` 과는 달리 논리적인 결함이 있지는 않다. 하지만 정말 이 경우 `LinkedList` 자료구조가 적절한지 고민해볼 필요가 있다.
-
 
 ### 5. 결론
 

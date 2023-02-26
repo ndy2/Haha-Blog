@@ -1,4 +1,3 @@
-
 자동 설정이 아닌 빈 직접 생성 방식으로 RedisTemplate<String, String> 을 생성하여 레디스에 저장해 보자.
 
 ```java
@@ -31,15 +30,18 @@ void set() {
 }
 ```
 
-- redis moniter 를 통해 확인한 실행된 명령어
+- redis monitor 를 통해 확인한 실행된 명령어
+
 ```redis
 "SET" "\xac\xed\x00\x05t\x00\x03key" "\xac\xed\x00\x05t\x00\x05value"
 ```
 
 위 처럼 아무 설정을 하지 않고 RedisTemplate 을 만들게 되면 Key 와 Value 의 직렬화`JdkSerialization
+
 `RedisSerializer` 를 사용해서 위 처럼 알아보기 힘든 문자가 저장된다. 만약 직접 정의한 Key 와 Value 타입을 사용할때 `JdkSerializationRedisSerializer` 를 사용하고 싶다면 꼭 `java.io.Serializable` 을 구현 해야 한다. 이런 두가지 이유로 저자분은 `JdkSerializationRedisSerializer` 의 사용을 반대한다.
 
 ---
+
 ### 2. `StringRedisTemplate` - `StringRedisSerializer` 사용!
 
 그럼 이번에는 StringRedisTemplate 을 사용해보자!
@@ -60,9 +62,7 @@ void set2() {
 "SET" "key" "value"
 ```
 
-
 깔끔하다!
-
 
 ### 3. 직접 RedisSerializer 클래스 구현!
 
@@ -148,5 +148,7 @@ void set3() {
 ```
 
 분명 Serializer 에 Encoding 옵션을 주었는데도 한글이 깨진다.
+
 찾아 보니 이는 redis-cli 실행시 --raw 옵션을 넣어 조회하면 정상적으로 볼 수 있다.
+
 ![redis-get.png](images/redis-get.png)

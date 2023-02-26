@@ -4,29 +4,30 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 [10, 7, 8, 9, 1, 5] ^D2WZzKAv
 
 pivot ^ZqmjjIeP
 
 partition([10, 7, 8, 9, 1, 5], 0, 5) flow ^JuWMBXS8
 
-index 0     1    2   3  4   5 ^HGGoM12r
+index 0 1    2 3  4 5 ^HGGoM12r
 
 i = -1 ^YvyarieF
 
 [10, 7, 8, 9, 1, 5] ^QkbfeYJL
 
-index 0     1    2   3  4   5 ^GT3yviWE
+index 0 1    2 3  4 5 ^GT3yviWE
 
 j ^7LLe8ddu
 
 [10, 7, 8, 9, 1, 5] ^zaXy0OLF
 
-index 0     1    2   3  4   5 ^epd685rE
+index 0 1    2 3  4 5 ^epd685rE
 
 i = -1 ^U9fQKI4z
 
@@ -37,12 +38,15 @@ j ^wMx2nBIv
 j ^r4h1r1Q8
 
 all arr[0-3] > pivot
+
  -> do nothing ^xXzzQs0R
 
 j == 4 ^ooFuAjmX
 
 arr[4] <= pivot 
+
 -> i++
+
 -> swap(arr[i], arr[j]) ^L0akPbGQ
 
 [1, 7, 8, 9, 10, 5] ^EJ6K2E36
@@ -98,7 +102,9 @@ pi = 3 ^b2zlhqJP
 pi = 4 ^6YtC4kyT
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -3838,4 +3844,5 @@ pi = 4 ^6YtC4kyT
 	"files": {}
 }
 ```
+
 %%

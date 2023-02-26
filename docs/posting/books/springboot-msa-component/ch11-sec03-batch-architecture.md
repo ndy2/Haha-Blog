@@ -1,13 +1,14 @@
-
 ### 0. 들어가기
 
 11 장에서는 배치 프로세스 그 중에서도 마이크로서버에서 실행되며 비교적 작은 규모의 배치 프로세싱을 의미하는 마이크로 배치 프로세스에 대해 다룹니다. 특히 `@Scheduled` 애너테이션과 `cron 표현식`을 이용해 일정 간격으로 실행되어야 할 배치 작업을 스프링에서 처리하는 법을 이야기합니다.
+
 <br>
 그 중 가장 흥미로운 부분인 3절 배치 서버 아키텍처를 알아보겠습니다. 이 절에서는 HA 를 만족하는 배치 서버를 구성하는 일반적인 방법 세가지를 소개합니다.
 
 ---
 
-### 1.  단독 배치 서버 구성
+### 1. 단독 배치 서버 구성
+
 ![batch-server-1.excalidraw.png](excalidraws/batch-server-1.excalidraw.png)
 
 - 배치 처리를 전담으로 하는 서버를 두는 방식
@@ -15,8 +16,8 @@
 - 이때 Redis 의 분산락을 통해 동시에 하나의 서버에서만 배치 프로세스를 수행하도록 할 수 있다.
 - 이런 구성에서는 `spring.main.web-application-type = none` 속성을 통해 웹 애플리케이션 기능을 사용하지 않도록 명시하는 것이 좋다.
 
-
 ### 2. REST-API 서버에 뭉뚱그려서 구성
+
 ![batch-server-2.excalidraw.png](excalidraws/batch-server-2.excalidraw.png)
 
 - 일반 웹 서버에 @Scheduled 를 메서드를 통해 간단하게 배치 기능을 추가하는 방식
@@ -24,6 +25,7 @@
 - 언제든지 별도의 배치 서버로 분리할 수 있도록 준비해야 한다.
 
 ### 3. 젠킨스를 활용한 구성
+
 ![batch-server-3.excalidraw.png](excalidraws/batch-server-3.excalidraw.png)
 
 - 마지막으로 소개하는 구성 방식은 젠킨스를 활용한 방식입니다.

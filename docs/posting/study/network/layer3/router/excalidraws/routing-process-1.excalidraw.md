@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 Host A ^74m4pob0
 
 Host B ^QZBSnomq
@@ -19,15 +20,19 @@ Router 2 ^ab4ELlxh
 Host A -> Host B 로 패킷을 전송해야 한다! ^mu8ybwum
 
 IP 111.111.111.111
+
 MAC AA ^1AR1Yb01
 
 IP 111.111.111.222
+
 MAC BB ^hjVb1iuq
 
 IP 111.111.111.333
+
 MAC CC ^S2matoJ7
 
 IP 111.111.111.444
+
 MAC DD ^TT6DJMRd
 
 Ethernet Header ^eB9TRFrv
@@ -45,6 +50,7 @@ FCS - Frame Check Sequence ^1kJgevao
 출발지 : AA, 목적지: BB ^gAovHVHI
 
 출발지 : 111.111.111.111, 
+
 목적지 : 111.111.111.444, ttl = 128 ^gtQVFyKd
 
 패킷 : Host A -> Router 1 ^jWMACpqz
@@ -66,6 +72,7 @@ FCS - Frame Check Sequence ^N3krjWd2
 출발지 : BB, 목적지: CC ^qVTvy5cK
 
 출발지 : 111.111.111.111, 
+
 목적지 : 111.111.111.444, ttl = 127 ^bKlfuvAn
 
 패킷 : Router A -> Router 2 ^HUe1Eaea
@@ -87,6 +94,7 @@ FCS - Frame Check Sequence ^ExKUNtfe
 출발지 : CC, 목적지: DD ^GQHu6gIF
 
 출발지 : 111.111.111.111, 
+
 목적지 : 111.111.111.444, ttl = 126 ^joKDxG4L
 
 패킷 : Router B -> Host 2 ^lHNbNO1G
@@ -97,13 +105,16 @@ Routing Table ^2AhyZfrt
 
 Routing Table ^glOhtuMm
 
+# Embedded Files
 
-# Embedded files
 10acf9a6374fb860dc921cf91b2b86fcd0b2a02d: [[host.png]]
+
 4732e0830e68ce9c31d1059bc5410600f4dcee84: [[router.png]]
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -2771,4 +2782,5 @@ Routing Table ^glOhtuMm
 	"files": {}
 }
 ```
+
 %%

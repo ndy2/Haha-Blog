@@ -1,4 +1,3 @@
-
 ### 1. Spring Event 와 메시징 플랫폼 (SQS, SNS, Kafka, RabbitMQ) 비교
 
 스프링 이벤트에 대한 학습을 시작하기에 앞서서 먼저 Spring Event 의 이벤트 처리와 SQS, Kafka 와 같은 외부 시스템 (미들웨어)을 이용한 이벤트 처리의 차이에 대해서 알고가면 좋을것 같습니다.

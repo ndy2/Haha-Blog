@@ -4,26 +4,33 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 AthorizationFilter 의 authorizationManager ^OFSkjXd6
 
 RequestMatcherDelegatingAuthorizationManager ^nXminr9m
 
-AnyRequest,  ^DmTGdYsJ
+AnyRequest, ^DmTGdYsJ
 
 @Bean
+
 name = "requestMatcherAuthorizationManager" ^eeHjagRy
 
 mappings[0] ^86LQtgim
 
 OrRequest(
+
 "/webjars/**" , 
+
 "/error/**", 
+
 "/", 
+
 ".ico"
+
 ) ^zANebwN4
 
 mappings[0] ^mCxtxihu
@@ -31,17 +38,23 @@ mappings[0] ^mCxtxihu
 mappings[1] ^2sj6pmNZ
 
 PermitAll 
+
 AccessDecisionManager ^fxrGsXHM
 
 mvcRequest(
+
 "/chat/**"
+
 ) ^BrPhKWh4
 
 AuthorityAuthorizationManager
+
 - check UserRole ^91KmtEIO
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -912,4 +925,5 @@ AuthorityAuthorizationManager
 	"files": {}
 }
 ```
+
 %%

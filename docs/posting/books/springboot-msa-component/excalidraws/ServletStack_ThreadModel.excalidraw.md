@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 Tomcat (WAS) ^R5LHhu5G
 
 Browser ^hIJm6nex
@@ -27,10 +28,13 @@ Thread #6 ^nYKJoMUU
 Thread #6 ^LwJT1WdN
 
 Spring MVC
+
 Application ^vPbGSAGz
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1231,4 +1235,5 @@ Application ^vPbGSAGz
 	"files": {}
 }
 ```
+
 %%

@@ -4,15 +4,17 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 MvcRequestMatcher ^ZmKSepNB
 
 '/webjars/**' ^r1M52AUc
 
 (a,o) -> 
+
 new AuthorizationDecision(true); ^MZbXnupc
 
 permitAllAuthorizationManager ^KqQYha9B
@@ -24,6 +26,7 @@ MvcRequestMatcher ^wCnHUD7a
 '/' ^np1zCmhI
 
 (a,o) -> 
+
 new AuthorizationDecision(true); ^uvVuO9jw
 
 permitAllAuthorizationManager ^PjTpg1ui
@@ -35,6 +38,7 @@ MvcRequestMatcher ^mZ0XWAjt
 '/' ^MLGKrDiF
 
 (a,o) -> 
+
 new AuthorizationDecision(true); ^EIbMdmff
 
 permitAllAuthorizationManager ^r2Wokn2g
@@ -46,6 +50,7 @@ MvcRequestMatcher ^SMhNMLlX
 '/error/**' ^Q0eUsj95
 
 (a,o) -> 
+
 new AuthorizationDecision(true); ^RuKKKUcJ
 
 permitAllAuthorizationManager ^2hAQ0UBN
@@ -57,6 +62,7 @@ MvcRequestMatcher ^x7DNKrcQ
 '*.ico' ^RyrewsQQ
 
 (a,o) -> 
+
 new AuthorizationDecision(true); ^wsOMEtWt
 
 permitAllAuthorizationManager ^RMgCZ189
@@ -78,6 +84,7 @@ AnyRequestMatcher ^ksU0HQjw
 'any request' ^2c4xxzkX
 
 (a,o) -> 
+
 new AuthorizationDecision(false); ^Qw0fdrpR
 
 denyAllAuthorizationManager ^wHJEILnQ
@@ -103,31 +110,41 @@ if match ^ftFXyrNg
 if match ^BrfbSoEo
 
 return check(이거) 
+
 즉 항상 ACCESS = new AuthorizationDecision(true); ^PK4xpD8Y
 
 return check(이거) 
+
 즉 항상 ACCESS = new AuthorizationDecision(true); ^b7tWQvUf
 
 return check(이거) 
+
 즉 항상 ACCESS = new AuthorizationDecision(true); ^H9ThzH9l
 
 return check(이거) 
+
 즉 항상 ACCESS = new AuthorizationDecision(true); ^qzArANiu
 
 return check(이거) 
+
 즉 항상 ACCESS = new AuthorizationDecision(true); ^nIn3bf25
 
 return check(이거) 
+
 즉 항상 DENY = new AuthorizationDecision(false); ^m3F9WFKi
 
 사실 위에 any request 가 있어서 위 구조에서 여기 올 수는 없다.
+
 명시적으로 이 엔트리를 포함할지 여부는 고민해볼만 할 듯 ^YeK6K1Ra
 
 return check(이거)
+
 넘겨준 RequestAuthorizationContext 를 통해 권한을 판단한다. ^rHAsUy9U
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -3781,4 +3798,5 @@ return check(이거)
 	"files": {}
 }
 ```
+
 %%

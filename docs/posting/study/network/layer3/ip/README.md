@@ -64,7 +64,6 @@ Public IP (왼쪽) 와 Private IP (오른쪽)
 | 공개 여부 | 내/외부 접근 가능                   | 외부 접근 불가능                      |
 | Routing   | Router 가 처리 함                   | Router 가 기본적으로 라우팅 하지 않음 |
 
-
 `Private IP` 의 주소 대역
 
 | 클래스  | 사설 IP 주소 대역            | Host Id | Network Id | 사용처            |

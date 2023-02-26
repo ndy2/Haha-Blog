@@ -13,6 +13,7 @@ author: ndy2
 - 패킷의 단편화 및 재조립
 
 과 같은 역할을 수행합니다.
+
 오늘은 그 중 NAT 에 대해서 알아보겠습니다.
 
 ---
@@ -31,9 +32,9 @@ NAT 를 이용하는 이유는 대부분 사설 네트워크에 속한 여러 �
 
 ![[images/nat.png]]
 
-- SNAT<sup>Source Network Adress Translation</sup> 
+- SNAT<sup>Source Network Address Translation</sup> 
     - 공공 IP 대역으로 나갈 때는 출발지 IP 가 공유기의 Public IP 로 변경됩니다.
-- DNAT<sup>Destination Network Adress Translation</sup> 
+- DNAT<sup>Destination Network Address Translation</sup> 
     - 반대로 사설 IP 대역으로 들어올 때는 목적지 IP가 호스트의 Private IP 로 변경됩니다.
 
 upstream 패킷에 대해서 NAT 는 NAT 테이블에 출발지 사설 IP, 포트, 도착지 공용 IP, 포트 등을 기록해두고 downstream 패킷에 대해서 테이블을 참조해 DNAT 를 적용합니다.

@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 EMPLOYEE ^SncTtwR6
 
 empl_id ^tPbCxlga
@@ -27,7 +28,9 @@ Set X ^Lyh5tL5v
 Set Y ^HDtG4paP
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -832,4 +835,5 @@ Set Y ^HDtG4paP
 	"files": {}
 }
 ```
+
 %%

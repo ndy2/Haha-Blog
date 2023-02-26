@@ -4,47 +4,55 @@ excalidraw-plugin: raw
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 @EnableWebSocketMessageBroker ^zPXFVyem
 
-@Import(DelegatingWebSocketMessageBrokerConfiguration.class)  ^B4BnKmqo
+@Import(DelegatingWebSocketMessageBrokerConfiguration.class) ^B4BnKmqo
 
 기본 메시지 컨버터 3인방 등록 ^7lUleI4p
 
 DelegatingWebSocketMessageBrokerConfiguration ^2qMEjixc
 
 WebSocketMessagingAutoConfiguration
+
 .WebSocketMessageConverterConfiguration 동작 ^tEj8mCyo
 
-빈 등록  ^Ri9auxrK
+빈 등록 ^Ri9auxrK
 
 1. 추가 적으로 등록된 WebSocketMessageBrokerConfigurer 처리 ^gwIgLD6v
 
 WebSocketMessageBrokerConfigurationSupport 상속함 ^q7PuXWFd
 
 @Bean
+
 stompWebSocketHandlerMapping : HandlerMapping ^gfzHa0wr
 
 @Bean
+
 subProtocolWebSocketHandler : WebSocketHandler ^hNVJ2apw
 
 @Bean
+
 webSocketScopeConfigurer : CustomScopeConfigurer ^eozPBTGK
 
 @Bean
+
 webSocketMessageBrokerStats : WebSocketMessageBrokerStats ^gceWhLkT
 
 컨디셔널 통과! ^EVRWWvbR
 
+# Embedded Files
 
-# Embedded files
 3dda1ff05dc47aaef2cba219fbd0750483b47296: [[code]]
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1356,4 +1364,5 @@ webSocketMessageBrokerStats : WebSocketMessageBrokerStats ^gceWhLkT
 	"files": {}
 }
 ```
+
 %%

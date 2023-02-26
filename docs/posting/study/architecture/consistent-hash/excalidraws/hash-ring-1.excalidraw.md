@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 S0 ^lPImdydm
 
 S1 ^H0kLbssV
@@ -43,7 +44,9 @@ Hash Ring 에 배치된 서버 ^BrY0FEbK
 Kn ^dIZaJ05D
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1699,4 +1702,5 @@ Kn ^dIZaJ05D
 	"files": {}
 }
 ```
+
 %%

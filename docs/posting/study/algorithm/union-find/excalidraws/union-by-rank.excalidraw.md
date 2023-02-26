@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 union ^bte9ZZqO
 
 Rank 2 ^CPPUUkkJ
@@ -25,7 +26,9 @@ Rank 2 ^BbAXkO78
 Rank 3 ^8OHdPnAc
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1878,4 +1881,5 @@ Rank 3 ^8OHdPnAc
 	"files": {}
 }
 ```
+
 %%

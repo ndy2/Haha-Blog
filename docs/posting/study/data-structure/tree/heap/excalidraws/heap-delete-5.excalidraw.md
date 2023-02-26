@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 15 ^bNNHg31s
 
 12 ^PWkreJCm
@@ -33,10 +34,13 @@ Delete ( ) ^61AtJmO9
  Done ^z6cIB0VO
 
 Leaf Node
+
 -> done ^zwqS4WeE
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1134,4 +1138,5 @@ Leaf Node
 	"files": {}
 }
 ```
+
 %%

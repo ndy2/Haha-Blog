@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 20 ^bNNHg31s
 
 15 ^PWkreJCm
@@ -33,12 +34,15 @@ Max Heap ^NPrGkygv
 Delete ( ) ^61AtJmO9
 
 root 제거 후
+
 가장 마지막 node 를 root 로 이동 ^RJsiy1kM
 
 Step 1 ^z6cIB0VO
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1417,4 +1421,5 @@ Step 1 ^z6cIB0VO
 	"files": {}
 }
 ```
+
 %%

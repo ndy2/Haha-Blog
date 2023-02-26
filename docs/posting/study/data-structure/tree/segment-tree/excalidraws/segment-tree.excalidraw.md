@@ -4,15 +4,16 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 int[] arr = {8, 5, 7, 3, 1, 9, 4} ^n0fT2iUh
 
 idx ^TNlIdDN7
 
- 0  1  2  3 4 5 6 ^mYBymBzF
+ 0 1  2 3 4 5 6 ^mYBymBzF
 
 [0-6] ^2d3iIcFj
 
@@ -69,7 +70,9 @@ idx ^TNlIdDN7
 10 ^q0Fjpq5M
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -2164,4 +2167,5 @@ idx ^TNlIdDN7
 	"files": {}
 }
 ```
+
 %%

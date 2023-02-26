@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 S0 ^lPImdydm
 
 S1 ^CSFMkVSa
@@ -19,6 +20,7 @@ P0 ^nU2LRvOT
 naive hash ring ^tICoURdN
 
 S0, S1 의 해시 값에 따라
+
 Partition 의 크기/ Key 의 분포가 균일하지 않음 ^emJ7AcgL
 
 hash ring with virtual node ^floWyiUm
@@ -42,7 +44,9 @@ s0 ^Qe6EQZuc
 가상 노드를 도입해 partition 의 크기의 불균형을 어느 정도 개선함 ^5Lyrto2N
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1711,4 +1715,5 @@ s0 ^Qe6EQZuc
 	"files": {}
 }
 ```
+
 %%

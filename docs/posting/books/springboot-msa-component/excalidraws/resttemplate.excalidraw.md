@@ -4,26 +4,31 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 HttpMessageConverter ^AXsouhT3
 
 Response
+
 ErrorHandler ^sI1jXznG
 
 RestTemplate ^Zvxth1TQ
 
 ClientHttp
+
 Request ^SsR7zist
 
 ClientHttpRequest
+
 Interceptor ^hEwQCrok
 
 ClientHttpRequestFactory ^Q6IzD0ru
 
 ClientHttp
+
 Response ^nBDbWjb7
 
 서버 ^cyB9Hzum
@@ -33,7 +38,9 @@ Response ^nBDbWjb7
 응답 ^oPZ19TA3
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -975,4 +982,5 @@ Response ^nBDbWjb7
 	"files": {}
 }
 ```
+
 %%

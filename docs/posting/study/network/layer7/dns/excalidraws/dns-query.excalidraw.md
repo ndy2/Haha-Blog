@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 Iterative DNS Query ^i2HSvaIg
 
 Recursive DNS Query ^h4Ykglaa
@@ -28,12 +29,14 @@ NA ^cQv0BWeI
 
 NA ^L1wzpRs7
 
+# Embedded Files
 
-# Embedded files
 65949951d8d3eab18e861bdce289663512f8f98b: [[dns-query.png]]
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -761,4 +764,5 @@ NA ^L1wzpRs7
 	"files": {}
 }
 ```
+
 %%

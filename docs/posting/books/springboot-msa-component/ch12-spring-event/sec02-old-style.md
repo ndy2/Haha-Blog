@@ -1,4 +1,3 @@
-
 먼저 Spring 4.2 이전에 활용되던 ApplicationEvent 와 ApplicationListener 상속 방식의 Spring Event 처리에 대해 알아보겠습니다.
 
 사용자가 가입을 하면 사용자의 이메일에 쿠폰을 발송하기 위해 별도의 클래스로 구성하고 이벤트로 처리하는 프로세스를 구성해보겠습니다.
@@ -6,7 +5,6 @@
 ---
 
 - 이벤트 클래스 - ApplicationEvent 상속
-
 
 ```java title="UserCouponEvent"
 @Getter
@@ -20,10 +18,10 @@ public class UserCouponEvent extends ApplicationEvent {
 	}
 }
 ```
+
 <br>
 
 - 리스너 클래스 - ApplicationListener 상속
-
 
 ```java title="UserCouponEventListner"
 @Slf4j
@@ -68,6 +66,7 @@ public class UserServiceImpl implements UserService {
 ---
 
 `ApplicationEventPublisher` 는 `ApplicationContext` 가 상속하는 이벤트 중 하나입니다.
+
 이벤트 퍼블리싱 만들 담당할 것이니 `ApplicationContext` 보단 적절한 인터페이스인 `ApplicationEventPublisher` 만을 주입 받아서 처리하는 것이 더 좋습니다.
 
 심하게는 구닥다리라고도 표현되는 이 방식은 단점이 몇가지 있습니다.

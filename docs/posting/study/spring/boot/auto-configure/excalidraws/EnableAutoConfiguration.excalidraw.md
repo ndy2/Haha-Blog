@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 <annotation>
 @SpringBootApplication ^15bF14nV
 
@@ -26,9 +27,8 @@ tags: [excalidraw]
 <annotation>
 @Import(AutoConfigurationPackages.Registrar.class) ^zximl570
 
-1.  ^cwCq2G9h
-
-2.  ^uRmOmJNV
+1. ^cwCq2G9h
+2. ^uRmOmJNV
 
 <meta> ^z1hXZ3PD
 
@@ -37,7 +37,9 @@ tags: [excalidraw]
 <meta> ^PEVh3khx
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -862,4 +864,5 @@ tags: [excalidraw]
 	"files": {}
 }
 ```
+
 %%

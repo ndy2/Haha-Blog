@@ -58,7 +58,7 @@ var n = 7
 parent = IntArray(n+1) {it} // [0,1,2,3,4,5,6,7]
 ```
 
-2. edge 를 추가하면 양옆 노드에 대해 union 연산을 적용합니다.
+1. edge 를 추가하면 양옆 노드에 대해 union 연산을 적용합니다.
 
 ```kotlin
 var edges = arrayOf(
@@ -72,7 +72,7 @@ for (edge in edges){
 }
 ```
 
-3. parent 배열을 통해 임의의 노드가 같은 집합에 속해있는지 알 수 있습니다.
+1. parent 배열을 통해 임의의 노드가 같은 집합에 속해있는지 알 수 있습니다.
 
 ```kotlin
 fun isInSameSet(a: Int, b: Int){

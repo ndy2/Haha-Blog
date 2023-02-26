@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 L3 Router ^XVg4UdJ5
 
 Internet ^L7GfD0PZ
@@ -23,9 +24,11 @@ Eth ^bHzZ5ZJP
 Host C ^ZnE2guUP
 
 IP : 192.168.0.10
+
 MAC : aa.aa.aa.aa.aa.aa ^7tRVA93r
 
 IP : 192.168.0.30
+
 MAC : aa.aa.aa.aa.aa.cc ^wckrS64M
 
 내 MAC 주소를 원하는 군! ^90godwLA
@@ -35,7 +38,9 @@ Eth ^4lAG6JZj
 ARP 응답 메시지 ^t3gBWNbH
 
 MAC 주소가 다 
+
 잘 들어있군!
+
 -> Unicast ^5E6kFLcX
 
 3 ^lIm25Jau
@@ -47,20 +52,27 @@ ARP 응답 메시지 ^hsAI3HsP
 4 ^Ww3tj2Zn
 
 ARP 테이블에 Host C 의 
+
 Mac 주소 등록! ^V67YB7oB
 
 내 맥주소가 궁금한게 아니군
+
 -> ARP 요청 패킷 버림 ^DsPX5HYu
 
+# Embedded Files
 
-# Embedded files
 10acf9a6374fb860dc921cf91b2b86fcd0b2a02d: [[host.png]]
+
 1c88663465db65a225cc28a887a4b0efcd151827: [[switch.png]]
+
 4732e0830e68ce9c31d1059bc5410600f4dcee84: [[router.png]]
+
 bee465a85a5cb79b264eee7f09a0b9510a09bd1b: [[internet-cloud-icon.png]]
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1707,4 +1719,5 @@ bee465a85a5cb79b264eee7f09a0b9510a09bd1b: [[internet-cloud-icon.png]]
 	"files": {}
 }
 ```
+
 %%

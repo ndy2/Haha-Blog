@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 Web Server #1 ^7rq9zFXb
 
 Web Server #2 ^SFWlq2o5
@@ -18,84 +19,24 @@ Web Server #2 ^SFWlq2o5
 
 load balancer ^yOnm1eK6
 
+# Embedded Files
 
-# Embedded files
-0692203312780ede6962ecf0f69b65b68eb1549d: [[docs/books/springboot-msa-component/excalidraws/images/server.png]]
 db892745bba5a7a16b36c8c2a08ece3788e6f2d3: [[redis-master.png]]
+
 c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 
+b13a37fd0042cfe11a325a40c9d15a331f29083c: [[resources/Excalidraw/server.png]]
+
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
 	"version": 2,
 	"source": "https://excalidraw.com",
 	"elements": [
-		{
-			"type": "image",
-			"version": 143,
-			"versionNonce": 1494499666,
-			"isDeleted": false,
-			"id": "fJaaqwaRwBh1zUZ5pmPwS",
-			"fillStyle": "hachure",
-			"strokeWidth": 1,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": -18.163420237958917,
-			"y": -180.87519842577166,
-			"strokeColor": "transparent",
-			"backgroundColor": "transparent",
-			"width": 200.8671875,
-			"height": 200.8671875,
-			"seed": 203893138,
-			"groupIds": [],
-			"strokeSharpness": "round",
-			"boundElements": [],
-			"updated": 1672142212288,
-			"link": null,
-			"locked": false,
-			"status": "pending",
-			"fileId": "0692203312780ede6962ecf0f69b65b68eb1549d",
-			"scale": [
-				1,
-				1
-			]
-		},
-		{
-			"type": "image",
-			"version": 102,
-			"versionNonce": 575190222,
-			"isDeleted": false,
-			"id": "Kj8CCOlZZuM-DnDM8c2yN",
-			"fillStyle": "hachure",
-			"strokeWidth": 1,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": -348.79428136916306,
-			"y": -180.20724572477513,
-			"strokeColor": "transparent",
-			"backgroundColor": "transparent",
-			"width": 200.8671875,
-			"height": 200.8671875,
-			"seed": 1148735826,
-			"groupIds": [],
-			"strokeSharpness": "round",
-			"boundElements": [],
-			"updated": 1672142212288,
-			"link": null,
-			"locked": false,
-			"status": "pending",
-			"fileId": "0692203312780ede6962ecf0f69b65b68eb1549d",
-			"scale": [
-				1,
-				1
-			]
-		},
 		{
 			"type": "image",
 			"version": 123,
@@ -116,7 +57,7 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"height": 237.00564869279958,
 			"seed": 78670,
 			"groupIds": [],
-			"strokeSharpness": "sharp",
+			"roundness": null,
 			"boundElements": [],
 			"updated": 1672142212288,
 			"link": null,
@@ -148,7 +89,7 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"height": 25,
 			"seed": 858540562,
 			"groupIds": [],
-			"strokeSharpness": "sharp",
+			"roundness": null,
 			"boundElements": [
 				{
 					"id": "2BKKCB2NO_9NdyJnfwv33",
@@ -188,7 +129,7 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"height": 25,
 			"seed": 1853694158,
 			"groupIds": [],
-			"strokeSharpness": "sharp",
+			"roundness": null,
 			"boundElements": [
 				{
 					"id": "SiKT4YeAAn4im7_ljLgKq",
@@ -228,7 +169,9 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"height": 116.0631816579579,
 			"seed": 1790031506,
 			"groupIds": [],
-			"strokeSharpness": "round",
+			"roundness": {
+				"type": 2
+			},
 			"boundElements": [],
 			"updated": 1672142212288,
 			"link": null,
@@ -277,7 +220,9 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"height": 127.06501097518469,
 			"seed": 1386281938,
 			"groupIds": [],
-			"strokeSharpness": "round",
+			"roundness": {
+				"type": 2
+			},
 			"boundElements": [],
 			"updated": 1672142311447,
 			"link": null,
@@ -326,11 +271,11 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"y": 163.70357411878126,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 153,
-			"height": 25,
+			"width": 170,
+			"height": 30,
 			"seed": 1993440018,
 			"groupIds": [],
-			"strokeSharpness": "sharp",
+			"roundness": null,
 			"boundElements": [],
 			"updated": 1672142212288,
 			"link": null,
@@ -339,7 +284,7 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"fontFamily": 1,
 			"text": "분산 락 획득 성공",
 			"rawText": "분산 락 획득 성공",
-			"baseline": 18,
+			"baseline": 23,
 			"textAlign": "left",
 			"verticalAlign": "top",
 			"containerId": null,
@@ -361,11 +306,11 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"y": 169.624737847299,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 153,
-			"height": 25,
+			"width": 170,
+			"height": 30,
 			"seed": 228421138,
 			"groupIds": [],
-			"strokeSharpness": "sharp",
+			"roundness": null,
 			"boundElements": [
 				{
 					"id": "SiKT4YeAAn4im7_ljLgKq",
@@ -379,7 +324,7 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"fontFamily": 1,
 			"text": "분산 락 획득 실패",
 			"rawText": "분산 락 획득 실패",
-			"baseline": 18,
+			"baseline": 23,
 			"textAlign": "left",
 			"verticalAlign": "top",
 			"containerId": null,
@@ -405,7 +350,9 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"height": 136.125,
 			"seed": 43720718,
 			"groupIds": [],
-			"strokeSharpness": "round",
+			"roundness": {
+				"type": 2
+			},
 			"boundElements": [],
 			"updated": 1672142222108,
 			"link": null,
@@ -437,7 +384,9 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"height": 52.658854166666686,
 			"seed": 230950802,
 			"groupIds": [],
-			"strokeSharpness": "round",
+			"roundness": {
+				"type": 2
+			},
 			"boundElements": [],
 			"updated": 1672142215037,
 			"link": null,
@@ -486,7 +435,9 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"height": 52.846354166666686,
 			"seed": 9026450,
 			"groupIds": [],
-			"strokeSharpness": "round",
+			"roundness": {
+				"type": 2
+			},
 			"boundElements": [],
 			"updated": 1672142225843,
 			"link": null,
@@ -535,7 +486,7 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"height": 25,
 			"seed": 1630128206,
 			"groupIds": [],
-			"strokeSharpness": "sharp",
+			"roundness": null,
 			"boundElements": [],
 			"updated": 1672142239482,
 			"link": null,
@@ -549,6 +500,70 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 			"verticalAlign": "top",
 			"containerId": null,
 			"originalText": "load balancer"
+		},
+		{
+			"type": "image",
+			"version": 75,
+			"versionNonce": 1784603596,
+			"isDeleted": false,
+			"id": "DS77KJ1RUD56dLun1bStc",
+			"fillStyle": "hachure",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": -358.2805780984828,
+			"y": -192.92883387088227,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 200.578369140625,
+			"height": 200.578369140625,
+			"seed": 1077166836,
+			"groupIds": [],
+			"roundness": null,
+			"boundElements": null,
+			"updated": 1677394286755,
+			"link": null,
+			"locked": false,
+			"status": "pending",
+			"fileId": "b13a37fd0042cfe11a325a40c9d15a331f29083c",
+			"scale": [
+				1,
+				1
+			]
+		},
+		{
+			"type": "image",
+			"version": 76,
+			"versionNonce": 1942379636,
+			"isDeleted": false,
+			"id": "IiFaFJ0S3f7iEGwfUVHAW",
+			"fillStyle": "hachure",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": -36.14752145785786,
+			"y": -198.5470284509604,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 200.578369140625,
+			"height": 200.578369140625,
+			"seed": 1500844148,
+			"groupIds": [],
+			"roundness": null,
+			"boundElements": null,
+			"updated": 1677394289211,
+			"link": null,
+			"locked": false,
+			"status": "pending",
+			"fileId": "b13a37fd0042cfe11a325a40c9d15a331f29083c",
+			"scale": [
+				1,
+				1
+			]
 		}
 	],
 	"appState": {
@@ -564,19 +579,21 @@ c33181c315089c01274e536c520e2b2b80e6d3fc: [[load-balancer.png]]
 		"currentItemFontFamily": 1,
 		"currentItemFontSize": 20,
 		"currentItemTextAlign": "left",
-		"currentItemStrokeSharpness": "sharp",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 443.5624984328713,
-		"scrollY": 387.2702616410364,
+		"scrollX": 490.7105707742641,
+		"scrollY": 377.3689049768393,
 		"zoom": {
-			"value": 1.4500000000000002
+			"value": 1
 		},
-		"currentItemLinearStrokeSharpness": "round",
+		"currentItemRoundness": "round",
 		"gridSize": null,
-		"colorPalette": {}
+		"colorPalette": {},
+		"currentStrokeOptions": null,
+		"previousGridSize": null
 	},
 	"files": {}
 }
 ```
+
 %%

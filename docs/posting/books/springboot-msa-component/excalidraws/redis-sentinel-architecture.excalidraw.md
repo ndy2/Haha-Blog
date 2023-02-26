@@ -4,35 +4,43 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 Master Node ^3zSwau8h
 
 Redis Procss
+
 on port 6374 ^nAdCzPPp
 
 Sentinel Procss
+
 on port 26379 ^CQxCf3wZ
 
 Slave Node #1 ^Nj6knyNg
 
 Redis Procss
+
 on port 6374 ^VsTvUEtr
 
 Sentinel Procss
+
 on port 26379 ^0f2pcSFY
 
 Slave Node #2 ^pGQiAkbO
 
 Redis Procss
+
 on port 6374 ^zEnQyMlY
 
 Sentinel Procss
+
 on port 26379 ^9CYliX9h
 
 Redis Client (Spring Application)
+
 on port 8080 ^pql84MSQ
 
 Application Instance ^oAB0bHc6
@@ -46,7 +54,9 @@ Application Instance ^oAB0bHc6
 모니터링 ^dXzOTt7v
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -1556,4 +1566,5 @@ Application Instance ^oAB0bHc6
 	"files": {}
 }
 ```
+
 %%

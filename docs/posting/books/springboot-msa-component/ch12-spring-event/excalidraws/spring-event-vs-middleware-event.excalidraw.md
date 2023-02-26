@@ -4,15 +4,17 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 카프카, 래빗MQ, SQS, .... ^5cHp78aH
 
 Publisher Class ^eEGZy5od
 
-Listner
+Listener
+
 Class ^eauXw9yZ
 
 ApplicationContext ^naERTEjt
@@ -21,15 +23,20 @@ SpringEvent ^bIpul3Wd
 
 외부 시스템 이벤트 ^KMIWFvVm
 
+# Embedded Files
 
-# Embedded files
 b13a37fd0042cfe11a325a40c9d15a331f29083c: [[resources/Excalidraw/server.png]]
+
 fc24ff899964bfdae05a235ad864617c32ad8d7a: [[message-oriented-middleware.png]]
+
 ce80fac2a9f0e32aeb0d0ca56ab6b6ec56aa5c9a: [[springBoot_logo.png]]
+
 d1be65ae4b76dad0a6675191b7e9f52f479d7b19: [[queue.excalidraw.png]]
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -823,4 +830,5 @@ d1be65ae4b76dad0a6675191b7e9f52f479d7b19: [[queue.excalidraw.png]]
 	"files": {}
 }
 ```
+
 %%

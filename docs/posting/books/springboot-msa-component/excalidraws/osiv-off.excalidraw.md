@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 Filter ^1p7YwT5V
 
 View ^jvBXt364
@@ -15,6 +16,7 @@ View ^jvBXt364
 @Controller 클래스 ^io0j1RK4
 
 @Transactional
+
 @Service 클래스 ^hyzJK2QU
 
 @Repository 클래스 ^98Pv1MrR
@@ -22,13 +24,17 @@ View ^jvBXt364
 d ^NEERFUaz
 
 영속성 컨텍스트 시작
+
 커넥션 객체 획득
+
 트랜잭션 시작 ^oKd237yV
 
 d ^c6Dyd1hB
 
 영속성 컨텍스트 종료
+
 커넥션 객체 반환
+
 트랜잭션 종료 ^BFDFEMDd
 
 영속성 컨텍스트의 생명주기 ^30hbtZ1Q
@@ -36,7 +42,9 @@ d ^c6Dyd1hB
 Interceptor ^nKktuXMv
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -2226,4 +2234,5 @@ Interceptor ^nKktuXMv
 	"files": {}
 }
 ```
+
 %%

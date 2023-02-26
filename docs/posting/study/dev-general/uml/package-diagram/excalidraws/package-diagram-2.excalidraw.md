@@ -4,24 +4,29 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 api ^tRYdExfD
 
 domain ^G8NiHCcF
 
 <<Interface>>
+
 Repository ^2DxEOwjw
 
 Service ^gnapoQXf
 
 <<Entity>>
+
 Entity ^RtsOM3xe
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -903,4 +908,5 @@ Entity ^RtsOM3xe
 	"files": {}
 }
 ```
+
 %%

@@ -4,15 +4,16 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 int[] arr = {8, 5, 7, 3, 1, 9, 4} ^n0fT2iUh
 
 idx ^TNlIdDN7
 
- 0  1  2  3 4 5 6 ^mYBymBzF
+ 0 1  2 3 4 5 6 ^mYBymBzF
 
 [0-6] ^2d3iIcFj
 
@@ -95,15 +96,21 @@ idx ^TNlIdDN7
 9 ^Gl2BVegV
 
 int[] arr = {8,5,3,7,1,9,4}
+
 int[] segTree = {}
 
 initTree(arr, segTree)
-        idx :  0 , 1,   2,   3, 4,  5,  6,  7, 8,  9, 10, 11, 12, 13
--> segTree : {x , 37, 23, 14, 13,  10, 10, 4, 8,  5, 3, 7,  1,  9, .....}
+
+        idx : 0 , 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+
+-> segTree : {x , 37, 23, 14, 13, 10, 10, 4, 8, 5, 3, 7, 1, 9, .....}
+
  ^YGItpA7a
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -3115,4 +3122,5 @@ initTree(arr, segTree)
 	"files": {}
 }
 ```
+
 %%

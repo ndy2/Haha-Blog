@@ -4,11 +4,13 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 BackEnd
+
 Application ^9O5WMJtD
 
 쿼리 요청 ^DNV7QaaS
@@ -16,13 +18,17 @@ Application ^9O5WMJtD
 쿼리 응답 ^vcaDGKYV
 
 TCP 연결 수립
+
 3 way handshake ^wQsBSquY
 
 TCP 연결 해지
+
 4 way handshake ^GFtB9Zw7
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -807,4 +813,5 @@ TCP 연결 해지
 	"files": {}
 }
 ```
+
 %%

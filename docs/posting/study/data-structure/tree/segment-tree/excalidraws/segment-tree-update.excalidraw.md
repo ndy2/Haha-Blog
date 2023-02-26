@@ -4,15 +4,16 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 int[] arr = {8, 5, 7, 3, 1, 9, 4} ^n0fT2iUh
 
 idx ^TNlIdDN7
 
- 0  1  2  3 4 5 6 ^mYBymBzF
+ 0 1  2 3 4 5 6 ^mYBymBzF
 
 [0-6] ^2d3iIcFj
 
@@ -68,7 +69,7 @@ idx ^TNlIdDN7
 
 10 ^q0Fjpq5M
 
-update :  index 5 번의 값을 3 으로 업데이트 ! ^wm29iPgT
+update : index 5 번의 값을 3 으로 업데이트 ! ^wm29iPgT
 
 3 ^o6paHnhM
 
@@ -87,7 +88,9 @@ update :  index 5 번의 값을 3 으로 업데이트 ! ^wm29iPgT
 -6 ^KjtIiBqf
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -2790,4 +2793,5 @@ update :  index 5 번의 값을 3 으로 업데이트 ! ^wm29iPgT
 	"files": {}
 }
 ```
+
 %%

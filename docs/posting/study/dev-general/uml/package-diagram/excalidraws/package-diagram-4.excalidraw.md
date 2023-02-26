@@ -4,10 +4,11 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 jdbc-api ^tRYdExfD
 
 mysql ^a1PjdhQB
@@ -15,7 +16,9 @@ mysql ^a1PjdhQB
 oracle ^ffoSI3a0
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -745,4 +748,5 @@ oracle ^ffoSI3a0
 	"files": {}
 }
 ```
+
 %%

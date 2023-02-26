@@ -4,15 +4,16 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 int[] arr = {8, 5, 7, 3, 1, 9, 4} ^n0fT2iUh
 
 idx ^TNlIdDN7
 
- 0  1  2  3 4 5 6 ^mYBymBzF
+ 0 1  2 3 4 5 6 ^mYBymBzF
 
 [0-6] ^2d3iIcFj
 
@@ -72,10 +73,12 @@ query : 2~4 구간의 합은 ?? ^ag9GbYLk
 
 [2,3] + [4,4] !! ^fruK9nMW
 
-[2,4]  ^njlV0ui0
+[2,4] ^njlV0ui0
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -2334,4 +2337,5 @@ query : 2~4 구간의 합은 ?? ^ag9GbYLk
 	"files": {}
 }
 ```
+
 %%

@@ -4,35 +4,45 @@ excalidraw-plugin: parsed
 tags: [excalidraw]
 
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 # Text Elements
+
 Thread
+
 #001 ^dOpVs6et
 
 Thread
+
 #100 ^IZPJmme3
 
 Thread
+
 #? ^X6nDdo2z
 
 Task
+
 #1 ^ESIk5jjt
 
 Task
+
 #3 ^4BccO0SL
 
 Task
+
 #2 ^COalASau
 
 RestAPI 호출 ^FNaJcqWz
 
 RestAPI 결과 획득
+
 및 나머지 작업 실행 ^t5QU49e7
 
 %%
+
 # Drawing
+
 ```json
 {
 	"type": "excalidraw",
@@ -780,4 +790,5 @@ RestAPI 결과 획득
 	"files": {}
 }
 ```
+
 %%

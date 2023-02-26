@@ -2,6 +2,7 @@
 title: 시작 단계의 체크리스트
 date: 2023-02-13
 ---
+
 ### 들어가며
 
 프로젝트를 시작할때 해야하는 작업의 목록을 정리해보자.
@@ -26,14 +27,12 @@ date: 2023-02-13
     - custom
 
 main 
+
 dev 
+
 feature 
 
-
-
-
 - [ ] how to write commit messages
-
 - [ ] Pull/Merge Request strategy
     - github 
         - Create a merge commit
@@ -45,9 +44,9 @@ feature
         - Fast-foward merge
     - Pull/Merge Requset Approval rule
 
-- [ ] Realease strategy
+- [ ] Release strategy
 
-#### 2. Issue tracking
+#### 2. Issue Tracking
 
 - [ ] Issue tracking system
     - JIRA
@@ -61,7 +60,6 @@ feature
     * 로버트 C. 마틴 `『클린 애자일』 [정리 링크](../../../books/clean-agile/clean-agile)
 
 - [ ] waterfall vs agile
-
 - [ ] sprint cycle
     - [ ] 1 week
     - [ ] 2 week
@@ -80,7 +78,7 @@ feature
     - [ ] notion
     - [ ] gather
 
-#### 5. Dev (on backend server with spring framework)
+#### 5. Dev (on Backend Server with Spring framework)
 
 ##### 1. Architecture (in 하나의 코드베이스)
 
@@ -105,7 +103,7 @@ feature
 - spring 6.0/ spring boot 3.0 이상의 기술을 활용하고 싶으면 - Java 17
 - kotlin
 
-##### 3. build system
+##### 3. Build System
 
 - maven
 - gradle(groovy/kotlin dsl)
@@ -113,7 +111,8 @@ feature
 
 #### 6. Style
 
-##### 1. Linter (a.k.a. static code analysis)
+##### 1. Linter (a.k.a. Static Code analysis)
+
 - [ ] sonarl lint
 - [ ] checkstyle
 
@@ -131,7 +130,7 @@ feature
 
 - [ ] `junit style` vs `assertj style`
     - [ ] 일반 검증 - `assertXXX()` vs `assertThat()`
-    - [ ] 예외 검증 - `assertThrows` vs  `assertThatExceptionOfType`
+    - [ ] 예외 검증 - `assertThrows` vs `assertThatExceptionOfType`
 
 ##### 2. Layerwise Test Sterategy
 
@@ -175,11 +174,9 @@ feature
 
 알맞은 영단어를 찾는 것은 쉽지 않은 일이지만 시간을 들여 찾는 노력을 해야한다. 그렇지 않으면 코드는 도메인과 점점 멀어진다. -p.59
 
-
-##### UL 과 관련된 글들 
+##### UL 과 관련된 글들
 
 - MSA 에서 유비쿼터스 언어(보편 언어)의 중요성 on [Medium/jus0997](https://medium.com/dtevangelist/msa-에서-유비쿼터스-언어-보편-언어-의-중요성-ca22b96aaeea)
-
 
 #### 9. Documentation
 
@@ -193,8 +190,7 @@ feature
     * 개발 전 및 논의 단계 에서 - notion/github/gitlab wiki 등
     * 코드를 통해서 구성하는 방식 - swagger/restdocs
 
-
-#### 10. What else more?
+#### 10. What Else More?
 
 - CI/CD pipeline/process
 - 설정 정보 관리
