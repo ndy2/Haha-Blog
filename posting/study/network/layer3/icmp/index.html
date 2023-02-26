@@ -1774,12 +1774,8 @@
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://kroki.io/packetdiag/svg/eNo9jUEKwjAQRfc5xVwg0GSwSoMrr9CdFCnJ2IRqUuiIVPHuTly4fI_H_8voZ-KQxgneCuBaMq_pRXAE2wj7cnumwFEYrRORS6BLpDRF_jVOiWz0voN-W6gWB212HZykq2RajUYwkp_Xx70qtLrFWmSmzHCWj_8gDk591BeKEym-?"><img alt="Kroki" src="https://kroki.io/packetdiag/svg/eNo9jUEKwjAQRfc5xVwg0GSwSoMrr9CdFCnJ2IRqUuiIVPHuTly4fI_H_8voZ-KQxgneCuBaMq_pRXAE2wj7cnumwFEYrRORS6BLpDRF_jVOiWz0voN-W6gWB212HZykq2RajUYwkp_Xx70qtLrFWmSmzHCWj_8gDk591BeKEym-?"/></a></p>
 <p><code>ICMP 패킷</code>은 <em>IPv4 패킷 내에 캡슐화</em> 됩니다. 즉, ICMP 헤더는 IPv4 헤더 뒤에 작성됩니다. <code>ICMP 패킷</code>은 헤더와 데이터 두 파트로 구분됩니다.</p>
 <ul>
-<li>
-<p>ICMP 의 데이터 파트에는 다양한 정보가 담길 수 있습니다. 에러에 따른 ICMP 메시지에는 에러를 발생시킨 요청의 IP 헤더를 그대로 담습니다.</p>
-</li>
-<li>
-<p>헤더는 8bit <code>Type</code> 필드와 8 bit <code>Code</code> 필드 둘에대한 <code>checksum</code> 필드로 구성됩니다.</p>
-<ul>
+<li>ICMP 의 데이터 파트에는 다양한 정보가 담길 수 있습니다. 에러에 따른 ICMP 메시지에는 에러를 발생시킨 요청의 IP 헤더를 그대로 담습니다.</li>
+<li>헤더는 8bit <code>Type</code> 필드와 8 bit <code>Code</code> 필드 둘에대한 <code>checksum</code> 필드로 구성됩니다.<ul>
 <li><code>type</code> - 요청의 큰 타입 (송신 불가, 메시지 리디렉션, 시간 초과 에러 등...)</li>
 <li><code>code</code> - type 별 구체적인 맥락</li>
 <li><code>checksum</code> - ICMP 헤더 에러를 검증하기 위한 체크섬</li>
@@ -1791,7 +1787,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 16, 2023</span>

@@ -1736,23 +1736,17 @@
 변경 감지기능이 동작하여 select 쿼리와 update 쿼리가 발생 할 수 있다.</p>
 </div>
 <ul>
-<li>
-<p>영속 상태 (MANAGED)</p>
-<ul>
+<li>영속 상태 (MANAGED)<ul>
 <li>객체가 영속성 컨텍스트에 의해 관리되는 상태이다.</li>
 <li>영속성 컨텍스트에 의해 관리된다는 것은 영속성 컨텍스의 기능인 1차 캐시, 더티 체킹 등의 기능이 동작하는 상태라는 의미이다.</li>
 </ul>
 </li>
-<li>
-<p>준영속 상태 (DETACHED)</p>
-<ul>
+<li>준영속 상태 (DETACHED)<ul>
 <li>Managed 상태의 객체는 <code>em.detach()</code> 를 통해 영속성 컨텍스트의 관리에서 빠져나갈 수 있다.</li>
 <li><code>em.merge()</code> 를 통해 다시 MANAGED 상태가 될 수 있다.</li>
 </ul>
 </li>
-<li>
-<p>삭제 상태 (REMOVED)</p>
-<ul>
+<li>삭제 상태 (REMOVED)<ul>
 <li><code>em.remove()</code> 에 의해 삭제 된 상태이다.</li>
 <li><code>em.flush()</code> 가 호출되면 삭제 쿼리가 발생한다.</li>
 </ul>
@@ -1792,7 +1786,7 @@ save 호출시 바로 insert 쿼리가 발생한다. 영속성 컨텍스트에�
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>

@@ -1148,7 +1148,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#vs">
-    서블릿 스택 vs 리액티브 스택 그리고 스레드 모델
+    서블릿 스택 Vs 리액티브 스택 그리고 스레드 모델
   </a>
 </li>
 </ul>
@@ -1724,7 +1724,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#vs">
-    서블릿 스택 vs 리액티브 스택 그리고 스레드 모델
+    서블릿 스택 Vs 리액티브 스택 그리고 스레드 모델
   </a>
 </li>
 </ul>
@@ -1739,19 +1739,25 @@
 </a>
 <h1>Ch04 sec02 servlet and mvc</h1>
 <h3 id="_1">서블릿<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<p><strong>자바 플랫폼 엔터프라이즈 에디션</strong>
-- a.k.a. Java platform. Enterprise Edition, Java EE, J2EE
-- 자바 언어를 사용하여 엔터프라이즈 애플리케이션을 만들 수 있는 플랫폼
-- 동시에 표준 스펙의 집합
-- 웹 애플리케이션(JSP, Servlet 등), 데이터베이스 접근(JDBC), 자바 메시징 처리 (JMS) ...</p>
-<p><strong>Servlet</strong>
-- HTTP 프로토콜을 사용하여 데이터를 주고받는 서버용 프로그래밍 스펙
-- javax.servlet.Servlet 인터페이스 형태로 Java API 에서 제공
-    - c.f. tomcat 10 이상 -&gt; jakarta.servlet.Servlet (Java EE -&gt; Jakarta EE 로 migrate)
-    - 관련 아티클 - <a href="https://www.samsungsds.com/kr/insights/java_jakarta.html">링크</a> </p>
-<blockquote>
+<p><strong>자바 플랫폼 엔터프라이즈 에디션</strong></p>
+<ul>
+<li>a.k.a. Java platform. Enterprise Edition, Java EE, J2EE</li>
+<li>자바 언어를 사용하여 엔터프라이즈 애플리케이션을 만들 수 있는 플랫폼</li>
+<li>동시에 표준 스펙의 집합</li>
+<li>웹 애플리케이션(JSP, Servlet 등), 데이터베이스 접근(JDBC), 자바 메시징 처리 (JMS) ...</li>
+</ul>
+<p><strong>Servlet</strong></p>
+<ul>
+<li>HTTP 프로토콜을 사용하여 데이터를 주고받는 서버용 프로그래밍 스펙</li>
+<li>javax.servlet.Servlet 인터페이스 형태로 Java API 에서 제공<ul>
+<li>c.f. tomcat 10 이상 -&gt; jakarta.servlet.Servlet (Java EE -&gt; Jakarta EE 로 migrate)</li>
+<li>관련 아티클 - <a href="https://www.samsungsds.com/kr/insights/java_jakarta.html">링크</a> <blockquote>
 <p>A servlet is a small Java program that runs within a Web server. Servlets receive and respond to requests from Web clients, usually across HTTP, the HyperText Transfer Protocol</p>
 </blockquote>
+</li>
+</ul>
+</li>
+</ul>
 <p>Life-cycle 메서드 세개 (<code>init</code>, <code>service</code>, <code>destroy</code>) 와 메타 정보를 조회하기 위한 메서드 두개 (<code>getServletConfig</code>, <code>getServletInfo</code>) 를 정의한다.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">jakarta.servlet</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>
@@ -1776,10 +1782,12 @@
 <a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="c1">// memory, file handles, threads 등의 정보를 cleanup 하기위해 사용한다. 컨테이너에 의해 서블릿 소멸 전 (garbage collected and finallized)에 호출된다.</span>
 <a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="p">}</span>
 </code></pre></div>
-<p>Servlet Container
-- a.k.a. Web Application Server (자바 진영)
-- 서블릿을 보관, 관리하고 적절한 서블릿을 찾아 실행함
-- e.g. Tomcat, Undertow, Jetty, ...</p>
+<p>Servlet Container</p>
+<ul>
+<li>a.k.a. Web Application Server (자바 진영)</li>
+<li>서블릿을 보관, 관리하고 적절한 서블릿을 찾아 실행함</li>
+<li>e.g. Tomcat, Undertow, Jetty, ...</li>
+</ul>
 <hr/>
 <h3 id="mvc">MVC 패턴<a class="headerlink" href="#mvc" title="Permanent link">¶</a></h3>
 <ul>
@@ -1800,12 +1808,14 @@
 <p>내용을 보면 참 당연하면서도 누군가에게 MVC 패턴이 어떤건지 설명해보라는 질문을 받았을때 더 흥미롭고 명확하게 기존에 알던 내용을 전달 할 수 있도록 도와주는 이야기였습니다.</p>
 </li>
 </ul>
-<h3 id="vs">서블릿 스택 vs 리액티브 스택 그리고 스레드 모델<a class="headerlink" href="#vs" title="Permanent link">¶</a></h3>
-<p>Spring Web MVC 는 5.0 부터 두가지 방식으로 설정 할 수 있습니다.
-- 전통적인 서블릿 모델을 사용한 Servlet Stack
-- Reactor 모델을 적용한 Reative Stack</p>
-<p>두 스택의 차이점과 스레드 사용 방식을 간단하게 비교해 보겠습니다.
-책과 함께 <a href="https://www.youtube.com/watch?v=I0zMm6wIbRI&amp;t=1462s&amp;ab_channel=NHNCloud">이 영상</a> 의 초반부의 내용이 많은 도움이 되었습니다.</p>
+<h3 id="vs">서블릿 스택 Vs 리액티브 스택 그리고 스레드 모델<a class="headerlink" href="#vs" title="Permanent link">¶</a></h3>
+<p>Spring Web MVC 는 5.0 부터 두가지 방식으로 설정 할 수 있습니다.</p>
+<ul>
+<li>전통적인 서블릿 모델을 사용한 Servlet Stack</li>
+<li>Reactor 모델을 적용한 Reative Stack</li>
+</ul>
+<p>두 스택의 차이점과 스레드 사용 방식을 간단하게 비교해 보겠습니다.</p>
+<p>책과 함께 <a href="https://www.youtube.com/watch?v=I0zMm6wIbRI&amp;t=1462s&amp;ab_channel=NHNCloud">이 영상</a> 의 초반부의 내용이 많은 도움이 되었습니다.</p>
 <ul>
 <li>서블릿 스택 모델 (a.k.a. Thread per Request Model)<ul>
 <li>동기식</li>
@@ -1843,7 +1853,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2022</span>

@@ -1290,7 +1290,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3-transactionaleventlistener">
-    3.  @TransactionalEventListener
+    3. @TransactionalEventListener
   </a>
 </li>
 </ul>
@@ -1714,7 +1714,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3-transactionaleventlistener">
-    3.  @TransactionalEventListener
+    3. @TransactionalEventListener
   </a>
 </li>
 </ul>
@@ -1753,10 +1753,10 @@
 <li>추가적인 설정이 필요없다면 <code>@SpringBootApplication</code> 클래스에 추가해도 되지만 가능하면 별도의 <code>@Configuration</code> 클래스에서 비동기 처리 관련 설정을 해주는 것이 좋습니다.</li>
 </ul>
 <p><br/>
-- Aysnc 와 관련된 설정에는 크게 <code>Executor</code> 를 빈 등록하는 것과 <code>AsyncConfigurer</code> 를 구현하는 방식이 있습니다. </p>
+- Async 와 관련된 설정에는 크게 <code>Executor</code> 를 빈 등록하는 것과 <code>AsyncConfigurer</code> 를 구현하는 방식이 있습니다. </p>
 <hr/>
-<h3 id="3-transactionaleventlistener">3.  <code>@TransactionalEventListener</code><a class="headerlink" href="#3-transactionaleventlistener" title="Permanent link">¶</a></h3>
-<p>기본적인 @EventListner 에서는 이벤트 처리를 담당하는 쓰레드가 이벤트를 감지하는 즉시 이벤트 리스너 메서드가 동작합니다. <code>@TransactionalEventListener</code> 를 사용하면  <code>@Transactional</code> 와 연동해서 트랜잭션과 관련된 시점에 정교하게 이벤트 리스너 메서드 실행시점을 조작할 수 있습니다. </p>
+<h3 id="3-transactionaleventlistener">3. <code>@TransactionalEventListener</code><a class="headerlink" href="#3-transactionaleventlistener" title="Permanent link">¶</a></h3>
+<p>기본적인 @EventListner 에서는 이벤트 처리를 담당하는 쓰레드가 이벤트를 감지하는 즉시 이벤트 리스너 메서드가 동작합니다. <code>@TransactionalEventListener</code> 를 사용하면 <code>@Transactional</code> 와 연동해서 트랜잭션과 관련된 시점에 정교하게 이벤트 리스너 메서드 실행시점을 조작할 수 있습니다. </p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>TransactionPhase 에 따라 호출 되는 `EventLisner` 임
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>요 인터페이스를 구현 한 것과 같음 TransactionalApplicationListener
 </code></pre></div>
@@ -1764,8 +1764,8 @@
 <p><code>TransactionPhase</code></p>
 <ul>
 <li>AFTER_COMMIT (기본값) - 트랜잭션이 성공적으로 마무리(commit)됬을 때 이벤트 실행</li>
-<li>AFTER_ROLLBACK – 트랜잭션이 rollback 됬을 때 이벤트 실행</li>
-<li>AFTER_COMPLETION – 트랜잭션이 마무리 됬을 때(commit or rollback) 이벤트 실행</li>
+<li>AFTER_ROLLBACK–트랜잭션이 rollback 됬을 때 이벤트 실행</li>
+<li>AFTER_COMPLETION–트랜잭션이 마무리 됬을 때(commit or rollback) 이벤트 실행</li>
 <li>BEFORE_COMMIT - 트랜잭션의 커밋 전에 이벤트 실행</li>
 </ul>
 <hr/>
@@ -1773,7 +1773,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>

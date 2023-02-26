@@ -1257,7 +1257,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#4-keep-alive">
-    4. keep-alive 와 커넥션 풀
+    4. Keep-alive 와 커넥션 풀
   </a>
 </li>
 </ul>
@@ -1782,7 +1782,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#4-keep-alive">
-    4. keep-alive 와 커넥션 풀
+    4. Keep-alive 와 커넥션 풀
   </a>
 </li>
 </ul>
@@ -1796,7 +1796,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
 <h1>Ch09 sec01 resttemplate</h1>
-<p><code>o.s.web.client.RestTemplate</code> 클래스를 몇번 사용해보긴 했지만 그때마다 관련 코드를 찾아보고 혹은 intellij의 code assitant 의 도움을 크게 받으면서 코드를 작성했었습니다. 또한 대충 이름만 보고 템플릿 메서드 패턴을 활용한 다는 것은 알았지만 내부 구조가 어떻게 동작하는 지는 알지 못했습니다. 이번 정리를 통해 확실히 정리하겠습니다.</p>
+<p><code>o.s.web.client.RestTemplate</code> 클래스를 몇번 사용해보긴 했지만 그때마다 관련 코드를 찾아보고 혹은 intellij의 code assistant 의 도움을 크게 받으면서 코드를 작성했었습니다. 또한 대충 이름만 보고 템플릿 메서드 패턴을 활용한 다는 것은 알았지만 내부 구조가 어떻게 동작하는 지는 알지 못했습니다. 이번 정리를 통해 확실히 정리하겠습니다.</p>
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../../../assets/my-profile.jpeg"><img alt="../../../assets/my-profile.jpeg" src="../../../../assets/my-profile.jpeg"/></a>
 </p>
@@ -1834,18 +1834,22 @@
 <p><code>ClientHttpRequestFactory</code> 는 서버와 클라이언트 사이에 커넥션을 사용해 요청 전송 및 응답 수신 과정을 처리한다. <code>ClientHttpRequestInterceptor</code> 는 요청을 날리기 전 가로채서 추가적인 작업을 할 수 있다. 헤더를 추가하는 작업등을 할 수 있다. <code>RestponseErrorHandler</code> 는 응답 코드를 보고 예외를 발생시킨다.</p>
 <h3 id="3-connection-timeout-read-tieout">3. Connection Timeout 과 Read Tieout 설정<a class="headerlink" href="#3-connection-timeout-read-tieout" title="Permanent link">¶</a></h3>
 <p>ClientHttpRequestFactory 빈을 직접 RestTemplate 에 등록할 때는 connection timeout 과 read timeout 설정이 가장 중요하다.</p>
-<p>Connection Timeout
-- 서버와 클라이언트가 TCP 3-way handshake를 통해 커넥션을 획득하는 시간에 대한 timeout
-- <code>java.net.ConnectionException: Connection timed out connect</code></p>
-<p>Read Timeout
-- 커넥션이 수립된 이후 api를 요청하고 응답 받을때 까지 걸리는 시간에 대한 timeout
-- <code>java.net.SocketTimeoutException: Read timed out</code></p>
+<p>Connection Timeout</p>
+<ul>
+<li>서버와 클라이언트가 TCP 3-way handshake를 통해 커넥션을 획득하는 시간에 대한 timeout</li>
+<li><code>java.net.ConnectionException: Connection timed out connect</code></li>
+</ul>
+<p>Read Timeout</p>
+<ul>
+<li>커넥션이 수립된 이후 api를 요청하고 응답 받을때 까지 걸리는 시간에 대한 timeout</li>
+<li><code>java.net.SocketTimeoutException: Read timed out</code></li>
+</ul>
 <p>timeout 을 찾기위한 정답은 없다. 적당히 설정하고 스카우터나 제니퍼 같은 APM 툴로 모니터링 하는 것이 중요하다. 클라이언트는 timeout 설정을 통해 자신의 리소스를 보호해야 한다.</p>
 <p>MSA 에서는 timeout 등으로 인해 발생한 문제가 시스템 전체에 전파될 위험이 있다. 이를 해결하는 것을 fallback 처리라고 한다. MSA 에서는 주로 서킷 브레이커 패턴을 통해 이를 해결하고자 한다.</p>
-<h3 id="4-keep-alive">4. keep-alive 와 커넥션 풀<a class="headerlink" href="#4-keep-alive" title="Permanent link">¶</a></h3>
+<h3 id="4-keep-alive">4. Keep-alive 와 커넥션 풀<a class="headerlink" href="#4-keep-alive" title="Permanent link">¶</a></h3>
 <p><code>RestTemplate</code> 의 기본 설정은 <code>SimpleClientHttpRequestFactory</code> 를 사용합니다. 이 클래스는 jdk의 기본 네트워크 라이브러리를 통해 커넥션(<code>java.net.HttpUrlConnection</code>)을 맺으며 매 요청마다 커넥션을 수립하고 해제 합니다.</p>
-<p>만약 커넥션 풀을 사용하고 싶다면 <code>HttpComponentsClientHttpRequestFactory</code> 를 사용해야합니다.
-이 구현채는 아파치 httpcomponents 프로젝트의 <code>HttpClient</code> 를 활용합니다. 이를 위해서는 꼭 서버가 keep-alive 기능을 지원해야 합니다.</p>
+<p>만약 커넥션 풀을 사용하고 싶다면 <code>HttpComponentsClientHttpRequestFactory</code> 를 사용해야합니다.</p>
+<p>이 구현채는 아파치 httpcomponents 프로젝트의 <code>HttpClient</code> 를 활용합니다. 이를 위해서는 꼭 서버가 keep-alive 기능을 지원해야 합니다.</p>
 <p>MSA 구조에서 한 클라이언트가 여러 서버에 RestApi를 호출해야 한다면 각기 다른 RestTemplate 빈을 등록해 사용하는 것도 고려해봄직 할 것 같습니다.</p>
 <p>참고 - <a href="https://multifrontgarden.tistory.com/249">RestTemplate connection pool 설정하기</a></p>
 <hr/>
@@ -1853,7 +1857,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>

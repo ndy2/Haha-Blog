@@ -1228,18 +1228,18 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#what-makes-redis-special">
-    What makes Redis special?
+    What Makes Redis Special?
   </a>
-<nav aria-label="What makes Redis special?" class="md-nav">
+<nav aria-label="What Makes Redis Special?" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1-every-operation-on-redis-is-atomic">
-    1. Every operation on Redis is Atomic
+    1. Every Operation on Redis is Atomic
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2-data-is-stored-in-memory">
-    2. Data is stored in-memory
+    2. Data is Stored in-memory
   </a>
 </li>
 <li class="md-nav__item">
@@ -1249,7 +1249,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#4-other-key-features">
-    4. Other key features
+    4. Other Key Features
   </a>
 </li>
 </ul>
@@ -1718,18 +1718,18 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#what-makes-redis-special">
-    What makes Redis special?
+    What Makes Redis Special?
   </a>
-<nav aria-label="What makes Redis special?" class="md-nav">
+<nav aria-label="What Makes Redis Special?" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1-every-operation-on-redis-is-atomic">
-    1. Every operation on Redis is Atomic
+    1. Every Operation on Redis is Atomic
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2-data-is-stored-in-memory">
-    2. Data is stored in-memory
+    2. Data is Stored in-memory
   </a>
 </li>
 <li class="md-nav__item">
@@ -1739,7 +1739,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#4-other-key-features">
-    4. Other key features
+    4. Other Key Features
   </a>
 </li>
 </ul>
@@ -1764,8 +1764,8 @@ as a database, cache, streaming engine, and message broker.</p>
 <p>레디스의 특징을 대표하기 적합한 키워드 두가지는
 1. '메모리', 2. '싱글 스레드' 이다.</p>
 </div>
-<h2 id="what-makes-redis-special">What makes Redis special?<a class="headerlink" href="#what-makes-redis-special" title="Permanent link">¶</a></h2>
-<h3 id="1-every-operation-on-redis-is-atomic">1. Every operation on Redis is <strong>Atomic</strong><a class="headerlink" href="#1-every-operation-on-redis-is-atomic" title="Permanent link">¶</a></h3>
+<h2 id="what-makes-redis-special">What Makes Redis Special?<a class="headerlink" href="#what-makes-redis-special" title="Permanent link">¶</a></h2>
+<h3 id="1-every-operation-on-redis-is-atomic">1. Every Operation on Redis is <strong>Atomic</strong><a class="headerlink" href="#1-every-operation-on-redis-is-atomic" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>atomic - when command is executing, Redis does not context switch and stant
@@ -1777,7 +1777,7 @@ executing others command. That is you don't have to worry about concurrency at a
 <li>set union, intersection</li>
 <li>incrementing the value</li>
 </ul>
-<h3 id="2-data-is-stored-in-memory">2. Data is stored <strong>in-memory</strong><a class="headerlink" href="#2-data-is-stored-in-memory" title="Permanent link">¶</a></h3>
+<h3 id="2-data-is-stored-in-memory">2. Data is Stored <strong>in-memory</strong><a class="headerlink" href="#2-data-is-stored-in-memory" title="Permanent link">¶</a></h3>
 <ul>
 <li>hence the most common use of Redis is for "caching"</li>
 </ul>
@@ -1808,20 +1808,24 @@ executing others command. That is you don't have to worry about concurrency at a
  중 하나로, 특정 이벤트가 발생할 때까지 대기하다가 이벤트가 발생하면 디스패치해 처리하
  는 방식으로 작동합니다.  </p>
 </div>
-<p>이벤트 루프를 활용한 다양한 구현체
-- Netty, Node.js (libuy), Redis </p>
-<p>Single Thread
- Conccurency 를 위해 mutex, semaphore, wating 이 필요 없다.</p>
-<p>I/O multiplexing
-- 다중 TCP 연결을 concurrent 하게 다룰 수 있다.</p>
-<h3 id="4-other-key-features">4. Other key features<a class="headerlink" href="#4-other-key-features" title="Permanent link">¶</a></h3>
+<p>이벤트 루프를 활용한 다양한 구현체</p>
+<ul>
+<li>Netty, Node.js (libuy), Redis </li>
+</ul>
+<p>Single Thread</p>
+<p>Conccurency 를 위해 mutex, semaphore, waiting 이 필요 없다.</p>
+<p>I/O multiplexing</p>
+<ul>
+<li>다중 TCP 연결을 concurrent 하게 다룰 수 있다.</li>
+</ul>
+<h3 id="4-other-key-features">4. Other Key Features<a class="headerlink" href="#4-other-key-features" title="Permanent link">¶</a></h3>
 <p>Transactions, Pub/Sub, TTL on keys and LRU eviction</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2022</span>

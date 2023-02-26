@@ -1738,9 +1738,7 @@
 <li>AOP 적용 대상 객체</li>
 </ul>
 </li>
-<li>
-<p>Proxy Object</p>
-<ul>
+<li>Proxy Object<ul>
 <li>프록시 객체</li>
 <li>targetObject 를 필드로 가지며 advice 로직을 targetObject의 호출전에 실행해준다고 생각하면 좋다!</li>
 <li>Spring AOP 는 <code>o.s.aop.framework.ProxyFactory</code> 를 이용해 프록시를 생성한다.<ul>
@@ -1749,43 +1747,33 @@
 </li>
 </ul>
 </li>
-<li>
-<p>Aspect</p>
-<ul>
+<li>Aspect<ul>
 <li>Advice + PointCut</li>
 <li>Spring AOP 에서는 <code>@Aspect</code> 애너테이션으로 클래스를 선언함으로써 내부의 어드바이스 메서드와 어드바이스 애너테이션 내부의 포인트컷을 함께 표현한다.</li>
 <li>Note - <code>@Aspect</code> 애너테이션과 <code>@Around</code>, <code>@After</code> 과 같은 어드바이스 애너테이션은 모두 <code>org.aspect.lang.annotation</code> 패키지에 포함되어 있다.</li>
 <li>즉 <code>@Aspect</code> 만 선언한다고 스프링 이 인식할 수 없다 빈을 꼭 직접 등록 해 주어야 한다.</li>
 </ul>
 </li>
-<li>
-<p>Advice</p>
-<ul>
+<li>Advice<ul>
 <li>AOP 를 통해 적용하고자 하는 로직을 작성한 공통 모듈을 의미한다.</li>
 <li>Spring AOP 에서는 어드바이스 애너테이션을 가지는 메서드로 어드바이스를 표현한다.</li>
 <li>Spring AOP는 JDK 동적 프록시의 <code>InvocationHandler</code> 와 CGLIB 의 <code>MethodInterceptor</code> 를 통합한 개념인 <code>Advice</code> 를 도입하였고 이를 어드바이스 애너테이션을 이용해 제공한다.</li>
 <li>Spring 이 지원하는 다섯가지 <code>Advice</code> 는 <code>@Befter</code>, <code>@After</code>, <code>@AfterReturning</code>, <code>@AfterThowing</code>, <code>@Around</code> 이다. </li>
 </ul>
 </li>
-<li>
-<p>PointCut</p>
-<ul>
+<li>PointCut<ul>
 <li>어드바이스를 적용할 위치를 선정하는 설정을 의미한다.</li>
 <li>포인트 컷은 포인트 컷 표현식을 사용하여 설정할 수 있으며, 특정 애너테이션을 지정하여 설정 할 수도 있다.</li>
 </ul>
 </li>
-<li>
-<p>JoinPoint </p>
-<ul>
+<li>JoinPoint <ul>
 <li>어드바이스가 적용된 위치를 의미한다.</li>
 <li>타겟 클래스의 어드바이스 적용대상 메서드를 의미한다.</li>
 <li>포인트컷은 조인포인트를 선정하는 것을 의미한다.</li>
 <li>Spring AOP 에서는어드바이스 메서드에 <code>JoinPoint</code> 나 <code>ProceedingJoinPoint</code> 를 인자로 선언하여 활용한다.</li>
 </ul>
 </li>
-<li>
-<p>Weaving</p>
-<ul>
+<li>Weaving<ul>
 <li>조인 포인트에 어드바이스를 끼워 넣는 과정을 의미한다.</li>
 <li>런타임에 어드바이스 로직을 호출하는 프록시 객체를 생성하는 의미를 가지기도 한다.</li>
 </ul>
@@ -1796,7 +1784,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>

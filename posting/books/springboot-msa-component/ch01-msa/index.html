@@ -1118,9 +1118,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#vs">
-    모놀리식 아키텍처 vs 마이크로서비스 아키텍처
+    모놀리식 아키텍처 Vs 마이크로서비스 아키텍처
   </a>
-<nav aria-label="모놀리식 아키텍처 vs 마이크로서비스 아키텍처" class="md-nav">
+<nav aria-label="모놀리식 아키텍처 Vs 마이크로서비스 아키텍처" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
@@ -1733,9 +1733,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#vs">
-    모놀리식 아키텍처 vs 마이크로서비스 아키텍처
+    모놀리식 아키텍처 Vs 마이크로서비스 아키텍처
   </a>
-<nav aria-label="모놀리식 아키텍처 vs 마이크로서비스 아키텍처" class="md-nav">
+<nav aria-label="모놀리식 아키텍처 Vs 마이크로서비스 아키텍처" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
@@ -1778,82 +1778,48 @@
 <h1>Ch01 msa</h1>
 <h3 id="_1">들어가기<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <p>컴포넌트란 시스템을 이루는 기능적 단위를 말한다. 모든 시스템은 하나 이상의 컴포넌트로 구성되어 있다. 마이크로서비스 아키텍처란 분산 시스템 아키텍처의 일종으로 다량의 요청을 처리하고 애플리케이션 복잡도를 낮추어 주는 여러 장점이 있다.</p>
-<h3 id="vs">모놀리식 아키텍처 vs 마이크로서비스 아키텍처<a class="headerlink" href="#vs" title="Permanent link">¶</a></h3>
+<h3 id="vs">모놀리식 아키텍처 Vs 마이크로서비스 아키텍처<a class="headerlink" href="#vs" title="Permanent link">¶</a></h3>
 <h4 id="_2">모놀리식 아키텍처 특징/장점<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
 <ul>
-<li>
-<p>전반적으로 구조가 매우 간단하다.</p>
-</li>
-<li>
-<p>하나의 WAS 에서 모든 기능을 처리하도록 구성한다.</p>
-</li>
-<li>
-<p>하나의 데이터 저장소만을 가지며 데이터는 객체들 사이에서만 전달된다.</p>
-<ul>
+<li>전반적으로 구조가 매우 간단하다.</li>
+<li>하나의 WAS 에서 모든 기능을 처리하도록 구성한다.</li>
+<li>하나의 데이터 저장소만을 가지며 데이터는 객체들 사이에서만 전달된다.<ul>
 <li>네트워크로 인한 지연이나 데이터 유실을 걱정할 필요가 없다.</li>
 </ul>
 </li>
-<li>
-<p>시스템 장애나 버그의 원인을 파악하기 쉽다.</p>
-</li>
-<li>
-<p>RDB 의 transaction 기능을 쉽게 사용할 수 있다.</p>
-</li>
+<li>시스템 장애나 버그의 원인을 파악하기 쉽다.</li>
+<li>RDB 의 transaction 기능을 쉽게 사용할 수 있다.</li>
 </ul>
 <h4 id="_3">모놀리식 아키텍처 단점<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
 <ul>
-<li>
-<p>서비스 고도화에 따라 코드가 복잡해질 가능성이 높다.</p>
-</li>
-<li>
-<p>복잡하게 얽힌 코드를 수정하는 일도 점차 힘들어진다. 개발속도나 생산성도 점차 낮아진다.</p>
-</li>
-<li>
-<p>스케일 아웃 (수평 확장)에 따라 합리적이지 않은 확장이 동반될 수 있다.</p>
-<ul>
+<li>서비스 고도화에 따라 코드가 복잡해질 가능성이 높다.</li>
+<li>복잡하게 얽힌 코드를 수정하는 일도 점차 힘들어진다. 개발속도나 생산성도 점차 낮아진다.</li>
+<li>스케일 아웃 (수평 확장)에 따라 합리적이지 않은 확장이 동반될 수 있다.<ul>
 <li>e.g.) 배달의 민족 이라면 사장님 요청보다 사용자의 요청이 훨씬 많을 것이다. 모놀리식 구조라면 사용자의 요청만을 위한 확장을 할 수 없다.</li>
 </ul>
 </li>
 </ul>
 <h4 id="_4">마이크로서비스 아키텍처 특징/장점<a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
 <ul>
-<li>
-<p>독립성에서 오는 확장성, 비즈니스적 기민함을 가질 수 있다.</p>
-</li>
-<li>
-<p>기능 위주로 나뉜 여러 애플리케이션이 있고, 각각 독립된 데이터 저장소를 사용한다.</p>
-<ul>
-<li>
-<p>데이터베이스가 단일 장애 지점이 될 수 없다!</p>
-</li>
-<li>
-<p>데이터 베이스가 분산되어 있기 때문에 대용량 데이터를 저장, 처리하는데에 비교적 자유롭다.</p>
-</li>
+<li>독립성에서 오는 확장성, 비즈니스적 기민함을 가질 수 있다.</li>
+<li>기능 위주로 나뉜 여러 애플리케이션이 있고, 각각 독립된 데이터 저장소를 사용한다.<ul>
+<li>데이터베이스가 단일 장애 지점이 될 수 없다!</li>
+<li>데이터 베이스가 분산되어 있기 때문에 대용량 데이터를 저장, 처리하는데에 비교적 자유롭다.</li>
 </ul>
 </li>
-<li>
-<p>배포주기가 빠르다.</p>
-</li>
+<li>배포주기가 빠르다.</li>
 </ul>
 <h4 id="_5">마이크로서비스 아키텍처 단점<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
 <ul>
-<li>
-<p>개발하기 어렵다.</p>
-</li>
-<li>
-<p>운영하기 매우 어렵다.</p>
-</li>
-<li>
-<p>설계하기 어렵다.</p>
-</li>
-<li>
-<p>여러 자동화된 시스템이 필요하며 개발자의 높은 역량이 요구된다.</p>
-</li>
+<li>개발하기 어렵다.</li>
+<li>운영하기 매우 어렵다.</li>
+<li>설계하기 어렵다.</li>
+<li>여러 자동화된 시스템이 필요하며 개발자의 높은 역량이 요구된다.</li>
 </ul>
 <h3 id="_6">마이크로서비스 아키텍처 설계<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p>마이크로서비스 아키텍처 설계의 핵심은 '잘 분리하는 것' </p>
-<p>물론 정해진 법칙이나 왕도는 없다. 비즈니스 성격과 상황에 따라 '그때 그때 달라요' 가 정답이다.
-하지만 일반적으로 활용되는 원칙과 이론은 존재한다!</p>
+<p>물론 정해진 법칙이나 왕도는 없다. 비즈니스 성격과 상황에 따라 '그때 그때 달라요' 가 정답이다.</p>
+<p>하지만 일반적으로 활용되는 원칙과 이론은 존재한다!</p>
 <ol>
 <li>서비스 세분화 법칙 - 비즈니스 기능/ 성능/ 메시지 크기/ 트랜잭션</li>
 <li>DDD 의 Bounded Context<ul>
@@ -1875,7 +1841,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2022</span>

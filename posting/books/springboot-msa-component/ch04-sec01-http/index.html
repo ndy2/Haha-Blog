@@ -1739,22 +1739,28 @@
 <h2 id="http-protocol">HTTP Protocol<a class="headerlink" href="#http-protocol" title="Permanent link">¶</a></h2>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/HTTP-Request-Response.png"><img alt="HTTP-Request-Response.png" src="../images/HTTP-Request-Response.png"/></a></p>
 <h3 id="http">HTTP 프로토콜의 주요 버전별 주요 특징<a class="headerlink" href="#http" title="Permanent link">¶</a></h3>
-<p>HTTP/1.1 (RFC 2616/ 1999.06)
-- <strong>keep-alive</strong> 기능 (Connection 헤더)
-- <strong>pipelining</strong> 기능을 제공
-- Chunk 응답 기능을 제공한다.</p>
-<p>HTTP/2.0 (RFC 7540/ 2015.05)
-- 구글이 만든 SPDY 프로토콜을 정식으로 채용한것
-- 요청과 응답에 <strong>Multiplexing</strong> 기능을 제공.
-- <strong>Binray Framing</strong> 적용
-- Server Push, Header 압축 등의 최적화 적용</p>
-<p>HTTP/3.0 (RFC 9114/ 2022.06)
-- UDP 를 기반으로 한 새로운 전송 프로토콜인 QUIC 를 사용
--  Zero RTT, 패킷 손실에 대한 빠른 대응, 사용자 IP가 바뀌어도 연결이 유지
-- 기본적으로 TLS 사용</p>
-<blockquote>
+<p>HTTP/1.1 (RFC 2616/ 1999.06)</p>
+<ul>
+<li><strong>keep-alive</strong> 기능 (Connection 헤더)</li>
+<li><strong>pipelining</strong> 기능을 제공</li>
+<li>Chunk 응답 기능을 제공한다.</li>
+</ul>
+<p>HTTP/2.0 (RFC 7540/ 2015.05)</p>
+<ul>
+<li>구글이 만든 SPDY 프로토콜을 정식으로 채용한것</li>
+<li>요청과 응답에 <strong>Multiplexing</strong> 기능을 제공.</li>
+<li><strong>Binray Framing</strong> 적용</li>
+<li>Server Push, Header 압축 등의 최적화 적용</li>
+</ul>
+<p>HTTP/3.0 (RFC 9114/ 2022.06)</p>
+<ul>
+<li>UDP 를 기반으로 한 새로운 전송 프로토콜인 QUIC 를 사용</li>
+<li>Zero RTT, 패킷 손실에 대한 빠른 대응, 사용자 IP가 바뀌어도 연결이 유지</li>
+<li>기본적으로 TLS 사용<blockquote>
 <p>😎 각 버전의 특징에 대해 숙지하고 있자!</p>
 </blockquote>
+</li>
+</ul>
 <h3 id="http_1">HTTP 특징<a class="headerlink" href="#http_1" title="Permanent link">¶</a></h3>
 <ul>
 <li><strong>비연결성(Connectionless)</strong> 과 <strong>무상태(Stateless)</strong></li>
@@ -1769,7 +1775,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2022</span>

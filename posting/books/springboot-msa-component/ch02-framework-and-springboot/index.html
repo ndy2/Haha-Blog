@@ -1790,45 +1790,39 @@
 <li>Provide production-ready features such as metrics, health checks, and externalized configuration</li>
 <li>Absolutely no code generation and no requirement for XML configuration</li>
 </ul>
-<p>두 프로젝트에서 개발시 경험하는 스프링의 대부분의 마법같은 일이 일어난다.
-IOC, AOP, AutoConfigure, Embedded WAS ...</p>
+<p>두 프로젝트에서 개발시 경험하는 스프링의 대부분의 마법같은 일이 일어난다.</p>
+<p>IOC, AOP, AutoConfigure, Embedded WAS ...</p>
 <h2 id="_3">스프링 애플리케이션이 실행되고 애플리케이션 컨텍스트가 준비되는 과정<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<p>스프링 애플리케이션은 자바 애플리케이션이므로 <code>main</code> 메서드에 의해 시작된다.
-Spring Initializer로 프로젝트를 생성하게 되면 <code>SpringApplication.run</code> 메서드를 호출하는 코드가 달랑 한줄 있다. <code>run</code> 메서드가 의미하는 바를 간단히 정리해보자.</p>
-<p>Static 메서드 <code>run</code> 은 <code>SpringApplication</code> 객체를 생성하고 Instance 메서드 <code>run</code> 을 실행한다. 
-이때 <code>SpringApplication</code> 객체 생성 시 <code>Main</code> 클래스 정보가 <code>Class</code>  객체의 형태로 전달된다.</p>
+<p>스프링 애플리케이션은 자바 애플리케이션이므로 <code>main</code> 메서드에 의해 시작된다.</p>
+<p>Spring Initializer로 프로젝트를 생성하게 되면 <code>SpringApplication.run</code> 메서드를 호출하는 코드가 달랑 한줄 있다. <code>run</code> 메서드가 의미하는 바를 간단히 정리해보자.</p>
+<p>Static 메서드 <code>run</code> 은 <code>SpringApplication</code> 객체를 생성하고 Instance 메서드 <code>run</code> 을 실행한다. </p>
+<p>이때 <code>SpringApplication</code> 객체 생성 시 <code>Main</code> 클래스 정보가 <code>Class</code> 객체의 형태로 전달된다.</p>
 <h3 id="1">1. 클래스 정보를 이용하여 실행 준비<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
 <p>SpringApplication 의 생성자는 전달받는 Class 정보를 참고하여 여러가지 필드를 셋업한다.</p>
-<p>주요 셋업 필드는 다음과 같다.
-- <code>resourceLoader</code>
-    - <code>ResourceLoader</code> 는 <code>Resource getResource(String location);</code> 라는 핵심 메서드를 가지는 인터페이스이다.
-    - <code>Resource</code> 를 애플리케이션으로 로드하기위한 다양한 방법을 추상화한 전략 인터페이스이다.
-    - <code>SpringApplication</code> 에서의 <code>ResourceLoader</code>는 스프링 배너 프린터, <code>ApplicationContext</code>  생성시 필요한 다양한 객체의 <code>ResourceLoader</code> 필드를 전달하기 위한 용도로 사용되며 
-    - 참고로 <code>ApplicationContext</code> 자체도 <code>ResourceLoader</code> 를 구현하고 있다.
-    - 기본적으로 SpringApplciation 의 ResourceLoader 는  null, ApplicationContext</p>
+<p>주요 셋업 필드는 다음과 같다.</p>
 <ul>
-<li>
-<p><code>primarySources</code></p>
-<ul>
+<li><code>resourceLoader</code><ul>
+<li><code>ResourceLoader</code> 는 <code>Resource getResource(String location);</code> 라는 핵심 메서드를 가지는 인터페이스이다.</li>
+<li><code>Resource</code> 를 애플리케이션으로 로드하기위한 다양한 방법을 추상화한 전략 인터페이스이다.</li>
+<li><code>SpringApplication</code> 에서의 <code>ResourceLoader</code>는 스프링 배너 프린터, <code>ApplicationContext</code> 생성시 필요한 다양한 객체의 <code>ResourceLoader</code> 필드를 전달하기 위한 용도로 사용되며 </li>
+<li>참고로 <code>ApplicationContext</code> 자체도 <code>ResourceLoader</code> 를 구현하고 있다.</li>
+<li>기본적으로 SpringApplciation 의 ResourceLoader 는 null, ApplicationContext</li>
+</ul>
+</li>
+<li><code>primarySources</code><ul>
 <li>전달 받은 Class 정보를 저장하는 필드이다.</li>
 </ul>
 </li>
-<li>
-<p><code>webApplicationType</code></p>
-<ul>
+<li><code>webApplicationType</code><ul>
 <li><code>WebApplicationType.REACTIVE</code>, <code>WebApplicationType.NONE</code>, <code>WebApplicationType.SERVLET</code> 중 하나로 추론 된다.</li>
 <li><code>Environment</code> 의 타입을 결정하기 위해 사용된다.</li>
 </ul>
 </li>
-<li>
-<p><code>bootstrapRegistryInitializers</code> </p>
-<ul>
+<li><code>bootstrapRegistryInitializers</code> <ul>
 <li>아직 뭔지 모르겠다.</li>
 </ul>
 </li>
-<li>
-<p><code>mainApplicationClass</code></p>
-<ul>
+<li><code>mainApplicationClass</code><ul>
 <li>메인 애플리케이션 클래스를 셋업해둔다. 로깅을 위해서만 활용된다.</li>
 <li>셋업 과정에서 더미 런타임 예외를 만들어 스택 트레이스를 순회하며 <code>main</code> 메서드를 찾는 방식으로 추론한다.</li>
 </ul>
@@ -1839,7 +1833,7 @@ Spring Initializer로 프로젝트를 생성하게 되면 <code>SpringApplicatio
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/SpringApplication.run.png"><img alt="SpringApplication.run.png" src="../images/SpringApplication.run.png"/></a></p>
 <p>역할을 요약하면</p>
 <ul>
-<li>Enviroment 준비</li>
+<li>Environment 준비</li>
 <li>ApplicationContext 생성 및 초기화</li>
 <li>Runner 실행 <ul>
 <li>ApplicationRunner, CommandLineRunner 가 있다.</li>
@@ -1849,14 +1843,15 @@ Spring Initializer로 프로젝트를 생성하게 되면 <code>SpringApplicatio
 </li>
 </ul>
 <p>등이 있다.</p>
-<p>run 메서드는 생성된 ApplicationContext 를 반환하므로 main 메서드에서 이를 받아 추가적인 처리를 해줄 수도 있다.
-    e.g.) 애플리케이션 리스너 추가, 이벤트 발행, ...</p>
+<p>run 메서드는 생성된 ApplicationContext 를 반환하므로 main 메서드에서 이를 받아 추가적인 처리를 해줄 수도 있다.</p>
+<div class="highlight"><pre><span></span><code>e.g.) 애플리케이션 리스너 추가, 이벤트 발행, ...
+</code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2022</span>

@@ -1198,7 +1198,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#8-viewresolving-and-render">
-    8. viewResolving() and render()
+    8. viewResolving() And render()
   </a>
 </li>
 <li class="md-nav__item">
@@ -1769,7 +1769,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#8-viewresolving-and-render">
-    8. viewResolving() and render()
+    8. viewResolving() And render()
   </a>
 </li>
 <li class="md-nav__item">
@@ -1789,8 +1789,8 @@
 </a>
 <h1>Ch06 sec03 dispatcher servlet</h1>
 <p>이번 절의 원래 주제는 Servlet Filter 와 Spring Interceptor 이지만 이 둘의 차이점과 동작 시점을 이해하기 위해서는 Dispatcher Servlet 의 요청 처리 흐름을 전반적으로 이해해야 합니다.</p>
-<p>그래서 이 글에서는 바로 아래 순서도를 재 방식대로 이해하고 정리해보겠습니다.
-아래 순서도의 전반적인 흐름은 이해하고 있지만 각 클래스의 이름과 역할에 대해 조금더 명확히 정리하는게 좋겠다 싶어 정리하게 되었습니다.</p>
+<p>그래서 이 글에서는 바로 아래 순서도를 재 방식대로 이해하고 정리해보겠습니다.</p>
+<p>아래 순서도의 전반적인 흐름은 이해하고 있지만 각 클래스의 이름과 역할에 대해 조금더 명확히 정리하는게 좋겠다 싶어 정리하게 되었습니다.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dispatcher-servlet-sequence-diagram.png"><img alt="dispatcher-servlet-sequence-diagram.png" src="../images/dispatcher-servlet-sequence-diagram.png"/></a></p>
 <blockquote>
 <p>학습하다 발견한 그림인데 이 그림이 가장 깔끔하고 좋은것 같습니다.
@@ -1802,31 +1802,23 @@
 <hr/>
 <h4 id="1-doservice">1. doService<a class="headerlink" href="#1-doservice" title="Permanent link">¶</a></h4>
 <ul>
-<li>
-<p><code>DispatcherServlet</code> 도 하나의 Servlet 으로 WAS 에 의해 동작하기 때문에 당연히 <code>javax(jakarta).servlet.Servlet</code> 를 상속하고 <code>doService</code> 를 호출함으로써 동작을 시작합니다.</p>
-</li>
-<li>
-<p><code>DispatcherServlet</code> 은 <code>FrameworkServlet</code> 을 상속합니다.</p>
-</li>
+<li><code>DispatcherServlet</code> 도 하나의 Servlet 으로 WAS 에 의해 동작하기 때문에 당연히 <code>javax(jakarta).servlet.Servlet</code> 를 상속하고 <code>doService</code> 를 호출함으로써 동작을 시작합니다.</li>
+<li><code>DispatcherServlet</code> 은 <code>FrameworkServlet</code> 을 상속합니다.</li>
 <li>FrameworkServlet 은 HttpServletBean 을 상속하는 추상 클래스 로서 서블릿별 <code>WebApplicationContext를</code> 관리하고 <code>wac</code> 에 요청 처리 실패에 대한 이벤트 (<code>ServletRequestHandledEvent</code>) 를 발행하는 역할을 합니다.</li>
-<li>
-<p>또한 책에서 언급하는 중요한 내용으로 <code>FrameworkServlet</code> 은 <code>ApplicationContextAware</code> 를 구현하는데 그 내용은 마지막에 정리하겠습니다.</p>
-</li>
-<li>
-<p><code>DispatcherServlet.doService</code> 는 간단히 <code>DispatcherServlet</code> 내에서 사용된 요청에 대한 attribute 를 세팅하고 <code>doDispatch</code> 에 그 요청을 위임합니다.</p>
-</li>
+<li>또한 책에서 언급하는 중요한 내용으로 <code>FrameworkServlet</code> 은 <code>ApplicationContextAware</code> 를 구현하는데 그 내용은 마지막에 정리하겠습니다.</li>
+<li><code>DispatcherServlet.doService</code> 는 간단히 <code>DispatcherServlet</code> 내에서 사용된 요청에 대한 attribute 를 세팅하고 <code>doDispatch</code> 에 그 요청을 위임합니다.</li>
 </ul>
 <h4 id="2-dodispatch">2. <code>doDispatch</code><a class="headerlink" href="#2-dodispatch" title="Permanent link">¶</a></h4>
 <p>핸들러로의 실질적인 dispatch 가 이루어집니다. 스프링 웹 MVC 가 요청을 처리하는 실질적인 진입점이라고 볼 수 있습니다.</p>
 <p>핸들러 조회 및 실행, 사이 사이의 인터셉터 호출, 뷰 처리까지 모든 작업이 이 메서드에서 시작됩니다.</p>
 <h4 id="3-gethandler">3. <code>getHandler</code><a class="headerlink" href="#3-gethandler" title="Permanent link">¶</a></h4>
-<p><code>DispatcherServlet</code> 은 <code>List&lt;HandlerMapping&gt; handlerMapping</code> 필드를 가지고 있습니다.
+<p><code>DispatcherServlet</code> 은 <code>List&lt;HandlerMapping&gt; handlerMapping</code> 필드를 가지고 있습니다.</p>
 <div class="highlight"><span class="filename">o.s.web.servlet.HandlerMapping</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">HandlerMapping</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="n">HandlerExecutionChain</span><span class="w"> </span><span class="nf">getHandler</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="p">;</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">}</span>
-</code></pre></div></p>
-<p>핸들러 매핑은 요청에 대해 <code>HandlerExecutionChain</code> 을 응답해줍니다. <code>HandlerExecutionChain</code> 은 
-간단히 표현해서 아래와 같은 클래스입니다.
+</code></pre></div>
+<p>핸들러 매핑은 요청에 대해 <code>HandlerExecutionChain</code> 을 응답해줍니다. <code>HandlerExecutionChain</code> 은 </p>
+<p>간단히 표현해서 아래와 같은 클래스입니다.</p>
 <div class="highlight"><span class="filename">o.s.web.servlet.HandlerExecutionChain</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HandlerExecutionChain</span><span class="p">{</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">handler</span><span class="p">;</span><span class="w">  </span>
@@ -1834,11 +1826,11 @@
 <a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>
 <a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="c1">// 생략</span>
 <a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
 <p><code>DispatcherServlet</code> 은 이 핸들러매핑 목록을 순회하며 요청에 대해 적절한 <code>HandlerExecutionChain</code> 을 조회합니다. </p>
 <h4 id="4-gethandleradapter-support">4. <code>getHandlerAdapter</code> -&gt; <code>support</code><a class="headerlink" href="#4-gethandleradapter-support" title="Permanent link">¶</a></h4>
-<p>DispatcherServlet 은 또한 <code>List&lt;HandlerAdapter&gt; handlerAdapters</code> 필드도 가집니다.
-Spring 은 DispatcherServlet 과 Handler 가 강하게 결합되는 설계를 피하기 위해서인지 DispatcherServlet 이 직접 Handler 를 호출하는 것이 아니라 중간에 어댑터를 하나 두었습니다.</p>
+<p>DispatcherServlet 은 또한 <code>List&lt;HandlerAdapter&gt; handlerAdapters</code> 필드도 가집니다.</p>
+<p>Spring 은 DispatcherServlet 과 Handler 가 강하게 결합되는 설계를 피하기 위해서인지 DispatcherServlet 이 직접 Handler 를 호출하는 것이 아니라 중간에 어댑터를 하나 두었습니다.</p>
 <p>또한 <code>o.s.web.servlet</code> 패키지의 클래스내에 Handler 는 항상 <code>Object</code> 타입으로 표현하고 있습니다. 따라서 구체적인 Handler 의 타입에 따라 다를 수 있는 실행 로직은 <code>HandlerAdapter</code> 가 담당하게 하여 전형적인 어댑터 패턴을 적용한 사례입니다. 유연함과 확장성에 대한 스프링의 철학을 엿볼 수 있는 부분이라고 생각합니다.</p>
 <p>핸들러 어댑터는 두가지 추상 메서드를 가지는 인터페이스 입니다.</p>
 <div class="highlight"><span class="filename">o.s.web.servlet.HandlerAdapter</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">HandlerAdapter</span><span class="w"> </span><span class="p">{</span>
@@ -1872,7 +1864,7 @@ Spring 은 DispatcherServlet 과 Handler 가 강하게 결합되는 설계를 �
 <li>
 <p><code>RequestMappingHandlerAdapter</code>
 <code>HandlerMethod</code> 타입의 핸들러를 support 하는 어댑터입니다.
-<code>handle</code> 작업에서  argumentResolving, dataBinding 등의 추가 작업이 발생하고 <code>HandlerMethod</code> 를 실제 호출하여 그 결과를 <code>ModelAndView</code> 객체에 담아 반환합니다.</p>
+<code>handle</code> 작업에서 argumentResolving, dataBinding 등의 추가 작업이 발생하고 <code>HandlerMethod</code> 를 실제 호출하여 그 결과를 <code>ModelAndView</code> 객체에 담아 반환합니다.</p>
 </li>
 </ul>
 <hr/>
@@ -1881,17 +1873,17 @@ Spring 은 DispatcherServlet 과 Handler 가 강하게 결합되는 설계를 �
 <h4 id="6-handle"><code>6. handle()</code><a class="headerlink" href="#6-handle" title="Permanent link">¶</a></h4>
 <p>handlerAdapter 에 의해 실질적인 handle 이 이루어 집니다.</p>
 <p>일반적으로 사용되는 ha 객체는 <code>ReqestMappingHandlerAdapter</code>, Handler 객체는 <code>HandlerMethod</code> 타입입니다.</p>
-<p><code>HandlerMethod</code> 는 내부적으로 Controller bean 과 reflection 의 <code>Method</code> 객체 가지고 있습니다.
-<code>ReqestMappingHandlerAdapter</code> 는 argumentResolving, dataBinding 등의 추가 작업을 하고 HandlerMethod를  <code>실행 할 수 있는 서블릿 핸들러 메서드 = ReqestMappingHandlerAdapter</code> 타입으로 바꾸어 실행하여 ModelAndView 결과를 반환합니다.</p>
+<p><code>HandlerMethod</code> 는 내부적으로 Controller bean 과 reflection 의 <code>Method</code> 객체 가지고 있습니다.</p>
+<p><code>ReqestMappingHandlerAdapter</code> 는 argumentResolving, dataBinding 등의 추가 작업을 하고 HandlerMethod를 <code>실행 할 수 있는 서블릿 핸들러 메서드 = ReqestMappingHandlerAdapter</code> 타입으로 바꾸어 실행하여 ModelAndView 결과를 반환합니다.</p>
 <h4 id="7-posthandle">7. <code>postHandle()</code><a class="headerlink" href="#7-posthandle" title="Permanent link">¶</a></h4>
 <p>mappedHandler (<code>HandlerExecutionChain</code>) 의 <code>postHandle</code> 을 호출합니다. </p>
 <p><code>handle</code> 과정에서 예외가 발생한 경우 호출되지 않습니다.</p>
-<h4 id="8-viewresolving-and-render">8. <code>viewResolving() and render()</code><a class="headerlink" href="#8-viewresolving-and-render" title="Permanent link">¶</a></h4>
-<p>ModelAndView 객체에서 viewName 을 얻어 ViewResolver 를 통해 View 객체를 얻습니다.
-response 객체에 view 를 담는 render 작업을 수행함합니다.</p>
+<h4 id="8-viewresolving-and-render">8. <code>viewResolving() And render()</code><a class="headerlink" href="#8-viewresolving-and-render" title="Permanent link">¶</a></h4>
+<p>ModelAndView 객체에서 viewName 을 얻어 ViewResolver 를 통해 View 객체를 얻습니다.</p>
+<p>response 객체에 view 를 담는 render 작업을 수행함합니다.</p>
 <h4 id="9-aftercompletion">9. <code>afterCompletion()</code><a class="headerlink" href="#9-aftercompletion" title="Permanent link">¶</a></h4>
-<p>마지막으로 render 까지 마무리된 응답에 인터셉터 목록의 <code>afterCompletion</code> 를 호출합니다.
-이 인터셉터는 예외 여부와 상관없이 항상 호출됩니다.</p>
+<p>마지막으로 render 까지 마무리된 응답에 인터셉터 목록의 <code>afterCompletion</code> 를 호출합니다.</p>
+<p>이 인터셉터는 예외 여부와 상관없이 항상 호출됩니다.</p>
 <blockquote>
 <p>후... 정말 기네요. 대략적으로 흐름만 이해하고 있었지만 정리를 통해 사용되는 실제 클래스의 이름에 조금더 친숙해진 것 같습니다.</p>
 </blockquote>
@@ -1900,7 +1892,7 @@ response 객체에 view 를 담는 render 작업을 수행함합니다.</p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2022</span>

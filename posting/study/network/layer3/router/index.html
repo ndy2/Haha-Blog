@@ -1821,19 +1821,19 @@
 <p>TTL 필드가 0 이 되면 라우터는 해당 패킷을 버립니다. 그리고 송신 호스트에게 <code>ICMP time exceeded</code> 메시지를 보냅니다. 송신 호스트는 ICMP time exceeded 메시지를 수신하면 TTL 을 조정하여 다시 패킷을 전송하고 해당 라우터를 거쳐갔는지 확인합니다.</p>
 </div>
 <h3 id="4">4. 라우팅 테이블<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/routing-table.png"><img alt="images/routing-table.png" src="images/routing-table.png"/></a>
-<strong><code>라우팅 테이블</code></strong></p>
-<p>위 라우팅 테이블의 엔트리를 해석하면 다음과 같습니다.
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/routing-table.png"><img alt="images/routing-table.png" src="images/routing-table.png"/></a></p>
+<p><strong><code>라우팅 테이블</code></strong></p>
+<p>위 라우팅 테이블의 엔트리를 해석하면 다음과 같습니다.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>1. 101.25.67.0 이 목적지인 패킷을 받으면 eth3 인터페이스를 통해 10.0.0.2 게이트웨이 로 전달해라
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>2. 라우팅 테이블에서 목적지 IP 를 찾지 못하면 eh0 인터페이스를 통해 10.0.0.1 게이트웨이 로 전달해라
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>3. ...
-</code></pre></div></p>
+</code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2023</span>

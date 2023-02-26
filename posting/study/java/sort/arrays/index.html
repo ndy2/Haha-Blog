@@ -714,7 +714,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2-parallelism">
-    2.  parallelism 이 적용되는 조건, 적용되는 방식 간단 확인
+    2. Parallelism 이 적용되는 조건, 적용되는 방식 간단 확인
   </a>
 </li>
 <li class="md-nav__item">
@@ -1757,7 +1757,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2-parallelism">
-    2.  parallelism 이 적용되는 조건, 적용되는 방식 간단 확인
+    2. Parallelism 이 적용되는 조건, 적용되는 방식 간단 확인
   </a>
 </li>
 <li class="md-nav__item">
@@ -1852,7 +1852,7 @@ toIndex – the index of the last element (exclusive) to be sorted</p>
 <li>객체 타입 + <code>Comparator</code> (<code>T[] and Comparator&lt;? super T&gt;</code> )) -&gt; <code>Timsort</code>.<em><code>sort</code></em></li>
 </ul>
 </div>
-<p>객체 타입의 경우 하위호환성을 위해 사용자의 요구에 따라 merge sort 를 사용하도록 지정할 수 있다. 하지만 이후 릴리즈 버전에서는 언제라도 제거 될 수 있고 굳이 사용할 이유가 없기 때문에 사용하면 안된다.  (VM option :  <code>-Djava.util.Arrays.useLegacyMergeSort=true</code> )</p>
+<p>객체 타입의 경우 하위호환성을 위해 사용자의 요구에 따라 merge sort 를 사용하도록 지정할 수 있다. 하지만 이후 릴리즈 버전에서는 언제라도 제거 될 수 있고 굳이 사용할 이유가 없기 때문에 사용하면 안된다. (VM option : <code>-Djava.util.Arrays.useLegacyMergeSort=true</code> )</p>
 <p>추후에 알고리즘 쪽에서 정렬에 관해 한번 정리 할때 추가적으로 정리 하는 것이 더 좋을거 같아서 이 글에서 <code>DulPivotQuicksort</code> 나 <code>Timsort</code> 의 구현까지 들어가보지는 않을것이다. 객체 타입의 경우 <code>Comparator</code> 를 지정해주면 그냥 <code>Timsort</code> 를 사용하고 그렇지 않고 <code>Comparable</code> 을 상속한 경우에는 <code>ComparableTimsort</code> 를 사용한다. 둘의 차이는 두 객체의 비교 연산에 <code>Comparable</code> 을 사용하가, <code>Comparable</code> 을 사용하는가 이다. 메서드 호출에 따른 성능차이가 있을 수 있긴 하지만 optimized 된 VM 을 사용한다면 큰 의미는 없다고 한다.</p>
 <hr/>
 <h3 id="2">2. 왜 서로 다른 알고리즘을 사용했을까? (뇌피셜)<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
@@ -1927,7 +1927,7 @@ equal elements will not be reordered as a result of the sort.</p>
 <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/DualPivotQuicksort.sort.png"><img alt="images/DualPivotQuicksort.sort.png" src="../images/DualPivotQuicksort.sort.png"/></a></li>
 </ul>
 <hr/>
-<h3 id="2-parallelism">2.  parallelism 이 적용되는 조건, 적용되는 방식 간단 확인<a class="headerlink" href="#2-parallelism" title="Permanent link">¶</a></h3>
+<h3 id="2-parallelism">2. Parallelism 이 적용되는 조건, 적용되는 방식 간단 확인<a class="headerlink" href="#2-parallelism" title="Permanent link">¶</a></h3>
 <p>먼저 primitive 타입 중 parallelism 인자를 가지고 있는 int, long, double, float 의 DualPivoQuicksort.sort( ) 를 확인해보자.</p>
 <div class="highlight"><span class="filename">DualPivoQuicksort#sort(int[], ...)</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cm">/* Min array size to perform sorting in parallel. */</span>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MIN_PARALLEL_SORT_SIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
@@ -1952,13 +1952,13 @@ equal elements will not be reordered as a result of the sort.</p>
 <h3 id="4">4. 마무리...<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
 <p>알고리즘을 건드리지 않는 선에서 정렬의 동작 방식을 최대한 깊게 파해쳐 본것 같다.</p>
 <p>요 내용은 어느정도 알던 내용이지만 시간을 내 글을 통해 정리하면서 좀더 지식이 정제된것 같은 느낌이 든다. </p>
-<p>사실 이 글은 알고리즘 문제를 풀다가 시작된 한 의문점에서 시작되었다. 정렬 문제를 코틀린으로 푸는 도중 자바와 코틀린의 코드가 똑같아 보이는데 메모리 사용량에서 큰 차이가 나는 것을 발견했다. 이에 관해 흥미가 있으신 분은 여기를 참고해주세용  <a href="https://github.com/ndy2/sort-memory-test">관련 깃헙 링크</a></p>
+<p>사실 이 글은 알고리즘 문제를 풀다가 시작된 한 의문점에서 시작되었다. 정렬 문제를 코틀린으로 푸는 도중 자바와 코틀린의 코드가 똑같아 보이는데 메모리 사용량에서 큰 차이가 나는 것을 발견했다. 이에 관해 흥미가 있으신 분은 여기를 참고해주세용 <a href="https://github.com/ndy2/sort-memory-test">관련 깃헙 링크</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>

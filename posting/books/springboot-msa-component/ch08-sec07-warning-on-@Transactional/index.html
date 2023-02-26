@@ -1198,7 +1198,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2-public">
-    2. public 접근 제어자 필수
+    2. Public 접근 제어자 필수
   </a>
 </li>
 <li class="md-nav__item">
@@ -1709,7 +1709,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2-public">
-    2. public 접근 제어자 필수
+    2. Public 접근 제어자 필수
   </a>
 </li>
 <li class="md-nav__item">
@@ -1741,7 +1741,7 @@
 <a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="c1">// 생략</span>
 <a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="p">}</span>
 </code></pre></div>
-<p>즉, @Transactional 은 타입 (클래스, 인터페이스)과 메서드에 모두 선언 될 수 있습니다.
+<p>즉, @Transactional 은 타입 (클래스, 인터페이스)과 메서드에 모두 선언 될 수 있습니다.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nd">@Transactional</span><span class="w"> </span><span class="c1">// (1)</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">UserService</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="nd">@Transactional</span><span class="w"> </span><span class="c1">// (2)</span>
@@ -1760,14 +1760,14 @@
 <a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">        </span><span class="n">userRepository</span><span class="p">.</span><span class="na">save</span><span class="p">();</span>
 <a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">    </span><span class="p">}</span>
 <a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="p">}</span>
-</code></pre></div></p>
-<p>이 코드에 총 몇개의 @Transactional 어노테이션이 관여할까요?
-정답은 4개... 지만 높은 확률로 5개입니다.</p>
+</code></pre></div>
+<p>이 코드에 총 몇개의 @Transactional 어노테이션이 관여할까요?</p>
+<p>정답은 4개... 지만 높은 확률로 5개입니다.</p>
 <p>그 이유는 높은 확률로 JpaRepository 를 활용할탠데 JpaRepository 의 save 메서드에서는 <code>@Transactional</code> 이 선언 되어 있기 때문입니다. 그 부분은 @Transactional 의 propagation 속성과 관련이 있는데 지금은 다루지 않겠습니다.</p>
 <p>그러면 남은 4개의 @Transactional 애너테이션의 우선순위는 어떨까요? 지금은 4가지 애너테이션이 모두 같은 방식으로 선언되어 있지만 readOnly flag를 준다든가 propagation 속성, timeout 속성을 다르게 주면 어떤 선언이 동작할 까요?</p>
 <p>{<mark>정답은 <strong><code>(4) -&gt; (3) -&gt; (2) -&gt; (1)</code></strong> 입니다.</mark>} 가장 구체적인 선언이 가장 먼저 활용되는 것이니 합리적인 우선순위라고 생각됩니다. 하지만 interface 에 <code>@Transactional</code> 을 추가하는 방식은 활용하지 않는 것이 좋습니다. 클래스에 직접 선언되어 있지 않기 때문에 명시적이지 않으며 일부 버전에서는 aop 적용 방식에 따라 인터페이스의 <code>@Transactional</code> 애너테이션을 인식하지 못하는 문제가 있다고 합니다.</p>
 <p>물론 이런 규칙은 같이 작업하는 팀원들과 통일해서 일관되게 적용하는것이 가장 중요합니다.</p>
-<h2 id="2-public">2. public 접근 제어자 필수<a class="headerlink" href="#2-public" title="Permanent link">¶</a></h2>
+<h2 id="2-public">2. Public 접근 제어자 필수<a class="headerlink" href="#2-public" title="Permanent link">¶</a></h2>
 <p>@Transactional 애너테이션은 기본적으로 Proxy 기반의 aop 로 동작 (<code>ProxyMode</code>)하기 때문에 <code>private</code>, <code>protected</code> 메서드에 선언하면 동작하지 않는다. 물론 메서드 혹은 클래스에 <code>final</code> 키워드를 사용해서도 안된다. </p>
 <h2 id="3">3. 프록시 내부 호출 문제<a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/transaction-internal-call.png"><img alt="transaction-internal-call.png" src="../images/transaction-internal-call.png"/></a></p>
@@ -1794,7 +1794,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2022</span>

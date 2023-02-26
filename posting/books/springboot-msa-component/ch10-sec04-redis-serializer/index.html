@@ -1754,11 +1754,12 @@
 <a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li>redis moniter 를 통해 확인한 실행된 명령어
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>"SET" "\xac\xed\x00\x05t\x00\x03key" "\xac\xed\x00\x05t\x00\x05value"
-</code></pre></div></li>
+<li>redis monitor 를 통해 확인한 실행된 명령어</li>
 </ul>
-<p>위 처럼 아무 설정을 하지 않고 RedisTemplate 을 만들게 되면 Key 와 Value 의 직렬화<code>JdkSerialization</code>RedisSerializer<code>를 사용해서 위 처럼 알아보기 힘든 문자가 저장된다. 만약 직접 정의한 Key 와 Value 타입을 사용할때</code>JdkSerializationRedisSerializer<code>를 사용하고 싶다면 꼭</code>java.io.Serializable<code>을 구현 해야 한다. 이런 두가지 이유로 저자분은</code>JdkSerializationRedisSerializer` 의 사용을 반대한다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>"SET" "\xac\xed\x00\x05t\x00\x03key" "\xac\xed\x00\x05t\x00\x05value"
+</code></pre></div>
+<p>위 처럼 아무 설정을 하지 않고 RedisTemplate 을 만들게 되면 Key 와 Value 의 직렬화`JdkSerialization</p>
+<p><code>RedisSerializer</code> 를 사용해서 위 처럼 알아보기 힘든 문자가 저장된다. 만약 직접 정의한 Key 와 Value 타입을 사용할때 <code>JdkSerializationRedisSerializer</code> 를 사용하고 싶다면 꼭 <code>java.io.Serializable</code> 을 구현 해야 한다. 이런 두가지 이유로 저자분은 <code>JdkSerializationRedisSerializer</code> 의 사용을 반대한다.</p>
 <hr/>
 <h3 id="2-stringredistemplate-stringredisserializer">2. <code>StringRedisTemplate</code> - <code>StringRedisSerializer</code> 사용!<a class="headerlink" href="#2-stringredistemplate-stringredisserializer" title="Permanent link">¶</a></h3>
 <p>그럼 이번에는 StringRedisTemplate 을 사용해보자!</p>
@@ -1844,15 +1845,15 @@ void set3() {<br/>
 ```</hotelcachekey,></p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>"SET" "HOTEL::1" "{\"name\":\"haha\",\"address\":\"\xeb\x8c\x80\xea\xb5\xac \xec\x88\x98\xec\x84\xb1\xea\xb5\xac\"}"
 </code></pre></div>
-<p>분명 Serializer 에 Encoding 옵션을 주었는데도 한글이 깨진다.
-찾아 보니 이는 redis-cli 실행시 --raw 옵션을 넣어 조회하면 정상적으로 볼 수 있다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/redis-get.png"><img alt="redis-get.png" src="../images/redis-get.png"/></a></p>
+<p>분명 Serializer 에 Encoding 옵션을 주었는데도 한글이 깨진다.</p>
+<p>찾아 보니 이는 redis-cli 실행시 --raw 옵션을 넣어 조회하면 정상적으로 볼 수 있다.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/redis-get.png"><img alt="redis-get.png" src="../images/redis-get.png"/></a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>

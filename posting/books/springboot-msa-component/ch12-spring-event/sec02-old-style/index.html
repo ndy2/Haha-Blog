@@ -1683,7 +1683,7 @@
 <ul>
 <li>이벤트 클래스 - ApplicationEvent 상속</li>
 </ul>
-<p><div class="highlight"><span class="filename">UserCouponEvent</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nd">@Getter</span>
+<div class="highlight"><span class="filename">UserCouponEvent</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nd">@Getter</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserCouponEvent</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ApplicationEvent</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
 <a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
@@ -1694,7 +1694,7 @@
 <a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
 <a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">}</span>
 </code></pre></div>
-<br/></p>
+<p><br/></p>
 <ul>
 <li>리스너 클래스 - ApplicationListener 상속</li>
 </ul>
@@ -1732,8 +1732,8 @@
 </code></pre></div>
 <p>물론 event 를 퍼블리시 하는 책임을 user 자체로 넘기고 또한 ApplicationEventPublisher 를 감싼 도메인 서비스를 구축하는 방식으로 구체적인 기술을 조금 감출 수는 있습니다. 예시 코드에서는 간단히 사용 법 위주로 보아주세요.</p>
 <hr/>
-<p><code>ApplicationEventPublisher</code> 는 <code>ApplicationContext</code> 가 상속하는 이벤트 중 하나입니다.
-이벤트 퍼블리싱 만들 담당할 것이니 <code>ApplicationContext</code> 보단 적절한 인터페이스인 <code>ApplicationEventPublisher</code> 만을 주입 받아서 처리하는 것이 더 좋습니다.</p>
+<p><code>ApplicationEventPublisher</code> 는 <code>ApplicationContext</code> 가 상속하는 이벤트 중 하나입니다.</p>
+<p>이벤트 퍼블리싱 만들 담당할 것이니 <code>ApplicationContext</code> 보단 적절한 인터페이스인 <code>ApplicationEventPublisher</code> 만을 주입 받아서 처리하는 것이 더 좋습니다.</p>
 <p>심하게는 구닥다리라고도 표현되는 이 방식은 단점이 몇가지 있습니다.</p>
 <ol>
 <li>이벤트 클래스와 리스너 클래스가 상속을 이용하여 Spring 에 의존적입니다.</li>
@@ -1745,7 +1745,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
