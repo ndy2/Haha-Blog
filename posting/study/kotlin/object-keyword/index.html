@@ -1774,7 +1774,7 @@
 <ul>
 <li><strong>객체 선언</strong><sup>object</sup> <sup>declaration</sup> - 싱글턴을 정의 하는 방법 중 하나입니다.</li>
 <li><strong>동반 객체</strong><sup>companion</sup> <sup>object</sup> - 자바의 static 메서드, 변수와 같은 역할을 합니다.</li>
-<li><strong>익명 객체</strong><sup>anoymous</sup> <sup>object</sup> - 자바의 익명 클래스와 같은 역할을 합니다.</li>
+<li><strong>익명 객체</strong><sup>anonymous</sup> <sup>object</sup> - 자바의 익명 클래스와 같은 역할을 합니다.</li>
 </ul>
 <h3 id="1-object-declaration">1. 객체 선언 - <code>object declaration</code><a class="headerlink" href="#1-object-declaration" title="Permanent link">¶</a></h3>
 <p>싱글턴 패턴<sup>singleton</sup> <sup>pattern</sup>은 클래스의 인스턴스가 오직 하나만 생성되도록 하는 디자인 패턴입니다. 자바에서는 보통 private 생성자를 통해 단하나의 인스턴스를 private static 필드로 생성 해 두고 이에대한 접근을 public static getInstance 와 같은 메서드를 통해 제어하는 방식으로 싱글턴 패턴을 구현합니다. </p>
@@ -1854,17 +1854,11 @@
 </input></input></div>
 <p>``</p>
 <ul>
-<li>
-<p>유틸리티 메서드는 자바에서는 <code>static</code> 메서드로 구현되곤 하지만 코틀린에서는 최상위 함수가 그 역할을 대신할 수 있습니다. </p>
-</li>
-<li>
-<p>또 자바에서는 앞서 살펴보았듯이 싱글턴 패턴의 구현을 위해서도 <code>static</code> 을 활용합니다. 이는 코틀린의 객체 선언으로 대체 가능합니다.</p>
-</li>
-<li>
-<p>자바에서는 객체 내부에 static 필드와 메서드(객체의 상태가 필요한) 를 가지는 경우가 있는데 이 경우에 동행 객체<sup>companion</sup> <sup>object</sup> 가 그 역할을 할 수 있습니다.</p>
-</li>
+<li>유틸리티 메서드는 자바에서는 <code>static</code> 메서드로 구현되곤 하지만 코틀린에서는 최상위 함수가 그 역할을 대신할 수 있습니다. </li>
+<li>또 자바에서는 앞서 살펴보았듯이 싱글턴 패턴의 구현을 위해서도 <code>static</code> 을 활용합니다. 이는 코틀린의 객체 선언으로 대체 가능합니다.</li>
+<li>자바에서는 객체 내부에 static 필드와 메서드(객체의 상태가 필요한) 를 가지는 경우가 있는데 이 경우에 동행 객체<sup>companion</sup> <sup>object</sup> 가 그 역할을 할 수 있습니다.</li>
 </ul>
-<p>위 코틀린 <code>person</code> 클래스의 구성을 뜯어보면 <code>Person</code> 클래스와 그 안에 객체선언으로 <code>object</code>가 하나 정의 되어 있고 <code>object</code> 에는 <code>companion</code> 이라는 특별한 표시가 붙어있습니다.  companion object 는 클래스 안에 정의된 일반 객체입니다. 따라서 동반 객체에 이름을 붙이거나, 인터페이스를 상속하거나, 동반 객체 안에 확장 함수와 프로퍼티를 정의할 수도 있습니다.</p>
+<p>위 코틀린 <code>person</code> 클래스의 구성을 뜯어보면 <code>Person</code> 클래스와 그 안에 객체선언으로 <code>object</code>가 하나 정의 되어 있고 <code>object</code> 에는 <code>companion</code> 이라는 특별한 표시가 붙어있습니다. companion object 는 클래스 안에 정의된 일반 객체입니다. 따라서 동반 객체에 이름을 붙이거나, 인터페이스를 상속하거나, 동반 객체 안에 확장 함수와 프로퍼티를 정의할 수도 있습니다.</p>
 <h3 id="3-anoymous-object">3. 익명 객체 - <code>anoymous object</code><a class="headerlink" href="#3-anoymous-object" title="Permanent link">¶</a></h3>
 <p>자바의 익명 클래스는 특정 인터페이스나 클래스를 상속받은 구현체를 일회성으로 사용할 때 사용하는 클래스 입니다.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">자바</label><label for="__tabbed_3_2">코틀린</label></div>
@@ -1895,7 +1889,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>

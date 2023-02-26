@@ -783,7 +783,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3-non-local-returns">
-    3.  non-local returns
+    3. Non-local Returns
   </a>
 </li>
 </ul>
@@ -1714,7 +1714,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3-non-local-returns">
-    3.  non-local returns
+    3. Non-local Returns
   </a>
 </li>
 </ul>
@@ -1789,9 +1789,9 @@
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kd">inline</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="n">inlined</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w"> </span><span class="n">noinline</span><span class="w"> </span><span class="n">notInlined</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p><code>inline</code> 함수의 모든 람다식이 <code>inline</code> 되기 원하지 않는다면 해당 함수 파라미터 앞에 <code>noinline</code> 변경자를 추가하면 됩니다.</p>
-<h3 id="3-non-local-returns">3.  non-local returns<a class="headerlink" href="#3-non-local-returns" title="Permanent link">¶</a></h3>
-<p>람다에서는 원 함수에 리턴 할 수 없습니다. 하지만 람다식이 inlined 되었다면 가능합니다.
-이런 리턴을 <em><code>non-local</code></em> return 이라고 합니다.</p>
+<h3 id="3-non-local-returns">3. Non-local Returns<a class="headerlink" href="#3-non-local-returns" title="Permanent link">¶</a></h3>
+<p>람다에서는 원 함수에 리턴 할 수 없습니다. 하지만 람다식이 inlined 되었다면 가능합니다.</p>
+<p>이런 리턴을 <em><code>non-local</code></em> return 이라고 합니다.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">bare <code>return</code> is forbidden inside a labmda</label><label for="__tabbed_1_2">label return</label><label for="__tabbed_1_3">bare return with inlined lambda return = non-local return</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1843,7 +1843,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2023</span>

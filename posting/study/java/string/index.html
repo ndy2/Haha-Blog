@@ -1774,8 +1774,8 @@
 <li>java.lang.StringBuilder</li>
 </ul>
 <p>세가지가 있습니다.</p>
-<p>이 문서에서는 먼저 가장 핵심이 되는 클래스인 String 에 대해서 자세히 정리하겠습니다.
-이후에 다음 문서에서 세 클래스를 간단히 비교해보겠습니다.</p>
+<p>이 문서에서는 먼저 가장 핵심이 되는 클래스인 String 에 대해서 자세히 정리하겠습니다.</p>
+<p>이후에 다음 문서에서 세 클래스를 간단히 비교해보겠습니다.</p>
 <hr/>
 <h3 id="1-string">1. String 은 불변 객체!<a class="headerlink" href="#1-string" title="Permanent link">¶</a></h3>
 <p><code>java.lang.String</code> 은 자바에서 문자열을 표현하는 가장 기본적인 객체입니다. String 의 특징에대해 검색해보면 가장 먼저 나오는 것이 열이면 아홉 <code>String</code> 은 불변 객체 (Immutable Object) 라는 것입니다.</p>
@@ -1792,13 +1792,13 @@
 <p>String 은 불변객체이며 따라서 Thread-Safe 합니다!</p>
 </blockquote>
 <h3 id="3-string-pool-constant-pool">3. String Pool (constant pool)<a class="headerlink" href="#3-string-pool-constant-pool" title="Permanent link">¶</a></h3>
-<p>자바의 String Pool 은 String 을 저장하기 위해 마련된 힙 내부에 위치한 특별한 메모리 공간힙니다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/string-pool.png"><img alt="images/string-pool.png" src="../images/string-pool.png"/></a></p>
-<p>String 을 생성하는 방식에는 String literal (<code>""</code>) 를 활용하는 방식과 생성자 (<code>new String(..)</code>) 을 활용하는 방식이 있습니다. <code>(*)</code>이때 항상 literal 을 사용하는 방식을 사용하는것이 좋습니다. 왜냐하면 생성자를 통해 String 을 생성하면 String pool 이 아닌 일반 heap 영역에 메모리가 저장되고 String 이 Immutable 함으로써 가질 수 있는 이점 (thread-safe 등)을 가질 수 없습니다. </p>
+<p>자바의 String Pool 은 String 을 저장하기 위해 마련된 힙 내부에 위치한 특별한 메모리 공간힙니다.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/string-pool.png"><img alt="images/string-pool.png" src="../images/string-pool.png"/></a></p>
+<p>String 을 생성하는 방식에는 String literal (<code>""</code>) 를 활용하는 방식과 생성자 (<code>new String(..)</code>) 을 활용하는 방식이 있습니다. <code>(*)</code> 이때 항상 literal 을 사용하는 방식을 사용하는것이 좋습니다. 왜냐하면 생성자를 통해 String 을 생성하면 String pool 이 아닌 일반 heap 영역에 메모리가 저장되고 String 이 Immutable 함으로써 가질 수 있는 이점 (thread-safe 등) 을 가질 수 없습니다. </p>
 <p><code>(*)</code> Java 15 에 추가된 text block (""") 을 활용하는 방식도 있긴 합니다.</p>
 <p>링크 - <a href="https://www.digitalocean.com/community/tutorials/what-is-java-string-pool#how-many-strings-are-getting-created-in-the-string-pool">String pool 과 관련된 헷갈리는 면접 문제</a></p>
 <h3 id="4-string">4. String 의 내부 구현!<a class="headerlink" href="#4-string" title="Permanent link">¶</a></h3>
-<p>Java 8 까지 String 은 내부적으로 UTF-16 으로 인코딩된 <code>char[]</code> 문자 배열을 가졌습니다. 즉 한 글자는 항상 2바이트를 사용합니다.  하지만 영어의 경우 1 바이트 만으로 충분합니다.</p>
+<p>Java 8 까지 String 은 내부적으로 UTF-16 으로 인코딩된 <code>char[]</code> 문자 배열을 가졌습니다. 즉 한 글자는 항상 2 바이트를 사용합니다. 하지만 영어의 경우 1 바이트 만으로 충분합니다.</p>
 <p>Java 9 에는 이를 해결하기 위해 Compact String 이라는 기능이 추가되었으며 이는 기본적으로 활성화 되어 있습니다. </p>
 <div class="highlight"><span class="filename">java.lang.String 일부</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">String</span><span class="w">  </span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="kd">implements</span><span class="w"> </span><span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">Serializable</span><span class="p">,</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">CharSequence</span><span class="p">,</span><span class="w">  </span>
@@ -1810,7 +1810,7 @@
 <a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="p">...</span>
 <a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="p">}</span>
 </code></pre></div>
-<p>동작 확인
+<p>동작 확인</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nd">@Test</span><span class="w">  </span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">문자_바이트_찍어보기</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"aa"</span><span class="p">;</span><span class="w">  </span>
@@ -1825,7 +1825,7 @@
 <a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="c1">// 가 : utf-8 : \xEA\xB0\x80 : [-22, -80, -128]  </span>
 <a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="na">getBytes</span><span class="p">()));</span><span class="w">  </span>
 <a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
 <div class="highlight"><span class="filename">실행 결과</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>cs = UTF-8
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>
 <a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>2
@@ -1838,7 +1838,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 23, 2022</span>

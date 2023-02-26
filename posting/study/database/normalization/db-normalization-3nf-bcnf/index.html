@@ -1754,36 +1754,36 @@
 <p class="admonition-title">참고 자료</p>
 <ul>
 <li>쉬운코드 - <a href="https://youtu.be/EdkjkifH-m8">(1부) DB 정규화(normalization)는 DB를 설계하는 공식적인 방법이죠~</a></li>
-<li>쉬운코드 - [(2부) DB 정규화(normalization) 2부입니다!!]</li>
+<li>쉬운코드 - [(2 부) DB 정규화 (normalization) 2 부입니다!!]</li>
 </ul>
 </div>
 <h3 id="3-3nf">3. 3NF<a class="headerlink" href="#3-3nf" title="Permanent link">¶</a></h3>
 <blockquote>
-<p>모든 non-prime attribute 는 어떤 key에 대해서도 Transitive FD 가 존재하면 안된다.
+<p>모든 non-prime attribute 는 어떤 key 에 대해서도 Transitive FD 가 존재하면 안된다.
 or non-prime attribute 와 non-prime attribute 사이에는 FD 가 있으면 안된다.</p>
 <p>Transitive FD
 if X -&gt; Y &amp; Y -&gt; Z holds, then X -&gt; Z holds 
 unless either Y or Z is NOT subset of any key</p>
 </blockquote>
 <ul>
-<li>2NF 까지 적용한 상태의 테이블 구조
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/after-2nf.png"><img alt="images/after-2nf.png" src="../images/after-2nf.png"/></a></li>
+<li>2NF 까지 적용한 상태의 테이블 구조</li>
 </ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/after-2nf.png"><img alt="images/after-2nf.png" src="../images/after-2nf.png"/></a></p>
 <p>살펴보면 (e1, Sony) 튜플이 중복으로 존재한다는 사실을 알 수 있습니다.</p>
-<p>그 이유는 Transitive FD 때문입니다.
-이 테이블에 존재하는 Transitive FD 는 아래와 같습니다.</p>
+<p>그 이유는 Transitive FD 때문입니다.</p>
+<p>이 테이블에 존재하는 Transitive FD 는 아래와 같습니다.</p>
 <ol>
 <li><code>{account_id}</code> -&gt; <code>{empl_id}</code> -&gt; <code>{empl_name}</code></li>
 <li><code>{bank_name, account_name}</code> -&gt; <code>{empl_id}</code> -&gt; <code>{empl_name}</code></li>
 </ol>
-<p>Employee 테이블을 분리하여 3NF 를 만족하도록 변경하면 아래와 같습니다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/after-3nf.png"><img alt="images/after-3nf.png" src="../images/after-3nf.png"/></a></p>
+<p>Employee 테이블을 분리하여 3NF 를 만족하도록 변경하면 아래와 같습니다.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/after-3nf.png"><img alt="images/after-3nf.png" src="../images/after-3nf.png"/></a></p>
 <h3 id="35-bcnf">3.5 BCNF<a class="headerlink" href="#35-bcnf" title="Permanent link">¶</a></h3>
 <blockquote>
 <p>모든 유효한 non-trivial FD X -&gt; Y 에 대해서 X 는 super key 여야 한다.</p>
 </blockquote>
-<p>EMPLOYEE_ACCOUNT 테이블의 {class} -&gt; {bank_name} FD 는 위 제약사항을 위반합니다!
-class 의 값인 BRONZE, LOYAL 만으로는 tuple 을 식별할 수 없습니다.</p>
+<p>EMPLOYEE_ACCOUNT 테이블의 {class} -&gt; {bank_name} FD 는 위 제약사항을 위반합니다!</p>
+<p>class 의 값인 BRONZE, LOYAL 만으로는 tuple 을 식별할 수 없습니다.</p>
 <p>테이블을 나누어 BCNF 를 만족하도록 변경해보면 아래와 같습니다.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/after-bcnf.png"><img alt="images/after-bcnf.png" src="../images/after-bcnf.png"/></a></p>
 <h3 id="4">4. 역정규화<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
@@ -1795,7 +1795,7 @@ class 의 값인 BRONZE, LOYAL 만으로는 tuple 을 식별할 수 없습니다
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>

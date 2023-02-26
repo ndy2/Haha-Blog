@@ -1853,14 +1853,14 @@
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="excalidraws/graph.excalidraw.png"><img alt="excalidraws/graph.excalidraw.png" src="excalidraws/graph.excalidraw.png"/></a></p>
 <p>union-find 알고리즘은 흔히 배열을 이용해 구현됩니다.</p>
 <ol>
-<li>
-<p>최초 각 node 는 자기자신을 가르킵니다. 
+<li>최초 각 node 는 자기자신을 가르킵니다. </li>
+</ol>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">var</span><span class="w"> </span><span class="nv">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IntArray</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="nb">it</span><span class="p">}</span><span class="w"> </span><span class="c1">// [0,1,2,3,4,5,6,7]</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>edge 를 추가하면 양옆 노드에 대해 union 연산을 적용합니다.
+</code></pre></div>
+<ol>
+<li>edge 를 추가하면 양옆 노드에 대해 union 연산을 적용합니다.</li>
+</ol>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="nv">edges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arrayOf</span><span class="p">(</span>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="n">Edge</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="n">Edge</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
 <a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="n">Edge</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">),</span><span class="w"> </span><span class="n">Edge</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">),</span><span class="w"> </span><span class="n">Edge</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">4</span><span class="p">)</span>
@@ -1870,16 +1870,14 @@
 <a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">   </span><span class="kd">val</span><span class="w"> </span><span class="p">(</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edge</span>
 <a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">   </span><span class="n">union</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 <a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="p">}</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>parent 배열을 통해 임의의 노드가 같은 집합에 속해있는지 알 수 있습니다.
+</code></pre></div>
+<ol>
+<li>parent 배열을 통해 임의의 노드가 같은 집합에 속해있는지 알 수 있습니다.</li>
+</ol>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">isInSameSet</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">){</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="p">}</span>
-</code></pre></div></p>
-</li>
-</ol>
+</code></pre></div>
 <h3 id="3">3. 생각 할 거리<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
 <h4 id="1-parents">1. <code>Parents</code> 배열의 의미<a class="headerlink" href="#1-parents" title="Permanent link">¶</a></h4>
 <p>최종적으로 생성된 parents 배열을 출력해보면 다음과 같습니다. 이를 그림으로 나타내면 아래와 같습니다.</p>
@@ -1889,12 +1887,12 @@
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="excalidraws/graph-after.excalidraw.png"><img alt="excalidraws/graph-after.excalidraw.png" src="excalidraws/graph-after.excalidraw.png"/></a></p>
 <p>1번 노드를 보면 <code>parents</code> 배열은 그 자체가 disjoint-set 의 대표값을 표현하지는 못하지만 <code>find</code> 를 연쇄적으로 호출함으로써 결국 자신의 대표값을 찾을 수 있다는 것을 알 수 있습니다.</p>
 <h4 id="2_1">2. 시간 복잡도<a class="headerlink" href="#2_1" title="Permanent link">¶</a></h4>
-<p><code>union</code> - 두번의 <code>find</code> 연산으로 이루어집니다.
-<code>find</code> - worst case 에 대입 연산(O(1))이 노드의 숫자번 (n 번) 발생합니다. 즉, <code>O(n)</code> 입니다.</p>
+<p><code>union</code> - 두번의 <code>find</code> 연산으로 이루어집니다.</p>
+<p><code>find</code> - worst case 에 대입 연산(O(1))이 노드의 숫자번 (n 번) 발생합니다. 즉, <code>O(n)</code> 입니다.</p>
 <p>즉 두 연산 모두 O(n) 시간 복잡도를 가집니다.</p>
 <h3 id="3_1">3. 개선<a class="headerlink" href="#3_1" title="Permanent link">¶</a></h3>
 <ul>
-<li>Naive Implementation 방식은 O(logN) 시간 복잡도를 가지는 <em>Union by Rank or Height</em>,  <em>Path Compression</em> 방식으로 개선 될 수 있습니다.</li>
+<li>Naive Implementation 방식은 O(logN) 시간 복잡도를 가지는 <em>Union by Rank or Height</em>, <em>Path Compression</em> 방식으로 개선 될 수 있습니다.</li>
 <li>또한 만약 node 1 이 속한 집합의 노드를 모두 알고 싶다면 현재 방식에서는 효율적이지 않습니다. 이는 parents 배열이 tree 형태가 아니라 circular-linked-list 형태를 띄도록 구현하여 효율적으로 구할 수 있습니다.</li>
 </ul>
 <hr/>
@@ -1902,7 +1900,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 20, 2023</span>

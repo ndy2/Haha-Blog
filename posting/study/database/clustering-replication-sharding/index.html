@@ -1876,7 +1876,7 @@
 <div class="admonition quote">
 <p class="admonition-title">참고 자료</p>
 <ul>
-<li>테리의 일상 <a href="https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81Clustering">클러스터링</a>,  <a href="https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EB%A0%88%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98Replication">리플리케이션</a>,<a href="https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%83%A4%EB%94%A9Sharding?category=805412">샤딩</a></li>
+<li>테리의 일상 <a href="https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81Clustering">클러스터링</a>, <a href="https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EB%A0%88%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98Replication">리플리케이션</a>,<a href="https://dheldh77.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%83%A4%EB%94%A9Sharding?category=805412">샤딩</a></li>
 <li>Be A Better Dev - <a href="https://www.youtube.com/watch?v=hdxdhCpgYo8">데이터베이스 샤딩이란?</a></li>
 <li>망나니 개발자 - <a href="https://mangkyu.tistory.com/97">[Database] 리플리케이션(Replication) vs 클러스터링(Clustering)</a></li>
 <li>쉬운코드 - <a href="https://www.youtube.com/watch?v=P7LqaEO-nGU">[DB] 파티셔닝? 샤딩? 레플리케이션 (partitioning? sharding? replication?)</a></li>
@@ -1885,15 +1885,15 @@
 <hr/>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><code>클러스터링</code>, <code>레플리케이션</code>, <code>샤딩/파티셔닝</code>은 모두 데이터베이스 다중화를 위한 기법입니다.</p>
+<p><code>클러스터링</code>, <code>레플리케이션</code>, <code>샤딩/파티셔닝</code> 은 모두 데이터베이스 다중화를 위한 기법입니다.</p>
 </div>
 <h2 id="1-clustering">1. 클러스터링 (clustering)<a class="headerlink" href="#1-clustering" title="Permanent link">¶</a></h2>
 <ul>
-<li>여러 개의 DB를 수평적인 구조로 구축하는 방식</li>
+<li>여러 개의 DB 를 수평적인 구조로 구축하는 방식</li>
 <li>동기 방식으로 노드들간의 데이터를 동기화 한다.</li>
-<li>Active-Active 방식과 Active-Standby 방식이 있다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/clustering.png"><img alt="images/clustering.png" src="images/clustering.png"/></a></li>
+<li>Active-Active 방식과 Active-Standby 방식이 있다.</li>
 </ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/clustering.png"><img alt="images/clustering.png" src="images/clustering.png"/></a></p>
 <h3 id="_1">장점<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <ul>
 <li>항상 일관성 있는 데이터를 얻을 수 있다.</li>
@@ -1901,19 +1901,19 @@
 </ul>
 <h3 id="_2">단점<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
 <ul>
-<li>노드들 간의 데이터를 동기화하는 시간이 필요하므로 Replication에 비해 쓰기 성능이 떨어진다.</li>
+<li>노드들 간의 데이터를 동기화하는 시간이 필요하므로 Replication 에 비해 쓰기 성능이 떨어진다.</li>
 <li>장애가 전파된 경우 처리가 까다로우며, 데이터 동기화에 의해 스케일링에 한계가 있다.</li>
 </ul>
 <h2 id="2">2. 리플리케이션<a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
 <ul>
-<li>여러 개의 DB를 <code>수직적인 구조(Master-Slave)</code>로 구축하는 방식</li>
-<li><code>비동기 방식</code>으로 노드들 간의 데이터를 동기화 한다.</li>
-<li>Master 노드는 Create, Update, Delete 연산을 수행하고 Slave 노드는 Read 연산을 수행하여 로드를 분산할 수 있다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/replication.png"><img alt="images/replication.png" src="images/replication.png"/></a></li>
+<li>여러 개의 DB 를 <code>수직적인 구조(Master-Slave)</code> 로 구축하는 방식</li>
+<li><code>비동기 방식</code> 으로 노드들 간의 데이터를 동기화 한다.</li>
+<li>Master 노드는 Create, Update, Delete 연산을 수행하고 Slave 노드는 Read 연산을 수행하여 로드를 분산할 수 있다.</li>
 </ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/replication.png"><img alt="images/replication.png" src="images/replication.png"/></a></p>
 <h3 id="_3">장점<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <ul>
-<li>DB 요청의 60~80% 정도가 읽기 작업이기 때문에 Replication만으로도 충분히 성능을 높일 수 있다.</li>
+<li>DB 요청의 60~80% 정도가 읽기 작업이기 때문에 Replication 만으로도 충분히 성능을 높일 수 있다.</li>
 <li>비동기 방식으로 운영되어 지연 시간이 거의 없다.</li>
 </ul>
 <h3 id="_4">단점<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
@@ -1969,7 +1969,7 @@
 <p>(-) 다른 샤드의 엔티티를 참조해야 하는 경우 비효율적</p>
 <h2 id="4">4. 파티셔닝<a class="headerlink" href="#4" title="Permanent link">¶</a></h2>
 <p>파티셔닝은 데이터베이스 테이블을 더 작은 테이블로 나누는 것이다.</p>
-<p>파티셔닝은 <code>column</code>을 기준으로 테이블을 나누는 <code>vertical partitioning</code> 과 <code>row</code> 를 기준으로 테이블을 나누는 <code>horizontal partitioning</code> 이 있다. </p>
+<p>파티셔닝은 <code>column</code> 을 기준으로 테이블을 나누는 <code>vertical partitioning</code> 과 <code>row</code> 를 기준으로 테이블을 나누는 <code>horizontal partitioning</code> 이 있다. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
@@ -1979,25 +1979,25 @@
 </ul>
 </div>
 <p>그럼 이제 <code>vertical partitioning</code> 에 대해 알아보자!</p>
-<p><code>Vertical Partitioning</code> 은 <code>column을</code> 기준으로 테이블을 나누는 것이다. VP 를 수행하는 경우는 크게 정규화가 있다. <code>정규화</code>란 데이터의 중복을 없에고 CUD 연산의 이상현상을 없애기 위해 테이블을 잘게 나누는 것을 의미한다. 하지만 VP 에는 정규화만있는 것은 아니다.</p>
-<p>정규화는 추후에 별도로 알아보도록 하고 오늘은 <code>성능 개선</code>을 위해 VP 를 수행할 수 있는 상황에 대해 알아보자.</p>
-<p>아래와 같은 게시판의 목록 화면을 띄우기 위해서 Article 테이블에는 어떤 쿼리가 발생해야 할까?
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/article-table.png"><img alt="images/article-table.png" src="images/article-table.png"/></a></p>
+<p><code>Vertical Partitioning</code> 은 <code>column을</code> 기준으로 테이블을 나누는 것이다. VP 를 수행하는 경우는 크게 정규화가 있다. <code>정규화</code> 란 데이터의 중복을 없에고 CUD 연산의 이상현상을 없애기 위해 테이블을 잘게 나누는 것을 의미한다. 하지만 VP 에는 정규화만있는 것은 아니다.</p>
+<p>정규화는 추후에 별도로 알아보도록 하고 오늘은 <code>성능 개선</code> 을 위해 VP 를 수행할 수 있는 상황에 대해 알아보자.</p>
+<p>아래와 같은 게시판의 목록 화면을 띄우기 위해서 Article 테이블에는 어떤 쿼리가 발생해야 할까?</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/article-table.png"><img alt="images/article-table.png" src="images/article-table.png"/></a></p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/articles.png"><img alt="images/articles.png" src="images/articles.png"/></a></p>
-<p>예상 쿼리
+<p>예상 쿼리</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">article</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="p">...</span>
-</code></pre></div></p>
-<p>놀라운 사실은 개발자가 SELECT 절에 필드를 명시했다고 할지라도 article 테이블의 where 절에 해당되는 row의 모든 필드 데이터를 메모리에 올리고 SELECT 절의 필드에 대한 프로젝션을 데이터베이스에서 수행한다는 것이다. 이는 데이터베이스가 일반적으로 데이터를 row 단위로 관리하기 때문이다. (Column-oriented DBMS vs Row-oriented DBMS)</p>
-<p>이때 아래와 같이 Column 을 기준으로 테이블을 파티셔닝하면 게시판의 목록 조회에 대해서 content를 IO 해야 한다는 부당함을 덜 수 있다.</p>
+</code></pre></div>
+<p>놀라운 사실은 개발자가 SELECT 절에 필드를 명시했다고 할지라도 article 테이블의 where 절에 해당되는 row 의 모든 필드 데이터를 메모리에 올리고 SELECT 절의 필드에 대한 프로젝션을 데이터베이스에서 수행한다는 것이다. 이는 데이터베이스가 일반적으로 데이터를 row 단위로 관리하기 때문이다. (Column-oriented DBMS vs Row-oriented DBMS)</p>
+<p>이때 아래와 같이 Column 을 기준으로 테이블을 파티셔닝하면 게시판의 목록 조회에 대해서 content 를 IO 해야 한다는 부당함을 덜 수 있다.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/article-table-partitioning.png"><img alt="images/article-table-partitioning.png" src="images/article-table-partitioning.png"/></a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 19, 2022</span>

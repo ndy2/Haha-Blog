@@ -1812,12 +1812,12 @@
 <div class="admonition quote">
 <p class="admonition-title">참고 자료</p>
 <ul>
-<li>쉬운 코드 - <a href="https://www.youtube.com/watch?v=E-khvKjjVv4">join 의 의미와 여러 종류 ... </a></li>
+<li>쉬운 코드 - <a href="https://www.youtube.com/watch?v=E-khvKjjVv4">join 의 의미와 여러 종류 ...</a></li>
 </ul>
 </div>
 <h3 id="join">Join 의 의미<a class="headerlink" href="#join" title="Permanent link">¶</a></h3>
 <ul>
-<li>두 개 이상의 table들에 있는 데이터를 한번에 조회 하는것</li>
+<li>두 개 이상의 table 들에 있는 데이터를 한번에 조회 하는것</li>
 </ul>
 <hr/>
 <h3 id="implicit-join">Implicit Join<a class="headerlink" href="#implicit-join" title="Permanent link">¶</a></h3>
@@ -1832,13 +1832,15 @@
 </ul>
 <hr/>
 <h3 id="explicit-join">Explicit Join<a class="headerlink" href="#explicit-join" title="Permanent link">¶</a></h3>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="k">name</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="k">name</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">D</span>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="k">ON</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">dept_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="n">id</span>
 <a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">E</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </code></pre></div>
-- from 절에 JOIN 키워드와 함께 joined table 들을 명시함
-- from 절의 ON 뒤에 join condition 작성</p>
+<ul>
+<li>from 절에 JOIN 키워드와 함께 joined table 들을 명시함</li>
+<li>from 절의 ON 뒤에 join condition 작성</li>
+</ul>
 <hr/>
 <ul>
 <li>예시 테이블</li>
@@ -1859,7 +1861,7 @@
 <li>join 컨디션에서는 <code>=</code> 뿐만이 아니래 <code>&lt;</code>, <code>&gt;</code>, <code>!=</code> 등 여러가지 연산자를 선택할 수 있다.</li>
 <li>결과</li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/inner-join.png"><img alt="images/inner-join.png" src="images/inner-join.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/inner-join.png"><img alt="inner-join.png" src="images/inner-join.png"/></a></p>
 <h3 id="outer-join">Outer Join<a class="headerlink" href="#outer-join" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="p">(</span><span class="k">OUTER</span><span class="p">)</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="n">D</span>
@@ -1870,12 +1872,8 @@
 <ul>
 <li>LEFT JOIN, RIGHT JOIN, FULL JOIN 만 작성해도 된다.</li>
 <li>두 테이블에서 join 컨디션을 만족 (<code>true</code>) 하지 않는 tuple 도 선택한다.</li>
-<li>
-<p>join 컨디션에서는 <code>=</code> 뿐만이 아니래 <code>&lt;</code>, <code>&gt;</code>, <code>!=</code> 등 여러가지 연산자를 선택할 수 있다.</p>
-</li>
-<li>
-<p>LEFT OUTER JOIN 결과 </p>
-<ul>
+<li>join 컨디션에서는 <code>=</code> 뿐만이 아니래 <code>&lt;</code>, <code>&gt;</code>, <code>!=</code> 등 여러가지 연산자를 선택할 수 있다.</li>
+<li>LEFT OUTER JOIN 결과 <ul>
 <li>Left Table 즉, Employee 테이블의 모든 튜플을 포함한다.</li>
 <li>다른쪽 테이블 즉, Deplartment 테이블의 에트리뷰트는 null 로 채운다.</li>
 </ul>
@@ -1884,7 +1882,7 @@
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/left-outer-join.png"><img alt="images/left-outer-join.png" src="images/left-outer-join.png"/></a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>mysql은 Full Outer Join 을 지원하지 않는다.</p>
+<p>mysql 은 Full Outer Join 을 지원하지 않는다.</p>
 </div>
 <hr/>
 <h3 id="equi-join">Equi Join<a class="headerlink" href="#equi-join" title="Permanent link">¶</a></h3>
@@ -1925,7 +1923,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>

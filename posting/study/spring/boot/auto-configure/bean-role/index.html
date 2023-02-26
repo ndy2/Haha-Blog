@@ -865,7 +865,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3-spring-boot">
-    3. Spring Boot 가 빈을 컨테이너에 등록하는 방식
+    3. Spring Boot 가 빈을 컨테이너에 등록하는 방식
   </a>
 </li>
 </ul>
@@ -1714,7 +1714,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3-spring-boot">
-    3. Spring Boot 가 빈을 컨테이너에 등록하는 방식
+    3. Spring Boot 가 빈을 컨테이너에 등록하는 방식
   </a>
 </li>
 </ul>
@@ -1759,27 +1759,21 @@
 <p>스프링 컨테이너에 올라가는 빈의 종류를 알아보자</p>
 <h3 id="1">1. 빈의 역할<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
 <ul>
-<li>
-<p>애플리케이션 로직 빈</p>
-<ul>
+<li>애플리케이션 로직 빈<ul>
 <li>애플리케이션 주요 로직을 담고 있는 주요 클래스의 오브젝트</li>
 <li>e.g.) DAO, Service, Controller 등이 대표적이다.</li>
 </ul>
 </li>
-<li>
-<p>애플리케이션 인프라 빈</p>
-<ul>
+<li>애플리케이션 인프라 빈<ul>
 <li>애플리케이션이 동작하는데 밀접하게 동작하지만 애플리케이션 로직을 담고 있지는 않은 오브젝트</li>
-<li>e.g.) DAO 가 사용하는 <code>DataSource</code> 오브젝트,  트랜잭션 추상화에 사용되는 <code>DataSourceTransactionManager</code></li>
+<li>e.g.) DAO 가 사용하는 <code>DataSource</code> 오브젝트, 트랜잭션 추상화에 사용되는 <code>DataSourceTransactionManager</code></li>
 </ul>
 </li>
-<li>
-<p>컨테이너 인프라스트럭처 빈</p>
-<ul>
+<li>컨테이너 인프라스트럭처 빈<ul>
 <li>애플리케이션 로직과 관계없이 스프링 켄테이너의 기능에 관여하는 빈</li>
 <li>ApplicationContext/BeanFactory, Environment</li>
 <li>BeanPostProcessor, BeanFactoryPostProcessor</li>
-<li>DefaultAdvisorAutoProxyCreator  - Advisort 타입 빈의 포인트컷 정보를 이용해 타깃 빈을 선정하고 선정된 빈을 프록시로 바꾼다.</li>
+<li>DefaultAdvisorAutoProxyCreator - Advisort 타입 빈의 포인트컷 정보를 이용해 타깃 빈을 선정하고 선정된 빈을 프록시로 바꾼다.</li>
 </ul>
 </li>
 </ul>
@@ -1820,7 +1814,7 @@
 <a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a>
 <a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="p">}</span><span class="w"> </span>
 </code></pre></div>
-<h3 id="3-spring-boot">3. Spring Boot 가 빈을 컨테이너에 등록하는 방식<a class="headerlink" href="#3-spring-boot" title="Permanent link">¶</a></h3>
+<h3 id="3-spring-boot">3. Spring Boot 가 빈을 컨테이너에 등록하는 방식<a class="headerlink" href="#3-spring-boot" title="Permanent link">¶</a></h3>
 <ul>
 <li>애플리케이션 로직 빈 -&gt; <code>@ComponentScan</code></li>
 <li>애플리케이션 인프라 빈/ 컨테이너 인프라 빈 -&gt; <code>Auto-Configuration</code></li>
@@ -1830,7 +1824,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2023</span>

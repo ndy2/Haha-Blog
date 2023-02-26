@@ -313,7 +313,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1-dbcp">
-    1. DBCP의 개념과 원리
+    1. DBCP 의 개념과 원리
   </a>
 </li>
 <li class="md-nav__item">
@@ -348,7 +348,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2-maximumpoolsize">
-    2.  maximumPoolSize
+    2. maximumPoolSize
   </a>
 </li>
 <li class="md-nav__item">
@@ -1742,7 +1742,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1-dbcp">
-    1. DBCP의 개념과 원리
+    1. DBCP 의 개념과 원리
   </a>
 </li>
 <li class="md-nav__item">
@@ -1777,7 +1777,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2-maximumpoolsize">
-    2.  maximumPoolSize
+    2. maximumPoolSize
   </a>
 </li>
 <li class="md-nav__item">
@@ -1840,35 +1840,33 @@
 </ul>
 <p>을 사용하여 DBCP 를 설정하는 방식을 알아보겠습니다.</p>
 <hr/>
-<h3 id="1-dbcp">1. DBCP의 개념과 원리<a class="headerlink" href="#1-dbcp" title="Permanent link">¶</a></h3>
+<h3 id="1-dbcp">1. DBCP 의 개념과 원리<a class="headerlink" href="#1-dbcp" title="Permanent link">¶</a></h3>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="excalidraws/dbcp-con.excalidraw.png"><img alt="excalidraws/dbcp-con.excalidraw.png" src="excalidraws/dbcp-con.excalidraw.png"/></a></p>
 <ul>
 <li>매번 connection 을 열고 닫는 시간적인 비용이 발생합니다.</li>
 <li>서비스 성능에 좋지 않습니다.</li>
 </ul>
 <p><strong>DBCP</strong> - Database Connection Pool</p>
-<p>=&gt; <mark>미리 커넥션을 만들어두고 Pool 처럼 관리하자!</mark>
-- 요청의 시작 전에 TCP 연결을 수립하고 해지 하지 않고 Pool 에서 커넥션을 조회하고 반납하자!</p>
+<p>=&gt; <mark>미리 커넥션을 만들어두고 Pool 처럼 관리하자!</mark></p>
+<ul>
+<li>요청의 시작 전에 TCP 연결을 수립하고 해지 하지 않고 Pool 에서 커넥션을 조회하고 반납하자!</li>
+</ul>
 <h3 id="2-mysql">2. MySql<a class="headerlink" href="#2-mysql" title="Permanent link">¶</a></h3>
 <h4 id="1-max_connections">1. <code>max_connections</code><a class="headerlink" href="#1-max_connections" title="Permanent link">¶</a></h4>
 <ul>
-<li>client 와 맺을 수 있는 최대 connection 수 (default = 100)
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/dbcp-max_connections.png"><img alt="images/dbcp-max_connections.png" src="images/dbcp-max_connections.png"/></a></li>
-<li>
-<p>mysql 의 max_connections 값이 4로 설정된 경우</p>
-</li>
-<li>
-<p>이런 상황에서 새로운 애플리케이션을 추가하거나 <code>HikariCP</code> 의 커넥션 개수를 늘리려고 해도 동작하지 않습니다. 이럴 때는 MySQL의 max_connections 값을 늘려주어야 합니다.</p>
-</li>
-<li>
-<p>초과 분에 대해서는 <code>Too Many Connections</code> 에러가 발생합니다.</p>
-</li>
+<li>client 와 맺을 수 있는 최대 connection 수 (default = 100)</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/dbcp-max_connections.png"><img alt="images/dbcp-max_connections.png" src="images/dbcp-max_connections.png"/></a></p>
+<ul>
+<li>mysql 의 max_connections 값이 4 로 설정된 경우</li>
+<li>이런 상황에서 새로운 애플리케이션을 추가하거나 <code>HikariCP</code> 의 커넥션 개수를 늘리려고 해도 동작하지 않습니다. 이럴 때는 MySQL 의 max_connections 값을 늘려주어야 합니다.</li>
+<li>초과 분에 대해서는 <code>Too Many Connections</code> 에러가 발생합니다.</li>
 <li>설정 및 확인 방법 - <a href="https://zetawiki.com/wiki/MySQL_max_connections_설정">링크</a></li>
 </ul>
 <h4 id="2-mysql-wait_timeout">2. MySQL - <code>wait_timeout</code><a class="headerlink" href="#2-mysql-wait_timeout" title="Permanent link">¶</a></h4>
 <ul>
 <li>connection 이 idle (inactive) 할 때 다시 요청이 오기까지 얼마의 시간을 기다린 뒤에 close 할 것인지 결정하는 값 (default - 8 시간 (28800 초))</li>
-<li>한 쓰레드가 커넥션 풀에서 커넥션을 가져가서 사용하지도 않고 반환하지도 않는 경우 리소스 점유의 문제가 있습니다. 이 문제를 해결하기  MySQL 은 마지막 사용(요청) 시간을 기준으로 wait_timeout 시간이 초과된다면 connection 을 종료합니다.</li>
+<li>한 쓰레드가 커넥션 풀에서 커넥션을 가져가서 사용하지도 않고 반환하지도 않는 경우 리소스 점유의 문제가 있습니다. 이 문제를 해결하기 MySQL 은 마지막 사용 (요청) 시간을 기준으로 wait_timeout 시간이 초과된다면 connection 을 종료합니다.</li>
 </ul>
 <div class="admonition quote">
 <p class="admonition-title">참고 자료</p>
@@ -1889,7 +1887,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="2-maximumpoolsize">2.  <code>maximumPoolSize</code><a class="headerlink" href="#2-maximumpoolsize" title="Permanent link">¶</a></h4>
+<h4 id="2-maximumpoolsize">2. <code>maximumPoolSize</code><a class="headerlink" href="#2-maximumpoolsize" title="Permanent link">¶</a></h4>
 <ul>
 <li>pool 이 가질 수 있는 최대 connection 수</li>
 <li>default - 10</li>
@@ -1900,19 +1898,19 @@
 <p><code>maximumPoolSize</code> 가 <code>minimumIdle</code> 보다 우선 순위를 가집니다!
 <code>maximumPoolSize</code> = 4, <code>minimumIdle</code> = 2 인 설정으로 HikraiCP 를 시작하면
 minimumIdle 을 만족하기 위해 먼저 두개의 커넥션을 생성합니다.
-이 상태에서 하나의 요청이 와서 커넥션 하나가 <code>IN-USE</code> 상태가 된다면 minmumIdle 설정에 따라 Connection 이 하나 추가되고 idle connection 의 최솟값을 2로 유지할 수 있습니다.</p>
-<p>하지만 이 상태에서 추가적인 요청이 두개가 더 온다면 minimumIdle을 준수하기 위해 Connection을 두개 더 추가했다가는 maximumPoolSize 가 께지게 됩니다. HikariCP는 이 때 maximumPoolSize 설정이 minimuIdle 설정에 우선해서 동작하도록 합니다.</p>
+이 상태에서 하나의 요청이 와서 커넥션 하나가 <code>IN-USE</code> 상태가 된다면 minmumIdle 설정에 따라 Connection 이 하나 추가되고 idle connection 의 최솟값을 2 로 유지할 수 있습니다.</p>
+<p>하지만 이 상태에서 추가적인 요청이 두개가 더 온다면 minimumIdle 을 준수하기 위해 Connection 을 두개 더 추가했다가는 maximumPoolSize 가 께지게 됩니다. HikariCP 는 이 때 maximumPoolSize 설정이 minimuIdle 설정에 우선해서 동작하도록 합니다.</p>
 <p>참고 링크 - 쉬운코드님 영상 14:41</p>
 </div>
 <h4 id="3-maxlifetime">3. <code>maxLifetime</code><a class="headerlink" href="#3-maxlifetime" title="Permanent link">¶</a></h4>
 <ul>
-<li>pool 에서 connection의 최대 수명</li>
-<li>maxLifetime 을 넘기면 idle 인 경우 pool 에서 바로 제거 active 인 경우 pool로 반환된 후 제거</li>
+<li>pool 에서 connection 의 최대 수명</li>
+<li>maxLifetime 을 넘기면 idle 인 경우 pool 에서 바로 제거 active 인 경우 pool 로 반환된 후 제거</li>
 <li>db 의 connection timeout 보다 몇 초 짧게 설정해야한다.</li>
 </ul>
 <h4 id="4-connectiontimeout">4. <code>connectionTimeout</code><a class="headerlink" href="#4-connectiontimeout" title="Permanent link">¶</a></h4>
 <ul>
-<li>poll 에서 connection을 받기 위한 대기 시간</li>
+<li>poll 에서 connection 을 받기 위한 대기 시간</li>
 <li>default - 30 초</li>
 </ul>
 <hr/>
@@ -1920,7 +1918,7 @@ minimumIdle 을 만족하기 위해 먼저 두개의 커넥션을 생성합니�
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 26, 2022</span>

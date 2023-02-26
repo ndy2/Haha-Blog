@@ -738,7 +738,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3-observable-properties">
-    3. Observable properties﻿
+    3. Observable Properties
   </a>
 </li>
 <li class="md-nav__item">
@@ -1724,7 +1724,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3-observable-properties">
-    3. Observable properties﻿
+    3. Observable Properties
   </a>
 </li>
 <li class="md-nav__item">
@@ -1773,7 +1773,7 @@
 <p class="admonition-title">참고 자료</p>
 <ul>
 <li><a href="http://www.yes24.com/Product/Goods/55148593"><code>『코틀린 인 액션』</code></a> by 드미트리 제메로프, 스베트라나 이사코바 <ul>
-<li>7장 연산자 오버로딩과 기타 관례</li>
+<li>7 장 연산자 오버로딩과 기타 관례</li>
 </ul>
 </li>
 <li>kotlin documentation - <a href="https://kotlinlang.org/docs/delegated-properties.html">delegation properties</a></li>
@@ -1826,8 +1826,8 @@
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>Hello
 <a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>Hello
 </code></pre></div>
-<p><code>get()</code> 이 처음 호출 되면 람다식을 실행해서 그 결과값을 <code>Lazy&lt;T&gt;</code> 인스턴스에 저장합니다.
-<code>get()</code> 이 추가적으로 호출 되는 경우 람다식을 실행하지 않고 저장된 값을 반환합니다.</p>
+<p><code>get()</code> 이 처음 호출 되면 람다식을 실행해서 그 결과값을 <code>Lazy&lt;T&gt;</code> 인스턴스에 저장합니다.</p>
+<p><code>get()</code> 이 추가적으로 호출 되는 경우 람다식을 실행하지 않고 저장된 값을 반환합니다.</p>
 <p>아주 매력적입니다. <code>lazy()</code> 의 구현을 더 자세히 살펴보겠습니다.</p>
 <div class="highlight"><span class="filename">LazyJVM.kt - kotlin.LazyKt</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">package</span><span class="w"> </span><span class="nn">kotlin</span>
 <a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>
@@ -1870,7 +1870,7 @@
 </code></pre></div>
 <ol>
 <li>Lazy 인터페이스 - 저장 값의 게터와 초기화 여부를 제공합니다. </li>
-<li><em>delegate</em> 로 동작하는 expression 은 <code>getValue</code> 를 제공해야 합니다. <code>Lazy&lt;T&gt;</code> 에 대한 <code>getValue</code> 연산자를 확장함수로 제공함으로써 Lazy 구현체가 delagate 로 동작 할 수 있습니다.</li>
+<li><em>delegate</em> 로 동작하는 expression 은 <code>getValue</code> 를 제공해야 합니다. <code>Lazy&lt;T&gt;</code> 에 대한 <code>getValue</code> 연산자를 확장함수로 제공함으로써 Lazy 구현체가 delegate 로 동작 할 수 있습니다.</li>
 <li><code>lazy</code> 팩토리 메서드의 LazyThreadSaftetyMode 를 통해 세가지 타입의 Lazy 구현체를 제공합니다. 나머지 하나는 초기화가 다 되었다는 정보를 포함하는 <code>InitializedLazyImpl</code> 이므로 <code>lazyOf</code> 메서드로 따로 제공하고 람다를 받지도 않습니다.</li>
 </ol>
 <pre class="mermaid"><code>classDiagram
@@ -1915,8 +1915,8 @@
 <li>여기서 한번 더 확인 하는 모습도 인상적입니다.</li>
 <li>function type 을 실행 한다. 여기서 <code>initializer</code> 의 값을 <code>null</code> 로 변경 해 주어서 이 구문이 단 한번만 실행 하도록 보장하는 모습이 인상적입니다.</li>
 </ol>
-<h3 id="3-observable-properties">3. Observable properties﻿<a class="headerlink" href="#3-observable-properties" title="Permanent link">¶</a></h3>
-<p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/observable.html"><code>Delegates.observable()</code></a> 는 <code>초기 값</code>과 <code>핸들러</code> 두가지 인자를 가집니다.</p>
+<h3 id="3-observable-properties">3. Observable Properties<a class="headerlink" href="#3-observable-properties" title="Permanent link">¶</a></h3>
+<p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/observable.html"><code>Delegates.observable()</code></a> 는 <code>초기 값</code> 과 <code>핸들러</code> 두가지 인자를 가집니다.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">import</span><span class="w"> </span><span class="nn">kotlin.properties.Delegates</span>
 <a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>
 <a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kd">class</span><span class="w"> </span><span class="nc">User</span><span class="w"> </span><span class="p">{</span>
@@ -1936,7 +1936,7 @@
 <a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>name : first -&gt; second
 </code></pre></div>
 <p>이번에는 게터 보다 세터와 조금더 연관이 깊은 <em>delegation</em> 입니다. <code>Delegates.observable</code> 은 setValue 연산자에 대한 오버라이딩을 제공하여 이전값, 현재값을 저장하고 있다가 값에 변경이 일어나는 경우 <code>Handler</code> 를 호출 할 수 있습니다.</p>
-<p><em>kotlin documentation</em> 에서 설명하는 내용 중 핸들러의 호출시점에 대해서는 꼭 알고가야할 것 같습니다. <code>Delegates.observable()</code> 의 핸들러는 값의 할당이 이루어 진 이후에 호출됩니다. 값의 할당이 이루어 지기 전 핸들러를 호출하는 <em>delegation</em> 인 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/vetoable.html"><code>Delegates.vetoable()</code></a>  이라는 녀석도 있습니다.  이녀석을 활용하면 값의 변경이 이루어지기 전 값을 검증하는 등의 역할을 수행 할 수도 있습니다. </p>
+<p><em>kotlin documentation</em> 에서 설명하는 내용 중 핸들러의 호출시점에 대해서는 꼭 알고가야할 것 같습니다. <code>Delegates.observable()</code> 의 핸들러는 값의 할당이 이루어 진 이후에 호출됩니다. 값의 할당이 이루어 지기 전 핸들러를 호출하는 <em>delegation</em> 인 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/vetoable.html"><code>Delegates.vetoable()</code></a> 이라는 녀석도 있습니다. 이녀석을 활용하면 값의 변경이 이루어지기 전 값을 검증하는 등의 역할을 수행 할 수도 있습니다. </p>
 <h3 id="4">4. 컴파일러가 어떻게 처리하는가?<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
 <p>공식 문서 및 다양한 예제를 보면 위에서 정리한 <code>Lazy</code>, 나 <code>Delegation.observable()</code>, <code>vetoable()</code> 외의 몇가지 흥미로운 활용방식을 더 소개합니다.</p>
 <div class="admonition example">
@@ -1948,7 +1948,7 @@
 </ul>
 </div>
 <p>위 방식들은 나중에 사용할 기회가 있으면 더 알아보는 것으로 하고 컴파일러가 이 위임 <em>Delegation</em> 을 어떻게 처리하는가에 대해서 알아보겠습니다.</p>
-<p>사실 이전에 살펴본 <a href="../delegation">class 레벨의 delegation</a>에서 바이트코드 디 컴파일을 통해 어느정도 동작방식을 살펴보았습니다. 컴파일러는 위임 프로퍼티에 대해 보조 프로퍼티를 생성하여 이를 처리합니다.</p>
+<p>사실 이전에 살펴본 <a href="../delegation">class 레벨의 delegation</a> 에서 바이트코드 디 컴파일을 통해 어느정도 동작방식을 살펴보았습니다. 컴파일러는 위임 프로퍼티에 대해 보조 프로퍼티를 생성하여 이를 처리합니다.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">C</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">prop</span><span class="p">:</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">MyDelegate</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
 <a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>
 <a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="c1">// this code is generated by the compiler instead: </span>
@@ -1990,7 +1990,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 19, 2023</span>

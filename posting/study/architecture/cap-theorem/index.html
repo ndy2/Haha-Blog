@@ -1752,23 +1752,21 @@
 <div class="admonition quote">
 <p class="admonition-title">참고 자료</p>
 <ul>
-<li>Jung-Haeng Lee - [CAP Theorem, 오해와 진실](http://eincs.com/2013/07/misleading-and-truth-of-cap-theorem</li>
+<li>Jung-Haeng Lee - [CAP Theorem, 오해와 진실](http://eincs.com/2013/07/misleading-and-truth-of-cap-theorem<ul>
 <li>무조건 읽을 것</li>
+</ul>
+</li>
 <li><code>『System Design Interview/가상 면접 사례로 배우는 대규모 시스템 설계 기초』</code> by Alex Xu/ 알렉스 쉬 - <a href="http://www.yes24.com/Product/Goods/102819435">yes24</a></li>
 </ul>
 </div>
 <h3 id="cap-theorem">CAP Theorem<a class="headerlink" href="#cap-theorem" title="Permanent link">¶</a></h3>
-<blockquote>
-<p>![quote] CAP theorem on <a href="https://en.wikipedia.org/wiki/CAP_theorem">wikipedia</a>
-In theoretical computer science, the <strong>CAP theorem</strong> states that any distributed data store can provide only two of the following three quarantees </p>
-<ul>
-<li>Consistency - Every read receives the most recent write or an error<ul>
-<li>Availability - Every request receives a (non-error) response, without the guarantee that it contains the most recent write.</li>
-<li>Partition tolerance - The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.</li>
-</ul>
-</li>
-</ul>
-</blockquote>
+<div class="admonition quote">
+<p class="admonition-title">CAP theorem on <a href="https://en.wikipedia.org/wiki/CAP_theorem">wikipedia</a></p>
+<p>In theoretical computer science, the <strong>CAP theorem</strong> states that any distributed data store can provide only two of the following three quarantees 
+* Consistency - Every read receives the most recent write or an error
+* Availability - Every request receives a (non-error) response, without the guarantee that it contains the most recent write.
+* Partition tolerance - The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.</p>
+</div>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/the-cap-theorem-diagram.png"><img alt="images/the-cap-theorem-diagram.png" src="images/the-cap-theorem-diagram.png"/></a></p>
 <h3 id="cap">CAP<a class="headerlink" href="#cap" title="Permanent link">¶</a></h3>
 <ul>
@@ -1780,12 +1778,8 @@ In theoretical computer science, the <strong>CAP theorem</strong> states that an
 <ul>
 <li>CP 시스템 : 일관성과 파티션 감내를 지원한다. 가용성을 희생한다.</li>
 <li>AP 시스템 : 가용성과 파티션 감내를 지원한다. 데이터 일관성을 희생한다.</li>
-<li>
-<p>CA 시스템: 일관성과 가용성을 지원한다. 파티션 감내는 지원하지 않는다. 그러나 통산 네트워크 장애는 피할 수 없는 일로 여겨지므로, 분산 시스템은 반드시 파티션 문제를 감내할 수 있도록 설계되어야 한다. 그러므로 실세계에 CA 시스템은 존재하지 않는다.</p>
-</li>
-<li>
-<p>온라인 뱅킹 시스템은 데이터 일관성을 포기 할 수 없다. 한 서버에 문제가 생긴다면 다른 서버에 대한 쓰기 연산을 중단시킨다. 즉 가용성을 희생한다.</p>
-</li>
+<li>CA 시스템: 일관성과 가용성을 지원한다. 파티션 감내는 지원하지 않는다. 그러나 통산 네트워크 장애는 피할 수 없는 일로 여겨지므로, 분산 시스템은 반드시 파티션 문제를 감내할 수 있도록 설계되어야 한다. 그러므로 실세계에 CA 시스템은 존재하지 않는다.</li>
+<li>온라인 뱅킹 시스템은 데이터 일관성을 포기 할 수 없다. 한 서버에 문제가 생긴다면 다른 서버에 대한 쓰기 연산을 중단시킨다. 즉 가용성을 희생한다.</li>
 <li>반면 가용성이 중요한 시스템은 멀쩡한 서버를 계속 사용한다. 이때 데이터 일관성이 희생 될 수 있다.</li>
 </ul>
 <hr/>
@@ -1793,7 +1787,7 @@ In theoretical computer science, the <strong>CAP theorem</strong> states that an
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2023</span>

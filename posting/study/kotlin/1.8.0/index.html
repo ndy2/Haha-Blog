@@ -1776,7 +1776,7 @@
 <ol>
 <li><code>java &lt;-&gt; kotlin</code> 간의 시간 단위 전환</li>
 </ol>
-<p>java 는 <code>java.util.concurrent.TimeUnit</code>을 kotlin 은 <code>kotlin.time.Duration</code> 을 주로 활용한다. 이제 확장 함수를 이용해 이들의 전환을 쉽게 할 수 있다.</p>
+<p>java 는 <code>java.util.concurrent.TimeUnit</code> 을 kotlin 은 <code>kotlin.time.Duration</code> 을 주로 활용한다. 이제 확장 함수를 이용해 이들의 전환을 쉽게 할 수 있다.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="n">DurationUnit</span><span class="p">.</span><span class="nf">toTimeUnit</span><span class="p">():</span><span class="w"> </span><span class="n">TimeUnit</span>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="n">TimeUnit</span><span class="p">.</span><span class="nf">toDurationUnit</span><span class="p">():</span><span class="w"> </span><span class="n">DurationUnit</span>
 </code></pre></div>
@@ -1893,13 +1893,13 @@
 <a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="n">resources</span><span class="p">.</span><span class="na">deleteRecursively</span><span class="p">()</span><span class="w">  </span>
 <a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="p">}</span>
 </code></pre></div>
-<p>resources 폴더까지 모두 사라졌다. 지정한 root 폴더는 남겨놓는 옵션이 있으면 좋을거 같은데 이 api는 별도의 파라미터를 받지않는 형태로 정의되어있다.</p>
+<p>resources 폴더까지 모두 사라졌다. 지정한 root 폴더는 남겨놓는 옵션이 있으면 좋을거 같은데 이 api 는 별도의 파라미터를 받지않는 형태로 정의되어있다.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2023</span>

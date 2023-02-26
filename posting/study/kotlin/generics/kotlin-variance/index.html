@@ -760,12 +760,12 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1-declaration-site-variance">
-    1. declaration-site variance
+    1. Declaration-site variance
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2-use-site-variance-type-projections">
-    2. Use-site variance: type projections
+    2. Use-site Variance: Type Projections
   </a>
 </li>
 </ul>
@@ -1709,12 +1709,12 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1-declaration-site-variance">
-    1. declaration-site variance
+    1. Declaration-site variance
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2-use-site-variance-type-projections">
-    2. Use-site variance: type projections
+    2. Use-site Variance: Type Projections
   </a>
 </li>
 </ul>
@@ -1751,7 +1751,7 @@
     }
 </style>
 <div class="admonition quote">
-<p class="admonition-title">참고 자료</p>
+<p class="admonition-title"> 참고 자료 </p>
 <ul>
 <li>kotlin documentation - <a href="https://kotlinlang.org/docs/generics.html#variance">generics#Variance</a></li>
 <li><a href="http://www.yes24.com/Product/Goods/55148593"><code>『코틀린 인 액션』</code></a> by 드미트리 제메로프, 스베트라나 이사코바 <ul>
@@ -1762,20 +1762,20 @@
 </div>
 <hr/>
 <h3 id="0">0. 들어가며<a class="headerlink" href="#0" title="Permanent link">¶</a></h3>
-<p><a href="../java-variance">이전 글</a>에서</p>
+<p><a href="../java-variance">이전 글</a> 에서</p>
 <ol>
-<li>변성의 세가지 종류와 적용 조건(PECS)</li>
+<li>변성의 세가지 종류와 적용 조건 (PECS)</li>
 <li>자바에서 extends, super 키워드를 이용해 convariance, contravariance 를 적용 하는 법</li>
 </ol>
 <p>을 알아보았다. </p>
 <p>이제,</p>
 <ol>
-<li>코틀린에서 변성을 다루기 위해 사용하는 두가지 <code>variance annotation</code> 인  <code>in</code>, <code>out</code> 변경자</li>
+<li>코틀린에서 변성을 다루기 위해 사용하는 두가지 <code>variance annotation</code> 인 <code>in</code>, <code>out</code> 변경자</li>
 <li>코틀린의 <code>declaration-site variance</code> 와 <code>type-projection (call-site variance)</code></li>
 </ol>
 <p>두가지에 대해서 알아보자!</p>
 <hr/>
-<h3 id="1-declaration-site-variance">1. declaration-site variance<a class="headerlink" href="#1-declaration-site-variance" title="Permanent link">¶</a></h3>
+<h3 id="1-declaration-site-variance">1. Declaration-site variance<a class="headerlink" href="#1-declaration-site-variance" title="Permanent link">¶</a></h3>
 <p>선언 지점 변성은 자바에는 존재하지 않던 코틀린의 새로운 개념이다. 그 이름과 공식문서의 예제에서 그 모티프를 알 수 있다. 공식문서의 예제를 살펴보자.</p>
 <p><code>interface Source&lt;T&gt; { T nextT(); }</code></p>
 <p>java 에서 위 generic interface 를 살펴보자. 선언 지점 변성을 이해하기 위해 필요한 이 인터페이스의 중요한 특징은 타입 파라미터 <code>T</code> 를 메서드의 반환 값에서만 사용하고 메서드의 파라미터에는 포함되지 않는 다는 것이다.</p>
@@ -1805,14 +1805,14 @@
 <a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="p">}</span>
 </code></pre></div>
 <p><code>in</code>/<code>out</code> 변경자의 이름을 통해 그 역할을 쉽게 유추할 수 있습니다!</p>
-<h3 id="2-use-site-variance-type-projections">2. Use-site variance: type projections<a class="headerlink" href="#2-use-site-variance-type-projections" title="Permanent link">¶</a></h3>
+<h3 id="2-use-site-variance-type-projections">2. Use-site Variance: Type Projections<a class="headerlink" href="#2-use-site-variance-type-projections" title="Permanent link">¶</a></h3>
 <p>클래스/ 인터페이스 전체가 타입 파라미터 T 에 대해서 in/out 한 성질을 가지는 경우 선언 지점 변성을 적용할 수 있습니다. 그렇지 않은 경우에는 Use-site varinace 를 적용 할 수 있습니다. <code>Array&lt;T&gt;</code> 는 그런 클래스 중 하나입니다.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Array</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">size</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="kd">operator</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="n">index</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">):</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// T 를 생산 (out)</span>
 <a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="kd">operator</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="n">index</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// T 를 사용 (in)</span>
 <a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="p">}</span>
 </code></pre></div>
-<p><code>Use-site Variance</code> 는 그 이름 처럼 사용하는 시점에 <code>T</code> 를 produce 하기만 하는 메서드만 혹은 <code>T</code> 타입을 consume하는 메서드만 사용 하는 경우라면 사용 시점에 변성을 정의해 주는 방식입니다. </p>
+<p><code>Use-site Variance</code> 는 그 이름 처럼 사용하는 시점에 <code>T</code> 를 produce 하기만 하는 메서드만 혹은 <code>T</code> 타입을 consume 하는 메서드만 사용 하는 경우라면 사용 시점에 변성을 정의해 주는 방식입니다. </p>
 <p>배열 클래스에 use-site variance 를 적용한 두 예시 를 살펴보고 글을 마치겠습니다.</p>
 <div class="highlight"><span class="filename">copy 에서는 from 메열을 통해 배열의 타입을 생산 하기만 한다</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="n">from</span><span class="p">:</span><span class="w"> </span><span class="n">Array</span><span class="o">&lt;</span><span class="k">out</span><span class="w"> </span><span class="kt">Any</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="p">:</span><span class="w"> </span><span class="n">Array</span><span class="o">&lt;</span><span class="kt">Any</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
@@ -1823,7 +1823,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 18, 2023</span>

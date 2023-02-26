@@ -1489,17 +1489,17 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#case-1">
-    case 1
+    Case 1
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#case-2">
-    case 2
+    Case 2
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#case-3">
-    case 3
+    Case 3
   </a>
 </li>
 </ul>
@@ -1764,17 +1764,17 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#case-1">
-    case 1
+    Case 1
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#case-2">
-    case 2
+    Case 2
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#case-3">
-    case 3
+    Case 3
   </a>
 </li>
 </ul>
@@ -1853,14 +1853,14 @@
 <div class="highlight"><span class="filename">kafka 서버 구동</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>./bin/kafka-server-start.sh<span class="w"> </span>./config/server.properties
 </code></pre></div>
 <h3 id="_1">토픽 생성<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<h4 id="case-1">case 1<a class="headerlink" href="#case-1" title="Permanent link">¶</a></h4>
+<h4 id="case-1">Case 1<a class="headerlink" href="#case-1" title="Permanent link">¶</a></h4>
 <div class="highlight"><span class="filename">topic 생성</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>./bin/kafka-topics.sh<span class="w"> </span>--create<span class="w"> </span><span class="se">\</span>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>--topic<span class="w"> </span>quickstart-event<span class="w"> </span><span class="se">\</span>
 <a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>--bootstrap-server<span class="w"> </span><span class="se">\</span>
 <a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>localhost:9092<span class="w"> </span><span class="se">\</span>
 <a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>--partitions<span class="w"> </span><span class="m">1</span>
 </code></pre></div>
-<h4 id="case-2">case 2<a class="headerlink" href="#case-2" title="Permanent link">¶</a></h4>
+<h4 id="case-2">Case 2<a class="headerlink" href="#case-2" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>./bin/kafka-topics.sh<span class="w"> </span><span class="se">\</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>--create<span class="w"> </span><span class="se">\ </span><span class="c1"># 1. (1)</span>
 <a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>--bootstrap-server<span class="w"> </span>my-kafka:9092<span class="w"> </span><span class="se">\ </span><span class="c1"># 2. (2)</span>
@@ -1874,7 +1874,7 @@
 </ol>
 <div class="highlight"><span class="filename">Result</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>Created topic hello.kafka
 </code></pre></div>
-<h4 id="case-3">case 3<a class="headerlink" href="#case-3" title="Permanent link">¶</a></h4>
+<h4 id="case-3">Case 3<a class="headerlink" href="#case-3" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>./bin/kafka-topics.sh<span class="w"> </span><span class="se">\</span>
 <a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>--create<span class="w"> </span><span class="se">\</span>
 <a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>--bootstrap-server<span class="w"> </span>my-kafka:9092<span class="w"> </span><span class="se">\</span>
@@ -1912,14 +1912,16 @@
 <a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>--topic<span class="w"> </span>quickstart-events
 </code></pre></div>
 <h3 id="_6">메시지 소비<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
-<p><div class="highlight"><span class="filename">메시지 소비</span><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>./bin/kafka-console-consumer.sh<span class="w"> </span><span class="se">\</span>
+<div class="highlight"><span class="filename">메시지 소비</span><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>./bin/kafka-console-consumer.sh<span class="w"> </span><span class="se">\</span>
 <a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>--bootstrap-server<span class="w"> </span>my-kafka:9092<span class="w"> </span><span class="se">\ </span><span class="c1"># 1. (1)</span>
 <a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a>--topic<span class="w"> </span>hello.kafka<span class="w"> </span><span class="se">\ </span><span class="c1"># 2. (2)</span>
 <a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a>--from-beginning<span class="w"> </span><span class="c1"># 3. (3)</span>
 </code></pre></div>
-1. <code>--bootstrap-server</code> : 카프카 클러스터 정보 (필수)
-2. <code>--topic</code> : 토픽 이름 (필수)
-3. <code>--from-beginning</code> : 토픽에 저장된 가장 처음 데이터 부터 출력하는 옵션</p>
+<ol>
+<li><code>--bootstrap-server</code> : 카프카 클러스터 정보 (필수)</li>
+<li><code>--topic</code> : 토픽 이름 (필수)</li>
+<li><code>--from-beginning</code> : 토픽에 저장된 가장 처음 데이터 부터 출력하는 옵션</li>
+</ol>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>no1
 <a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>4
 <a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a>5
@@ -1968,7 +1970,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2023</span>

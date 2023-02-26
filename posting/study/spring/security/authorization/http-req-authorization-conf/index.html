@@ -905,17 +905,17 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1-method-chaining">
-    1. method chaining
+    1. Method Chaining
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2-lambda-dsl">
-    2. lambda dsl
+    2. Lambda Dsl
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3-bean-based-approach">
-    3. bean-based approach
+    3. Bean-based Approach
   </a>
 </li>
 </ul>
@@ -1714,17 +1714,17 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1-method-chaining">
-    1. method chaining
+    1. Method Chaining
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2-lambda-dsl">
-    2. lambda dsl
+    2. Lambda Dsl
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3-bean-based-approach">
-    3. bean-based approach
+    3. Bean-based Approach
   </a>
 </li>
 </ul>
@@ -1766,11 +1766,11 @@
 <li>spring-security reference - <a href="https://docs.spring.io/spring-security/reference/6.0.0-M5/servlet/authorization/authorize-http-requests.html">링크</a></li>
 </ul>
 <h3 id="0-shouldfilteralldispatchertypes">0. shouldFilterAllDispatcherTypes() 옵션<a class="headerlink" href="#0-shouldfilteralldispatchertypes" title="Permanent link">¶</a></h3>
-<p>authorizeHttpRequests 설정을 하며 shouldFilterAllDispatcherTypes flag 를 설정 할 수 있습니다.
-이 flag 는 아래 세가지 옵션을 한번에 변경하는 flag 입니다.</p>
+<p>authorizeHttpRequests 설정을 하며 shouldFilterAllDispatcherTypes flag 를 설정 할 수 있습니다.</p>
+<p>이 flag 는 아래 세가지 옵션을 한번에 변경하는 flag 입니다.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/should-filter-all-dispatcher-types.png"><img alt="images/should-filter-all-dispatcher-types.png" src="../images/should-filter-all-dispatcher-types.png"/></a></p>
 <hr/>
-<h3 id="1-method-chaining">1. method chaining<a class="headerlink" href="#1-method-chaining" title="Permanent link">¶</a></h3>
+<h3 id="1-method-chaining">1. Method Chaining<a class="headerlink" href="#1-method-chaining" title="Permanent link">¶</a></h3>
 <div class="highlight"><span class="filename">SecurityFilterChain Bean</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nd">@Bean</span><span class="w">  </span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">fun</span><span class="w"> </span><span class="nf">filterChain</span><span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="w"> </span><span class="n">HttpSecurity</span><span class="p">):</span><span class="w"> </span><span class="n">SecurityFilterChain</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">http</span><span class="w">  </span>
@@ -1795,7 +1795,7 @@
 <a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="p">}</span>
 </code></pre></div>
 <hr/>
-<h3 id="2-lambda-dsl">2. lambda dsl<a class="headerlink" href="#2-lambda-dsl" title="Permanent link">¶</a></h3>
+<h3 id="2-lambda-dsl">2. Lambda Dsl<a class="headerlink" href="#2-lambda-dsl" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nd">@Bean</span><span class="w">  </span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">fun</span><span class="w"> </span><span class="nf">filterChain</span><span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="w"> </span><span class="n">HttpSecurity</span><span class="p">):</span><span class="w"> </span><span class="n">SecurityFilterChain</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">http</span><span class="w">  </span>
@@ -1819,10 +1819,10 @@
 <a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w">  </span>
 <a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="p">}</span>
 </code></pre></div>
-<p>포맷이 좀 불편하지만 바꿀 수 있고 관련된 것 끼리 Indent 가 잘 맞으니 보기 좋은것 같다.
-참고로 <code>authorizeHttpRequests</code> 외 모든 설정이 <code>configurer</code> 를 인자로 받는 lambda dsl 설정이 가능하다.</p>
+<p>포맷이 좀 불편하지만 바꿀 수 있고 관련된 것 끼리 Indent 가 잘 맞으니 보기 좋은것 같다.</p>
+<p>참고로 <code>authorizeHttpRequests</code> 외 모든 설정이 <code>configurer</code> 를 인자로 받는 lambda dsl 설정이 가능하다.</p>
 <hr/>
-<h3 id="3-bean-based-approach">3. bean-based approach<a class="headerlink" href="#3-bean-based-approach" title="Permanent link">¶</a></h3>
+<h3 id="3-bean-based-approach">3. Bean-based Approach<a class="headerlink" href="#3-bean-based-approach" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nd">@Bean</span><span class="w">  </span>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">fun</span><span class="w"> </span><span class="nf">filterChain</span><span class="p">(</span><span class="w">  </span>
 <a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="n">http</span><span class="p">:</span><span class="w"> </span><span class="n">HttpSecurity</span><span class="p">,</span><span class="w">  </span>
@@ -1876,7 +1876,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>

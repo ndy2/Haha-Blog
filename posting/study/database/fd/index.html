@@ -333,9 +333,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#4-fd">
-    4.  FD 의 종류
+    4. FD 의 종류
   </a>
-<nav aria-label="4.  FD 의 종류" class="md-nav">
+<nav aria-label="4. FD 의 종류" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#0-y">
@@ -1743,9 +1743,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#4-fd">
-    4.  FD 의 종류
+    4. FD 의 종류
   </a>
-<nav aria-label="4.  FD 의 종류" class="md-nav">
+<nav aria-label="4. FD 의 종류" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#0-y">
@@ -1806,23 +1806,48 @@
 <h3 id="1-functional-dependency">1. Functional Dependency 란?<a class="headerlink" href="#1-functional-dependency" title="Permanent link">¶</a></h3>
 <ul>
 <li>한 테이블에 있는 두 개의 <code>attributes set</code> 사이의 <code>constraint</code></li>
-<li>집합 X 의 값에 따라 집합 Y 의 값이 유일하게 결정된때
-  'X 가 Y 를 함수적으로 결정한다. Y 가 X 에 함수적으로 의존한다' 라고 부르며 두 집합 사이의 이러한 제약 관계를 Functional Dependency (FD) 라고 부른다.</li>
+<li>집합 X 의 값에 따라 집합 Y 의 값이 유일하게 결정된때</li>
 </ul>
+<p>'X 가 Y 를 함수적으로 결정한다. Y 가 X 에 함수적으로 의존한다 ' 라고 부르며 두 집합 사이의 이러한 제약 관계를 Functional Dependency (FD) 라고 부른다.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="excalidraws/fd.excalidraw.png"><img alt="excalidraws/fd.excalidraw.png" src="excalidraws/fd.excalidraw.png"/></a></p>
 <p><code>X = {empl_id}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>Y = {empl_name, birt_date, position, salary}</code></p>
 <p>empl_id 값에 따라 나머지 모든 필드의 값은 의미적으로 unique 하게 결정된다.</p>
 <h3 id="2-fd">2. FD 주의 사항<a class="headerlink" href="#2-fd" title="Permanent link">¶</a></h3>
 <ul>
-<li>테이블의 특정 순간, 상태가 아니라 <strong>의미적으로 파악</strong>해야 한다.</li>
-<li>player
-| <ins>id</ins> | name  | team_id | backnumber |
-| ------ | ----- | ------- | ---------- |
-| 1      | messi | 2       | 10         |
-| 2      | sonny | 105     | 7          |
-| 3       | ronaldo  | null   | null  |</li>
+<li>테이블의 특정 순간, 상태가 아니라 <strong>의미적으로 파악</strong> 해야 한다.</li>
+<li>player</li>
 </ul>
-<p><code>{name}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{team_id}</code> 처럼 보이지만 id 3번과 동명이인인 브라질의 Ronaldo 선수는 team_id 값이 있을 수 있다!</p>
+<table>
+<thead>
+<tr>
+<th><ins>id</ins></th>
+<th>name</th>
+<th>team_id</th>
+<th>backnumber</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>messi</td>
+<td>2</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>sonny</td>
+<td>105</td>
+<td>7</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ronaldo</td>
+<td>null</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<p><code>{name}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{team_id}</code> 처럼 보이지만 id 3 번과 동명이인인 브라질의 Ronaldo 선수는 team_id 값이 있을 수 있다!</p>
 <h3 id="3-fd">3. FD 예시<a class="headerlink" href="#3-fd" title="Permanent link">¶</a></h3>
 <ul>
 <li><code>{std_id}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{stu_name, birth_date, addr}</code></li>
@@ -1830,12 +1855,12 @@
 <li><code>{stu_id, class_id}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{grde}</code></li>
 <li><code>{bank_name, bank_account}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>{balance, open_date}</code></li>
 </ul>
-<h3 id="4-fd">4.  FD 의 종류<a class="headerlink" href="#4-fd" title="Permanent link">¶</a></h3>
+<h3 id="4-fd">4. FD 의 종류<a class="headerlink" href="#4-fd" title="Permanent link">¶</a></h3>
 <h4 id="0-y">0. {} -&gt;Y<a class="headerlink" href="#0-y" title="Permanent link">¶</a></h4>
 <p>항상 Y 의 값이 일정하다면 공집합 즉, 아무 attribute 없이도 Y 값을 결정할 수 있고 이러한 FD 를 <code>{}</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>Y</code> 처럼 표현 할 수 있다.</p>
 <h4 id="1-trivial-fd-non-trivial-fd">1. Trivial FD, Non-trivial FD<a class="headerlink" href="#1-trivial-fd-non-trivial-fd" title="Permanent link">¶</a></h4>
-<p>Y 가 X 의 subset 이라면 당연히 <code>X</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>Y</code> 가 성립하고 이런 FD 를 trivial FD 라 부른다.
-그렇지 않은 FD 는 non-trivial FD 라 부른다.</p>
+<p>Y 가 X 의 subset 이라면 당연히 <code>X</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <code>Y</code> 가 성립하고 이런 FD 를 trivial FD 라 부른다.</p>
+<p>그렇지 않은 FD 는 non-trivial FD 라 부른다.</p>
 <h3 id="2-partial-fd-full-fd">2. Partial FD, Full FD<a class="headerlink" href="#2-partial-fd-full-fd" title="Permanent link">¶</a></h3>
 <p>X 의 proper subset 으로도 FD 가 성립하면 partial FD 라 부르고 그렇지 않다면 full FD 라 부른다.</p>
 <hr/>
@@ -1843,7 +1868,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>

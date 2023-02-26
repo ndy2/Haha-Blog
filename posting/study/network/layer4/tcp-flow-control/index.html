@@ -475,7 +475,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#sliding-window-protocol">
-    sliding window protocol
+    Sliding Window Protocol
   </a>
 </li>
 <li class="md-nav__item">
@@ -1709,7 +1709,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#sliding-window-protocol">
-    sliding window protocol
+    Sliding Window Protocol
   </a>
 </li>
 <li class="md-nav__item">
@@ -1775,18 +1775,12 @@
 <p>이러한 위험을 줄이기 위해 송신 측의 데이터 전송량을 수신측에 따라 조절합니다.</p>
 </li>
 </ul>
-<h3 id="sliding-window-protocol">sliding window protocol<a class="headerlink" href="#sliding-window-protocol" title="Permanent link">¶</a></h3>
+<h3 id="sliding-window-protocol">Sliding Window Protocol<a class="headerlink" href="#sliding-window-protocol" title="Permanent link">¶</a></h3>
 <ul>
 <li>소켓은 TCP/IP 를 추상화 한 파일입니다.</li>
-<li>
-<p>소켓에는 <code>send()</code> 와 <code>recieve()</code> 라는 두가지 기능이 있으며 각각 버퍼를 통해 관리됩니다.</p>
-</li>
-<li>
-<p>node A 에서 node B 로 TCP 통신을 해야한다면 이때 중요한 것은 node B 의 recieve 버퍼, 즉, 수신 측의 버퍼입니다.</p>
-</li>
-<li>
-<p>sliding window 동작</p>
-</li>
+<li>소켓에는 <code>send()</code> 와 <code>recieve()</code> 라는 두가지 기능이 있으며 각각 버퍼를 통해 관리됩니다.</li>
+<li>node A 에서 node B 로 TCP 통신을 해야한다면 이때 중요한 것은 node B 의 receive 버퍼, 즉, 수신 측의 버퍼입니다.</li>
+<li>sliding window 동작</li>
 </ul>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/sliding-window.png"><img alt="images/sliding-window.png" src="images/sliding-window.png"/></a></p>
 <ul>
@@ -1799,28 +1793,20 @@
 </ul>
 <h3 id="_1">아주아주 중요한것<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <ul>
-<li>
-<p>tcp 전송에는 항상 ack 응답이 따르는데 이때 항상 수신측의 window size 를 함께 응답합니다.</p>
-</li>
-<li>
-<p>Receiver 가 버퍼를 비우는 속도가 Sender 가 segment를 보내는 속도에 너무 느리게 되면 window size 자체를 줄여버리고 아예 0으로 만들어 버릴 수도 있습니다. (zero window in tcp)</p>
-</li>
-<li>
-<p>이 때 송신측은 segment 를 더 전송해도 되는지 판단합니다.</p>
-<ul>
+<li>tcp 전송에는 항상 ack 응답이 따르는데 이때 항상 수신측의 window size 를 함께 응답합니다.</li>
+<li>Receiver 가 버퍼를 비우는 속도가 Sender 가 segment를 보내는 속도에 너무 느리게 되면 window size 자체를 줄여버리고 아예 0으로 만들어 버릴 수도 있습니다. (zero window in tcp)</li>
+<li>이 때 송신측은 segment 를 더 전송해도 되는지 판단합니다.<ul>
 <li><code>window size &gt; segment size ? send() : wait()</code></li>
 </ul>
 </li>
-<li>
-<p>wait 이후에는 계속 기다리지 않고 한번씩 수신측에게 윈도우에 여유가 있는지 확인하는 요청을 보냅니다.</p>
-</li>
+<li>wait 이후에는 계속 기다리지 않고 한번씩 수신측에게 윈도우에 여유가 있는지 확인하는 요청을 보냅니다.</li>
 </ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 22, 2022</span>

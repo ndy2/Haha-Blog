@@ -1788,12 +1788,8 @@
 <h4 id="the-authorizationmanager">The AuthorizationManager<a class="headerlink" href="#the-authorizationmanager" title="Permanent link">¶</a></h4>
 <ul>
 <li><code>AuthorizationManager</code> 는 <code>AccessDecisionManager</code> 와 <code>AccessDecisionVoter</code> 를 모두 대체합니다.</li>
-<li>
-<p><code>AuthorizationManager</code>  는 AuthorizationFilter 에 의해 사용되며 최종적인 접근 제어 결정에 대한 책임을 가집니다.</p>
-</li>
-<li>
-<p><code>AuthorizationManager</code> 인터페이스는 두가지 메서드를 가집니다.</p>
-</li>
+<li><code>AuthorizationManager</code> 는 AuthorizationFilter 에 의해 사용되며 최종적인 접근 제어 결정에 대한 책임을 가집니다.</li>
+<li><code>AuthorizationManager</code> 인터페이스는 두가지 메서드를 가집니다.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">AuthorizationDecision</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Authentication</span><span class="o">&gt;</span><span class="w"> </span><span class="n">authentication</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">secureObject</span><span class="p">);</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>
@@ -1803,18 +1799,14 @@
 <a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li><code>check</code> 메서드의  secureObject 는 인가 결정을 내리기 위해 필요한 모든 관련된 정보를 의미합니다. </li>
-<li>
-<p><code>check</code> 결과 </p>
-<ul>
-<li><code>ACCESS_GRANTED</code> -&gt;  positive <code>AuthorizationDecision</code> 반환</li>
-<li><code>ACCESS_ABSTAIN</code>  -&gt;  null</li>
-<li><code>ACCESS_DENIED</code>    -&gt; negative <code>AuthorizationDecision</code> 반환</li>
+<li><code>check</code> 메서드의 secureObject 는 인가 결정을 내리기 위해 필요한 모든 관련된 정보를 의미합니다. </li>
+<li><code>check</code> 결과 <ul>
+<li><code>ACCESS_GRANTED</code> -&gt; positive <code>AuthorizationDecision</code> 반환</li>
+<li><code>ACCESS_ABSTAIN</code> -&gt; null</li>
+<li><code>ACCESS_DENIED</code> -&gt; negative <code>AuthorizationDecision</code> 반환</li>
 </ul>
 </li>
-<li>
-<p><code>verify</code> 메서드는 <code>check</code> 를 호출하고 <code>ACCESS_DENIED</code> 인 경우 <code>AccessDeniedException</code> 예외를 던집니다.</p>
-</li>
+<li><code>verify</code> 메서드는 <code>check</code> 를 호출하고 <code>ACCESS_DENIED</code> 인 경우 <code>AccessDeniedException</code> 예외를 던집니다.</li>
 </ul>
 <hr/>
 <p>다음 장에서는 권한 설정을 하는 다양한 방식에 대해서 알아보겠습니다.</p>
@@ -1823,7 +1815,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>

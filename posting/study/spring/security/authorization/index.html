@@ -1761,9 +1761,11 @@
 <hr/>
 <h3 id="0">0. 들어가며<a class="headerlink" href="#0" title="Permanent link">¶</a></h3>
 <p>사실 기존 방식의 <code>Spring Security</code> 인가 처리에 대한 프로세스는 과거 노션에 정리하였던 적이 있습니다. <a href="https://www.notion.so/ndy-dev/Spring-Security-Authorization-Flow-30e3f30b2a74478398ddf9db23052489">링크</a> 오늘은 Spring Security 5.8 업데이트에 따라 변경된 부분 및 인가 처리 프로세스를 정리하고자 합니다.</p>
-<p>관련 깃헙 이슈
-    - 1. Deprecated 처리 https://github.com/spring-projects/spring-security/issues/11302
-    - 2. guide for migration https://github.com/spring-projects/spring-security/issues/11337</p>
+<p>관련 깃헙 이슈</p>
+<div class="highlight"><pre><span></span><code>- 1. Deprecated 처리 https://github.com/spring-projects/spring-security/issues/11302
+
+- 2. guide for migration https://github.com/spring-projects/spring-security/issues/11337
+</code></pre></div>
 <p>사실 개인적으로 인증 처리는 전부 각각 네이밍이 어쩌고 저쩌고 필터 인 반면 인가처리는 마지막 하나의 필터 그것도 이름이 FilterSecurityInterceptor 라는 점이 마음에 들지 않았었는데 더 일관성 있게 변경 된 것 같아서 좋습니다.</p>
 <hr/>
 <h3 id="1-deprecated">1. 주요 @Deprecated 된 인가 프로세스 관련 타입들<a class="headerlink" href="#1-deprecated" title="Permanent link">¶</a></h3>
@@ -1826,7 +1828,7 @@
 <a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li><code>HttpSecurity</code>.<code>antMatcher</code>  -&gt; <code>HttpSecurity.securityMatcher()</code></li>
+<li><code>HttpSecurity</code>.<code>antMatcher</code> -&gt; <code>HttpSecurity.securityMatcher()</code></li>
 </ul>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">// 변경 전</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">// The `http.antMatcher` states that this `HttpSecurity` is applicable only to URLs that start with `/api/`.</span>
@@ -1862,7 +1864,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>

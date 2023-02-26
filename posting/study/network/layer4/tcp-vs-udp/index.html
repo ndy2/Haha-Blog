@@ -475,7 +475,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#tcp-vs-udp">
-    TCP vs UDP 간단 비교
+    TCP Vs UDP 간단 비교
   </a>
 </li>
 <li class="md-nav__item">
@@ -1742,7 +1742,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#tcp-vs-udp">
-    TCP vs UDP 간단 비교
+    TCP Vs UDP 간단 비교
   </a>
 </li>
 <li class="md-nav__item">
@@ -1833,11 +1833,11 @@
 <li>위키피디아 - <a href="https://ko.wikipedia.org/wiki/전송_계층">전송계층</a></li>
 <li>GeeksforGeeks - <a href="https://www.geeksforgeeks.org/differences-between-tcp-and-udp/?ref=rp">Differences between TCP and UDP</a></li>
 </ul>
-<p>전송 계층은 <code>연결 지향 데이터 스트림 지원</code>, <code>신뢰성</code>, <code>흐름 제어</code>, 그리고 <code>다중화</code>와 같은 편리한 서비스를 제공합니다.  전송 프로토콜 중 가장 잘 알려진 것은 연결 지향 전속 방식을 사용하는 <code>TCP</code> 입니다. 보다 단순한 전송에서 사용되는 <code>UDP</code> 도 있습니다.</p>
+<p>전송 계층은 <code>연결 지향 데이터 스트림 지원</code>, <code>신뢰성</code>, <code>흐름 제어</code>, 그리고 <code>다중화</code>와 같은 편리한 서비스를 제공합니다. 전송 프로토콜 중 가장 잘 알려진 것은 연결 지향 전속 방식을 사용하는 <code>TCP</code> 입니다. 보다 단순한 전송에서 사용되는 <code>UDP</code> 도 있습니다.</p>
 <p>전송 계층은 </p>
 <p>이 문서에서는 둘을 간단히 비교 정리하겠습니다.</p>
 <hr/>
-<h3 id="tcp-vs-udp">TCP vs UDP 간단 비교<a class="headerlink" href="#tcp-vs-udp" title="Permanent link">¶</a></h3>
+<h3 id="tcp-vs-udp">TCP Vs UDP 간단 비교<a class="headerlink" href="#tcp-vs-udp" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -1928,12 +1928,8 @@
 </ul>
 <h4 id="1-1-3-way-4-way-handshake">1-1. 연결 수립시에는 3-Way, 연결 종료시에는 4-Way Handshake 가 발생하는데 왜 그런 차이가 있을까요?<a class="headerlink" href="#1-1-3-way-4-way-handshake" title="Permanent link">¶</a></h4>
 <ul>
-<li>
-<p>연결 수립시 주고 받는 주요 Field 의 정보는 Syn, Syn-Ack, Ack 입니다. Syn 은 Sequence number 를 의미하고 요청, 응답의 ID 처럼 사용됩니다. Ack 은 이전 요청을 잘 받았음을 인정하는 신호입니다. 이전 전달 받은 Syn 필드의 값에 1을 더한 값을 응답합니다.</p>
-</li>
-<li>
-<p>연결 종료시에는 Fin, Ack, Fin, Ack 입니다. 이때 연결 수립시와 달리 서버는 Ack 과 Fin 을 한번에 보내지 않고 사이에 텀을 가집니다. 그 이유는 클라이언트의 연결 종료 요청 (Fin) 을 받은 시점에 서버가 추가적인 정보를 응답할 수 있는 시간을 남겨두는 것입니다.</p>
-</li>
+<li>연결 수립시 주고 받는 주요 Field 의 정보는 Syn, Syn-Ack, Ack 입니다. Syn 은 Sequence number 를 의미하고 요청, 응답의 ID 처럼 사용됩니다. Ack 은 이전 요청을 잘 받았음을 인정하는 신호입니다. 이전 전달 받은 Syn 필드의 값에 1을 더한 값을 응답합니다.</li>
+<li>연결 종료시에는 Fin, Ack, Fin, Ack 입니다. 이때 연결 수립시와 달리 서버는 Ack 과 Fin 을 한번에 보내지 않고 사이에 텀을 가집니다. 그 이유는 클라이언트의 연결 종료 요청 (Fin) 을 받은 시점에 서버가 추가적인 정보를 응답할 수 있는 시간을 남겨두는 것입니다.</li>
 </ul>
 <h3 id="1-2-server-fin-routing-fin">1-2 만약 Server에서 FIN 플래그를 전송하기 전에 전송한 패킷이 Routing 지연이나 패킷 유실로 인한 재전송 등으로 인해 FIN 패킷보다 늦게 도착하는 상황이 발생하면 어떻게 될까요?<a class="headerlink" href="#1-2-server-fin-routing-fin" title="Permanent link">¶</a></h3>
 <ul>
@@ -1941,7 +1937,7 @@
 </ul>
 <h4 id="1-3-sequence-number-isn-0">1-3 초기 Sequence Number인 ISN을 0부터 시작하지 않고 난수를 생성해서 설정하는 이유?<a class="headerlink" href="#1-3-sequence-number-isn-0" title="Permanent link">¶</a></h4>
 <ul>
-<li>ISN 은 Initial Seqence Number 로 Handshake 시에  설정됩니다.</li>
+<li>ISN 은 Initial Sequence Number 로 Handshake 시에 설정됩니다.</li>
 <li>이전의 요청으로 오해할 수 있는 가능성이 있기 때문입니다.</li>
 </ul>
 <h4 id="2-tcp-udp">2. TCP 가 UDP 보다 빠른 이유가 무엇일까요?<a class="headerlink" href="#2-tcp-udp" title="Permanent link">¶</a></h4>
@@ -1972,7 +1968,7 @@
 <p><a href="https://www.cloudflare.com/learning/ddos/glossary/tcp-ip/">TCP</a>와 <a href="https://www.cloudflare.com/learning/ddos/glossary/user-datagram-protocol-udp/">UDP</a>는 전송 프로토콜로서 인터넷을 통한 콘텐츠 전송을 담당합니다. TCP는 UDP보다 데이터 전송 신뢰성이 높지만 UDP는 전송 중 일부 데이터가 손실될 수 있지만 전송 속도가 훨씬 빠릅니다.</p>
 <p>UDP가 빠르기 때문에 많은 스트리밍 프로토콜은 TCP 대신 UDP를 사용합니다. 하지만 HLS는 여러 가지 이유로 TCP를 사용합니다.</p>
 <ul>
-<li>CloudFlare  - <a href="https://www.cloudflare.com/ko-kr/learning/video/what-is-http-live-streaming/">HTTP 라이브 스트리밍이란 무엇입니까? | HLS 스트리밍</a></li>
+<li>CloudFlare - <a href="https://www.cloudflare.com/ko-kr/learning/video/what-is-http-live-streaming/">HTTP 라이브 스트리밍이란 무엇입니까? | HLS 스트리밍</a></li>
 </ul>
 </blockquote>
 <hr/>
@@ -1981,7 +1977,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 24, 2022</span>

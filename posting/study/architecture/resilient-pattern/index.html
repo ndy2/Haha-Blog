@@ -1781,17 +1781,13 @@
 </style>
 <p>@참고 자료)</p>
 <ul>
-<li>
-<p>UWE FRIEDRICHSEN</p>
-<ul>
+<li>UWE FRIEDRICHSEN<ul>
 <li>https://www.ufried.com/blog/resilience/</li>
 <li>https://www.ufried.com/blog/resilience_vs_fault_tolerance/</li>
 <li>https://ufried.com/blog/why_resilient_software_design_1/</li>
 </ul>
 </li>
-<li>
-<p>vinsguru </p>
-<ul>
+<li>vinsguru <ul>
 <li><a href="https://www.vinsguru.com/timeout-pattern/">Timeout Pattern</a></li>
 <li><a href="https://www.vinsguru.com/retry-pattern/">Retry Pattern</a></li>
 <li><a href="https://www.vinsguru.com/circuit-breaker-pattern/">Circuit Breaker Pattern</a></li>
@@ -1799,9 +1795,7 @@
 <li><a href="https://www.vinsguru.com/rate-limiter-pattern/">Rate Limiter Pattern</a></li>
 </ul>
 </li>
-<li>
-<p>ms</p>
-<ul>
+<li>ms<ul>
 <li>https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker</li>
 <li>https://learn.microsoft.com/ko-kr/azure/architecture/patterns/bulkhead</li>
 </ul>
@@ -1809,13 +1803,13 @@
 </ul>
 <hr/>
 <h3 id="0">0. 들어가며<a class="headerlink" href="#0" title="Permanent link">¶</a></h3>
-<p>Resilient Pattern 의 종류를 정리하기 전에 Resilient 와 Resilient Pattern 의 의미를 먼저 정리하겠습니다.
-<br/>
-- Resilient 는 탄력성있는, 회복성있는 등으로 단어입니다. 
-- 한 시스템이 Resilient 하다는 것은 외부의 부적절한 영향에 휘둘리지 않으며 혹은 이를 빠르게 회복할 수 있다는 것입니다.
-- MSA 패턴에서 Resilient Pattern 이란 마이크로 서비스 컴포넌트가 정상적으로 동작하지 않을때도 요청에 대해 정상적인 (의도한 대로의) 응답을 할 수 있도록 하는 패턴입니다.
-<br/>
-Resilient 라는 특성은 IT 분야 뿐만 아니라 많은 영역에서 중요한 특성입니다. 한국은 화물차의 주행에 꼭 필요한 요소수의 생산에 필요한 요소의 수입량의 97퍼센트를 중국에 의존하고 있었습니다. 한국은 요소의 공급 시스템에 Resilient 특성을 가지고 있지 않았습니다. 중국 정부의 수출 통제라는 부적절한 영향에 일시적으로 요소, 요소수의 품귀 현상이 발생하였습니다. - <a href="https://namu.wiki/w/2021년%20요소수%20대란">나무위키 링크</a></p>
+<p>Resilient Pattern 의 종류를 정리하기 전에 Resilient 와 Resilient Pattern 의 의미를 먼저 정리하겠습니다.</p>
+<ul>
+<li>Resilient 는 탄력성있는, 회복성있는 등으로 단어입니다. </li>
+<li>한 시스템이 Resilient 하다는 것은 외부의 부적절한 영향에 휘둘리지 않으며 혹은 이를 빠르게 회복할 수 있다는 것입니다.</li>
+<li>MSA 패턴에서 Resilient Pattern 이란 마이크로 서비스 컴포넌트가 정상적으로 동작하지 않을때도 요청에 대해 정상적인 (의도한 대로의) 응답을 할 수 있도록 하는 패턴입니다.</li>
+</ul>
+<p>Resilient 라는 특성은 IT 분야 뿐만 아니라 많은 영역에서 중요한 특성입니다. 한국은 화물차의 주행에 꼭 필요한 요소수의 생산에 필요한 요소의 수입량의 97퍼센트를 중국에 의존하고 있었습니다. 한국은 요소의 공급 시스템에 Resilient 특성을 가지고 있지 않았습니다. 중국 정부의 수출 통제라는 부적절한 영향에 일시적으로 요소, 요소수의 품귀 현상이 발생하였습니다. - <a href="https://namu.wiki/w/2021년%20요소수%20대란">나무위키 링크</a></p>
 <p>시스템을 설계할때는 항상 효율성 (Efficiency)과 탄력성 (Resilience) 간의 트레이드 오프를 고민해야 합니다. </p>
 <p>이렇게 정리하고 나니 흔히 이야기 하는 Fail Tolerant 와 Resilient 의 차이가 궁금해졌습니다. 검색해 보니 이 <a href="https://www.ufried.com/blog/resilience_vs_fault_tolerance/">링크</a> 에서 이와 관련된 내용을 잘 정리해 두었습니다. 요약하면 Resilient 를 단순히 Fail Tolerant 와 동일시 하는 사람들도 있지만 필자(Uwe Friedrichsen)는 Resilient는 조금더 확장된 개념 (특히 회복성 측면에서)이라고 이야기합니다. 저도 생각해보니 그런 뉘앙스의 차이만 살짝 있고 둘이 크게 다른 개념처럼 보이지는 않습니다.</p>
 <p>이제 MSA 에서 Resilient 특성을 갖추기 위해 활용되는 Resilient Pattern 을 알아보겠습니다.</p>
@@ -1844,7 +1838,7 @@ Resilient 라는 특성은 IT 분야 뿐만 아니라 많은 영역에서 중요
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>

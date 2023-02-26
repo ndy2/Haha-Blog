@@ -1791,7 +1791,7 @@
 <li>TCP 의 연결지향은 3-way, 4-way handshake 로 달성됩니다.</li>
 <li>TCP 의 신뢰성은 많은 이유가 있지만 보통 흐름제어 (flow-control), 혼잡제어 (congestion-control) 를 통해 이루어진다고 이야기 됩니다.</li>
 </ul>
-<p>이중 혼잡 제어 (Congestion Control) 란 트래픽 증가로 인해 라우터/스위치 버퍼의 큐잉 지연시간 증가 및 오버플로 발생 상태를 막기위해 혼잡 윈도우 라는 개념을 통해 Sender 가 전송하는 segment의 양을 조절하는 것입니다.  이 문서에서는 바로이 혼잡 제어에 대해서 알아보겠습니다.</p>
+<p>이중 혼잡 제어 (Congestion Control) 란 트래픽 증가로 인해 라우터/스위치 버퍼의 큐잉 지연시간 증가 및 오버플로 발생 상태를 막기위해 혼잡 윈도우 라는 개념을 통해 Sender 가 전송하는 segment의 양을 조절하는 것입니다. 이 문서에서는 바로이 혼잡 제어에 대해서 알아보겠습니다.</p>
 <hr/>
 <h3 id="_1">혼잡제어와 흐름제어<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <ul>
@@ -1844,14 +1844,14 @@
 <li>Fast Recovery</li>
 <li>경미한 혼잡 상황에서 cwnd 를 다시 1로 drop 시키고 slow start 를 적용하는 것은 비합리적입니다.</li>
 <li>TCP 최신 버전인 TCP Reno 버전에서는 이를 Fast Recovery 방식으로 해결합니다.</li>
-<li>fast recovery 알고리즘은  3 Ack Duplicated 감지시 임계치를 반으로 줄인 후 RTT 마다 cwnd 를 1씩 늘릴 수 있도록 합니다. 혼잡이 해결되면 cwnd 를 다시 복구하고 Congestion Avoidance 를 시작합니다.</li>
+<li>fast recovery 알고리즘은 3 Ack Duplicated 감지시 임계치를 반으로 줄인 후 RTT 마다 cwnd 를 1씩 늘릴 수 있도록 합니다. 혼잡이 해결되면 cwnd 를 다시 복구하고 Congestion Avoidance 를 시작합니다.</li>
 </ol>
 </li>
 </ul>
 <h3 id="tcp-taheo-reno">TCP Taheo 와 Reno<a class="headerlink" href="#tcp-taheo-reno" title="Permanent link">¶</a></h3>
 <ul>
 <li>TCP Taheo 는 Timeout 과 3 duplicated ACKs 발생시 모두 cwnd 를 1로 줄이고 Slow Start 를 시작합니다.</li>
-<li>TCP Reno 는 Timout 시에는 TCP Taheo 와 같이 동작하지만 3 duplicated ACKs 시에는 Fast Recovery 를 적용합니다.</li>
+<li>TCP Reno 는 Timeout 시에는 TCP Taheo 와 같이 동작하지만 3 duplicated ACKs 시에는 Fast Recovery 를 적용합니다.</li>
 </ul>
 <h3 id="_5">추가로...<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
 <ul>
@@ -1863,7 +1863,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 22, 2022</span>

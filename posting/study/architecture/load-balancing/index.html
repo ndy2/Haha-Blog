@@ -1774,26 +1774,26 @@
 <div class="admonition note">
 <p class="admonition-title">Least Connections &amp; Least Time</p>
 <p><code>Least Connections</code>
-* 가장 적은 커넥션을 가진 서버에게 요청을 분배한다.
-* 대부분의 경우 실용적이고 좋은 선택이다.</p>
+- 가장 적은 커넥션을 가진 서버에게 요청을 분배한다.
+- 대부분의 경우 실용적이고 좋은 선택이다.</p>
 <p><code>Least Time</code>
-* 평균 응답시간과 현재 커넥션 수를 합친 공식에 따라 서버를 선정한다.
-* <em>the current number of active connection</em>s + <em>a weighted average response time for past requests</em>
-* Least Connection 알고리즘에 추가적으로 응답 시간을 고려한 알고리즘이라고 생각할 수 있다.
-* Upstream Server 간의 평균 응답시간이 크게 차이나는 경우 적절한 선택이다.
-     * 예를 들어 DR의 목적으로 여러 Data Center 를 운영한다면, Least Connection 알고리즘은 응답시간을 고려해 가까운 Local Data Center 를 주로 활용 할 것이다.</p>
+- 평균 응답시간과 현재 커넥션 수를 합친 공식에 따라 서버를 선정한다.
+- <em>the current number of active connection</em>s + <em>a weighted average response time for past requests</em>
+- Least Connection 알고리즘에 추가적으로 응답 시간을 고려한 알고리즘이라고 생각할 수 있다.
+- Upstream Server 간의 평균 응답시간이 크게 차이나는 경우 적절한 선택이다.
+     - 예를 들어 DR의 목적으로 여러 Data Center 를 운영한다면, Least Connection 알고리즘은 응답시간을 고려해 가까운 Local Data Center 를 주로 활용 할 것이다.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Hash &amp; IP Hash</p>
 <p><code>Hash</code>
-* 장점
-   * 결과가 일정하기 때문에 (deterministic) 부가적인 장점이 발생한다.
-* 단점
-   * 균등한 분배가 보장되지 않는다
-   * 서버가 추가, 제거되는 경우 Rehashing 이 발생한다. 알고리즘 적으로 rehashing 의 발생 빈도를 낮출 수는 있지만 완벽하지는 않다.</p>
+- 장점
+   - 결과가 일정하기 때문에 (deterministic) 부가적인 장점이 발생한다.
+- 단점
+   - 균등한 분배가 보장되지 않는다
+   - 서버가 추가, 제거되는 경우 Rehashing 이 발생한다. 알고리즘 적으로 rehashing 의 발생 빈도를 낮출 수는 있지만 완벽하지는 않다.</p>
 <p><code>IP Hash</code>
-* Client 의 IP 가 세션이 동작하는 동안 변경되는 경우 (e.g. 모바일 유저의 IP가 wifi -&gt; 데이터로 변경) 적절하지 않다.
-* forward proxy를 적용하는 경우 proxy ip 가 모두 사용될 것이므로 사용할 수 없다.</p>
+- Client 의 IP 가 세션이 동작하는 동안 변경되는 경우 (e.g. 모바일 유저의 IP가 wifi -&gt; 데이터로 변경) 적절하지 않다.
+- forward proxy를 적용하는 경우 proxy ip 가 모두 사용될 것이므로 사용할 수 없다.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1804,7 +1804,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2023</span>

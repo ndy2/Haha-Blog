@@ -1788,12 +1788,8 @@
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/security-chain-1.png"><img alt="images/security-chain-1.png" src="../images/security-chain-1.png"/></a></p>
 <ol>
 <li>모든 앞 필터를 다 통과하고 <code>AuthorizationFilter</code> 에 도착한다.</li>
-<li>
-<p>그 과정에서 <code>SecurityContextHolder</code> 에는 <code>AnonymousAuthenticationFilter</code> 에 의해 <code>AnonymousAuthenticationToken</code> 이 저장된다.</p>
-</li>
-<li>
-<p>권한 부여 대상이 아닌 경우를 판단 하기 위해 전처리를 살짝 해 준다.</p>
-</li>
+<li>그 과정에서 <code>SecurityContextHolder</code> 에는 <code>AnonymousAuthenticationFilter</code> 에 의해 <code>AnonymousAuthenticationToken</code> 이 저장된다.</li>
+<li>권한 부여 대상이 아닌 경우를 판단 하기 위해 전처리를 살짝 해 준다.</li>
 </ol>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/authorizationfilter-dofilter.png"><img alt="images/authorizationfilter-dofilter.png" src="../images/authorizationfilter-dofilter.png"/></a></p>
 <ol>
@@ -1806,33 +1802,29 @@
 <p>설정에 의해 추가 된 <code>RequestMatcherDelegatingAuthorizationManager</code> 의 <code>mappings</code> 필드와 그 녀석의 check 메서드의 동작방식은 아래 그림과 같습니다.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/requestmatcherdelegatingauthorizationmanager.excalidraw.png"><img alt="excalidraws/requestmatcherdelegatingauthorizationmanager.excalidraw.png" src="../excalidraws/requestmatcherdelegatingauthorizationmanager.excalidraw.png"/></a></p>
 <ul>
-<li>
-<p><code>RequestMatcherDelegatingAuthorizationManager</code> </p>
-<ul>
-<li>implements  <code>AuthorizationManager&lt;HttpServletRequest&gt;</code> </li>
+<li><code>RequestMatcherDelegatingAuthorizationManager</code> <ul>
+<li>implements <code>AuthorizationManager&lt;HttpServletRequest&gt;</code> </li>
 <li>즉 HttpServletRequest 자체를 securityObject 타입으로 가집니다.</li>
 <li>기존의 <code>AccessDecisionManager</code> 와 비슷한 역할을 합니다.</li>
 <li>공식 문서에서는 Delegate-based AuthorizationManager 구현 이라고 표현합니다.</li>
 <li>디자인 패턴의 Composite 패턴이 적용되었습니다.</li>
 </ul>
 </li>
-<li>
-<p>AuthorityAuthorizationManager 나, AuthenticatedAuthorizationManager, permitall, denyall </p>
-<ul>
+<li>AuthorityAuthorizationManager 나, AuthenticatedAuthorizationManager, permitall, denyall <ul>
 <li>설정에 의해 <code>RequestAuthorizationContext</code> 타입을 securityObject 타입으로 가집니다.</li>
 <li>기존의 AccessDecisionVoter 와 비슷한 역할을 합니다.</li>
 </ul>
 </li>
 </ul>
 <h4 id="3">3. 그 이후<a class="headerlink" href="#3" title="Permanent link">¶</a></h4>
-<p>그 이후는  기존의 Authorization 프로세스와 동일합니다. authorizationManager 의 결과에 따라 예외가 발생하였다면 바로 앞의 ExceptionTranslationFilter 에 의해 처리가 됩니다. 위의 기본 설정으로는 기본 authenticationEntrypoint 로 commence. 즉, 로그인 페이지로 리디렉션이 발생합니다.</p>
+<p>그 이후는 기존의 Authorization 프로세스와 동일합니다. authorizationManager 의 결과에 따라 예외가 발생하였다면 바로 앞의 ExceptionTranslationFilter 에 의해 처리가 됩니다. 위의 기본 설정으로는 기본 authenticationEntrypoint 로 commence. 즉, 로그인 페이지로 리디렉션이 발생합니다.</p>
 <p>예외가 발생하지 않았다면 요청은 Spring Security Filter 를 마지고 web mvc 의 Dispatcher Servlet 까지 전달 될 것입니다.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>

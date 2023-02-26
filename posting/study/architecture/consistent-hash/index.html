@@ -938,7 +938,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1-rehash-problem">
-    1.  Rehash Problem
+    1. Rehash Problem
   </a>
 </li>
 <li class="md-nav__item">
@@ -1713,7 +1713,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1-rehash-problem">
-    1.  Rehash Problem
+    1. Rehash Problem
   </a>
 </li>
 <li class="md-nav__item">
@@ -1775,7 +1775,7 @@
 </li>
 </ul>
 <hr/>
-<h3 id="1-rehash-problem">1.  Rehash Problem<a class="headerlink" href="#1-rehash-problem" title="Permanent link">¶</a></h3>
+<h3 id="1-rehash-problem">1. Rehash Problem<a class="headerlink" href="#1-rehash-problem" title="Permanent link">¶</a></h3>
 <p>N 개의 서버에 부하를 균등하게 나누는 보편적인 방법은 해시 함수를 이용하는 것이다.</p>
 <div class="highlight"><span class="filename">해시 값에 modulo 를 이용해 서버 인덱스를 얻을 수 있다.</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>serverIndex = hash(key) % N
 </code></pre></div>
@@ -1804,12 +1804,8 @@ In contrast, in most traditional hash tables, a chage in the number of array slo
 </ul>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="excalidraws/hash-ring-1.excalidraw.png"><img alt="excalidraws/hash-ring-1.excalidraw.png" src="excalidraws/hash-ring-1.excalidraw.png"/></a></p>
 <ul>
-<li>
-<p>Consistent Hash 에서 Key 가 서버를 조회하기 위해서 modulo 연산을 하는 것이 아니라 시계방향으로 탐색을 한다.</p>
-</li>
-<li>
-<p>이 방식 만으로 서버를 추가/제거 했을때 예측할 수 없는 형태로 대부분의 데이터에 대해서 자신의 대상 서버가 변경되는 현상을 피할 수 있다.</p>
-<ul>
+<li>Consistent Hash 에서 Key 가 서버를 조회하기 위해서 modulo 연산을 하는 것이 아니라 시계방향으로 탐색을 한다.</li>
+<li>이 방식 만으로 서버를 추가/제거 했을때 예측할 수 없는 형태로 대부분의 데이터에 대해서 자신의 대상 서버가 변경되는 현상을 피할 수 있다.<ul>
 <li>물론 해시를 적용한 다음에 hash ring 위에서 예측가능 하므로 이 방식도 모든 데이터에 대해 hash 값을 새로 계산해 보아야 하는 것은 변함없다.</li>
 </ul>
 </li>
@@ -1835,7 +1831,7 @@ In contrast, in most traditional hash tables, a chage in the number of array slo
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2023</span>

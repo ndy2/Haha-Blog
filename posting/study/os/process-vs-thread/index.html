@@ -1860,12 +1860,8 @@
 <figcaption>프로세스 상태 다이어그램</figcaption>
 </figure>
 <ul>
-<li>
-<p>이런 상태는 운영체제의 프로세스 스케쥴링에 의해 이루어집니다. 스케쥴링의 핵심은 Ready Queue 에서 실행될 프로세스를 선정하는 것입니다. 보통 프로세스의 우선순위를 바탕으로한 Multilevel Feedback Queue 방식이 활용되며 이외에도 다양한 스케쥴링 알고리즘이 있습니다.</p>
-</li>
-<li>
-<p>선정된 프로세스는 디스패처에 의해 CPU 자원을 할당받아 RUNNING 상태가 됩니다.</p>
-</li>
+<li>이런 상태는 운영체제의 프로세스 스케쥴링에 의해 이루어집니다. 스케쥴링의 핵심은 Ready Queue 에서 실행될 프로세스를 선정하는 것입니다. 보통 프로세스의 우선순위를 바탕으로한 Multilevel Feedback Queue 방식이 활용되며 이외에도 다양한 스케쥴링 알고리즘이 있습니다.</li>
+<li>선정된 프로세스는 디스패처에 의해 CPU 자원을 할당받아 RUNNING 상태가 됩니다.</li>
 </ul>
 <h4 id="3-pcb">3. PCB<a class="headerlink" href="#3-pcb" title="Permanent link">¶</a></h4>
 <ul>
@@ -1876,20 +1872,22 @@
 <ul>
 <li>프로세스의 코드에 정의된 절차에 따라 CPU에 작업 요청을 하는 실행 흐름의 단위</li>
 <li>같은 프로세스내의 쓰레드 간에는 가상 메모리 영역 (VMS) 을 공유합니다.<ul>
-<li>HEAP, CODE, DATA 영역은 공유하고 STACK 영역에서는 각 쓰레드별 지역변수와 함수 콜스택 등을 관리합기위해 공유하지 않습니다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/thread.png"><img alt="images/thread.png" src="images/thread.png"/></a></li>
+<li>HEAP, CODE, DATA 영역은 공유하고 STACK 영역에서는 각 쓰레드별 지역변수와 함수 콜스택 등을 관리합기위해 공유하지 않습니다.</li>
 </ul>
 </li>
 </ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/thread.png"><img alt="images/thread.png" src="images/thread.png"/></a></p>
 <h4 id="1_2">1. 특징<a class="headerlink" href="#1_2" title="Permanent link">¶</a></h4>
 <ul>
 <li>스레드는 프로세스 내에서 각각 stack 만 따로 할당받고 Code, Data, Heap 영역은 공유한다.</li>
 <li>스레드는 한 프로세스 내에서 동작하는 실행 흐름, 프로세스 내의 주소 공간이나 자원들(힙공간) 등을 같은 프로세스 내에서 스레드 끼리 공유하며 실행된다.</li>
 </ul>
 <h4 id="2_2">2. 쓰레드 모델<a class="headerlink" href="#2_2" title="Permanent link">¶</a></h4>
-<p>쓰레드의 종류 (대표적인 것)
-- 유저쓰레드 - 쓰레드 개념을 프로그래밍 레벨에서 추상화 한것
-- 커널쓰레드 - OS 커널 레벨에서 생성되고 관리되는 쓰레드</p>
+<p>쓰레드의 종류 (대표적인 것)</p>
+<ul>
+<li>유저쓰레드 - 쓰레드 개념을 프로그래밍 레벨에서 추상화 한것</li>
+<li>커널쓰레드 - OS 커널 레벨에서 생성되고 관리되는 쓰레드</li>
+</ul>
 <p><br/>
 - 쓰레드는 크게 유저 영역에서 실행되는 유저 쓰레드와 커널 영역에서 실행되는 커널 쓰레드로 구분됩니다. 
 - 유저 쓰레드가 실행되기 위해서는 항상 커널 쓰레드 와 연결되어 동작해야 합니다.</p>
@@ -1913,7 +1911,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 27, 2022</span>
