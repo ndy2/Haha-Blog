@@ -11,5 +11,4 @@ description: >-
 
 ![[images/2.png|응답없는 프로세스 확인|400]]
 
-
 ![[images/3.png|강제 종료|400]]

@@ -4,7 +4,7 @@ title: 변성 with Java
 date: 2023-02-18
 ---
 
-!!! quote "참고 자료"
+!!! quote " 참고 자료 "
 
     * kotlin documentation - [generics#Variance](https://kotlinlang.org/docs/generics.html#variance)
     * [`『코틀린 인 액션』`](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바 
@@ -23,8 +23,7 @@ date: 2023-02-18
 
 이 모든것들은 변성 <sup>Variance</sup> 이라는 개념을 해결하기 위한 도구입니다.
 
-
-!!! note "변성 <sup>Variance</sup>"
+!!! note " 변성 <sup>Variance</sup>"
 
     * 변성 이란 **제네릭 타입의 계층 관계**를 나타내는 개념
     * Variance 에는 다음 세 가지 종류가 있다.
@@ -33,7 +32,7 @@ date: 2023-02-18
         * covariance - `Foo<A>` 는 `Foo<B>` 의 하위 타입
         * contravariance - `Foo<A>` 는 `Foo<B>` 의 상위 타입
 
-### 2. invarinace
+### 2. Invarinace
 
 코틀린 의 변성에 대해 알아보기 전 자바의 변성에 대한 복습을 간단히 해보겠습니다. 자바와 코틀린 에서 기본적으로 제네릭 타입은 `invariant` 합니다. 즉 `List<Int>` 와 `List<Object>` 에는 상속 관계가 없습니다.
 
@@ -61,7 +60,6 @@ public static void main(String[] args) {
 
 이 메서드는 전달 받는 컬렉션의 타입 파라미터에 관계 없이 동작 할 수 있습니다. 따라서 이 메서드에서는 `Object` 의 하위 타입 `T` (모든 자바의 클래스) 에 대해 `Collection<T>` 가 `Collection<Object>` 의 하위 타입이라고 정할 수 있습니다. 이를 공변 <sup>convariance</sup> 이라고 합니다. 자바에서는 `wildcard type argument` 를 이용해 이런 성질을 나타낼 수 있습니다.
 
-
 ```java title="wildcard type argument 를 이용해 공변성을 추가한 메서드"
 public static void printAll(Collection<? extends Object> collection){  
     for (Object o : collection) {  
@@ -82,7 +80,6 @@ public static <E> void forEach(Collection<E> collection, Consumer<E> action){
     collection.forEach(action); // 사실 이미 구현 된 것에 넘겨주기만 함
 }
 ```
-
 
 이 forEach 메서드를 사용하는 코드를 작성해 봅시다!
 
@@ -116,8 +113,6 @@ public static <E> void forEach(Collection<E> collection, Consumer<? super E> act
 }
 ```
 
-
 ### 5. PECS
 
-이 성질을 간단히 요약 하면 _PECS_ 라고 나타낼 수 있습니다. 이는 _Producer-Extends, Consumer-Super._ 를 의미합니다.
-
+이 성질을 간단히 요약 하면 *PECS* 라고 나타낼 수 있습니다. 이는 *Producer-Extends, Consumer-Super.* 를 의미합니다.

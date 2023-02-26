@@ -25,10 +25,9 @@ date: 2023-02-08
 ![[images/bit-update.png]]
 
 - update(4, delta)
-    - BIT[5] += delta  // 5 = 00101<sub>2</sub> (-> + 1<sub>2</sub>)
-    - BIT[6] += delta  // 6 = 00110<sub>2</sub> (-> + 10<sub>2</sub>)
-    - BIT[8] += delta  // 8 = 01000<sub>2</sub> 
-
+    - BIT[5] += delta // 5 = 00101<sub>2</sub> (-> + 1<sub>2</sub>)
+    - BIT[6] += delta // 6 = 00110<sub>2</sub> (-> + 10<sub>2</sub>)
+    - BIT[8] += delta // 8 = 01000<sub>2</sub> 
 
 ### 3. Range Update
 

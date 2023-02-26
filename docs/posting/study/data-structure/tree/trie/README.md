@@ -17,7 +17,6 @@ author: ndy2
 - n = 7 - 문자열의 개수
 - m = 9 - 문자열의 최대 길이, 삽입이나 조회 시에는 현재 문자열의 길이인 경우도 있지만 대충 문자열의 길이를 표현하는 변수로 퉁 치겠음
 
-
 ### 1. 배열 (Array)
 
 ![[excalidraws/array.excalidraw.png]]
@@ -46,8 +45,6 @@ author: ndy2
 
 해시셋을 이용한 검색은 해시값을 얻기만 하면 바로 bucket 의 참조를 얻을 수 있으므로 해시집합이 잘 분포되었다는 가정 하예 O(m) 이라고 얘기할 수 있다.
 
-
-
 ### 3. 트라이 (Trie)
 
 ![[excalidraws/trie-example.excalidraw.png|400]]
@@ -58,7 +55,7 @@ Trie 는 문자열 집합을 위 그림 처럼 저장한다.
 
 트라이에서 검색을 하기 위해서는 마찬가지로 O(m) 타임이 필요하다.
 
-### 4. 해시 셋 vs Trie
+### 4. 해시 셋 Vs Trie
 
 [참고](https://www.baeldung.com/cs/hash-table-vs-trie-prefix-tree)
 

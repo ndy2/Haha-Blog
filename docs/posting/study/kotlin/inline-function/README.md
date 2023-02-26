@@ -38,9 +38,9 @@ finally { l.unlock() }
 inline fun <T> lock(lock: Lock, body: () -> T): T { ... }
 ```
 
->[!note]
->* `inline` 변경자는 함수 자기 자신과 인자로 받는 람다식 모두에게 영향을 끼칩니다.
->* 컴파일러에 의해 둘 모두 호출 시점에 inline 처리가 됩니다.
+> [!note]
+> - `inline` 변경자는 함수 자기 자신과 인자로 받는 람다식 모두에게 영향을 끼칩니다.
+> - 컴파일러에 의해 둘 모두 호출 시점에 inline 처리가 됩니다.
 
 ### 2. `noinline` 변경자
 
@@ -50,9 +50,10 @@ inline fun foo(inlined: () -> Unit, noinline notInlined: () -> Unit) { ... }
 
 `inline` 함수의 모든 람다식이 `inline` 되기 원하지 않는다면 해당 함수 파라미터 앞에 `noinline` 변경자를 추가하면 됩니다.
 
-### 3.  non-local returns
+### 3. Non-local Returns
 
 람다에서는 원 함수에 리턴 할 수 없습니다. 하지만 람다식이 inlined 되었다면 가능합니다.
+
 이런 리턴을 *`non-local`* return 이라고 합니다.
 
 === "bare `return` is forbidden inside a labmda"

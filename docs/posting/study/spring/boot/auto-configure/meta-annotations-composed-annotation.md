@@ -17,7 +17,7 @@ date: 2023-02-03
 - 애너테이션이 애너테이션을 포함하여 중첩되는 경우 중첩된 애너테이션을 메타 애너테이션 이라고 한다.
 - Java 의 애너테이션을 선언하기 위해 반드시 포함되어야 하는 `@Retention,` `@Target` 은 대표적인 Java 의 메타 애너테이션이다.
 <br>
-- `@Component`  는 `@Controller`, `@Service`, `@Repository` 가 포함하는 Spring 의 대표적인 메타 애너테이션만이다.
+- `@Component` 는 `@Controller`, `@Service`, `@Repository` 가 포함하는 Spring 의 대표적인 메타 애너테이션만이다.
 - 이를 통해 개발자는 컨트롤러 클래스가 Spring Component 임과 동시에 web-mvc 의 Handler 로 동작한다는 사실을 알 수 있다.
 
 !!! warn
@@ -79,7 +79,3 @@ date: 2023-02-03
     //...
     }
     ```
-
-
-
-

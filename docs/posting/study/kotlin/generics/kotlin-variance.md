@@ -4,7 +4,7 @@ title: 변성 in Kotlin
 date: 2023-02-18
 ---
 
-!!! quote "참고 자료"
+!!! quote " 참고 자료 "
 
     * kotlin documentation - [generics#Variance](https://kotlinlang.org/docs/generics.html#variance)
     * [`『코틀린 인 액션』`](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바 
@@ -14,23 +14,23 @@ date: 2023-02-18
 
 ### 0. 들어가며
 
-[이전 글](../java-variance)에서
+[이전 글](../java-variance) 에서
 
-1. 변성의 세가지 종류와 적용 조건(PECS)
+1. 변성의 세가지 종류와 적용 조건 (PECS)
 2. 자바에서 extends, super 키워드를 이용해 convariance, contravariance 를 적용 하는 법
 
 을 알아보았다. 
 
 이제,
 
-1. 코틀린에서 변성을 다루기 위해 사용하는 두가지 `variance annotation` 인  `in`, `out` 변경자
+1. 코틀린에서 변성을 다루기 위해 사용하는 두가지 `variance annotation` 인 `in`, `out` 변경자
 2. 코틀린의 `declaration-site variance` 와 `type-projection (call-site variance)`
 
 두가지에 대해서 알아보자!
 
 ---
 
-### 1. declaration-site variance
+### 1. Declaration-site variance
 
 선언 지점 변성은 자바에는 존재하지 않던 코틀린의 새로운 개념이다. 그 이름과 공식문서의 예제에서 그 모티프를 알 수 있다. 공식문서의 예제를 살펴보자.
 
@@ -75,7 +75,7 @@ fun demo(x: Comparable<Number>) {
 
 `in`/`out` 변경자의 이름을 통해 그 역할을 쉽게 유추할 수 있습니다!
 
-### 2. Use-site variance: type projections
+### 2. Use-site Variance: Type Projections
 
 클래스/ 인터페이스 전체가 타입 파라미터 T 에 대해서 in/out 한 성질을 가지는 경우 선언 지점 변성을 적용할 수 있습니다. 그렇지 않은 경우에는 Use-site varinace 를 적용 할 수 있습니다. `Array<T>` 는 그런 클래스 중 하나입니다.
 
@@ -86,7 +86,7 @@ class Array<T>(val size: Int) {
 }
 ```
 
-`Use-site Variance` 는 그 이름 처럼 사용하는 시점에 `T` 를 produce 하기만 하는 메서드만 혹은 `T` 타입을 consume하는 메서드만 사용 하는 경우라면 사용 시점에 변성을 정의해 주는 방식입니다. 
+`Use-site Variance` 는 그 이름 처럼 사용하는 시점에 `T` 를 produce 하기만 하는 메서드만 혹은 `T` 타입을 consume 하는 메서드만 사용 하는 경우라면 사용 시점에 변성을 정의해 주는 방식입니다. 
 
 배열 클래스에 use-site variance 를 적용한 두 예시 를 살펴보고 글을 마치겠습니다.
 

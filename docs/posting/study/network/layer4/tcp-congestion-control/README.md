@@ -14,7 +14,7 @@ TCP 의 주요한 특징은연결 지향 프로토콜 이면서 신뢰성있는 
 - TCP 의 연결지향은 3-way, 4-way handshake 로 달성됩니다.
 - TCP 의 신뢰성은 많은 이유가 있지만 보통 흐름제어 (flow-control), 혼잡제어 (congestion-control) 를 통해 이루어진다고 이야기 됩니다.
 
-이중 혼잡 제어 (Congestion Control) 란 트래픽 증가로 인해 라우터/스위치 버퍼의 큐잉 지연시간 증가 및 오버플로 발생 상태를 막기위해 혼잡 윈도우 라는 개념을 통해 Sender 가 전송하는 segment의 양을 조절하는 것입니다.  이 문서에서는 바로이 혼잡 제어에 대해서 알아보겠습니다.
+이중 혼잡 제어 (Congestion Control) 란 트래픽 증가로 인해 라우터/스위치 버퍼의 큐잉 지연시간 증가 및 오버플로 발생 상태를 막기위해 혼잡 윈도우 라는 개념을 통해 Sender 가 전송하는 segment의 양을 조절하는 것입니다. 이 문서에서는 바로이 혼잡 제어에 대해서 알아보겠습니다.
 
 ---
 
@@ -46,22 +46,21 @@ TCP 의 주요한 특징은연결 지향 프로토콜 이면서 신뢰성있는 
 - 1. Slow Start
 	- ACK 수신시 cwnd 를 1 (MSS) 늘립니다.
 	- 즉 RTT 마다 cwnd 를 두배씩 (지수적으로) 늘립니다.
-
 - 2. Congestion Avoidance
 	- 계속해서 Slow Start 알고리즘을 적용하면 cwnd 가 계속 지수적으로 커지게 됩니다. 
 	- 이를 방지하기 위해 특정 임계치가 넘어가는 경우 RTT 마다 cwnd 를 1씩 늘릴 수 있도록 조정해줍니다.
 	- 이때 ACK 수신시 cwnd 를 1/cwnd 만큼 늘리면 됩니다.
-
 - 3. Fast Recovery
 	- 경미한 혼잡 상황에서 cwnd 를 다시 1로 drop 시키고 slow start 를 적용하는 것은 비합리적입니다.
 	- TCP 최신 버전인 TCP Reno 버전에서는 이를 Fast Recovery 방식으로 해결합니다.
-	- fast recovery 알고리즘은  3 Ack Duplicated 감지시 임계치를 반으로 줄인 후 RTT 마다 cwnd 를 1씩 늘릴 수 있도록 합니다. 혼잡이 해결되면 cwnd 를 다시 복구하고 Congestion Avoidance 를 시작합니다.
+	- fast recovery 알고리즘은 3 Ack Duplicated 감지시 임계치를 반으로 줄인 후 RTT 마다 cwnd 를 1씩 늘릴 수 있도록 합니다. 혼잡이 해결되면 cwnd 를 다시 복구하고 Congestion Avoidance 를 시작합니다.
 
 ### TCP Taheo 와 Reno
-- TCP Taheo 는 Timeout 과 3 duplicated ACKs 발생시 모두 cwnd 를 1로 줄이고 Slow Start 를 시작합니다.
-- TCP Reno 는 Timout 시에는 TCP Taheo 와 같이 동작하지만 3 duplicated ACKs 시에는 Fast Recovery 를 적용합니다.
 
+- TCP Taheo 는 Timeout 과 3 duplicated ACKs 발생시 모두 cwnd 를 1로 줄이고 Slow Start 를 시작합니다.
+- TCP Reno 는 Timeout 시에는 TCP Taheo 와 같이 동작하지만 3 duplicated ACKs 시에는 Fast Recovery 를 적용합니다.
 
 ### 추가로...
+
 - 맨 위 참고 자료에 있는 문동욱 님의 글에 따르면 TCP Taheo 와 Reno 모두 현재는 그리 잘 사용되는 방식은 아니라고 한다. 
 - 최근에는 과거에 비해 네트워크 대역폭이 훨씬 여유가 있기 때문에 송신측이 혼잡 윈도우를 팍팍 늘려도 덜 문제가 된다고 한다. 최근의 혼잡제어 정책들은 얼마나 빠르고 똑똑하게 혼잡 윈도우의 크기를 조절하고 혼잡 감지를 하는가에 초점이 맞추어져 있다고 한다.

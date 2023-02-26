@@ -10,9 +10,7 @@ date: 2023-02-23
 - 위키피디아 - [전송계층](https://ko.wikipedia.org/wiki/전송_계층)
 - GeeksforGeeks - [Differences between TCP and UDP](https://www.geeksforgeeks.org/differences-between-tcp-and-udp/?ref=rp)
 
-
-
-전송 계층은 `연결 지향 데이터 스트림 지원`, `신뢰성`, `흐름 제어`, 그리고 `다중화`와 같은 편리한 서비스를 제공합니다.  전송 프로토콜 중 가장 잘 알려진 것은 연결 지향 전속 방식을 사용하는 `TCP` 입니다. 보다 단순한 전송에서 사용되는 `UDP` 도 있습니다.
+전송 계층은 `연결 지향 데이터 스트림 지원`, `신뢰성`, `흐름 제어`, 그리고 `다중화`와 같은 편리한 서비스를 제공합니다. 전송 프로토콜 중 가장 잘 알려진 것은 연결 지향 전속 방식을 사용하는 `TCP` 입니다. 보다 단순한 전송에서 사용되는 `UDP` 도 있습니다.
 
 전송 계층은 
 
@@ -20,8 +18,8 @@ date: 2023-02-23
 
 ---
 
-### TCP vs UDP 간단 비교
-  
+### TCP Vs UDP 간단 비교
+
 | Basis       | TCP                                                                                                                     | UDP                                                                                                                                   |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | 핵심 컨셉   | 연결 지향 프로토콜 <br /> 연결 지향이란 데이터를 주고받기 전과 후에 연결을 수립하고 끊는 과정이 있어야 한다는 것을 의미 | 데이터그램 지향 프로토콜 <br /> 연결을 맺고 유지, 종료하는 것에 대한 오버헤드가 없음 방송과 multicast 타입의 네트워크 전송에 효율적임 |
@@ -38,8 +36,8 @@ date: 2023-02-23
 | Stream Type | byte stream                                                                                                             | message stream                                                                                                                        |
 | Overhead    | UDP 보다 큼                                                                                                             | 낮음                                                                                                                                  |
 
-
 ### TCP 상태 다이어그램
+
 ![[images/tcp-state-diagram.png]]
 
 ### TCP, UDP 와 관련된 질문들
@@ -53,20 +51,19 @@ date: 2023-02-23
 - 연결 수립시에는 ISN, MSS, Window Size (rwnd, cwnd), 혼잡제어 정책 과 같은 정보를 주고 받습니다.
 - handshake 과정에서 body 는 사용하지 않고 header 필드 만을 주고 받습니다.
 
-
 #### 1-1. 연결 수립시에는 3-Way, 연결 종료시에는 4-Way Handshake 가 발생하는데 왜 그런 차이가 있을까요?
-- 연결 수립시 주고 받는 주요 Field 의 정보는 Syn, Syn-Ack, Ack 입니다. Syn 은 Sequence number 를 의미하고 요청, 응답의 ID 처럼 사용됩니다. Ack 은 이전 요청을 잘 받았음을 인정하는 신호입니다. 이전 전달 받은 Syn 필드의 값에 1을 더한 값을 응답합니다.
 
+- 연결 수립시 주고 받는 주요 Field 의 정보는 Syn, Syn-Ack, Ack 입니다. Syn 은 Sequence number 를 의미하고 요청, 응답의 ID 처럼 사용됩니다. Ack 은 이전 요청을 잘 받았음을 인정하는 신호입니다. 이전 전달 받은 Syn 필드의 값에 1을 더한 값을 응답합니다.
 - 연결 종료시에는 Fin, Ack, Fin, Ack 입니다. 이때 연결 수립시와 달리 서버는 Ack 과 Fin 을 한번에 보내지 않고 사이에 텀을 가집니다. 그 이유는 클라이언트의 연결 종료 요청 (Fin) 을 받은 시점에 서버가 추가적인 정보를 응답할 수 있는 시간을 남겨두는 것입니다.
 
 ### 1-2 만약 Server에서 FIN 플래그를 전송하기 전에 전송한 패킷이 Routing 지연이나 패킷 유실로 인한 재전송 등으로 인해 FIN 패킷보다 늦게 도착하는 상황이 발생하면 어떻게 될까요?
+
 - Client 는 서버의 FIN 응답을 받으면 바로 소켓을 닫는 것이 아니라 MSL (Maximum Segment Life) 의 두배 시간동안 Time-Wait 상태를 가진후 소켓을 닫습니다. 그 시간동안 클라이언트는 서버의 추가적인 패킷을 전달 받을 수 있습니다.
 
-
 #### 1-3 초기 Sequence Number인 ISN을 0부터 시작하지 않고 난수를 생성해서 설정하는 이유?
-- ISN 은 Initial Seqence Number 로 Handshake 시에  설정됩니다.
-- 이전의 요청으로 오해할 수 있는 가능성이 있기 때문입니다.
 
+- ISN 은 Initial Sequence Number 로 Handshake 시에 설정됩니다.
+- 이전의 요청으로 오해할 수 있는 가능성이 있기 때문입니다.
 
 #### 2. TCP 가 UDP 보다 빠른 이유가 무엇일까요?
 
@@ -78,7 +75,6 @@ date: 2023-02-23
 - TCP는 UDP에 비해 Flow Control, Congestion Control 기능을 이용해 한번에 전송하는 패킷의 양을 조절하기 때문에 느립니다.
 	- Flow Control - 수신측의 rwnd 사이즈를 계속해서 전달받으며 수신측의 버퍼가 터지지 않도록 패킷 전송을 조절하는 것입니다. (Sliding window)
 	- Congestion Control - Ack 를 받기전에 계속해서 전송할 수 있는 패킷의 양 cwnd 사이즈를 통해 조절하는 것입니다.
-
 
 ### Video Streaming 과 UDP
 
@@ -93,6 +89,6 @@ date: 2023-02-23
 > 
 > UDP가 빠르기 때문에 많은 스트리밍 프로토콜은 TCP 대신 UDP를 사용합니다. 하지만 HLS는 여러 가지 이유로 TCP를 사용합니다.
 > 
-> - CloudFlare  - [HTTP 라이브 스트리밍이란 무엇입니까? | HLS 스트리밍](https://www.cloudflare.com/ko-kr/learning/video/what-is-http-live-streaming/)
+> - CloudFlare - [HTTP 라이브 스트리밍이란 무엇입니까? | HLS 스트리밍](https://www.cloudflare.com/ko-kr/learning/video/what-is-http-live-streaming/)
 
 --- 

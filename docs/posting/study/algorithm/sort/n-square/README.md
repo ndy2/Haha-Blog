@@ -19,10 +19,9 @@ title: O(n^2) 정렬 알고리즘
 	- `comp` 연산의 횟수
 	- `swap` 연산의 횟수
 
-
 ### 1. 버블 정렬 Bubble Sort
 
-#### 1. python code
+#### 1. Python Code
 
 ```python title="Bubble Sort!" exec="true" source="material-block"
 # Python program for implementation of Bubble Sort
@@ -48,15 +47,14 @@ for i in range(len(arr)):
 	print("%d" % arr[i], end=" ")
 ```
 
-
 #### 2. 실행 흐름
 
 다음 순서로 비교와 스왑을 진행한다.
 
-- arr[0],arr[1] ->  arr[1], arr[2] -> ...........-> arr[n-3],arr[n-2]  ->  arr[n-2], arr[n-1] 
-- arr[0],arr[1] ->  arr[1], arr[2] -> ............-> arr[n-3],arr[n-2]
+- arr[0],arr[1] -> arr[1], arr[2] -> ...........-> arr[n-3],arr[n-2] -> arr[n-2], arr[n-1] 
+- arr[0],arr[1] -> arr[1], arr[2] -> ............-> arr[n-3],arr[n-2]
 - ....
-- arr[0],arr[1] ->  arr[1], arr[2]
+- arr[0],arr[1] -> arr[1], arr[2]
 - arr[0],arr[1]
 
 #### 3. 특징
@@ -65,7 +63,7 @@ for i in range(len(arr)):
 - Stable Sort
 - 시간 복잡도 - O(n<sup>2</sup>), 보조 메모리 - O(1) (`temp` 저장용 하나)
 <br>
-- 최선의 경우 -  배열이 모두 정렬 된 경우
+- 최선의 경우 - 배열이 모두 정렬 된 경우
 	- swap 을 한번도 진행하지 않지만 그경우에도 항상 O(n<sup>2</sup>) 타임의 비교연산이 필요하다.
 - 최악의 경우 - 배열이 역순으로 정렬 된 경우
 	- swap, comp 연산 모두 O(n<sup>2</sup>) 타임이 필요하다.
@@ -74,7 +72,7 @@ for i in range(len(arr)):
 
 ### 2. 선택 정렬 (Selection Sort)
 
-#### 1. python code
+#### 1. Python Code
 
 ```python title="Selection Sort!" exec="true" source="material-block"
 # Python program for implementation of Selection
@@ -121,7 +119,7 @@ for i in range(len(A)):
 
 ### 3. 삽입 정렬 (Insertion sort)
 
-#### 1. python code
+#### 1. Python Code
 
 ```python title="Selection Sort!" exec="true" source="material-block"
 # Python program for implementation of Insertion Sort
@@ -158,9 +156,9 @@ for i in range(len(arr)):
 
 key 를 고른다 -> *적당한 위치*에 삽입한다.
 
-- i -> key          -> comp (i-1 ~ 더 작을 때 까지)/ comp 하는 동시에 뒤로 미는 swap 도 수행
-- 1 -> arr[1]     -> j = 0 done
-- 2 -> arr[2]   ->  j = 1/ key 와 arr[j] 비교 -> key 가 더 작으면 계속 arr[j+1] 과 [j] 변경
+- i -> key -> comp (i-1 ~ 더 작을 때 까지)/ comp 하는 동시에 뒤로 미는 swap 도 수행
+- 1 -> arr[1] -> j = 0 done
+- 2 -> arr[2] -> j = 1/ key 와 arr[j] 비교 -> key 가 더 작으면 계속 arr[j+1] 과 [j] 변경
 
 ...
 

@@ -43,7 +43,7 @@ Negative matches:
 ...
 ```
 
-### 2. ConditionEvaluationReport 
+### 2. ConditionEvaluationReport
 
 `ConditionalEvaluationReport` 를 주입 받아 직접 원하는 형태로 출력하는 `ApplicationRunner` 빈을 하나 등록 한다.
 
@@ -63,8 +63,6 @@ fun run(report: ConditionEvaluationReport) = ApplicationRunner {
     println("자동 등록된 빈은 총 $count 개!")  
 }
 ```
-
-
 
 `implementation("org.springframework.boot:spring-boot-starter")` 만 추가했을때 등록되는 자동 목록
 
@@ -114,8 +112,7 @@ org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration#task
 자동 등록된 빈은 총 13 개!
 ```
 
-
-### 3. SpringBoot Reference 
+### 3. SpringBoot Reference
 
 - 아래 사진 [링크](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#documentation.web)
 

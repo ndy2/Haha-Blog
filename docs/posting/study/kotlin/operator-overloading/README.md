@@ -17,7 +17,6 @@ date: 2023-02-19
 
 코틀린에서 관례 <sup>Convention</sup> 에 의해 미리 정해진 함수의 이름의 함수를 `operator` 변경자와 함께 정의하면 연산자를 오버로딩 할 수 있다.
 
-
 !!! note "연산자 오버로딩의 특징"
 
     * 연산자 오버로딩은 [basic types](https://kotlinlang.org/docs/basic-types.html) 에 대해 최적화를 제공한다. 
@@ -31,7 +30,7 @@ data class Point(val x : Int, val y : Int)
 
 ### 2. 단항 연산자 <sup>Unary operations</sup>
 
-#### 1. Unary prefix operation
+#### 1. Unary Prefix Operation
 
 | Expression | Translated to  |
 | ---------- | -------------- |
@@ -48,9 +47,7 @@ println(-point) // "Point(x=-10, y=-20)"
 
 의미적으로 상당히 유용하고 쓸만해보인다. :thumbsup:
 
-
-#### 2. Increments and decrements﻿
-
+#### 2. Increments and Decrements
 
 | Expression | Translated to |
 | ---------- | ------------- |
@@ -82,7 +79,6 @@ fun main(){
     3. Val cannot be reassigned
     4. Functions inc(), dec() shouldn't return Unit to be used by operators ++, --
 
-
 이런 식으로 사용할 수 없다. 공식 문서와 예외 메시지를 읽어보니 `inc()`, `dec()` 함수는 항상 리턴 값을 가져야 한다고 한다. 또한 여기서는 애초에 `val` 이라 값은 변경 할 수 없었다.
 
 ```kotlin
@@ -98,10 +94,8 @@ fun main(){
 }
 ```
 
-
 - `inc()`, `dec()` 연산자도 일반적으로 예상되는 *prefix* 와 *postfix* 형태를 잘 처리해 준다.
 - 또한 특히 사항으로 p 는 val 로 선언할 수 없다. 공식문서의 `inc()`, `dec()` 처리 순서에 잘 설명이 나오는데 `inc()`, `dec()` 동작 과정에서 변수 p 에 대한 재할당이 발생하기 때문이다.
-
 
 ### 3. 이항 연산자 <sup>binary operations</sup>
 
@@ -146,16 +140,14 @@ fun main(){
 }
 ```
 
-
-#### 2. in operator
+#### 2. In Operator
 
 | Expression | Translated to  |
 | ---------- | -------------- |
 | a in b     | b.contains(a)  |
 | a !in b   | !b.contains(a) |
 
-
-#### 3. indexed access operator
+#### 3. Indexed Access Operator
 
 | Expression            | Translated to          |
 | --------------------- | ---------------------- |
@@ -167,7 +159,8 @@ fun main(){
 | a[i0, i1, ... in] = b | a.set(i0,i1,...,in, b) |
 
 대 괄호안에 index를 여러개 작성 할 수있다는 점이 눈에 띈다.
-`Point` 클래스에 한개의 index 를 받는 `get`, `set` 오퍼레이터를 재 정의해 `index 0` 이  x 의 값 `index 1` 이 y 의 값을 의미하도록 해보자
+
+`Point` 클래스에 한개의 index 를 받는 `get`, `set` 오퍼레이터를 재 정의해 `index 0` 이 x 의 값 `index 1` 이 y 의 값을 의미하도록 해보자
 
 ```kotlin
 data class Point(var x : Int, var y : Int) // set 을 위해 var 로 변경
@@ -194,7 +187,7 @@ fun main(){
 }
 ```
 
-#### 4. invoke operator
+#### 4. Invoke Operator
 
 | Expression   | Translated to      |
 | ------------ | ------------------ |
@@ -203,6 +196,7 @@ fun main(){
 | a(i0,...,in) | a.invoke(i0,...in) |
 
 소괄호를 통해 함수를 호출하는 것 처럼 동작하게 할 수도 있다.
+
 인자를 받지 않는 invoke 함수를 정의해 한번 호출 할 때마다 90 도 시계방향으로 로테이션 하는 연산자를 오버로딩 해보자.
 
 ```kotlin
@@ -224,7 +218,7 @@ fun main(){
 }
 ```
 
-#### 5. augmented assignments (compund assignment)
+#### 5. Augmented Assignments (compound assignment)
 
 | Expression | Translated to    |
 | ---------- | ---------------- |
@@ -235,9 +229,10 @@ fun main(){
 | `a%=b`       | a.remAssign(b)   |
 
 이론적으로 `+=` 을 plus, plusAssign 양쪽으로 컴파일 할 수 있다.
+
 하지만 둘 중 한쪽만 정의 하는 것이 안전한다.
 
-#### 6. equality and inequality operators
+#### 6. Equality and Inequality Operators
 
 | Expression | Translated to    |
 | ---------- | ---------------- |
@@ -246,7 +241,7 @@ fun main(){
 
 `동등성 검사`는 `equals 호출`과 `널 검사`로 컴파일 된다.
 
-#### 7. comparison operators
+#### 7. Comparison Operators
 
 | Expression | Translated to       |
 | ---------- | ------------------- |
@@ -263,7 +258,6 @@ fun main(){
 }
 ```
 
-
-#### 8. Property delegation operators
+#### 8. Property Delegation Operators
 
 `provideDelegate`, `getValue`, `setValue` 연산자 함수는 Delegated properties 에서 다루겠습니다.

@@ -5,9 +5,9 @@ date: 2023-02-16
 ---
  
 > [!quote] 참고 자료
->* [`『코틀린 인 액션』`](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바 
->     * 8장 고차 함수: 파라미터와 반환 값으로 람다 사용
->* kotlin documentation - [High-order functions and lambdas](https://kotlinlang.org/docs/lambdas.html)
+> * [`『코틀린 인 액션』`](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바 
+>      * 8 장 고차 함수: 파라미터와 반환 값으로 람다 사용
+> * kotlin documentation - [High-order functions and lambdas](https://kotlinlang.org/docs/lambdas.html)
 
 ### 1. 고차 함수
 
@@ -39,18 +39,18 @@ public inline fun <T> Iterable<T>.filter(predicate: (T) -> Boolean): List<T> {
 
 ### 2. 함수 타입
 
-#### a. 코틀린 함수 타입 문법
+#### A. 코틀린 함수 타입 문법
 
--  `(A, B) -> C`
-- `val myFun : (A, B) -> C = ...` 와 같이 활용할 수 있다.
-- 이때 `myFun` 함수는 `A`, `B` 타입 두개의 아규먼트를 받아 `C` 타입의 값을 반환한다.
+* `(A, B) -> C`
+* `val myFun : (A, B) -> C = ...` 와 같이 활용할 수 있다.
+* 이때 `myFun` 함수는 `A`, `B` 타입 두개의 아규먼트를 받아 `C` 타입의 값을 반환한다.
 
-#### b. :warning: Unit 과 함수 타입
+#### B. :warning: Unit 과 함수 타입
 
-- 파라미터의 타입 목록은 빌 수 있다. (e.g. `val aSupplier :  ( ) -> A = ...`)
-- 하지만 `Unit` 리턴 타입은 생략 될 수 없다. (e.g.  `val aConsummer : A -> = ...`)
+* 파라미터의 타입 목록은 빌 수 있다. (e.g. `val aSupplier :  ( ) -> A = ...`)
+* 하지만 `Unit` 리턴 타입은 생략 될 수 없다. (e.g. `val aConsummer : A -> = ...`)
 
-#### c. 파라미터 이름과 함수 타입
+#### C. 파라미터 이름과 함수 타입
 
 ```kotlin
 fun performReq(
@@ -61,10 +61,10 @@ fun performReq(
 }
 ```
 
-- 파라미터 이름을 지정해 가독성을 높일 수 있다.
-- 컴파일러는 타입 검사시에 파라미터 이름은 무시한다.
+* 파라미터 이름을 지정해 가독성을 높일 수 있다.
+* 컴파일러는 타입 검사시에 파라미터 이름은 무시한다.
 
-#### d. *Receiver Type* 과 함수 타입
+#### D. *Receiver Type* 과 함수 타입
 
 ```kotlin
 fun main() {  
@@ -80,7 +80,6 @@ fun main() {
 }
 ```
 
-
 ```text title="실행 결과"
 i am 1, isEvenEqualIt is false
 i am 1, isEvenEqualIt is true
@@ -88,14 +87,14 @@ i am 2, isEvenEqualIt is true
 i am 2, isEvenEqualIt is false
 ```
 
-#### e. 이 외 다양한 형태의 함수 타입활용
+#### E. 이 외 다양한 형태의 함수 타입활용
 
-- 함수 타입 자체가 nullable 한 경우 : `((Int, Int) -> Int)?`
-- 인자 혹은 리턴 타입이 nullable 한 경우 : `(Int?, Int) -> Int?`
-- 중첩된 함수 타입 구조 : `(Int -> ((Int -> Unit)))`
-- typealias 와 함수 타입 : `typealias ClickHandler = (Button, ClickEvent) -> Unit`
-- 고차 함수의 파라미터에서 활용시 default 값을 지정할 수 도 있다.
-- 물론 다루지는 않았지만 고차 함수의 반환값에도 함수 타입을 사용할 수 있다.
+* 함수 타입 자체가 nullable 한 경우 : `((Int, Int) -> Int)?`
+* 인자 혹은 리턴 타입이 nullable 한 경우 : `(Int?, Int) -> Int?`
+* 중첩된 함수 타입 구조 : `(Int -> ((Int -> Unit)))`
+* typealias 와 함수 타입 : `typealias ClickHandler = (Button, ClickEvent) -> Unit`
+* 고차 함수의 파라미터에서 활용시 default 값을 지정할 수 도 있다.
+* 물론 다루지는 않았지만 고차 함수의 반환값에도 함수 타입을 사용할 수 있다.
 
 ### 3. 함수 타입을 생성하는 방법
 
@@ -105,20 +104,19 @@ i am 2, isEvenEqualIt is false
 
 함수 타입 인스턴스를 얻는 방식에는 몇가지가 있습니다.
 
-#### a. 람다 식
+#### A. 람다 식
 
 ```kotlin
 val intAdd : (Int, Int) -> Int = { a: Int, b: Int -> a + b }
 ```
 
-#### b. 익명(?) 함수
+#### B. 익명 (?) 함수
 
 ```kotlin
 val intAdd2 : (Int, Int) -> Int = fun(a: Int, b: Int) = a + b
 ```
 
-
-#### c. callable reference 활용 
+#### C. Callable Reference 활용
 
 ```kotlin
 fun main() {  
@@ -135,7 +133,7 @@ fun main() {
 fun intAdd3(a: Int, b: Int) = a + b
 ```
 
-#### d. 함수 타입을 구현하는 클래스를 정의하고 생성하기
+#### D. 함수 타입을 구현하는 클래스를 정의하고 생성하기
 
 ```kotlin
 fun main() {  
@@ -149,8 +147,7 @@ class IntAdder : (Int, Int) -> Int {
 }
 ```
 
-
-### 4. 함수 타입을 사용 (호출)하는 방법
+### 4. 함수 타입을 사용 (호출) 하는 방법
 
 ```kotlin title="위의 모든 함수 타입 인스턴스 생성 방법과 함수 타입 사용 모음"
 fun main() {  
@@ -171,7 +168,6 @@ class IntAdder : (Int, Int) -> Int {
 }
 ```
 
-
 ### 5. 함수 타입이 동작하는 원리
 
 !!! quote "`『kotlin in action』` p.352"
@@ -180,7 +176,7 @@ class IntAdder : (Int, Int) -> Int {
 
 ![[images/functions.png]]
 
-#### byte code decompiled
+#### Byte Code Decompiled
 
 ```java
 // IntAdder.java  

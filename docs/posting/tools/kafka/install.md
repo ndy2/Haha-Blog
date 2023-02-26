@@ -3,6 +3,7 @@ tags: [kafka]
 title: 설치
 date: 2023-02-03
 ---
+
 ### 1. 카프카 설치
 
 1. 압축 파일 다운로드
@@ -11,14 +12,13 @@ date: 2023-02-03
 
 ![[images/install.png]]
 
-2. 압축 해제
+1. 압축 해제
 
 ```zsh
 mv kafka_2.13-3.3.2.tgz ~/Desktop/work/kafka-demo
 cd ~/Desktop/work/kafka-demo
 tar -xvf kafka_2.13-3.3.2.tgz
 ```
-
 
 ```zsh
 ╭─deukyun@namdeug-yun-ui-Macmini ~/Desktop/work/kafka-demo
@@ -27,7 +27,6 @@ tar -xvf kafka_2.13-3.3.2.tgz
 ╰─$ ls
 LICENSE   NOTICE    bin       config    libs      licenses  site-docs
 ```
-
 
 ### 2. Kafka Connect 설치 - MacOS
 

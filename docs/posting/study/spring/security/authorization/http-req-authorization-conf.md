@@ -6,18 +6,19 @@ date: 2023-02-06
 
 @ 참고 자료)
 
--  spring-security reference - [링크](https://docs.spring.io/spring-security/reference/6.0.0-M5/servlet/authorization/authorize-http-requests.html)
+- spring-security reference - [링크](https://docs.spring.io/spring-security/reference/6.0.0-M5/servlet/authorization/authorize-http-requests.html)
 
 ### 0. shouldFilterAllDispatcherTypes() 옵션
 
 authorizeHttpRequests 설정을 하며 shouldFilterAllDispatcherTypes flag 를 설정 할 수 있습니다.
+
 이 flag 는 아래 세가지 옵션을 한번에 변경하는 flag 입니다.
 
 ![[images/should-filter-all-dispatcher-types.png]]
 
 ---
 
-### 1. method chaining
+### 1. Method Chaining
 
 ```java title="SecurityFilterChain Bean"
 
@@ -48,7 +49,7 @@ fun filterChain(http: HttpSecurity): SecurityFilterChain {
 
 ---
 
-### 2. lambda dsl
+### 2. Lambda Dsl
 
 ```java
 @Bean  
@@ -76,12 +77,12 @@ fun filterChain(http: HttpSecurity): SecurityFilterChain {
 ```
 
 포맷이 좀 불편하지만 바꿀 수 있고 관련된 것 끼리 Indent 가 잘 맞으니 보기 좋은것 같다.
+
 참고로 `authorizeHttpRequests` 외 모든 설정이 `configurer` 를 인자로 받는 lambda dsl 설정이 가능하다.
 
 ---
 
-### 3. bean-based approach 
-
+### 3. Bean-based Approach
 
 ```java
 @Bean  
@@ -128,7 +129,6 @@ fun requestMatcherAuthorizationManager(introspector: HandlerMappingIntrospector)
     //warp manager and return  
     return AuthorizationManager { a, context -> manager.check(a, context.request) }  
 ```
-
 
 공식 문서에서 소개하는 방법 중 하나로 설정자 클래스의 access 메서드를 활용하는 방법이 있습니다.
 

@@ -21,7 +21,7 @@ author: ndy2
 
 - **객체 선언**^object^ ^declaration^ - 싱글턴을 정의 하는 방법 중 하나입니다.
 - **동반 객체**^companion^ ^object^ - 자바의 static 메서드, 변수와 같은 역할을 합니다.
-- **익명 객체**^anoymous^ ^object^ - 자바의 익명 클래스와 같은 역할을 합니다.
+- **익명 객체**^anonymous^ ^object^ - 자바의 익명 클래스와 같은 역할을 합니다.
 
 ### 1. 객체 선언 - `object declaration`
 
@@ -66,8 +66,6 @@ public final class SingleTon {  // 1. 클래스 선언
 ```
 
 또한 `INSTANCE` 라는 변수명으로 단일 인스턴스의 변수명이 지정된 것을 확인 할 수 있습니다. 따라서 자바에서 `object` 로 선언된 코틀린의 싱글턴 객체에 접근하고자 한다면 `SingleTon.INSTANCE` 와 같이 사용할 수 있습니다.
-
-
 
 ### 2. 동반 객체 - `companion object`
 
@@ -114,13 +112,10 @@ public final class SingleTon {  // 1. 클래스 선언
 ``
 
 - 유틸리티 메서드는 자바에서는 `static` 메서드로 구현되곤 하지만 코틀린에서는 최상위 함수가 그 역할을 대신할 수 있습니다. 
-
 - 또 자바에서는 앞서 살펴보았듯이 싱글턴 패턴의 구현을 위해서도 `static` 을 활용합니다. 이는 코틀린의 객체 선언으로 대체 가능합니다.
-
 - 자바에서는 객체 내부에 static 필드와 메서드(객체의 상태가 필요한) 를 가지는 경우가 있는데 이 경우에 동행 객체^companion^ ^object^ 가 그 역할을 할 수 있습니다.
 
-위 코틀린 `person` 클래스의 구성을 뜯어보면 `Person` 클래스와 그 안에 객체선언으로 `object`가 하나 정의 되어 있고 `object` 에는 `companion` 이라는 특별한 표시가 붙어있습니다.  companion object 는 클래스 안에 정의된 일반 객체입니다. 따라서 동반 객체에 이름을 붙이거나, 인터페이스를 상속하거나, 동반 객체 안에 확장 함수와 프로퍼티를 정의할 수도 있습니다.
-
+위 코틀린 `person` 클래스의 구성을 뜯어보면 `Person` 클래스와 그 안에 객체선언으로 `object`가 하나 정의 되어 있고 `object` 에는 `companion` 이라는 특별한 표시가 붙어있습니다. companion object 는 클래스 안에 정의된 일반 객체입니다. 따라서 동반 객체에 이름을 붙이거나, 인터페이스를 상속하거나, 동반 객체 안에 확장 함수와 프로퍼티를 정의할 수도 있습니다.
 
 ### 3. 익명 객체 - `anoymous object`
 

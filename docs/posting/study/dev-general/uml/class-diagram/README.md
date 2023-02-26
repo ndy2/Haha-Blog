@@ -5,18 +5,18 @@ date: 2023-02-09
 ---
  
 > [!quote] 참고 자료
->* 최범균님 - UML 기초 강의 on [Youtube](https://www.youtube.com/@madvirus)
->* 널널한 개발자님 - UML 이야기 첫 번째, 클래스 다이어그램 on [Youtube](https://youtu.be/CM61UST1gsQ)
->* nextree - [UML: 클래스 다이어그램과 소스코드 매핑](https://www.nextree.co.kr/p6753/)
->* UML for Java Programmers by Robert C. Martin 
->* mermaid syntax - [classDiagram](https://mermaid.js.org/syntax/classDiagram.html)
+> * 최범균님 - UML 기초 강의 on [Youtube](https://www.youtube.com/@madvirus)
+> * 널널한 개발자님 - UML 이야기 첫 번째, 클래스 다이어그램 on [Youtube](https://youtu.be/CM61UST1gsQ)
+> * nextree - [UML: 클래스 다이어그램과 소스코드 매핑](https://www.nextree.co.kr/p6753/)
+> * UML for Java Programmers by Robert C. Martin 
+> * mermaid syntax - [classDiagram](https://mermaid.js.org/syntax/classDiagram.html)
 
 ### 클래스 다이어그램
 
-- 객체의 타입을 표현
-- 타입 간의 정적인 관계 기술
-- 클래스 이름/속성 (attribute)/ 오퍼레이션 (operation) 으로 세칸으로 구분
-- 클래스 이름만 필수로 나머지는 필요한 것만 표시 가능
+* 객체의 타입을 표현
+* 타입 간의 정적인 관계 기술
+* 클래스 이름/속성 (attribute)/ 오퍼레이션 (operation) 으로 세칸으로 구분
+* 클래스 이름만 필수로 나머지는 필요한 것만 표시 가능
 
 ```mermaid
 classDiagram
@@ -45,8 +45,8 @@ Member : +hello()
 
 ### 속성 표기법
 
-- `가시성 이름 : 타입 = 기본갑`
-- 가시성 `+ public`,  `- private`,  `# protected`,  `~ package`
+* `가시성 이름 : 타입 = 기본갑`
+* 가시성 `+ public`, `- private`, `# protected`, `~ package`
 
 ```mermaid
 classDiagram
@@ -56,6 +56,7 @@ classDiagram
         #type = CORPORATE
     }
 ```
+
 ```text title="in mermaid"
 classDiagram
     class Customer{
@@ -65,10 +66,10 @@ classDiagram
     }
 ```
 
-
 ### 오퍼레이션 표기법
 
--  가시성 이름(매개변수 목록) : 리턴타입
+* 가시성 이름 (매개변수 목록) : 리턴타입
+
 ```mermaid
 classDiagram
 class Order {
@@ -89,12 +90,12 @@ class Order {
 
 ![[images/class-relations-uml.png]]
 
-- 연관관계 - 협력을 위해 필요한 영구적인 탐색 구조
-- 의존관계 - 협력을 위해 일시적으로 필요한 의존성 (파라미터, 리턴타입, 지역변수)
+* 연관관계 - 협력을 위해 필요한 영구적인 탐색 구조
+* 의존관계 - 협력을 위해 일시적으로 필요한 의존성 (파라미터, 리턴타입, 지역변수)
 
 ### 연관 (association)
 
-#### association with label
+#### Association with Label
 
 ```mermaid
 classDiagram
@@ -103,6 +104,7 @@ classDiagram
     class Person
     class Company
 ```
+
 ```text title="in mermaid"
 classDiagram
     direction LR
@@ -111,9 +113,10 @@ classDiagram
     class Company
 ```
 
-- mermaid syntax - `[classA][Arrow][ClassB]:LabelText`
+* mermaid syntax - `[classA][Arrow][ClassB]:LabelText`
 
-#### association with cardinality
+#### Association with Cardinality
+
 ```mermaid
 classDiagram
     direction LR
@@ -129,18 +132,18 @@ classDiagram
     class Person
     class Company
 ```
-- `[classA] "cardinality1" [Arrow] "cardinality2" [ClassB]:LabelText`
 
+* `[classA] "cardinality1" [Arrow] "cardinality2" [ClassB]:LabelText`
 
 #### 연관 탐색
 
-- 연관(실선)의  화살표는 연관의 탐색 가능 방향을 의미
-- 양쪽에 모두 지정하지 않으면 양방향 탐색 가능
+* 연관 (실선) 의 화살표는 연관의 탐색 가능 방향을 의미
+* 양쪽에 모두 지정하지 않으면 양방향 탐색 가능
 
 ### 의존 (Dependency)
 
-- 변경에 의한 전파 가능성을 의미
-- 점선(..>)으로 표시
+* 변경에 의한 전파 가능성을 의미
+* 점선 (..>) 으로 표시
 
 ```mermaid
 classDiagram
@@ -200,15 +203,15 @@ classDiagram
     class ArrayList
 ```
 
-### aggregation, composition
+### Aggregation, Composition
 
-- 마름모꼴로 표현
-- aggregration - 집합
-    - 부분/전체 관계를 내포하는 연관의 특별한 형태
-    - 색이 칠해져 있지 않음
-- composition - 합성
-    - 집합의 특별한 형태 (사실 큰 차이 없을 지도?) 조금 더 긴밀한 관계를 의미
-    - 색이 칠해져 있음
+* 마름모꼴로 표현
+* aggregration - 집합
+    * 부분/전체 관계를 내포하는 연관의 특별한 형태
+    * 색이 칠해져 있지 않음
+* composition - 합성
+    * 집합의 특별한 형태 (사실 큰 차이 없을 지도?) 조금 더 긴밀한 관계를 의미
+    * 색이 칠해져 있음
 
 ```mermaid
 classDiagram
@@ -231,7 +234,3 @@ classDiagram
     class Order 
     class OrderItem
 ```
-
-
-
-

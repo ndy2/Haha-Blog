@@ -5,25 +5,25 @@ author: ndy2
 ---
  
 > [!quote] 참고 자료
->* 드미트리 제메로프, 스베트라나 이사코바 - Kotlin IN ACTION 1장
->* Kotlinlang.org - [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)
+> * 드미트리 제메로프, 스베트라나 이사코바 - Kotlin IN ACTION 1장
+> * Kotlinlang.org - [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)
 
 ### 1. 코틀린 소개
 
 ![[images/kotlin_logo.png]]
 
->[!note]
->**Kotlin**은 IntelliJ, Pycharm 등의 IDE 로 유명한 *JetBrains* 에서 개발한 프로그래밍 언어입니다.  코틀린은 *Better Language than Java* 를 표방하며 자바에 존재하던 많은 boilerplate 한 코드를 제거할 수 있도록 설계되었습니다.
-    
+> [!note]
+> **Kotlin**은 IntelliJ, Pycharm 등의 IDE 로 유명한 *JetBrains* 에서 개발한 프로그래밍 언어입니다. 코틀린은 *Better Language than Java* 를 표방하며 자바에 존재하던 많은 boilerplate 한 코드를 제거할 수 있도록 설계되었습니다.
+
 ### 2. 코틀린의 특징
 
 #### 1. 멀티 플랫폼 지원
 
 Kotlin Multiplatform Use cases
 
--   Android and iOS applications
--   Full-stack web applications
--   Multiplatform libraries
+* Android and iOS applications
+* Full-stack web applications
+* Multiplatform libraries
 
 How Kotlin Multiplaform works
 
@@ -63,8 +63,8 @@ How Kotlin Multiplaform works
 
 자바에서도 functional interface 와 labmda 를 통해 Java8 이후 부터는 함수형 프로그래밍을 지원하였지만 아쉬운점이 몇가지 있었습니다.
 
-- 함수... 이긴하지만 근본적으로는 일반 인터페이스으로 동작한다.
-- 함수를 직접 호출할 수 없다. - method call 방식으로 호출가능
+* 함수... 이긴하지만 근본적으로는 일반 인터페이스으로 동작한다.
+* 함수를 직접 호출할 수 없다. - method call 방식으로 호출가능
 
 코틀린에서는 `**함수 타**입`의 도입으로 이런 아쉬운점을 해결하였습니다.
 
@@ -72,16 +72,15 @@ How Kotlin Multiplaform works
 
 #### 1. 실용성
 
-- 코틀린은 실제 문제를 해결하기 위해 만들어진 실용적인 언어!
-- 프로그래밍 스타일이나 패러다임을 강제하지 않음
-    - 명령형 프로그래밍, 객체지향 프로그래밍, 함수형 프로그래밍 세가지의 대표적인 프로그래밍 패러다임을 모두 적용 할 수 있습니다.
-- IDE 를 개발하는 회사에서 만들 언어 답게 도구를 강조합니다.
-
+* 코틀린은 실제 문제를 해결하기 위해 만들어진 실용적인 언어!
+* 프로그래밍 스타일이나 패러다임을 강제하지 않음
+    * 명령형 프로그래밍, 객체지향 프로그래밍, 함수형 프로그래밍 세가지의 대표적인 프로그래밍 패러다임을 모두 적용 할 수 있습니다.
+* IDE 를 개발하는 회사에서 만들 언어 답게 도구를 강조합니다.
 
 #### 2. 간결성
 
-- 자바에 존재하는 여러 가지 준비 코드를 코틀린은 implicit 하게 제공합니다.
-- 코틀린의 표준 라이브러리는 자주 사용되는 복잡한 기능을 확장함수의 형태로 제공합니다. 특히, 컬렉션에 제공되는 확장함수는 아주 강력합니다.
+* 자바에 존재하는 여러 가지 준비 코드를 코틀린은 implicit 하게 제공합니다.
+* 코틀린의 표준 라이브러리는 자주 사용되는 복잡한 기능을 확장함수의 형태로 제공합니다. 특히, 컬렉션에 제공되는 확장함수는 아주 강력합니다.
 
 #### 3. 안정성
 

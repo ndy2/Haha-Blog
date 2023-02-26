@@ -16,7 +16,7 @@ date: 2023-02-03
 
 ### 토픽 생성
 
-#### case 1
+#### Case 1
 
 ```bash title="topic 생성"
 ./bin/kafka-topics.sh --create \
@@ -26,7 +26,7 @@ localhost:9092 \
 --partitions 1
 ```
 
-#### case 2
+#### Case 2
 
 ```bash
 ./bin/kafka-topics.sh \
@@ -44,7 +44,7 @@ localhost:9092 \
 Created topic hello.kafka
 ```
 
-#### case 3
+#### Case 3
 
 ```bash
 ./bin/kafka-topics.sh \
@@ -63,7 +63,6 @@ Created topic hello.kafka
 ```text title="Result"
 Created topic hello.kafka
 ```
-
 
 ---
 
@@ -91,7 +90,6 @@ Created topic hello.kafka
 --delete --topic topic
 ```
 
-
 ### 메시지 생산
 
 ```bash title="메시지 생산"
@@ -100,14 +98,15 @@ Created topic hello.kafka
 --topic quickstart-events
 ```
 
-
 ### 메시지 소비
+
 ```bash title="메시지 소비"
 ./bin/kafka-console-consumer.sh \
 --bootstrap-server my-kafka:9092 \ # 1. (1)
 --topic hello.kafka \ # 2. (2)
 --from-beginning # 3. (3)
 ```
+
 1. `--bootstrap-server` : 카프카 클러스터 정보 (필수)
 2. `--topic` : 토픽 이름 (필수)
 3. `--from-beginning` : 토픽에 저장된 가장 처음 데이터 부터 출력하는 옵션
@@ -147,7 +146,6 @@ null-kafka
 key2-no2
 key3-no3
 ```
-
 
 ### 컨슈머 그룹 목록 조회
 

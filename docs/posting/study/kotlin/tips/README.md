@@ -4,9 +4,9 @@ title: 꿀팁 모음
 date: 2023-02-20
 ---
  
->[!quote] 참고 자료
->* Kotlin by Jetbrains on Youtube - playlist [`『Kotlin Tips 2023』`](https://www.youtube.com/watch?v=i-kyPp1qFBA&list=PLlFc5cFwUnmyDrc-mwwAL9cYFkSHoHHz7)
 
+> [!quote] 참고 자료
+> * Kotlin by Jetbrains on Youtube - playlist [`『Kotlin Tips 2023』`](https://www.youtube.com/watch?v=i-kyPp1qFBA&list=PLlFc5cFwUnmyDrc-mwwAL9cYFkSHoHHz7)
 
 ### 1. How to Improve Loops in Kotlin | Kotlin Tips 2023
 
@@ -70,7 +70,7 @@ fun main() {
 
 === eoc
 
-### 2. How YOU CAN DO MORE with the Elvis operator | Tips from the Kotlin team
+### 2. How YOU CAN DO MORE with the Elvis Operator | Tips from the Kotlin Team
 
 === "Elvis 연산자 기본"
 
@@ -97,7 +97,7 @@ fun main() {
 
 === eoc
 
-### 3. These 3 Tips will Change Your Approach to Strings in Kotlin
+### 3. These 3 Tips Will Change Your Approach to Strings in Kotlin
 
 ```kotlin
 fun main(){

@@ -36,7 +36,6 @@ public @interface Configuration {
 }
 ```
 
-
 ### proxyBeanMethods 속성이란?
 
 - @Configuration 클래스는 @Bean 메서드의 싱글턴을 보장하기 위해 프록시를 적용합니다. 

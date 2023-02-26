@@ -16,24 +16,16 @@ date: 2023-02-03
 ### 1. 빈의 역할
 
 - 애플리케이션 로직 빈
-
 	- 애플리케이션 주요 로직을 담고 있는 주요 클래스의 오브젝트
 	- e.g.) DAO, Service, Controller 등이 대표적이다.
-
-
 - 애플리케이션 인프라 빈
-
 	- 애플리케이션이 동작하는데 밀접하게 동작하지만 애플리케이션 로직을 담고 있지는 않은 오브젝트
-	- e.g.) DAO 가 사용하는 `DataSource` 오브젝트,  트랜잭션 추상화에 사용되는 `DataSourceTransactionManager`
-
-
+	- e.g.) DAO 가 사용하는 `DataSource` 오브젝트, 트랜잭션 추상화에 사용되는 `DataSourceTransactionManager`
 - 컨테이너 인프라스트럭처 빈
-
 	- 애플리케이션 로직과 관계없이 스프링 켄테이너의 기능에 관여하는 빈
 	- ApplicationContext/BeanFactory, Environment
 	- BeanPostProcessor, BeanFactoryPostProcessor
-	- DefaultAdvisorAutoProxyCreator  - Advisort 타입 빈의 포인트컷 정보를 이용해 타깃 빈을 선정하고 선정된 빈을 프록시로 바꾼다.
-
+	- DefaultAdvisorAutoProxyCreator - Advisort 타입 빈의 포인트컷 정보를 이용해 타깃 빈을 선정하고 선정된 빈을 프록시로 바꾼다.
 
 ### 2. 빈의 역할을 확인하는 법
 
@@ -75,10 +67,7 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 } 
 ```
 
-
-### 3. Spring Boot 가 빈을 컨테이너에 등록하는 방식
+### 3. Spring Boot 가 빈을 컨테이너에 등록하는 방식
 
 - 애플리케이션 로직 빈 -> `@ComponentScan`
 - 애플리케이션 인프라 빈/ 컨테이너 인프라 빈 -> `Auto-Configuration`
-
-

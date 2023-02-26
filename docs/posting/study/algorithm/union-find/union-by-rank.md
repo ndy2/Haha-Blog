@@ -9,6 +9,7 @@ date: 2023-02-04
 - **Union By Rank and Path Compression in Union-Find Algorithm** - on [geeksforgeeks](https://www.geeksforgeeks.org/union-by-rank-and-path-compression-in-union-find-algorithm/)
 
 ---
+
 ### 1. Worst Case
 
 이전 시간에 다루었던 Naive Implementation 방식은 최악의 경우 find 연산에 *O(n)* 시간이 소요됩니다. 그 이유는 node 의 대표값을 찾기위한 depth 가 전체 노드의 크기와 일치 할 수 있기 때문입니다.
@@ -69,7 +70,7 @@ LINK(pa,pb)
         pb.r ++
 ```
 
-`Link`  부분만 변경되었습니다.
+`Link` 부분만 변경되었습니다.
 
 node 에 r 이라고 하는 추가적인 property 가 생겼습니다. 이 값은 각 tree 의 높이를 의미합니다. `Link` 를 살펴보면 rank 가 낮은 트리의 루트를 rank 가 높은 트리에 붙인 다는 것을 알 수 있습니다. 두 노드의 랭크가 같을 때는 임의의 방향으로 붙이고 붙여 진 쪽의 rank 를 1 추가해줍니다. 그림으로 살펴보면 아래와 같습니다.
 
@@ -79,6 +80,4 @@ rank 를 통해 트리의 방향성을 제어 하여 최대한 tree 의 높이�
 
 ### 시간복잡도
 
-union-by-rank 를 적용하면 `find`, `union` 연산의 시간복잡도는  `O(log n)` 라고 합니다. 이를 이해하기 위해서는 *amortized time complexity* 라는 개념을 이해 해야 한다고 하는데 이는 나중에 알아보겠습니다.
-
-
+union-by-rank 를 적용하면 `find`, `union` 연산의 시간복잡도는 `O(log n)` 라고 합니다. 이를 이해하기 위해서는 *amortized time complexity* 라는 개념을 이해 해야 한다고 하는데 이는 나중에 알아보겠습니다.

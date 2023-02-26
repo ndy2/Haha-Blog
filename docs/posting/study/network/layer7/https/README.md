@@ -10,9 +10,9 @@ author: ndy2
 > - `RFC 2818` - HTTP Over TLS [링크](https://web.archive.org/web/20050607073343/http://www.ietf.org/rfc/rfc2818.txt)
 > - `RFC 5246` - TLS [링크](https://datatracker.ietf.org/doc/html/rfc5246)
 
->[!note]
->* HTTPS 란 channel-oriented security 를 제공하기 위해 고안된 TLS [RFC 2246] 를 HTTP 위에 얹어서 사용하는 것이다.
->* TLS protocol의 목적은 두 커뮤니케이션하는 애플리케이션의 privacy와 data integrity를 보장하는 것이다.
+> [!note]
+> - HTTPS 란 channel-oriented security 를 제공하기 위해 고안된 TLS [RFC 2246] 를 HTTP 위에 얹어서 사용하는 것이다.
+> - TLS protocol의 목적은 두 커뮤니케이션하는 애플리케이션의 privacy와 data integrity를 보장하는 것이다.
 
 이 문서에서는 TLS 의 `privacy` 를 위한 하위 프로토콜인 핸드세이크 프로토콜에 대해 자세히 알아보겠습니다.
 
@@ -32,8 +32,7 @@ author: ndy2
 	- 키 교환/ 합의 프로토콜
 	- 클라이언트와 서버간의 안전한 대칭키 공유를 목적으로 합니다.
 
-
-### 3. TLS handshake protocol
+### 3. TLS Handshake Protocol
 
 - Note - TLS handshake 는 TCP handshake 이후에 이루어 집니다.
 ![[images/tls-handshake.png]]
@@ -41,18 +40,19 @@ author: ndy2
 핸드세이크의 핵심은 암복호화 과정의 코스트가 큰 비대칭키의 사용을 최소한으로 사용하여 안전하게 대칭키를 공유해 일반적인 HTTP 요청시에는 비대칭키가 아닌 대칭키를 활용하는 것입니다.
 
 #### 1. ClientHello
--   `클라이언트 측에서 생성한 램덤 데이터`
--   클라이언트가 지원하는 암호화 방식들
--   세션 id - 이미 ssl 핸드 쉐이킹을 했다면 기존의 세션을 활용한다
+
+- `클라이언트 측에서 생성한 램덤 데이터`
+- 클라이언트가 지원하는 암호화 방식들
+- 세션 id - 이미 ssl 핸드 쉐이킹을 했다면 기존의 세션을 활용한다
 
 #### 2. Server Hello
--   `서버 측에서 생성한 램덤 데이터`
--   서버가 선택한 클라이언트의 암호화 방식
-    -   암호화 방식에 대한 협상 종료
--   `인증서` 
+
+- `서버 측에서 생성한 램덤 데이터`
+- 서버가 선택한 클라이언트의 암호화 방식
+    - 암호화 방식에 대한 협상 종료
+- `인증서` 
 	- 서버의 공개키를 포함한다
 	- 서버가 생성한 공개키를 CA 의 비밀키로 암호화 한 것이다.
-
 
 #### 3. Pre-Master Key 교환
 

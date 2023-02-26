@@ -5,7 +5,8 @@ date: 2023-02-19
 ---
 
 ### 1. JamesIves/github-pages-deploy-action
--  [링크](https://github.com/JamesIves/github-pages-deploy-action)
+
+- [링크](https://github.com/JamesIves/github-pages-deploy-action)
 
 !!! example
 

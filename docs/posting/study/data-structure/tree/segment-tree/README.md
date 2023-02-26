@@ -8,7 +8,6 @@ author: ndy2
 
 - 개발자 영맨 - [[Range Query] Segment Tree 1/2 - introduction](https://youtu.be/075fcq7oCC8)
 
-
 ### 1. 세그먼트 트리 (Segment Tree)의 정의와 의문점
 
 !!! quote "Segment Tree on [wikipedia](https://en.wikipedia.org/wiki/Segment_tree)"
@@ -53,17 +52,19 @@ author: ndy2
 
 - 세그먼트 트리는 자신의 구간을 반으로 나누어 자식 노드에게 나누어준다.
 - :warning: 일반적으로 Complete Binary Tree 아님
-    
-                                           |_0,5_|
-                                ______/     \_______
-                               |_0,2_|       |_3,5__|
-                             _/     |       |       \_
-                     ____/_    __|       |____     \____
-                    |_0,1_|  |_2_|      |_3,4_|    |_5_|
-               _/__  ___|             |___   \____
-             |_0__| |_1_|            |_3_|   |_4_|
 
-#### 2. 동작 - query
+```
+                           |_0,5_|
+                    ______/     \_______
+                   |_0,2_|       |_3,5__|
+                 _/     |       |       \_
+             ____/_    __|       |____     \____
+            |_0,1_|  |_2_|      |_3,4_|    |_5_|
+           _/__  ___|             |___   \____
+         |_0__| |_1_|            |_3_|   |_4_|
+```
+
+#### 2. 동작 - Query
 
 !!! note ""
 
@@ -71,8 +72,7 @@ author: ndy2
 
 ![[excalidraws/segment-tree-query.excalidraw.png]]
 
-
-#### 3. 동작 - update
+#### 3. 동작 - Update
 
 !!! note ""
 
@@ -85,7 +85,6 @@ author: ndy2
 #### 1. 구현
 
 - 세그먼트 트리는 root 부터 차례대로 1부터 시작하는 번호(segment index) 를 부여한다. 따라서 보통 left 나 right 포인터를 두거나 하지는 않는다.
-
 - 규칙: 왼쪽 자식 : `idx*2` , 오른쪽 자식 : `idx*2+1` 
 
 ![[excalidraws/segment-tree-index.excalidraw.png]]
@@ -95,6 +94,7 @@ author: ndy2
 #### 2. 관련 문제와 풀이
 
 {{ boj(":g1: 커피숍2", 1275) }} 
+
 - {{ ps("src/자료구조/세그먼트트리/boj/Main_커피숍2_1275.kt") }}
 - 구간 합을 저장하는 세그먼트 트리를 구성하고 구간 쿼리와 포인트 업데이트를 수행하는 문제이다.
 - 이 문제의 풀이를 통해 Segment Tree 의 구현을 알아보자!
@@ -201,8 +201,7 @@ class Solution_커피숍2(
     }
 ```
 
-
-### 5. 더 알아볼 주제 들 
+### 5. 더 알아볼 주제 들
 
 #### 1. 비슷한 자료구조 들
 

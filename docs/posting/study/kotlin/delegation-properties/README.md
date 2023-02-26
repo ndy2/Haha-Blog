@@ -4,9 +4,10 @@ title: 위임 프로퍼티 (delegated properties)
 date: 2023-02-19
 ---
  
->[!quote] 참고 자료
-> *  [`『코틀린 인 액션』`](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바 
->     * 7장 연산자 오버로딩과 기타 관례
+
+> [!quote] 참고 자료
+> * [`『코틀린 인 액션』`](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바 
+>     * 7 장 연산자 오버로딩과 기타 관례
 > * kotlin documentation - [delegation properties](https://kotlinlang.org/docs/delegated-properties.html)
 > * kotlin examples - [Delegation/DelegationProperties](https://play.kotlinlang.org/byExample/07_Delegation/02_DelegatedProperties)
 
@@ -44,7 +45,7 @@ println(e.p) // (1)
 e.p = "NEW" // (2)
 ```
 
-1.  result - `Example@33a17727, thank you for delegating 'p' to me!`
+1. result - `Example@33a17727, thank you for delegating 'p' to me!`
 2. `NEW has been assigned to 'p' in Example@33a17727.`
 
 ### 2. Lazy Delegation
@@ -70,6 +71,7 @@ Hello
 ```
 
 `get()` 이 처음 호출 되면 람다식을 실행해서 그 결과값을 `Lazy<T>` 인스턴스에 저장합니다.
+
 `get()` 이 추가적으로 호출 되는 경우 람다식을 실행하지 않고 저장된 값을 반환합니다.
 
 아주 매력적입니다. `lazy()` 의 구현을 더 자세히 살펴보겠습니다.
@@ -118,7 +120,7 @@ internal class InitializedLazyImpl<out T>(override val value: T) : Lazy<T>, Seri
 ```
 
 1. Lazy 인터페이스 - 저장 값의 게터와 초기화 여부를 제공합니다. 
-2. *delegate* 로 동작하는 expression 은 `getValue` 를 제공해야 합니다. `Lazy<T>` 에 대한 `getValue` 연산자를 확장함수로 제공함으로써 Lazy 구현체가 delagate 로 동작 할 수 있습니다.
+2. *delegate* 로 동작하는 expression 은 `getValue` 를 제공해야 합니다. `Lazy<T>` 에 대한 `getValue` 연산자를 확장함수로 제공함으로써 Lazy 구현체가 delegate 로 동작 할 수 있습니다.
 3. `lazy` 팩토리 메서드의 LazyThreadSaftetyMode 를 통해 세가지 타입의 Lazy 구현체를 제공합니다. 나머지 하나는 초기화가 다 되었다는 정보를 포함하는 `InitializedLazyImpl` 이므로 `lazyOf` 메서드로 따로 제공하고 람다를 받지도 않습니다.
 
 ```mermaid
@@ -169,9 +171,9 @@ override val value: T  // (1)
 4. 여기서 한번 더 확인 하는 모습도 인상적입니다.
 5. function type 을 실행 한다. 여기서 `initializer` 의 값을 `null` 로 변경 해 주어서 이 구문이 단 한번만 실행 하도록 보장하는 모습이 인상적입니다.
 
-### 3. Observable properties﻿
+### 3. Observable Properties
 
-[`Delegates.observable()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/observable.html) 는 `초기 값`과 `핸들러` 두가지 인자를 가집니다.
+[`Delegates.observable()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/observable.html) 는 `초기 값` 과 `핸들러` 두가지 인자를 가집니다.
 
 ```kotlin
 import kotlin.properties.Delegates
@@ -197,7 +199,7 @@ name : first -> second
 
 이번에는 게터 보다 세터와 조금더 연관이 깊은 *delegation* 입니다. `Delegates.observable` 은 setValue 연산자에 대한 오버라이딩을 제공하여 이전값, 현재값을 저장하고 있다가 값에 변경이 일어나는 경우 `Handler` 를 호출 할 수 있습니다.
 
-*kotlin documentation* 에서 설명하는 내용 중 핸들러의 호출시점에 대해서는 꼭 알고가야할 것 같습니다. `Delegates.observable()` 의 핸들러는 값의 할당이 이루어 진 이후에 호출됩니다. 값의 할당이 이루어 지기 전 핸들러를 호출하는 *delegation* 인 [`Delegates.vetoable()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/vetoable.html)  이라는 녀석도 있습니다.  이녀석을 활용하면 값의 변경이 이루어지기 전 값을 검증하는 등의 역할을 수행 할 수도 있습니다. 
+*kotlin documentation* 에서 설명하는 내용 중 핸들러의 호출시점에 대해서는 꼭 알고가야할 것 같습니다. `Delegates.observable()` 의 핸들러는 값의 할당이 이루어 진 이후에 호출됩니다. 값의 할당이 이루어 지기 전 핸들러를 호출하는 *delegation* 인 [`Delegates.vetoable()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-delegates/vetoable.html) 이라는 녀석도 있습니다. 이녀석을 활용하면 값의 변경이 이루어지기 전 값을 검증하는 등의 역할을 수행 할 수도 있습니다. 
 
 ### 4. 컴파일러가 어떻게 처리하는가?
 
@@ -210,7 +212,7 @@ name : first -> second
 
 위 방식들은 나중에 사용할 기회가 있으면 더 알아보는 것으로 하고 컴파일러가 이 위임 *Delegation* 을 어떻게 처리하는가에 대해서 알아보겠습니다.
 
-사실 이전에 살펴본 [class 레벨의 delegation](../delegation)에서 바이트코드 디 컴파일을 통해 어느정도 동작방식을 살펴보았습니다. 컴파일러는 위임 프로퍼티에 대해 보조 프로퍼티를 생성하여 이를 처리합니다.
+사실 이전에 살펴본 [class 레벨의 delegation](../delegation) 에서 바이트코드 디 컴파일을 통해 어느정도 동작방식을 살펴보았습니다. 컴파일러는 위임 프로퍼티에 대해 보조 프로퍼티를 생성하여 이를 처리합니다.
 
 ```kotlin
 class C { var prop: Type by MyDelegate() } 
@@ -223,7 +225,6 @@ class C {
         set(value: Type) = prop$delegate.setValue(this, this::prop, value) // 세터 위임 
 }
 ```
-
 
 기본적인 룰은 위와 같습니다. 컴파일러는 더 나아가서 최적화가 가능한 몇몇 경우에 보조 프로퍼티를 생성하지 않는 등의 최적화를 수행하기도 합니다.
 

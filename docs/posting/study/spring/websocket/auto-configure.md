@@ -3,6 +3,7 @@ tags: [spring, web-socket, auto-configure]
 title: 웹 소켓 자동 설정
 date: 2023-02-03
 ---
+
 ### 의존성
 
 `implementation("org.springframework.boot:spring-boot-starter-websocket")`
@@ -45,7 +46,6 @@ org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoCon
 자동 등록된 빈은 총 4 개!
 ```
 
-
 ### 1. @EnableWebSocket, @EnableWebSocketMessageBroker
 
 #### 1. @EnableWebSocket
@@ -54,8 +54,6 @@ org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoCon
 
 ![[excalidraws/auto-configure-1.excalidraw.png|400]]
 
-
-
 #### 2. @EnableWebSocketMessageBroker
 
 사용 간단 프로젝트 - [링크](https://github.com/ndy2/study-webrtc-and-websocket/tree/fae9f20b84571701ff9134a0dfce5c6a87982f08) 
@@ -63,12 +61,10 @@ org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoCon
 - `WebSocket-based` 메시징을 위한 자동 설정 클래스이다.
 - 하지만 이 설정 클래스는 기본적으로 아무 빈도 등록하지 않는다.
 - `WebSocketMessagingAutoConfiguration` 의 내부 static class 인 `WebSocketMessageConverterConfiguration` 의 `Conditional` 중 `DelegatingWebSocketMessageBrokerConfiguration` 이 빈이 필요하다는 조건이 있는데 얘가 없기 때문이다. 
-
 - DelegatingWebSocketMessageBrokerConfiguration 는 `@EnableWebSocketMessageBroker` 를 등록하면 @Import 되고 이때 `WebSocketMessageConverterConfiguration` 이 동작한다.
 
-
-
 `WebSocketMessageConverterConfiguration` 는 
+
 - StringMessageConverter
 - ByteArrayMessageConverter
 - MappingJackson2MessageConverter   
@@ -87,6 +83,7 @@ org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoCon
 - 리액티브 웹 소켓 설정이 있다.
 
 기본적으로 `Tomcat` 컨디션이 충족되기 때문에 `TomcatWebSocketConfiguration` 설정 클래스가 동작한다.
+
 이 클래스는 `TomcatWebSocketServletWebServerCustomizer` 빈을 등록한다.
 
 ```java title="WebSocketServletAutoConfiguration 의 static class TomcatWebSocketConfiguration"
@@ -103,6 +100,5 @@ static class TomcatWebSocketConfiguration {
   
 }
 ```
-
 
 TomcatWebSocketServletWebServerCustomizer 는 TomcatServletWebServerFactory 에 WebSocket 설정을 커스텀 하는 역할을 한다. `WsSci` 라는 녀석을 `TomcatContextCustomizer` 를 이용해 추가한다.

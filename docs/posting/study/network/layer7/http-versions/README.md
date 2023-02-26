@@ -6,19 +6,22 @@ author: ndy2
 
 @참고 자료)
 
-- [모질라 - HTTP의 진화 ](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP#http2_더_나은_성능을_위한_프로토콜)
+- [모질라 - HTTP의 진화](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP#http2_더_나은_성능을_위한_프로토콜)
 
 HTTP 의 버전별 특징을 정리한 문서입니다.
 
 ---
+
 ### 1. HTTP/0.9 - 원 라인 프로토콜
 
 HTTP 초기 버전에는 버전 번호가 없었습니다. HTTP/0.9는 이후에 차후 버전과 구별하기 위해 0.9로 불리게 됐습니다. HTTP/0.9는 극히 단순합니다. 요청은 단일 라인으로 구성되며 리소스에 대한 (프로토콜, 서버 그리고 포트는 서버가 연결되고 나면 불필요로 하므로 URL은 아닌) 경로로 가능한 메서드는 `GET`이 유일했습니다.
+
 ```http
 GET /mypage.html
 ```
 
 응답 또한 극도로 단순합니다. 오로지 파일 내용 자체로 구성됩니다.
+
 ```html
 <HTML>
 A very simple HTML page
@@ -32,6 +35,7 @@ A very simple HTML page
 ### 2. HTTP/1.0
 
 HTTP/1.0 부터 조금은 익숙한 형태의 요청과 응답이 이루어 졌습니다.
+
 - HTTP 버전 정보나, 응답 상태 코드 같은 것이 Start-Line 에 추가되었습니다.
 - HTTP 헤더 개념이 추가되었습니다.
 - HTTP의 Content-Type 헤더 스펙으로 인해 HTML 파일 외 다른 문서를 전송할 수 있게 되었습니다.

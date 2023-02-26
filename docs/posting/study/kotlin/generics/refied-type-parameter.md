@@ -7,14 +7,14 @@ date: 2023-02-17
 @참고 자료)
 
 - [`『코틀린 인 액션』`](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바 
-    - 9장 제네릭스
+    - 9 장 제네릭스
 - kotlin documentation - [generics#type-ereasure](https://kotlinlang.org/docs/generics.html#type-erasure)
 
 ---
 
 ### 1. 타입 소거 <sup>Type erasure</sup>
 
-!!! note "타입 소거"
+!!! note " 타입 소거 "
 
     * 제네릭 선언 (제네릭 함수 선언, 제네릭 클래스 선언)에 대한 타입 안정성 검증은 컴파일 타임에 이루어집니다. 
     * 런타임에 제네릭 타입의 인스턴스에는 실제 어떤 타입 아규먼트가 담겨 있는지에 대한 정보가 사라집니다. 
@@ -22,16 +22,14 @@ date: 2023-02-17
 
 #### 1. 제네릭 타입 체크와 캐스팅
 
-타입 소거로 인해, 런타입에 생성된 제네릭 타임 인스턴스의 구체적인 타입 아규먼트의 타입을 체크 할 수 있는 일반적인 방법은 없습니다.  `Foo<Bar>` 과 `Foo<Baz?>` 는 런타임에 모두 그냥 `Foo<*>` 일 뿐입니다.
+타입 소거로 인해, 런타입에 생성된 제네릭 타임 인스턴스의 구체적인 타입 아규먼트의 타입을 체크 할 수 있는 일반적인 방법은 없습니다. `Foo<Bar>` 과 `Foo<Baz?>` 는 런타임에 모두 그냥 `Foo<*>` 일 뿐입니다.
 
 !!! note 
 
     * 일반적이지 않은 방법으로 슈퍼 타입 토큰 이라는 것이 있습니다.
     * 참고 영상 링크 - [토비의 봄 TV 2회 - 수퍼 타입 토큰](https://youtu.be/01sdXvZSjcI)
 
-
 그렇기 때문에 컴파일러는 애초가 그런 종류의 타입 체킹 (제네릭 타입 파라미터를 포함한 타입 체킹 이나 타입 파라미터 자체를 이용한 타입 체킹) 을 허용하지 않습니다. 제네릭 클래스 자체 타입에 대한 검증을 star-projected type 을 이용해 수행 할 수 있습니다.
-
 
 ### 2. 인라인 함수와 Refied Type Parameter
 
@@ -55,6 +53,7 @@ intellij 에서 확인 - 너무 똑똑하다.
 ![[images/5.png]]
 
 ++option+enter++
+
 ![[images/6.png]]
 
 `inline 함수 에서만  refied 를 사용할 수 있고 refied 를 사용하지 않으면 여전히 타입 실체화가 되지 않는다.`
@@ -76,6 +75,7 @@ class Product(id: String, val price: Int) : BaseIdEntity<String>(id)
 위와 같은 간단한 엔티티의 추상 구조를 생각해보자.
 
 자바에서 각 엔티티 타입의 NotFountException 을 추상화 해서 발생시키는 코드를 만들어보자.
+
 제네릭을 이용해서는 런타임에 타입 클래스의 정보 (simpleName 등) 을 얻을 수 없다. 따라서 `java.lang.Class` 를 활용한다.
 
 ```java
@@ -97,12 +97,11 @@ public class NotFoundException extends ServiceRuntimeException {
 }
 ```
 
-
 ---
 
 코드는 살짝 다르다는 점에 유의해 코틀린에서 이 코드를 어떻게 활용할 수 있는지 살펴보자
 
-java 라면 메서드의 파라 미터에 `Class<?>`  타입을 넘기는 등의 트릭이 필요했겠지만 코틀린에서든 훨씬 간결하게 사용 할 수 있다.
+java 라면 메서드의 파라 미터에 `Class<?>` 타입을 넘기는 등의 트릭이 필요했겠지만 코틀린에서든 훨씬 간결하게 사용 할 수 있다.
 
 ```kotlin title="이 정도면 만족하고 사용할 만한것 같다."
 fun main() {  
@@ -123,7 +122,6 @@ inline fun <reified E : BaseIdEntity<String>> notFound(id: String): Nothing {
   
 class NotFoundException(entityName: String, id: Any) : RuntimeException("$entityName with id : $id not found")
 ```
-
 
 개인적으로 코틀린 코드가 훨씬 깔끔하게 보인다. 
 

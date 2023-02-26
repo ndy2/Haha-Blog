@@ -4,7 +4,7 @@ title: git clone
 date: 2023-02-02
 ---
 
-### 1. 디렉토리나 file 하나만 Clone 하는 방법
+### 1. 디렉토리나 File 하나만 Clone 하는 방법
 
 - [참고 링크](https://nurilee.com/2020/05/23/github에서-sub-directory-또는-file-1개만-가져오는-방법/)
 
@@ -58,12 +58,11 @@ From https://github.com/eugenp/tutorials
 webrtc
 ```
 
-
-### 2. git clone --single branch
+### 2. Git Clone --single Branch
 
  
 > [!quote] 참고 자료
-> * https://www.slipp.net/questions/577
+> - https://www.slipp.net/questions/577
 
 ```
 git clone -b {branch_name} --single-branch {저장소 URL} 

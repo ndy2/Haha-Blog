@@ -24,7 +24,7 @@ description: >-
 
 ![[images/2.png|300]]
 
-### 2. new UI 적용
+### 2. New UI 적용
 
 ![[3.png|500]]
 

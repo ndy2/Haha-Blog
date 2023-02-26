@@ -3,13 +3,14 @@ tags: [architecture]
 title: Consistent Hash
 date: 2023-02-09
 ---
+
 @참고 자료)
 
 - `『System Design Interview/가상 면접 사례로 배우는 대규모 시스템 설계 기초』` by Alex Xu/ 알렉스 쉬 - [yes24](http://www.yes24.com/Product/Goods/102819435)
     - 5장 안정 해시 설계
 ---
 
-### 1.  Rehash Problem
+### 1. Rehash Problem
 
 N 개의 서버에 부하를 균등하게 나누는 보편적인 방법은 해시 함수를 이용하는 것이다.
 
@@ -44,7 +45,6 @@ serverIndex = hash(key) % N
 ![[excalidraws/hash-ring-1.excalidraw.png]]
 
 - Consistent Hash 에서 Key 가 서버를 조회하기 위해서 modulo 연산을 하는 것이 아니라 시계방향으로 탐색을 한다.
-
 - 이 방식 만으로 서버를 추가/제거 했을때 예측할 수 없는 형태로 대부분의 데이터에 대해서 자신의 대상 서버가 변경되는 현상을 피할 수 있다.
     - 물론 해시를 적용한 다음에 hash ring 위에서 예측가능 하므로 이 방식도 모든 데이터에 대해 hash 값을 새로 계산해 보아야 하는 것은 변함없다.
 - 하지만 이 기본 구현법만으로는 서버가 추가되거나 삭제되는 상황에 따라 파티션 (인접한 서버 사이의 해시 공간)의 크기를 균등하게 유지하는 것이 불가능 하다. 따라서 데이터의 균등 분포를 보장 할 수 없다.

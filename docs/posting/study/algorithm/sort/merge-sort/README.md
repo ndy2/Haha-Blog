@@ -6,12 +6,10 @@ date: 2023-02-05
 
 ### 1. 병합 정렬 (Merge sort)
 
-
 !!! note "병합 정렬!"
 
     * 병합 정렬<sup>Merge Sort/mergesort</sup>은 효율적이고, 범용적인 정렬 알고리즘 입니다.
     * 병합 정렬은 `divide-and-conquer` 알고리즘입니다.
-
 
 ### 2. 병합 정렬 코드
 
@@ -95,7 +93,6 @@ if __name__ == '__main__':
     * Auxiliary Spce : O(n) - 병합과정에서 보조 배열이 n 사이즈 만큼 필요하다.
     * Stable? : Yes!
 
-
 !!! note "크기가 작은 배열과 병합 정렬"
 
     * 병합 정렬은 작은 크기의 배열에서는 효율적이지 않습니다.
@@ -108,7 +105,6 @@ if __name__ == '__main__':
     MergeSort 의 단점중 하나는 O(n) 만큼의 추가적인 메모리를 필요로 한다는 점입니다. 이를 In-Place 에 수행하기 위한 많은 방법이 제안되었습니다.
     * [Wikipedia](https://en.wikipedia.org/wiki/Merge_sort#In-place_merge_sort)
     * 병합시에 메모리를 두 덩어리 중 작은 쪽의 사이즈 만큼만 사용할 수 있는 방법이 널리 활용되고 있습니다. (e.g. in Timsort [video example](https://youtu.be/HHN1axRRKx8?t=1160))
-
 
 !!! note "LinkedList 와 병합정렬"
 

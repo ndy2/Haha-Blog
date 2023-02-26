@@ -3,6 +3,7 @@ tags: [network, layer3]
 title: Network Layer, Internet
 author: ndy2
 ---
+
 @참고 자료)
 
 - cloud flare - [학습센터/네트워크 계층](https://www.cloudflare.com/ko-kr/learning/network-layer/what-is-the-network-layer/)
@@ -11,6 +12,7 @@ author: ndy2
     - [LAN과 WAN을 구별하는 방법](https://youtu.be/N8pE-vDsJ38)
 - ibm - [네트워크 계층 프로토콜](https://www.ibm.com/docs/ko/aix/7.1?topic=protocols-internet-network-level)
 ---
+
 ### 0. 들어가며
 
 네트워크 계층, 인터넷에 대해서 알아봅시다!
@@ -35,7 +37,6 @@ author: ndy2
     
     인터넷은 네트워크의 네트워크라고 생각할 수 있습니다. 이러한 인터넷이 동작하는 가장 중요한 두가지 컨셉은 ***패킷*** 과 ***프로토콜***입니다.
 
-
 !!! note "인터넷이란 무엇인가요?"
 
     [널널한 개발자] <br>
@@ -43,7 +44,6 @@ author: ndy2
     인터넷을 구성하는 요소중 가장 중요한것 두가지는 ***라우터***와 ***DNS*** 입니다.
      
     ![host-switch-network.png](images/host-switch-network.png)
-
 
 !!! note "인터넷이 동작하도록 하는 physical infrastructure에는 어떤것이 있나요?"
 
@@ -100,7 +100,7 @@ author: ndy2
 
 ### 3. 네트워크 계층의 프로토콜
 
-이 계층에서 주요 프로토콜은 IP^Internet^ ^Protocol^ 와 ICMP^Internet^ ^Control^  ^Message^  ^Protocol^  입니다. (+ARP ^Address^ ^Resolution^ ^Protocol^)
+이 계층에서 주요 프로토콜은 IP^Internet^ ^Protocol^ 와 ICMP^Internet^ ^Control^ ^Message^ ^Protocol^ 입니다. (+ARP ^Address^ ^Resolution^ ^Protocol^)
 
 !!! note "인터넷 프로토콜(IP)란 무엇인가요?"
 
@@ -110,14 +110,12 @@ author: ndy2
     [ibm] <br>
     IP는 인터넷에 대해 신뢰할 수 없는 비연결 패킷 전달을 제공합니다.
 
-
 !!! note "인터넷 제어 메시지 프로토콜 (ICMP)은 무엇인가요?"
 
     [ibm] <br>
     ICMP는 오류를 처리하고 IP 메시지를 제어합니다. ICMP는 모든 IP 구현의 필수 부분입니다. 
 
     ⚠️ ICMP는 통신 환경의 문제점에 관한 피드백을 제공하지만 IP가 신뢰 가능하도록 만들지는 않습니다. 즉, ICMP는 IP 패킷이 확실하게 전달된다거나 IP 패킷이 전달되지 않을 때 또는 올바르지 않게 전달될 때 ICMP 메시지가 소스 호스트로 리턴된다고 보장하지 않습니다.
-
 
 !!! note "주소 해석 프로토콜(ARP)는 무엇인가요?"
 
@@ -143,4 +141,3 @@ author: ndy2
 
     physical infrastructure - 라우터  
     network layer protocol - IP/IP address, ICMP
-

@@ -3,6 +3,7 @@ tags: [data-structure, tree]
 title: 힙 (Heap)
 date: 2023-02-02
 ---
+
 @ 참고 자료)
 
 - `쉬운코드 (@ez.)` - [우선순위 큐와 힙의 개념과 차이...](https://youtu.be/P-FTb1faxlo)
@@ -66,7 +67,6 @@ date: 2023-02-02
 === "완료"
 
     ![heap-insert-4.excalidraw.png](excalidraws/heap-insert-4.excalidraw.png)
-
 
 #### 4. Delete
 

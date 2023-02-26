@@ -3,6 +3,7 @@ tags:[kotlin]
 title: scope functions
 date: 2023-02-08
 ---
+
 @ 참고 자료)
 
 - [코틀린 인 액션](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바
@@ -10,11 +11,11 @@ date: 2023-02-08
 - kotlin documentation - [scope functions](https://kotlinlang.org/docs/scope-functions.htm)
 
 ---
+
 !!! example
 
     scope function 을 활용하는 다양한 예시는 만날때 마다 [note](../../../notes/cheetsheets/kotlin/scope-functions) 에 업데이트 할 예정입니다. 여기서는 scope function 의 기술적인 동작 방식과 간단한 활용에 대해서만 다루겠습니다.
 ---
-
 
 ### 1. Scope Function 이란?
 
@@ -34,7 +35,7 @@ fun printPerson(person: Person?){
 }
 ```
 
-### 2. scope function 을 알아보기 전에....
+### 2. Scope Function 을 알아보기 전에....
 
 #### Standard.kt
 
@@ -86,9 +87,9 @@ public inline fun repeat(times: Int, action: (Int) -> Unit) { /* 생략 */}
 - 모든 inline 메서드에 포함된 `@kotlin.internal.InlineOnly` 애너테이션 모두 생략하였습니다.
 - 전체적으로 한번 훑어 보아도 정의된 함수나 코드 라인이 그리 많지 않아서 모두 이해할 만 합니다! 
 
-#### contrant
+#### Contrant
 
-`Standard.kt` 파일에서 눈길이 가는 또 다른 부분은 바로 `contract` 의 활용입니다.  `contract` 를 사용하면 코틀린 컴파일러에게 추가적인 정보를 전달하여 타입 추론을 돕고 기타 불필요한 컴파일 에러를 방지할 수 있습니다.   `contract` 문법에 관한 내용은 [여기 링크](https://medium.com/harrythegreat/kotlin-contracts-문법-쉽게-배워보기-9ffdc399aa75) 를 참고해주세요.  이 문서의 아래 코드에서는 `contract` 부분을 생략하고 scope function 의 구현과 동작에 대해서 다루겠습니다.
+`Standard.kt` 파일에서 눈길이 가는 또 다른 부분은 바로 `contract` 의 활용입니다. `contract` 를 사용하면 코틀린 컴파일러에게 추가적인 정보를 전달하여 타입 추론을 돕고 기타 불필요한 컴파일 에러를 방지할 수 있습니다. `contract` 문법에 관한 내용은 [여기 링크](https://medium.com/harrythegreat/kotlin-contracts-문법-쉽게-배워보기-9ffdc399aa75) 를 참고해주세요. 이 문서의 아래 코드에서는 `contract` 부분을 생략하고 scope function 의 구현과 동작에 대해서 다루겠습니다.
 
 ```kotlin title="Standard.kt 에 포함된 contract 의 활용!"
 // 2, 3  메서드의 시작 부분에 공통적으로 포함된 라인
@@ -109,7 +110,6 @@ public inline fun repeat(times: Int, action: (Int) -> Unit) {
 
 ### 3. 요약
 
-
 ```kotlin title="kotlin 확장함수 인 scope function 요약"
 
 val value1 : Int = person.let { /* it: Person */ it.age}
@@ -122,8 +122,7 @@ val value4 : Person = person.apply { /* this: Person */ this.age}
 
 ```
 
-
-### 4. let
+### 4. Let
 
 ```kotlin
 public inline fun <T, R> T.let(block: (T) -> R): R {  
@@ -131,10 +130,10 @@ public inline fun <T, R> T.let(block: (T) -> R): R {
 }
 ```
 
-- 전달 받은 block (함수) 에  T 타입의 자기 자신을 전달하여 호출하고 그 block의 반환값인 R 타입의 반환값을 그대로 리턴합니다.
+- 전달 받은 block (함수) 에 T 타입의 자기 자신을 전달하여 호출하고 그 block의 반환값인 R 타입의 반환값을 그대로 리턴합니다.
 - let 은 *일반 함수* 를 받는다.
 
-### 5. run
+### 5. Run
 
 ```kotlin
 public inline fun <R> run(block: () -> R): R {  
@@ -149,7 +148,7 @@ public inline fun <T, R> T.run(block: T.() -> R): R {
 - 그냥 block 을 실행 (run) 하고 반환한다.
 - `run` 은 *확장함수*를 받는다. (?)
 
-### 6. also
+### 6. Also
 
 ```kotlin
 public inline fun <T> T.also(block: (T) -> Unit): T {  
@@ -158,7 +157,7 @@ public inline fun <T> T.also(block: (T) -> Unit): T {
 }
 ```
 
-### 7. apply
+### 7. Apply
 
 ```kotlin
 public inline fun <T> T.apply(block: T.() -> Unit): T {  
@@ -167,7 +166,7 @@ public inline fun <T> T.apply(block: T.() -> Unit): T {
 }
 ```
 
-### 8. with
+### 8. With
 
 ```kotlin
 public inline fun <T, R> with(receiver: T, block: T.() -> R): R {  

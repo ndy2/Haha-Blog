@@ -3,6 +3,7 @@ tags: [algorithm, union-find]
 title: 유니온 파인드 (Union-Find)
 date: 2023-02-04
 ---
+
 ### 1. Union-Find 알고리즘
 
 ***Union-Find 알고리즘***은 *Disjoint-Set* 자료구조를 효율적으로 구현하기 위한 알고리즘 입니다.
@@ -48,16 +49,17 @@ fun find(a: Int): Int {
 
 ![[excalidraws/graph.excalidraw.png]]
 
-
 union-find 알고리즘은 흔히 배열을 이용해 구현됩니다.
 
 1. 최초 각 node 는 자기자신을 가르킵니다. 
+
 ```kotlin
 var n = 7
 parent = IntArray(n+1) {it} // [0,1,2,3,4,5,6,7]
 ```
 
 2. edge 를 추가하면 양옆 노드에 대해 union 연산을 적용합니다.
+
 ```kotlin
 var edges = arrayOf(
     Edge(1,2), Edge(2,3)
@@ -71,12 +73,12 @@ for (edge in edges){
 ```
 
 3. parent 배열을 통해 임의의 노드가 같은 집합에 속해있는지 알 수 있습니다.
+
 ```kotlin
 fun isInSameSet(a: Int, b: Int){
   return find(a) == find(b)
 }
 ```
-
 
 ### 3. 생각 할 거리
 
@@ -97,11 +99,12 @@ fun isInSameSet(a: Int, b: Int){
 #### 2. 시간 복잡도
 
 `union` - 두번의 `find` 연산으로 이루어집니다.
+
 `find` - worst case 에 대입 연산(O(1))이 노드의 숫자번 (n 번) 발생합니다. 즉, `O(n)` 입니다.
 
 즉 두 연산 모두 O(n) 시간 복잡도를 가집니다.
 
 ### 3. 개선
 
-- Naive Implementation 방식은 O(logN) 시간 복잡도를 가지는 *Union by Rank or Height*,  *Path Compression* 방식으로 개선 될 수 있습니다.
+- Naive Implementation 방식은 O(logN) 시간 복잡도를 가지는 *Union by Rank or Height*, *Path Compression* 방식으로 개선 될 수 있습니다.
 - 또한 만약 node 1 이 속한 집합의 노드를 모두 알고 싶다면 현재 방식에서는 효율적이지 않습니다. 이는 parents 배열이 tree 형태가 아니라 circular-linked-list 형태를 띄도록 구현하여 효율적으로 구할 수 있습니다.

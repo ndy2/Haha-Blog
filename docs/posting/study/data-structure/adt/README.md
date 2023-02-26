@@ -24,4 +24,3 @@ author: ndy2
 !!! note ""
 
     Special Thanks to 쉬운코드 on https://www.youtube.com/@ez.
-

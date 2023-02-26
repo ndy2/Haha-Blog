@@ -22,6 +22,7 @@ title: Hexagonal Architecture
 
 > 아키텍처는 뭔가 중요한 것 (Some Important Stuff) 이다.
  
+
 참 난해합니다. 조금 더 풀어서 설명하면 아래와 같습니다.
 
 > 아키텍처란 지식을 공유하는 것 (Shared understanding) 이고 또한 바꾸기 어려운 것 (Hard to change) 이다. 이를 합치면 뭔가 중요한 것 (Important Stuff) 이다.
@@ -35,6 +36,7 @@ title: Hexagonal Architecture
 마틴은 경제적인 관점에서 아키텍처의 중요성을 강조하며 아래의 그래프로 이를 설명합니다.
 
 [Design Stamina Hypothesis](https://martinfowler.com/bliki/DesignStaminaHypothesis.html)
+
 ![[images/DesignStaminaHypothesis.png|Design Stamina Hypothesis]]
 
 이 그래프는 좋은 아키텍처 (디자인)를 가지고 있으면 초기에는 개발속도가 느리지만 일정 시점 (Design payoff line) 이후에도 기능을 추가하는 속도가 항상 선형적일수 있다는 것을 보여줍니다. 마틴은 자신의 저서인 `리팩토링` 에서도 이 그래프를 언급하며 리팩토링을 하는 이유 역시 좋은 Design 을 유지하여 기능 추가에 따른 코스트를 선형으로 유지하기 위함이라고 하였습니다.
@@ -44,12 +46,14 @@ title: Hexagonal Architecture
 물론 이런 정의에도 논쟁의 여지가 있고 다른 정의방식 역시 많지만 개인적으로 가장 와닫는 방식입니다.
 
 ---
+
 그런 아키텍처에는 크게 컴포넌트 (마이크로서비스) 내부 아키텍처와 외부 아키텍처가 있습니다. 오늘 이야기할 `계층형 아키텍처`와 `육각형 아키텍처`는 그 중 내부 아키텍처의 한 종류입니다.
 
 #### 2. 계층형 아키텍처
 
-- 마이크로서비스의 내부 구조를 계층형으로 구성.
-- 호출은 위에서 아래로, 아래에서 위 호출 불가
+* 마이크로서비스의 내부 구조를 계층형으로 구성.
+* 호출은 위에서 아래로, 아래에서 위 호출 불가
+
 ![[images/layered-architecture.png|계층형 아키텍처의 여러가지 형태]]
 
 계층형 아키텍처는 간단하지만 레이어간 호출방향에 대한 룰 외에는 정해진 룰이 없어서 확장성 측면에서 불리합니다. 특히 도메인별 참조와 컴포넌트의 너비 (Width) 에 대한 룰을 정하지 않아 흔히 이야기 하는 스파게티 코드가 되기 쉽상입니다. 
@@ -68,43 +72,41 @@ Clean Architecture 와 Hexagonal Architecture 는 DIP 적인 컨셉을 더 강�
 
 > `Hexagonal Architecture` 는 엘리스터 콕번이 제안한 아키텍쳐이고 로버트 마틴이 제안한 Clean Architecture 의 한 형태입니다. 
 
-클린아키텍처는 애플리케이션을 계층형태가 아니라  중앙을 향하는 의존성을 가진 여러 동심원 형태로 표현합니다. 원의 가장 중앙에는 애플리케이션의 가장중요한 가치 바로 도메인이 자리합니다. 그래서 클린 아키텍처를 양파 아키텍처라고도 부릅니다.
+클린아키텍처는 애플리케이션을 계층형태가 아니라 중앙을 향하는 의존성을 가진 여러 동심원 형태로 표현합니다. 원의 가장 중앙에는 애플리케이션의 가장중요한 가치 바로 도메인이 자리합니다. 그래서 클린 아키텍처를 양파 아키텍처라고도 부릅니다.
+
 ![[images/onion-architecture.png|양파 껍질과 같은 클린 아키텍쳐]]
 
-
 헥사고날 아키텍처는 아키텍처를 구성하는 중요한 요소인 포트와 어댑트의 이름을 그대로 딴 `Port and Adapter 아키텍처` 라고도 불립니다. 추가로 클린 아키텍처와 헥사고날 아키텍처를 비교하면 클린아키텍처는 추상적인 개념이며 헥사고날 아키텍처는 클린아키텍처를 구체적으로 (패키지 구조 형태로) 구현한 인스턴스라고 볼 수 있습니다.
+
 ![[images/hexagonal-architecture.png|Hexagonal Architecture]]
 
--   `Port`
-    -   포트는 바로 인터페이스입니다.
-    -   In-Port (Praimary Port, Driving Port) 
-	    - 외부에서 요청해야 동작하는 포트와 어댑터를 주요소(primary)라고 하며, 포트와 어댑터에 따라 주포트 혹은 주어댑터라고도 부릅니다.
-    -   Out-Port (Secondary Port, Driven Port) 
-	    - 애플리케이션이 호출하면 동작하는 포트
--   `Adapter`
-    -   어댑터는 바로 애플리케이션이 포트를 이용해 연결되는 외부의 구현체
-    -   In-Adapter (Pramary Adater, Driving Adapter)
-        -   WebAdapter (Rest API) 가 대표적입니다.
-    -   Out-Adapter (Secondary Adapter, Driven Adapter)
-        -   PersistenceAdapter (Repository) 가 대표적입니다.
-
+* `Port`
+    * 포트는 바로 인터페이스입니다.
+    * In-Port (Praimary Port, Driving Port) 
+	    * 외부에서 요청해야 동작하는 포트와 어댑터를 주요소(primary)라고 하며, 포트와 어댑터에 따라 주포트 혹은 주어댑터라고도 부릅니다.
+    * Out-Port (Secondary Port, Driven Port) 
+	    * 애플리케이션이 호출하면 동작하는 포트
+* `Adapter`
+    * 어댑터는 바로 애플리케이션이 포트를 이용해 연결되는 외부의 구현체
+    * In-Adapter (Pramary Adater, Driving Adapter)
+        * WebAdapter (Rest API) 가 대표적입니다.
+    * Out-Adapter (Secondary Adapter, Driven Adapter)
+        * PersistenceAdapter (Repository) 가 대표적입니다.
 
 클린/헥사고날 아키텍처의 핵심은 잘 변하는 구체 기술 (HTTP, DB, 외부 시스템)의 변경이 코어 애플리케이션과 도메인에 영향을 주지 않도록 하는 것입니다. 따라서 애플리케이션, 도메인 코드를 작성할 때는 구체적인 기술에 대한 코드를 최대한 줄여야 합니다.
 
 ---
 
-### 4.  그럼에도 고민해야 하는 내용들
-
+### 4. 그럼에도 고민해야 하는 내용들
 
 #### 1. 기술에 대한 의존
 
 애플리케이션, 도메인 코드를 작성할 때 구체적인 기술과 관련된 코드 없이 최대한 POJO 로 작성하는 것은 헥사고날 아키텍쳐의 중요한 원칙입니다. 하지만 때로는 개발생산성의 관점에서 적절한 합의가 이루어져야합니다.
 
-- Jpa 를 사용할때 도메인 모델에 Jpa 의존성을 없애고자 한다면 코드 작성이 매우 번거롭습니다.
-- Spring 을 사용하면서 Spring 에 대한 의존성 노출을 막기란 쉽지 않습니다. 특히 @Transactional 없이 트랜잭션을 구현하고자 한다면 서비스 계층에서 배보다 배꼽이 더 커지는 일이 발생할 것입니다.
+* Jpa 를 사용할때 도메인 모델에 Jpa 의존성을 없애고자 한다면 코드 작성이 매우 번거롭습니다.
+* Spring 을 사용하면서 Spring 에 대한 의존성 노출을 막기란 쉽지 않습니다. 특히 @Transactional 없이 트랜잭션을 구현하고자 한다면 서비스 계층에서 배보다 배꼽이 더 커지는 일이 발생할 것입니다.
 
 이런 결정에 딱히 정답은 없으며 팀적인 합의가 가장 중요하다고 생각합니다. 같은 애플리케이션/ 도메인 코드라고 할지라도 Spring 에 대한 의존을 애플리케이션 서비스에서는 허용하고 도메인 모델에서는 제한 하는 등의 유연한 결정도 개발에 도움이 된다고 생각합니다.
-
 
 #### 2. 매핑 모델
 

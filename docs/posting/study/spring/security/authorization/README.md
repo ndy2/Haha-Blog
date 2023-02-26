@@ -18,7 +18,9 @@ description: >-
 사실 기존 방식의 `Spring Security` 인가 처리에 대한 프로세스는 과거 노션에 정리하였던 적이 있습니다. [링크](https://www.notion.so/ndy-dev/Spring-Security-Authorization-Flow-30e3f30b2a74478398ddf9db23052489) 오늘은 Spring Security 5.8 업데이트에 따라 변경된 부분 및 인가 처리 프로세스를 정리하고자 합니다.
 
 관련 깃헙 이슈
+
 	- 1. Deprecated 처리 https://github.com/spring-projects/spring-security/issues/11302
+
 	- 2. guide for migration https://github.com/spring-projects/spring-security/issues/11337
 
 사실 개인적으로 인증 처리는 전부 각각 네이밍이 어쩌고 저쩌고 필터 인 반면 인가처리는 마지막 하나의 필터 그것도 이름이 FilterSecurityInterceptor 라는 점이 마음에 들지 않았었는데 더 일관성 있게 변경 된 것 같아서 좋습니다.
@@ -82,8 +84,7 @@ SecurityFilterChain web(HttpSecurity http) throws Exception {
 
 ```
 
-
-- `HttpSecurity`.`antMatcher`  -> `HttpSecurity.securityMatcher()`
+- `HttpSecurity`.`antMatcher` -> `HttpSecurity.securityMatcher()`
 
 ```java
 // 변경 전
@@ -114,6 +115,5 @@ public SecurityFilterChain apiFilterChain(HttpSecurity http) throws Exception {
 		return http.build();
 	}
 ```
-
 
 일단 사용하면서 알아차린 변경은 이정도 입니다. 문서를 살펴 더 디테일 하게 조사해보겠습니다!

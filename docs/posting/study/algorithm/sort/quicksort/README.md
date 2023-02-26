@@ -11,7 +11,6 @@ date: 2023-02-04
     * 퀵 정렬<sup>Quicksort</sup>은 효율적이고, 범용적인 정렬 알고리즘 입니다.
     * 퀵 정렬은 `divide-and-conquer` 알고리즘입니다.
 
-
 ### 2. 퀵 정렬 코드!
 
 ```python title="Quick Sort!" exec="true" source="material-block"
@@ -76,7 +75,6 @@ print(f'Sorted array: {array}')
 4. 탐색을 마치면 i 를 기준으로 왼쪽에는 피봇보다 작은 원소가 i 를 포함하여 i의 오른쪽에는 피봇보다 큰 원소만이 위치하게 된다. `swap` 으로 피봇의 위치를 잡아준다. 이때 피봇의 위치는 전체 배열에서 결정되었다고 볼 수 있다.
 5. 결정된 `pivot` 의 위치를 기준으로 좌우로 나누어 `1` 을 두번 호출한다.
 
-
 ### 4. 퀵 정렬의 특징
 
 !!! note "퀵 정렬의 성능"
@@ -100,7 +98,6 @@ print(f'Sorted array: {array}')
     * not stable!
     * 즉 비교 순서가 같은 원소간의 정렬 후 순서를 보장하지 않는다.
 
-
 !!! note "퀵 정렬과 다른 정렬들 비교"
 
     * 퀵 정렬은 전반적으로 *randomized data*, 특히 *분포가 큰 데이터* 에 대해서 같은 O(nlogn) 시간 복잡도의 merge sort 나 heapsort 에 비해 빠르다고 알려져 있습니다.
@@ -122,4 +119,3 @@ print(f'Sorted array: {array}')
 
     * 반면 다음과 같은 단점도 있습니다.
         * 최악의 경우 O(n^2) 의 성능을 내고 이를 피하기 위한 pivot 의 선정은 heuristic 에 의존적입니다.
-

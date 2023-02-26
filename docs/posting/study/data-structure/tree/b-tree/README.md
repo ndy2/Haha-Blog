@@ -6,7 +6,7 @@ author: ndy2
 
 @ 참고 자료)
 
-- 쉬운코드 -  https://youtu.be/bqkcoSm_rCs
+- 쉬운코드 - https://youtu.be/bqkcoSm_rCs
 - B-Tree Visualization - https://www.cs.usfca.edu/~galles/visualization/BTree.html
 
 ---
@@ -43,7 +43,6 @@ author: ndy2
     - `M`과 관계없이 internal-node 는 **최소** 두 개의 자녀는 가진다.
     - `M`이 정해지면 internal 노드는 **최소** `ceil(M/2)` 개의 자녀 노드를 가질 수 있게 된다.
 
-
 ### 4. 데이터 삽입
 
 - 추가는 항상 leaf 노드에 한다
@@ -53,12 +52,11 @@ author: ndy2
 - 영상을 보자! ( M = 3 인 경우 )
 <iframe width="341" height="240" src="https://www.youtube.com/embed/bqkcoSm_rCs" title="(1부) B tree의 개념과 특징, 데이터 삽입이 어떻게 동작하는지를 설명합니다! (DB 인덱스과 관련있는 자료 구조)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-- pesudocode 도 보자!  ( M = 4 인 경우) 
+- pesudocode 도 보자! ( M = 4 인 경우) 
     - https://www.cs.utexas.edu/users/djimenez/utsa/cs3343/lecture17.html
 
-### 5. B tree 의 특징
+### 5. B Tree 의 특징
 
 !!! note ""
 
     B-tree 는 AVL Tree (Auto Balancing Tree) 이다.
-
