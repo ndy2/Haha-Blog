@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://ndy2.github.io//Haha-Blog/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/</loc>
          <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -127,6 +127,16 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/bloggingtips/mkdocs-obsidian/kroki-test/</loc>
+         <lastmod>2023-02-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/bloggingtips/mkdocs-obsidian/kroki-test/test1/</loc>
+         <lastmod>2023-02-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/bloggingtips/mkdocs-obsidian/kroki-test/test2/</loc>
          <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
