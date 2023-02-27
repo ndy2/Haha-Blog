@@ -16,19 +16,8 @@
                 "file": "docs/posting/pages.ini"
               }
             }
-          },
-          {
-            "id": "4864b8939c467e43",
-            "type": "leaf",
-            "state": {
-              "type": "ini",
-              "state": {
-                "file": "docs/posting/study/database/normalization/pages.ini"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -86,7 +75,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/posting/study/database/normalization/pages.ini",
+                "file": "docs/posting/pages.ini",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +92,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/posting/study/database/normalization/pages.ini",
+                "file": "docs/posting/pages.ini",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +115,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/posting/study/database/normalization/pages.ini"
+                "file": "docs/posting/pages.ini"
               }
             }
           },
@@ -165,10 +154,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "4864b8939c467e43",
+  "active": "ca318ff533524fce",
   "lastOpenFiles": [
-    "docs/posting/pages.ini",
+    "Excalidraw/Scripts/Downloaded/Set Dimensions.md",
+    "Excalidraw/Scripts/Downloaded/Set Dimensions.svg",
     "docs/posting/study/database/normalization/pages.ini",
+    "docs/posting/pages.ini",
     "docs/posting/study/data-structure/pages.ini",
     "docs/posting/study/database/normalization/anomaly/README.md",
     "docs/posting/study/database/normalization/fd/README.md",
@@ -200,9 +191,6 @@
     "docs/posting/bloggingtips/obsidian/custom-callout/excalidraws/my-q.excalidraw.md",
     "docs/posting/bloggingtips/obsidian/custom-callout/excalidraws/my-q.excalidraw.png",
     "docs/posting/bloggingtips/obsidian/custom-callout/excalidraws/Drawing 2023-02-27 13.47.39.excalidraw.png",
-    "Excalidraw/Scripts/Downloaded/Set Dimensions.svg",
-    "Excalidraw/Scripts/Downloaded/Set Dimensions.md",
-    "Excalidraw/Scripts/Downloaded",
     "docs/README.md",
     "docs/posting/bloggingtips/obsidian/custom-callout/Callouts.md",
     "docs/posting/bloggingtips/mkdocs-obsidian/README.md",
