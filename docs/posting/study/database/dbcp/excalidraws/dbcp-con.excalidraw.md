@@ -26,9 +26,7 @@ TCP 연결 해지
 4 way handshake ^GFtB9Zw7
 
 %%
-
 # Drawing
-
 ```json
 {
 	"type": "excalidraw",
@@ -55,7 +53,9 @@ TCP 연결 해지
 			"height": 108.5714285714285,
 			"seed": 1661389885,
 			"groupIds": [],
-			"strokeSharpness": "round",
+			"roundness": {
+				"type": 1
+			},
 			"boundElements": [],
 			"updated": 1672026995503,
 			"link": null,
@@ -78,28 +78,28 @@ TCP 연결 해지
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 103,
-			"height": 50,
+			"height": 100,
 			"seed": 671072115,
 			"groupIds": [],
-			"strokeSharpness": "sharp",
+			"roundness": null,
 			"boundElements": [],
 			"updated": 1672026871822,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 1,
-			"text": "BackEnd\nApplication",
+			"text": "\nBackEnd\n\nApplication",
 			"rawText": "BackEnd\nApplication",
-			"baseline": 43,
+			"baseline": 93,
 			"textAlign": "left",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "BackEnd\nApplication"
+			"originalText": "\nBackEnd\n\nApplication"
 		},
 		{
 			"type": "ellipse",
-			"version": 120,
-			"versionNonce": 1273243667,
+			"version": 159,
+			"versionNonce": 2024853742,
 			"isDeleted": false,
 			"id": "L5Ds5r52cJhpz2jAQeYd8",
 			"fillStyle": "hachure",
@@ -108,8 +108,8 @@ TCP 연결 해지
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 299.8597810774734,
-			"y": -553.9519030858601,
+			"x": 286.6085791543964,
+			"y": -560.1378005217575,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 133.2985967024983,
@@ -118,16 +118,16 @@ TCP 연결 해지
 			"groupIds": [
 				"B6KMlbAca1TTsHcCEHCIL"
 			],
-			"strokeSharpness": "sharp",
+			"roundness": null,
 			"boundElements": [],
-			"updated": 1672026935048,
+			"updated": 1677514017280,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "line",
-			"version": 110,
-			"versionNonce": 1910527645,
+			"version": 149,
+			"versionNonce": 1144225010,
 			"isDeleted": false,
 			"id": "cT7woeMisVpqbepn2-2ub",
 			"fillStyle": "hachure",
@@ -136,8 +136,8 @@ TCP 연결 해지
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 299.0266457795655,
-			"y": -533.1239973510948,
+			"x": 285.7754438564886,
+			"y": -539.3098947869922,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 0,
@@ -146,9 +146,11 @@ TCP 연결 해지
 			"groupIds": [
 				"B6KMlbAca1TTsHcCEHCIL"
 			],
-			"strokeSharpness": "round",
+			"roundness": {
+				"type": 2
+			},
 			"boundElements": [],
-			"updated": 1672026935048,
+			"updated": 1677514017280,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -169,8 +171,8 @@ TCP 연결 해지
 		},
 		{
 			"type": "line",
-			"version": 108,
-			"versionNonce": 1542172083,
+			"version": 147,
+			"versionNonce": 1753514798,
 			"isDeleted": false,
 			"id": "aYfWPaK0vE2r-IQXoe89p",
 			"fillStyle": "hachure",
@@ -179,8 +181,8 @@ TCP 연결 해지
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 434.82458481406326,
-			"y": -532.2908779436179,
+			"x": 421.57338289098635,
+			"y": -538.4767753795154,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 1.6662070340915882,
@@ -189,9 +191,11 @@ TCP 연결 해지
 			"groupIds": [
 				"B6KMlbAca1TTsHcCEHCIL"
 			],
-			"strokeSharpness": "round",
+			"roundness": {
+				"type": 2
+			},
 			"boundElements": [],
-			"updated": 1672026935048,
+			"updated": 1677514017280,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -212,8 +216,8 @@ TCP 연결 해지
 		},
 		{
 			"type": "line",
-			"version": 142,
-			"versionNonce": 1815444221,
+			"version": 181,
+			"versionNonce": 844828338,
 			"isDeleted": false,
 			"id": "Qmh4-IvJbuaY9H3pyUFN9",
 			"fillStyle": "hachure",
@@ -222,8 +226,8 @@ TCP 연결 해지
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 300.6928845945191,
-			"y": -512.2961075067603,
+			"x": 287.44168267144215,
+			"y": -518.4820049426578,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 135.79797081535975,
@@ -232,9 +236,11 @@ TCP 연결 해지
 			"groupIds": [
 				"B6KMlbAca1TTsHcCEHCIL"
 			],
-			"strokeSharpness": "round",
+			"roundness": {
+				"type": 2
+			},
 			"boundElements": [],
-			"updated": 1672026935048,
+			"updated": 1677514017280,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -263,8 +269,8 @@ TCP 연결 해지
 		},
 		{
 			"type": "line",
-			"version": 210,
-			"versionNonce": 942767955,
+			"version": 249,
+			"versionNonce": 2141711726,
 			"isDeleted": false,
 			"id": "pMPYk2IDGdRMT3LlxXaHv",
 			"fillStyle": "hachure",
@@ -273,8 +279,8 @@ TCP 연결 해지
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 299.45289398857676,
-			"y": -484.95398403033903,
+			"x": 286.2016920654998,
+			"y": -491.1398814662365,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 135.79797081535975,
@@ -283,9 +289,11 @@ TCP 연결 해지
 			"groupIds": [
 				"B6KMlbAca1TTsHcCEHCIL"
 			],
-			"strokeSharpness": "round",
+			"roundness": {
+				"type": 2
+			},
 			"boundElements": [],
-			"updated": 1672026935048,
+			"updated": 1677514017280,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -314,8 +322,8 @@ TCP 연결 해지
 		},
 		{
 			"type": "line",
-			"version": 255,
-			"versionNonce": 1025971037,
+			"version": 294,
+			"versionNonce": 556427378,
 			"isDeleted": false,
 			"id": "i50Vpl_JFWpqsu0zmkhou",
 			"fillStyle": "hachure",
@@ -324,8 +332,8 @@ TCP 연결 해지
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 301.21269889760003,
-			"y": -467.08256604164075,
+			"x": 287.9614969745231,
+			"y": -473.2684634775382,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 135.79797081535975,
@@ -334,9 +342,11 @@ TCP 연결 해지
 			"groupIds": [
 				"B6KMlbAca1TTsHcCEHCIL"
 			],
-			"strokeSharpness": "round",
+			"roundness": {
+				"type": 2
+			},
 			"boundElements": [],
-			"updated": 1672026935048,
+			"updated": 1677514017280,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -364,30 +374,37 @@ TCP 연결 해지
 			]
 		},
 		{
-			"id": "W_UnApyjALQofw9seZ4eb",
 			"type": "line",
-			"x": -165.94995264781173,
-			"y": -455.4187707721686,
-			"width": 6.22222900390625,
-			"height": 255.99999321831592,
-			"angle": 0,
-			"strokeColor": "#000000",
-			"backgroundColor": "transparent",
+			"version": 33,
+			"versionNonce": 712050109,
+			"isDeleted": false,
+			"id": "W_UnApyjALQofw9seZ4eb",
 			"fillStyle": "hachure",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
 			"roughness": 1,
 			"opacity": 100,
-			"groupIds": [],
-			"strokeSharpness": "round",
+			"angle": 0,
+			"x": -165.94995264781173,
+			"y": -455.4187707721686,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 6.22222900390625,
+			"height": 255.99999321831592,
 			"seed": 1090953149,
-			"version": 33,
-			"versionNonce": 712050109,
-			"isDeleted": false,
-			"boundElements": null,
+			"groupIds": [],
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [],
 			"updated": 1672026940473,
 			"link": null,
 			"locked": false,
+			"startBinding": null,
+			"endBinding": null,
+			"lastCommittedPoint": null,
+			"startArrowhead": null,
+			"endArrowhead": null,
 			"points": [
 				[
 					0,
@@ -397,38 +414,40 @@ TCP 연결 해지
 					6.22222900390625,
 					255.99999321831592
 				]
-			],
-			"lastCommittedPoint": null,
-			"startBinding": null,
-			"endBinding": null,
-			"startArrowhead": null,
-			"endArrowhead": null
+			]
 		},
 		{
-			"id": "3TEDjwiFhE_t3x76run6b",
 			"type": "line",
-			"x": 369.1611482907734,
-			"y": -447.41879111722074,
-			"width": 9.77783203125,
-			"height": 254.22220865885424,
-			"angle": 0,
-			"strokeColor": "#000000",
-			"backgroundColor": "transparent",
+			"version": 52,
+			"versionNonce": 416633725,
+			"isDeleted": false,
+			"id": "3TEDjwiFhE_t3x76run6b",
 			"fillStyle": "hachure",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
 			"roughness": 1,
 			"opacity": 100,
-			"groupIds": [],
-			"strokeSharpness": "round",
+			"angle": 0,
+			"x": 369.1611482907734,
+			"y": -447.41879111722074,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 9.77783203125,
+			"height": 254.22220865885424,
 			"seed": 895025299,
-			"version": 52,
-			"versionNonce": 416633725,
-			"isDeleted": false,
-			"boundElements": null,
+			"groupIds": [],
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [],
 			"updated": 1672026943467,
 			"link": null,
 			"locked": false,
+			"startBinding": null,
+			"endBinding": null,
+			"lastCommittedPoint": null,
+			"startArrowhead": null,
+			"endArrowhead": null,
 			"points": [
 				[
 					0,
@@ -438,49 +457,35 @@ TCP 연결 해지
 					9.77783203125,
 					254.22220865885424
 				]
-			],
-			"lastCommittedPoint": null,
-			"startBinding": null,
-			"endBinding": null,
-			"startArrowhead": null,
-			"endArrowhead": null
+			]
 		},
 		{
-			"id": "7n6p1tXCPDORKl0gpPhBl",
 			"type": "arrow",
-			"x": -163.283275808619,
-			"y": -354.08545778388736,
-			"width": 538.6666870117188,
-			"height": 0.8889092339409785,
-			"angle": 0,
-			"strokeColor": "#000000",
-			"backgroundColor": "transparent",
+			"version": 65,
+			"versionNonce": 900688221,
+			"isDeleted": false,
+			"id": "7n6p1tXCPDORKl0gpPhBl",
 			"fillStyle": "hachure",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
 			"roughness": 1,
 			"opacity": 100,
-			"groupIds": [],
-			"strokeSharpness": "round",
+			"angle": 0,
+			"x": -163.283275808619,
+			"y": -354.08545778388736,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 538.6666870117188,
+			"height": 0.8889092339409785,
 			"seed": 1765268445,
-			"version": 65,
-			"versionNonce": 900688221,
-			"isDeleted": false,
-			"boundElements": null,
+			"groupIds": [],
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [],
 			"updated": 1672026973705,
 			"link": null,
 			"locked": false,
-			"points": [
-				[
-					0,
-					0
-				],
-				[
-					538.6666870117188,
-					0.8889092339409785
-				]
-			],
-			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "DNV7QaaS",
 				"focus": 0.9194652718861701,
@@ -491,30 +496,41 @@ TCP 연결 해지
 				"focus": 1.7599479122058728,
 				"gap": 11.444437662760379
 			},
+			"lastCommittedPoint": null,
 			"startArrowhead": null,
-			"endArrowhead": "arrow"
+			"endArrowhead": "arrow",
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					538.6666870117188,
+					0.8889092339409785
+				]
+			]
 		},
 		{
-			"id": "DNV7QaaS",
 			"type": "text",
-			"x": -158.39441065562423,
-			"y": -382.8632559067172,
-			"width": 92,
-			"height": 30,
-			"angle": 0,
-			"strokeColor": "#000000",
-			"backgroundColor": "transparent",
+			"version": 45,
+			"versionNonce": 2060247261,
+			"isDeleted": false,
+			"id": "DNV7QaaS",
 			"fillStyle": "hachure",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
 			"roughness": 1,
 			"opacity": 100,
-			"groupIds": [],
-			"strokeSharpness": "sharp",
+			"angle": 0,
+			"x": -158.39441065562423,
+			"y": -382.8632559067172,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 80,
+			"height": 25,
 			"seed": 2012516467,
-			"version": 45,
-			"versionNonce": 2060247261,
-			"isDeleted": false,
+			"groupIds": [],
+			"roundness": null,
 			"boundElements": [
 				{
 					"id": "7n6p1tXCPDORKl0gpPhBl",
@@ -524,41 +540,52 @@ TCP 연결 해지
 			"updated": 1672026961112,
 			"link": null,
 			"locked": false,
-			"text": "쿼리 요청",
-			"rawText": "쿼리 요청",
 			"fontSize": 20,
 			"fontFamily": 1,
+			"text": "쿼리 요청",
+			"rawText": "쿼리 요청",
+			"baseline": 18,
 			"textAlign": "left",
 			"verticalAlign": "top",
-			"baseline": 23,
 			"containerId": null,
 			"originalText": "쿼리 요청"
 		},
 		{
-			"id": "zvHsulxxMGWzCd1qLs4Hp",
 			"type": "arrow",
-			"x": 374.4945358775789,
-			"y": -314.97433310940824,
-			"width": 534.2222595214844,
-			"height": 3.5555352105034785,
-			"angle": 0,
-			"strokeColor": "#000000",
-			"backgroundColor": "transparent",
+			"version": 58,
+			"versionNonce": 1913927101,
+			"isDeleted": false,
+			"id": "zvHsulxxMGWzCd1qLs4Hp",
 			"fillStyle": "hachure",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
 			"roughness": 1,
 			"opacity": 100,
-			"groupIds": [],
-			"strokeSharpness": "round",
+			"angle": 0,
+			"x": 374.4945358775789,
+			"y": -314.97433310940824,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 534.2222595214844,
+			"height": 3.5555352105034785,
 			"seed": 865516861,
-			"version": 58,
-			"versionNonce": 1913927101,
-			"isDeleted": false,
-			"boundElements": null,
+			"groupIds": [],
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [],
 			"updated": 1672026973705,
 			"link": null,
 			"locked": false,
+			"startBinding": {
+				"elementId": "vcaDGKYV",
+				"focus": -0.7923807675994923,
+				"gap": 6.6666531032986995
+			},
+			"endBinding": null,
+			"lastCommittedPoint": null,
+			"startArrowhead": null,
+			"endArrowhead": "arrow",
 			"points": [
 				[
 					0,
@@ -568,38 +595,29 @@ TCP 연결 해지
 					-534.2222595214844,
 					3.5555352105034785
 				]
-			],
-			"lastCommittedPoint": null,
-			"startBinding": {
-				"elementId": "vcaDGKYV",
-				"focus": -0.7923807675994923,
-				"gap": 6.6666531032986995
-			},
-			"endBinding": null,
-			"startArrowhead": null,
-			"endArrowhead": "arrow"
+			]
 		},
 		{
-			"id": "vcaDGKYV",
 			"type": "text",
-			"x": 275.8278827742802,
-			"y": -341.752110887186,
-			"width": 92,
-			"height": 30,
-			"angle": 0,
-			"strokeColor": "#000000",
-			"backgroundColor": "transparent",
+			"version": 27,
+			"versionNonce": 281071763,
+			"isDeleted": false,
+			"id": "vcaDGKYV",
 			"fillStyle": "hachure",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
 			"roughness": 1,
 			"opacity": 100,
-			"groupIds": [],
-			"strokeSharpness": "sharp",
+			"angle": 0,
+			"x": 275.8278827742802,
+			"y": -341.752110887186,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 80,
+			"height": 25,
 			"seed": 1767345203,
-			"version": 27,
-			"versionNonce": 281071763,
-			"isDeleted": false,
+			"groupIds": [],
+			"roundness": null,
 			"boundElements": [
 				{
 					"id": "7n6p1tXCPDORKl0gpPhBl",
@@ -613,76 +631,89 @@ TCP 연결 해지
 			"updated": 1672026973705,
 			"link": null,
 			"locked": false,
-			"text": "쿼리 응답",
-			"rawText": "쿼리 응답",
 			"fontSize": 20,
 			"fontFamily": 1,
+			"text": "쿼리 응답",
+			"rawText": "쿼리 응답",
+			"baseline": 18,
 			"textAlign": "left",
 			"verticalAlign": "top",
-			"baseline": 23,
 			"containerId": null,
 			"originalText": "쿼리 응답"
 		},
 		{
-			"id": "wQsBSquY",
 			"type": "text",
-			"x": -162.55684232382475,
-			"y": -447.3395192321607,
-			"width": 171,
-			"height": 55,
-			"angle": 0,
-			"strokeColor": "#364fc7",
-			"backgroundColor": "#228be6",
+			"version": 55,
+			"versionNonce": 1405711795,
+			"isDeleted": false,
+			"id": "wQsBSquY",
 			"fillStyle": "hachure",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
 			"roughness": 1,
 			"opacity": 100,
-			"groupIds": [],
-			"strokeSharpness": "round",
+			"angle": 0,
+			"x": -162.55684232382475,
+			"y": -447.3395192321607,
+			"strokeColor": "#364fc7",
+			"backgroundColor": "#228be6",
+			"width": 168,
+			"height": 75,
 			"seed": 1062717917,
-			"version": 55,
-			"versionNonce": 1405711795,
-			"isDeleted": false,
+			"groupIds": [],
+			"roundness": {
+				"type": 2
+			},
 			"boundElements": [],
 			"updated": 1672027141727,
 			"link": null,
 			"locked": false,
-			"text": "TCP 연결 수립\n3 way handshake",
-			"rawText": "TCP 연결 수립\n3 way handshake",
 			"fontSize": 20,
 			"fontFamily": 1,
+			"text": "TCP 연결 수립\n\n3 way handshake",
+			"rawText": "TCP 연결 수립\n3 way handshake",
+			"baseline": 68,
 			"textAlign": "left",
 			"verticalAlign": "top",
-			"baseline": 48,
 			"containerId": null,
-			"originalText": "TCP 연결 수립\n3 way handshake"
+			"originalText": "TCP 연결 수립\n\n3 way handshake"
 		},
 		{
-			"id": "-_nZgpMswAvdZgKwLmGq5",
 			"type": "arrow",
-			"x": 216.85929754900104,
-			"y": -259.6359544938638,
-			"width": 372.74952406878936,
-			"height": 3.9631121008958416,
-			"angle": 0,
-			"strokeColor": "#364fc7",
-			"backgroundColor": "#228be6",
+			"version": 161,
+			"versionNonce": 1737497757,
+			"isDeleted": false,
+			"id": "-_nZgpMswAvdZgKwLmGq5",
 			"fillStyle": "hachure",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
 			"roughness": 1,
 			"opacity": 100,
-			"groupIds": [],
-			"strokeSharpness": "round",
+			"angle": 0,
+			"x": 216.85929754900104,
+			"y": -259.6359544938638,
+			"strokeColor": "#364fc7",
+			"backgroundColor": "#228be6",
+			"width": 372.74952406878936,
+			"height": 3.9631121008958416,
 			"seed": 1947312851,
-			"version": 161,
-			"versionNonce": 1737497757,
-			"isDeleted": false,
-			"boundElements": null,
+			"groupIds": [],
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [],
 			"updated": 1672027125576,
 			"link": null,
 			"locked": false,
+			"startBinding": {
+				"elementId": "GFtB9Zw7",
+				"focus": 1.3637026191694221,
+				"gap": 11.818693672704285
+			},
+			"endBinding": null,
+			"lastCommittedPoint": null,
+			"startArrowhead": null,
+			"endArrowhead": "triangle",
 			"points": [
 				[
 					0,
@@ -692,42 +723,40 @@ TCP 연결 해지
 					-372.74952406878936,
 					3.9631121008958416
 				]
-			],
-			"lastCommittedPoint": null,
-			"startBinding": {
-				"elementId": "GFtB9Zw7",
-				"focus": 1.3637026191694221,
-				"gap": 11.818693672704285
-			},
-			"endBinding": null,
-			"startArrowhead": null,
-			"endArrowhead": "triangle"
+			]
 		},
 		{
-			"id": "XY2R-3y-aeTsJAxAzhx4l",
 			"type": "arrow",
-			"x": 5.443137331123211,
-			"y": -415.672842392968,
-			"width": 365.3333028157555,
-			"height": 1.33331298828125,
-			"angle": 0,
-			"strokeColor": "#364fc7",
-			"backgroundColor": "#228be6",
+			"version": 86,
+			"versionNonce": 1973030557,
+			"isDeleted": false,
+			"id": "XY2R-3y-aeTsJAxAzhx4l",
 			"fillStyle": "hachure",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
 			"roughness": 1,
 			"opacity": 100,
-			"groupIds": [],
-			"strokeSharpness": "round",
+			"angle": 0,
+			"x": 5.443137331123211,
+			"y": -415.672842392968,
+			"strokeColor": "#364fc7",
+			"backgroundColor": "#228be6",
+			"width": 365.3333028157555,
+			"height": 1.33331298828125,
 			"seed": 800988307,
-			"version": 86,
-			"versionNonce": 1973030557,
-			"isDeleted": false,
-			"boundElements": null,
+			"groupIds": [],
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [],
 			"updated": 1672027141726,
 			"link": null,
 			"locked": false,
+			"startBinding": null,
+			"endBinding": null,
+			"lastCommittedPoint": null,
+			"startArrowhead": null,
+			"endArrowhead": "triangle",
 			"points": [
 				[
 					0,
@@ -737,12 +766,7 @@ TCP 연결 해지
 					365.3333028157555,
 					1.33331298828125
 				]
-			],
-			"lastCommittedPoint": null,
-			"startBinding": null,
-			"endBinding": null,
-			"startArrowhead": null,
-			"endArrowhead": "triangle"
+			]
 		},
 		{
 			"type": "text",
@@ -760,11 +784,13 @@ TCP 연결 해지
 			"y": -251.33949888710868,
 			"strokeColor": "#364fc7",
 			"backgroundColor": "#228be6",
-			"width": 138.00008138020848,
-			"height": 44.64708515242039,
+			"width": 136,
+			"height": 61,
 			"seed": 406920445,
 			"groupIds": [],
-			"strokeSharpness": "round",
+			"roundness": {
+				"type": 2
+			},
 			"boundElements": [
 				{
 					"id": "-_nZgpMswAvdZgKwLmGq5",
@@ -776,13 +802,13 @@ TCP 연결 해지
 			"locked": false,
 			"fontSize": 16.235303691789234,
 			"fontFamily": 1,
-			"text": "TCP 연결 해지\n4 way handshake",
+			"text": "TCP 연결 해지\n\n4 way handshake",
 			"rawText": "TCP 연결 해지\n4 way handshake",
-			"baseline": 37.64708515242039,
+			"baseline": 55,
 			"textAlign": "left",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "TCP 연결 해지\n4 way handshake"
+			"originalText": "TCP 연결 해지\n\n4 way handshake"
 		}
 	],
 	"appState": {
@@ -798,20 +824,20 @@ TCP 연결 해지
 		"currentItemFontFamily": 1,
 		"currentItemFontSize": 20,
 		"currentItemTextAlign": "left",
-		"currentItemStrokeSharpness": "round",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "triangle",
-		"scrollX": 768.8902061747365,
-		"scrollY": 908.1728551086258,
+		"scrollX": 296.54707596125104,
+		"scrollY": 668.4522444880809,
 		"zoom": {
-			"value": 0.5999999999999998
+			"value": 1.9500000000000002
 		},
-		"currentItemLinearStrokeSharpness": "round",
+		"currentItemRoundness": "round",
 		"gridSize": null,
-		"colorPalette": {}
+		"colorPalette": {},
+		"currentStrokeOptions": null,
+		"previousGridSize": null
 	},
 	"files": {}
 }
 ```
-
 %%
