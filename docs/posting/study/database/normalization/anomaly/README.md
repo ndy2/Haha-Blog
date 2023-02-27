@@ -13,7 +13,7 @@ author: ndy2
 
 #### 1. Insertion Anomaly
 
-![[images/insertion-anomaly.png]]
+![[insertion-anomaly.png]]
 
 **문제점**
 
@@ -27,7 +27,7 @@ author: ndy2
 
 ### 2. Deletion Anomaly
 
-![[images/deletion-anomaly.png]]
+![[deletion-anomaly.png]]
 
 **문제점**
 
@@ -54,7 +54,7 @@ author: ndy2
 
 * 두 테이블의 Join 을 잘못 된 방식으로 해서 발생한 이상한 튜플
 
-![[images/spurious-tuple.png]]
+![[spurious-tuple.png]]
 
 ### 3. Null 값이 많아짐으로 인한 문제
 

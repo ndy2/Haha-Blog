@@ -19,7 +19,7 @@ date: 2023-02-23
 
 ### 2. 정규화 과정
 
-![[images/nf.png]]
+![[nf.png]]
 
 * 순서대로 진행한다!
 * 1NF ~ BCNF 까지가 FD 와 key 만으로 정의되는 normal forms
@@ -28,7 +28,7 @@ date: 2023-02-23
 
 ### 3. Init Table
 
-![[images/1NF.png]]
+![[1NF.png]]
 
 자료형은 대충 넣었습니다. 정규화 중이라 안 맞는 부분이 존재합니다.
 
@@ -48,4 +48,4 @@ date: 2023-02-23
 
 주요 FD 는 아래와 같습니다.
 
-![[images/table-fd.png]]
+![[table-fd.png]]

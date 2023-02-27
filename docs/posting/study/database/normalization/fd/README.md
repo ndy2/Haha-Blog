@@ -14,7 +14,7 @@ author: ndy2
 
   'X 가 Y 를 함수적으로 결정한다. Y 가 X 에 함수적으로 의존한다 ' 라고 부르며 두 집합 사이의 이러한 제약 관계를 Functional Dependency (FD) 라고 부른다.
 
-![[excalidraws/fd.excalidraw.png]]
+![[fd.excalidraw.png]]
 
 `X = {empl_id}` :material-arrow-right: `Y = {empl_name, birt_date, position, salary}`
 
