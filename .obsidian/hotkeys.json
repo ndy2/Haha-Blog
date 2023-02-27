@@ -1,0 +1,123 @@
+{
+  "wikilinks-to-mdlinks-obsidian:toggle-wiki-md-links": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "3"
+    }
+  ],
+  "obsidian-global-hotkeys:show-hide": [
+    {
+      "modifiers": [
+        "Shift"
+      ],
+      "key": "Tab"
+    }
+  ],
+  "app:open-settings": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "S"
+    }
+  ],
+  "command-palette:open": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "A"
+    }
+  ],
+  "app:toggle-left-sidebar": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "1"
+    }
+  ],
+  "app:toggle-right-sidebar": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "2"
+    }
+  ],
+  "editor:toggle-code": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "C"
+    }
+  ],
+  "switcher:open": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "E"
+    }
+  ],
+  "obsidian-git:open-diff-view": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "D"
+    }
+  ],
+  "obsidian-excalidraw-plugin:insert-image": [],
+  "obsidian-excalidraw-plugin:insert-md": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "U"
+    }
+  ],
+  "table-editor-obsidian:format-all-tables": [],
+  "table-editor-obsidian:format-table": [],
+  "obsidian-wrap-with-shortcuts:wrap-with-shortcut-underline": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "U"
+    }
+  ],
+  "obsidian-wrap-with-shortcuts:wrap-with-shortcut-w1674015820545": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "P"
+    }
+  ],
+  "graph:open": [],
+  "insert-template": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "Insert"
+    }
+  ],
+  "obsidian-rich-links:create-rich-links": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "R"
+    }
+  ]
+}
