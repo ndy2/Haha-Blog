@@ -2,6 +2,7 @@
 .idea/*
 .obsidian/app.json
 .obsidian/appearance.json
+.obsidian/workspace.json
 .obsidian/plugins/*
 .DS_Store
 __pycache__/*

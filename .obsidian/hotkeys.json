@@ -22,12 +22,26 @@
         "Shift"
       ],
       "key": "S"
+    },
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "S"
     }
   ],
   "command-palette:open": [
     {
       "modifiers": [
         "Alt",
+        "Shift"
+      ],
+      "key": "A"
+    },
+    {
+      "modifiers": [
+        "Mod",
         "Shift"
       ],
       "key": "A"
@@ -39,12 +53,24 @@
         "Alt"
       ],
       "key": "1"
+    },
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "1"
     }
   ],
   "app:toggle-right-sidebar": [
     {
       "modifiers": [
         "Alt"
+      ],
+      "key": "2"
+    },
+    {
+      "modifiers": [
+        "Mod"
       ],
       "key": "2"
     }
@@ -119,5 +145,7 @@
       ],
       "key": "R"
     }
-  ]
+  ],
+  "workspace:goto-tab-1": [],
+  "workspace:goto-tab-2": []
 }
