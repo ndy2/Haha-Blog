@@ -8,7 +8,7 @@ description: >-
 ---
  
 - [x] keboard macro 만들기
-- [ ] custom callout/admonition - `Answer` 만들기
+- [x] custom callout/admonition - `Answer` 만들기
 - [x] TIL 링크 깨지는 것 고치기
 - [x] TIL csv 자동화
 - mkdocs-obsidian-support-plugin
