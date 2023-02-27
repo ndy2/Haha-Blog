@@ -421,11 +421,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/anomaly/</loc>
-         <lastmod>2023-02-27</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/basic-terminologies/</loc>
          <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
@@ -446,11 +441,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/fd/</loc>
-         <lastmod>2023-02-27</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/join/</loc>
          <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
@@ -461,17 +451,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/normalization/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/normalization/1nf-and-2nf/</loc>
          <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/normalization/db-normalization-1nf-2nf/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/normalization/3nf-and-bcnf/db-normalization-3nf-bcnf/</loc>
          <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/normalization/db-normalization-3nf-bcnf/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/normalization/anomaly/</loc>
+         <lastmod>2023-02-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/normalization/fd/</loc>
+         <lastmod>2023-02-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/database/normalization/is-what/</loc>
          <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
