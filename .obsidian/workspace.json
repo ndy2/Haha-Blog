@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/posting/study/architecture/cap-theorem/README.md",
+                "file": "docs/posting/books/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -91,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/posting/study/architecture/cap-theorem/README.md",
+                "file": "docs/posting/books/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +108,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/posting/study/architecture/cap-theorem/README.md",
+                "file": "docs/posting/books/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/posting/study/architecture/cap-theorem/README.md"
+                "file": "docs/posting/books/README.md"
               }
             }
           },
@@ -172,6 +172,7 @@
   },
   "active": "a997530d36eab083",
   "lastOpenFiles": [
+    "docs/posting/study/architecture/cap-theorem/README.md",
     "docs/posting/bloggingtips/mkdocs-obsidian/todo.md",
     "docs/posting/bloggingtips/mkdocs-obsidian/pros-and-cons.md",
     "docs/posting/bloggingtips/mkdocs/custom-admonition/README.md",
@@ -216,7 +217,6 @@
     "docs/posting/books/springboot-msa-component/excalidraws/osiv-on.excalidraw.md",
     "docs/posting/books/springboot-msa-component/excalidraws/osiv-off.excalidraw.md",
     "docs/posting/books/springboot-msa-component/excalidraws/batch-server-3.excalidraw.md",
-    "docs/archive/README.md",
     "docs/posting/study/pages.ini"
   ]
 }
