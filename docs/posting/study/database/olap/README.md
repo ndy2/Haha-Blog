@@ -1,5 +1,5 @@
 ---
-tags: [database]
+tags: [db]
 title: OLAP
 author: ndy2
 ---

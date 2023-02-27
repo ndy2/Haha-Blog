@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/posting/bloggingtips/obsidian/custom-callout/README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a997530d36eab083",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/posting/books/README.md",
+                "file": "docs/posting/study/data-structure/tree/b-tree/README.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -74,8 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 387.5110321044922,
-    "collapsed": true
+    "width": 387.5110321044922
   },
   "right": {
     "id": "9d242b20af779459",
@@ -91,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/posting/books/README.md",
+                "file": "docs/posting/study/data-structure/tree/b-tree/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/posting/books/README.md",
+                "file": "docs/posting/study/data-structure/tree/b-tree/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/posting/books/README.md"
+                "file": "docs/posting/study/data-structure/tree/b-tree/README.md"
               }
             }
           },
@@ -170,13 +156,15 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "a997530d36eab083",
+  "active": "696e7f229c384dd8",
   "lastOpenFiles": [
+    "docs/posting/study/database/olap/README.md",
+    "docs/posting/bloggingtips/obsidian/custom-callout/README.md",
+    "docs/posting/books/README.md",
     "docs/posting/study/architecture/cap-theorem/README.md",
     "docs/posting/bloggingtips/mkdocs-obsidian/todo.md",
     "docs/posting/bloggingtips/mkdocs-obsidian/pros-and-cons.md",
     "docs/posting/bloggingtips/mkdocs/custom-admonition/README.md",
-    "docs/posting/bloggingtips/obsidian/custom-callout/README.md",
     "docs/posting/bloggingtips/mkdocs/custom-admonition",
     "docs/posting/bloggingtips/mkdocs",
     "docs/posting/bloggingtips/obsidian/file-hide/README.md",
@@ -215,8 +203,6 @@
     "docs/posting/books/springboot-msa-component/excalidraws/redis-cluster-architecture.excalidraw.md",
     "docs/posting/books/springboot-msa-component/excalidraws/ReativeStack_NonBlocked.excalidraw.md",
     "docs/posting/books/springboot-msa-component/excalidraws/osiv-on.excalidraw.md",
-    "docs/posting/books/springboot-msa-component/excalidraws/osiv-off.excalidraw.md",
-    "docs/posting/books/springboot-msa-component/excalidraws/batch-server-3.excalidraw.md",
     "docs/posting/study/pages.ini"
   ]
 }

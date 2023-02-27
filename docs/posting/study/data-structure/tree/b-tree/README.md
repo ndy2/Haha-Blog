@@ -1,5 +1,5 @@
 ---
-tags: [data-structure, tree, b-tree, database]
+tags: [data-structure, tree, b-tree, db]
 title: B-tree 특징과 삽입 연산
 author: ndy2
 ---
