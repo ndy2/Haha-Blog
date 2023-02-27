@@ -42,6 +42,10 @@ serverIndex = hash(key) % N
 - `hash space` - `hash function` 의 공역
 - `hash ring` - `hash space` 를 환형으로 이해하는 것
 
+```excalidraws
+
+```
+
 ![[excalidraws/hash-ring-1.excalidraw.png]]
 
 - Consistent Hash 에서 Key 가 서버를 조회하기 위해서 modulo 연산을 하는 것이 아니라 시계방향으로 탐색을 한다.

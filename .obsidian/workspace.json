@@ -4,16 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "b79aa5a124ba2848",
+        "id": "768e3b5679610c90",
         "type": "tabs",
         "children": [
           {
-            "id": "696e7f229c384dd8",
+            "id": "acdb6ef214113d3e",
             "type": "leaf",
             "state": {
-              "type": "ini",
+              "type": "markdown",
               "state": {
-                "file": "docs/posting/pages.ini"
+                "file": "docs/posting/bloggingtips/mkdocs-obsidian/kroki-test/README.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -46,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "kroki-",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -75,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/posting/pages.ini",
+                "file": "docs/posting/bloggingtips/mkdocs-obsidian/kroki-test/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -92,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/posting/pages.ini",
+                "file": "docs/posting/bloggingtips/mkdocs-obsidian/kroki-test/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -115,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/posting/pages.ini"
+                "file": "docs/posting/bloggingtips/mkdocs-obsidian/kroki-test/README.md"
               }
             }
           },
@@ -135,12 +137,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 542.5,
+    "width": 416.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -154,52 +155,53 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "ca318ff533524fce",
+  "active": "acdb6ef214113d3e",
   "lastOpenFiles": [
-    "Excalidraw/Scripts/Downloaded/Set Dimensions.md",
-    "Excalidraw/Scripts/Downloaded/Set Dimensions.svg",
-    "docs/posting/study/database/normalization/pages.ini",
-    "docs/posting/pages.ini",
-    "docs/posting/study/data-structure/pages.ini",
-    "docs/posting/study/database/normalization/anomaly/README.md",
-    "docs/posting/study/database/normalization/fd/README.md",
-    "docs/posting/study/database/normalization/is-what/README.md",
-    "docs/posting/study/database/normalization/1nf-and-2nf/README.md",
-    "docs/posting/study/database/normalization/is-what/images",
-    "docs/posting/study/database/normalization/is-what",
-    "docs/posting/study/database/normalization/1nf-and-2nf/images/before-1nf.png",
-    "docs/posting/study/database/normalization/is-what/images/1NF.png",
-    "docs/posting/study/os/deadlock/README.md",
-    "docs/posting/study/database/normalization/1nf-and-2nf/images",
-    "docs/posting/study/database/normalization/3nf-and-bcnf",
-    "docs/posting/study/database/normalization/1nf-and-2nf",
-    "docs/posting/bloggingtips/mkdocs-obsidian/pros-and-cons.md",
-    "docs/posting/study/data-structure/tree/b-tree/README.md",
-    "docs/posting/study/database/olap/README.md",
-    "docs/posting/bloggingtips/obsidian/custom-callout/README.md",
-    "docs/posting/books/README.md",
-    "docs/posting/study/architecture/cap-theorem/README.md",
-    "docs/posting/bloggingtips/mkdocs-obsidian/todo.md",
-    "docs/posting/bloggingtips/mkdocs/custom-admonition/README.md",
-    "docs/posting/bloggingtips/mkdocs/custom-admonition",
-    "docs/posting/bloggingtips/mkdocs",
-    "docs/posting/bloggingtips/obsidian/file-hide/README.md",
-    "docs/posting/bloggingtips/obsidian/custom-callout/excalidraws/q-bubble.excalidraw.svg",
-    "docs/posting/bloggingtips/obsidian/custom-callout/excalidraws/q-bubble.excalidraw.md",
-    "docs/posting/bloggingtips/obsidian/custom-callout/excalidraws/q-bubble.excalidraw.png",
-    "docs/posting/bloggingtips/obsidian/custom-callout/excalidraws/my-q.excalidraw.svg",
-    "docs/posting/bloggingtips/obsidian/custom-callout/excalidraws/my-q.excalidraw.md",
-    "docs/posting/bloggingtips/obsidian/custom-callout/excalidraws/my-q.excalidraw.png",
-    "docs/posting/bloggingtips/obsidian/custom-callout/excalidraws/Drawing 2023-02-27 13.47.39.excalidraw.png",
+    "docs/posting/bloggingtips/mkdocs-obsidian/kroki-test/README.md",
+    "docs/posting/bloggingtips/mkdocs-obsidian/kroki-test/README.md",
+    "docs/posting/bloggingtips/mkdocs-obsidian/excalidraws/Drawing 2023-02-27 17.10.10.excalidraw.md",
+    "docs/posting/bloggingtips/mkdocs-obsidian/excalidraws/Drawing 2023-02-27 17.10.10.excalidraw.png",
     "docs/README.md",
-    "docs/posting/bloggingtips/obsidian/custom-callout/Callouts.md",
-    "docs/posting/bloggingtips/mkdocs-obsidian/README.md",
-    "docs/posting/study/dev-general/collaborate/aync-communication/README.md",
-    "docs/posting/til/2023-02-26.md",
-    "docs/posting/study/dev-general/uml/README.md",
-    "docs/posting/study/dev-general/license/README.md",
-    "docs/posting/books/springboot-msa-component/excalidraws/batch-server-1.excalidraw.png",
-    "docs/posting/books/springboot-msa-component/excalidraws/batch-server-2.excalidraw.md",
-    "docs/posting/books/springboot-msa-component/excalidraws/batch-server-2.excalidraw.png"
+    "docs/posting/bloggingtips/mkdocs-obsidian/excalidraws",
+    "docs/posting/study/network/layer3/icmp/README.md",
+    "docs/posting/til/README.md",
+    "docs/posting/bloggingtips/mkdocs-obsidian/kroki-test",
+    "docs/pages.ini",
+    "docs/posting/study/dev-general/uml/package-diagram/excalidraws/package-diagram-1.excalidraw.md",
+    "docs/posting/study/dev-general/uml/package-diagram/excalidraws/package-diagram-1.excalidraw.png",
+    "docs/posting/study/pages.ini",
+    "docs/posting/study/os/pages.ini",
+    "docs/posting/study/network/layer7/http-versions/README.md",
+    "docs/posting/study/network/layer7/dns/excalidraws/dns-query.excalidraw.md",
+    "docs/posting/study/network/layer7/dns/excalidraws/dns-query.excalidraw.png",
+    "docs/posting/study/network/layer4/tcp-vs-udp/README.md",
+    "docs/posting/study/network/layer4/tcp-flow-control/README.md",
+    "docs/posting/study/network/layer4/tcp-flow-control/images/sliding-window.png",
+    "docs/posting/study/network/layer4/tcp-congestion-control/README.md",
+    "docs/posting/study/network/layer3/router/excalidraws/routing-process-1.excalidraw.md",
+    "docs/posting/study/network/layer3/router/excalidraws/nat.excalidraw.png",
+    "docs/posting/study/network/layer3/router/excalidraws/nat.excalidraw.md",
+    "docs/posting/study/network/layer3/ip/README.md",
+    "docs/posting/study/network/layer3/ip/images/encapsulation.png",
+    "docs/posting/study/network/layer3/images/host-switch-network.png",
+    "docs/posting/study/network/layer2/pages.ini",
+    "docs/posting/study/network/layer2/arp/excalidraws/what-layer-arp-blongs-to.excalidraw.md",
+    "docs/posting/study/network/layer2/arp/excalidraws/arp-resp.excalidraw.png",
+    "docs/posting/study/network/layer2/arp/excalidraws/arp-resp.excalidraw.md",
+    "docs/posting/study/network/layer2/arp/excalidraws/arp-req.excalidraw.md",
+    "docs/posting/study/network/layer2/arp/excalidraws/arp-req-resp.excalidraw.png",
+    "docs/posting/study/algorithm/sort/quicksort/excalidraws/quicksort.excalidraw.md",
+    "docs/posting/study/algorithm/sort/quicksort/excalidraws/quicksort.excalidraw.png",
+    "docs/posting/study/algorithm/union-find/excalidraws/worst-case.excalidraw.md",
+    "docs/posting/study/algorithm/union-find/excalidraws/union-by-rank.excalidraw.md",
+    "docs/posting/study/algorithm/union-find/excalidraws/graph.excalidraw.md",
+    "docs/posting/study/algorithm/union-find/excalidraws/graph-before.excalidraw.md",
+    "docs/posting/study/algorithm/union-find/excalidraws/graph-after.excalidraw.md",
+    "docs/posting/study/architecture/consistent-hash/README.md",
+    "docs/posting/study/architecture/consistent-hash/excalidraws/hash-ring-1.excalidraw.md",
+    "docs/posting/pages.ini",
+    "docs/posting/study/database/normalization/pages.ini",
+    "docs/posting/study/data-structure/pages.ini",
+    "docs/posting/study/database/normalization/is-what/images"
   ]
 }

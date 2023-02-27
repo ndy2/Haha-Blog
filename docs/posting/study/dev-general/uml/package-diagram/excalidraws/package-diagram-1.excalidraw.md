@@ -28,9 +28,7 @@ domain
 완전한 패키지 이름 ^mxxbMI1G
 
 %%
-
 # Drawing
-
 ```json
 {
 	"type": "excalidraw",
@@ -124,7 +122,7 @@ domain
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 28,
-			"height": 25,
+			"height": 50,
 			"seed": 698995694,
 			"groupIds": [
 				"P9P0q_z4ixuNisfZHaJ_T"
@@ -136,13 +134,13 @@ domain
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 1,
-			"text": "api",
-			"rawText": "api",
-			"baseline": 18,
+			"text": "\napi",
+			"rawText": "\napi",
+			"baseline": 43,
 			"textAlign": "center",
 			"verticalAlign": "middle",
 			"containerId": "yk540Fq_WS6d9Dl-4117A",
-			"originalText": "api"
+			"originalText": "\napi"
 		},
 		{
 			"type": "rectangle",
@@ -525,8 +523,8 @@ domain
 			"y": 2.8013850692050823,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 139,
-			"height": 50,
+			"width": 140,
+			"height": 74,
 			"seed": 924181998,
 			"groupIds": [
 				"1cwDzxKnivB8MteA3oKl5"
@@ -543,13 +541,13 @@ domain
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 1,
-			"text": "domain\n(ch02::member)",
-			"rawText": "domain\n(ch02::member)",
-			"baseline": 43,
+			"text": "domain\n\n(ch02::member)",
+			"rawText": "domain\n\n(ch02::member)",
+			"baseline": 67,
 			"textAlign": "left",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "domain\n(ch02::member)"
+			"originalText": "domain\n\n(ch02::member)"
 		},
 		{
 			"type": "arrow",
@@ -614,7 +612,7 @@ domain
 			"y": -298.27004350222364,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 110,
+			"width": 111,
 			"height": 30,
 			"seed": 550284782,
 			"groupIds": [],
@@ -696,7 +694,7 @@ domain
 			"y": -276.27004350222364,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 110,
+			"width": 111,
 			"height": 30,
 			"seed": 1817730286,
 			"groupIds": [],
@@ -782,7 +780,7 @@ domain
 			"y": -229.4399653772236,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 179,
+			"width": 180,
 			"height": 30,
 			"seed": 1979953010,
 			"groupIds": [],
@@ -836,5 +834,4 @@ domain
 	"files": {}
 }
 ```
-
 %%
