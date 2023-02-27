@@ -44,4 +44,4 @@ obsidian 의 장점은 강력한 plugin 들 입니다. 추후에 하나씩 소�
 
 [Material 테마의 웹사이트](https://squidfunk.github.io/mkdocs-material)와 이를 구축한 [깃헙 사이트](https://github.com/squidfunk/mkdocs-material)를 비교해보면 빠르게 그 동작 방식을 익힐 수 있습니다.
 
-![[../../assets/my-profile.jpeg|렛츠 고!]]
+![[docs/assets/my-profile.jpeg|렛츠 고!]]
