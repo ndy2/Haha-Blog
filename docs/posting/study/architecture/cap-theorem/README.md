@@ -5,7 +5,7 @@ date: 2023-02-09
 ---
  
 > [!quote] 참고 자료
-> * Jung-Haeng Lee - [CAP Theorem, 오해와 진실](http://eincs.com/2013/07/misleading-and-truth-of-cap-theorem
+> * Jung-Haeng Lee - [CAP Theorem, 오해와 진실](http://eincs.com/2013/07/misleading-and-truth-of-cap-theorem)
 >      * 무조건 읽을 것
 > * `『System Design Interview/가상 면접 사례로 배우는 대규모 시스템 설계 기초』` by Alex Xu/ 알렉스 쉬 - [yes24](http://www.yes24.com/Product/Goods/102819435)
 
@@ -13,6 +13,7 @@ date: 2023-02-09
 
 > [!quote] CAP theorem on [wikipedia](https://en.wikipedia.org/wiki/CAP_theorem)
 > In theoretical computer science, the **CAP theorem** states that any distributed data store can provide only two of the following three quarantees 
+> 
 > * Consistency - Every read receives the most recent write or an error
 > * Availability - Every request receives a (non-error) response, without the guarantee that it contains the most recent write.
 > * Partition tolerance - The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.

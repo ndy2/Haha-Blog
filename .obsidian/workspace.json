@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/posting/bloggingtips/mkdocs-obsidian/todo.md",
+                "file": "docs/posting/study/architecture/cap-theorem/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -74,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 387.5110321044922
+    "width": 387.5110321044922,
+    "collapsed": true
   },
   "right": {
     "id": "9d242b20af779459",
@@ -90,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/posting/bloggingtips/mkdocs-obsidian/todo.md",
+                "file": "docs/posting/study/architecture/cap-theorem/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +108,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/posting/bloggingtips/mkdocs-obsidian/todo.md",
+                "file": "docs/posting/study/architecture/cap-theorem/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -130,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/posting/bloggingtips/mkdocs-obsidian/todo.md"
+                "file": "docs/posting/study/architecture/cap-theorem/README.md"
               }
             }
           },
@@ -171,6 +172,7 @@
   },
   "active": "a997530d36eab083",
   "lastOpenFiles": [
+    "docs/posting/bloggingtips/mkdocs-obsidian/todo.md",
     "docs/posting/bloggingtips/mkdocs-obsidian/pros-and-cons.md",
     "docs/posting/bloggingtips/mkdocs/custom-admonition/README.md",
     "docs/posting/bloggingtips/obsidian/custom-callout/README.md",
@@ -195,7 +197,6 @@
     "docs/posting/bloggingtips/mkdocs-obsidian/README.md",
     "docs/posting/bloggingtips/obsidian/custom-callout",
     "docs/posting/bloggingtips/mkdocs-obsidian",
-    "docs/posting/bloggingtips/mkdocs-obsidian/todo.md",
     "docs/posting/study/dev-general/collaborate/aync-communication/README.md",
     "docs/posting/til/2023-02-26.md",
     "docs/posting/study/dev-general/uml/README.md",
