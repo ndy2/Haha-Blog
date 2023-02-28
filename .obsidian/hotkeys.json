@@ -147,5 +147,19 @@
     }
   ],
   "workspace:goto-tab-1": [],
-  "workspace:goto-tab-2": []
+  "workspace:goto-tab-2": [],
+  "app:reload": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "R"
+    },
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "R"
+    }
+  ]
 }
