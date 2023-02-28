@@ -36,3 +36,6 @@ div[data-path='LICENSE'] {display: none;}
 평소에는 잘 보지 않는 폴더 세가지와 라이센스 파일 하나를 기본 화면에서 제거하였다.
 
 ![[images/after.png|깔끔한 file explorer 화면!]]
+
+> [!tip] [Snippet Commands Obsidian Plugin](https://github.com/deathau/snippet-commands-obsidian#snippet-commands-obsidian-plugin)
+>  이 플러그인을 통해 command 혹은 단축키로 간단하게 개별 css snippet 적용을 toggle 할 수 있다.
