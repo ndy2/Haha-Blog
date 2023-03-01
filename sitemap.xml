@@ -746,6 +746,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/spring/boot/externerlized-configuration/</loc>
+         <lastmod>2023-03-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/spring/boot/externerlized-configuration/abstraction-in-spring/</loc>
+         <lastmod>2023-03-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/spring/boot/externerlized-configuration/in-traditional-java/</loc>
+         <lastmod>2023-03-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/spring/security/authorization/</loc>
          <lastmod>2023-03-01</lastmod>
          <changefreq>daily</changefreq>
@@ -1072,6 +1087,11 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-27/</loc>
+         <lastmod>2023-03-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/til/2023-02-28/</loc>
          <lastmod>2023-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
