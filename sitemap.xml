@@ -721,6 +721,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/spring/boot/actuator/</loc>
+         <lastmod>2023-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/spring/boot/auto-configure/auto-configure/</loc>
          <lastmod>2023-03-02</lastmod>
          <changefreq>daily</changefreq>
