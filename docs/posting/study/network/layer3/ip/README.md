@@ -3,17 +3,15 @@ tags: [network, layer3]
 title: IP
 author: ndy2
 ---
-
-@ 참고 자료)
-
-- wikipidia
-	- [Internet Protocol](https://en.wikipedia.org/wiki/Internet_Protocol)
-	- [Internet Protocol version 4](https://en.wikipedia.org/wiki/Internet_Protocol_version_4)
-- 널널한 개발자
-	- [IPv4 주소 체계에 대한 암기사항](https://youtu.be/gOMljj6K2V0)
-- meridianoutpost.com - [Classes of IPv4 Addresses](https://www.meridianoutpost.com/resources/articles/IP-classes.php)
-
----
+ 
+ 
+> [!quote] 참고 자료
+> - wikipidia
+> 	- [Internet Protocol](https://en.wikipedia.org/wiki/Internet_Protocol)
+> 	- [Internet Protocol version 4](https://en.wikipedia.org/wiki/Internet_Protocol_version_4)
+> - 널널한 개발자
+> 	- [IPv4 주소 체계에 대한 암기사항](https://youtu.be/gOMljj6K2V0)
+> - meridianoutpost.com - [Classes of IPv4 Addresses](https://www.meridianoutpost.com/resources/articles/IP-classes.php)
 
 ### 1. IP
 
@@ -32,7 +30,7 @@ IP 에는 `IPv4` 와 `IPv6` 두가지 주요 버전이 있습니다. 그중 현�
 IP, IPv4 에 대한 주요 특징은 다음과 같습니다.
 
 - 32bit 주소체계를 사용한다.
-	- 최대 2^32^개 = 43억 개 존재 가능
+	- 최대 2<sup>32</sup>개 = 43억 개 존재 가능
 - Connectionless
 - 패킷을 분할/병합하는 기능을 수행하기도 한다.
 	- 패킷을 분할 하는 작업은 송신 호스트/라우터 에서 발생하며

@@ -2,22 +2,15 @@
 tags: [network, layer3]
 title: Network Layer, Internet
 author: ndy2
+description: 네트워크 계층, 인터넷에 대해서 알아봅시다!
 ---
-
-@참고 자료)
-
-- cloud flare - [학습센터/네트워크 계층](https://www.cloudflare.com/ko-kr/learning/network-layer/what-is-the-network-layer/)
-- 널널한 개발자 
-    - [Host, Switch, Network 이들의 관계에 대해](https://youtu.be/kGst-VftN1w)
-    - [LAN과 WAN을 구별하는 방법](https://youtu.be/N8pE-vDsJ38)
-- ibm - [네트워크 계층 프로토콜](https://www.ibm.com/docs/ko/aix/7.1?topic=protocols-internet-network-level)
----
-
-### 0. 들어가며
-
-네트워크 계층, 인터넷에 대해서 알아봅시다!
-
----
+  
+> [!quote] 참고 자료
+> - cloud flare - [학습센터/네트워크 계층](https://www.cloudflare.com/ko-kr/learning/network-layer/what-is-the-network-layer/)
+> - 널널한 개발자 
+>     - [Host, Switch, Network 이들의 관계에 대해](https://youtu.be/kGst-VftN1w)
+>     - [LAN과 WAN을 구별하는 방법](https://youtu.be/N8pE-vDsJ38)
+> - ibm - [네트워크 계층 프로토콜](https://www.ibm.com/docs/ko/aix/7.1?topic=protocols-internet-network-level)
 
 ### 1. 네트워크 계층이란? 네트워크란? 인터넷 이란?
 
@@ -125,7 +118,7 @@ author: ndy2
 !!! note "LAN 과 WAN은 어떻게 구분하나요?"
 
     [널널한 개발자 - 널피셜] <br>
-    LAN(Local Area Network)과 WAN(Wide Area Network)은 지역의 크기로 구분되는 것이 아니다. 
+    LAN(Local Area Network)과 WAN(Wide Area Network)은 지역의 크기로 구분되는 것이 아닙니다. 
     
     LAN <br>
     -  물리적인 영역 (OSI - 1계층, 2계층, TCP/IP - Access 계층)에서 설명되는 영역 <br>
@@ -134,10 +127,3 @@ author: ndy2
     
     WAN <br> 
     - 논리적인(가상의) 영역 (OSI - 3 계층(네트워크 계층), TCP - 인터넷 계층 이상) 에서 설명 되는 영역.
-
----
-
-!!! quote "더 자세히 알아볼 키워드 들"
-
-    physical infrastructure - 라우터  
-    network layer protocol - IP/IP address, ICMP
