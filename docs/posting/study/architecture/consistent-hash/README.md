@@ -3,12 +3,10 @@ tags: [architecture]
 title: Consistent Hash
 date: 2023-02-09
 ---
-
-@참고 자료)
-
-- `『System Design Interview/가상 면접 사례로 배우는 대규모 시스템 설계 기초』` by Alex Xu/ 알렉스 쉬 - [yes24](http://www.yes24.com/Product/Goods/102819435)
-    - 5장 안정 해시 설계
----
+ 
+> [!quote] 참고 자료
+> - `『System Design Interview/가상 면접 사례로 배우는 대규모 시스템 설계 기초』` by Alex Xu/ 알렉스 쉬 - [yes24](http://www.yes24.com/Product/Goods/102819435)
+>     - 5장 안정 해시 설계
 
 ### 1. Rehash Problem
 
@@ -41,10 +39,6 @@ serverIndex = hash(key) % N
 
 - `hash space` - `hash function` 의 공역
 - `hash ring` - `hash space` 를 환형으로 이해하는 것
-
-```excalidraws
-
-```
 
 ![[excalidraws/hash-ring-1.excalidraw.png]]
 

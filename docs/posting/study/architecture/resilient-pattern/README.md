@@ -4,23 +4,21 @@ title: Resilient Pattern
 date: 2023-02-23
 ---
 
-@참고 자료)
-
-- UWE FRIEDRICHSEN
-	- https://www.ufried.com/blog/resilience/
-	- https://www.ufried.com/blog/resilience_vs_fault_tolerance/
-	- https://ufried.com/blog/why_resilient_software_design_1/
-- vinsguru 
-	- [Timeout Pattern](https://www.vinsguru.com/timeout-pattern/)
-	- [Retry Pattern](https://www.vinsguru.com/retry-pattern/)
-	- [Circuit Breaker Pattern](https://www.vinsguru.com/circuit-breaker-pattern/)
-	- [Bulkhead Pattern](https://www.vinsguru.com/bulkhead-pattern/)
-	- [Rate Limiter Pattern](https://www.vinsguru.com/rate-limiter-pattern/)
-- ms
-	- https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker
-	- https://learn.microsoft.com/ko-kr/azure/architecture/patterns/bulkhead
-
----
+ 
+> [!quote] 참고 자료
+> - UWE FRIEDRICHSEN
+> 	- https://www.ufried.com/blog/resilience/
+> 	- https://www.ufried.com/blog/resilience_vs_fault_tolerance/
+> 	- https://ufried.com/blog/why_resilient_software_design_1/
+> - vinsguru 
+> 	- [Timeout Pattern](https://www.vinsguru.com/timeout-pattern/)
+> 	- [Retry Pattern](https://www.vinsguru.com/retry-pattern/)
+> 	- [Circuit Breaker Pattern](https://www.vinsguru.com/circuit-breaker-pattern/)
+> 	- [Bulkhead Pattern](https://www.vinsguru.com/bulkhead-pattern/)
+> 	- [Rate Limiter Pattern](https://www.vinsguru.com/rate-limiter-pattern/)
+> - ms
+> 	- https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker
+> 	- https://learn.microsoft.com/ko-kr/azure/architecture/patterns/bulkhead
 
 ### 0. 들어가며
 
