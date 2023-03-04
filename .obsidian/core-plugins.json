@@ -3,13 +3,10 @@
   "global-search",
   "switcher",
   "backlink",
-  "outgoing-link",
   "tag-pane",
   "daily-notes",
   "templates",
-  "note-composer",
   "command-palette",
   "editor-status",
-  "outline",
   "file-recovery"
 ]

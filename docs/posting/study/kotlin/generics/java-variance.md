@@ -3,34 +3,29 @@ tags: [kotlin, generics]
 title: 변성 with Java
 date: 2023-02-18
 ---
-
-!!! quote " 참고 자료 "
-
-    * kotlin documentation - [generics#Variance](https://kotlinlang.org/docs/generics.html#variance)
-    * [`『코틀린 인 액션』`](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바 
-        * 9장 제네릭스
-
-
----
+  
+> [!quote] 참고 자료
+> * [`『코틀린 인 액션』`](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바
+>     * 9 장 제네릭스
+> * kotlin documentation - [genericss#Variance](https://kotlinlang.org/docs/generics.htmls#variance)
 
 ### 1. 변성 <sup>Variance</sup>
 
-- 자바의 가장 어려운 문법 중 하나는 `wildcard types (Foo<*>)` 입니다.
-- kotlin 그 대신 다음 두가지를 가집니다.
+* 자바의 가장 어려운 문법 중 하나는 `wildcard types (Foo<*>)` 입니다.
+* kotlin 그 대신 다음 두가지를 가집니다.
 
 1. 선언 지점 변성 <sup>declaration-site variance</sup>
 2. 타입 프로젝션 <sup>type projections</sup>
 
 이 모든것들은 변성 <sup>Variance</sup> 이라는 개념을 해결하기 위한 도구입니다.
 
-!!! note " 변성 <sup>Variance</sup>"
-
-    * 변성 이란 **제네릭 타입의 계층 관계**를 나타내는 개념
-    * Variance 에는 다음 세 가지 종류가 있다.
-        * `Type A` 가 `Type B` 의 하위 타입 일때, `Foo` 는 타입 파라미터를 한개 가지는 제네릭 클래스 일때 (`Type A` 에 `Integer`, `Type B` 에 `Number`, `Foo` 에 `List` 를 대입해 생각하자)
-        * invariance - `Foo<A>` 와 `Foo<B>` 는 상속 관계가 없다.
-        * covariance - `Foo<A>` 는 `Foo<B>` 의 하위 타입
-        * contravariance - `Foo<A>` 는 `Foo<B>` 의 상위 타입
+> [!note] 변성 <sup>Variance</sup>
+> * 변성 이란 **제네릭 타입의 계층 관계**를 나타내는 개념
+> * Variance 에는 다음 세 가지 종류가 있다.
+> * `Type A` 가 `Type B` 의 하위 타입 일때, `Foo` 는 타입 파라미터를 한개 가지는 제네릭 클래스 일때 (`Type A` 에 `Integer`, `Type B` 에 `Number`, `Foo` 에 `List` 를 대입해 생각하자)
+>     * invariance - `Foo<A>` 와 `Foo<B>` 는 상속 관계가 없다.
+>     * covariance - `Foo<A>` 는 `Foo<B>` 의 하위 타입
+>     * contravariance - `Foo<A>` 는 `Foo<B>` 의 상위 타입
 
 ### 2. Invarinace
 

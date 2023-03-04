@@ -7,7 +7,6 @@ description: >-
   코틀린 1.8.0에 추가된 내용들을 알아보자.
 ---
  
- 
 > [!quote] 참고 자료
 > * kotlin documentation - [What's new in Kotlin 1.8.0](https://kotlinlang.org/docs/whatsnew18.html)
 > * [What's New in Kotlin 1.8.0 - Standard Libray Udates](https://youtu.be/cLyTx5wSPbg) by `『Kotlin by JetBrains』`

@@ -3,36 +3,33 @@ tags: [kotlin, generics]
 title: 변성 in Kotlin
 date: 2023-02-18
 ---
-
-!!! quote " 참고 자료 "
-
-    * kotlin documentation - [generics#Variance](https://kotlinlang.org/docs/generics.html#variance)
-    * [`『코틀린 인 액션』`](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바 
-        * 9장 제네릭스
-
----
+  
+> [!quote] 참고 자료
+> * [`『코틀린 인 액션』`](http://www.yes24.com/Product/Goods/55148593) by 드미트리 제메로프, 스베트라나 이사코바
+>     * 9 장 제네릭스
+> * kotlin documentation - [genericss#Variance](https://kotlinlang.org/docs/generics.htmls#variance)
 
 ### 0. 들어가며
 
-[이전 글](../java-variance) 에서
+[이전 글](java-variance) 에서
 
 1. 변성의 세가지 종류와 적용 조건 (PECS)
 2. 자바에서 extends, super 키워드를 이용해 convariance, contravariance 를 적용 하는 법
 
-을 알아보았다. 
+을 알아보았습니다. 
 
 이제,
 
 1. 코틀린에서 변성을 다루기 위해 사용하는 두가지 `variance annotation` 인 `in`, `out` 변경자
 2. 코틀린의 `declaration-site variance` 와 `type-projection (call-site variance)`
 
-두가지에 대해서 알아보자!
+두가지에 대해서 알아보겠습니다!
 
 ---
 
 ### 1. Declaration-site variance
 
-선언 지점 변성은 자바에는 존재하지 않던 코틀린의 새로운 개념이다. 그 이름과 공식문서의 예제에서 그 모티프를 알 수 있다. 공식문서의 예제를 살펴보자.
+선언 지점 변성은 자바에는 존재하지 않던 코틀린의 새로운 개념입니다. 그 이름과 공식문서의 예제에서 그 모티프를 알 수 있습니다. 공식문서의 예제를 살펴보겠습니다.
 
 `interface Source<T> { T nextT(); }`
 
@@ -44,11 +41,11 @@ void demo(Source<String> strs) {
 }
 ```
 
-당연히 위 코드는 컴파일러에러가 발생한다.
+당연히 위 코드는 컴파일러에러가 발생합니다.
 
-하지만 지난 시간 정리한 *PECS* 와 함께 개념을 다시 생각해보면 `Source<T>` 인터페이스는 `T` 타입의 Producer 이다. 또한 위 코드에서 실제로 String 을 생성 할지라도 사용하는 측 입장에서 Object 를 생성한다고 이해해도 아무 문제가 없다. 
+하지만 지난 시간 정리한 *PECS* 와 함께 개념을 다시 생각해보면 `Source<T>` 인터페이스는 `T` 타입의 Producer 입니다. 또한 위 코드에서 실제로 String 을 생성 할지라도 사용하는 측 입장에서 Object 를 생성한다고 이해해도 아무 문제가 없습니다. 
 
-선언 지점 변성 <sup>declaration-site variance</sup> 은 이러한 모티프에서 도입되었다. 선언 지점 변성을 통해 컴파일러에게 `Source<T>` 는 `T` 타입을 생성만 하고 따라서 `Source<T>` 대신 `Source<Object>` 를 사용해도 문제가 없다는 것을 알려 줄 수 있다. kotlin 에서는 두가지 `variance annotation` - `in`, `out` 변경자를 통해 이를 나타낼 수 있다. 
+선언 지점 변성 <sup>declaration-site variance</sup> 은 이러한 모티프에서 도입되었다. 선언 지점 변성을 통해 컴파일러에게 `Source<T>` 는 `T` 타입을 생성만 하고 따라서 `Source<T>` 대신 `Source<Object>` 를 사용해도 문제가 없다는 것을 알려 줄 수 있다. kotlin 에서는 두가지 `variance annotation` - `in`, `out` 변경자를 통해 이를 나타낼 수 있습니다. 
 
 ```kotlin title="out 변경자의 활용으로 공변성 획득"
 interface Source<out T> { fun nextT(): T } 

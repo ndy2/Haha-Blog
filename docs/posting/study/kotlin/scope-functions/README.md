@@ -1,5 +1,5 @@
 ---
-tags:[kotlin]
+tags: [kotlin]
 title: scope functions
 date: 2023-02-08
 ---
@@ -10,11 +10,6 @@ date: 2023-02-08
 - 자바 개발자를 위한 코틀린 입문 [by 최태현 on Inflearn](https://www.inflearn.com/course/java-to-kotlin/)
 - kotlin documentation - [scope functions](https://kotlinlang.org/docs/scope-functions.htm)
 
----
-
-!!! example
-
-    scope function 을 활용하는 다양한 예시는 만날때 마다 [note](../../../notes/cheetsheets/kotlin/scope-functions) 에 업데이트 할 예정입니다. 여기서는 scope function 의 기술적인 동작 방식과 간단한 활용에 대해서만 다루겠습니다.
 ---
 
 ### 1. Scope Function 이란?
