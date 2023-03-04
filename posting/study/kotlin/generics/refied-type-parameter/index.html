@@ -11,9 +11,9 @@
 <link href="../kotlin-variance/" rel="prev"/>
 <link href="../../hof-and-function-type/" rel="next"/>
 <link href="../../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.15" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.0" name="generator"/>
 <title>실체화된 타입 파라미터 (refied-type-parameter) - Haha 블로그</title>
-<link href="../../../../../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -827,7 +827,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../scope-functions/">
-        Index
+        scope functions
       </a>
 </li>
 <li class="md-nav__item">
@@ -1888,18 +1888,19 @@
         border-radius: 5px;
     }
 </style>
-<p>@참고 자료)</p>
+<div class="admonition quote">
+<p class="admonition-title">참고 자료</p>
 <ul>
-<li><a href="http://www.yes24.com/Product/Goods/55148593"><code>『코틀린 인 액션』</code></a> by 드미트리 제메로프, 스베트라나 이사코바 <ul>
+<li><a href="http://www.yes24.com/Product/Goods/55148593"><code>『코틀린 인 액션』</code></a> by 드미트리 제메로프, 스베트라나 이사코바<ul>
 <li>9 장 제네릭스</li>
 </ul>
 </li>
 <li>kotlin documentation - <a href="https://kotlinlang.org/docs/generics.html#type-erasure">generics#type-ereasure</a></li>
 </ul>
-<hr/>
+</div>
 <h3 id="1-type-erasure">1. 타입 소거 <sup>Type erasure</sup><a class="headerlink" href="#1-type-erasure" title="Permanent link">¶</a></h3>
 <div class="admonition note">
-<p class="admonition-title"> 타입 소거 </p>
+<p class="admonition-title">타입 소거</p>
 <ul>
 <li>제네릭 선언 (제네릭 함수 선언, 제네릭 클래스 선언)에 대한 타입 안정성 검증은 컴파일 타임에 이루어집니다. </li>
 <li>런타임에 제네릭 타입의 인스턴스에는 실제 어떤 타입 아규먼트가 담겨 있는지에 대한 정보가 사라집니다. </li>
@@ -1926,15 +1927,20 @@
 <a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">println</span><span class="p">(</span><span class="n">isA</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">(</span><span class="m">123</span><span class="p">))</span>
 <a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="kc">false</span>
 </code></pre></div>
-<p>인라인 함수의 타입 파라미터는 실체화 되므로 실행 시점에 타입 인자를 알 수 있다.</p>
-<p>intellij 에서 확인 - 너무 똑똑하다.</p>
+<p>인라인 함수의 타입 파라미터는 실체화 되므로 실행 시점에 타입 인자를 알 수 있습니다.</p>
 <p><code>그냥 활용</code></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/5.png"><img alt="images/5.png" src="../images/5.png"/></a></p>
-<p><span class="keys"><kbd class="key-option">Option</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/6.png"><img alt="images/6.png" src="../images/6.png"/></a></p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/5.png"><img alt="images/5.png" src="../images/5.png"/></a>
+</p>
+<figcaption>intellij 에서 확인 - 너무 똑똑하다.</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/6.png"><img alt="images/6.png" src="../images/6.png"/></a>
+</p>
+<figcaption>refied 변경자를 추가하면 타입 실체화가 가능하다</figcaption>
+</figure>
 <p><code>inline 함수 에서만  refied 를 사용할 수 있고 refied 를 사용하지 않으면 여전히 타입 실체화가 되지 않는다.</code></p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/7.png"><img alt="images/7.png" src="../images/7.png"/></a></p>
-<hr/>
 <h3 id="3-refied-type-parameter">3. Refied Type Parameter 와 클래스 참조 예제<a class="headerlink" href="#3-refied-type-parameter" title="Permanent link">¶</a></h3>
 <p>코틀린 타입에 대응하는 <code>java.lang.Class</code> 를 얻기 (<code>::class.java</code>) 위해서 refied type parameter 를 사용하면 좋다!</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">BaseIdEntity</span><span class="o">&lt;</span><span class="n">Id</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">Any</span><span class="o">&gt;</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="n">Id</span><span class="p">)</span><span class="w">  </span>
@@ -1990,7 +1996,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2023</span>
@@ -2050,7 +2056,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+<script src="../../../../../assets/javascripts/bundle.ce72ebac.min.js"></script>
 <script src="../../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

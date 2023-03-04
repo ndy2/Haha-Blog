@@ -11,9 +11,9 @@
 <link href="../operator-overloading/" rel="prev"/>
 <link href="examples/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.15" name="generator"/>
-<title>Index - Haha 블로그</title>
-<link href="../../../../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.0" name="generator"/>
+<title>scope functions - Haha 블로그</title>
+<link href="../../../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -62,7 +62,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Index
+              scope functions
             
           </span>
 </div>
@@ -791,11 +791,11 @@
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Index
+          scope functions
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Index
+        scope functions
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -1925,23 +1925,34 @@
 <a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/tree/main/docs/posting/study/kotlin/scope-functions/README.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>Index</h1>
-<hr/>
-<p>tags:[kotlin]
-title: scope functions
-date: 2023-02-08</p>
-<hr/>
+<h1>scope functions</h1>
+<div class="blogging-tags-grid">
+<a class="blogging-tag" href="https://ndy2.github.io/Haha-Blog/archive/tags#kotlin"><code>#kotlin</code></a>
+</div>
+<style>
+    .md-typeset .blogging-tags-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .md-typeset .blogging-tag {
+        color: var(--md-typeset-color);
+        background-color: var(--md-typeset-code-color);
+    }
+
+    .md-typeset .blogging-tag code {
+        border-radius: 5px;
+    }
+</style>
 <p>@ 참고 자료)</p>
 <ul>
 <li><a href="http://www.yes24.com/Product/Goods/55148593">코틀린 인 액션</a> by 드미트리 제메로프, 스베트라나 이사코바</li>
 <li>자바 개발자를 위한 코틀린 입문 <a href="https://www.inflearn.com/course/java-to-kotlin/">by 최태현 on Inflearn</a></li>
 <li>kotlin documentation - <a href="https://kotlinlang.org/docs/scope-functions.htm">scope functions</a></li>
 </ul>
-<hr/>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>scope function 을 활용하는 다양한 예시는 만날때 마다 <a href="../../../notes/cheetsheets/kotlin/scope-functions">note</a> 에 업데이트 할 예정입니다. 여기서는 scope function 의 기술적인 동작 방식과 간단한 활용에 대해서만 다루겠습니다.</p>
-</div>
 <hr/>
 <h3 id="1-scope-function">1. Scope Function 이란?<a class="headerlink" href="#1-scope-function" title="Permanent link">¶</a></h3>
 <div class="admonition note">
@@ -2081,7 +2092,7 @@ date: 2023-02-08</p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2023</span>
@@ -2141,7 +2152,7 @@ date: 2023-02-08</p>
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.ce72ebac.min.js"></script>
 <script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

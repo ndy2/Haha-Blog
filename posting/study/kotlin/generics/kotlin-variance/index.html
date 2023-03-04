@@ -11,9 +11,9 @@
 <link href="../java-variance/" rel="prev"/>
 <link href="../refied-type-parameter/" rel="next"/>
 <link href="../../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.15" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.0" name="generator"/>
 <title>변성 in Kotlin - Haha 블로그</title>
-<link href="../../../../../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -818,7 +818,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../scope-functions/">
-        Index
+        scope functions
       </a>
 </li>
 <li class="md-nav__item">
@@ -1871,41 +1871,40 @@
     }
 </style>
 <div class="admonition quote">
-<p class="admonition-title"> 참고 자료 </p>
+<p class="admonition-title">참고 자료</p>
 <ul>
-<li>kotlin documentation - <a href="https://kotlinlang.org/docs/generics.html#variance">generics#Variance</a></li>
-<li><a href="http://www.yes24.com/Product/Goods/55148593"><code>『코틀린 인 액션』</code></a> by 드미트리 제메로프, 스베트라나 이사코바 <ul>
-<li>9장 제네릭스</li>
+<li><a href="http://www.yes24.com/Product/Goods/55148593"><code>『코틀린 인 액션』</code></a> by 드미트리 제메로프, 스베트라나 이사코바<ul>
+<li>9 장 제네릭스</li>
 </ul>
 </li>
+<li>kotlin documentation - <a href="https://kotlinlang.org/docs/generics.htmls#variance">genericss#Variance</a></li>
 </ul>
 </div>
-<hr/>
 <h3 id="0">0. 들어가며<a class="headerlink" href="#0" title="Permanent link">¶</a></h3>
-<p><a href="../java-variance">이전 글</a> 에서</p>
+<p><a href="java-variance">이전 글</a> 에서</p>
 <ol>
 <li>변성의 세가지 종류와 적용 조건 (PECS)</li>
 <li>자바에서 extends, super 키워드를 이용해 convariance, contravariance 를 적용 하는 법</li>
 </ol>
-<p>을 알아보았다. </p>
+<p>을 알아보았습니다. </p>
 <p>이제,</p>
 <ol>
 <li>코틀린에서 변성을 다루기 위해 사용하는 두가지 <code>variance annotation</code> 인 <code>in</code>, <code>out</code> 변경자</li>
 <li>코틀린의 <code>declaration-site variance</code> 와 <code>type-projection (call-site variance)</code></li>
 </ol>
-<p>두가지에 대해서 알아보자!</p>
+<p>두가지에 대해서 알아보겠습니다!</p>
 <hr/>
 <h3 id="1-declaration-site-variance">1. Declaration-site variance<a class="headerlink" href="#1-declaration-site-variance" title="Permanent link">¶</a></h3>
-<p>선언 지점 변성은 자바에는 존재하지 않던 코틀린의 새로운 개념이다. 그 이름과 공식문서의 예제에서 그 모티프를 알 수 있다. 공식문서의 예제를 살펴보자.</p>
+<p>선언 지점 변성은 자바에는 존재하지 않던 코틀린의 새로운 개념입니다. 그 이름과 공식문서의 예제에서 그 모티프를 알 수 있습니다. 공식문서의 예제를 살펴보겠습니다.</p>
 <p><code>interface Source&lt;T&gt; { T nextT(); }</code></p>
 <p>java 에서 위 generic interface 를 살펴보자. 선언 지점 변성을 이해하기 위해 필요한 이 인터페이스의 중요한 특징은 타입 파라미터 <code>T</code> 를 메서드의 반환 값에서만 사용하고 메서드의 파라미터에는 포함되지 않는 다는 것이다.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">demo</span><span class="p">(</span><span class="n">Source</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">strs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="n">Source</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">objects</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strs</span><span class="p">;</span><span class="w"> </span><span class="c1">// !!! Not allowed in Java // ...</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">}</span>
 </code></pre></div>
-<p>당연히 위 코드는 컴파일러에러가 발생한다.</p>
-<p>하지만 지난 시간 정리한 <em>PECS</em> 와 함께 개념을 다시 생각해보면 <code>Source&lt;T&gt;</code> 인터페이스는 <code>T</code> 타입의 Producer 이다. 또한 위 코드에서 실제로 String 을 생성 할지라도 사용하는 측 입장에서 Object 를 생성한다고 이해해도 아무 문제가 없다. </p>
-<p>선언 지점 변성 <sup>declaration-site variance</sup> 은 이러한 모티프에서 도입되었다. 선언 지점 변성을 통해 컴파일러에게 <code>Source&lt;T&gt;</code> 는 <code>T</code> 타입을 생성만 하고 따라서 <code>Source&lt;T&gt;</code> 대신 <code>Source&lt;Object&gt;</code> 를 사용해도 문제가 없다는 것을 알려 줄 수 있다. kotlin 에서는 두가지 <code>variance annotation</code> - <code>in</code>, <code>out</code> 변경자를 통해 이를 나타낼 수 있다. </p>
+<p>당연히 위 코드는 컴파일러에러가 발생합니다.</p>
+<p>하지만 지난 시간 정리한 <em>PECS</em> 와 함께 개념을 다시 생각해보면 <code>Source&lt;T&gt;</code> 인터페이스는 <code>T</code> 타입의 Producer 입니다. 또한 위 코드에서 실제로 String 을 생성 할지라도 사용하는 측 입장에서 Object 를 생성한다고 이해해도 아무 문제가 없습니다. </p>
+<p>선언 지점 변성 <sup>declaration-site variance</sup> 은 이러한 모티프에서 도입되었다. 선언 지점 변성을 통해 컴파일러에게 <code>Source&lt;T&gt;</code> 는 <code>T</code> 타입을 생성만 하고 따라서 <code>Source&lt;T&gt;</code> 대신 <code>Source&lt;Object&gt;</code> 를 사용해도 문제가 없다는 것을 알려 줄 수 있다. kotlin 에서는 두가지 <code>variance annotation</code> - <code>in</code>, <code>out</code> 변경자를 통해 이를 나타낼 수 있습니다. </p>
 <div class="highlight"><span class="filename">out 변경자의 활용으로 공변성 획득</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nc">Source</span><span class="o">&lt;</span><span class="k">out</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">nextT</span><span class="p">():</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">demo</span><span class="p">(</span><span class="n">strs</span><span class="p">:</span><span class="w"> </span><span class="n">Source</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
@@ -1943,7 +1942,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 18, 2023</span>
@@ -2003,7 +2002,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+<script src="../../../../../assets/javascripts/bundle.ce72ebac.min.js"></script>
 <script src="../../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
