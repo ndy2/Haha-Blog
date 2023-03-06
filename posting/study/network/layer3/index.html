@@ -5,13 +5,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
+<meta content="네트워크 계층, 인터넷에 대해서 알아봅시다!" name="description"/>
 <meta content="ndy2" name="author"/>
 <link href="https://ndy2.github.io/Haha-Blog/posting/study/network/layer3/" rel="canonical"/>
 <link href="../layer2/arp/" rel="prev"/>
 <link href="icmp/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.0" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.1" name="generator"/>
 <title>Network Layer, Internet - Haha 블로그</title>
 <link href="../../../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
@@ -38,7 +38,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#0">
+<a class="md-skip" href="#1">
           Skip to content
         </a>
 </div>
@@ -408,11 +408,6 @@
       Table of contents
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#0">
-    0. 들어가며
-  </a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1">
     1. 네트워크 계층이란? 네트워크란? 인터넷 이란?
@@ -1670,6 +1665,51 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+          Review
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+          Review
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../review/Untitled/">
+        Untitled
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8_2" id="__nav_2_8_2_label" tabindex="0">
+          Spring developers
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_8_2">
+<span class="md-nav__icon md-icon"></span>
+          Spring developers
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../review/spring-developers/">
+        Youtube - SpringDeveloper
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../review/spring-developers/spring-tips-the-road-to-spring-boot-3-spring-freamwork-6/">
+        Spring Tips 1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -1833,11 +1873,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#0">
-    0. 들어가며
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#1">
     1. 네트워크 계층이란? 네트워크란? 인터넷 이란?
   </a>
@@ -1890,7 +1925,8 @@
         border-radius: 5px;
     }
 </style>
-<p>@참고 자료)</p>
+<div class="admonition quote">
+<p class="admonition-title">참고 자료</p>
 <ul>
 <li>cloud flare - <a href="https://www.cloudflare.com/ko-kr/learning/network-layer/what-is-the-network-layer/">학습센터/네트워크 계층</a></li>
 <li>널널한 개발자 <ul>
@@ -1900,10 +1936,7 @@
 </li>
 <li>ibm - <a href="https://www.ibm.com/docs/ko/aix/7.1?topic=protocols-internet-network-level">네트워크 계층 프로토콜</a></li>
 </ul>
-<hr/>
-<h3 id="0">0. 들어가며<a class="headerlink" href="#0" title="Permanent link">¶</a></h3>
-<p>네트워크 계층, 인터넷에 대해서 알아봅시다!</p>
-<hr/>
+</div>
 <h3 id="1">1. 네트워크 계층이란? 네트워크란? 인터넷 이란?<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">네트워크 계층이란 무엇인가요?</p>
@@ -1992,7 +2025,7 @@ ARP는 IP를 MAC으로 동적으로 변환합니다. LAN (근거리 통신망) �
 <div class="admonition note">
 <p class="admonition-title">LAN 과 WAN은 어떻게 구분하나요?</p>
 <p>[널널한 개발자 - 널피셜] <br/>
-LAN(Local Area Network)과 WAN(Wide Area Network)은 지역의 크기로 구분되는 것이 아니다. </p>
+LAN(Local Area Network)과 WAN(Wide Area Network)은 지역의 크기로 구분되는 것이 아닙니다. </p>
 <p>LAN <br/>
 -  물리적인 영역 (OSI - 1계층, 2계층, TCP/IP - Access 계층)에서 설명되는 영역 <br/>
 - 즉, MAC Address 가 중요한 영역 <br/>
@@ -2001,17 +2034,11 @@ LAN(Local Area Network)과 WAN(Wide Area Network)은 지역의 크기로 구분�
 - 논리적인(가상의) 영역 (OSI - 3 계층(네트워크 계층), TCP - 인터넷 계층 이상) 에서 설명 되는 영역.</p>
 </div>
 <hr/>
-<div class="admonition quote">
-<p class="admonition-title">더 자세히 알아볼 키워드 들</p>
-<p>physical infrastructure - 라우터<br/>
-network layer protocol - IP/IP address, ICMP</p>
-</div>
-<hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
@@ -2071,7 +2098,7 @@ network layer protocol - IP/IP address, ICMP</p>
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../assets/javascripts/bundle.ce72ebac.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.b78d2936.min.js"></script>
 <script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

@@ -11,7 +11,7 @@
 <link href="../ip/" rel="prev"/>
 <link href="nat/" rel="next"/>
 <link href="../../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.0" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.1" name="generator"/>
 <title>Router - Haha 블로그</title>
 <link href="../../../../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
@@ -1665,6 +1665,51 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+          Review
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+          Review
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../review/Untitled/">
+        Untitled
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8_2" id="__nav_2_8_2_label" tabindex="0">
+          Spring developers
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_8_2">
+<span class="md-nav__icon md-icon"></span>
+          Spring developers
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../review/spring-developers/">
+        Youtube - SpringDeveloper
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../review/spring-developers/spring-tips-the-road-to-spring-boot-3-spring-freamwork-6/">
+        Spring Tips 1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -1881,24 +1926,29 @@
         border-radius: 5px;
     }
 </style>
-<p>@ 참고 자료)</p>
+<div class="admonition quote">
+<p class="admonition-title">참고 자료</p>
 <ul>
 <li>비전공개발자 주니 키우기 - <a href="https://youtu.be/aRv1NWdYKfs">그림으로 배우는 네트워크 원리 스터디 영상</a></li>
 <li>baeldung cs - <a href="https://www.baeldung.com/cs/routing-table-entry">routing table entry</a></li>
 <li>geeksforgeeks - <a href="https://www.geeksforgeeks.org/what-is-frame-check-sequence/">what is frame check sequence?</a></li>
 </ul>
-<hr/>
+</div>
 <h3 id="1">1. 라우팅, 라우터란?<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Network Routing - 라우팅이란?</p>
-<p>라우팅은 에트워크에서 경로를 선택하는 프로세스입니다. </p>
-<p>라우팅을 통해 네트워크 통신의 효율성을 높일 수 있습니다.</p>
+<ul>
+<li>라우팅은 에트워크에서 경로를 선택하는 프로세스입니다. </li>
+<li>라우팅을 통해 네트워크 통신의 효율성을 높일 수 있습니다.</li>
+</ul>
 </div>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/routing.png"><img alt="images/routing.png" src="images/routing.png"/></a></p>
 <div class="admonition note">
 <p class="admonition-title">Network Router - 라우터란?</p>
-<p>라우터는 OSI 7계층에서 네트워크 계층에 포함되는 기기입니다. </p>
-<p>논리적으로 분리된 망, 혹은 물리적으로 분리된 망 사이를 지나가야 하는 패킷들에게 경로를 뽑아 자기가 아는 최선의 경로를 찾아낸 뒤 (라우팅, 경로설정) 다른 망으로 패킷을 보내주는 역할 (포워딩, 스위칭) 을 하는 기계입니다. </p>
+<ul>
+<li>라우터는 OSI 7계층에서 네트워크 계층에 포함되는 기기입니다. </li>
+<li>논리적으로 분리된 망, 혹은 물리적으로 분리된 망 사이를 지나가야 하는 패킷들에게 경로를 뽑아 자기가 아는 최선의 경로를 찾아낸 뒤 (라우팅, 경로설정) 다른 망으로 패킷을 보내주는 역할 (포워딩, 스위칭) 을 하는 기계입니다. </li>
+</ul>
 </div>
 <div class="admonition note">
 <p class="admonition-title">라우터의 종류</p>
@@ -1913,13 +1963,13 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">라우팅 테이블이란?</p>
-<p>라우터가 라우팅 테이블을 만드는 방식에 따라 라우팅은 두가지 유형으로 구분 됩니다. 네트워크 관리자가 네트워크 설계나 파라미터를 사전에 분석하여 정적으로 테이블을 구축하는 방식과 런타임에 동적으로 스스로 업데이트 되는 방식입니다. (정적 라우팅 (테이블)과 동적 라우팅 (테이블))</p>
-<p>동적 라우팅 테이블은 현재의 망 상태 및 구성 현황이 반영된 최적의 경로정보들로 항상 갱신하는 방식입니다. 
- 이를 위해 각 라우터들은 다른 라우터와의 라우팅 정보를 교환하는데 이러한 라우팅 정보 교환용 프로토콜을 <strong><em>라우팅 프로토콜</em></strong><sup>Routing</sup> <sup>Protocol</sup> 이라 하며 RIP, IGRP, OSPF, ISIS, BGP 등이 있습니다.</p>
+<p>라우터가 라우팅 테이블을 만드는 방식에 따라 라우팅은 두가지 유형으로 구분 됩니다. 네트워크 관리자가 네트워크 설계나 파라미터를 사전에 분석하여 정적으로 테이블을 구축하는 방식과 런타임에 동적으로 스스로 업데이트 되는 방식입니다. - 정적 라우팅 (테이블)과 동적 라우팅 (테이블)</p>
+<p>동적 라우팅 테이블은 현재의 망 상태 및 구성 현황이 반영된 최적의 경로정보들로 항상 갱신하는 방식입니다. </p>
+<p>이를 위해 각 라우터들은 다른 라우터와의 라우팅 정보를 교환하는데 이러한 라우팅 정보 교환용 프로토콜을 <strong><em>라우팅 프로토콜</em></strong><sup>Routing Protocol</sup> 이라 하며 RIP, IGRP, OSPF, ISIS, BGP 등이 있습니다.</p>
 </div>
 <h3 id="3">3. 라우팅 동작<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="excalidraws/routing-process-1.excalidraw.png"><img alt="excalidraws/routing-process-1.excalidraw.png" src="excalidraws/routing-process-1.excalidraw.png"/></a></p>
-<p>라우팅 과정은 라우터가 패킷을 받으며 시작합니다. 라우터는 라우팅 테이블에 따라 목적지로 보내기 위한 다음 디바이스의 IP 주소 즉, <strong><em>넥스트 홉</em></strong><sup>Next</sup> <sup>Hope</sup> 을 결정합니다.</p>
+<p>라우팅 과정은 라우터가 패킷을 받으며 시작합니다. 라우터는 라우팅 테이블에 따라 목적지로 보내기 위한 다음 디바이스의 IP 주소 즉, <strong><em>넥스트 홉</em></strong><sup>Next Hope</sup> 을 결정합니다.</p>
 <p>라우팅 과정에서 변하는 것은 세가지 입니다.</p>
 <ul>
 <li>이더넷 헤더 (MAC 주소)</li>
@@ -1937,8 +1987,8 @@
 <div class="admonition note">
 <p class="admonition-title">TTL - Time To Live</p>
 <p>TTL 은 IP 헤더의 필드이며 컴퓨터나 네트워크에서 데이터의 유효기간을 나타내기 위한 방법입니다.
-정해지 유효기간이 지나면 패킷을 패키하는 방식으로 패킷이 네트워크에서 무한 순환하는 것을 방지합니다.</p>
-<p>TTL 필드가 0 이 되면 라우터는 해당 패킷을 버립니다. 그리고 송신 호스트에게 <code>ICMP time exceeded</code> 메시지를 보냅니다. 송신 호스트는 ICMP time exceeded 메시지를 수신하면 TTL 을 조정하여 다시 패킷을 전송하고 해당 라우터를 거쳐갔는지 확인합니다.</p>
+정해지 유효기간이 지나면 패킷을 패키하는 방식으로 패킷이 네트워크에서 무한 순환하는 것을 방지합니다.
+TTL 필드가 0 이 되면 라우터는 해당 패킷을 버립니다. 그리고 송신 호스트에게 <code>ICMP time exceeded</code> 메시지를 보냅니다. 송신 호스트는 ICMP time exceeded 메시지를 수신하면 TTL 을 조정하여 다시 패킷을 전송하고 해당 라우터를 거쳐갔는지 확인합니다.</p>
 </div>
 <h3 id="4">4. 라우팅 테이블<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/routing-table.png"><img alt="images/routing-table.png" src="images/routing-table.png"/></a></p>
@@ -1953,7 +2003,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2023</span>
@@ -2013,7 +2063,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../../assets/javascripts/bundle.ce72ebac.min.js"></script>
+<script src="../../../../../assets/javascripts/bundle.b78d2936.min.js"></script>
 <script src="../../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

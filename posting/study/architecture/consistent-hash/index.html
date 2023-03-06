@@ -11,7 +11,7 @@
 <link href="../cap-theorem/" rel="prev"/>
 <link href="../hexagonal-architecture/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.0" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.1" name="generator"/>
 <title>Consistent Hash - Haha 블로그</title>
 <link href="../../../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
@@ -1669,6 +1669,51 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+          Review
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+          Review
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../review/Untitled/">
+        Untitled
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8_2" id="__nav_2_8_2_label" tabindex="0">
+          Spring developers
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_8_2">
+<span class="md-nav__icon md-icon"></span>
+          Spring developers
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../review/spring-developers/">
+        Youtube - SpringDeveloper
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../review/spring-developers/spring-tips-the-road-to-spring-boot-3-spring-freamwork-6/">
+        Spring Tips 1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -1887,14 +1932,15 @@
         border-radius: 5px;
     }
 </style>
-<p>@참고 자료)</p>
+<div class="admonition quote">
+<p class="admonition-title">참고 자료</p>
 <ul>
 <li><code>『System Design Interview/가상 면접 사례로 배우는 대규모 시스템 설계 기초』</code> by Alex Xu/ 알렉스 쉬 - <a href="http://www.yes24.com/Product/Goods/102819435">yes24</a><ul>
 <li>5장 안정 해시 설계</li>
 </ul>
 </li>
 </ul>
-<hr/>
+</div>
 <h3 id="1-rehash-problem">1. Rehash Problem<a class="headerlink" href="#1-rehash-problem" title="Permanent link">¶</a></h3>
 <p>N 개의 서버에 부하를 균등하게 나누는 보편적인 방법은 해시 함수를 이용하는 것이다.</p>
 <div class="highlight"><span class="filename">해시 값에 modulo 를 이용해 서버 인덱스를 얻을 수 있다.</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>serverIndex = hash(key) % N
@@ -1922,8 +1968,6 @@ In contrast, in most traditional hash tables, a chage in the number of array slo
 <li><code>hash space</code> - <code>hash function</code> 의 공역</li>
 <li><code>hash ring</code> - <code>hash space</code> 를 환형으로 이해하는 것</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>
-</code></pre></div>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="excalidraws/hash-ring-1.excalidraw.png"><img alt="excalidraws/hash-ring-1.excalidraw.png" src="excalidraws/hash-ring-1.excalidraw.png"/></a></p>
 <ul>
 <li>Consistent Hash 에서 Key 가 서버를 조회하기 위해서 modulo 연산을 하는 것이 아니라 시계방향으로 탐색을 한다.</li>
@@ -1953,7 +1997,7 @@ In contrast, in most traditional hash tables, a chage in the number of array slo
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2023</span>
@@ -2013,7 +2057,7 @@ In contrast, in most traditional hash tables, a chage in the number of array slo
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../assets/javascripts/bundle.ce72ebac.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.b78d2936.min.js"></script>
 <script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
