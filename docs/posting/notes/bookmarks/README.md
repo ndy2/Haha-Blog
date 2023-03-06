@@ -16,7 +16,7 @@ date: 2023-02-02
 
 ### Interview Questions
 
-- https://github.com/ndy2/backend-interview-question
+- https://github.com/ksundong/backend-interview-question
 - https://github.com/JaeYeopHan/Interview_Question_for_Beginner
 - https://github.com/WeareSoft/tech-interview
 - https://github.com/gyoogle/tech-interview-for-developer
