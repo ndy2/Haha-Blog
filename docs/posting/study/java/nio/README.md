@@ -1,6 +1,6 @@
 ---
-tags: [java]
-title: NIO
+tags: [java, nio]
+title: Java 4에 추가된 NIO (New I/O) 에 대해 알아보자
 author: ndy2
 ---
  
@@ -39,9 +39,7 @@ author: ndy2
 * BIO 의 `read()` 과정
 	* `JVM -> 커널-> 시스템 콜 -> 디스크 컨트롤러 -> DMA가 커널버퍼로 복사 -> JVM 버퍼에 복사`
 
-![[images/bio-read.png]]
-
- 
+![[bio-read.png]]
 
  이때 발생할 수 있는 문제로는 
 

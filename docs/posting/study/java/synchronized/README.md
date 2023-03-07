@@ -38,27 +38,26 @@ public class SynchronizedExchanger {
         return object;
     }
 
-    public synchronized void setObject(Object object) { // (2)
+    public synchronized void setObject(Object object) { // (1)
         this.object = object;
     }
 
-    public Object getObj(){ // (3)
-        synchronized (this){
+    public Object getObj(){ 
+        synchronized (this){ // (2)
             return object;
         }
     }
 
-    public void setObj(Object o) { // (4)
-        synchronized (this) {
+    public void setObj(Object o) { 
+        synchronized (this) { // (2)
             this.object = o;
         }
     }
 }
 ```
 
-(1), (2) - `synchronzied method`
-
-(3), (4) - `synchronized staement`
+1. `synchronzied method`
+2. `synchronized staement`
 
 synchronized 키워드에는 항상 monitor 가 전달되어야 합니다. 위 예시에서 `synchronized` 블락에는 `this` 로 객체 자신을 `모니터 오브젝트` 로 활용 하였습니다. 메서드에 `synchronized` 키워드를 활용한다면 인스턴스 메서드에는 this 가 정적 메서드에는 `Class<?>` 객체가 `모니터 오브젝트` 로 활용됩니다.
 
@@ -70,7 +69,7 @@ synchronized 키워드에는 항상 monitor 가 전달되어야 합니다. 위 �
 
 #### 1. 같은 객체 공유
 
-![[images/synchronized-1.png]]
+![[synchronized-1.png]]
 
 Thread 1 과 Thread 2 가 동일한 SynchronizedExchanger 객체를 공유하는 경우
 
@@ -78,7 +77,7 @@ Thread 1 과 Thread 2 가 동일한 SynchronizedExchanger 객체를 공유하는
 
 #### 2. 서로 다른 객체 활용
 
-![[images/synchronized-2.png]]
+![[synchronized-2.png]]
 
 Thread 1 과 Thread 2 가 각자의 SynchronizedExchanger 객체를 가지는 경우
 
@@ -113,7 +112,7 @@ public class StaticSynchronizedExchanger {
 }
 ```
 
-![[images/synchronized-3.png]]
+![[synchronized-3.png]]
 
 전체 쓰레드에서 한 쓰레드만이 synchronized static 메서드를 호출 할 수 있습니다.
 
@@ -240,7 +239,7 @@ public class SharedMonitorObject {
 
 ### 6. Synchronized 블락과 성능 오버헤드
 
-![[images/synchronized-overhead.png]]
+![[synchronized-overhead.png]]
 
 * 경쟁이 발생하여 쓰레드가 대기하는 상황이 발생한다면 오버헤드가 큽니다.
 * 경쟁이 발생하지 않는다고 해도 Lock 을 획득하고 Release 하는 약간의 오버헤드는 발생하게 됩니다.

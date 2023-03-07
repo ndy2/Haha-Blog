@@ -4,7 +4,6 @@ title: String
 author: ndy2
 ---
  
-
 > [!quote] 참고 자료
 > * baeldung - [java-string-pool](https://www.baeldung.com/java-string-pool)
 > * baeldung - [java-9-compact-string](https://www.baeldung.com/java-9-compact-string)
@@ -45,7 +44,7 @@ String 이 Immutable 함으로써 가질 수 있는 이점은 다음과 같습�
 
 자바의 String Pool 은 String 을 저장하기 위해 마련된 힙 내부에 위치한 특별한 메모리 공간힙니다.
 
-![[images/string-pool.png]]
+![[string-pool.png]]
 
 String 을 생성하는 방식에는 String literal (`""`) 를 활용하는 방식과 생성자 (`new String(..)`) 을 활용하는 방식이 있습니다. `(*)` 이때 항상 literal 을 사용하는 방식을 사용하는것이 좋습니다. 왜냐하면 생성자를 통해 String 을 생성하면 String pool 이 아닌 일반 heap 영역에 메모리가 저장되고 String 이 Immutable 함으로써 가질 수 있는 이점 (thread-safe 등) 을 가질 수 없습니다. 
 
