@@ -29,7 +29,7 @@ class GreetingHttpController {
             throw new IllegalArgumentException("the name must start with a capital letter");
         }
 
-        // (1) !
+        // (1)!
         return new Observation
             .createNotStarted("greetins.name", this.registry)
             .observe(() -> new Greeting("Hello, " + name + "!"));
@@ -40,7 +40,7 @@ class GreetingHttpController {
 
 class ProblemDetailErrorHandlingControllerAdvice {
 
-    // (2) !
+    // (2)!
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ProblemDetail onException(IllegalArgumentException argumentException){
@@ -51,15 +51,14 @@ class ProblemDetailErrorHandlingControllerAdvice {
     }
 }
 
-// (3) !
+// (3)!
 record Greeting(String message){
 }
 
 
 ```
 
-1. Spring boot 3 의 ***Observability API*** 이다.
-   - 참고자료 [@Baeldung](https://www.baeldung.com/spring-boot-3-observability)
+1. Spring boot 3 의 ***Observability API*** 이다. - 참고자료 [@Baeldung](https://www.baeldung.com/spring-boot-3-observability)
 2. Spring boot 3 에 새롭게 추가된 클래스인 [`ProblemDetail`](https://docs.spring.io/spring-framework/docs/6.0.0-M3/javadoc-api/org/springframework/http/ProblemDetail.html) 을 @ExceptionHandling 메서드에서 활용하고 있다.
 3. Java 16에 정식 도입된 `record` 를 DTO 로 활용하고 있다.
 
@@ -75,7 +74,7 @@ ApplicationListener<ApplicationReadyEvent> ready(GreetinsClient gc) {
     }
 }
 
-// (1) !
+// (1)!
 static class GreetingsClientRuntimeHintsRegisterar implements RuntimeHintsRegistrar {
 
     @Override
@@ -97,7 +96,7 @@ GreetinsClient greetinsClient(HttpServiceProxyFactory factory){
     return factory.createClient(GreetinsClient.class)
 }
 
-// (2) !
+// (2)!
 @Bean
 HttpServiceProxyFactory httpServiceProxyFactory(WebClient.Builder builder){
     var wc = builder.baseUrl("http://localhost:8080")
@@ -106,11 +105,13 @@ HttpServiceProxyFactory httpServiceProxyFactory(WebClient.Builder builder){
 }
 
 record Greeting(String message){}
-// (3) !
+// (3)!
 interface GreetingClient {
     @GetExchnage("/greetins/{name}")
     Greeting greeting (@PathVariable String name);
 }
 ```
 
-1. `RestTemplate` 없이 Interface 만으로 요청/응답의 처리를 처리할 수 있다.
+1. TODO
+2. TODO
+3. `RestTemplate` 없이 Interface 만으로 요청/응답의 처리를 처리할 수 있다.
