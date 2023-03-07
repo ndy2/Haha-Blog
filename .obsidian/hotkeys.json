@@ -82,6 +82,13 @@
         "Shift"
       ],
       "key": "C"
+    },
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "C"
     }
   ],
   "switcher:open": [
@@ -134,6 +141,12 @@
     {
       "modifiers": [
         "Alt"
+      ],
+      "key": "Insert"
+    },
+    {
+      "modifiers": [
+        "Mod"
       ],
       "key": "Insert"
     }
