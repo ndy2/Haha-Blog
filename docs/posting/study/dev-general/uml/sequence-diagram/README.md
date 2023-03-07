@@ -13,7 +13,7 @@ date: 2023-02-16
 
 ### 1. Sequence Diagram
 
-![1.png](images/1.png)
+![1.png](docs/posting/study/dev-general/uml/sequence-diagram/images/1.png)
 
 !!! note ""
 

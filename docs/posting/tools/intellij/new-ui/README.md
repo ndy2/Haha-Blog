@@ -18,7 +18,7 @@ description: >-
 > [!warning] 주의!
 > 이때 꼭 check IDE for Early Access 를 Early Access Program 으로 설정해주자.
 
-![[images/1.png]]
+![[docs/posting/tools/intellij/new-ui/images/1.png]]
 
 혹은 JetBrains Toolbox 를 활용해보자.
 

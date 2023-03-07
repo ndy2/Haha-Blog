@@ -12,7 +12,7 @@ date: 2023-02-16
 
 ### 1. Create Self-hosted Runner
 
-![[images/1.png]]
+![[docs/posting/tools/github/actions/self-hosted-runner/images/1.png]]
 
 #### 1. Download
 
