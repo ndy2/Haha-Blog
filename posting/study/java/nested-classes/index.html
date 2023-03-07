@@ -38,6 +38,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1-terminologies">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -640,9 +643,55 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          자바의 여러 중첩 클래스에 대해 알아보자
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         자바의 여러 중첩 클래스에 대해 알아보자
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-terminologies">
+    1. Terminologies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-why-use-nested-classes">
+    2. Why Use Nested Classes?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-inner-classes-">
+    3. Inner Classes - 내부 클래스
+  </a>
+<nav aria-label="3. Inner Classes - 내부 클래스" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-local-classes-">
+    3.1. Local Classes - 지역 클래스
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-anonymous-classes-">
+    3.2 Anonymous Classes - 익명 클래스
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-static-nested-classes">
+    4. Static Nested Classes
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../nio/">
@@ -1827,6 +1876,46 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-terminologies">
+    1. Terminologies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-why-use-nested-classes">
+    2. Why Use Nested Classes?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-inner-classes-">
+    3. Inner Classes - 내부 클래스
+  </a>
+<nav aria-label="3. Inner Classes - 내부 클래스" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-local-classes-">
+    3.1. Local Classes - 지역 클래스
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-anonymous-classes-">
+    3.2 Anonymous Classes - 익명 클래스
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-static-nested-classes">
+    4. Static Nested Classes
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -1863,9 +1952,78 @@
 <p class="admonition-title">참고 자료</p>
 <ul>
 <li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html">Nested Classes</a> on Oracle Documentation</li>
-<li><a href="https://youtu.be/2G41JMLh05U">자바의 내부 클래스는 스프링 빈이 될 수 있을까?</a> by Toby Lee on Youtube</li>
+<li><a href="https://youtu.be/2G41JMLh05U">자바의 내부 클래스는 스프링 빈이 될 수 있을까?</a> by Toby Lee on Youtube<ul>
+<li>중첩 클래스와 스프링에 관한 재미있는 실험 영상입니다.</li>
+</ul>
+</li>
 </ul>
 </div>
+<h3 id="1-terminologies">1. Terminologies<a class="headerlink" href="#1-terminologies" title="Permanent link">¶</a></h3>
+<div class="admonition quote">
+<p class="admonition-title"><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html">Nested Classes</a> on Oracle Documentation</p>
+<ul>
+<li>Java 프로그래밍 언어는 클래스 안에 클래스를 정의 할 수 있습니다.</li>
+<li>그런 클래스는 중첩 클래스 (Nested Class) 라고 부릅니다.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><em><code>static nested classes</code></em> &amp; <em><code>inner (nested) classes</code></em></p>
+<ul>
+<li>중첩 클래스는 non-static 중첩 클래스와 static 중첩 클래스 두가지로 구분됩니다.</li>
+<li>non-static nested class 는 내부 중첩 클래스 (Inner static class) 라고 부릅니다.</li>
+<li>보통 '중첩 (Nested)' 을 생략하고 <code>Static Class</code>, <code>Inner Class</code> 라고 많이 부릅니다.</li>
+<li>
+<p>```java
+  class OuterClass{
+        ...
+        class InnerNestedClass { // (1)!
+            ...
+        }</p>
+<div class="highlight"><pre><span></span><code>static class  StaticNestedClass { // (2)!
+    ...
+}
+</code></pre></div>
+<p>}</p>
+</li>
+</ul>
+<p>```
+  1. 내부 클래스
+  2. static 클래스</p>
+</div>
+<h3 id="2-why-use-nested-classes">2. Why Use Nested Classes?<a class="headerlink" href="#2-why-use-nested-classes" title="Permanent link">¶</a></h3>
+<p>중첩 클래스를 사용하는 이유는 다음과 같습니다.</p>
+<ul>
+<li>클래스를 논리적으로 그루핑 할 수 있다.</li>
+<li>(<code>private</code>, <code>default</code> 접근 제어자와 함께 활용해) 캡슐화를 높인다.</li>
+<li>가독성/유지보수성을 높인다.</li>
+</ul>
+<h3 id="3-inner-classes-">3. Inner Classes - 내부 클래스<a class="headerlink" href="#3-inner-classes-" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">class</span> <span class="nc">OuterClass</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="p">...</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="kd">class</span> <span class="nc">InnerClass</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="p">...</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">}</span>
+</code></pre></div>
+<p>OuterClass 의 바깥에서 InnerClass 의 인스턴스를 생성하기 위해서는 OuterClass 인스턴스와 함께 특별한 문법이 필요합니다.</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">OuterClass</span><span class="w"> </span><span class="n">outerObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OuterClass</span><span class="p">();</span><span class="w"> </span><span class="c1">// 1. OuterClass 인스턴스 생성</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">OuterClass</span><span class="p">.</span><span class="na">InnerClass</span><span class="w"> </span><span class="n">innerObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outerObject</span><span class="p">.</span><span class="na">new</span><span class="w"> </span><span class="nf">InnerClass</span><span class="p">();</span><span class="w"> </span><span class="c1">// (해당 인스턴스).생성자 호출 문법!</span>
+</code></pre></div>
+또한 내부 클래스에서는 외부 클래스의 필드를 참조할 수도, 메서드를 호출할 수도 있습니다.</p>
+<p>Inner Class 에는 지역 클래스(Local Classes)와 익명 클래스(Anonymous Classes) 라는 특별한 종류가 있습니다.</p>
+<h4 id="31-local-classes-">3.1. Local Classes - 지역 클래스<a class="headerlink" href="#31-local-classes-" title="Permanent link">¶</a></h4>
+<p>내부 클래스를 메서드의 바디에 정의한 것을 지역 클래스라고 합니다.</p>
+<h4 id="32-anonymous-classes-">3.2 Anonymous Classes - 익명 클래스<a class="headerlink" href="#32-anonymous-classes-" title="Permanent link">¶</a></h4>
+<p>클래스에 이름을 두지 않고 인스턴스화 한 클래스를 익명 클래스 라고 합니다. 익명 클래스의 단점은 실제 관심있는 코드 구현부에 비해 원 인터페이스를 생성하고 메서드를 오버라이딩 하는 문법자체가 너무 verbose 하다는 것입니다. 자바 8부터 도입된 람다표현식을 통해 추상 메서드가 단하나인 인터페이스 (SAM Interface) 에 대해 이 문제를 해결할 수 있습니다.</p>
+<h3 id="4-static-nested-classes">4. Static Nested Classes<a class="headerlink" href="#4-static-nested-classes" title="Permanent link">¶</a></h3>
+<p>static class 는 사실 위치만 내부에 지정되있지 별도의 top-level class 로 취급되어도 문제없는 녀석들입니다. 당연히 외부 클래스의 필드를 참조할 수도, 메서드를 호출할 수도 없습니다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">class</span> <span class="nc">OuterClass</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="p">...</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StaticClass</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="p">...</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="p">}</span>
+</code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
