@@ -346,11 +346,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/review/Untitled/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/review/spring-developers/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
@@ -412,6 +407,11 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/architecture/msa/msa-pros-cons/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/architecture/observability/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>

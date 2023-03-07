@@ -1012,6 +1012,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../../study/architecture/observability/">
+        Observability
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../../study/architecture/resilient-pattern/">
         Resilient Pattern
       </a>
@@ -1635,28 +1640,11 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
-          Review
+          Spring developers
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="true" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_8">
-<span class="md-nav__icon md-icon"></span>
-          Review
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../Untitled/">
-        Untitled
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_8_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_8_2" id="__nav_2_8_2_label" tabindex="0">
-          Spring developers
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_8_2_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_8_2">
 <span class="md-nav__icon md-icon"></span>
           Spring developers
         </label>
@@ -1695,9 +1683,6 @@
 <a class="md-nav__link" href="#2-client">
     2. Client 애플리케이션
   </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -1940,7 +1925,7 @@
 <a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">"the name must start with a capital letter"</span><span class="p">);</span>
 <a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="p">}</span>
 <a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>
-<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="c1">// (1) !</span>
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="c1">// (1)!</span>
 <a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Observation</span>
 <a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">            </span><span class="p">.</span><span class="na">createNotStarted</span><span class="p">(</span><span class="s">"greetins.name"</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">registry</span><span class="p">)</span>
 <a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">            </span><span class="p">.</span><span class="na">observe</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Greeting</span><span class="p">(</span><span class="s">"Hello, "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"!"</span><span class="p">));</span>
@@ -1951,7 +1936,7 @@
 <a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>
 <a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="kd">class</span> <span class="nc">ProblemDetailErrorHandlingControllerAdvice</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>
-<a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">    </span><span class="c1">// (2) !</span>
+<a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">    </span><span class="c1">// (2)!</span>
 <a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">    </span><span class="nd">@ExceptionHandler</span><span class="p">(</span><span class="n">IllegalArgumentException</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
 <a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">    </span><span class="nd">@ResponseStatus</span><span class="p">(</span><span class="n">HttpStatus</span><span class="p">.</span><span class="na">BAD_REQUEST</span><span class="p">)</span>
 <a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ProblemDetail</span><span class="w"> </span><span class="nf">onException</span><span class="p">(</span><span class="n">IllegalArgumentException</span><span class="w"> </span><span class="n">argumentException</span><span class="p">){</span>
@@ -1962,13 +1947,12 @@
 <a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">    </span><span class="p">}</span>
 <a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="p">}</span>
 <a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a>
-<a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="c1">// (3) !</span>
+<a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="c1">// (3)!</span>
 <a href="#__codelineno-0-36" id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="kd">record</span> <span class="nc">Greeting</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">){</span>
 <a href="#__codelineno-0-37" id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="p">}</span>
 </code></pre></div>
 <ol>
-<li>Spring boot 3 의 <strong><em>Observability API</em></strong> 이다.</li>
-<li>참고자료 <a href="https://www.baeldung.com/spring-boot-3-observability">@Baeldung</a></li>
+<li>Spring boot 3 의 <strong><em>Observability API</em></strong> 이다. - 참고자료 <a href="https://www.baeldung.com/spring-boot-3-observability">@Baeldung</a></li>
 <li>Spring boot 3 에 새롭게 추가된 클래스인 <a href="https://docs.spring.io/spring-framework/docs/6.0.0-M3/javadoc-api/org/springframework/http/ProblemDetail.html"><code>ProblemDetail</code></a> 을 @ExceptionHandling 메서드에서 활용하고 있다.</li>
 <li>Java 16에 정식 도입된 <code>record</code> 를 DTO 로 활용하고 있다.</li>
 </ol>
@@ -1981,7 +1965,7 @@
 <a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="p">}</span>
 <a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="p">}</span>
 <a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>
-<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="c1">// (1) !</span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="c1">// (1)!</span>
 <a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GreetingsClientRuntimeHintsRegisterar</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RuntimeHintsRegistrar</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>
 <a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="nd">@Override</span>
@@ -2003,7 +1987,7 @@
 <a href="#__codelineno-1-28" id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">factory</span><span class="p">.</span><span class="na">createClient</span><span class="p">(</span><span class="n">GreetinsClient</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
 <a href="#__codelineno-1-29" id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="p">}</span>
 <a href="#__codelineno-1-30" id="__codelineno-1-30" name="__codelineno-1-30"></a>
-<a href="#__codelineno-1-31" id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="c1">// (2) !</span>
+<a href="#__codelineno-1-31" id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="c1">// (2)!</span>
 <a href="#__codelineno-1-32" id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="nd">@Bean</span>
 <a href="#__codelineno-1-33" id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="n">HttpServiceProxyFactory</span><span class="w"> </span><span class="nf">httpServiceProxyFactory</span><span class="p">(</span><span class="n">WebClient</span><span class="p">.</span><span class="na">Builder</span><span class="w"> </span><span class="n">builder</span><span class="p">){</span>
 <a href="#__codelineno-1-34" id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="n">wc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="na">baseUrl</span><span class="p">(</span><span class="s">"http://localhost:8080"</span><span class="p">)</span>
@@ -2012,13 +1996,15 @@
 <a href="#__codelineno-1-37" id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="p">}</span>
 <a href="#__codelineno-1-38" id="__codelineno-1-38" name="__codelineno-1-38"></a>
 <a href="#__codelineno-1-39" id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="kd">record</span> <span class="nc">Greeting</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">){}</span>
-<a href="#__codelineno-1-40" id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="c1">// (3) !</span>
+<a href="#__codelineno-1-40" id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="c1">// (3)!</span>
 <a href="#__codelineno-1-41" id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="kd">interface</span> <span class="nc">GreetingClient</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-1-42" id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="w">    </span><span class="nd">@GetExchnage</span><span class="p">(</span><span class="s">"/greetins/{name}"</span><span class="p">)</span>
 <a href="#__codelineno-1-43" id="__codelineno-1-43" name="__codelineno-1-43"></a><span class="w">    </span><span class="n">Greeting</span><span class="w"> </span><span class="nf">greeting</span><span class="w"> </span><span class="p">(</span><span class="nd">@PathVariable</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
 <a href="#__codelineno-1-44" id="__codelineno-1-44" name="__codelineno-1-44"></a><span class="p">}</span>
 </code></pre></div>
 <ol>
+<li>TODO</li>
+<li>TODO</li>
 <li><code>RestTemplate</code> 없이 Interface 만으로 요청/응답의 처리를 처리할 수 있다.</li>
 </ol>
 <hr/>
