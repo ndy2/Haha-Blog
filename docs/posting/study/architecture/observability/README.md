@@ -18,7 +18,7 @@ description: >-
 
 알고 싶은 **Observability** 의 정의는 *제어이론* 이 아니라 소프트웨어 공학/컴퓨터 공학 문야 에서의 Observability 입니다. 다시 검색해보겠습니다.
 
-![[1.png|Google Observability 뜻 검색 결과|400]]
+![[docs/posting/study/architecture/observability/images/1.png|Google Observability 뜻 검색 결과|400]]
 
 구글에 검색하여 포스팅/기사의 요약본을 살펴보면 ==2018년 쯤 등장한 모니터링의 새로운 유행어== 정도되는것 같습니다. 하지만 소프트웨어 분야의 새로운 유행어가 등장할때에는 (e.g. `OOP -> DDD`, `fail tolerant pattern -> resilient pattern` ) 항상 기존의 것을 포함하면서도 확장하며 자기만이 내세우는 어떤 중요한 특징이 있다고 생각합니다. 
 
