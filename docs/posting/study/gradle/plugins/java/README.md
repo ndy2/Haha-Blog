@@ -75,4 +75,4 @@ dependencies {
 
 ### Java Plugin Task Graph
 
-![[1.png]]
+![[docs/posting/study/gradle/plugins/java/images/1.png]]

@@ -3,7 +3,7 @@
 .obsidian/app.json
 .obsidian/appearance.json
 .obsidian/workspace.json
-.obsidian/plugins/*
+.obsidian/plugins/*.js
 .DS_Store
 __pycache__/*
 *.pyc
