@@ -3,12 +3,8 @@
 .obsidian/app.json
 .obsidian/appearance.json
 .obsidian/workspace.json
-.obsidian/plugins/*
-!.obsidian/plugins/obsidian-excalidraw-plugin/data.json
-!.obsidian/plugins/obsidian-git/data.json
-!.obsidian/plugins/obsidian-linter/data.json
-!.obsidian/plugins/obsidian-paste-image-rename/data.json
-!.obsidian/plugins/obsidian-wrap-with-shortcuts/data.json
+.obsidian/plugins/*/*
+!.obsidian/plugins/*/data.json
 .DS_Store
 __pycache__/*
 *.pyc
