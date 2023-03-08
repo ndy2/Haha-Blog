@@ -11,5 +11,8 @@
   "mermaid-tools",
   "image-captions",
   "obsidian-linter",
+  "obsidian-outliner",
+  "obsidian-link-converter",
+  "obsidian-emoji-toolbar",
   "snippet-commands-obsidian"
 ]

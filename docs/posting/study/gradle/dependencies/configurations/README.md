@@ -9,6 +9,4 @@ description: >-
  
  
 > [!quote] 참고 자료
-> * [declaring-dependencies#what are dependency-configuration](https://docs.gradle.org/current/userguide/declaring_dependencies.html#sec:what-are-dependency-configurations) on gradle documentation
-
-
+> * [`『declaring-dependencies#what are dependency-configuration』`](https://docs.gradle.org/current/userguide/declaring_dependencies.html#sec:what-are-dependency-configurations) on gradle documentation
