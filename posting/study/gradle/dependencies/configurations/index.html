@@ -7,20 +7,20 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다!" name="description"/>
 <meta content="ndy2" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/posting/tools/gradle/" rel="canonical"/>
-<link href="../github/project/" rel="prev"/>
-<link href="plugins/java/" rel="next"/>
-<link href="../../../assets/favicon.ico" rel="icon"/>
+<link href="https://ndy2.github.io/Haha-Blog/posting/study/gradle/dependencies/configurations/" rel="canonical"/>
+<link href="../../" rel="prev"/>
+<link href="../../plugins/java/" rel="next"/>
+<link href="../../../../../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.1" name="generator"/>
-<title>Gradle - Haha 블로그</title>
-<link href="../../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<title>gradle 의존성 설정이란? - Haha 블로그</title>
+<link href="../../../../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../assets/stylesheets/obsidian-rich-links.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<link href="../../../../../assets/stylesheets/obsidian-rich-links.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -31,22 +31,19 @@
                 body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
                 body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+                </style><script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#what-is-gradle">
-          Skip to content
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Haha 블로그" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Haha 블로그">
+<a aria-label="Haha 블로그" class="md-header__button md-logo" data-md-component="logo" href="../../../../.." title="Haha 블로그">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -62,7 +59,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Gradle
+              gradle 의존성 설정이란?
             
           </span>
 </div>
@@ -125,17 +122,17 @@
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../..">
+<a class="md-tabs__link" href="../../../../..">
       안녕하세요!
     </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../til/">
+<a class="md-tabs__link md-tabs__link--active" href="../../../../til/">
         Posting
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../archive/">
+<a class="md-tabs__link" href="../../../../../archive/">
         Archive
       </a>
 </li>
@@ -149,7 +146,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Haha 블로그" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Haha 블로그">
+<a aria-label="Haha 블로그" class="md-nav__button md-logo" data-md-component="logo" href="../../../../.." title="Haha 블로그">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
     Haha 블로그
@@ -166,7 +163,7 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
+<a class="md-nav__link" href="../../../../..">
         안녕하세요!
       </a>
 </li>
@@ -195,20 +192,20 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../til/">
+<a class="md-nav__link" href="../../../../til/">
         Today I Learned
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
           Study
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_2">
 <span class="md-nav__icon md-icon"></span>
           Study
@@ -227,12 +224,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/os/process-vs-thread/">
+<a class="md-nav__link" href="../../../os/process-vs-thread/">
         Process vs Thread
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/os/deadlock/">
+<a class="md-nav__link" href="../../../os/deadlock/">
         Deadlock
       </a>
 </li>
@@ -249,12 +246,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/os/memory-management/virtual-memory-1/">
+<a class="md-nav__link" href="../../../os/memory-management/virtual-memory-1/">
         Virtual Memory 1
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/os/memory-management/virtual-memory-2/">
+<a class="md-nav__link" href="../../../os/memory-management/virtual-memory-2/">
         Virtual Memory 2
       </a>
 </li>
@@ -277,32 +274,32 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/basic-terminologies/">
+<a class="md-nav__link" href="../../../database/basic-terminologies/">
         Basic Terminologies
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/clustering-replication-sharding/">
+<a class="md-nav__link" href="../../../database/clustering-replication-sharding/">
         Clustering Replication Sharding
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/db-index/">
+<a class="md-nav__link" href="../../../database/db-index/">
         Index
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/dbcp/">
+<a class="md-nav__link" href="../../../database/dbcp/">
         Database Connection Pool
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/join/">
+<a class="md-nav__link" href="../../../database/join/">
         Join
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/mysql-execution-plan/">
+<a class="md-nav__link" href="../../../database/mysql-execution-plan/">
         Mysql Excution Plan
       </a>
 </li>
@@ -319,27 +316,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/normalization/anomaly/">
+<a class="md-nav__link" href="../../../database/normalization/anomaly/">
         Anomaly
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/normalization/fd/">
+<a class="md-nav__link" href="../../../database/normalization/fd/">
         Functional Dependency
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/normalization/is-what/">
+<a class="md-nav__link" href="../../../database/normalization/is-what/">
         What is Normalization
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/normalization/1nf-and-2nf/">
+<a class="md-nav__link" href="../../../database/normalization/1nf-and-2nf/">
         1NF &amp; 2NF
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/normalization/3nf-and-bcnf/db-normalization-3nf-bcnf/">
+<a class="md-nav__link" href="../../../database/normalization/3nf-and-bcnf/db-normalization-3nf-bcnf/">
         3NF &amp; BCNF
       </a>
 </li>
@@ -347,17 +344,17 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/olap/">
+<a class="md-nav__link" href="../../../database/olap/">
         OLAP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/rdb/">
+<a class="md-nav__link" href="../../../database/rdb/">
         Relational DB
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/database/transaction-acid/">
+<a class="md-nav__link" href="../../../database/transaction-acid/">
         Transaction
       </a>
 </li>
@@ -377,7 +374,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/network/layer2/arp/">
+<a class="md-nav__link" href="../../../network/layer2/arp/">
         ARP
       </a>
 </li>
@@ -394,17 +391,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/network/layer3/">
+<a class="md-nav__link" href="../../../network/layer3/">
         Network Layer, Internet
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/network/layer3/icmp/">
+<a class="md-nav__link" href="../../../network/layer3/icmp/">
         ICMP
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/network/layer3/ip/">
+<a class="md-nav__link" href="../../../network/layer3/ip/">
         IP
       </a>
 </li>
@@ -421,12 +418,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/network/layer3/router/">
+<a class="md-nav__link" href="../../../network/layer3/router/">
         Router
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/network/layer3/router/nat/">
+<a class="md-nav__link" href="../../../network/layer3/router/nat/">
         NAT
       </a>
 </li>
@@ -449,17 +446,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/network/layer4/tcp-congestion-control/">
+<a class="md-nav__link" href="../../../network/layer4/tcp-congestion-control/">
         TCP Congestion Control
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/network/layer4/tcp-flow-control/">
+<a class="md-nav__link" href="../../../network/layer4/tcp-flow-control/">
         TCP flow control
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/network/layer4/tcp-vs-udp/">
+<a class="md-nav__link" href="../../../network/layer4/tcp-vs-udp/">
         TCP vs UDP
       </a>
 </li>
@@ -479,17 +476,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/network/layer7/dns/">
+<a class="md-nav__link" href="../../../network/layer7/dns/">
         DNS
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/network/layer7/http-versions/">
+<a class="md-nav__link" href="../../../network/layer7/http-versions/">
         HTTP Versions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/network/layer7/https/">
+<a class="md-nav__link" href="../../../network/layer7/https/">
         HTTPS
       </a>
 </li>
@@ -524,17 +521,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/algorithm/sort/n-square/">
+<a class="md-nav__link" href="../../../algorithm/sort/n-square/">
         O(n^2) 정렬 알고리즘
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/algorithm/sort/merge-sort/">
+<a class="md-nav__link" href="../../../algorithm/sort/merge-sort/">
         병합 정렬(Merge sort)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/algorithm/sort/quicksort/">
+<a class="md-nav__link" href="../../../algorithm/sort/quicksort/">
         퀵 소트 (Quicksort)
       </a>
 </li>
@@ -554,12 +551,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/algorithm/union-find/">
+<a class="md-nav__link" href="../../../algorithm/union-find/">
         유니온 파인드 (Union-Find)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/algorithm/union-find/union-by-rank/">
+<a class="md-nav__link" href="../../../algorithm/union-find/union-by-rank/">
         union by rank
       </a>
 </li>
@@ -582,7 +579,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/data-structure/adt/">
+<a class="md-nav__link" href="../../../data-structure/adt/">
         ADT
       </a>
 </li>
@@ -599,27 +596,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/data-structure/tree/b-tree/">
+<a class="md-nav__link" href="../../../data-structure/tree/b-tree/">
         B-tree 특징과 삽입 연산
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/data-structure/tree/binary-indexed-tree/">
+<a class="md-nav__link" href="../../../data-structure/tree/binary-indexed-tree/">
         Binary-Indexed-Tree
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/data-structure/tree/heap/">
+<a class="md-nav__link" href="../../../data-structure/tree/heap/">
         힙 (Heap)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/data-structure/tree/segment-tree/">
+<a class="md-nav__link" href="../../../data-structure/tree/segment-tree/">
         Segment Tree
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/data-structure/tree/trie/">
+<a class="md-nav__link" href="../../../data-structure/tree/trie/">
         Trie
       </a>
 </li>
@@ -642,12 +639,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/java/nested-classes/">
+<a class="md-nav__link" href="../../../java/nested-classes/">
         자바의 여러 중첩 클래스에 대해 알아보자
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/java/nio/">
+<a class="md-nav__link" href="../../../java/nio/">
         Java 4에 추가된 NIO (New I/O) 에 대해 알아보자
       </a>
 </li>
@@ -664,12 +661,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/java/sort/arrays/">
+<a class="md-nav__link" href="../../../java/sort/arrays/">
         Arrays.sort
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/java/sort/collections/">
+<a class="md-nav__link" href="../../../java/sort/collections/">
         Collections.sort
       </a>
 </li>
@@ -677,17 +674,17 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/java/string/">
+<a class="md-nav__link" href="../../../java/string/">
         String
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/java/synchronized/">
+<a class="md-nav__link" href="../../../java/synchronized/">
         synchronized
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/java/time/">
+<a class="md-nav__link" href="../../../java/time/">
         Date-Time Overview
       </a>
 </li>
@@ -707,22 +704,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/">
+<a class="md-nav__link" href="../../../kotlin/">
         Introduction
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/1.8.0/">
+<a class="md-nav__link" href="../../../kotlin/1.8.0/">
         Kotlin 1.8.0
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/delegation/">
+<a class="md-nav__link" href="../../../kotlin/delegation/">
         위임 (Delegation)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/delegation-properties/">
+<a class="md-nav__link" href="../../../kotlin/delegation-properties/">
         위임 프로퍼티 (delegated properties)
       </a>
 </li>
@@ -739,22 +736,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/generics/basic/">
+<a class="md-nav__link" href="../../../kotlin/generics/basic/">
         제네릭스 (generics) 기초
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/generics/java-variance/">
+<a class="md-nav__link" href="../../../kotlin/generics/java-variance/">
         변성 with Java
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/generics/kotlin-variance/">
+<a class="md-nav__link" href="../../../kotlin/generics/kotlin-variance/">
         변성 in Kotlin
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/generics/refied-type-parameter/">
+<a class="md-nav__link" href="../../../kotlin/generics/refied-type-parameter/">
         실체화된 타입 파라미터 (refied-type-parameter)
       </a>
 </li>
@@ -762,27 +759,27 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/hof-and-function-type/">
+<a class="md-nav__link" href="../../../kotlin/hof-and-function-type/">
         고차 함수 (Higher-Order-Function)와 함수 타입 (Function Type)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/inline-function/">
+<a class="md-nav__link" href="../../../kotlin/inline-function/">
         inline 함수
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/lambda/variable-capturing/">
+<a class="md-nav__link" href="../../../kotlin/lambda/variable-capturing/">
         변수 캡쳐링
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/object-keyword/">
+<a class="md-nav__link" href="../../../kotlin/object-keyword/">
         object 키워드 활용
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/operator-overloading/">
+<a class="md-nav__link" href="../../../kotlin/operator-overloading/">
         연산자 오버로딩
       </a>
 </li>
@@ -799,12 +796,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/scope-functions/">
+<a class="md-nav__link" href="../../../kotlin/scope-functions/">
         scope functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/scope-functions/examples/">
+<a class="md-nav__link" href="../../../kotlin/scope-functions/examples/">
         Scope Function 활용 예시
       </a>
 </li>
@@ -812,7 +809,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/kotlin/tips/">
+<a class="md-nav__link" href="../../../kotlin/tips/">
         꿀팁 모음
       </a>
 </li>
@@ -844,12 +841,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/boot/3.0/observability/">
+<a class="md-nav__link" href="../../../spring/boot/3.0/observability/">
         Observability 와 Spring Boot 3
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/boot/actuator/">
+<a class="md-nav__link" href="../../../spring/boot/actuator/">
         actuator
       </a>
 </li>
@@ -866,27 +863,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/boot/auto-configure/auto-configure/">
+<a class="md-nav__link" href="../../../spring/boot/auto-configure/auto-configure/">
         스프링 부트의 자동 설정 동작 원리
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/boot/auto-configure/bean-role/">
+<a class="md-nav__link" href="../../../spring/boot/auto-configure/bean-role/">
         빈 오브젝트의 역할과 구분
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/boot/auto-configure/configuration-proxybeanmethods/">
+<a class="md-nav__link" href="../../../spring/boot/auto-configure/configuration-proxybeanmethods/">
         Configuration과 proxyBeanmethods
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/boot/auto-configure/how-to-analysis/">
+<a class="md-nav__link" href="../../../spring/boot/auto-configure/how-to-analysis/">
         자동 구성 분석 방법
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/boot/auto-configure/meta-annotations-composed-annotation/">
+<a class="md-nav__link" href="../../../spring/boot/auto-configure/meta-annotations-composed-annotation/">
         자동 구성 기반 애플리케이션
       </a>
 </li>
@@ -906,17 +903,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/boot/externerlized-configuration/">
+<a class="md-nav__link" href="../../../spring/boot/externerlized-configuration/">
         외부 설정값 관리
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/boot/externerlized-configuration/abstraction-in-spring/">
+<a class="md-nav__link" href="../../../spring/boot/externerlized-configuration/abstraction-in-spring/">
         스프링의 외부 설정 추상화
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/boot/externerlized-configuration/in-traditional-java/">
+<a class="md-nav__link" href="../../../spring/boot/externerlized-configuration/in-traditional-java/">
         전통적인 자바의 외부 설정 처리 방식
       </a>
 </li>
@@ -939,22 +936,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/security/authorization/">
+<a class="md-nav__link" href="../../../spring/security/authorization/">
         인가 프로세스 업데이트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/security/authorization/authorization-architecture/">
+<a class="md-nav__link" href="../../../spring/security/authorization/authorization-architecture/">
         Authorization Architecture
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/security/authorization/http-req-authorization-conf/">
+<a class="md-nav__link" href="../../../spring/security/authorization/http-req-authorization-conf/">
         Http 요청 인가 설정
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/security/authorization/http-req-authorization-proc/">
+<a class="md-nav__link" href="../../../spring/security/authorization/http-req-authorization-proc/">
         Http 요청 인가 프로세스
       </a>
 </li>
@@ -962,79 +959,60 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/spring/websocket/auto-configure/">
+<a class="md-nav__link" href="../../../spring/websocket/auto-configure/">
         웹 소켓 자동 설정
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_9" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_9" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
-          Architecture
+          Gradle
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_9_label" class="md-nav" data-md-level="3">
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_9_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_9">
 <span class="md-nav__icon md-icon"></span>
-          Architecture
+          Gradle
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/architecture/cap-theorem/">
-        CAP Theorem
+<a class="md-nav__link" href="../../">
+        Gradle
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../study/architecture/consistent-hash/">
-        Consistent Hash
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../study/architecture/hexagonal-architecture/">
-        Hexagonal Architecture
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+        gradle 의존성 설정이란?
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_9_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_9_4" id="__nav_2_2_9_4_label" tabindex="0">
-          Load balancing
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_9_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_9_3" id="__nav_2_2_9_3_label" tabindex="0">
+          Java
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_9_4_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_9_4">
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_9_3_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_9_3">
 <span class="md-nav__icon md-icon"></span>
-          Load balancing
+          Java
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/architecture/load-balancing/">
-        Load Balancing
+<a class="md-nav__link" href="../../plugins/java/">
+        gradle java plugin
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/architecture/load-balancing/l4-lb-vs-l7-lb/">
-        L4 LB vs L7 LB
+<a class="md-nav__link" href="../../plugins/java/dependency-configurations/">
+        gradle java plugin 이 추가하는 Gradle 의 의존성 설정에 대해 알아보자.
       </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../study/architecture/msa/msa-pros-cons/">
-        MSA 장단점
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../study/architecture/observability/">
-        Observability
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../study/architecture/resilient-pattern/">
-        Resilient Pattern
-      </a>
 </li>
 </ul>
 </nav>
@@ -1042,23 +1020,68 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2_10" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2_10" id="__nav_2_2_10_label" tabindex="0">
-          Web
+          Architecture
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_2_2_10_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_10">
 <span class="md-nav__icon md-icon"></span>
-          Web
+          Architecture
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/web/cookie-session-token/">
-        Cookie, Session and Token
+<a class="md-nav__link" href="../../../architecture/cap-theorem/">
+        CAP Theorem
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/web/websocket/bookmarks/">
-        참고 링크
+<a class="md-nav__link" href="../../../architecture/consistent-hash/">
+        Consistent Hash
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/hexagonal-architecture/">
+        Hexagonal Architecture
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_10_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_10_4" id="__nav_2_2_10_4_label" tabindex="0">
+          Load balancing
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_10_4_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_10_4">
+<span class="md-nav__icon md-icon"></span>
+          Load balancing
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/load-balancing/">
+        Load Balancing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/load-balancing/l4-lb-vs-l7-lb/">
+        L4 LB vs L7 LB
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/msa/msa-pros-cons/">
+        MSA 장단점
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/observability/">
+        Observability
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/resilient-pattern/">
+        Resilient Pattern
       </a>
 </li>
 </ul>
@@ -1067,54 +1090,79 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2_11" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2_11" id="__nav_2_2_11_label" tabindex="0">
-          Dev general
+          Web
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_2_2_11_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_11">
 <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/cookie-session-token/">
+        Cookie, Session and Token
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../web/websocket/bookmarks/">
+        참고 링크
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_12" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_12" id="__nav_2_2_12_label" tabindex="0">
+          Dev general
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_12_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_12">
+<span class="md-nav__icon md-icon"></span>
           Dev general
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/dev-general/collaborate/aync-communication/">
+<a class="md-nav__link" href="../../../dev-general/collaborate/aync-communication/">
         비동기적 커뮤니케이션
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/dev-general/license/">
+<a class="md-nav__link" href="../../../dev-general/license/">
         Open-Source License
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_11_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_11_3" id="__nav_2_2_11_3_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_12_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_12_3" id="__nav_2_2_12_3_label" tabindex="0">
           Uml
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_11_3_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_11_3">
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_12_3_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_12_3">
 <span class="md-nav__icon md-icon"></span>
           Uml
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/dev-general/uml/">
+<a class="md-nav__link" href="../../../dev-general/uml/">
         UML 시작
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/dev-general/uml/class-diagram/">
+<a class="md-nav__link" href="../../../dev-general/uml/class-diagram/">
         클래스 다이어그램
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/dev-general/uml/package-diagram/">
+<a class="md-nav__link" href="../../../dev-general/uml/package-diagram/">
         패키지 다이어그램
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../study/dev-general/uml/sequence-diagram/">
+<a class="md-nav__link" href="../../../dev-general/uml/sequence-diagram/">
         시퀀스 다이어그램
       </a>
 </li>
@@ -1140,12 +1188,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/">
+<a class="md-nav__link" href="../../../../books/">
         Study with Books
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/clean-agile/">
+<a class="md-nav__link" href="../../../../books/clean-agile/">
         Clean Agile
       </a>
 </li>
@@ -1162,142 +1210,142 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/">
         Index
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch01-msa/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch01-msa/">
         Ch01 msa
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch02-framework-and-springboot/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch02-framework-and-springboot/">
         Ch02 framework and springboot
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch03-springboot-basic/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch03-springboot-basic/">
         Ch03 springboot basic
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch04-sec01-http/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch04-sec01-http/">
         Ch04 sec01 http
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
         Ch04 sec02 servlet and mvc
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch04-spring-web-mvc-basic/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch04-spring-web-mvc-basic/">
         Ch04 spring web mvc basic
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
         Ch05 spring web mvc with restapi
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch06-build-web-application-server/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-build-web-application-server/">
         Ch06 build web application server
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
         ch06 sec00 @EnableXXX and bean modulerlize
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
         Ch06 sec01 webapplication configure mechanism
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
         Ch06 sec03 dispatcher servlet
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch07-sec01-spring-aop/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch07-sec01-spring-aop/">
         Ch07 sec01 spring aop
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch07-sec03-autoconfiguration/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch07-sec03-autoconfiguration/">
         Ch07 sec03 autoconfiguration
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
         Ch07 spring aop and test and autoconfiguration
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch08-data-persistence/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-data-persistence/">
         Ch08 data persistence
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
         Ch08 sec01 jpa pros and cons
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
         ch08 sec07 warning on @Transactional
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
         Ch08 sec08 entitymanager and persistence context
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch08-sec11-osiv/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch08-sec11-osiv/">
         Ch08 sec11 osiv
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch09-application-integration-restapi/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch09-application-integration-restapi/">
         Ch09 application integration restapi
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch09-sec01-resttemplate/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch09-sec01-resttemplate/">
         Ch09 sec01 resttemplate
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch09-sec02-webclient/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch09-sec02-webclient/">
         Ch09 sec02 webclient
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch10-sec01-redis-high-availability/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec01-redis-high-availability/">
         Ch10 sec01 redis high availability
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch10-sec01-redis-introduction/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec01-redis-introduction/">
         Ch10 sec01 redis introduction
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch10-sec04-redis-serializer/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec04-redis-serializer/">
         Ch10 sec04 redis serializer
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch10-sec05-redis-usages/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch10-sec05-redis-usages/">
         Ch10 sec05 redis usages
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch11-sec03-batch-architecture/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch11-sec03-batch-architecture/">
         Ch11 sec03 batch architecture
       </a>
 </li>
@@ -1314,32 +1362,32 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch12-spring-event/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/">
         Index
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch12-spring-event/sec01-introduction/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec01-introduction/">
         Sec01 introduction
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch12-spring-event/sec02-old-style/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec02-old-style/">
         Sec02 old style
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch12-spring-event/sec03-new-style/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec03-new-style/">
         Sec03 new style
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch12-spring-event/sec04-async-event/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec04-async-event/">
         Sec04 async event
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../books/springboot-msa-component/ch12-spring-event/sec05-spring-event/">
+<a class="md-nav__link" href="../../../../books/springboot-msa-component/ch12-spring-event/sec05-spring-event/">
         Sec05 spring event
       </a>
 </li>
@@ -1365,12 +1413,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../projects/common/on-startup/">
+<a class="md-nav__link" href="../../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../projects/kakaotalk-clone-coding/">
+<a class="md-nav__link" href="../../../../projects/kakaotalk-clone-coding/">
         카카오톡 클론 코딩
       </a>
 </li>
@@ -1390,7 +1438,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../bloggingtips/mkdocs/custom-admonition/">
+<a class="md-nav__link" href="../../../../bloggingtips/mkdocs/custom-admonition/">
         Custom Admonition
       </a>
 </li>
@@ -1407,17 +1455,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../bloggingtips/mkdocs-obsidian/">
+<a class="md-nav__link" href="../../../../bloggingtips/mkdocs-obsidian/">
         들어가기
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../bloggingtips/mkdocs-obsidian/pros-and-cons/">
+<a class="md-nav__link" href="../../../../bloggingtips/mkdocs-obsidian/pros-and-cons/">
         장 단점
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../bloggingtips/mkdocs-obsidian/todo/">
+<a class="md-nav__link" href="../../../../bloggingtips/mkdocs-obsidian/todo/">
         TODO
       </a>
 </li>
@@ -1434,17 +1482,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../bloggingtips/mkdocs-obsidian/kroki-test/">
+<a class="md-nav__link" href="../../../../bloggingtips/mkdocs-obsidian/kroki-test/">
         Index
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../bloggingtips/mkdocs-obsidian/kroki-test/test1/">
+<a class="md-nav__link" href="../../../../bloggingtips/mkdocs-obsidian/kroki-test/test1/">
         Test1
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../bloggingtips/mkdocs-obsidian/kroki-test/test2/">
+<a class="md-nav__link" href="../../../../bloggingtips/mkdocs-obsidian/kroki-test/test2/">
         Test2
       </a>
 </li>
@@ -1467,12 +1515,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../bloggingtips/obsidian/custom-callout/">
+<a class="md-nav__link" href="../../../../bloggingtips/obsidian/custom-callout/">
         Custom Callout
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../bloggingtips/obsidian/file-hide/">
+<a class="md-nav__link" href="../../../../bloggingtips/obsidian/file-hide/">
         File hide with snippet
       </a>
 </li>
@@ -1482,13 +1530,13 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
           Tools
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_6">
 <span class="md-nav__icon md-icon"></span>
           Tools
@@ -1507,12 +1555,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../git/clone/">
+<a class="md-nav__link" href="../../../../tools/git/clone/">
         git clone
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../git/rebase/">
+<a class="md-nav__link" href="../../../../tools/git/rebase/">
         git rebase
       </a>
 </li>
@@ -1532,105 +1580,48 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../github/actions/self-hosted-runner/">
+<a class="md-nav__link" href="../../../../tools/github/actions/self-hosted-runner/">
         self-hosted runners
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../github/pages/">
+<a class="md-nav__link" href="../../../../tools/github/pages/">
         깃헙 페이지 지원 깃헙 액션 워크플로우
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../github/project/">
+<a class="md-nav__link" href="../../../../tools/github/project/">
         프로젝트를 이용한 이슈 관리 및 PR 연동 흐름
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_6_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_6_3" id="__nav_2_6_3_label" tabindex="0">
-          Gradle
+          Intellij
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_6_3_label" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_3_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_6_3">
 <span class="md-nav__icon md-icon"></span>
-          Gradle
+          Intellij
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Gradle
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-        Gradle
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../tools/intellij/new-ui/">
+        intellij New UI 적용
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#what-is-gradle">
-    What is Gradle?
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#why-use-gradle">
-    Why Use Gradle?
-  </a>
+<a class="md-nav__link" href="../../../../tools/intellij/style/">
+        인텔리제이 코드 스타일/포멧팅
+      </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#key-concepts">
-    Key Concepts
-  </a>
-<nav aria-label="Key Concepts" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-buildgradle">
-    1. build.gradle
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-tasks">
-    2. Tasks
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-wrapper">
-    3. Wrapper
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#gradle">
-    Gradle 설치 확인
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#simple-gradle-project-structure">
-    Simple Gradle Project Structure
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#gradle_1">
-    Gradle 프로젝트 시작하기
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="plugins/java/">
-        gradle java plugin
+<a class="md-nav__link" href="../../../../tools/intellij/tasks-server-and-commit-push/">
+        인텔리제이 tasks server 추가 및 활용
       </a>
 </li>
 </ul>
@@ -1639,57 +1630,27 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_6_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_6_4" id="__nav_2_6_4_label" tabindex="0">
-          Intellij
+          Kafka
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_2_6_4_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_6_4">
 <span class="md-nav__icon md-icon"></span>
-          Intellij
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../intellij/new-ui/">
-        intellij New UI 적용
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../intellij/style/">
-        인텔리제이 코드 스타일/포멧팅
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../intellij/tasks-server-and-commit-push/">
-        인텔리제이 tasks server 추가 및 활용
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_6_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_6_5" id="__nav_2_6_5_label" tabindex="0">
-          Kafka
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_6_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_6_5">
-<span class="md-nav__icon md-icon"></span>
           Kafka
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../kafka/install/">
+<a class="md-nav__link" href="../../../../tools/kafka/install/">
         설치
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../kafka/troubleshooting/">
+<a class="md-nav__link" href="../../../../tools/kafka/troubleshooting/">
         문제 해결
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../kafka/use/">
+<a class="md-nav__link" href="../../../../tools/kafka/use/">
         사용
       </a>
 </li>
@@ -1697,7 +1658,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../mac/activity-monitor/kill-process/">
+<a class="md-nav__link" href="../../../../tools/mac/activity-monitor/kill-process/">
         활동매니저 - 프로세스 강제 종료
       </a>
 </li>
@@ -1729,7 +1690,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../notes/bookmarks/">
+<a class="md-nav__link" href="../../../../notes/bookmarks/">
         북마크
       </a>
 </li>
@@ -1752,12 +1713,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../review/spring-developers/">
+<a class="md-nav__link" href="../../../../review/spring-developers/">
         Youtube - SpringDeveloper
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../review/spring-developers/spring-tips-the-road-to-spring-boot-3-spring-freamwork-6/">
+<a class="md-nav__link" href="../../../../review/spring-developers/spring-tips-the-road-to-spring-boot-3-spring-freamwork-6/">
         Spring Tips 1
       </a>
 </li>
@@ -1780,7 +1741,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/">
+<a class="md-nav__link" href="../../../../../archive/">
         모든 포스팅 모음
       </a>
 </li>
@@ -1797,92 +1758,92 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/">
+<a class="md-nav__link" href="../../../../../archive/categories/">
         카테고리별 포스팅 모음
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/algorithm/">
+<a class="md-nav__link" href="../../../../../archive/categories/algorithm/">
         알고리즘
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/architecture/">
+<a class="md-nav__link" href="../../../../../archive/categories/architecture/">
         아키텍쳐
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/avalon-chat/">
+<a class="md-nav__link" href="../../../../../archive/categories/avalon-chat/">
         아발론 챗
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/blog/">
+<a class="md-nav__link" href="../../../../../archive/categories/blog/">
         블로그, mkdocs 와 obsidian
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/books/">
+<a class="md-nav__link" href="../../../../../archive/categories/books/">
         개발 프로젝트 공통
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/collaborate/">
+<a class="md-nav__link" href="../../../../../archive/categories/collaborate/">
         협업
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/data-structure/">
+<a class="md-nav__link" href="../../../../../archive/categories/data-structure/">
         자료구조
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/database/">
+<a class="md-nav__link" href="../../../../../archive/categories/database/">
         데이터베이스
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/java/">
+<a class="md-nav__link" href="../../../../../archive/categories/java/">
         Java
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/kotlin/">
+<a class="md-nav__link" href="../../../../../archive/categories/kotlin/">
         kotlin
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/network/">
+<a class="md-nav__link" href="../../../../../archive/categories/network/">
         네트워크
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/os/">
+<a class="md-nav__link" href="../../../../../archive/categories/os/">
         운영체제
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/project/">
+<a class="md-nav__link" href="../../../../../archive/categories/project/">
         개발 프로젝트 공통
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/spring/">
+<a class="md-nav__link" href="../../../../../archive/categories/spring/">
         스프링
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/til/">
+<a class="md-nav__link" href="../../../../../archive/categories/til/">
         Today I Learned
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/uml/">
+<a class="md-nav__link" href="../../../../../archive/categories/uml/">
         UML
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/categories/web/">
+<a class="md-nav__link" href="../../../../../archive/categories/web/">
         웹 개발
       </a>
 </li>
@@ -1902,7 +1863,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../archive/tags/">
+<a class="md-nav__link" href="../../../../../archive/tags/">
         태그별 포스팅 모음
       </a>
 </li>
@@ -1921,73 +1882,17 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#what-is-gradle">
-    What is Gradle?
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#why-use-gradle">
-    Why Use Gradle?
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#key-concepts">
-    Key Concepts
-  </a>
-<nav aria-label="Key Concepts" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-buildgradle">
-    1. build.gradle
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-tasks">
-    2. Tasks
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-wrapper">
-    3. Wrapper
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#gradle">
-    Gradle 설치 확인
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#simple-gradle-project-structure">
-    Simple Gradle Project Structure
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#gradle_1">
-    Gradle 프로젝트 시작하기
-  </a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/tree/main/docs/posting/tools/gradle/README.md" title="View source of this page">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/tree/main/docs/posting/study/gradle/dependencies/configurations/README.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>Gradle</h1>
+<h1>gradle 의존성 설정이란?</h1>
 <div class="blogging-tags-grid">
-<a class="blogging-tag" href="https://ndy2.github.io/Haha-Blog/archive/tags#build"><code>#build</code></a>
 <a class="blogging-tag" href="https://ndy2.github.io/Haha-Blog/archive/tags#gradle"><code>#gradle</code></a>
 </div>
 <style>
@@ -2011,164 +1916,9 @@
 <div class="admonition quote">
 <p class="admonition-title">참고 자료</p>
 <ul>
-<li>https://learn.tomgregory.com/courses/get-going-with-gradle</li>
+<li><a href="https://docs.gradle.org/current/userguide/declaring_dependencies.html#sec:what-are-dependency-configurations">declaring-dependencies#what are dependency-configuration</a> on gradle documentation</li>
 </ul>
 </div>
-<h3 id="what-is-gradle">What is Gradle?<a class="headerlink" href="#what-is-gradle" title="Permanent link">¶</a></h3>
-<ul>
-<li>build automation tool<ul>
-<li>takes your code and packages it into deployable unit</li>
-<li>applies to small or large project</li>
-</ul>
-</li>
-<li>written in the Groovy language</li>
-<li>highly configurable</li>
-</ul>
-<h3 id="why-use-gradle">Why Use Gradle?<a class="headerlink" href="#why-use-gradle" title="Permanent link">¶</a></h3>
-<ul>
-<li>makes building &amp; running easy</li>
-<li>no need to install<ul>
-<li>Gradle wrapper comes bundled with project</li>
-<li>just <code>./gradlew build</code></li>
-</ul>
-</li>
-<li>very concise</li>
-</ul>
-<h3 id="key-concepts">Key Concepts<a class="headerlink" href="#key-concepts" title="Permanent link">¶</a></h3>
-<h4 id="1-buildgradle">1. <code>build.gradle</code><a class="headerlink" href="#1-buildgradle" title="Permanent link">¶</a></h4>
-<ul>
-<li><code>build.gradle</code> is the Bradle build script file<ul>
-<li>written in a Groovy DSL</li>
-<li>= Maven's <code>pom.xml</code></li>
-<li>nomarlly lives in top level of the project</li>
-</ul>
-</li>
-</ul>
-<div class="highlight"><span class="filename">super simple build.gradle</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">puglins</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="c1">// (1)!</span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="s1">'java'</span><span class="w"> </span><span class="c1">// (2)!</span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="o">}</span>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">group</span><span class="w"> </span><span class="s1">'org.example'</span><span class="w">  </span><span class="c1">// (3)!</span>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">version</span><span class="w"> </span><span class="s1">'1.0-SNAPSHOT'</span>
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">repositories</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="c1">// (4)!</span>
-<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="n">mavenCentral</span><span class="o">()</span>
-<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="o">}</span>
-<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>
-<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="c1">// (5)!</span>
-<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="n">testCompile</span><span class="w"> </span><span class="nl">group:</span><span class="w"> </span><span class="s1">'junit'</span><span class="o">,</span><span class="w"> </span><span class="nl">name:</span><span class="w"> </span><span class="s1">'junit'</span><span class="o">,</span><span class="w"> </span><span class="nl">version:</span><span class="w"> </span><span class="s1">'4.12'</span>
-<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="o">}</span>
-</code></pre></div>
-<ol>
-<li>plugins - additional build functionality</li>
-<li>plugin <code>java</code> - 자바 코드를 compile, test 할 수 있도록 한다.</li>
-<li>build metadata - information about your build</li>
-<li>repositories - where to find dependencies</li>
-<li>dependencies - requirements for building your code</li>
-</ol>
-<h4 id="2-tasks">2. Tasks<a class="headerlink" href="#2-tasks" title="Permanent link">¶</a></h4>
-<ul>
-<li>defines a unit of work</li>
-<li>invoked from the command line<ul>
-<li><code>./gradlew build</code></li>
-</ul>
-</li>
-<li>see all available tasks - <code>./gradlew tasks</code></li>
-<li>can create your own custom tasks</li>
-<li>tasks have dependencies on other tasks</li>
-<li>creates a tasks graph</li>
-</ul>
-<h4 id="3-wrapper">3. Wrapper<a class="headerlink" href="#3-wrapper" title="Permanent link">¶</a></h4>
-<ul>
-<li>script used to invoke Gradle and run tasks<ul>
-<li>🍎<code>./gradlew build</code></li>
-<li><span class="keys"><kbd class="key-windows">Win</kbd></span> <code>gradlew.bat build</code></li>
-</ul>
-</li>
-<li>git 등의 version control 에 항상 포함해야한다.</li>
-</ul>
-<h3 id="gradle">Gradle 설치 확인<a class="headerlink" href="#gradle" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>C:\Users\1&gt;gradle --version
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>Welcome to Gradle 8.0.2!
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>Here are the highlights of this release:
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a> - Improvements to the Kotlin DSL
-<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a> - Fine-grained parallelism from the first build with configuration cache
-<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a> - Configurable Gradle user home cache cleanup
-<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>
-<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>For more details see https://docs.gradle.org/8.0.2/release-notes.html
-<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>
-<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>
-<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a>------------------------------------------------------------
-<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a>Gradle 8.0.2
-<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a>------------------------------------------------------------
-<a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a>
-<a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a>Build time:   2023-03-03 16:41:37 UTC
-<a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a>Revision:     7d6581558e226a580d91d399f7dfb9e3095c2b1d
-<a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a>
-<a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a>Kotlin:       1.8.10
-<a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a>Groovy:       3.0.13
-<a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a>Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
-<a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a>JVM:          17.0.5 (Oracle Corporation 17.0.5+9-LTS-191)
-<a href="#__codelineno-1-24" id="__codelineno-1-24" name="__codelineno-1-24"></a>OS:           Windows 10 10.0 amd64
-</code></pre></div>
-<h3 id="simple-gradle-project-structure">Simple Gradle Project Structure<a class="headerlink" href="#simple-gradle-project-structure" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>.
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>├── build.gradle
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>├── gradle
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>│   └─wrapper
-<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>|      └──gradle-wrapper.jar
-<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>|      └──gradle-wrapper.properties
-<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>|── gradlew
-<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>|── gradlew.bat
-<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>└── settings.gradle
-</code></pre></div>
-<p>위의 모든 파일은 git 에 포함되어야 한다. <code>.gradle</code> 은 포함되면 안된다.</p>
-<h3 id="gradle_1">Gradle 프로젝트 시작하기<a class="headerlink" href="#gradle_1" title="Permanent link">¶</a></h3>
-<ul>
-<li><code>gradle init</code></li>
-</ul>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>C:\Users\1\Desktop\gradle-basic&gt;gradle init
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>Select type of project to generate:
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>  1: basic
-<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>  2: application
-<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>  3: library
-<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>  4: Gradle plugin
-<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>Select build script DSL:
-<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>  1: Groovy
-<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>  2: Kotlin---&gt; 0% EXECUTING [7s]
-<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>Enter selection (default: Groovy) [1..2] 1
-<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>
-<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no]
-<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>
-<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>Project name (default: gradle-basic):
-<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>
-<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a>&gt; Task :init
-<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a>Get more help with your project: Learn more about Gradle by exploring our samples at https://docs.gradle.org/8.0.2/samples
-<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a>
-<a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a>BUILD SUCCESSFUL in 50s
-<a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a>2 actionable tasks: 2 executed
-</code></pre></div>
-<div class="highlight"><span class="filename">기본 build.gradle</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cm">/*</span>
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="cm"> * This file was generated by the Gradle 'init' task.</span>
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="cm"> *</span>
-<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="cm"> * This is a general purpose Gradle build.</span>
-<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="cm"> * Learn more about Gradle by exploring our samples at https://docs.gradle.org/8.0.2/samples</span>
-<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="cm"> */</span>
-</code></pre></div>
-<div class="highlight"><span class="filename">기본 settings.gradle</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cm">/*</span>
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="cm"> * This file was generated by the Gradle 'init' task.</span>
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="cm"> *</span>
-<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="cm"> * The settings file is used to specify which projects to include in your build.</span>
-<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="cm"> *</span>
-<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="cm"> * Detailed information about configuring a multi-project build in Gradle can be found</span>
-<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="cm"> * in the user manual at https://docs.gradle.org/8.0.2/userguide/multi_project_builds.html</span>
-<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="cm"> */</span>
-<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>
-<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="n">rootProject</span><span class="o">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'gradle-basic'</span>
-</code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
@@ -2186,7 +1936,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 프로젝트를 이용한 이슈 관리 및 PR 연동 흐름" class="md-footer__link md-footer__link--prev" href="../github/project/" rel="prev">
+<a aria-label="Previous: Gradle" class="md-footer__link md-footer__link--prev" href="../../" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -2195,11 +1945,11 @@
 <span class="md-footer__direction">
                   Previous
                 </span>
-                프로젝트를 이용한 이슈 관리 및 PR 연동 흐름
+                Gradle
               </div>
 </div>
 </a>
-<a aria-label="Next: gradle java plugin" class="md-footer__link md-footer__link--next" href="plugins/java/" rel="next">
+<a aria-label="Next: gradle java plugin" class="md-footer__link md-footer__link--next" href="../../plugins/java/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
@@ -2233,9 +1983,9 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.b78d2936.min.js"></script>
-<script src="../../../js/mkdocs-charts-plugin.js"></script>
+<script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../../../assets/javascripts/bundle.b78d2936.min.js"></script>
+<script src="../../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>

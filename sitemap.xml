@@ -551,6 +551,26 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/gradle/</loc>
+         <lastmod>2023-03-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/gradle/dependencies/configurations/</loc>
+         <lastmod>2023-03-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/gradle/plugins/java/</loc>
+         <lastmod>2023-03-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/gradle/plugins/java/dependency-configurations/</loc>
+         <lastmod>2023-03-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/java/nested-classes/</loc>
          <lastmod>2023-03-08</lastmod>
          <changefreq>daily</changefreq>
@@ -1157,16 +1177,6 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/tools/github/project/</loc>
-         <lastmod>2023-03-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/tools/gradle/</loc>
-         <lastmod>2023-03-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/tools/gradle/plugins/java/</loc>
          <lastmod>2023-03-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
