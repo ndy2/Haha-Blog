@@ -38,7 +38,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#1">
+<a class="md-skip" href="#gradle">
           Skip to content
         </a>
 </div>
@@ -986,19 +986,14 @@
         Gradle
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../dependencies/configurations/">
-        gradle 의존성 설정이란?
-      </a>
-</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_9_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_9_3" id="__nav_2_2_9_3_label" tabindex="0">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_9_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_9_2" id="__nav_2_2_9_2_label" tabindex="0">
           Java
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_2_9_3_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_9_3">
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_9_2_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_9_2">
 <span class="md-nav__icon md-icon"></span>
           Java
         </label>
@@ -1024,8 +1019,47 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1.
+<a class="md-nav__link" href="#gradle">
+    Gradle 의존성 설정
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java-plugin">
+    Java Plugin 의 의존성 설정
+  </a>
+<nav aria-label="Java Plugin 의 의존성 설정" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    implementation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#compileonly-annotationprocessor">
+    compileOnly &amp; annotationProcessor
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#runtimeonly">
+    runtimeOnly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#testimplementation">
+    testImplementation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#testcompileonly-testannotationprocessor">
+    testCompileOnly &amp; testAnnotationProcessor
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java-library-plugin">
+    Java-Library Plugin
   </a>
 </li>
 </ul>
@@ -1908,8 +1942,47 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1.
+<a class="md-nav__link" href="#gradle">
+    Gradle 의존성 설정
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java-plugin">
+    Java Plugin 의 의존성 설정
+  </a>
+<nav aria-label="Java Plugin 의 의존성 설정" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    implementation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#compileonly-annotationprocessor">
+    compileOnly &amp; annotationProcessor
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#runtimeonly">
+    runtimeOnly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#testimplementation">
+    testImplementation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#testcompileonly-testannotationprocessor">
+    testCompileOnly &amp; testAnnotationProcessor
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java-library-plugin">
+    Java-Library Plugin
   </a>
 </li>
 </ul>
@@ -1949,10 +2022,87 @@
 <div class="admonition quote">
 <p class="admonition-title">참고 자료</p>
 <ul>
-<li><a href="https://docs.gradle.org/current/userguide/java_plugin.html#tab:configurations">Java plugin#configurations</a> on gradle documentation</li>
+<li><a href="https://docs.gradle.org/current/userguide/declaring_dependencies.html#sec:what-are-dependency-configurations"><code>『declaring-dependencies#what are dependency-configuration』</code></a> on gradle documentation</li>
+<li><a href="https://docs.gradle.org/current/userguide/java_plugin.html#tab:configurations"><code>『Java plugin#configurations』</code></a> on gradle documentation</li>
 </ul>
 </div>
-<h3 id="1">1.<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
+<h3 id="gradle">Gradle 의존성 설정<a class="headerlink" href="#gradle" title="Permanent link">¶</a></h3>
+<p>Gradle 의 모든 의존성은 특정한 scope 에 적용됩니다. 이러한 scope 는 기본적으로 이용하능한 것들도 있고 plugin 에 정의되어 있기도 하며 직접 커스텀할 수도 있습니다.</p>
+<h3 id="java-plugin">Java Plugin 의 의존성 설정<a class="headerlink" href="#java-plugin" title="Permanent link">¶</a></h3>
+<p>Java plugin 에 정의되어 있는 의존성 설정 중 자주 활용되는 녀석들에 대해서 알아보겠습니다.</p>
+<h4 id="implementation"><code>implementation</code><a class="headerlink" href="#implementation" title="Permanent link">¶</a></h4>
+<ul>
+<li>Implementation only dependencies.</li>
+<li>This is where you declare dependencies which are purely internal and not meant to be exposed to consumers (they are still exposed to consumers at runtime).</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">     </span><span class="n">implementation</span><span class="w"> </span><span class="s1">'org.springframework.boot:spring-boot-starter-data-jpa'</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">     </span><span class="n">implementation</span><span class="w"> </span><span class="s1">'org.apache.commons:commons-lang3'</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="o">}</span>
+</code></pre></div>
+<h4 id="compileonly-annotationprocessor"><code>compileOnly</code> &amp; <code>annotationProcessor</code><a class="headerlink" href="#compileonly-annotationprocessor" title="Permanent link">¶</a></h4>
+<ul>
+<li>Compile time only dependencies, not used at runtime.<ul>
+<li>This is where you declare dependencies which are required at compile time, but not at runtime. This typically includes dependencies which are shaded when found at runtime.</li>
+</ul>
+</li>
+<li>Annotation processors used during compilation.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">     </span><span class="n">compileOnly</span><span class="w"> </span><span class="s1">'org.projectlombok:lombok'</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">     </span><span class="n">annotationProcessor</span><span class="w"> </span><span class="s1">'org.projectlombok:lombok'</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="o">}</span>
+</code></pre></div>
+<h4 id="runtimeonly"><code>runtimeOnly</code><a class="headerlink" href="#runtimeonly" title="Permanent link">¶</a></h4>
+<ul>
+<li>Runtime only dependencies.<ul>
+<li>This is where you declare dependencies which are only required at runtime, and not at compile time.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="n">runtimeOnly</span><span class="w"> </span><span class="s1">'com.h2database:h2'</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="o">}</span>
+</code></pre></div>
+<h4 id="testimplementation"><code>testImplementation</code><a class="headerlink" href="#testimplementation" title="Permanent link">¶</a></h4>
+<ul>
+<li>Implementation only dependencies for tests.<ul>
+<li>This is where you declare dependencies which are used to compile tests.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="n">testImplementation</span><span class="o">(</span><span class="s1">'org.springframework.boot:spring-boot-starter-test'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">            </span><span class="n">exclude</span><span class="w"> </span><span class="nl">group:</span><span class="w"> </span><span class="s1">'junit'</span><span class="w"> </span><span class="c1">// excluding junit 4</span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="o">}</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="n">testImplementation</span><span class="w"> </span><span class="s1">'org.springframework.security:spring-security-test'</span>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="n">testImplementation</span><span class="w"> </span><span class="s1">'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.0'</span>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="n">testImplementation</span><span class="w"> </span><span class="s1">'com.tngtech.archunit:archunit:0.23.1'</span>
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="n">testImplementation</span><span class="w"> </span><span class="s1">'com.navercorp.fixturemonkey:fixture-monkey-starter:0.3.5'</span>
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="o">}</span>
+</code></pre></div>
+<h4 id="testcompileonly-testannotationprocessor"><code>testCompileOnly</code> &amp; <code>testAnnotationProcessor</code><a class="headerlink" href="#testcompileonly-testannotationprocessor" title="Permanent link">¶</a></h4>
+<ul>
+<li>Additional dependencies only for compiling tests, not used at runtime.<ul>
+<li>This is where you declare dependencies which are only required at test compile time, but should not leak into the runtime. This typically includes dependencies which are shaded when found at runtime.</li>
+</ul>
+</li>
+<li>Annotation processors used during compilation on tests</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">     </span><span class="n">testCompileOnly</span><span class="w"> </span><span class="s1">'org.projectlombok:lombok:1.18.12'</span><span class="w"> </span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">     </span><span class="n">testAnnotationProcessor</span><span class="w"> </span><span class="s1">'org.projectlombok:lombok:1.18.12'</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="o">}</span>
+</code></pre></div>
+<h3 id="java-library-plugin">Java-Library Plugin<a class="headerlink" href="#java-library-plugin" title="Permanent link">¶</a></h3>
+<p>자바 라이브러리 플러그인은 자바 플러그인을 확장한 플러그인으로서 <code>api</code> 라고 하는 추가적인 의존성 설정을 가지고 있습니다. </p>
+<ul>
+<li><code>api</code> - 내부 의존성을 컴파일 타임, 런타임에 모두 노출함<ul>
+<li>This is where you declare dependencies which are transitively exported to consumers, for compile time and runtime.</li>
+</ul>
+</li>
+<li><code>implementation</code> - 내부 의존성을 런타임에만 노출함함</li>
+</ul>
 <hr/>
 <div class="md-source-file">
 <small>
