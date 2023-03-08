@@ -97,6 +97,12 @@
         "Alt"
       ],
       "key": "E"
+    },
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "E"
     }
   ],
   "obsidian-git:open-diff-view": [
@@ -174,5 +180,6 @@
       ],
       "key": "R"
     }
-  ]
+  ],
+  "markdown:toggle-preview": []
 }
