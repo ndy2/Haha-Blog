@@ -13,7 +13,7 @@ description: >-
 
 ### 1. Date-Time 패키지
 
-![[1.png|400]]
+![[docs/posting/study/java/time/images/1.png|400]]
 
 - `java.time`
 	- ISO-8601 를 따르는 달력 시스템을 표현하는 클래스들
