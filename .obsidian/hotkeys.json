@@ -181,5 +181,7 @@
       "key": "R"
     }
   ],
-  "markdown:toggle-preview": []
+  "markdown:toggle-preview": [],
+  "app:go-back": [],
+  "app:go-forward": []
 }
