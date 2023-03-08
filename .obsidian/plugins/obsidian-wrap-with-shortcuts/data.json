@@ -1,28 +1,28 @@
 {
   "wrapperTags": [
     {
-      "id": "w1674566186727",
-      "name": "highlight",
-      "startTag": "{==",
-      "endTag": "==}"
+      "id": "w1675923075083",
+      "name": "book",
+      "startTag": "`『",
+      "endTag": "』`"
     },
     {
-      "id": "w1677351475362",
-      "name": "keyboard",
-      "startTag": "{{ keyboard(",
-      "endTag": "  )}}"
+      "id": "w1675923167231",
+      "name": "subscript",
+      "startTag": "<sub>",
+      "endTag": "</sub>"
     },
     {
-      "id": "w1674565964733",
-      "name": "Superscript",
-      "startTag": "<sup>",
-      "endTag": "</sup>"
+      "id": "w1674015820545",
+        "name": "superscript",
+        "startTag": "<sup>",
+        "endTag": "</sup>"
     },
-    {
-      "id": "underline",
-      "name": "Underline",
-      "startTag": "<u>",
-      "endTag": "</u>"
-    }
+      {
+          "id": "underline",
+          "name": "Underline",
+          "startTag": "<u>",
+          "endTag": "</u>"
+      }
   ]
 }
