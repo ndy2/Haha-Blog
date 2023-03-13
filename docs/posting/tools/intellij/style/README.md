@@ -37,6 +37,10 @@ date: 2023-02-17
 	}
 	```
 
+#### Checkstyle Plugin 설치
+
+![[4.png]]
+
 ### 4. Editorconfig
 
 ``` title=".editorconfig 예시"
@@ -65,3 +69,7 @@ trim_trailing_whitespace = true
 ```
 
 ![[images/3.png]]
+
+### 5. Intellij Commit Option 설정
+
+![[5.png]]
