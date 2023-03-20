@@ -19,7 +19,7 @@ author: ndy2
 
 ### 1. 배열 (Array)
 
-![[excalidraws/array.excalidraw.png]]
+![[docs/posting/study/data-structure/tree/trie/excalidraws/array.excalidraw.png]]
 
 문자열 검색의 시간 복잡도는 `O(nm)` 이다. 
 

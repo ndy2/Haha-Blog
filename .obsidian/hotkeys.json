@@ -183,5 +183,13 @@
   ],
   "markdown:toggle-preview": [],
   "app:go-back": [],
-  "app:go-forward": []
+  "app:go-forward": [],
+  "obsidian-emoji-toolbar:emoji-picker:open-picker": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "="
+    }
+  ]
 }

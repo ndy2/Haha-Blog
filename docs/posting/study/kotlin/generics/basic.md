@@ -33,7 +33,7 @@ date: 2023-02-17
 
 #### 1. 제네릭 함수 선언
 
-![[excalidraws/1.excalidraw.png]]
+![[1.excalidraw.png]]
 
 #### 2. 제네릭 함수 호출
 
