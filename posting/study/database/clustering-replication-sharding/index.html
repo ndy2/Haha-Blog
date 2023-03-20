@@ -11,9 +11,9 @@
 <link href="../basic-terminologies/" rel="prev"/>
 <link href="../db-index/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>Clustering Replication Sharding - Haha 블로그</title>
-<link href="../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1499,10 +1499,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/kakaotalk-clone-coding/">
@@ -2108,7 +2128,7 @@
 <li>동기 방식으로 노드들간의 데이터를 동기화 한다.</li>
 <li>Active-Active 방식과 Active-Standby 방식이 있다.</li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/clustering.png"><img alt="images/clustering.png" src="images/clustering.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/clustering.png"><img alt="images/clustering.png" src="images/clustering.png"/></a></p>
 <h3 id="_1">장점<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <ul>
 <li>항상 일관성 있는 데이터를 얻을 수 있다.</li>
@@ -2125,7 +2145,7 @@
 <li><code>비동기 방식</code> 으로 노드들 간의 데이터를 동기화 한다.</li>
 <li>Master 노드는 Create, Update, Delete 연산을 수행하고 Slave 노드는 Read 연산을 수행하여 로드를 분산할 수 있다.</li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/replication.png"><img alt="images/replication.png" src="images/replication.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/replication.png"><img alt="images/replication.png" src="images/replication.png"/></a></p>
 <h3 id="_3">장점<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <ul>
 <li>DB 요청의 60~80% 정도가 읽기 작업이기 때문에 Replication 만으로도 충분히 성능을 높일 수 있다.</li>
@@ -2141,7 +2161,7 @@
 <li>테이블을 row 단위로 나누어 저장해 DB 용량을 줄이고 검색 성능을 올리는 기법</li>
 <li>기존 테이블과 같은 스키마를 가지는 <code>샤드</code> 라는 작은 단위로 나누어 저장하는 방식</li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/sharding.png"><img alt="images/sharding.png" src="images/sharding.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/sharding.png"><img alt="images/sharding.png" src="images/sharding.png"/></a></p>
 <ul>
 <li><code>샤드키</code> - 나누어진 샤드 중 어떤 샤드를 선택할 지 결정하는 키</li>
 </ul>
@@ -2197,8 +2217,8 @@
 <p><code>Vertical Partitioning</code> 은 <code>column을</code> 기준으로 테이블을 나누는 것이다. VP 를 수행하는 경우는 크게 정규화가 있다. <code>정규화</code> 란 데이터의 중복을 없에고 CUD 연산의 이상현상을 없애기 위해 테이블을 잘게 나누는 것을 의미한다. 하지만 VP 에는 정규화만있는 것은 아니다.</p>
 <p>정규화는 추후에 별도로 알아보도록 하고 오늘은 <code>성능 개선</code> 을 위해 VP 를 수행할 수 있는 상황에 대해 알아보자.</p>
 <p>아래와 같은 게시판의 목록 화면을 띄우기 위해서 Article 테이블에는 어떤 쿼리가 발생해야 할까?</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/article-table.png"><img alt="images/article-table.png" src="images/article-table.png"/></a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/articles.png"><img alt="images/articles.png" src="images/articles.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/article-table.png"><img alt="images/article-table.png" src="images/article-table.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/articles.png"><img alt="images/articles.png" src="images/articles.png"/></a></p>
 <p>예상 쿼리</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">article</span>
@@ -2206,7 +2226,7 @@
 </code></pre></div>
 <p>놀라운 사실은 개발자가 SELECT 절에 필드를 명시했다고 할지라도 article 테이블의 where 절에 해당되는 row 의 모든 필드 데이터를 메모리에 올리고 SELECT 절의 필드에 대한 프로젝션을 데이터베이스에서 수행한다는 것이다. 이는 데이터베이스가 일반적으로 데이터를 row 단위로 관리하기 때문이다. (Column-oriented DBMS vs Row-oriented DBMS)</p>
 <p>이때 아래와 같이 Column 을 기준으로 테이블을 파티셔닝하면 게시판의 목록 조회에 대해서 content 를 IO 해야 한다는 부당함을 덜 수 있다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/article-table-partitioning.png"><img alt="images/article-table-partitioning.png" src="images/article-table-partitioning.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/article-table-partitioning.png"><img alt="images/article-table-partitioning.png" src="images/article-table-partitioning.png"/></a></p>
 <hr/>
 <div class="md-source-file">
 <small>
@@ -2272,7 +2292,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

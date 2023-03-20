@@ -11,9 +11,9 @@
 <link href="../ch10-sec05-redis-usages/" rel="prev"/>
 <link href="../ch12-spring-event/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>Ch11 sec03 batch architecture - Haha 블로그</title>
-<link href="../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1442,10 +1442,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/kakaotalk-clone-coding/">
@@ -1959,7 +1979,7 @@
 그 중 가장 흥미로운 부분인 3절 배치 서버 아키텍처를 알아보겠습니다. 이 절에서는 HA 를 만족하는 배치 서버를 구성하는 일반적인 방법 세가지를 소개합니다.</p>
 <hr/>
 <h3 id="1">1. 단독 배치 서버 구성<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/batch-server-1.excalidraw.png"><img alt="batch-server-1.excalidraw.png" src="../excalidraws/batch-server-1.excalidraw.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../excalidraws/batch-server-1.excalidraw.png"><img alt="batch-server-1.excalidraw.png" src="../excalidraws/batch-server-1.excalidraw.png"/></a></p>
 <ul>
 <li>배치 처리를 전담으로 하는 서버를 두는 방식</li>
 <li>HA 를 위해서 같은 코드베이스를 가진 여러대의 서버 인스턴스를 가질 수 있다.</li>
@@ -1967,14 +1987,14 @@
 <li>이런 구성에서는 <code>spring.main.web-application-type = none</code> 속성을 통해 웹 애플리케이션 기능을 사용하지 않도록 명시하는 것이 좋다.</li>
 </ul>
 <h3 id="2-rest-api">2. REST-API 서버에 뭉뚱그려서 구성<a class="headerlink" href="#2-rest-api" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/batch-server-2.excalidraw.png"><img alt="batch-server-2.excalidraw.png" src="../excalidraws/batch-server-2.excalidraw.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../excalidraws/batch-server-2.excalidraw.png"><img alt="batch-server-2.excalidraw.png" src="../excalidraws/batch-server-2.excalidraw.png"/></a></p>
 <ul>
 <li>일반 웹 서버에 @Scheduled 를 메서드를 통해 간단하게 배치 기능을 추가하는 방식</li>
 <li>배치 프로세싱의 작업 크기가 커지면 REST-API 서버에 부하가 걸릴 수 있다.</li>
 <li>언제든지 별도의 배치 서버로 분리할 수 있도록 준비해야 한다.</li>
 </ul>
 <h3 id="3">3. 젠킨스를 활용한 구성<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/batch-server-3.excalidraw.png"><img alt="batch-server-3.excalidraw.png" src="../excalidraws/batch-server-3.excalidraw.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../excalidraws/batch-server-3.excalidraw.png"><img alt="batch-server-3.excalidraw.png" src="../excalidraws/batch-server-3.excalidraw.png"/></a></p>
 <ul>
 <li>마지막으로 소개하는 구성 방식은 젠킨스를 활용한 방식입니다.</li>
 <li>젠킨스는 CI/CD 툴로 알려져 있지만, 등록된 인스턴스에 대해서 스케쥴링과 각종 명령어를 실행하는 기능도 제공합니다.</li>
@@ -2046,7 +2066,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

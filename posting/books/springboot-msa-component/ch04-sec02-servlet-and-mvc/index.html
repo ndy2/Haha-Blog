@@ -11,9 +11,9 @@
 <link href="../ch04-sec01-http/" rel="prev"/>
 <link href="../ch04-spring-web-mvc-basic/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>Ch04 sec02 servlet and mvc - Haha 블로그</title>
-<link href="../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1442,10 +1442,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/kakaotalk-clone-coding/">
@@ -2017,7 +2037,7 @@
 <li>국내에서 전자정부 프레임웍 아키텍처에서 이 개념이 잘못 이해되어 MVC 패턴이 백엔드 아키텍처의 전부인 것처럼 오해되고 있음. 많은 잘못된 블로그 정보 존재</li>
 <li>
 <p>즉 MVC 패턴만으로는 전체 백엔드 애플리케이션 아키텍처를 표현, 이해 할 수 없다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/LayeredArchitecture_And_MVCPattern.png"><img alt="LayeredArchitecture_And_MVCPattern.png" src="../images/LayeredArchitecture_And_MVCPattern.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/LayeredArchitecture_And_MVCPattern.png"><img alt="LayeredArchitecture_And_MVCPattern.png" src="../images/LayeredArchitecture_And_MVCPattern.png"/></a></p>
 </li>
 <li>
 <p>내용을 보면 참 당연하면서도 누군가에게 MVC 패턴이 어떤건지 설명해보라는 질문을 받았을때 더 흥미롭고 명확하게 기존에 알던 내용을 전달 할 수 있도록 도와주는 이야기였습니다.</p>
@@ -2042,8 +2062,8 @@
 </ul>
 </li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/ServletStack_ThreadModel.excalidraw.png"><img alt="ServletStack_ThreadModel.excalidraw" src="../excalidraws/ServletStack_ThreadModel.excalidraw.png"/></a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/ServletStack_Blocked.excalidraw.png"><img alt="ServletStack_Blocked.excalidraw" src="../excalidraws/ServletStack_Blocked.excalidraw.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../excalidraws/ServletStack_ThreadModel.excalidraw.png"><img alt="ServletStack_ThreadModel.excalidraw" src="../excalidraws/ServletStack_ThreadModel.excalidraw.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../excalidraws/ServletStack_Blocked.excalidraw.png"><img alt="ServletStack_Blocked.excalidraw" src="../excalidraws/ServletStack_Blocked.excalidraw.png"/></a></p>
 <ul>
 <li>리액티브 스택 모델 (a.k.a. EventLoop Model)<ul>
 <li>비동기식</li>
@@ -2062,7 +2082,7 @@
 </ul>
 </li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/ReativeStack_NonBlocked.excalidraw.png"><img alt="ReativeStack_NonBlocked.excalidraw" src="../excalidraws/ReativeStack_NonBlocked.excalidraw.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../excalidraws/ReativeStack_NonBlocked.excalidraw.png"><img alt="ReativeStack_NonBlocked.excalidraw" src="../excalidraws/ReativeStack_NonBlocked.excalidraw.png"/></a></p>
 <hr/>
 <div class="md-source-file">
 <small>
@@ -2128,7 +2148,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

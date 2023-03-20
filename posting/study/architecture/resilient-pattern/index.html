@@ -11,9 +11,9 @@
 <link href="../observability/" rel="prev"/>
 <link href="../../web/cookie-session-token/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>Resilient Pattern - Haha 블로그</title>
-<link href="../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1452,10 +1452,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/kakaotalk-clone-coding/">
@@ -2031,23 +2051,23 @@
 <p>이제 MSA 에서 Resilient 특성을 갖추기 위해 활용되는 Resilient Pattern 을 알아보겠습니다.</p>
 <hr/>
 <h3 id="1-timeout-pattern">1. Timeout Pattern<a class="headerlink" href="#1-timeout-pattern" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/timeout-1.png"><img alt="images/timeout-1.png" src="images/timeout-1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/timeout-1.png"><img alt="images/timeout-1.png" src="images/timeout-1.png"/></a></p>
 <p>Timeout 패턴은 매 요청시 타임아웃을 걸고 타임아웃 내에 응답이 오지 않는다면 더이상 기다리지 않고 쓰레드를 진행시키는 패턴입니다. 이 때 응답값이 별로 중요하지 않다면 기본값을 채울 수도 있고 응답값이 중요한 값이라면 예외를 발생 시킬 수도 있습니다.</p>
 <p>타임아웃 방식은 요청 쓰레드가 타임아웃 시간동안 계속 요청을 물고 있어야 하기 때문에 동시 요청이 많은 시스템에서는 문제가 될 수 있습니다.</p>
 <h3 id="2-retry-pattern">2. Retry Pattern<a class="headerlink" href="#2-retry-pattern" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/retry-1.png"><img alt="images/retry-1.png" src="images/retry-1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/retry-1.png"><img alt="images/retry-1.png" src="images/retry-1.png"/></a></p>
 <p>Retry 패턴은 요청이 실패하면 재요청을 보내는 패턴입니다. 이때 재요청의 횟수를 제한하거나 요청 시 간격을 둘 수도 있습니다. 또한 첫번째 요청과 두번째 이상의 요청 (재 요청) 메서드 (fallback)를 다르게 가져갈 수도 있습니다.</p>
 <h3 id="3-circuit-breaker-pattern">3. Circuit Breaker Pattern<a class="headerlink" href="#3-circuit-breaker-pattern" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/circuit-breaker-1.png"><img alt="images/circuit-breaker-1.png" src="images/circuit-breaker-1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/circuit-breaker-1.png"><img alt="images/circuit-breaker-1.png" src="images/circuit-breaker-1.png"/></a></p>
 <p>서킷 브레이커 패턴은 요청 클라이언트와 응답 서버 사이에 Circuit Breker (회로 차단기) 를 추가로 두어 서킷 브레이커가 서버의 상태를 나름의 기준으로 판단하여 서버의 상태가 좋지 않은 경우 이를 차단하는 패턴입니다. 한번씩 요청을 보내서 서버의 상태를 판단해보고 괜찮다고 판단되면 다시 회복합니다. 서킷 브레이커는 서버의 상태를 OPEN (장애) CLOSED(정상) HALF-OPEN(반 장애) 로 구분합니다.</p>
 <p>이 패턴은 Retry 패턴이 회복되지도 않을 서버에 계속해서 재시도 요청을 하여 발생할 수 있는 리소스 낭비의 문제를 어느정도 해결합니다. 프록시 패턴의 일종입니다.</p>
 <h3 id="4-bulkhead-pattern">4. Bulkhead Pattern<a class="headerlink" href="#4-bulkhead-pattern" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/bulkhead-1.png"><img alt="images/bulkhead-1.png" src="images/bulkhead-1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/bulkhead-1.png"><img alt="images/bulkhead-1.png" src="images/bulkhead-1.png"/></a></p>
 <p>Bulkhead Pattern (격벽 패턴) 은 애플리케이션의 요소를 격리하여 관리함으로써 한 요소의 실패가 다른 요소로 전파되지 않도록합니다. </p>
 <p>Worlkload 1 와 Workload2 의 커넥션 풀을 나누어 Workload 1 의 문제가 Workload 2 로 전파되지 않도록할 수 있습니다.</p>
 <p>요청 흐름에 따라 리소스를 나누어 놓았기 때문에 리소스 사용 효율성이 떨어 질 수도 있습니다.</p>
 <h3 id="5-rate-limiter-pattern">5. Rate Limiter Pattern<a class="headerlink" href="#5-rate-limiter-pattern" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/rate-limmiter-1.png"><img alt="images/rate-limmiter-1.png" src="images/rate-limmiter-1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/rate-limmiter-1.png"><img alt="images/rate-limmiter-1.png" src="images/rate-limmiter-1.png"/></a></p>
 <p>Rate Limiter 패턴은 일정 시간 (윈도우) 동안 보낼 수 있는 요청의 횟수를 제한하여 서버의 리소스를 보호하는 패턴입니다.</p>
 <hr/>
 <div class="md-source-file">
@@ -2114,7 +2134,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

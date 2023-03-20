@@ -11,9 +11,9 @@
 <link href="../ch06-build-web-application-server/" rel="prev"/>
 <link href="../ch06-sec01-webapplication-configure-mechanism/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>ch06 sec00 @EnableXXX and bean modulerlize - Haha 블로그</title>
-<link href="../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1461,10 +1461,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/kakaotalk-clone-coding/">
@@ -2140,7 +2160,7 @@
 <a href="#__codelineno-10-13" id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="p">}</span>
 </code></pre></div>
 <p>이제 TransactionManagementConfigurationSelector 를 살펴보자!</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/TrasactionManagementConfigurationSelector.png"><img alt="TrasactionManagementConfigurationSelector.png" src="../images/TrasactionManagementConfigurationSelector.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/TrasactionManagementConfigurationSelector.png"><img alt="TrasactionManagementConfigurationSelector.png" src="../images/TrasactionManagementConfigurationSelector.png"/></a></p>
 <ul>
 <li>추상 클래스와 템플릿 메서드 패턴을 이용해 <code>selectImports</code> 메서드의 파라미터를 <code>AdviceMode</code> 로 두었다.</li>
 <li>스프링이 지원하는 두가지 프록시 방식 (JDK 의 다이나믹 프록시 기반, AspectJ AOP 기반) 에 따라 내부에 설정되어야 하는 빈의 정보가 완전히 달라지게 된다.</li>
@@ -2215,7 +2235,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

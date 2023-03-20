@@ -11,9 +11,9 @@
 <link href="../is-what/" rel="prev"/>
 <link href="../3nf-and-bcnf/db-normalization-3nf-bcnf/" rel="next"/>
 <link href="../../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>1NF &amp; 2NF - Haha 블로그</title>
-<link href="../../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1432,10 +1432,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../projects/kakaotalk-clone-coding/">
@@ -1966,9 +1986,9 @@
 <blockquote>
 <p>attribute 의 value 는 반드시 나누어 질 수 없는 단일한 값이어야 한다.</p>
 </blockquote>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/before-1nf.png"><img alt="before-1nf.png" src="images/before-1nf.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/before-1nf.png"><img alt="before-1nf.png" src="images/before-1nf.png"/></a></p>
 <p>card_id 에트리뷰트가 두개의 카드번호를 하나의 값으로 표현하고 있습니다. row 를 분리하는 방식으로 1NF 를 만족하도록 변경하면 아래와 같은 테이블이 나옵니다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/after-1nf.png"><img alt="after-1nf.png" src="images/after-1nf.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/after-1nf.png"><img alt="after-1nf.png" src="images/after-1nf.png"/></a></p>
 <ul>
 <li>중복 데이터가 생겼습니다.</li>
 <li>ratio 의 개념이 이상해 졌습니다. (한 직원에 대해서 합이 2 가되었습니다.)</li>
@@ -1983,7 +2003,7 @@
 <p>변경된 non-prime attribute set 은 card_id 가 빠진 <code>{class, ratio, empl_id, empl_name}</code> 입니다.</p>
 <p>그럼 모든 후보 키 <code>{account_id, card_id}</code>, <code>{bank_name, account_num, card_id}</code> 가 non-prime attribute set <code>{class, ratio, empl_id, empl_name}</code> 를 fully functional determine 하는지 살펴보면 그렇지 않습니다.</p>
 <p>FD 를 결정할때는 항상 의미론적으로 접근해야 한다는 사실을 주의해야합니다. 생각해보면 두 후보키에서 모드 card_id 가 없이 기존의 <code>{account_id}</code>, <code>{bank_name, account_num}</code> 만으로 non-prime attribute 를 determine 할 수 있다는 사실을 알 수 있습니다. 따라서 card_id 가 빠지는 것이 자연스럽습니다. 이를 위해 아래와 같이 테이블을 분리해 보겠습니다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/after-2nf.png"><img alt="after-2nf.png" src="images/after-2nf.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/after-2nf.png"><img alt="after-2nf.png" src="images/after-2nf.png"/></a></p>
 <p>확인해보면 두테이블 모두 2NF 를 만족 한다는 것을 알 수 있습니다.</p>
 <p><code>ACCOUNT_CARD</code> 테이블은 후보 키를 {account_id, card_id} 로 가집니다. (계좌 하나가 여러 카드에 연동될 수 있다는 사실을 잊지 말아 주세용) 따라서 non-prime attribute 는 공집합이고 2NF 를 만족한다는 것은 trivial 합니다.</p>
 <hr/>
@@ -2051,7 +2071,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

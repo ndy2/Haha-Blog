@@ -11,9 +11,9 @@
 <link href="../string/" rel="prev"/>
 <link href="../time/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>synchronized - Haha 블로그</title>
-<link href="../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1514,10 +1514,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/kakaotalk-clone-coding/">
@@ -2174,11 +2194,11 @@
 <p>모니터의 자세한 동작방식은 마지막에 알아보겠습니다.</p>
 <h3 id="2-synchronzied">2. 그림으로 보는 Synchronzied 키워드<a class="headerlink" href="#2-synchronzied" title="Permanent link">¶</a></h3>
 <h4 id="1">1. 같은 객체 공유<a class="headerlink" href="#1" title="Permanent link">¶</a></h4>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/synchronized-1.png"><img alt="synchronized-1.png" src="images/synchronized-1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/synchronized-1.png"><img alt="synchronized-1.png" src="images/synchronized-1.png"/></a></p>
 <p>Thread 1 과 Thread 2 가 동일한 SynchronizedExchanger 객체를 공유하는 경우</p>
 <p>위 코드에서 모든 메서드는 같은 monitor 객체 (this) 를 가지기 때문에 Thread 1 이 setObject 를 호출하는 순간 Thread 2 는 getObject 를 호출 할 수 없습니다. (동기화 블럭으로 선언된 xxxObj 메서드 들도 마찬가지)</p>
 <h4 id="2">2. 서로 다른 객체 활용<a class="headerlink" href="#2" title="Permanent link">¶</a></h4>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/synchronized-2.png"><img alt="synchronized-2.png" src="images/synchronized-2.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/synchronized-2.png"><img alt="synchronized-2.png" src="images/synchronized-2.png"/></a></p>
 <p>Thread 1 과 Thread 2 가 각자의 SynchronizedExchanger 객체를 가지는 경우</p>
 <p>이렇게 활용하게 되면 Thread1 과 Thread2 에서는 synchronized 를 활용하는 의미가 없습니다. 각 쓰레드가 자신의 SynchronizedExchanger 의 모니터 락을 획득하여 동기화 메서드, 블락에 진입할수 있기 때문입니다. (사실 당연합니다.)</p>
 <h4 id="3-static-synchronzied">3. Static 메서드와 Synchronzied 키워드<a class="headerlink" href="#3-static-synchronzied" title="Permanent link">¶</a></h4>
@@ -2207,7 +2227,7 @@
 <a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">    </span><span class="p">}</span>
 <a href="#__codelineno-1-24" id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="p">}</span>
 </code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/synchronized-3.png"><img alt="synchronized-3.png" src="images/synchronized-3.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/synchronized-3.png"><img alt="synchronized-3.png" src="images/synchronized-3.png"/></a></p>
 <p>전체 쓰레드에서 한 쓰레드만이 synchronized static 메서드를 호출 할 수 있습니다.</p>
 <h3 id="3">3. 복잡하게 모니터 객체를 활용하는 예제 코드<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
 <h4 id="1-static-instance-synchronized">1. Static, Instance 메서드에 모두 Synchronized 활용하기<a class="headerlink" href="#1-static-instance-synchronized" title="Permanent link">¶</a></h4>
@@ -2319,7 +2339,7 @@
 </li>
 </ul>
 <h3 id="6-synchronized">6. Synchronized 블락과 성능 오버헤드<a class="headerlink" href="#6-synchronized" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/synchronized-overhead.png"><img alt="synchronized-overhead.png" src="images/synchronized-overhead.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/synchronized-overhead.png"><img alt="synchronized-overhead.png" src="images/synchronized-overhead.png"/></a></p>
 <ul>
 <li>경쟁이 발생하여 쓰레드가 대기하는 상황이 발생한다면 오버헤드가 큽니다.</li>
 <li>경쟁이 발생하지 않는다고 해도 Lock 을 획득하고 Release 하는 약간의 오버헤드는 발생하게 됩니다.</li>
@@ -2435,7 +2455,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

@@ -11,9 +11,9 @@
 <link href="../../mysql-execution-plan/" rel="prev"/>
 <link href="../fd/" rel="next"/>
 <link href="../../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>Anomaly - Haha 블로그</title>
-<link href="../../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1456,10 +1456,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../projects/kakaotalk-clone-coding/">
@@ -2014,7 +2034,7 @@
 </div>
 <h3 id="1-anomalies">1. 이상현상 (Anomalies)<a class="headerlink" href="#1-anomalies" title="Permanent link">¶</a></h3>
 <h4 id="1-insertion-anomaly">1. Insertion Anomaly<a class="headerlink" href="#1-insertion-anomaly" title="Permanent link">¶</a></h4>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/insertion-anomaly.png"><img alt="insertion-anomaly.png" src="images/insertion-anomaly.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/insertion-anomaly.png"><img alt="insertion-anomaly.png" src="images/insertion-anomaly.png"/></a></p>
 <p><strong>문제점</strong></p>
 <ul>
 <li>저장 공간 낭비</li>
@@ -2026,7 +2046,7 @@
 <li>별개의 관심사가 한 테이블에 있음 - <code>EMPLOYEE</code>, <code>DEPARTMENT</code></li>
 </ul>
 <h3 id="2-deletion-anomaly">2. Deletion Anomaly<a class="headerlink" href="#2-deletion-anomaly" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/deletion-anomaly.png"><img alt="deletion-anomaly.png" src="images/deletion-anomaly.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/deletion-anomaly.png"><img alt="deletion-anomaly.png" src="images/deletion-anomaly.png"/></a></p>
 <p><strong>문제점</strong></p>
 <ul>
 <li>QA 부서 최후의 1 인인 YUJIN 을 삭제하려면?</li>
@@ -2050,7 +2070,7 @@
 <ul>
 <li>두 테이블의 Join 을 잘못 된 방식으로 해서 발생한 이상한 튜플</li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/spurious-tuple.png"><img alt="spurious-tuple.png" src="images/spurious-tuple.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/spurious-tuple.png"><img alt="spurious-tuple.png" src="images/spurious-tuple.png"/></a></p>
 <h3 id="3-null">3. Null 값이 많아짐으로 인한 문제<a class="headerlink" href="#3-null" title="Permanent link">¶</a></h3>
 <ul>
 <li>null 값이 있는 column 으로 join 하는 경우 상황에 따라 예상과 다른 결과 발생</li>
@@ -2122,7 +2142,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

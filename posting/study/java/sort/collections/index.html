@@ -11,9 +11,9 @@
 <link href="../arrays/" rel="prev"/>
 <link href="../../string/" rel="next"/>
 <link href="../../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>Collections.sort - Haha 블로그</title>
-<link href="../../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1452,10 +1452,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../projects/kakaotalk-clone-coding/">
@@ -2031,7 +2051,7 @@
 <p>특이한점으로는 배열의 값을 바꾸는 과정에 listIterator 를 활용한다는 점이다. 이렇게되면 값을 바꿀때 매번 index 를 찾아가는 것이 아니라 참조 자체를 순회하는 방식이기 때문에 효율적인것 같다.</p>
 <hr/>
 <p>다시 <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-option">Option</kbd><span>+</span><kbd class="key-b">B</kbd></span> 를 눌러 이 인터페이스를 구현한 녀석을 살펴보자.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/List.sort.png"><img alt="List.sort.png" src="../images/List.sort.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/List.sort.png"><img alt="List.sort.png" src="../images/List.sort.png"/></a></p>
 <h3 id="3-arraylist">3. ArrayList 정렬<a class="headerlink" href="#3-arraylist" title="Permanent link">¶</a></h3>
 <p><code>ArrayList</code> 가 눈에 띈다! 살펴보자!</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nd">@Override</span>
@@ -2048,7 +2068,7 @@
 <hr/>
 <h3 id="4">4. 나머지 리스트 구현체 정렬<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
 <p>그런데 위 목록을 살펴보니 <code>LinkedList</code> 와 <code>Stack</code> 이 보이지 않는다. (<em>deprecated</em> 된 <code>Vector</code> 같은 경우는 <code>ArrayList</code> 와 구현 방식이 같다.)</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/ListCollection.png"><img alt="ListCollection.png" src="../images/ListCollection.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/ListCollection.png"><img alt="ListCollection.png" src="../images/ListCollection.png"/></a></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Stack Sort</label><label for="__tabbed_1_2">LinkedList Sort</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2166,7 +2186,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

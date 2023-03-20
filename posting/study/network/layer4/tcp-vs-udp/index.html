@@ -11,9 +11,9 @@
 <link href="../tcp-flow-control/" rel="prev"/>
 <link href="../../layer7/dns/" rel="next"/>
 <link href="../../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>TCP vs UDP - Haha 블로그</title>
-<link href="../../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1475,10 +1475,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../projects/kakaotalk-clone-coding/">
@@ -2130,7 +2150,7 @@
 </tbody>
 </table>
 <h3 id="tcp">TCP 상태 다이어그램<a class="headerlink" href="#tcp" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/tcp-state-diagram.png"><img alt="images/tcp-state-diagram.png" src="images/tcp-state-diagram.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/tcp-state-diagram.png"><img alt="images/tcp-state-diagram.png" src="images/tcp-state-diagram.png"/></a></p>
 <h3 id="tcp-udp">TCP, UDP 와 관련된 질문들<a class="headerlink" href="#tcp-udp" title="Permanent link">¶</a></h3>
 <h4 id="1-tcp-handshake">1. TCP 의 Handshake 에 대해서 설명해주세요<a class="headerlink" href="#1-tcp-handshake" title="Permanent link">¶</a></h4>
 <ul>
@@ -2160,7 +2180,7 @@
 <li>TCP는 UDP와 달리 연결지향형 프로토콜로 Handshake 에 대한 오버헤드가 있습니다.<ul>
 <li>자세히 들어가서 TCP 기반에서 연결을 수립할 때에는 3-Way-Hadshake 과정이 필요하며, 여기에 암호화를 위해 TLS까지 적용된다면, 실제 통신이 이루어 지기 이전에 연결 수립만을 위한 지연이 약 4.5 RTT가 발생하게 됩니다.
 <figure markdown="">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/tcp-rtt.png"><img alt="images/tcp-rtt.png" src="images/tcp-rtt.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/tcp-rtt.png"><img alt="images/tcp-rtt.png" src="images/tcp-rtt.png"/></a>
 <br/>
 <figcaption>TCP는 핸드셰이크로 인한 라운드 트립이 발생한다!</figcaption></figure></li>
 </ul>
@@ -2252,7 +2272,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

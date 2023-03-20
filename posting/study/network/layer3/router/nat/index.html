@@ -11,9 +11,9 @@
 <link href="../" rel="prev"/>
 <link href="../../../layer4/tcp-congestion-control/" rel="next"/>
 <link href="../../../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>NAT - Haha 블로그</title>
-<link href="../../../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1437,10 +1437,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../../projects/kakaotalk-clone-coding/">
@@ -1980,9 +2000,9 @@
 <p>NAT<sup>Network Address Translation</sup> 은 IP 패킷의 TCP/UDP 포트 숫자와 출발/목적지의 IP 주소 등을 재기록하면서 라우터를 통해 네트워크 트래픽을 주고 받는 기술을 말합니다.</p>
 <p>패킷에 변화가 생기기 때문에 IP, TCP/UDP 헤더의 체크섬도 다시 계산되어 재 기록해야 합니다.</p>
 <p>NAT 를 이용하는 이유는 대부분 사설 네트워크에 속한 여러 개의 호스트가 하나의 Public IP 를 이용해 네트워크에 접속하기 위해서 입니다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/nat.excalidraw.png"><img alt="excalidraws/nat.excalidraw.png" src="../excalidraws/nat.excalidraw.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../excalidraws/nat.excalidraw.png"><img alt="excalidraws/nat.excalidraw.png" src="../excalidraws/nat.excalidraw.png"/></a></p>
 <h3 id="2">2. 동작 원리<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/nat.png"><img alt="images/nat.png" src="../images/nat.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/nat.png"><img alt="images/nat.png" src="../images/nat.png"/></a></p>
 <ul>
 <li>SNAT<sup>Source Network Address Translation</sup> <ul>
 <li>공공 IP 대역으로 나갈 때는 출발지 IP 가 공유기의 Public IP 로 변경됩니다.</li>
@@ -2059,7 +2079,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

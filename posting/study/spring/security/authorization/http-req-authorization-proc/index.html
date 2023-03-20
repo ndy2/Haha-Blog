@@ -11,9 +11,9 @@
 <link href="../http-req-authorization-conf/" rel="prev"/>
 <link href="../../../websocket/auto-configure/" rel="next"/>
 <link href="../../../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>Http 요청 인가 프로세스 - Haha 블로그</title>
-<link href="../../../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1437,10 +1437,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../../projects/kakaotalk-clone-coding/">
@@ -2000,22 +2020,22 @@
 <ol>
 <li>FilterChainproxy$VirtualFilterChain 에서 시작한다.</li>
 </ol>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/security-chain-1.png"><img alt="images/security-chain-1.png" src="../images/security-chain-1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/security-chain-1.png"><img alt="images/security-chain-1.png" src="../images/security-chain-1.png"/></a></p>
 <ol>
 <li>모든 앞 필터를 다 통과하고 <code>AuthorizationFilter</code> 에 도착한다.</li>
 <li>그 과정에서 <code>SecurityContextHolder</code> 에는 <code>AnonymousAuthenticationFilter</code> 에 의해 <code>AnonymousAuthenticationToken</code> 이 저장된다.</li>
 <li>권한 부여 대상이 아닌 경우를 판단 하기 위해 전처리를 살짝 해 준다.</li>
 </ol>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/authorizationfilter-dofilter.png"><img alt="images/authorizationfilter-dofilter.png" src="../images/authorizationfilter-dofilter.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/authorizationfilter-dofilter.png"><img alt="images/authorizationfilter-dofilter.png" src="../images/authorizationfilter-dofilter.png"/></a></p>
 <ol>
 <li>가지고 있는 authorizationManager 의 check 을 통해 AccessDecision 획득하고 이를 통해 ACCESS_ABSTAIN 혹은 ACCESS_DENIED 라면 직접 예외를 터트린다.</li>
 </ol>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/authorizationfilter-dofilter-2.png"><img alt="images/authorizationfilter-dofilter-2.png" src="../images/authorizationfilter-dofilter-2.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/authorizationfilter-dofilter-2.png"><img alt="images/authorizationfilter-dofilter-2.png" src="../images/authorizationfilter-dofilter-2.png"/></a></p>
 <h4 id="2-authorizationmanager-">2. AuthorizationManager 의 동작 - <a href="https://docs.spring.io/spring-security/reference/6.0.0-M5/servlet/authorization/architecture.html#authz-delegate-authorization-manager">참고 링크</a><a class="headerlink" href="#2-authorizationmanager-" title="Permanent link">¶</a></h4>
 <p>위와 같은 <code>authorizeHttpRequests</code> 에 경로와 권한 제어 정보만 넘겨준 설정에서는 어떤 <code>AuthorizationManager</code> 가 기본적으로 등록될까요? 그 녀석은 바로 <code>RequestMatcherDelegatingAuthorizationManager</code> 입니다. </p>
 <p><code>RequestMatcherDelegatingAuthorizationManager</code> 는 <code>RequestMatcherEntry</code> 목록을 가집니다. <code>그리RequestMatcherEntry</code> 는 요청에 대한 권한 여부를 판별할지 판단하는 <code>RequestMatcher</code> 와 권한을 판단하는 <code>AuthorizationManager</code> 의 Pair 입니다.</p>
 <p>설정에 의해 추가 된 <code>RequestMatcherDelegatingAuthorizationManager</code> 의 <code>mappings</code> 필드와 그 녀석의 check 메서드의 동작방식은 아래 그림과 같습니다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../excalidraws/requestmatcherdelegatingauthorizationmanager.excalidraw.png"><img alt="excalidraws/requestmatcherdelegatingauthorizationmanager.excalidraw.png" src="../excalidraws/requestmatcherdelegatingauthorizationmanager.excalidraw.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../excalidraws/requestmatcherdelegatingauthorizationmanager.excalidraw.png"><img alt="excalidraws/requestmatcherdelegatingauthorizationmanager.excalidraw.png" src="../excalidraws/requestmatcherdelegatingauthorizationmanager.excalidraw.png"/></a></p>
 <ul>
 <li><code>RequestMatcherDelegatingAuthorizationManager</code> <ul>
 <li>implements <code>AuthorizationManager&lt;HttpServletRequest&gt;</code> </li>
@@ -2099,7 +2119,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

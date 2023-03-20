@@ -11,9 +11,9 @@
 <link href="../sort/collections/" rel="prev"/>
 <link href="../synchronized/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>String - Haha 블로그</title>
-<link href="../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1442,10 +1442,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/kakaotalk-clone-coding/">
@@ -2008,7 +2028,7 @@
 </blockquote>
 <h3 id="3-string-pool-constant-pool">3. String Pool (constant pool)<a class="headerlink" href="#3-string-pool-constant-pool" title="Permanent link">¶</a></h3>
 <p>자바의 String Pool 은 String 을 저장하기 위해 마련된 힙 내부에 위치한 특별한 메모리 공간힙니다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/string-pool.png"><img alt="string-pool.png" src="images/string-pool.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/string-pool.png"><img alt="string-pool.png" src="images/string-pool.png"/></a></p>
 <p>String 을 생성하는 방식에는 String literal (<code>""</code>) 를 활용하는 방식과 생성자 (<code>new String(..)</code>) 을 활용하는 방식이 있습니다. <code>(*)</code> 이때 항상 literal 을 사용하는 방식을 사용하는것이 좋습니다. 왜냐하면 생성자를 통해 String 을 생성하면 String pool 이 아닌 일반 heap 영역에 메모리가 저장되고 String 이 Immutable 함으로써 가질 수 있는 이점 (thread-safe 등) 을 가질 수 없습니다. </p>
 <p><code>(*)</code> Java 15 에 추가된 text block (""") 을 활용하는 방식도 있긴 합니다.</p>
 <p>링크 - <a href="https://www.digitalocean.com/community/tutorials/what-is-java-string-pool#how-many-strings-are-getting-created-in-the-string-pool">String pool 과 관련된 헷갈리는 면접 문제</a></p>
@@ -2113,7 +2133,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

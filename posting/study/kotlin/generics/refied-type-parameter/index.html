@@ -11,9 +11,9 @@
 <link href="../kotlin-variance/" rel="prev"/>
 <link href="../../hof-and-function-type/" rel="next"/>
 <link href="../../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>실체화된 타입 파라미터 (refied-type-parameter) - Haha 블로그</title>
-<link href="../../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1446,10 +1446,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../projects/kakaotalk-clone-coding/">
@@ -2025,17 +2045,17 @@
 <p>인라인 함수의 타입 파라미터는 실체화 되므로 실행 시점에 타입 인자를 알 수 있습니다.</p>
 <p><code>그냥 활용</code></p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/5.png"><img alt="images/5.png" src="../images/5.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/5.png"><img alt="images/5.png" src="../images/5.png"/></a>
 </p>
 <figcaption>intellij 에서 확인 - 너무 똑똑하다.</figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/6.png"><img alt="images/6.png" src="../images/6.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/6.png"><img alt="images/6.png" src="../images/6.png"/></a>
 </p>
 <figcaption>refied 변경자를 추가하면 타입 실체화가 가능하다</figcaption>
 </figure>
 <p><code>inline 함수 에서만  refied 를 사용할 수 있고 refied 를 사용하지 않으면 여전히 타입 실체화가 되지 않는다.</code></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/7.png"><img alt="images/7.png" src="../images/7.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/7.png"><img alt="images/7.png" src="../images/7.png"/></a></p>
 <h3 id="3-refied-type-parameter">3. Refied Type Parameter 와 클래스 참조 예제<a class="headerlink" href="#3-refied-type-parameter" title="Permanent link">¶</a></h3>
 <p>코틀린 타입에 대응하는 <code>java.lang.Class</code> 를 얻기 (<code>::class.java</code>) 위해서 refied type parameter 를 사용하면 좋다!</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">BaseIdEntity</span><span class="o">&lt;</span><span class="n">Id</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">Any</span><span class="o">&gt;</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="n">Id</span><span class="p">)</span><span class="w">  </span>
@@ -2151,7 +2171,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

@@ -11,9 +11,9 @@
 <link href="../ip/" rel="prev"/>
 <link href="nat/" rel="next"/>
 <link href="../../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>Router - Haha 블로그</title>
-<link href="../../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1442,10 +1442,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../projects/kakaotalk-clone-coding/">
@@ -1992,7 +2012,7 @@
 <li>라우팅을 통해 네트워크 통신의 효율성을 높일 수 있습니다.</li>
 </ul>
 </div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/routing.png"><img alt="images/routing.png" src="images/routing.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/routing.png"><img alt="images/routing.png" src="images/routing.png"/></a></p>
 <div class="admonition note">
 <p class="admonition-title">Network Router - 라우터란?</p>
 <ul>
@@ -2018,7 +2038,7 @@
 <p>이를 위해 각 라우터들은 다른 라우터와의 라우팅 정보를 교환하는데 이러한 라우팅 정보 교환용 프로토콜을 <strong><em>라우팅 프로토콜</em></strong><sup>Routing Protocol</sup> 이라 하며 RIP, IGRP, OSPF, ISIS, BGP 등이 있습니다.</p>
 </div>
 <h3 id="3">3. 라우팅 동작<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="excalidraws/routing-process-1.excalidraw.png"><img alt="excalidraws/routing-process-1.excalidraw.png" src="excalidraws/routing-process-1.excalidraw.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="excalidraws/routing-process-1.excalidraw.png"><img alt="excalidraws/routing-process-1.excalidraw.png" src="excalidraws/routing-process-1.excalidraw.png"/></a></p>
 <p>라우팅 과정은 라우터가 패킷을 받으며 시작합니다. 라우터는 라우팅 테이블에 따라 목적지로 보내기 위한 다음 디바이스의 IP 주소 즉, <strong><em>넥스트 홉</em></strong><sup>Next Hope</sup> 을 결정합니다.</p>
 <p>라우팅 과정에서 변하는 것은 세가지 입니다.</p>
 <ul>
@@ -2041,7 +2061,7 @@
 TTL 필드가 0 이 되면 라우터는 해당 패킷을 버립니다. 그리고 송신 호스트에게 <code>ICMP time exceeded</code> 메시지를 보냅니다. 송신 호스트는 ICMP time exceeded 메시지를 수신하면 TTL 을 조정하여 다시 패킷을 전송하고 해당 라우터를 거쳐갔는지 확인합니다.</p>
 </div>
 <h3 id="4">4. 라우팅 테이블<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="images/routing-table.png"><img alt="images/routing-table.png" src="images/routing-table.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/routing-table.png"><img alt="images/routing-table.png" src="images/routing-table.png"/></a></p>
 <p><strong><code>라우팅 테이블</code></strong></p>
 <p>위 라우팅 테이블의 엔트리를 해석하면 다음과 같습니다.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>1. 101.25.67.0 이 목적지인 패킷을 받으면 eth3 인터페이스를 통해 10.0.0.2 게이트웨이 로 전달해라
@@ -2113,7 +2133,7 @@ TTL 필드가 0 이 되면 라우터는 해당 패킷을 버립니다. 그리고
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>

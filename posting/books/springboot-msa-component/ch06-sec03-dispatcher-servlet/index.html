@@ -11,9 +11,9 @@
 <link href="../ch06-sec01-webapplication-configure-mechanism/" rel="prev"/>
 <link href="../ch07-sec01-spring-aop/" rel="next"/>
 <link href="../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>Ch06 sec03 dispatcher servlet - Haha 블로그</title>
-<link href="../../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1467,10 +1467,30 @@
           Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+          Common
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Common
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../projects/common/meeting-notes-template/Untitled/">
+        Meeting Template
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/common/on-startup/">
         시작 단계의 체크리스트
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../projects/kakaotalk-clone-coding/">
@@ -2006,7 +2026,7 @@
 <p>이번 절의 원래 주제는 Servlet Filter 와 Spring Interceptor 이지만 이 둘의 차이점과 동작 시점을 이해하기 위해서는 Dispatcher Servlet 의 요청 처리 흐름을 전반적으로 이해해야 합니다.</p>
 <p>그래서 이 글에서는 바로 아래 순서도를 재 방식대로 이해하고 정리해보겠습니다.</p>
 <p>아래 순서도의 전반적인 흐름은 이해하고 있지만 각 클래스의 이름과 역할에 대해 조금더 명확히 정리하는게 좋겠다 싶어 정리하게 되었습니다.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dispatcher-servlet-sequence-diagram.png"><img alt="dispatcher-servlet-sequence-diagram.png" src="../images/dispatcher-servlet-sequence-diagram.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/dispatcher-servlet-sequence-diagram.png"><img alt="dispatcher-servlet-sequence-diagram.png" src="../images/dispatcher-servlet-sequence-diagram.png"/></a></p>
 <blockquote>
 <p>학습하다 발견한 그림인데 이 그림이 가장 깔끔하고 좋은것 같습니다.
 위에 표시 되어 있다 싶이 전자정부 프레임워크의 그림 입니다. 근데 지금 코드를 따라가다 보니 그림이 스프링 프레임워크의 흐름과 살짝 다른 부분이 있는것 같습니다.</p>
@@ -2062,11 +2082,11 @@
 <ul>
 <li>
 <p><code>handlerMappings</code>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/handler-mappings.png"><img alt="handler-mappings.png" src="../images/handler-mappings.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/handler-mappings.png"><img alt="handler-mappings.png" src="../images/handler-mappings.png"/></a></p>
 </li>
 <li>
 <p><code>handlerAdapters</code>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/handler-adapters.png"><img alt="handler-adapters.png" src="../images/handler-adapters.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/handler-adapters.png"><img alt="handler-adapters.png" src="../images/handler-adapters.png"/></a></p>
 </li>
 </ul>
 <p>두 목록의 첫번 째에 있는 <code>RequestMappingHandlerMapping</code> 과 <code>RequestMappingHandlerAdapter</code> 가 가장 중요하고 자주 사용되는 녀석이다. (사실 다른 녀석들을 사용할 일은 거의 없다.) </p>
@@ -2074,7 +2094,7 @@
 <li>
 <p><code>RequestMappingHandlerMapping</code>
  @Controller 클래스에 선언된 @RequestMapping 메서드의 @RequestMapping 어노테이션에 선언된 정보를 바탕으로 핸들러 메서드를 찾아서 반환 해 줍니다.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/handler-execution-chain.png"><img alt="handler-execution-chain.png" src="../images/handler-execution-chain.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../images/handler-execution-chain.png"><img alt="handler-execution-chain.png" src="../images/handler-execution-chain.png"/></a></p>
 </li>
 <li>
 <p><code>RequestMappingHandlerAdapter</code>
@@ -2167,7 +2187,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script src="../../../../js/mkdocs-charts-plugin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
