@@ -1,5 +1,5 @@
 ---
-tags: [spring, spring-data-jpa]
+tags: [spring, spring-data-common]
 title: Repository Hierarchy
 author: ndy2
 date: 2023-03-23
@@ -9,7 +9,7 @@ description: >-
  
  
 > [!quote] 참고 자료
-> * spring-data jpa documentation - [Hierarchy for Packages](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/package-tree.html)org.springframework.data.jpa.repository
+> * spring-data documentation - [Hierarchy for Packages](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/package-tree.html)org.springframework.data.jpa.repository
 > * [CrudRepository, JpaRepository, and PagingAndSortingRepository in Spring Data](https://www.baeldung.com/spring-data-repositories) on baeldung
 > * [Announcing ListCrudRepository & Friends for Spring Data 3.0](https://spring.io/blog/2022/02/22/announcing-listcrudrepository-friends-for-spring-data-3-0)
 
