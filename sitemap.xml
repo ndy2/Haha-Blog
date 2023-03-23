@@ -591,6 +591,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/java/collections/fail-fast-and-fail-safe/</loc>
+         <lastmod>2023-03-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/java/nested-classes/</loc>
          <lastmod>2023-03-23</lastmod>
          <changefreq>daily</changefreq>
