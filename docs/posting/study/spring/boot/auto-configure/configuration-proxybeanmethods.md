@@ -6,7 +6,7 @@ date: 2023-02-03
 
 ### @Configuration 의 proxyBeanMethods 엘리먼트와 관련된 부분
 
-```java title="@Configuration 의 proxyBeanMethods 엘리먼트와 관련된 부분
+```java title="@Configuration 의 proxyBeanMethods 엘리먼트와 관련된 부분"
 /*
 Configuration classes must be non-final (allowing for subclasses at runtime), unless the proxyBeanMethods flag is set to false in which case no runtime-generated subclass is necessary
 */
