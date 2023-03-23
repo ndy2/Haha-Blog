@@ -1996,32 +1996,34 @@
     }
 </style>
 <h3 id="configuration-proxybeanmethods">@Configuration 의 proxyBeanMethods 엘리먼트와 관련된 부분<a class="headerlink" href="#configuration-proxybeanmethods" title="Permanent link">¶</a></h3>
-<p>```java title="@Configuration 의 proxyBeanMethods 엘리먼트와 관련된 부분
-/<em>
-Configuration classes must be non-final (allowing for subclasses at runtime), unless the proxyBeanMethods flag is set to false in which case no runtime-generated subclass is necessary
-</em>/
-@Target(ElementType.TYPE)<br/>
-@Retention(RetentionPolicy.RUNTIME)<br/>
-@Documented<br/>
-@Component<br/>
-public @interface Configuration {  </p>
-<p>/*<em><br/>
-    * Specify whether {@code @Bean} methods should get proxied in order to enforce<br/>
-    * bean lifecycle behavior, e.g. to return shared singleton bean instances even    * in case of direct {@code @Bean} method calls in user code. This feature<br/>
-    * requires method interception, implemented through a runtime-generated CGLIB    * subclass which comes with limitations such as the configuration class and    * its methods not being allowed to declare {@code final}.<br/>
-    * <p>The default is {@code true}, allowing for 'inter-bean references' via direct<br/>
-    * method calls within the configuration class as well as for external calls to    * this configuration's {@code @Bean} methods, e.g. from another configuration class.<br/>
-    * If this is not needed since each of this particular configuration's {@code @Bean}<br/>
-    * methods is self-contained and designed as a plain factory method for container use,    * switch this flag to {@code false} in order to avoid CGLIB subclass processing.<br/>
-    * <p>Turning off bean method interception effectively processes {@code @Bean}<br/>
-    * methods individually like when declared on non-{@code @Configuration} classes,<br/>
-    * a.k.a. "@Bean Lite Mode" (see {@link Bean @Bean's javadoc}). It is therefore<br/>
-    * behaviorally equivalent to removing the {@code @Configuration} stereotype.<br/>
-    * @since 5.2<br/>
-</p></p></em>/   boolean proxyBeanMethods() default true;  </p>
-<p>//...
-}
-```</p>
+<div class="highlight"><span class="filename">@Configuration 의 proxyBeanMethods 엘리먼트와 관련된 부분</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cm">/*</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="cm">Configuration classes must be non-final (allowing for subclasses at runtime), unless the proxyBeanMethods flag is set to false in which case no runtime-generated subclass is necessary</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="cm">*/</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nd">@Target</span><span class="p">(</span><span class="n">ElementType</span><span class="p">.</span><span class="na">TYPE</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nd">@Retention</span><span class="p">(</span><span class="n">RetentionPolicy</span><span class="p">.</span><span class="na">RUNTIME</span><span class="p">)</span><span class="w">  </span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nd">@Documented</span><span class="w">  </span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nd">@Component</span><span class="w">  </span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="kd">public</span><span class="w"> </span><span class="nd">@interface</span><span class="w"> </span><span class="n">Configuration</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">   </span><span class="cm">/**  </span>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="cm">    * Specify whether {@code @Bean} methods should get proxied in order to enforce  </span>
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="cm">    * bean lifecycle behavior, e.g. to return shared singleton bean instances even    * in case of direct {@code @Bean} method calls in user code. This feature  </span>
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="cm">    * requires method interception, implemented through a runtime-generated CGLIB    * subclass which comes with limitations such as the configuration class and    * its methods not being allowed to declare {@code final}.  </span>
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="cm">    * &lt;p&gt;The default is {@code true}, allowing for 'inter-bean references' via direct  </span>
+<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="cm">    * method calls within the configuration class as well as for external calls to    * this configuration's {@code @Bean} methods, e.g. from another configuration class.  </span>
+<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="cm">    * If this is not needed since each of this particular configuration's {@code @Bean}  </span>
+<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="cm">    * methods is self-contained and designed as a plain factory method for container use,    * switch this flag to {@code false} in order to avoid CGLIB subclass processing.  </span>
+<a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="cm">    * &lt;p&gt;Turning off bean method interception effectively processes {@code @Bean}  </span>
+<a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="cm">    * methods individually like when declared on non-{@code @Configuration} classes,  </span>
+<a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="cm">    * a.k.a. "@Bean Lite Mode" (see {@link Bean @Bean's javadoc}). It is therefore  </span>
+<a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="cm">    * behaviorally equivalent to removing the {@code @Configuration} stereotype.  </span>
+<a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="cm">    * @since 5.2  </span>
+<a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="cm">    */</span><span class="w">   </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">proxyBeanMethods</span><span class="p">()</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">  </span>
+<a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a>
+<a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">   </span><span class="c1">//...</span>
+<a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="p">}</span>
+</code></pre></div>
 <h3 id="proxybeanmethods">proxyBeanMethods 속성이란?<a class="headerlink" href="#proxybeanmethods" title="Permanent link">¶</a></h3>
 <ul>
 <li>@Configuration 클래스는 @Bean 메서드의 싱글턴을 보장하기 위해 프록시를 적용합니다. </li>
@@ -2033,7 +2035,7 @@ public @interface Configuration {  </p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2023</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2023</span>
