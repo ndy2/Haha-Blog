@@ -1,10 +1,6 @@
 .vscode/*
 .idea/*
-.obsidian/app.json
-.obsidian/appearance.json
-.obsidian/workspace.json
-.obsidian/plugins/*/*
-!.obsidian/plugins/*/data.json
+.obsidian/*
 .DS_Store
 __pycache__/*
 *.pyc

@@ -1,5 +1,0 @@
-div[data-path='resources'], div[data-path='resources'] + div.nav-folder-children {display: none;}
-div[data-path='docs/archive'], div[data-path='docs/archive'] + div.nav-folder-children {display: none;}
-div[data-path='docs/assets'], div[data-path='docs/assets'] + div.nav-folder-children {display: none;}
-div[data-path='docs/stylesheets'], div[data-path='docs/stylesheets'] + div.nav-folder-children {display: none;}
-div[data-path='LICENSE'] {display: none;}
