@@ -846,6 +846,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/spring/data/jpa/repository-hierarchy/</loc>
+         <lastmod>2023-03-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/spring/security/authorization/</loc>
          <lastmod>2023-03-23</lastmod>
          <changefreq>daily</changefreq>
