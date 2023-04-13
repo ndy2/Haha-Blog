@@ -6,7 +6,7 @@ date: 2023-04-13
 description: >-
   
 ---
-
+ 
 > [!quote] 참고 자료
 > * [`『Difference between Swapping and Context Switching』`](https://www.geeksforgeeks.org/difference-between-swapping-and-context-switching/) on geeks-for-geeks
 > * [`『Difference between Swapping and Context Switching』`](https://www.javatpoint.com/swapping-vs-context-switching) on javaTpoint
@@ -26,7 +26,7 @@ description: >-
 * 프로세스의 문맥이란 
 	* PCB를 의미한다.
 	* 프로세스/스레드의 상태
-	* CPU - register (PC, SP...), 메모리 등등
+	* CPU - register (PC, SP, PTBR...), 메모리 등등
 * 이러한 Context Switch를 유발하는 요소로는 
 	* 주어진 time slice 를 다 사용
 	* IO 작업을 해야 한다
@@ -57,6 +57,9 @@ description: >-
 ![[swap-in-out.png]]
 
 * Swap In/Out 은 기본적으로 Main Memory와 저 너머 이차메모리 사이의 데이터 교환을 의미하는 용어이다. 
+* 사실 page table도 사용시에는 메인 메모리의 커널 영역에 있음
+* 페이지 테이블도 스왑 인, 아웃의 대상이 됨 (연관 매핑 방식, TLB)
+* 즉 Swap/In Out 의 대상은 메인메모리의 유저 영역에 한정되지 않는다.
 
 ### 3. 프로세스의 상태도
 
