@@ -1770,6 +1770,11 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../algorithm-data-structure/README.md/">
+        알고리즘/자료구조
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../bookmarks/README.md/">
         인터뷰 질문 모음 링크
       </a>
@@ -1799,7 +1804,8 @@
 <a class="md-nav__link" href="#_1">
     프로세스는 어떤 상태를 가지나요?
   </a>
-</li>
+<nav aria-label="프로세스는 어떤 상태를 가지나요?" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#xxxterm">
     프로세스의 상태 관리 (스케쥴링)의 레벨 (XXXterm)에 대해 설명해주세요.
@@ -1814,8 +1820,7 @@
 <a class="md-nav__link" href="#_2">
     프로세스의 상태는 어떤 형태로 기록되고 관리되나요?
   </a>
-<nav aria-label="프로세스의 상태는 어떤 형태로 기록되고 관리되나요?" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#pcb">
     PCB에는 어떤 정보들이 저장되나요?
@@ -1847,15 +1852,96 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2. 메모리 (저장장치)의 계층에 대해 설명해주세요.
+<a class="md-nav__link" href="#2-os">
+    2. OS 가 동시성 이슈를 해결하는 방법에 대해 알려주세요.
   </a>
-<nav aria-label="2. 메모리 (저장장치)의 계층에 대해 설명해주세요." class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 메모리 (저장장치)의 계층에 대해 설명해주세요.
+  </a>
+<nav aria-label="3. 메모리 (저장장치)의 계층에 대해 설명해주세요." class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ram">
     그 중 흔히 메인메모리라고 부르는 RAM 에 대해 자세히 설명해주세요.
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#os">
+    OS 가 메모리를 관리하는 방법에 대해서 설명해 주세요.
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 가상메모리 관리 기법에 대해 설명해주세요.
+  </a>
+<nav aria-label="4. 가상메모리 관리 기법에 대해 설명해주세요." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#paging">
+    Paging 방식에 대해 설명해주세요.
+  </a>
+<nav aria-label="Paging 방식에 대해 설명해주세요." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#page-fault">
+    Page Fault 에 대해 설명해주세요.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#page-table">
+    Page Table 에는 어떤 정보가 저장되나요?
+  </a>
+<nav aria-label="Page Table 에는 어떤 정보가 저장되나요?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#page-table_1">
+    Page Table 어디에 저장이되나요?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#os-page-table">
+    OS 는 Page Table의 주소를 어떻게 찾을 수 있죠?
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#paging-segmentation">
+    Paging 방식과 비교해서 Segmentation 방식을 간단하게 설명해주세요.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#os-mmu">
+    OS의 메모리 관리에 있어서 MMU 의 역할을 설명해주세요.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-os-deadlock">
+    4. OS에서 Deadlock 이란 무엇인가요?
+  </a>
+<nav aria-label="4. OS에서 Deadlock 이란 무엇인가요?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deadlock">
+    Deadlock 의 발생(필요)조건에 대해 설명해주세요.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deadlock_1">
+    Deadlock 의 해결 방법에 대해 설명해주세요.
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -2098,7 +2184,8 @@
 <a class="md-nav__link" href="#_1">
     프로세스는 어떤 상태를 가지나요?
   </a>
-</li>
+<nav aria-label="프로세스는 어떤 상태를 가지나요?" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#xxxterm">
     프로세스의 상태 관리 (스케쥴링)의 레벨 (XXXterm)에 대해 설명해주세요.
@@ -2113,8 +2200,7 @@
 <a class="md-nav__link" href="#_2">
     프로세스의 상태는 어떤 형태로 기록되고 관리되나요?
   </a>
-<nav aria-label="프로세스의 상태는 어떤 형태로 기록되고 관리되나요?" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#pcb">
     PCB에는 어떤 정보들이 저장되나요?
@@ -2146,15 +2232,96 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2. 메모리 (저장장치)의 계층에 대해 설명해주세요.
+<a class="md-nav__link" href="#2-os">
+    2. OS 가 동시성 이슈를 해결하는 방법에 대해 알려주세요.
   </a>
-<nav aria-label="2. 메모리 (저장장치)의 계층에 대해 설명해주세요." class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 메모리 (저장장치)의 계층에 대해 설명해주세요.
+  </a>
+<nav aria-label="3. 메모리 (저장장치)의 계층에 대해 설명해주세요." class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ram">
     그 중 흔히 메인메모리라고 부르는 RAM 에 대해 자세히 설명해주세요.
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#os">
+    OS 가 메모리를 관리하는 방법에 대해서 설명해 주세요.
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 가상메모리 관리 기법에 대해 설명해주세요.
+  </a>
+<nav aria-label="4. 가상메모리 관리 기법에 대해 설명해주세요." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#paging">
+    Paging 방식에 대해 설명해주세요.
+  </a>
+<nav aria-label="Paging 방식에 대해 설명해주세요." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#page-fault">
+    Page Fault 에 대해 설명해주세요.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#page-table">
+    Page Table 에는 어떤 정보가 저장되나요?
+  </a>
+<nav aria-label="Page Table 에는 어떤 정보가 저장되나요?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#page-table_1">
+    Page Table 어디에 저장이되나요?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#os-page-table">
+    OS 는 Page Table의 주소를 어떻게 찾을 수 있죠?
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#paging-segmentation">
+    Paging 방식과 비교해서 Segmentation 방식을 간단하게 설명해주세요.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#os-mmu">
+    OS의 메모리 관리에 있어서 MMU 의 역할을 설명해주세요.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-os-deadlock">
+    4. OS에서 Deadlock 이란 무엇인가요?
+  </a>
+<nav aria-label="4. OS에서 Deadlock 이란 무엇인가요?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deadlock">
+    Deadlock 의 발생(필요)조건에 대해 설명해주세요.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deadlock_1">
+    Deadlock 의 해결 방법에 대해 설명해주세요.
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -2193,18 +2360,35 @@
     }
 </style>
 <h2 id="1">1. 프로세스와 쓰레드를 비교해서 설명해주세요.<a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
-<hr/>
 <h3 id="_1">프로세스는 어떤 상태를 가지나요?<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<h3 id="xxxterm">프로세스의 상태 관리 (스케쥴링)의 레벨 (XXXterm)에 대해 설명해주세요.<a class="headerlink" href="#xxxterm" title="Permanent link">¶</a></h3>
-<h3 id="blocking-suspended">Blocking 상태와 Suspended 상태는 어떤 차이점이 있나요?<a class="headerlink" href="#blocking-suspended" title="Permanent link">¶</a></h3>
-<h3 id="_2">프로세스의 상태는 어떤 형태로 기록되고 관리되나요?<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<h4 id="xxxterm">프로세스의 상태 관리 (스케쥴링)의 레벨 (XXXterm)에 대해 설명해주세요.<a class="headerlink" href="#xxxterm" title="Permanent link">¶</a></h4>
+<h4 id="blocking-suspended">Blocking 상태와 Suspended 상태는 어떤 차이점이 있나요?<a class="headerlink" href="#blocking-suspended" title="Permanent link">¶</a></h4>
+<h4 id="_2">프로세스의 상태는 어떤 형태로 기록되고 관리되나요?<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
 <h4 id="pcb">PCB에는 어떤 정보들이 저장되나요?<a class="headerlink" href="#pcb" title="Permanent link">¶</a></h4>
 <hr/>
 <h3 id="_3">컨텍스트 스위치에대해서 설명해주세요.<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <h4 id="_4">프로세스의 컨텍스트 스위치와 쓰레드 컨텍스트 스위치의 차이에 대해 설명해주세요. 어떤것이 더 오버헤드가 큰가요?<a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
 <h4 id="swap-inout">컨텍스트 스위치와 비슷한 개념으로 Swap In/Out 이 있는데 둘을 비교해주세요.<a class="headerlink" href="#swap-inout" title="Permanent link">¶</a></h4>
-<h2 id="2">2. 메모리 (저장장치)의 계층에 대해 설명해주세요.<a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
+<hr/>
+<h2 id="2-os">2. OS 가 동시성 이슈를 해결하는 방법에 대해 알려주세요.<a class="headerlink" href="#2-os" title="Permanent link">¶</a></h2>
+<hr/>
+<h2 id="3">3. 메모리 (저장장치)의 계층에 대해 설명해주세요.<a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
 <h3 id="ram">그 중 흔히 메인메모리라고 부르는 RAM 에 대해 자세히 설명해주세요.<a class="headerlink" href="#ram" title="Permanent link">¶</a></h3>
+<h3 id="os">OS 가 메모리를 관리하는 방법에 대해서 설명해 주세요.<a class="headerlink" href="#os" title="Permanent link">¶</a></h3>
+<hr/>
+<h2 id="4">4. 가상메모리 관리 기법에 대해 설명해주세요.<a class="headerlink" href="#4" title="Permanent link">¶</a></h2>
+<h3 id="paging">Paging 방식에 대해 설명해주세요.<a class="headerlink" href="#paging" title="Permanent link">¶</a></h3>
+<hr/>
+<h4 id="page-fault">Page Fault 에 대해 설명해주세요.<a class="headerlink" href="#page-fault" title="Permanent link">¶</a></h4>
+<h4 id="page-table">Page Table 에는 어떤 정보가 저장되나요?<a class="headerlink" href="#page-table" title="Permanent link">¶</a></h4>
+<h5 id="page-table_1">Page Table 어디에 저장이되나요?<a class="headerlink" href="#page-table_1" title="Permanent link">¶</a></h5>
+<h5 id="os-page-table">OS 는 Page Table의 주소를 어떻게 찾을 수 있죠?<a class="headerlink" href="#os-page-table" title="Permanent link">¶</a></h5>
+<h3 id="paging-segmentation">Paging 방식과 비교해서 Segmentation 방식을 간단하게 설명해주세요.<a class="headerlink" href="#paging-segmentation" title="Permanent link">¶</a></h3>
+<h3 id="os-mmu">OS의 메모리 관리에 있어서 MMU 의 역할을 설명해주세요.<a class="headerlink" href="#os-mmu" title="Permanent link">¶</a></h3>
+<hr/>
+<h3 id="4-os-deadlock">4. OS에서 Deadlock 이란 무엇인가요?<a class="headerlink" href="#4-os-deadlock" title="Permanent link">¶</a></h3>
+<h4 id="deadlock">Deadlock 의 발생(필요)조건에 대해 설명해주세요.<a class="headerlink" href="#deadlock" title="Permanent link">¶</a></h4>
+<h4 id="deadlock_1">Deadlock 의 해결 방법에 대해 설명해주세요.<a class="headerlink" href="#deadlock_1" title="Permanent link">¶</a></h4>
 <hr/>
 <div class="md-source-file">
 <small>
