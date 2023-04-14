@@ -1,5 +1,5 @@
 ---
-1tags: []
+tags: []
 title: 인터뷰 질문 모음 링크
 author: ndy2
 date: 2023-04-14
