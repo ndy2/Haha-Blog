@@ -336,12 +336,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/algorithm-data-structure/README.md/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/algorithm-data-structure/</loc>
          <lastmod>2023-04-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/bookmarks/README.md/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/architecture-codebase/</loc>
+         <lastmod>2023-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/architecture-system-infra/</loc>
+         <lastmod>2023-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/bookmarks/</loc>
          <lastmod>2023-04-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -351,7 +361,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/java/</loc>
+         <lastmod>2023-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/os/</loc>
+         <lastmod>2023-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/spring/</loc>
          <lastmod>2023-04-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
