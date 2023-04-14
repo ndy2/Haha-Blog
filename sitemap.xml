@@ -796,6 +796,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/os/concurrency-issue/</loc>
+         <lastmod>2023-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/os/context-switch-vs-swapping/</loc>
          <lastmod>2023-04-14</lastmod>
          <changefreq>daily</changefreq>
