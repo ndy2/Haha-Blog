@@ -231,7 +231,7 @@ list = [(1, 10), (1, 10), (1, 3), (2, 7), (2, 5), (3, 4), (6, 7), (6, 1)]
 
 이제 메서드의 이름만 봐도 슬슬 감이 온다.
 
-배열의 정렬 API중 특이한 것은 배열이 Comparable 하지 않음에도 `sort()` 를 호출할 수 있다는 것이다. `List`, `MutableList` 타입에서는 제네릭의 upper-bound를 통해 Comparable 하지 않은 타입인자를 가지는 경우 파라미터를 가지지 않은 `sort()` , `sorted()` 의 호출을 아예 막았는데 배열의 경우 그냥 호출하고 `ClassCastException` 을 터트려버린다.
+배열의 정렬 API중 특이한 것은 배열이 Comparable 하지 않음에도 `sort()` 를 호출할 수 있다는 것이다. `List`, `MutableList` 타입에서는 제네릭의 upper-bound를 통해 Comparable 하지 않은 타입인자를 가지는 경우 파라미터를 가지지 않은 `sort()` , `sorted()` 의 호출을 아예 막았는데 배열의 경우 그냥 호출하고 `ClassCastException` 을 터트려버린다. 아마 자바의 Array.sort 와의 호환성을 위한 선택인것 같다.
 
 또한 특이한 것은 배열에 대해 `sortedXXX` 호출시 기본적으로 List가 응답이되고 배열을 원하는 경우 `sortedArrayWith` 라는 녀석을 사용해야 한다는 것이다.
 
