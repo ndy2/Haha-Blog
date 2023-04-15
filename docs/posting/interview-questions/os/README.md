@@ -61,8 +61,8 @@ description: >-
 
 ---
 
-### 4. OS에서 Deadlock 이란 무엇인가요?
+## 5. OS에서 Deadlock 이란 무엇인가요?
 
-#### Deadlock 의 발생(필요)조건에 대해 설명해주세요.
+### Deadlock 의 발생(필요)조건에 대해 설명해주세요.
 
-#### Deadlock 의 해결 방법에 대해 설명해주세요.
+### Deadlock 의 해결 방법에 대해 설명해주세요.
