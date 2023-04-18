@@ -16,7 +16,7 @@ date: 2023-02-16
 
 #### 1. Download
 
-![[images/2.png]]
+![[docs/posting/tools/github/actions/self-hosted-runner/images/2.png]]
 
 #### 2. Configure
 

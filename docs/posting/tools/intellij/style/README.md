@@ -6,11 +6,11 @@ date: 2023-02-17
 
 ### 1. Formatter 적용
 
-![[docs/posting/tools/intellij/style/images/1.png]]
+![[1.png]]
 
 ### 2. 파일의 마지막 줄 항상 New line 추가 하기
 
-![[images/2.png]]
+![[2.png]]
 
 ### 3. Check Style 추가
 

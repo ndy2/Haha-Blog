@@ -18,11 +18,11 @@ description: >-
 > [!warning] 주의!
 > 이때 꼭 check IDE for Early Access 를 Early Access Program 으로 설정해주자.
 
-![[docs/posting/tools/intellij/new-ui/images/1.png]]
+![[1.png]]
 
 혹은 JetBrains Toolbox 를 활용해보자.
 
-![[images/2.png|300]]
+![[2.png|300]]
 
 ### 2. New UI 적용
 

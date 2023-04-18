@@ -7,8 +7,8 @@ description: >-
   mac 에서 프로세스 강제 종료하는 법을 알아보자!
 ---
 
-![[docs/posting/tools/mac/activity-monitor/images/1.png|Activity Manager|400]]
+![[1.png|Activity Manager|400]]
 
-![[images/2.png|응답없는 프로세스 확인|400]]
+![[2.png|응답없는 프로세스 확인|400]]
 
 ![[images/3.png|강제 종료|400]]
