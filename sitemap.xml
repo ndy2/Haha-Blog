@@ -361,7 +361,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/dev-general/</loc>
+         <lastmod>2023-04-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/java/</loc>
+         <lastmod>2023-04-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/jpa/</loc>
+         <lastmod>2023-04-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/network/</loc>
          <lastmod>2023-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -372,6 +387,11 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/spring/</loc>
+         <lastmod>2023-04-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/interview-questions/web-general/</loc>
          <lastmod>2023-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
