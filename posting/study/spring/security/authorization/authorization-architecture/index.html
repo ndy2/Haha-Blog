@@ -1,2139 +1,5307 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다.">
+      
+      
+        <meta name="author" content="Haha">
+      
+      
+        <link rel="canonical" href="https://ndy2.github.io/Haha-Blog/posting/study/spring/security/authorization/authorization-architecture/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../http-req-authorization-conf/">
+      
+      <link rel="icon" href="../../../../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+    
+    
+      
+        <title>Authorization Architecture - Haha 블로그</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
 
-<html class="no-js" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다." name="description"/>
-<meta content="Haha" name="author"/>
-<link href="https://ndy2.github.io/Haha-Blog/posting/study/spring/security/authorization/authorization-architecture/" rel="canonical"/>
-<link href="../" rel="prev"/>
-<link href="../http-req-authorization-conf/" rel="next"/>
-<link href="../../../../../../assets/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
-<title>Authorization Architecture - Haha 블로그</title>
-<link href="../../../../../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
-<link href="../../../../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../../../../assets/stylesheets/obsidian-rich-links.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-            html.glightbox-open { overflow: initial; height: 100%; }
-            .gslide-title { margin-top: 0px; user-select: text; }
-            .gslide-desc { color: #666; user-select: text; }
-            .gslide-image img { background: white; }
-            
-                .gscrollbar-fixer { padding-right: 15px; }
-                .gdesc-inner { font-size: 0.75rem; }
-                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../../../../../../assets/javascripts/glightbox.min.js"></script></head>
-<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
-<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#-spring-security-reference-authorization-architecture">
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/obsidian-rich-links.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-spring-security-reference-authorization-architecture" class="md-skip">
           Skip to content
         </a>
-</div>
-<div data-md-component="announce">
-</div>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
 <header class="md-header" data-md-component="header">
-<nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Haha 블로그" class="md-header__button md-logo" data-md-component="logo" href="../../../../../.." title="Haha 블로그">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
-</a>
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
-</label>
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../../.." title="Haha 블로그" class="md-header__button md-logo" aria-label="Haha 블로그" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Haha 블로그
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               Authorization Architecture
             
           </span>
-</div>
-</div>
-</div>
-<form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
-</label>
-<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
-</label>
-</form>
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-</label>
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</label>
-<nav aria-label="Search" class="md-search__options">
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
-</button>
-</nav>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="md-header__source">
-<a class="md-source" data-md-component="source" href="https://github.com/ndy2/Haha-Blog" title="Go to repository">
-<div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
-</div>
-<div class="md-source__repository">
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ndy2/Haha-Blog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
     ndy2/Haha-Blog
   </div>
 </a>
-</div>
-</nav>
+      </div>
+    
+  </nav>
+  
 </header>
-<div class="md-container" data-md-component="container">
-<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
-<div class="md-grid">
-<ul class="md-tabs__list">
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../../../..">
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../../../.." class="md-tabs__link">
       안녕하세요!
     </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../../../../til/">
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../til/" class="md-tabs__link md-tabs__link--active">
         Posting
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../../../../archive/">
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../archive/" class="md-tabs__link">
         Archive
       </a>
-</li>
-</ul>
-</div>
+    </li>
+  
+
+      
+    </ul>
+  </div>
 </nav>
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="Haha 블로그" class="md-nav__button md-logo" data-md-component="logo" href="../../../../../.." title="Haha 블로그">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
-</a>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Haha 블로그" class="md-nav__button md-logo" aria-label="Haha 블로그" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
     Haha 블로그
   </label>
-<div class="md-nav__source">
-<a class="md-source" data-md-component="source" href="https://github.com/ndy2/Haha-Blog" title="Go to repository">
-<div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
-</div>
-<div class="md-source__repository">
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ndy2/Haha-Blog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
     ndy2/Haha-Blog
   </div>
 </a>
-</div>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../..">
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
         안녕하세요!
       </a>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
           Posting
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
           Posting
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
           Til
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_1">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
           Til
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../til/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../til/" class="md-nav__link">
         Today I Learned
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
           Study
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_2">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
           Study
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
           Operating System
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_1_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_1">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
           Operating System
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../os/process-vs-thread/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../os/process-vs-thread/" class="md-nav__link">
         Process vs Thread
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../os/concurrency-issue/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../os/concurrency-issue/" class="md-nav__link">
         운영체제와 동시성 문제
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../os/context-switch-vs-swapping/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../os/context-switch-vs-swapping/" class="md-nav__link">
         Context Switch vs Swap In/Out
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../os/deadlock/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../os/deadlock/" class="md-nav__link">
         Deadlock
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_1_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_1_5" id="__nav_2_2_1_5_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_1_5" id="__nav_2_2_1_5_label" tabindex="0">
           Memory management
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_1_5_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_1_5">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_1_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_1_5">
+          <span class="md-nav__icon md-icon"></span>
           Memory management
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../os/memory-management/virtual-memory-1/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../os/memory-management/virtual-memory-1/" class="md-nav__link">
         Virtual Memory 1
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../os/memory-management/virtual-memory-2/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../os/memory-management/virtual-memory-2/" class="md-nav__link">
         Virtual Memory 2
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../os/memory-management/introduction/images/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../os/memory-management/introduction/images/" class="md-nav__link">
         메모리 관리 개요
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../os/memory-management/memory-allocation/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../os/memory-management/memory-allocation/" class="md-nav__link">
         메모리 할당/파티셔닝
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
           Database
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_2">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
           Database
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/basic-terminologies/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/basic-terminologies/" class="md-nav__link">
         Basic Terminologies
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/clustering-replication-sharding/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/clustering-replication-sharding/" class="md-nav__link">
         Clustering Replication Sharding
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/db-index/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/db-index/" class="md-nav__link">
         Index
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/dbcp/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/dbcp/" class="md-nav__link">
         Database Connection Pool
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/join/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/join/" class="md-nav__link">
         Join
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/mysql-execution-plan/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/mysql-execution-plan/" class="md-nav__link">
         Mysql Excution Plan
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_2_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_2_7" id="__nav_2_2_2_7_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_2_7" id="__nav_2_2_2_7_label" tabindex="0">
           Normalization
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_7_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_2_7">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_2_7">
+          <span class="md-nav__icon md-icon"></span>
           Normalization
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/normalization/anomaly/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/normalization/anomaly/" class="md-nav__link">
         Anomaly
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/normalization/fd/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/normalization/fd/" class="md-nav__link">
         Functional Dependency
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/normalization/is-what/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/normalization/is-what/" class="md-nav__link">
         What is Normalization
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/normalization/1nf-and-2nf/">
-        1NF &amp; 2NF
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/normalization/1nf-and-2nf/" class="md-nav__link">
+        1NF & 2NF
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/normalization/3nf-and-bcnf/db-normalization-3nf-bcnf/">
-        3NF &amp; BCNF
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/normalization/3nf-and-bcnf/db-normalization-3nf-bcnf/" class="md-nav__link">
+        3NF & BCNF
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/olap/">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/olap/" class="md-nav__link">
         OLAP
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/rdb/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/rdb/" class="md-nav__link">
         Relational DB
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../database/transaction-acid/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../database/transaction-acid/" class="md-nav__link">
         Transaction
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
           Network
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_3">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
           Network
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer2/arp/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../network/layer2/arp/" class="md-nav__link">
         ARP
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_3_2" id="__nav_2_2_3_2_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_3_2" id="__nav_2_2_3_2_label" tabindex="0">
           Layer3
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_2_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_3_2">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
           Layer3
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer3/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../network/layer3/" class="md-nav__link">
         Network Layer, Internet
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer3/icmp/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../network/layer3/icmp/" class="md-nav__link">
         ICMP
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer3/ip/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../network/layer3/ip/" class="md-nav__link">
         IP
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_2_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_3_2_4" id="__nav_2_2_3_2_4_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_3_2_4" id="__nav_2_2_3_2_4_label" tabindex="0">
           Router
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_2_4_label" class="md-nav" data-md-level="5">
-<label class="md-nav__title" for="__nav_2_2_3_2_4">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_2_3_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_3_2_4">
+          <span class="md-nav__icon md-icon"></span>
           Router
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer3/router/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../network/layer3/router/" class="md-nav__link">
         Router
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer3/router/nat/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../network/layer3/router/nat/" class="md-nav__link">
         NAT
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_3_3" id="__nav_2_2_3_3_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_3_3" id="__nav_2_2_3_3_label" tabindex="0">
           Layer4
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_3_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_3_3">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
           Layer4
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer4/tcp-and-timeout/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../network/layer4/tcp-and-timeout/" class="md-nav__link">
         Connection Timeout vs Read Timeout
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer4/tcp-congestion-control/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../network/layer4/tcp-congestion-control/" class="md-nav__link">
         TCP Congestion Control
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer4/tcp-flow-control/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../network/layer4/tcp-flow-control/" class="md-nav__link">
         TCP flow control
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer4/tcp-vs-udp/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../network/layer4/tcp-vs-udp/" class="md-nav__link">
         TCP vs UDP
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_3_4" id="__nav_2_2_3_4_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_3_4" id="__nav_2_2_3_4_label" tabindex="0">
           Layer7
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_4_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_3_4">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_3_4">
+          <span class="md-nav__icon md-icon"></span>
           Layer7
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer7/dns/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../network/layer7/dns/" class="md-nav__link">
         DNS
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer7/http-versions/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../network/layer7/http-versions/" class="md-nav__link">
         HTTP Versions
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../network/layer7/https/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../network/layer7/https/" class="md-nav__link">
         HTTPS
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
           Algorithm
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_4_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_4">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_4">
+          <span class="md-nav__icon md-icon"></span>
           Algorithm
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_4_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_4_1" id="__nav_2_2_4_1_label" tabindex="0">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_4_1" id="__nav_2_2_4_1_label" tabindex="0">
           정렬 알고리즘
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_4_1_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_4_1">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_4_1">
+          <span class="md-nav__icon md-icon"></span>
           정렬 알고리즘
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../algorithm/sort/n-square/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algorithm/sort/n-square/" class="md-nav__link">
         O(n^2) 정렬 알고리즘
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../algorithm/sort/merge-sort/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algorithm/sort/merge-sort/" class="md-nav__link">
         병합 정렬(Merge sort)
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../algorithm/sort/quicksort/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algorithm/sort/quicksort/" class="md-nav__link">
         퀵 소트 (Quicksort)
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_4_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_4_2" id="__nav_2_2_4_2_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_4_2" id="__nav_2_2_4_2_label" tabindex="0">
           유니온 파인드
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_4_2_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_4_2">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_4_2">
+          <span class="md-nav__icon md-icon"></span>
           유니온 파인드
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../algorithm/union-find/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algorithm/union-find/" class="md-nav__link">
         유니온 파인드 (Union-Find)
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../algorithm/union-find/union-by-rank/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algorithm/union-find/union-by-rank/" class="md-nav__link">
         union by rank
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
           Data Structure
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_5">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
           Data Structure
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../data-structure/adt/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data-structure/adt/" class="md-nav__link">
         ADT
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../data-structure/array-arraylist-linkedlist/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data-structure/array-arraylist-linkedlist/" class="md-nav__link">
         Array vs. ArrayList vs. LinkedList
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_5_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_5_3" id="__nav_2_2_5_3_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_5_3" id="__nav_2_2_5_3_label" tabindex="0">
           Tree
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_5_3_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_5_3">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_5_3">
+          <span class="md-nav__icon md-icon"></span>
           Tree
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../data-structure/tree/avl-tree/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data-structure/tree/avl-tree/" class="md-nav__link">
         AVL 트리
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../data-structure/tree/b-tree/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data-structure/tree/b-tree/" class="md-nav__link">
         B-tree 특징과 삽입 연산
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../data-structure/tree/binary-indexed-tree/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data-structure/tree/binary-indexed-tree/" class="md-nav__link">
         Binary-Indexed-Tree
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../data-structure/tree/bst/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data-structure/tree/bst/" class="md-nav__link">
         이진 탐색 트리
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../data-structure/tree/heap/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data-structure/tree/heap/" class="md-nav__link">
         힙 (Heap)
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../data-structure/tree/rb-tree/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data-structure/tree/rb-tree/" class="md-nav__link">
         Red-Black Tree
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../data-structure/tree/segment-tree/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data-structure/tree/segment-tree/" class="md-nav__link">
         Segment Tree
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../data-structure/tree/trie/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data-structure/tree/trie/" class="md-nav__link">
         Trie
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
           Java
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_6_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_6">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_6">
+          <span class="md-nav__icon md-icon"></span>
           Java
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../java/collections/fail-fast-and-fail-safe/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java/collections/fail-fast-and-fail-safe/" class="md-nav__link">
         fail-fast vs fail-safe iterator
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../java/nested-classes/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java/nested-classes/" class="md-nav__link">
         자바의 여러 중첩 클래스에 대해 알아보자
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../java/nio/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java/nio/" class="md-nav__link">
         Java 4에 추가된 NIO (New I/O) 에 대해 알아보자
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_6_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_6_4" id="__nav_2_2_6_4_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_6_4" id="__nav_2_2_6_4_label" tabindex="0">
           Sort
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_6_4_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_6_4">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_6_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_6_4">
+          <span class="md-nav__icon md-icon"></span>
           Sort
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../java/sort/arrays/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java/sort/arrays/" class="md-nav__link">
         Arrays.sort
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../java/sort/collections/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java/sort/collections/" class="md-nav__link">
         Collections.sort
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../java/string/">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java/string/" class="md-nav__link">
         String
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../java/synchronized/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java/synchronized/" class="md-nav__link">
         synchronized
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../java/time/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java/time/" class="md-nav__link">
         Date-Time Overview
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_7" id="__nav_2_2_7_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_7" id="__nav_2_2_7_label" tabindex="0">
           Kotlin
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_7_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_7">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_7">
+          <span class="md-nav__icon md-icon"></span>
           Kotlin
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/" class="md-nav__link">
         Introduction
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/1.8.0/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/1.8.0/" class="md-nav__link">
         Kotlin 1.8.0
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/delegation/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/delegation/" class="md-nav__link">
         위임 (Delegation)
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/delegation-properties/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/delegation-properties/" class="md-nav__link">
         위임 프로퍼티 (delegated properties)
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_7_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_7_5" id="__nav_2_2_7_5_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_7_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_7_5" id="__nav_2_2_7_5_label" tabindex="0">
           Generics
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_7_5_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_7_5">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_7_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_7_5">
+          <span class="md-nav__icon md-icon"></span>
           Generics
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/generics/basic/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/generics/basic/" class="md-nav__link">
         제네릭스 (generics) 기초
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/generics/java-variance/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/generics/java-variance/" class="md-nav__link">
         변성 with Java
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/generics/kotlin-variance/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/generics/kotlin-variance/" class="md-nav__link">
         변성 in Kotlin
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/generics/refied-type-parameter/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/generics/refied-type-parameter/" class="md-nav__link">
         실체화된 타입 파라미터 (refied-type-parameter)
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/hof-and-function-type/">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/hof-and-function-type/" class="md-nav__link">
         고차 함수 (Higher-Order-Function)와 함수 타입 (Function Type)
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/inline-function/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/inline-function/" class="md-nav__link">
         inline 함수
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/lambda/variable-capturing/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/lambda/variable-capturing/" class="md-nav__link">
         변수 캡쳐링
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/object-keyword/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/object-keyword/" class="md-nav__link">
         object 키워드 활용
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/operator-overloading/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/operator-overloading/" class="md-nav__link">
         연산자 오버로딩
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_7_11" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_7_11" id="__nav_2_2_7_11_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_7_11" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_7_11" id="__nav_2_2_7_11_label" tabindex="0">
           Scope functions
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_7_11_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_7_11">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_7_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_7_11">
+          <span class="md-nav__icon md-icon"></span>
           Scope functions
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/scope-functions/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/scope-functions/" class="md-nav__link">
         scope functions
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/scope-functions/examples/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/scope-functions/examples/" class="md-nav__link">
         Scope Function 활용 예시
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/sorting-api/">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/sorting-api/" class="md-nav__link">
         Kotlin의 정렬 API
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kotlin/tips/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kotlin/tips/" class="md-nav__link">
         꿀팁 모음
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_8" id="__nav_2_2_8_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_8" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_8" id="__nav_2_2_8_label" tabindex="0">
           Spring
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_2_8_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_8">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_8_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_2_8">
+          <span class="md-nav__icon md-icon"></span>
           Spring
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_8_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_8_1" id="__nav_2_2_8_1_label" tabindex="0">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_8_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_8_1" id="__nav_2_2_8_1_label" tabindex="0">
           Boot
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_8_1_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_8_1">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_8_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_8_1">
+          <span class="md-nav__icon md-icon"></span>
           Boot
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../boot/3.0/observability/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../boot/3.0/observability/" class="md-nav__link">
         Observability 와 Spring Boot 3
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../boot/actuator/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../boot/actuator/" class="md-nav__link">
         actuator
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_8_1_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_8_1_3" id="__nav_2_2_8_1_3_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_8_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_8_1_3" id="__nav_2_2_8_1_3_label" tabindex="0">
           Auto configure
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_8_1_3_label" class="md-nav" data-md-level="5">
-<label class="md-nav__title" for="__nav_2_2_8_1_3">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_2_8_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_8_1_3">
+          <span class="md-nav__icon md-icon"></span>
           Auto configure
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../boot/auto-configure/auto-configure/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../boot/auto-configure/auto-configure/" class="md-nav__link">
         스프링 부트의 자동 설정 동작 원리
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../boot/auto-configure/bean-role/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../boot/auto-configure/bean-role/" class="md-nav__link">
         빈 오브젝트의 역할과 구분
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../boot/auto-configure/configuration-proxybeanmethods/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../boot/auto-configure/configuration-proxybeanmethods/" class="md-nav__link">
         Configuration과 proxyBeanmethods
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../boot/auto-configure/how-to-analysis/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../boot/auto-configure/how-to-analysis/" class="md-nav__link">
         자동 구성 분석 방법
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../boot/auto-configure/meta-annotations-composed-annotation/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../boot/auto-configure/meta-annotations-composed-annotation/" class="md-nav__link">
         자동 구성 기반 애플리케이션
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_8_1_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_8_1_4" id="__nav_2_2_8_1_4_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_8_1_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_8_1_4" id="__nav_2_2_8_1_4_label" tabindex="0">
           Externerlized configuration
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_8_1_4_label" class="md-nav" data-md-level="5">
-<label class="md-nav__title" for="__nav_2_2_8_1_4">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_2_8_1_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_8_1_4">
+          <span class="md-nav__icon md-icon"></span>
           Externerlized configuration
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../boot/externerlized-configuration/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../boot/externerlized-configuration/" class="md-nav__link">
         외부 설정값 관리
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../boot/externerlized-configuration/abstraction-in-spring/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../boot/externerlized-configuration/abstraction-in-spring/" class="md-nav__link">
         스프링의 외부 설정 추상화
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../boot/externerlized-configuration/in-traditional-java/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../boot/externerlized-configuration/in-traditional-java/" class="md-nav__link">
         전통적인 자바의 외부 설정 처리 방식
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_8_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_8_2" id="__nav_2_2_8_2_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_8_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_8_2" id="__nav_2_2_8_2_label" tabindex="0">
           Common
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_8_2_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_8_2">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_8_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_8_2">
+          <span class="md-nav__icon md-icon"></span>
           Common
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../data/common/exception-translation/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/common/exception-translation/" class="md-nav__link">
         exception translation in spring-data
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../data/common/repository-hierarchy/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/common/repository-hierarchy/" class="md-nav__link">
         Repository Hierarchy
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_8_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_8_3" id="__nav_2_2_8_3_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_8_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_8_3" id="__nav_2_2_8_3_label" tabindex="0">
           Authorization
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_2_8_3_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_8_3">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_8_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_2_8_3">
+          <span class="md-nav__icon md-icon"></span>
           Authorization
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
         인가 프로세스 업데이트
       </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
           Authorization Architecture
           <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Authorization Architecture
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#-spring-security-reference-authorization-architecture">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-spring-security-reference-authorization-architecture" class="md-nav__link">
     - spring-security reference - Authorization Architecture
   </a>
-<nav aria-label="- spring-security reference - Authorization Architecture" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1">
+  
+    <nav class="md-nav" aria-label="- spring-security reference - Authorization Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
     1. 공식문서 뿌시기
   </a>
-<nav aria-label="1. 공식문서 뿌시기" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#authorities">
+  
+    <nav class="md-nav" aria-label="1. 공식문서 뿌시기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorities" class="md-nav__link">
     Authorities
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#the-authorizationmanager">
+        
+          <li class="md-nav__item">
+  <a href="#the-authorizationmanager" class="md-nav__link">
     The AuthorizationManager
   </a>
+  
 </li>
-</ul>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../http-req-authorization-conf/">
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http-req-authorization-conf/" class="md-nav__link">
         Http 요청 인가 설정
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../http-req-authorization-proc/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http-req-authorization-proc/" class="md-nav__link">
         Http 요청 인가 프로세스
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../websocket/auto-configure/">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../websocket/auto-configure/" class="md-nav__link">
         웹 소켓 자동 설정
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_9" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
           Gradle
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_9_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_9">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_9">
+          <span class="md-nav__icon md-icon"></span>
           Gradle
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../gradle/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gradle/" class="md-nav__link">
         Gradle
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_9_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_9_2" id="__nav_2_2_9_2_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_9_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_9_2" id="__nav_2_2_9_2_label" tabindex="0">
           Java
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_9_2_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_9_2">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_9_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_9_2">
+          <span class="md-nav__icon md-icon"></span>
           Java
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../gradle/plugins/java/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gradle/plugins/java/" class="md-nav__link">
         gradle java plugin
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../gradle/plugins/java/dependency-configurations/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gradle/plugins/java/dependency-configurations/" class="md-nav__link">
         gradle java plugin 이 추가하는 Gradle 의 의존성 설정에 대해 알아보자.
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_10" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_10" id="__nav_2_2_10_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_10" id="__nav_2_2_10_label" tabindex="0">
           Architecture
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_10_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_10">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_10">
+          <span class="md-nav__icon md-icon"></span>
           Architecture
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/cap-theorem/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/cap-theorem/" class="md-nav__link">
         CAP Theorem
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/consistent-hash/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/consistent-hash/" class="md-nav__link">
         Consistent Hash
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/hexagonal-architecture/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/hexagonal-architecture/" class="md-nav__link">
         Hexagonal Architecture
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_10_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_10_4" id="__nav_2_2_10_4_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_10_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_10_4" id="__nav_2_2_10_4_label" tabindex="0">
           Load balancing
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_10_4_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_10_4">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_10_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_10_4">
+          <span class="md-nav__icon md-icon"></span>
           Load balancing
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/load-balancing/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/load-balancing/" class="md-nav__link">
         Load Balancing
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/load-balancing/l4-lb-vs-l7-lb/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/load-balancing/l4-lb-vs-l7-lb/" class="md-nav__link">
         L4 LB vs L7 LB
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/msa/msa-pros-cons/">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/msa/msa-pros-cons/" class="md-nav__link">
         MSA 장단점
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/observability/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/observability/" class="md-nav__link">
         Observability
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../architecture/resilient-pattern/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/resilient-pattern/" class="md-nav__link">
         Resilient Pattern
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_11" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_11" id="__nav_2_2_11_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_11" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_11" id="__nav_2_2_11_label" tabindex="0">
           Web
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_11_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_11">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_11">
+          <span class="md-nav__icon md-icon"></span>
           Web
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/cookie-session-token/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../web/cookie-session-token/" class="md-nav__link">
         Cookie, Session and Token
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../web/websocket/bookmarks/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../web/websocket/bookmarks/" class="md-nav__link">
         참고 링크
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_12" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_12" id="__nav_2_2_12_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_12" id="__nav_2_2_12_label" tabindex="0">
           Dev general
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_12_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_12">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_12_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_12">
+          <span class="md-nav__icon md-icon"></span>
           Dev general
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../dev-general/collaborate/aync-communication/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dev-general/collaborate/aync-communication/" class="md-nav__link">
         비동기적 커뮤니케이션
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../dev-general/license/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dev-general/license/" class="md-nav__link">
         Open-Source License
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2_12_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_12_3" id="__nav_2_2_12_3_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_12_3" id="__nav_2_2_12_3_label" tabindex="0">
           Uml
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_12_3_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_2_12_3">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_12_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_12_3">
+          <span class="md-nav__icon md-icon"></span>
           Uml
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../dev-general/uml/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dev-general/uml/" class="md-nav__link">
         UML 시작
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../dev-general/uml/class-diagram/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dev-general/uml/class-diagram/" class="md-nav__link">
         클래스 다이어그램
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../dev-general/uml/package-diagram/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dev-general/uml/package-diagram/" class="md-nav__link">
         패키지 다이어그램
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../dev-general/uml/sequence-diagram/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dev-general/uml/sequence-diagram/" class="md-nav__link">
         시퀀스 다이어그램
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
           Books
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_3">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
           Books
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/" class="md-nav__link">
         Study with Books
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/clean-agile/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/clean-agile/" class="md-nav__link">
         Clean Agile
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_3_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
           Springboot msa component
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_3_3_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_3_3">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
           Springboot msa component
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/" class="md-nav__link">
         Index
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch01-msa/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch01-msa/" class="md-nav__link">
         Ch01 msa
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch02-framework-and-springboot/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch02-framework-and-springboot/" class="md-nav__link">
         Ch02 framework and springboot
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch03-springboot-basic/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch03-springboot-basic/" class="md-nav__link">
         Ch03 springboot basic
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch04-sec01-http/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch04-sec01-http/" class="md-nav__link">
         Ch04 sec01 http
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch04-sec02-servlet-and-mvc/" class="md-nav__link">
         Ch04 sec02 servlet and mvc
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch04-spring-web-mvc-basic/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch04-spring-web-mvc-basic/" class="md-nav__link">
         Ch04 spring web mvc basic
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch05-spring-web-mvc-with-restapi/" class="md-nav__link">
         Ch05 spring web mvc with restapi
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch06-build-web-application-server/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch06-build-web-application-server/" class="md-nav__link">
         Ch06 build web application server
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch06-sec00-%40EnableXXX-and-bean-modulerlize/" class="md-nav__link">
         ch06 sec00 @EnableXXX and bean modulerlize
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch06-sec01-webapplication-configure-mechanism/" class="md-nav__link">
         Ch06 sec01 webapplication configure mechanism
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch06-sec03-dispatcher-servlet/" class="md-nav__link">
         Ch06 sec03 dispatcher servlet
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch07-sec01-spring-aop/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch07-sec01-spring-aop/" class="md-nav__link">
         Ch07 sec01 spring aop
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch07-sec03-autoconfiguration/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch07-sec03-autoconfiguration/" class="md-nav__link">
         Ch07 sec03 autoconfiguration
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch07-spring-aop-and-test-and-autoconfiguration/" class="md-nav__link">
         Ch07 spring aop and test and autoconfiguration
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch08-data-persistence/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch08-data-persistence/" class="md-nav__link">
         Ch08 data persistence
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch08-sec01-jpa-pros-and-cons/" class="md-nav__link">
         Ch08 sec01 jpa pros and cons
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch08-sec07-warning-on-%40Transactional/" class="md-nav__link">
         ch08 sec07 warning on @Transactional
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch08-sec08-entitymanager-and-persistence-context/" class="md-nav__link">
         Ch08 sec08 entitymanager and persistence context
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch08-sec11-osiv/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch08-sec11-osiv/" class="md-nav__link">
         Ch08 sec11 osiv
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch09-application-integration-restapi/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch09-application-integration-restapi/" class="md-nav__link">
         Ch09 application integration restapi
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch09-sec01-resttemplate/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch09-sec01-resttemplate/" class="md-nav__link">
         Ch09 sec01 resttemplate
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch09-sec02-webclient/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch09-sec02-webclient/" class="md-nav__link">
         Ch09 sec02 webclient
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch10-sec01-redis-high-availability/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch10-sec01-redis-high-availability/" class="md-nav__link">
         Ch10 sec01 redis high availability
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch10-sec01-redis-introduction/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch10-sec01-redis-introduction/" class="md-nav__link">
         Ch10 sec01 redis introduction
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch10-sec04-redis-serializer/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch10-sec04-redis-serializer/" class="md-nav__link">
         Ch10 sec04 redis serializer
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch10-sec05-redis-usages/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch10-sec05-redis-usages/" class="md-nav__link">
         Ch10 sec05 redis usages
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch11-sec03-batch-architecture/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch11-sec03-batch-architecture/" class="md-nav__link">
         Ch11 sec03 batch architecture
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_3_3_29" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_3_3_29" id="__nav_2_3_3_29_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3_29" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_3_29" id="__nav_2_3_3_29_label" tabindex="0">
           Ch12 spring event
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_3_3_29_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_3_3_29">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_3_3_29_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_3_29">
+          <span class="md-nav__icon md-icon"></span>
           Ch12 spring event
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch12-spring-event/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch12-spring-event/" class="md-nav__link">
         Index
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch12-spring-event/sec01-introduction/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch12-spring-event/sec01-introduction/" class="md-nav__link">
         Sec01 introduction
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch12-spring-event/sec02-old-style/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch12-spring-event/sec02-old-style/" class="md-nav__link">
         Sec02 old style
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch12-spring-event/sec03-new-style/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch12-spring-event/sec03-new-style/" class="md-nav__link">
         Sec03 new style
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch12-spring-event/sec04-async-event/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch12-spring-event/sec04-async-event/" class="md-nav__link">
         Sec04 async event
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../books/springboot-msa-component/ch12-spring-event/sec05-spring-event/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../books/springboot-msa-component/ch12-spring-event/sec05-spring-event/" class="md-nav__link">
         Sec05 spring event
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
           Projects
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_4">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
           Projects
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
           Common
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_4_1">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4_1">
+          <span class="md-nav__icon md-icon"></span>
           Common
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../projects/common/meeting-notes-template/Untitled/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../projects/common/meeting-notes-template/Untitled/" class="md-nav__link">
         Meeting Template
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../projects/common/on-startup/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../projects/common/on-startup/" class="md-nav__link">
         시작 단계의 체크리스트
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../projects/kakaotalk-clone-coding/">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../projects/kakaotalk-clone-coding/" class="md-nav__link">
         카카오톡 클론 코딩
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
           Bloggingtips
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_5">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
           Bloggingtips
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../bloggingtips/mkdocs/custom-admonition/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../bloggingtips/mkdocs/custom-admonition/" class="md-nav__link">
         Custom Admonition
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_5_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
           Mkdocs obsidian
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_5_2_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_5_2">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_5_2">
+          <span class="md-nav__icon md-icon"></span>
           Mkdocs obsidian
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../bloggingtips/mkdocs-obsidian/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../bloggingtips/mkdocs-obsidian/" class="md-nav__link">
         들어가기
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../bloggingtips/mkdocs-obsidian/pros-and-cons/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../bloggingtips/mkdocs-obsidian/pros-and-cons/" class="md-nav__link">
         장 단점
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../bloggingtips/mkdocs-obsidian/todo/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../bloggingtips/mkdocs-obsidian/todo/" class="md-nav__link">
         TODO
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_5_2_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_5_2_4" id="__nav_2_5_2_4_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_2_4" id="__nav_2_5_2_4_label" tabindex="0">
           Kroki test
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_5_2_4_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_2_5_2_4">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_5_2_4">
+          <span class="md-nav__icon md-icon"></span>
           Kroki test
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../bloggingtips/mkdocs-obsidian/kroki-test/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../bloggingtips/mkdocs-obsidian/kroki-test/" class="md-nav__link">
         Index
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../bloggingtips/mkdocs-obsidian/kroki-test/test1/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../bloggingtips/mkdocs-obsidian/kroki-test/test1/" class="md-nav__link">
         Test1
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../bloggingtips/mkdocs-obsidian/kroki-test/test2/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../bloggingtips/mkdocs-obsidian/kroki-test/test2/" class="md-nav__link">
         Test2
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_5_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
           Obsidian
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_5_3_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_5_3">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_5_3">
+          <span class="md-nav__icon md-icon"></span>
           Obsidian
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../bloggingtips/obsidian/custom-callout/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../bloggingtips/obsidian/custom-callout/" class="md-nav__link">
         Custom Callout
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../bloggingtips/obsidian/file-hide/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../bloggingtips/obsidian/file-hide/" class="md-nav__link">
         File hide with snippet
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
           Tools
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_6">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
           Tools
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/etc/github-readme-tech-stack/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/etc/github-readme-tech-stack/" class="md-nav__link">
         테크 스텍 아이콘 생성 툴
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_6_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_6_2" id="__nav_2_6_2_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6_2" id="__nav_2_6_2_label" tabindex="0">
           Git
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_6_2_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_6_2">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_6_2">
+          <span class="md-nav__icon md-icon"></span>
           Git
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/git/clone/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/git/clone/" class="md-nav__link">
         git clone
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/git/rebase/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/git/rebase/" class="md-nav__link">
         git rebase
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/git/prune/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/git/prune/" class="md-nav__link">
         git prune
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_6_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_6_3" id="__nav_2_6_3_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6_3" id="__nav_2_6_3_label" tabindex="0">
           Github
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_6_3_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_6_3">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_6_3">
+          <span class="md-nav__icon md-icon"></span>
           Github
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/github/actions/self-hosted-runner/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/github/actions/self-hosted-runner/" class="md-nav__link">
         self-hosted runners
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/github/pages/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/github/pages/" class="md-nav__link">
         깃헙 페이지 지원 깃헙 액션 워크플로우
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/github/project/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/github/project/" class="md-nav__link">
         프로젝트를 이용한 이슈 관리 및 PR 연동 흐름
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_6_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_6_4" id="__nav_2_6_4_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6_4" id="__nav_2_6_4_label" tabindex="0">
           Intellij
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_6_4_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_6_4">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_6_4">
+          <span class="md-nav__icon md-icon"></span>
           Intellij
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/intellij/new-ui/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/intellij/new-ui/" class="md-nav__link">
         intellij New UI 적용
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/intellij/style/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/intellij/style/" class="md-nav__link">
         인텔리제이 코드 스타일/포멧팅
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/intellij/tasks-server-and-commit-push/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/intellij/tasks-server-and-commit-push/" class="md-nav__link">
         인텔리제이 tasks server 추가 및 활용
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_6_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_6_5" id="__nav_2_6_5_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6_5" id="__nav_2_6_5_label" tabindex="0">
           Kafka
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_6_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_6_5">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_6_5">
+          <span class="md-nav__icon md-icon"></span>
           Kafka
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/kafka/install/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/kafka/install/" class="md-nav__link">
         설치
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/kafka/troubleshooting/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/kafka/troubleshooting/" class="md-nav__link">
         문제 해결
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/kafka/use/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/kafka/use/" class="md-nav__link">
         사용
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../tools/mac/activity-monitor/kill-process/">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tools/mac/activity-monitor/kill-process/" class="md-nav__link">
         활동매니저 - 프로세스 강제 종료
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
           Interview questions
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_7">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
           Interview questions
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../interview-questions/algorithm-data-structure/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interview-questions/algorithm-data-structure/" class="md-nav__link">
         알고리즘/자료구조
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../interview-questions/architecture-codebase/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interview-questions/architecture-codebase/" class="md-nav__link">
         코드베이스의 아키텍쳐
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../interview-questions/architecture-system-infra/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interview-questions/architecture-system-infra/" class="md-nav__link">
         Index
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../interview-questions/bookmarks/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interview-questions/bookmarks/" class="md-nav__link">
         인터뷰 질문 모음 링크
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../interview-questions/database/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interview-questions/database/" class="md-nav__link">
         데이터베이스
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../interview-questions/java/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interview-questions/java/" class="md-nav__link">
         자바
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../interview-questions/os/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interview-questions/os/" class="md-nav__link">
         운영체제
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../interview-questions/spring/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interview-questions/spring/" class="md-nav__link">
         스프링
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
           Notes
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_8">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
           Notes
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_8_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_8_1" id="__nav_2_8_1_label" tabindex="0">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8_1" id="__nav_2_8_1_label" tabindex="0">
           Bookmarks
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_8_1_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_8_1">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_8_1">
+          <span class="md-nav__icon md-icon"></span>
           Bookmarks
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../notes/bookmarks/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/bookmarks/" class="md-nav__link">
         북마크
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
           Spring developers
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_9">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
           Spring developers
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../review/spring-developers/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../review/spring-developers/" class="md-nav__link">
         Youtube - SpringDeveloper
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../review/spring-developers/spring-tips-the-road-to-spring-boot-3-spring-freamwork-6/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../review/spring-developers/spring-tips-the-road-to-spring-boot-3-spring-freamwork-6/" class="md-nav__link">
         Spring Tips 1
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
           Archive
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
           Archive
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/" class="md-nav__link">
         모든 포스팅 모음
       </a>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
           Categories
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_2">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
           Categories
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/" class="md-nav__link">
         카테고리별 포스팅 모음
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/algorithm/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/algorithm/" class="md-nav__link">
         알고리즘
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/architecture/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/architecture/" class="md-nav__link">
         아키텍쳐
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/avalon-chat/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/avalon-chat/" class="md-nav__link">
         아발론 챗
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/blog/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/blog/" class="md-nav__link">
         블로그, mkdocs 와 obsidian
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/books/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/books/" class="md-nav__link">
         개발 프로젝트 공통
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/collaborate/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/collaborate/" class="md-nav__link">
         협업
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/data-structure/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/data-structure/" class="md-nav__link">
         자료구조
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/database/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/database/" class="md-nav__link">
         데이터베이스
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/java/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/java/" class="md-nav__link">
         Java
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/kotlin/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/kotlin/" class="md-nav__link">
         kotlin
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/network/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/network/" class="md-nav__link">
         네트워크
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/os/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/os/" class="md-nav__link">
         운영체제
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/project/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/project/" class="md-nav__link">
         개발 프로젝트 공통
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/spring/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/spring/" class="md-nav__link">
         스프링
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/til/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/til/" class="md-nav__link">
         Today I Learned
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/uml/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/uml/" class="md-nav__link">
         UML
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/categories/web/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/categories/web/" class="md-nav__link">
         웹 개발
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
           Tags
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_3">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
           Tags
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../../../../archive/tags/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../archive/tags/" class="md-nav__link">
         태그별 포스팅 모음
       </a>
-</li>
-</ul>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#-spring-security-reference-authorization-architecture">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-spring-security-reference-authorization-architecture" class="md-nav__link">
     - spring-security reference - Authorization Architecture
   </a>
-<nav aria-label="- spring-security reference - Authorization Architecture" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1">
+  
+    <nav class="md-nav" aria-label="- spring-security reference - Authorization Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
     1. 공식문서 뿌시기
   </a>
-<nav aria-label="1. 공식문서 뿌시기" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#authorities">
+  
+    <nav class="md-nav" aria-label="1. 공식문서 뿌시기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorities" class="md-nav__link">
     Authorities
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#the-authorizationmanager">
+        
+          <li class="md-nav__item">
+  <a href="#the-authorizationmanager" class="md-nav__link">
     The AuthorizationManager
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ndy2/Haha-Blog/tree/main/docs/posting/study/spring/security/authorization/authorization-architecture.md" title="View source of this page">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
-</a>
-<h1>Authorization Architecture</h1>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+    
+      
+    
+    <a href="https://github.com/ndy2/Haha-Blog/tree/main/docs/posting/study/spring/security/authorization/authorization-architecture.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+  <h1>Authorization Architecture</h1>
+
 <div class="blogging-tags-grid">
-<a class="blogging-tag" href="https://ndy2.github.io/Haha-Blog/archive/tags#spring"><code>#spring</code></a>
-<a class="blogging-tag" href="https://ndy2.github.io/Haha-Blog/archive/tags#spring-security"><code>#spring-security</code></a>
-<a class="blogging-tag" href="https://ndy2.github.io/Haha-Blog/archive/tags#authorization"><code>#authorization</code></a>
-</div>
+
+        <a href="https://ndy2.github.io/Haha-Blog/archive/tags#spring" class="blogging-tag"><code>#spring</code></a>
+
+        <a href="https://ndy2.github.io/Haha-Blog/archive/tags#spring-security" class="blogging-tag"><code>#spring-security</code></a>
+
+        <a href="https://ndy2.github.io/Haha-Blog/archive/tags#authorization" class="blogging-tag"><code>#authorization</code></a>
+
+    </div>
+
 <style>
     .md-typeset .blogging-tags-grid {
         display: flex;
@@ -2153,25 +5321,25 @@
     }
 </style>
 <p>@ 참고 자료)</p>
-<h2 id="-spring-security-reference-authorization-architecture">- spring-security reference - <a href="https://docs.spring.io/spring-security/reference/6.0.0-M5/servlet/authorization/architecture.html">Authorization Architecture</a><a class="headerlink" href="#-spring-security-reference-authorization-architecture" title="Permanent link">¶</a></h2>
-<h3 id="1">1. 공식문서 뿌시기<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
-<h4 id="authorities">Authorities<a class="headerlink" href="#authorities" title="Permanent link">¶</a></h4>
+<h2 id="-spring-security-reference-authorization-architecture">- spring-security reference - <a href="https://docs.spring.io/spring-security/reference/6.0.0-M5/servlet/authorization/architecture.html">Authorization Architecture</a><a class="headerlink" href="#-spring-security-reference-authorization-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 공식문서 뿌시기<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h4 id="authorities">Authorities<a class="headerlink" href="#authorities" title="Permanent link">&para;</a></h4>
 <p><a href="https://docs.spring.io/spring-security/reference/6.0.0-M5/servlet/authentication/architecture.html#servlet-authentication-authentication"><code>Authentication</code></a> 에서는 어떻게 모든 <code>Authentication</code> 타입의 구현체가 <code>GrantedAuthority</code> 목록을 저장하는지 알아보았습니다. <code>GrantedAuthority</code> 객체는 <code>AuthenticationManager</code> 에 의해 <code>Authentication</code> 에 추가되며 추후에 <code>AccessDecisionManager</code> 는 이를 확인하고 통해 권한 결정을 내립니다.</p>
 <p>GrantedAuthority 인터페이스는 하나의 메서드만을 가집니다.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">String</span><span class="w"> </span><span class="nf">getAuthority</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">String</span><span class="w"> </span><span class="nf">getAuthority</span><span class="p">();</span>
 </code></pre></div>
-<h4 id="the-authorizationmanager">The AuthorizationManager<a class="headerlink" href="#the-authorizationmanager" title="Permanent link">¶</a></h4>
+<h4 id="the-authorizationmanager">The AuthorizationManager<a class="headerlink" href="#the-authorizationmanager" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>AuthorizationManager</code> 는 <code>AccessDecisionManager</code> 와 <code>AccessDecisionVoter</code> 를 모두 대체합니다.</li>
 <li><code>AuthorizationManager</code> 는 AuthorizationFilter 에 의해 사용되며 최종적인 접근 제어 결정에 대한 책임을 가집니다.</li>
 <li><code>AuthorizationManager</code> 인터페이스는 두가지 메서드를 가집니다.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">AuthorizationDecision</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Authentication</span><span class="o">&gt;</span><span class="w"> </span><span class="n">authentication</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">secureObject</span><span class="p">);</span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="k">default</span><span class="w"> </span><span class="n">AuthorizationDecision</span><span class="w"> </span><span class="nf">verify</span><span class="p">(</span><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Authentication</span><span class="o">&gt;</span><span class="w"> </span><span class="n">authentication</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">secureObject</span><span class="p">)</span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="kd">throws</span><span class="w"> </span><span class="n">AccessDeniedException</span><span class="w"> </span><span class="p">{</span>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="c1">// ...</span>
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">AuthorizationDecision</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Authentication</span><span class="o">&gt;</span><span class="w"> </span><span class="n">authentication</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">secureObject</span><span class="p">);</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">default</span><span class="w"> </span><span class="n">AuthorizationDecision</span><span class="w"> </span><span class="nf">verify</span><span class="p">(</span><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Authentication</span><span class="o">&gt;</span><span class="w"> </span><span class="n">authentication</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">secureObject</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="kd">throws</span><span class="w"> </span><span class="n">AccessDeniedException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="c1">// ...</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
 </code></pre></div>
 <ul>
 <li><code>check</code> 메서드의 secureObject 는 인가 결정을 내리기 위해 필요한 모든 관련된 정보를 의미합니다. </li>
@@ -2183,77 +5351,115 @@
 </li>
 <li><code>verify</code> 메서드는 <code>check</code> 를 호출하고 <code>ACCESS_DENIED</code> 인 경우 <code>AccessDeniedException</code> 예외를 던집니다.</li>
 </ul>
-<hr/>
+<hr />
 <p>다음 장에서는 권한 설정을 하는 다양한 방식에 대해서 알아보겠습니다.</p>
-<hr/>
+
+  <hr>
 <div class="md-source-file">
-<small>
+  <small>
     
       Last update:
       <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
-<br/>
+      
+        <br>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>
-</small>
+      
+    
+  </small>
 </div>
-</article>
-</div>
-</div>
-</main>
-<footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 인가 프로세스 업데이트" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<span class="md-footer__direction">
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: 인가 프로세스 업데이트" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
                 Previous
               </span>
-<div class="md-ellipsis">
+              <div class="md-ellipsis">
                 인가 프로세스 업데이트
               </div>
-</div>
-</a>
-<a aria-label="Next: Http 요청 인가 설정" class="md-footer__link md-footer__link--next" href="../http-req-authorization-conf/" rel="next">
-<div class="md-footer__title">
-<span class="md-footer__direction">
+            </div>
+          </a>
+        
+        
+          
+          <a href="../http-req-authorization-conf/" class="md-footer__link md-footer__link--next" aria-label="Next: Http 요청 인가 설정" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
                 Next
               </span>
-<div class="md-ellipsis">
+              <div class="md-ellipsis">
                 Http 요청 인가 설정
               </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-copyright">
-<div class="md-copyright__highlight">
-      Copyright © 2022 - 2023 ndy2
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 - 2023 ndy2
     </div>
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
     </a>
+  
 </div>
-</div>
-</div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"base": "../../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../../../../assets/javascripts/bundle.51198bba.min.js"></script>
-<script src="../../../../../../js/mkdocs-charts-plugin.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="../../../../../../js/mkdocs-charts-plugin.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
