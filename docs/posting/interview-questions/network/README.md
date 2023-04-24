@@ -31,6 +31,8 @@ description: >-
 
 ### TCP의 Handshake 과정에 대해 설명해주세요.
 
+#### Connection의 수립과 종료 과정에 각각 3way/4way Handshake 를 하는데 차이가 나는 이유가 무엇인가요?
+
 ### TCP의 Congestion Controll 과 Flow Controll에 대해 설명해주세요.
 
 #### TCP의 Window Size 는 어떨때 변하나요?
