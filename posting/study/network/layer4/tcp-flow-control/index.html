@@ -21,7 +21,7 @@
         <link rel="next" href="../tcp-vs-udp/">
       
       <link rel="icon" href="../../../../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.7">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
     
     
       
@@ -130,29 +130,31 @@
       </div>
     </div>
     
-      <form class="md-header__option" data-md-component="palette">
-        
+      
+        <form class="md-header__option" data-md-component="palette">
           
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
           
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-          
-            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
-            </label>
-          
-        
-          
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
-            </label>
-          
-        
-      </form>
+        </form>
+      
     
     
     
@@ -5370,29 +5372,30 @@
         border-radius: 5px;
     }
 </style>
-<p>@참고 자료)</p>
+
+<div class="admonition quote">
+<p class="admonition-title">참고 자료</p>
 <ul>
 <li>Brian Storti - <a href="https://www.brianstorti.com/tcp-flow-control/">tcp-flow-control</a></li>
-<li>널널한 개발자 - https://www.youtube.com/watch?v=K9L9YZhEjC0 - 26분</li>
+<li>널널한 개발자 - <a href="https://www.youtube.com/watch?v=K9L9YZhEjC0">이해하면 인생이 바뀌는 TCP 송/수신 원리</a><ul>
+<li>특히 중요! - 26분</li>
 </ul>
+</li>
+<li>문동욱(Evan Moon) - <a href="https://evan-moon.github.io/2019/11/22/tcp-flow-control-error-control/">패킷의 흐름과 오류를 제어하는 TCP</a></li>
+</ul>
+</div>
 <p>TCP 의 주요한 특징은연결 지향 프로토콜 이면서 신뢰성있는 프로토콜 이라는 점입니다.</p>
 <ul>
 <li>TCP 의 연결지향은 3-way, 4-way handshake 로 달성됩니다.</li>
 <li>TCP 의 신뢰성은 많은 이유가 있지만 보통 흐름제어 (flow-control), 혼잡제어 (congestion-control) 를 통해 이루어진다고 이야기 됩니다.</li>
 </ul>
-<p>이중 흐름 제어 (Flow-Control) 이란 Sender 가 전송하는 데이터의 양을 조절하여 receiver 의 over-flow 를 방지하는 것입니다. 이 문서에서는 바로이 흐름 제어에 대해서 알아보겠습니다.</p>
+<p>이중 흐름 제어 (Flow-Control) 이란 Sender 가 전송하는 데이터의 양을 조절하여 receiver 의 over-flow 를 방지하는 것입니다. 이 문서에서는 바로이 흐름 제어에 대해서 알아보겠습니다.</p>
 <hr />
 <h3 id="flow-control">흐름제어 (Flow Control) 란?<a class="headerlink" href="#flow-control" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p>수신측이 송신측보다 데이터 처리 속도가 빠르면 문제없지만, 송신측의 속도가 빠를 경우 문제가 생깁니다.</p>
-</li>
-<li>
-<p>수신측에서 제한된 저장 용량을 초과한 이후에 도착하는 데이터는 손실 될 수 있으며, 만약 손실 된다면 불필요하게 응답과 데이터 전송이 송/수신 측 간에 빈번이 발생합니다.</p>
-</li>
-<li>
-<p>이러한 위험을 줄이기 위해 송신 측의 데이터 전송량을 수신측에 따라 조절합니다.</p>
-</li>
+<li>수신측이 송신측보다 데이터 처리 속도가 빠르면 문제없지만, 송신측의 속도가 빠를 경우 문제가 생깁니다.</li>
+<li>수신측에서 제한된 저장 용량을 초과한 이후에 도착하는 데이터는 손실 될 수 있으며, 만약 손실 된다면 불필요하게 응답과 데이터 전송이 송/수신 측 간에 빈번이 발생합니다.</li>
+<li>이러한 위험을 줄이기 위해 송신 측의 데이터 전송량을 수신측에 따라 조절합니다.</li>
 </ul>
 <h3 id="sliding-window-protocol">Sliding Window Protocol<a class="headerlink" href="#sliding-window-protocol" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5401,7 +5404,7 @@
 <li>node A 에서 node B 로 TCP 통신을 해야한다면 이때 중요한 것은 node B 의 receive 버퍼, 즉, 수신 측의 버퍼입니다.</li>
 <li>sliding window 동작</li>
 </ul>
-<p><a class="glightbox" href="images/sliding-window.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="images/sliding-window.png" src="images/sliding-window.png" /></a></p>
+<p><a class="glightbox" href="images/sliding-window.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="sliding-window.png" src="images/sliding-window.png" /></a></p>
 <ul>
 <li>먼저 윈도우에 포함되는 모든 패킷을 전송하고, 그 패킷들의 전달이 확인되는대로 이 윈도우를 옆으로 옮김으로써 그 다음 패킷들을 전송합니다.</li>
 <li>이 방식으로 현재 공중에 떠있는 패킷 수를 항상 sliding window 의 사이즈 보다 작거나 같도록 유지 할 수 있습니다.</li>
@@ -5426,7 +5429,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
         <br>
         Created:
