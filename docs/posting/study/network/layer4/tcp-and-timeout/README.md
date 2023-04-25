@@ -7,7 +7,6 @@ description: >-
   
 ---
  
- 
 > [!quote] 참고 자료
 > * Aaron's Papa - [Connection Timeout과 Read Timeout 살펴보기](https://alden-kang.tistory.com/20)
 
