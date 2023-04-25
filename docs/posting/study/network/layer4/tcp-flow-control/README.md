@@ -3,12 +3,12 @@ tags: [network, layer4, tcp]
 title: TCP flow control
 author: ndy2
 ---
-
  
 > [!quote] 참고 자료
 > * Brian Storti - [tcp-flow-control](https://www.brianstorti.com/tcp-flow-control/)
 > * 널널한 개발자 - [이해하면 인생이 바뀌는 TCP 송/수신 원리](https://www.youtube.com/watch?v=K9L9YZhEjC0)
 >      * 특히 중요! - 26분
+> - 문동욱(Evan Moon) - [패킷의 흐름과 오류를 제어하는 TCP](https://evan-moon.github.io/2019/11/22/tcp-flow-control-error-control/)
 
 TCP 의 주요한 특징은연결 지향 프로토콜 이면서 신뢰성있는 프로토콜 이라는 점입니다.
 
