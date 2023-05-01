@@ -1,6 +1,6 @@
 ---
 tags: [hussein, web]
-title: 제목
+title: Section2 - Backend Communication Patterns
 author: ndy2
 date: 2023-04-28
 description: >-
@@ -118,7 +118,7 @@ description: >-
 >     - HTTP/1.1 problem (6 connections)
 
 
-### 7. Pub/Sub
+### 7. Pub/Sub     
 
 ### 8. Multiplexing & Demultiplexing
 
