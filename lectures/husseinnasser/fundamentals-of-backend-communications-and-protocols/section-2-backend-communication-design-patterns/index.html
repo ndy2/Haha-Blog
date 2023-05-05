@@ -15,13 +15,13 @@
         <link rel="canonical" href="https://ndy2.github.io/Haha-Blog/lectures/husseinnasser/fundamentals-of-backend-communications-and-protocols/section-2-backend-communication-design-patterns/">
       
       
-        <link rel="prev" href="../../../../gist/">
+        <link rel="prev" href="../../../../posting/review/spring-developers/spring-tips-the-road-to-spring-boot-3-spring-freamwork-6/">
       
       
         <link rel="next" href="../section-3-protocols/">
       
       <link rel="icon" href="../../../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -250,6 +250,24 @@
     </li>
   
 
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Fundamentals of backend communications and protocols
+      </a>
+    </li>
   
 
       
@@ -524,23 +542,37 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../../posting/study/os/ipc/" class="md-nav__link">
+        IPC Part1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1_6" >
       
       
       
-        <label class="md-nav__link" for="__nav_2_2_1_5" id="__nav_2_2_1_5_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_2_2_1_6" id="__nav_2_2_1_6_label" tabindex="0">
           Memory management
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_1_5_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_2_2_1_5">
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_1_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_1_6">
           <span class="md-nav__icon md-icon"></span>
           Memory management
         </label>
@@ -4905,6 +4937,178 @@
 
   
   
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Fundamentals of backend communications and protocols
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Fundamentals of backend communications and protocols
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Section2 - Backend Communication Patterns
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Section2 - Backend Communication Patterns
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    0. 들어가며
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-request-response" class="md-nav__link">
+    1. Request-Response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-synchronous-vs-asynchronous" class="md-nav__link">
+    2. Synchronous vs Asynchronous
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-push" class="md-nav__link">
+    3. Push
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-short-polling-polling" class="md-nav__link">
+    4. Short Polling (Polling)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-long-polling" class="md-nav__link">
+    5. Long Polling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-streaming" class="md-nav__link">
+    6. Streaming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-pubsub" class="md-nav__link">
+    7. Pub/Sub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-multiplexing-demultiplexing" class="md-nav__link">
+    8. Multiplexing &amp; Demultiplexing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-stateful-vs-stateless" class="md-nav__link">
+    9. Stateful vs Stateless
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-sidecar-pattern" class="md-nav__link">
+    10. Sidecar Pattern
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section-3-protocols/" class="md-nav__link">
+        Section3 - Protocols
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
   
     
     <li class="md-nav__item md-nav__item--nested">
@@ -4912,17 +5116,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
       
-        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           Archive
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Archive
         </label>
@@ -4955,17 +5159,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
           Categories
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3_2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
           <span class="md-nav__icon md-icon"></span>
           Categories
         </label>
@@ -5243,17 +5447,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
           Tags
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3_3">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3">
           <span class="md-nav__icon md-icon"></span>
           Tags
         </label>
@@ -5627,7 +5831,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../../gist/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 공급망 금융 (Supply Chain Finance)" rel="prev">
+          <a href="../../../../posting/review/spring-developers/spring-tips-the-road-to-spring-boot-3-spring-freamwork-6/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Spring Tips 1" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -5636,7 +5840,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                공급망 금융 (Supply Chain Finance)
+                Spring Tips 1
               </div>
             </div>
           </a>
@@ -5688,7 +5892,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.fac441b0.min.js"></script>
       
         <script src="../../../../js/mkdocs-charts-plugin.js"></script>
       
