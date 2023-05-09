@@ -18,10 +18,9 @@ serverIndex = hash(key) % N
 
 이 방법은 server pool 의 크기 (N) 이 고정되어 있고 데이터 분포가 균등하다면 잘 동작한다. 해시가 잘 동작한다는 의미는 결과적으로 데이터가 모든 서버에 균등하게 분포된다는 의미이다.
 
-!!! note ""
-
-    * 서버는 일반적으로 `노드`라고 표현되기도 한다.
-    * 데이터 베이스 서버에 대해서는 Shard, 혹은 데이터베이스 schema 에 대해서는 Partition 이라는 표현을 사용하기도 한다.
+> [!note]
+> * 서버는 일반적으로 `노드`라고 표현되기도 한다.
+> * 데이터 베이스 서버에 대해서는 Shard, 혹은 데이터베이스 schema 에 대해서는 Partition 이라는 표현을 사용하기도 한다.
 
 세상에서 가장 단순한 위와 같은 구현은 N 이 변경되는 경우 결과 `serverIndex` 가 예측할 수 없이 변경되고 이에 따라 보든 데이터의 해시값을 새로 구하여 변경된 `serverIndex` 의 서버가 해당 데이터를 처리할 수 있도록 해주어야 한다.
 
@@ -30,10 +29,10 @@ serverIndex = hash(key) % N
 
 ### 2. 안정 해시
 
-!!! quote "Consistent Hashing on [Wikipedia](https://en.wikipedia.org/wiki/Consistent_hashing)"
-
-    In computer science, consistent hashing is a special kind of hashing technique such that when a hash table is reside, *only `n/m` keys* need to be remapped on average where n is the number of keys and m is the number of slots <br>
-    In contrast, in most traditional hash tables, a chage in the number of array slots causes *nearly all keys* to be remapped because the mapping between the keys and the slots is defined by a *modular operation*
+> [!quote] [`『Consistent Hashing』`](<(https://en.wikipedia.org/wiki/Consistent_hashing)>) on Wikipedia
+> In computer science, consistent hashing is a special kind of hashing technique such that when a hash table is reside, *only `n/m` keys* need to be remapped on average where n is the number of keys and m is the number of slots
+> 
+> In contrast, in most traditional hash tables, a change in the number of array slots causes *nearly all keys* to be remapped because the mapping between the keys and the slots is defined by a *modular operation*
 
 ### 3. 해시 공간과 해시 링
 
