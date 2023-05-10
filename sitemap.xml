@@ -1031,6 +1031,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/web-security/csrf/</loc>
+         <lastmod>2023-05-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/web-security/xss/</loc>
+         <lastmod>2023-05-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/til/</loc>
          <lastmod>2023-05-10</lastmod>
          <changefreq>daily</changefreq>

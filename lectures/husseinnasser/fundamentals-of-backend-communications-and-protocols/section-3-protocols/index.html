@@ -4853,17 +4853,17 @@
       
         <li class="md-nav__item">
   <a href="#1-protocol-properties" class="md-nav__link">
-    1. Protocol properties
+    1. Protocol Properties
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2-osi-model" class="md-nav__link">
-    2. OSI model
+    2. OSI Model
   </a>
   
-    <nav class="md-nav" aria-label="2. OSI model">
+    <nav class="md-nav" aria-label="2. OSI Model">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4875,7 +4875,7 @@
         
           <li class="md-nav__item">
   <a href="#1-osi-model" class="md-nav__link">
-    1. OSI model
+    1. OSI Model
   </a>
   
 </li>
@@ -4908,6 +4908,13 @@
         <li class="md-nav__item">
   <a href="#3-icmp" class="md-nav__link">
     3. ICMP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-udp" class="md-nav__link">
+    4. UDP
   </a>
   
 </li>
@@ -5543,17 +5550,17 @@
       
         <li class="md-nav__item">
   <a href="#1-protocol-properties" class="md-nav__link">
-    1. Protocol properties
+    1. Protocol Properties
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2-osi-model" class="md-nav__link">
-    2. OSI model
+    2. OSI Model
   </a>
   
-    <nav class="md-nav" aria-label="2. OSI model">
+    <nav class="md-nav" aria-label="2. OSI Model">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5565,7 +5572,7 @@
         
           <li class="md-nav__item">
   <a href="#1-osi-model" class="md-nav__link">
-    1. OSI model
+    1. OSI Model
   </a>
   
 </li>
@@ -5598,6 +5605,13 @@
         <li class="md-nav__item">
   <a href="#3-icmp" class="md-nav__link">
     3. ICMP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-udp" class="md-nav__link">
+    4. UDP
   </a>
   
 </li>
@@ -5658,7 +5672,7 @@
         border-radius: 5px;
     }
 </style>
-<h3 id="1-protocol-properties">1. Protocol properties<a class="headerlink" href="#1-protocol-properties" title="Permanent link">&para;</a></h3>
+<h3 id="1-protocol-properties">1. Protocol Properties<a class="headerlink" href="#1-protocol-properties" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">What is a protocol?</p>
 <ul>
@@ -5706,10 +5720,10 @@
 </li>
 </ul>
 </div>
-<h3 id="2-osi-model">2. OSI model<a class="headerlink" href="#2-osi-model" title="Permanent link">&para;</a></h3>
+<h3 id="2-osi-model">2. OSI Model<a class="headerlink" href="#2-osi-model" title="Permanent link">&para;</a></h3>
 <h4 id="0">0. 들어가며<a class="headerlink" href="#0" title="Permanent link">&para;</a></h4>
 <p>여러 선배 개발자/ 강사들이 OSI 모델에 대해 자신의 인사이트를 공유하는 영상을 많이 보았었다. 후세인의 인사이트 중 가장 독특한 점은 <code>TCP/IP 모델</code>이 아닌 전통적인 <code>OSI 7 layer 모델</code>을 선호하고 그 이유가 상당히 그럴듯 하다는 것이다. 대부분의 최근 영상에서 <code>OSI 7 layer 모델</code>의 윗 세 계층을 하나의 Application 계층으로 이해하는 <code>TCP/IP 모델</code>을 이야기 하는것에 비해 상당히 대조적이다.</p>
-<h4 id="1-osi-model">1. OSI model<a class="headerlink" href="#1-osi-model" title="Permanent link">&para;</a></h4>
+<h4 id="1-osi-model">1. OSI Model<a class="headerlink" href="#1-osi-model" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
 <p class="admonition-title">OSI Model - Open System Interconnection Model</p>
 <ul>
@@ -5760,7 +5774,7 @@
 <ul>
 <li><code>192.168.254.0/24</code> is also called a subnet</li>
 <li>The subnet has a mask <code>255.255.255.0</code></li>
-<li>Subnet mask is used to determin whether an IP is in the same subnet</li>
+<li>Subnet mask is used to determine whether an IP is in the same subnet</li>
 </ul>
 </div>
 <h4 id="ip-packet">IP Packet 뿌시기<a class="headerlink" href="#ip-packet" title="Permanent link">&para;</a></h4>
@@ -5768,18 +5782,39 @@
 <li>IP Packet = Headers + Data Sections</li>
 <li>Header 는 기본적으로 20 bytes (option 을 키면 최대 60 바이트)</li>
 <li>Data Section 은 최대 65536 바이트<ul>
-<li>하지만 현실에서는  MTU 에 따라 평균적으로 1500 바이트를 가진다.</li>
+<li>하지만 현실에서는 MTU 에 따라 평균적으로 1500 바이트를 가진다.</li>
 </ul>
 </li>
 </ul>
 <h3 id="3-icmp">3. ICMP<a class="headerlink" href="#3-icmp" title="Permanent link">&para;</a></h3>
+<h3 id="4-udp">4. UDP<a class="headerlink" href="#4-udp" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>UDP = User Datagram Protocol</li>
+<li>Layer 4 Protocol</li>
+<li>Simple protocol to send and receive data</li>
+<li>No Handshakes</li>
+<li>Stateless</li>
+<li>8 byte header</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">UDP Use cases</p>
+<ul>
+<li>Video streaming</li>
+<li>VPN</li>
+<li>DNS</li>
+<li>WebRTC</li>
+</ul>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 10, 2023</span>
       
         <br>
         Created:
