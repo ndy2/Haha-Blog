@@ -119,3 +119,7 @@ SELECT * FROM employee E INNER JOIN department D USING (dept_id)
 
 * 두 테이블이 가질 수 있는 모든 tuple pair 의 조합 (Cartesian product) 을 result table 로 반환
 * join condition 이 없음
+
+### 실습
+
+http://sqlfiddle.com/#!9/328b5c/5
