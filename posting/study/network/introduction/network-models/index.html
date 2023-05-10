@@ -9,7 +9,7 @@
         <meta name="description" content="안녕하세요! 좋은 설계와 객체지향 방법론에 관심이 많은 미래의 백엔드 개발자 남득윤입니다. 잘 부탁드립니다.">
       
       
-        <meta name="author" content="Haha">
+        <meta name="author" content="ndy2">
       
       
         <link rel="canonical" href="https://ndy2.github.io/Haha-Blog/posting/study/network/introduction/network-models/">
@@ -25,7 +25,7 @@
     
     
       
-        <title>Index - Haha 블로그</title>
+        <title>OSI 7 계층 모델 - Haha 블로그</title>
       
     
     
@@ -89,6 +89,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1-physical-layer" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -118,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              OSI 7 계층 모델
             
           </span>
         </div>
@@ -998,9 +1003,66 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          OSI 7 계층 모델
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Index
+        OSI 7 계층 모델
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-physical-layer" class="md-nav__link">
+    1. Physical Layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data-link-layer" class="md-nav__link">
+    2. Data Link Layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-network-layer" class="md-nav__link">
+    3. Network Layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-transport-layer" class="md-nav__link">
+    4. Transport Layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#567-session-presentation-application" class="md-nav__link">
+    5.6.7. - Session, Presentation, Application
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -5453,6 +5515,49 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-physical-layer" class="md-nav__link">
+    1. Physical Layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data-link-layer" class="md-nav__link">
+    2. Data Link Layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-network-layer" class="md-nav__link">
+    3. Network Layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-transport-layer" class="md-nav__link">
+    4. Transport Layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#567-session-presentation-application" class="md-nav__link">
+    5.6.7. - Session, Presentation, Application
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5477,16 +5582,82 @@
   
 
 
-  <h1>Index</h1>
+  <h1>OSI 7 계층 모델</h1>
 
+<div class="blogging-tags-grid">
 
+        <a href="https://ndy2.github.io/Haha-Blog/archive/tags#network" class="blogging-tag"><code>#network</code></a>
+
+        <a href="https://ndy2.github.io/Haha-Blog/archive/tags#osi-7layer" class="blogging-tag"><code>#osi-7layer</code></a>
+
+    </div>
+
+<style>
+    .md-typeset .blogging-tags-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .md-typeset .blogging-tag {
+        color: var(--md-typeset-color);
+        background-color: var(--md-typeset-code-color);
+    }
+
+    .md-typeset .blogging-tag code {
+        border-radius: 5px;
+    }
+</style>
+
+<div class="admonition quote">
+<p class="admonition-title">참고 자료</p>
+<ul>
+<li>Practical Networking<ul>
+<li><a href="https://youtu.be/LkolbURrtTs"><code>『OSI Model: A Practical Perspective - Networking Fundamentals - Lesson 2a』</code></a></li>
+<li><a href="https://youtu.be/LkolbURrtTs"><code>『OSI Model: A Practical Perspective - Part 2 - Networking Fundamentals - Lesson 2a』</code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="1-physical-layer">1. Physical Layer<a class="headerlink" href="#1-physical-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Computer data exists in form of Bits (<code>1 and 0</code>)</li>
+<li>Somthing has to transport thos bits between hosts</li>
+<li>L1 Technologies: Cables, Wifi, Repeaters, Hub</li>
+</ul>
+<h3 id="2-data-link-layer">2. Data Link Layer<a class="headerlink" href="#2-data-link-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Hop-to-Hop communication</li>
+<li>use Mac Address</li>
+<li>L2 Technologies : ARP, (L2) Switch</li>
+</ul>
+<h3 id="3-network-layer">3. Network Layer<a class="headerlink" href="#3-network-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>End-to-End communication</li>
+<li>use IP Address</li>
+<li>L3 Temnologies - IP (Internet Protocol), Router</li>
+</ul>
+<h3 id="4-transport-layer">4. Transport Layer<a class="headerlink" href="#4-transport-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Service-to-Service communication (Process to Process)</li>
+<li>use port number<ul>
+<li>L4 Technologies - TCP, UDP</li>
+</ul>
+</li>
+</ul>
+<h3 id="567-session-presentation-application">5.6.7. - Session, Presentation, Application<a class="headerlink" href="#567-session-presentation-application" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Distinction between these layers is somewhat vague</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 10, 2023</span>
       
         <br>
         Created:
