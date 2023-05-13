@@ -9,8 +9,8 @@ description: >-
  
 > [!quote] 참고 자료
 > * Domain-Driven Design Europe - DDD Europe 2022 
->     -  *Robert Baelde* - `『Introducing Bounded Contexts in a monolithic application』`
->     -  *Javiera Laso* - `『How to start with DDD when you have a monolith』`
+>     -  *Robert Baelde* - [`『Introducing Bounded Contexts in a monolithic application』`](https://youtu.be/DhMrqX_qrJE)
+>     -  *Javiera Laso* - [`『How to start with DDD when you have a monolith』`](https://youtu.be/ASNnN6rK65k)
 
 ### 0. 들어가며
 
