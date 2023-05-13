@@ -411,6 +411,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/projects/common/adr/</loc>
+         <lastmod>2023-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/projects/common/meeting-notes-template/Untitled/</loc>
          <lastmod>2023-05-13</lastmod>
          <changefreq>daily</changefreq>
@@ -547,6 +552,11 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/data-structure/tree/heap/</loc>
+         <lastmod>2023-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/data-structure/tree/lsm-tree/</loc>
          <lastmod>2023-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
