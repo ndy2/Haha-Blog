@@ -401,11 +401,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/notes/bookmarks/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/projects/common/adr/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
@@ -1037,6 +1032,11 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/web/cookie-session-token/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/posting/study/web/oauth/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
