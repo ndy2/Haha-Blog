@@ -96,5 +96,3 @@ OK
 
 * `DECR`, `DECRBY`
 * `INCR`, `INCRBY`, `INCRBYFLOAT`
-
-
