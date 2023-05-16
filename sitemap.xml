@@ -176,12 +176,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/lectures/ru101/week1/02_keys/key-expiration/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/ru101/week1/keys/key-expiration/</loc>
          <lastmod>2023-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ndy2.github.io/Haha-Blog/lectures/ru101/week1/02_keys/keys/</loc>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/ru101/week1/keys/keys/</loc>
+         <lastmod>2023-05-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/ru101/week1/strings/</loc>
          <lastmod>2023-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -952,11 +957,6 @@
     </url>
     <url>
          <loc>https://ndy2.github.io/Haha-Blog/posting/study/os/process-vs-thread/</loc>
-         <lastmod>2023-05-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ndy2.github.io/Haha-Blog/posting/study/redis/data-types/string/</loc>
          <lastmod>2023-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
