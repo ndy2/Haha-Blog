@@ -21,7 +21,7 @@
         <link rel="next" href="../sorted-sets/">
       
       <link rel="icon" href="../../../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.12">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
@@ -88,6 +88,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#1-set" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -5584,9 +5589,66 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Sets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Sets
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-set" class="md-nav__link">
+    1. Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sadd-scard-smembers-sscan" class="md-nav__link">
+    2. SADD, SCARD, SMEMBERS, SSCAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sismember" class="md-nav__link">
+    3. SISMEMBER
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-srem-spop" class="md-nav__link">
+    4. SREM, SPOP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sinter-sdiff-sunion-xxxstore" class="md-nav__link">
+    4. SINTER, SDIFF, SUNION, XXXSTORE
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -6440,6 +6502,49 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-set" class="md-nav__link">
+    1. Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sadd-scard-smembers-sscan" class="md-nav__link">
+    2. SADD, SCARD, SMEMBERS, SSCAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sismember" class="md-nav__link">
+    3. SISMEMBER
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-srem-spop" class="md-nav__link">
+    4. SREM, SPOP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sinter-sdiff-sunion-xxxstore" class="md-nav__link">
+    4. SINTER, SDIFF, SUNION, XXXSTORE
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6493,12 +6598,101 @@
     }
 </style>
 
+<div class="admonition quote">
+<p class="admonition-title">참고 자료</p>
+<ul>
+<li>Redis - <a href="https://youtu.be/PKdCppSNTGQ"><code>『Redis Sets Explained』</code></a> on Youtube</li>
+<li>Redis - <a href="https://www.youtube.com/watch?v=aRw5ME_5kMY"><code>『Redis Sets Elaborated』</code></a> on Youtube</li>
+<li><a href="https://redis.io/commands/?group=set">commands?group=set</a> on redis.io</li>
+</ul>
+</div>
+<h3 id="1-set">1. Set<a class="headerlink" href="#1-set" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Redis <code>Sets</code></p>
+<ul>
+<li>are unordered collection of string that conains no duplicates</li>
+<li>supports standard mathmatical set operations<ul>
+<li><code>SINTER</code> - 교집합</li>
+<li><code>SDIFF</code> - 차집합</li>
+<li><code>SUNION</code> - 합집합</li>
+</ul>
+</li>
+<li>are not nested</li>
+</ul>
+</div>
+<h3 id="2-sadd-scard-smembers-sscan">2. SADD, SCARD, SMEMBERS, SSCAN<a class="headerlink" href="#2-sadd-scard-smembers-sscan" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">SADD - 집합에 추가, SCARD - 카디날리티 조회</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&gt; SADD players:online 42
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>(integer) 1
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>&gt; SCARD players:online
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>(integer) 10000
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&gt;<span class="w"> </span>SADD<span class="w"> </span>venues<span class="w"> </span><span class="s2">&quot;Olympic Stadium&quot;</span><span class="w"> </span><span class="s2">&quot;Nippon Budokan&quot;</span><span class="w"> </span><span class="s2">&quot;Tokyo Stadium&quot;</span><span class="w"> </span><span class="c1"># (1) </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="o">(</span>integer<span class="o">)</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&gt;<span class="w"> </span>SMEMBERS<span class="w"> </span>venues<span class="w"> </span><span class="c1"># (2)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="s2">&quot;Olympic Stadium&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="m">2</span><span class="o">)</span><span class="w"> </span><span class="s2">&quot;Nippon Budokan&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="m">3</span><span class="o">)</span><span class="w"> </span><span class="s2">&quot;Tokyo Stadium&quot;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>&gt;<span class="w"> </span>SSCAN<span class="w"> </span>venues<span class="w"> </span><span class="m">0</span><span class="w"> </span>MATCH<span class="w"> </span>*<span class="w"> </span><span class="c1"># (3)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="m">2</span><span class="o">)</span><span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="s2">&quot;Nippon Budokan&quot;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">   </span><span class="m">2</span><span class="o">)</span><span class="w"> </span><span class="s2">&quot;Oplympic Stadium&quot;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">   </span><span class="m">3</span><span class="o">)</span><span class="w"> </span><span class="s2">&quot;Tokyou Stadium&quot;</span>
+</code></pre></div>
+<ol>
+<li>SADD 는 여러 멤버를 한번에 받을 수 있다. - 레디스에서는 멤버 라는 표현을 주로 사용한다.</li>
+<li>키에 대한 모든 멤버를 반환하는 <code>SMSMBERS</code></li>
+<li>집합의 멤버를 순회하는 <code>SSCAN</code></li>
+</ol>
+<h3 id="3-sismember">3. SISMEMBER<a class="headerlink" href="#3-sismember" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">SISMEMBER - 포함여부 확인</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&gt; SISMEMBER player:online 42
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>(integer) 1
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>&gt; SISMEMBER player:online 32
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>(integer) 0
+</code></pre></div>
+<h3 id="4-srem-spop">4. SREM, SPOP<a class="headerlink" href="#4-srem-spop" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&gt;<span class="w"> </span>SREM<span class="w"> </span>key<span class="w"> </span>member<span class="w"> </span><span class="o">[</span>member<span class="w"> </span>...<span class="o">]</span><span class="w"> </span><span class="c1"># (1)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>&gt;<span class="w"> </span>SPOP<span class="w"> </span>Key<span class="w"> </span><span class="o">[</span>count<span class="o">]</span><span class="w"> </span><span class="c1"># (2)</span>
+</code></pre></div>
+<ol>
+<li>멤버를 특정해 제거하는 <code>SREM</code></li>
+<li>임의의 멤버를 count (default - 1) 만큼 제거하는 <code>SPOP</code></li>
+</ol>
+<h3 id="4-sinter-sdiff-sunion-xxxstore">4. <code>SINTER</code>, <code>SDIFF</code>, <code>SUNION</code>, <code>XXXSTORE</code><a class="headerlink" href="#4-sinter-sdiff-sunion-xxxstore" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">SINTER - 교집합, 32 번 플레이어의 친구중 온라인인 플레이어를 조회</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&gt; SINTER player:32:friends players:online
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>1) &quot;42&quot;
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>2) &quot;55&quot;
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>3) &quot;99&quot;
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>4) &quot;101&quot;
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>5) &quot;158&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&gt; SDIFF player:32:friends players:online
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>1) &quot;1&quot;
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>2) &quot;30&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&gt; SUNION player:32:friends players:40:friends
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>1) &quot;40&quot;
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>2) &quot;32&quot;
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>3) &quot;15&quot;
+</code></pre></div>
+<hr />
+<ul>
+<li>STORE 가 붙는 경우 결과를 destination 에 저장한다.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>SINTERSTORE destination key [key ...]
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>SDIFFSTORE destination key [key ...]
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>SUNIONSTORE destination key [key ...]
+</code></pre></div>
+
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 17, 2023</span>
       
         <br>
         Created:
@@ -6589,7 +6783,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.c2be25ad.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
         <script src="../../../../js/mkdocs-charts-plugin.js"></script>
       

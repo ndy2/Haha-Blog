@@ -21,7 +21,7 @@
         <link rel="next" href="../../week2/capped-collections-and-set-operations/cardinality-and-capped-collections/">
       
       <link rel="icon" href="../../../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.12">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
@@ -88,6 +88,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#1-sorted-sets" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -5632,9 +5637,59 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Sorted Sets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Sorted Sets
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-sorted-sets" class="md-nav__link">
+    1. Sorted Sets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-zadd-zrange" class="md-nav__link">
+    2. ZADD, ZRANGE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-zscore-zrank" class="md-nav__link">
+    3. ZSCORE, ZRANK
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-set-based-zinter-zunion-zdiff" class="md-nav__link">
+    4. set based 연산 - ZINTER, ZUNION, ZDIFF
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -6440,6 +6495,42 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-sorted-sets" class="md-nav__link">
+    1. Sorted Sets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-zadd-zrange" class="md-nav__link">
+    2. ZADD, ZRANGE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-zscore-zrank" class="md-nav__link">
+    3. ZSCORE, ZRANK
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-set-based-zinter-zunion-zdiff" class="md-nav__link">
+    4. set based 연산 - ZINTER, ZUNION, ZDIFF
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6493,12 +6584,105 @@
     }
 </style>
 
+<div class="admonition quote">
+<p class="admonition-title">참고 자료</p>
+<ul>
+<li>Redis - <a href="https://youtu.be/MUKlxdBQZ7g"><code>『Redis Sorted Sets Explained』</code></a> - on Youtube</li>
+<li><a href="https://redis.io/commands#sorted_set">Commands?groupd=sorted_set</a> - on redis.io</li>
+</ul>
+</div>
+<h3 id="1-sorted-sets">1. Sorted Sets<a class="headerlink" href="#1-sorted-sets" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Sorted Sets</p>
+<ul>
+<li>Ordered collection of unique strings</li>
+<li>Floating point score</li>
+<li>manipulation by value, position, score or lexigraphically</li>
+<li>Set commands can be applied to <code>Sorted Sets</code><ul>
+<li>Union</li>
+<li>Intersiontion</li>
+</ul>
+</li>
+<li>are not nested, hierarchies</li>
+</ul>
+</div>
+<ul>
+<li>score 는 floating point 로 표현된다.</li>
+<li>오름차순으로 정렬된다.</li>
+<li>score 가 같은 원소는 <code>lexicographical</code> 하게 정렬된다.</li>
+</ul>
+<h3 id="2-zadd-zrange">2. ZADD, ZRANGE<a class="headerlink" href="#2-zadd-zrange" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ZADD<ul>
+<li>Adds one or more members to a sorted set</li>
+<li>or update their scores</li>
+<li>create the key if it does not exists</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ZADD key [NX | XX] [GT | LT] [CH] [INCR] score member [score member
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  ...]
+</code></pre></div>
+<ul>
+<li>ZRANGE<ul>
+<li>returns members in a sorted set within a range of indexes</li>
+<li>범위를 나타낼때 <code>(</code> 를 붙이면 exclusive 한 인덱스를 의미한다.</li>
+<li><code>BYSCORE</code>, <code>BYLEX</code>, <code>REV</code> 옵션들은 커맨드 자체로 대체될 수 있다.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ZRANGE key start stop [BYSCORE | BYLEX] [REV] [LIMIT offset count] [WITHSCORES]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>redis&gt; ZADD myzset 1 &quot;one&quot;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>(integer) 1
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>redis&gt; ZADD myzset 1 &quot;uno&quot;
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>(integer) 1
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>redis&gt; ZADD myzset 2 &quot;two&quot; 3 &quot;three&quot;
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>(integer) 2
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>redis&gt; ZRANGE myzset 0 -1 WITHSCORES
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>1) &quot;one&quot;
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>2) &quot;1&quot;
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>3) &quot;uno&quot;
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>4) &quot;1&quot;
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>5) &quot;two&quot;
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>6) &quot;2&quot;
+</code></pre></div>
+<h3 id="3-zscore-zrank">3. ZSCORE, ZRANK<a class="headerlink" href="#3-zscore-zrank" title="Permanent link">&para;</a></h3>
+<ul>
+<li>zscore<ul>
+<li>점수를 확인</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>redis&gt; ZSCORE myzset &quot;one&quot;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>(integer) 1
+</code></pre></div>
+<ul>
+<li>zrank<ul>
+<li>인덱스 (순위)를 확인</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>redis&gt; ZSCORE myzset &quot;one&quot;
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>(integer) 0
+</code></pre></div>
+<h3 id="4-set-based-zinter-zunion-zdiff">4. set based 연산 - <code>ZINTER</code>, <code>ZUNION</code>, <code>ZDIFF</code><a class="headerlink" href="#4-set-based-zinter-zunion-zdiff" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ZINTER numkeys key [key ...] [WEIGHTS weight [weight ...]]
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  [AGGREGATE &lt;SUM | MIN | MAX&gt;] [WITHSCORES]
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>ZUNION numkeys key [key ...] [WEIGHTS weight [weight ...]]
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  [AGGREGATE &lt;SUM | MIN | MAX&gt;] [WITHSCORES]
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>ZDIFF numkeys key [key ...] [WITHSCORES]
+</code></pre></div>
+<p>score 에 대한 가중치를 조절하는 wight 와 aggragate 방식을 조절 할 수 있다.</p>
+
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 17, 2023</span>
       
         <br>
         Created:
@@ -6589,7 +6773,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.view", "navigation.footer", "navigation.tabs", "navigation.sections", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.c2be25ad.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
         <script src="../../../../js/mkdocs-charts-plugin.js"></script>
       
