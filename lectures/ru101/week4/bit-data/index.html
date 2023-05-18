@@ -89,6 +89,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1-bit-data" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -5378,9 +5383,86 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Bit data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Bit data
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-bit-data" class="md-nav__link">
+    1. Bit Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-bit-data" class="md-nav__link">
+    2. BIT DATA 예시
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-bitfield" class="md-nav__link">
+    3. BITFIELD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-bitcount-bitop-bitpos" class="md-nav__link">
+    4. BITCOUNT, BITOP, BITPOS
+  </a>
+  
+    <nav class="md-nav" aria-label="4. BITCOUNT, BITOP, BITPOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-bitcount" class="md-nav__link">
+    4.1. BITCOUNT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-bitop" class="md-nav__link">
+    4.2 BITOP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-bitpos" class="md-nav__link">
+    4.3 BITPOS
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -6008,6 +6090,69 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-bit-data" class="md-nav__link">
+    1. Bit Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-bit-data" class="md-nav__link">
+    2. BIT DATA 예시
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-bitfield" class="md-nav__link">
+    3. BITFIELD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-bitcount-bitop-bitpos" class="md-nav__link">
+    4. BITCOUNT, BITOP, BITPOS
+  </a>
+  
+    <nav class="md-nav" aria-label="4. BITCOUNT, BITOP, BITPOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-bitcount" class="md-nav__link">
+    4.1. BITCOUNT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-bitop" class="md-nav__link">
+    4.2 BITOP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-bitpos" class="md-nav__link">
+    4.3 BITPOS
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6060,6 +6205,128 @@
         border-radius: 5px;
     }
 </style>
+<h3 id="1-bit-data">1. Bit Data<a class="headerlink" href="#1-bit-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bitfields &amp; Bit Arrays</li>
+<li>Compact, Optimized structures</li>
+<li>Commands to manipulate Bits</li>
+<li>No explicit Bit data type</li>
+<li>Commands operate on Strings</li>
+</ul>
+<h3 id="2-bit-data">2. BIT DATA 예시<a class="headerlink" href="#2-bit-data" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&gt;<span class="w"> </span>BITFIELD<span class="w"> </span>mykey<span class="w"> </span>SET<span class="w"> </span>u8<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="c1"># (1)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>&gt;<span class="w"> </span>GET<span class="w"> </span>mykey<span class="w"> </span><span class="c1"># (2)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s2">&quot;*&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>&gt;<span class="w"> </span>BITFIELD<span class="w"> </span>mykey<span class="w"> </span>get<span class="w"> </span>u8<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="c1"># (2)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="s2">&quot;42&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>&gt;<span class="w"> </span>BITFIELD<span class="w"> </span>mykey<span class="w"> </span>INCRBY<span class="w"> </span>u8<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="c1"># (3)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="s2">&quot;43&quot;</span><span class="w"> </span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>&gt;<span class="w"> </span>TYPE<span class="w"> </span>mykey<span class="w"> </span><span class="c1"># (4)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="s2">&quot;string&quot;</span><span class="w"> </span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>&gt;<span class="w"> </span>OBJECT<span class="w"> </span>encoding<span class="w"> </span>mykey<span class="w"> </span><span class="c1"># (5)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="s2">&quot;raw&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>&gt;<span class="w"> </span>GET<span class="w"> </span>mykey<span class="w"> </span><span class="c1"># (6)</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="s2">&quot;+&quot;</span>
+</code></pre></div>
+<p>아스키 테이블을 뒤져보면 42 는 <code>"*"</code> 43 은 <code>"+"</code> 임을 알 수 있다. 이제 BITFIELD 명령을 부셔보자.</p>
+<h3 id="3-bitfield">3. BITFIELD<a class="headerlink" href="#3-bitfield" title="Permanent link">&para;</a></h3>
+<p><code>BITFIELD</code> 명령은 다른 Sub Command 들과 함께 구성됩니다.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>BITFIELD key 
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  [GET encoding offset]
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  [SET encoding offset value]
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  [INCRBY encoding offset increment]
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  [OVERFLOW &lt;WRAP | SAT | FAIL&gt;]
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">encoding 이란?</p>
+<ul>
+<li>Signed (i) or Unsigned (u)</li>
+<li>Size (Number of Bits)</li>
+<li>최대 <code>i64</code> or <code>u63</code></li>
+<li>스키마가 없기 때문에 개발자가 해당 비트의 구성을 명확히 알아야 한다.</li>
+</ul>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&gt;<span class="w"> </span>BITFIELD<span class="w"> </span>mykey<span class="w"> </span>SET<span class="w"> </span>u8<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="c1"># (1)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>&gt;<span class="w"> </span>BITFIELD<span class="w"> </span>mykey<span class="w"> </span>get<span class="w"> </span>u8<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="c1"># (2)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>&gt;<span class="w"> </span>BITFIELD<span class="w"> </span>mykey<span class="w"> </span>INCRBY<span class="w"> </span>u8<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="c1"># (3)</span>
+</code></pre></div>
+<ol>
+<li><code>mykey</code> 를 <code>unsigned 8 bit</code> 의 인코딩으로 취급해서 <code>0 번째 offset</code> 에 <code>42</code> 라는 값을 채워 넣어라.</li>
+<li><code>mykey</code> 를 <code>unsigned 8 bit</code> 의 인코딩으로 취급해서 <code>0 번째 offset</code> 부터 값을 읽어라</li>
+<li><code>mykey</code> 를 <code>unsigned 8 bit</code> 의 인코딩으로 취급해서 <code>0 번째 offset</code> 의 값을 1 올려라</li>
+</ol>
+<p><a class="glightbox" href="excalidraws/bitfield.excalidraw.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="bitfield.excalidraw.png" src="excalidraws/bitfield.excalidraw.png" /></a></p>
+<p><code>BITFIELD mykey SET u8 2 1</code> 의 결과는?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&gt; BITFIELD mykey SET u8 2 1 
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>1) &quot;172&quot; 
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>&gt; GET mykey 
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>&quot;\x00@&quot;
+</code></pre></div>
+<p><a class="glightbox" href="excalidraws/bitfield-offset.excalidraw.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="bitfield-offset.excalidraw.png" src="excalidraws/bitfield-offset.excalidraw.png" /></a></p>
+<h3 id="4-bitcount-bitop-bitpos">4. BITCOUNT, BITOP, BITPOS<a class="headerlink" href="#4-bitcount-bitop-bitpos" title="Permanent link">&para;</a></h3>
+<h4 id="41-bitcount">4.1. BITCOUNT<a class="headerlink" href="#41-bitcount" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>BITCOUNT key [start end [BYTE | BIT]]
+</code></pre></div>
+<ul>
+<li>default - <code>BYTE</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>redis&gt; SET mykey &quot;foobar&quot;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>&quot;OK&quot;
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>redis&gt; BITCOUNT mykey
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>(integer) 26
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>redis&gt; BITCOUNT mykey 0 0
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>(integer) 4
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>redis&gt; BITCOUNT mykey 1 1
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>(integer) 6
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>redis&gt; BITCOUNT mykey 1 1 BYTE
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>(integer) 6
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>redis&gt; BITCOUNT mykey 5 30 BIT
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>(integer) 17
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>redis&gt;
+</code></pre></div>
+<p><a class="glightbox" href="excalidraws/bitfield-foobar.excalidraw.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="bitfield-foobar.excalidraw.png" src="excalidraws/bitfield-foobar.excalidraw.png" /></a></p>
+<h4 id="42-bitop">4.2 BITOP<a class="headerlink" href="#42-bitop" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>BITOP &lt;AND | OR | XOR | NOT&gt; destkey key [key ...]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&gt; SET key1 aa 
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>&quot;OK&quot; 
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>&gt; BITOP NOT notkey1 key1 
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>(integer) 2 
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>&gt; GET notkey1 &quot;\x9e\x9e&quot;
+</code></pre></div>
+<ul>
+<li><code>not a</code> = <code>10011110b</code> = <code>0x9e</code></li>
+</ul>
+<h3 id="43-bitpos">4.3 BITPOS<a class="headerlink" href="#43-bitpos" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>BITPOS key bit [start [end [BYTE | BIT]]]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&gt; SET key1 foobar
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>&quot;OK&quot;
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>&gt; BITPOS key1 0
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>(integer) 0
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>&gt; BITPOS key1 1
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>(integer) 1
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
