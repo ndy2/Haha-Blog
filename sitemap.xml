@@ -216,6 +216,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/ru101/week3/object-storage-with-hashes/</loc>
+         <lastmod>2023-05-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/ru101/week3/transactions/</loc>
+         <lastmod>2023-05-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/lectures/ru101/week4/bit-data/</loc>
          <lastmod>2023-05-18</lastmod>
          <changefreq>daily</changefreq>
