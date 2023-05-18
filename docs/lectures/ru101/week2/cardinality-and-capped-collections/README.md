@@ -14,7 +14,7 @@ description: >-
 
 ```
 - LLEN key // List
-- SCARD key // Set
+- SCARD key // Set
 - ZCARD key // Sorted-Set
 ```
 
@@ -74,7 +74,3 @@ description: >-
 4) "d" 
 5) "e"
 ```
-
-a b c d 
-a b c xyz d
-b c xyz
