@@ -11,6 +11,7 @@ description: >-
 > [!quote] 참고 자료
 > * https://go.dev/ref/spec#Array_types
 > * https://go.dev/ref/spec#Slice_types
+> * https://go.dev/ref/spec#Map_types
 
 ### 1. 배열
 
@@ -203,3 +204,94 @@ func main() {
 
 ### 3. Map
 
+> [!note] Map
+> `Map` 은 unique 한 key 로 식별되는 value 의 순서가 없는 그룹입니다. 초기화 되지 않은 맵은 `nil` 값을 가집니다.
+
+
+```
+MapType     = "map" "[" KeyType "]" ElementType .
+KeyType     = Type .
+```
+
+KeyType 에 대한 비교 연산자 `(==`, `!=`) 는 무조건 정의 되어야 합니다.
+
+#### 3.1. Map 을 생성하는 방법
+
+##### Compisite LITERAL
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	m := map[string]int{
+		"hello":  5,
+		"world!": 6,
+		"haha":   4,
+	}
+	fmt.Println(m)          //"map[haha:4 hello:5 world!:6]"
+	fmt.Println(m["hello"]) //"5"
+	fmt.Println(m["haha"])  //"4"
+	fmt.Println(m["papa"])  //"0"
+
+	v1, ok1 := m["haha"]
+	fmt.Println(v1, ok1) // 4 true
+
+	v2, ok2 := m["papa"]
+	fmt.Println(v2, ok2) // 0 false
+}
+```
+
+##### `make`
+
+```go
+make(map[string]int)
+make(map[string]int, 100) // optional capacity
+```
+
+#### 4.2. 원소 추가, range 순회
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	m := map[string]int{
+		"hello":  5,
+		"world!": 6,
+		"haha":   4,
+	}
+	v1, ok1 := m["papa"]
+	fmt.Println(v1, ok1) // 0 false
+
+	m["papa"] = 4
+	v2, ok2 := m["papa"]
+	fmt.Println(v2, ok2) // 4 true
+
+	for k, v := range m {
+		fmt.Println(k, v)
+	}
+}
+
+```
+
+#### 4.3. 원소 제거하기
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	m := map[string]int{
+		"hello":  5,
+		"world!": 6,
+		"haha":   4,
+	}
+	delete(m, "haha")
+	fmt.Println(m)
+}
+
+```
