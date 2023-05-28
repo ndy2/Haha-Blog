@@ -18,7 +18,7 @@
         <link rel="prev" href="../sec08-control-flow/">
       
       
-        <link rel="next" href="../../husseinnasser/fundamentals-of-backend-communications-and-protocols/section-2-backend-communication-design-patterns/">
+        <link rel="next" href="../sec12-struct/">
       
       <link rel="icon" href="../../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
@@ -5290,12 +5290,185 @@
     3. Map
   </a>
   
+    <nav class="md-nav" aria-label="3. Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-map" class="md-nav__link">
+    3.1. Map 을 생성하는 방법
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1. Map 을 생성하는 방법">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compisite-literal" class="md-nav__link">
+    Compisite LITERAL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make_1" class="md-nav__link">
+    make
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-range" class="md-nav__link">
+    4.2. 원소 추가, range 순회
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    4.3. 원소 제거하기
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sec12-struct/" class="md-nav__link">
+        구조체
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sec14-function/" class="md-nav__link">
+        함수
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sec16-pointer/" class="md-nav__link">
+        포인터
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sec18-application/" class="md-nav__link">
+        응용
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sec20-concurrency/" class="md-nav__link">
+        동시성
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sec22-channel/" class="md-nav__link">
+        채널
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sec24-exception-handling/README%201/" class="md-nav__link">
+        예외 처리
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sec26-godoc/" class="md-nav__link">
+        GoDoc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sec28-test-benchmark/" class="md-nav__link">
+        테스트, 벤치마크
+      </a>
     </li>
   
 
@@ -6433,6 +6606,53 @@
     3. Map
   </a>
   
+    <nav class="md-nav" aria-label="3. Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-map" class="md-nav__link">
+    3.1. Map 을 생성하는 방법
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1. Map 을 생성하는 방법">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compisite-literal" class="md-nav__link">
+    Compisite LITERAL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make_1" class="md-nav__link">
+    make
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-range" class="md-nav__link">
+    4.2. 원소 추가, range 순회
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    4.3. 원소 제거하기
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -6495,6 +6715,7 @@
 <ul>
 <li>https://go.dev/ref/spec#Array_types</li>
 <li>https://go.dev/ref/spec#Slice_types</li>
+<li>https://go.dev/ref/spec#Map_types</li>
 </ul>
 </div>
 <h3 id="1">1. 배열<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
@@ -6662,6 +6883,80 @@
 <a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="3-map">3. Map<a class="headerlink" href="#3-map" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Map</p>
+<p><code>Map</code> 은 unique 한 key 로 식별되는 value 의 순서가 없는 그룹입니다. 초기화 되지 않은 맵은 <code>nil</code> 값을 가집니다.</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>MapType     = &quot;map&quot; &quot;[&quot; KeyType &quot;]&quot; ElementType .
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>KeyType     = Type .
+</code></pre></div>
+<p>KeyType 에 대한 비교 연산자 <code>(==</code>, <code>!=</code>) 는 무조건 정의 되어야 합니다.</p>
+<h4 id="31-map">3.1. Map 을 생성하는 방법<a class="headerlink" href="#31-map" title="Permanent link">&para;</a></h4>
+<h5 id="compisite-literal">Compisite LITERAL<a class="headerlink" href="#compisite-literal" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="nx">m</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">        </span><span class="s">&quot;hello&quot;</span><span class="p">:</span><span class="w">  </span><span class="mi">5</span><span class="p">,</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">        </span><span class="s">&quot;world!&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">        </span><span class="s">&quot;haha&quot;</span><span class="p">:</span><span class="w">   </span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">m</span><span class="p">)</span><span class="w">          </span><span class="c1">//&quot;map[haha:4 hello:5 world!:6]&quot;</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">m</span><span class="p">[</span><span class="s">&quot;hello&quot;</span><span class="p">])</span><span class="w"> </span><span class="c1">//&quot;5&quot;</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">m</span><span class="p">[</span><span class="s">&quot;haha&quot;</span><span class="p">])</span><span class="w">  </span><span class="c1">//&quot;4&quot;</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">m</span><span class="p">[</span><span class="s">&quot;papa&quot;</span><span class="p">])</span><span class="w">  </span><span class="c1">//&quot;0&quot;</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="nx">v1</span><span class="p">,</span><span class="w"> </span><span class="nx">ok1</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">m</span><span class="p">[</span><span class="s">&quot;haha&quot;</span><span class="p">]</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span><span class="w"> </span><span class="nx">ok1</span><span class="p">)</span><span class="w"> </span><span class="c1">// 4 true</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">    </span><span class="nx">v2</span><span class="p">,</span><span class="w"> </span><span class="nx">ok2</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">m</span><span class="p">[</span><span class="s">&quot;papa&quot;</span><span class="p">]</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">v2</span><span class="p">,</span><span class="w"> </span><span class="nx">ok2</span><span class="p">)</span><span class="w"> </span><span class="c1">// 0 false</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="p">}</span>
+</code></pre></div>
+<h5 id="make_1"><code>make</code><a class="headerlink" href="#make_1" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="c1">// optional capacity</span>
+</code></pre></div>
+<h4 id="42-range">4.2. 원소 추가, range 순회<a class="headerlink" href="#42-range" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="nx">m</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">        </span><span class="s">&quot;hello&quot;</span><span class="p">:</span><span class="w">  </span><span class="mi">5</span><span class="p">,</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">        </span><span class="s">&quot;world!&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">        </span><span class="s">&quot;haha&quot;</span><span class="p">:</span><span class="w">   </span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">    </span><span class="nx">v1</span><span class="p">,</span><span class="w"> </span><span class="nx">ok1</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">m</span><span class="p">[</span><span class="s">&quot;papa&quot;</span><span class="p">]</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span><span class="w"> </span><span class="nx">ok1</span><span class="p">)</span><span class="w"> </span><span class="c1">// 0 false</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span><span class="nx">m</span><span class="p">[</span><span class="s">&quot;papa&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">    </span><span class="nx">v2</span><span class="p">,</span><span class="w"> </span><span class="nx">ok2</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">m</span><span class="p">[</span><span class="s">&quot;papa&quot;</span><span class="p">]</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">v2</span><span class="p">,</span><span class="w"> </span><span class="nx">ok2</span><span class="p">)</span><span class="w"> </span><span class="c1">// 4 true</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">k</span><span class="p">,</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">m</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span><span class="w"> </span><span class="nx">v</span><span class="p">)</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="43">4.3. 원소 제거하기<a class="headerlink" href="#43" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="nx">m</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">        </span><span class="s">&quot;hello&quot;</span><span class="p">:</span><span class="w">  </span><span class="mi">5</span><span class="p">,</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">        </span><span class="s">&quot;world!&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">        </span><span class="s">&quot;haha&quot;</span><span class="p">:</span><span class="w">   </span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="nb">delete</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;haha&quot;</span><span class="p">)</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">m</span><span class="p">)</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="p">}</span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
@@ -6714,13 +7009,13 @@
         
         
           
-          <a href="../../husseinnasser/fundamentals-of-backend-communications-and-protocols/section-2-backend-communication-design-patterns/" class="md-footer__link md-footer__link--next" aria-label="Next: Section2 - Backend Communication Patterns" rel="next">
+          <a href="../sec12-struct/" class="md-footer__link md-footer__link--next" aria-label="Next: 구조체" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Section2 - Backend Communication Patterns
+                구조체
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -186,6 +186,51 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec12-struct/</loc>
+         <lastmod>2023-05-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec14-function/</loc>
+         <lastmod>2023-05-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec16-pointer/</loc>
+         <lastmod>2023-05-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec18-application/</loc>
+         <lastmod>2023-05-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec20-concurrency/</loc>
+         <lastmod>2023-05-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec22-channel/</loc>
+         <lastmod>2023-05-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec24-exception-handling/README%201/</loc>
+         <lastmod>2023-05-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec26-godoc/</loc>
+         <lastmod>2023-05-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec28-test-benchmark/</loc>
+         <lastmod>2023-05-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/lectures/husseinnasser/fundamentals-of-backend-communications-and-protocols/section-2-backend-communication-design-patterns/</loc>
          <lastmod>2023-05-28</lastmod>
          <changefreq>daily</changefreq>
