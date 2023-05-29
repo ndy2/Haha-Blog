@@ -64,3 +64,11 @@ func bar(y *int) {
 ```
 ### 3. Method Set
 
+> [!note] [_Method Set_](https://go.dev/ref/spec#Method_sets)
+> - 어떠한 type의 _method set_ 은 해당 타입이 호출할 수 있는 메서드를 결정합니다.
+> - 모든 타입은 method set 을 가집니다.
+>
+> - defined type T 의 메서드 셋은 receiver type T 를 가지는 모든 메서드입니다.
+> - defined type T 의 포인터 타입의 메서드 셋은 receiver type 으로 T 혹은 `*T` 를 가지는 모든 메서드 입니다.
+> - interface type 의 메서드 셋은 interface 의 type set 의 intersection 입니다.
+
