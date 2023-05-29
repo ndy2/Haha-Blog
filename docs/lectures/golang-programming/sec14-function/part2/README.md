@@ -86,4 +86,13 @@ func main() {
 인터페이스의 더 복잡한 활용과 문법을 살펴보는 것은 미루어 두고 위 주제에 대해서 알아보자.
 
 > Go 는 OOP 를 지원하는 언어인가요?
+ 
+> [!quote] 참고 자료
+> * [Is Golang Object Oriented!? (OOP)](https://youtu.be/7D1W15cR_Hc) on Youtube by Golang Dojo
+> * [Is Go an Object Oriented language?](https://medium.com/gophersland/gopher-vs-object-oriented-golang-4fa62b88c701) on Medium by Luka Lukac
+
+
+
+
+
 
