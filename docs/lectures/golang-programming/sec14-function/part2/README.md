@@ -90,9 +90,3 @@ func main() {
 > [!quote] 참고 자료
 > * [Is Golang Object Oriented!? (OOP)](https://youtu.be/7D1W15cR_Hc) on Youtube by Golang Dojo
 > * [Is Go an Object Oriented language?](https://medium.com/gophersland/gopher-vs-object-oriented-golang-4fa62b88c701) on Medium by Luka Lukac
-
-
-
-
-
-
