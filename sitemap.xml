@@ -201,6 +201,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec14-function/part3/</loc>
+         <lastmod>2023-05-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec14-function/part4/</loc>
+         <lastmod>2023-05-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec16-pointer/</loc>
          <lastmod>2023-05-29</lastmod>
          <changefreq>daily</changefreq>
