@@ -124,7 +124,7 @@ func main() {
 		person: person{"James", "Bond", 42},
 		ltk:    true,
 	}
-	fmt.Println(sa) // "{{James Bond 42} true}"
+	fmt.Println(sa) // "{_{James Bond 42} true}"
 
 	fmt.Println(sa.first) // "James" - promoted
 	fmt.Println(sa.last)  // "Bond" - promoted 
@@ -154,7 +154,7 @@ func main() {
 		person: person{"James", "Bond", 42},
 		ltk:    true,
 	}
-	fmt.Println(sa) // "{{James Bond 42} true}"
+	fmt.Println(sa) // "{_{James Bond 42} true}"
 
 	fmt.Println(sa.first) // "James" - promoted
 	fmt.Println(sa.last)  // "Bond" - promoted
