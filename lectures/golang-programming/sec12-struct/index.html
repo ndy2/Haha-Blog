@@ -18,7 +18,7 @@
         <link rel="prev" href="../sec10-grouping-data/">
       
       
-        <link rel="next" href="../sec14-function/">
+        <link rel="next" href="../sec14-function/part1/">
       
       <link rel="icon" href="../../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro-syntax-error" class="md-skip">
+        <a href="#1-struct-" class="md-skip">
           Skip to content
         </a>
       
@@ -5194,12 +5194,60 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          구조체
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         구조체
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-struct-" class="md-nav__link">
+    1. Struct 타입 - 구조체
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-embedded-field" class="md-nav__link">
+    2. embedded field
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-promotion" class="md-nav__link">
+    3. Promotion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-anonymous-struct" class="md-nav__link">
+    4. Anonymous Struct
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -5211,10 +5259,58 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_6" id="__nav_3_1_6_label" tabindex="0">
+          Sec14 function
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Sec14 function
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../sec14-function/" class="md-nav__link">
-        함수
+      <a href="../sec14-function/part1/" class="md-nav__link">
+        함수 - Part1
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sec14-function/part2/" class="md-nav__link">
+        함수 - Part2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6356,8 +6452,42 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-struct-" class="md-nav__link">
+    1. Struct 타입 - 구조체
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-embedded-field" class="md-nav__link">
+    2. embedded field
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-promotion" class="md-nav__link">
+    3. Promotion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-anonymous-struct" class="md-nav__link">
+    4. Anonymous Struct
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -6383,11 +6513,183 @@
   
 
 
-<h1 id="macro-syntax-error"><em>Macro Syntax Error</em><a class="headerlink" href="#macro-syntax-error" title="Permanent link">&para;</a></h1>
-<p><em>File</em>: <code>lectures/golang-programming/sec12-struct/README.md</code></p>
-<p><em>Line 152 in Markdown file:</em> <strong>expected token 'end of print statement', got 'Bond'</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    fmt.Println(sa) // &quot;{{James Bond 42} true}&quot;
-</code></pre></div></p>
+  <h1>구조체</h1>
+
+<div class="blogging-tags-grid">
+
+        <a href="https://ndy2.github.io/Haha-Blog/archive/tags#lecture" class="blogging-tag"><code>#lecture</code></a>
+
+        <a href="https://ndy2.github.io/Haha-Blog/archive/tags#go" class="blogging-tag"><code>#go</code></a>
+
+    </div>
+
+<style>
+    .md-typeset .blogging-tags-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .md-typeset .blogging-tag {
+        color: var(--md-typeset-color);
+        background-color: var(--md-typeset-code-color);
+    }
+
+    .md-typeset .blogging-tag code {
+        border-radius: 5px;
+    }
+</style>
+
+<div class="admonition quote">
+<p class="admonition-title">참고 자료</p>
+<ul>
+<li><a href="https://go.dev/ref/spec#Struct_types">Struct Types</a></li>
+</ul>
+</div>
+<h3 id="1-struct-">1. Struct 타입 - 구조체<a class="headerlink" href="#1-struct-" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title"><em>Struct</em> </p>
+<ul>
+<li><code>struct</code> 란 <code>field</code> 라고 불리는 이름을 가진 원소들의 나열 (sequence) 입니다.</li>
+<li>필드의 이름은 명시적으로 나타내어 질 수도 있고(IdentifierList) 또한 그렇지 않을 수도 (EmbeddedField) 있습니다.</li>
+<li><code>struct</code> 에서 non-blank 필드 명은 unique 해야 합니다.</li>
+</ul>
+</div>
+<div class="highlight"><span class="filename">구조체 예시</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// An empty struct.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">struct</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">// A struct with 6 fields.</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nx">u</span><span class="w"> </span><span class="kt">float32</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="kt">float32</span><span class="w">  </span><span class="c1">// padding</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nx">A</span><span class="w"> </span><span class="o">*</span><span class="p">[]</span><span class="kt">int</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">F</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">구조체 person 과 다양한 생성 예시</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">type</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nx">first</span><span class="w"> </span><span class="kt">string</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nx">last</span><span class="w">  </span><span class="kt">string</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nx">age</span><span class="w">   </span><span class="kt">int</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">haha</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">person</span><span class="p">{</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="s">&quot;n&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="s">&quot;dy&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="mi">17</span><span class="p">,</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">haha</span><span class="p">)</span><span class="w"> </span><span class="c1">// &quot;{n dy 17}&quot;</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nx">papa</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">person</span><span class="p">{</span><span class="w"> </span><span class="c1">//</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="nx">first</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;James&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">        </span><span class="nx">last</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;Bond&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">        </span><span class="nx">age</span><span class="p">:</span><span class="w">   </span><span class="mi">42</span><span class="p">,</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">papa</span><span class="p">)</span><span class="w"> </span><span class="c1">// &quot;{James Bond 42}&quot;</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="c1">// baby := person{&quot;b&quot;, &quot;aby&quot;} //  too few values in struct literal of type person</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="nx">baby</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">person</span><span class="p">{</span><span class="nx">first</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">last</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;aby&quot;</span><span class="p">}</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">baby</span><span class="p">)</span><span class="w">     </span><span class="c1">// &quot;{b aby 0}&quot;- it works!</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">person</span><span class="p">{})</span><span class="w"> </span><span class="c1">// &quot;{  0}&quot; - it works TOO!</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="nx">newPerson</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">new</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">    </span><span class="nx">newPerson</span><span class="p">.</span><span class="nx">first</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;hello&quot;</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">    </span><span class="nx">newPerson</span><span class="p">.</span><span class="nx">last</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;world&quot;</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">newPerson</span><span class="p">)</span><span class="w"> </span><span class="c1">// &quot;&amp;{hello world 0}&quot;</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="2-embedded-field">2. <em>embedded field</em><a class="headerlink" href="#2-embedded-field" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">embedded field</p>
+<p>타입을 가지지만 명시적인 필드 이름을 가지지 않는 필드를 <em>embedded field</em> 라고 부릅니다.
+embedded field 는 꼭
+- 타입 이름 T 로 식별되거나
+- 인터페이스가 아닌 타입 이름 <code>*T</code> 로 식별되거나
+- T 자체는 포인터가 타입이 될 수 없어야 합니다. ??</p>
+</div>
+<div class="highlight"><span class="filename">embedded field 예시</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// A struct with four embedded fields of types T1, *T2, P.T3 and *P.T4</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">T1</span><span class="w">        </span><span class="c1">// field name is T1</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="o">*</span><span class="nx">T2</span><span class="w">       </span><span class="c1">// field name is T2</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nx">P</span><span class="p">.</span><span class="nx">T3</span><span class="w">      </span><span class="c1">// field name is T3</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="o">*</span><span class="nx">P</span><span class="p">.</span><span class="nx">T4</span><span class="w">     </span><span class="c1">// field name is T4</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span><span class="w">  </span><span class="c1">// field names are x and y</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">field name conflict - illegal struct</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">T</span><span class="w">     </span><span class="c1">// conflicts with embedded field *T and *P.T</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="o">*</span><span class="nx">T</span><span class="w">    </span><span class="c1">// conflicts with embedded field T and *P.T</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="o">*</span><span class="nx">P</span><span class="p">.</span><span class="nx">T</span><span class="w">  </span><span class="c1">// conflicts with embedded field T and *T</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="3-promotion">3. Promotion<a class="headerlink" href="#3-promotion" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title"><code>promoted</code></p>
+<p>구조체 x 의 (필드) 혹은 (embedded 필드의 메서드) f 는 x.f 가 legal selector 인 경우
+<code>promoted</code> 됩니다.</p>
+</div>
+<div class="highlight"><span class="filename">promoted</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kd">type</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nx">first</span><span class="w"> </span><span class="kt">string</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nx">last</span><span class="w">  </span><span class="kt">string</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nx">age</span><span class="w">   </span><span class="kt">int</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="kd">type</span><span class="w"> </span><span class="nx">secretAgent</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="nx">person</span><span class="w"> </span><span class="c1">// embedded field with implicit name</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="nx">ltk</span><span class="w">    </span><span class="kt">bool</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">}</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="nx">sa</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">secretAgent</span><span class="p">{</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="nx">person</span><span class="p">:</span><span class="w"> </span><span class="nx">person</span><span class="p">{</span><span class="s">&quot;James&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bond&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">},</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="nx">ltk</span><span class="p">:</span><span class="w">    </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sa</span><span class="p">)</span><span class="w"> </span><span class="c1">// &quot;{_{James Bond 42} true}&quot;</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sa</span><span class="p">.</span><span class="nx">first</span><span class="p">)</span><span class="w"> </span><span class="c1">// &quot;James&quot; - promoted</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sa</span><span class="p">.</span><span class="nx">last</span><span class="p">)</span><span class="w">  </span><span class="c1">// &quot;Bond&quot; - promoted </span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sa</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span><span class="w">   </span><span class="c1">// &quot;42&quot; - promoted</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sa</span><span class="p">.</span><span class="nx">ltk</span><span class="p">)</span><span class="w">   </span><span class="c1">// &quot;true&quot;</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="4-anonymous-struct">4. Anonymous Struct<a class="headerlink" href="#4-anonymous-struct" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">바로 위의 비밀요원 구조체를 익명 구조체로 변경</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="kd">type</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nx">first</span><span class="w"> </span><span class="kt">string</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nx">last</span><span class="w">  </span><span class="kt">string</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nx">age</span><span class="w">   </span><span class="kt">int</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nx">sa</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span><span class="nx">person</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="nx">ltk</span><span class="w"> </span><span class="kt">bool</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="p">}{</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">        </span><span class="nx">person</span><span class="p">:</span><span class="w"> </span><span class="nx">person</span><span class="p">{</span><span class="s">&quot;James&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bond&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">},</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">        </span><span class="nx">ltk</span><span class="p">:</span><span class="w">    </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sa</span><span class="p">)</span><span class="w"> </span><span class="c1">// &quot;{_{James Bond 42} true}&quot;</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sa</span><span class="p">.</span><span class="nx">first</span><span class="p">)</span><span class="w"> </span><span class="c1">// &quot;James&quot; - promoted</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sa</span><span class="p">.</span><span class="nx">last</span><span class="p">)</span><span class="w">  </span><span class="c1">// &quot;Bond&quot; - promoted</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sa</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span><span class="w">   </span><span class="c1">// &quot;42&quot; - promoted</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sa</span><span class="p">.</span><span class="nx">ltk</span><span class="p">)</span><span class="w">   </span><span class="c1">// &quot;true&quot;</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="p">}</span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
@@ -6440,13 +6742,13 @@
         
         
           
-          <a href="../sec14-function/" class="md-footer__link md-footer__link--next" aria-label="Next: 함수" rel="next">
+          <a href="../sec14-function/part1/" class="md-footer__link md-footer__link--next" aria-label="Next: 함수 - Part1" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                함수
+                함수 - Part1
               </div>
             </div>
             <div class="md-footer__button md-icon">
