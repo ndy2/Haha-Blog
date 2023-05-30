@@ -216,6 +216,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec18-application/encoding/</loc>
+         <lastmod>2023-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec18-application/sorting/</loc>
+         <lastmod>2023-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ndy2.github.io/Haha-Blog/lectures/golang-programming/sec20-concurrency/</loc>
          <lastmod>2023-05-30</lastmod>
          <changefreq>daily</changefreq>
