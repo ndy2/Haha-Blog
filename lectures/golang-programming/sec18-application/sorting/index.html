@@ -5387,10 +5387,10 @@
       
         <li class="md-nav__item">
   <a href="#2-slice-desending-abs" class="md-nav__link">
-    2. 정수 Slice - desending, abs 로 정렬
+    2. 정수 Slice - Desending, Abs 로 정렬
   </a>
   
-    <nav class="md-nav" aria-label="2. 정수 Slice - desending, abs 로 정렬">
+    <nav class="md-nav" aria-label="2. 정수 Slice - Desending, Abs 로 정렬">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5414,7 +5414,7 @@
       
         <li class="md-nav__item">
   <a href="#3-slice-" class="md-nav__link">
-    3. 정수 slice - 절댓값으로 정렬
+    3. 정수 Slice - 절댓값으로 정렬
   </a>
   
 </li>
@@ -6566,10 +6566,10 @@
       
         <li class="md-nav__item">
   <a href="#2-slice-desending-abs" class="md-nav__link">
-    2. 정수 Slice - desending, abs 로 정렬
+    2. 정수 Slice - Desending, Abs 로 정렬
   </a>
   
-    <nav class="md-nav" aria-label="2. 정수 Slice - desending, abs 로 정렬">
+    <nav class="md-nav" aria-label="2. 정수 Slice - Desending, Abs 로 정렬">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -6593,7 +6593,7 @@
       
         <li class="md-nav__item">
   <a href="#3-slice-" class="md-nav__link">
-    3. 정수 slice - 절댓값으로 정렬
+    3. 정수 Slice - 절댓값으로 정렬
   </a>
   
 </li>
@@ -6681,7 +6681,7 @@
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="w"> </span><span class="c1">// &quot;[-3 -1 3 4 5 8 10]&quot;</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="2-slice-desending-abs">2. 정수 Slice - desending, abs 로 정렬<a class="headerlink" href="#2-slice-desending-abs" title="Permanent link">&para;</a></h3>
+<h3 id="2-slice-desending-abs">2. 정수 Slice - Desending, Abs 로 정렬<a class="headerlink" href="#2-slice-desending-abs" title="Permanent link">&para;</a></h3>
 <h4 id="21-sortsort-sortreverse">2.1. <code>sort.Sort</code>, <code>sort.Reverse</code> 이용<a class="headerlink" href="#21-sortsort-sortreverse" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -6714,7 +6714,7 @@
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="w"> </span><span class="c1">// &quot;[10 8 5 4 3 -1 -3]&quot;</span>
 <a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="3-slice-">3. 정수 slice - 절댓값으로 정렬<a class="headerlink" href="#3-slice-" title="Permanent link">&para;</a></h3>
+<h3 id="3-slice-">3. 정수 Slice - 절댓값으로 정렬<a class="headerlink" href="#3-slice-" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
@@ -6739,6 +6739,79 @@
 <p>음... 람다식 없나?!</p>
 <h3 id="4-fun-sort">4. <code>fun Sort</code><a class="headerlink" href="#4-fun-sort" title="Permanent link">&para;</a></h3>
 <p>Sort 함수를 이용해 커스텀 타입의 정렬을 수행해보자.</p>
+<div class="highlight"><span class="filename">sort/sort.go #Sort</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Sort sorts data in ascending order as determined by the Less method.</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">// It makes one call to data.Len to determine n and O(n*log(n)) calls to</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">// data.Less and data.Swap. The sort is not guaranteed to be stable.</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kd">func</span><span class="w"> </span><span class="nx">Sort</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nx">n</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">Len</span><span class="p">()</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="k">return</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nx">limit</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">bits</span><span class="p">.</span><span class="nx">Len</span><span class="p">(</span><span class="nb">uint</span><span class="p">(</span><span class="nx">n</span><span class="p">))</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nx">pdqsort</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="nx">limit</span><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>Sort</code> 함수는 <code>Interface</code> 타입 <code>interface</code> 인자를 하나 전달 받고 이를 이용해 <code>pattern-defeating quicksort(pdqsort)</code> 함수에 내부적으로 정렬을 위임한다.</p>
+<p>그럼 가장 중요한 것이 바로 <code>Interface</code> 타입이다.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nx">Len</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">Less</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nx">Swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>인터페이스에 정의된 세가지 함수를 모두 리시버로 가지는 타입 T 는 Interface 로 동작 할 수 있으며 Sort 에 사용될 수 있다. 위에서 사용한 <code>sort.Ints</code> 함수의 구현을 살펴보자.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// Ints sorts a slice of ints in increasing order.</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">func</span><span class="w"> </span><span class="nx">Ints</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="p">[]</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Sort</span><span class="p">(</span><span class="nx">IntSlice</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>이녀석도 사실은 <code>Sort</code> 를 내부적으로 호출하고 IntSlice 라는 타입의 Interface 를 사용했던 것이다!</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// IntSlice attaches the methods of Interface to []int, sorting in increasing order.</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">type</span><span class="w"> </span><span class="nx">IntSlice</span><span class="w"> </span><span class="p">[]</span><span class="kt">int</span><span class="w">  </span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="nx">IntSlice</span><span class="p">)</span><span class="w"> </span><span class="nx">Len</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">  </span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="nx">IntSlice</span><span class="p">)</span><span class="w"> </span><span class="nx">Less</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nx">x</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">  </span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="nx">IntSlice</span><span class="p">)</span><span class="w"> </span><span class="nx">Swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="w"> </span><span class="nx">x</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">x</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span><span class="w"> </span><span class="nx">x</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>이제 sort.Ints, sort.Sort 의 비밀인 Interface 타입에 대해 알게 되었으므로 조금더 복잡한 기준의 정렬을 수행해보자. 목표는 <a href="https://www.acmicpc.net/problem/1181">이 문제</a> 이다.</p>
+<blockquote>
+<p>알파벳 소문자로 이루어진 N개의 단어가 들어오면 아래와 같은 조건에 따라 정렬하는 프로그램을 작성하시오.
+ 1. 길이가 짧은 것부터
+ 2. 길이가 같으면 사전 순으로</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="s">&quot;sort&quot;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">)</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="kd">type</span><span class="w"> </span><span class="nx">StringSorter</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="nx">StringSorter</span><span class="p">)</span><span class="w"> </span><span class="nx">Len</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="nx">StringSorter</span><span class="p">)</span><span class="w"> </span><span class="nx">Less</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">x</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">x</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">x</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">x</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nx">x</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="p">}</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="nx">StringSorter</span><span class="p">)</span><span class="w"> </span><span class="nx">Swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="w"> </span><span class="nx">x</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">x</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span><span class="w"> </span><span class="nx">x</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="kt">int</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Scan</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">n</span><span class="p">)</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nx">n</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="kt">string</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Scan</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">v</span><span class="p">)</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">        </span><span class="nx">arr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">append</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span><span class="w"> </span><span class="nx">v</span><span class="p">)</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="w">    </span><span class="nx">sort</span><span class="p">.</span><span class="nx">Sort</span><span class="p">(</span><span class="nx">StringSorter</span><span class="p">(</span><span class="nx">arr</span><span class="p">))</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a><span class="p">}</span>
+</code></pre></div>
+<p>Slice 만을 사용하는 경우 sort.Slice 를 활용해 익명함수를 넘기는 방식으로 작성하는것이 더 일반적인 것 같다.</p>
 
   <hr>
 <div class="md-source-file">
