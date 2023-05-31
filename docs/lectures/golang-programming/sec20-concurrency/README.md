@@ -9,7 +9,7 @@ description: >-
 
 ### 1. 동시성 vs 병렬성
 
-### 2. WaitGroups
+### 1.5 go 키워드와 goroutine
 
 ```go
 package main
@@ -121,3 +121,67 @@ Goroutines 	 :  2
 또한 foo 출력이 사라졌다!
 
 왜 와이? 그리고 goroutine 이 뭐지? 쓰레드 같은건가?!
+
+### 2. WaitGroup
+
+```
+package main
+
+import (
+	"fmt"
+	"runtime"
+	"sync"
+)
+
+var wg sync.WaitGroup
+
+func main() {
+	fmt.Println("OS \t\t : ", runtime.GOOS)
+	fmt.Println("ARCH \t\t : ", runtime.GOARCH)
+	fmt.Println("CPUs \t\t : ", runtime.NumCPU())
+	fmt.Println("Goroutines \t : ", runtime.NumGoroutine())
+
+	wg.Add(1)
+	go foo()
+	bar()
+
+	fmt.Println("CPUs \t\t : ", runtime.NumCPU())
+	fmt.Println("Goroutines \t : ", runtime.NumGoroutine())
+	wg.Wait()
+}
+
+func foo() {
+	for i := 0; i < 5; i++ {
+		fmt.Println("foo:", i)
+	}
+	wg.Done()
+}
+
+func bar() {
+	for i := 0; i < 5; i++ {
+		fmt.Println("bar:", i)
+	}
+}
+```
+
+```text title="실행 결과"
+OS 		 :  linux
+ARCH 		 :  amd64
+CPUs 		 :  8
+Goroutines 	 :  1
+bar: 0
+bar: 1
+bar: 2
+bar: 3
+bar: 4
+CPUs 		 :  8
+Goroutines 	 :  2
+foo: 0
+foo: 1
+foo: 2
+foo: 3
+foo: 4
+```
+
+### 3. 다시보는 WaitGroup
+
